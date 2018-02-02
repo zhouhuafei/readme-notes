@@ -1,4 +1,3 @@
-# 登录
 * 登录的接口
 ```
 post
@@ -23,3 +22,6 @@ http://oa.shopex.cn:89/client.do?method=checkin&type=checkout&latlng=31.168059,1
 post
 http://oa.shopex.cn:89/client.do?method=logout&sessionkey=abcbcTQlUiwES4dx6Unbw
 ```
+
+* 服务端和服务端之间通信不存在跨域问题
+* 跨域，指的是浏览器不能执行其他网站的脚本。它是由浏览器的同源策略造成的，是浏览器施加的安全限制。
