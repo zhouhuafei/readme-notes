@@ -6,7 +6,7 @@
 curl -L [https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh](https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh)| sh
 ```
 
-# 更改默认使用的shell 
+# 更改默认使用的shell
 * 查看可以使用的 shell,使用命令
 ```
 cat /etc/shells
