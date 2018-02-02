@@ -1,4 +1,64 @@
-# markdown笔记
-* 记录工作中遇到的问题
-* 记录学习中遇到的问题
-* 记录成长中遇到的问题
+# 模块兼容
+* 兼容commonjs规范 nodeJs
+* 兼容amd规范 requireJs
+* 兼容browser规范 window
+```
+"use strict";
+(function (global, factory) {
+    if (typeof exports === 'object' && typeof module !== 'undefined') { // nodejs - commonjs canon
+        module.exports = factory();
+    } else if (typeof define === 'function' && define.amd) { // requirejs - amd canon
+        define(factory);
+    } else { // window - browser canon
+        global.moduleCompat = factory();
+    }
+})(this, function () {
+    function moduleCompat() {
+        console.log('moduleCompat');
+    }
+
+    return moduleCompat;
+});
+```
+* 不能封装成方法使用1.因为module只针对当前文件有效,和函数在哪调用无关
+* 不能封装成方法使用2.不能通过传参,因为module,define存在未定义情况,会报错
+* 不能配合babel进行打包使用,他会把上面的this转成undefined
+# Q&A
+* 本来我是这么写的,但是严格模式不认下面这个this,因为严格模式下,函数自执行this是undefined
+```
+"use strict";
+(function (name, factory) {
+    if (typeof exports === 'object' && typeof module !== 'undefined') { // nodejs - commonjs canon
+        module.exports = factory();
+    } else if (typeof define === 'function' && define.amd) { // requirejs - amd canon
+        define(factory);
+    } else { // window - browser canon
+        this[name] = factory();
+    }
+})('moduleCompat', function () {
+    function moduleCompat() {
+        console.log('moduleCompat');
+    }
+
+    return moduleCompat;
+});
+```
+# 终极解决方案 - 使用下面这个babel转义和严格模式的问题都可以解决
+```
+"use strict";
+(function (name, factory) {
+    if (typeof exports === 'object' && typeof module !== 'undefined') { // nodejs - commonjs canon
+        module.exports = factory();
+    } else if (typeof define === 'function' && define.amd) { // requirejs - amd canon
+        define(factory);
+    } else { // window - browser canon
+        window[name] = factory();
+    }
+})('moduleCompat', function () {
+    function moduleCompat() {
+        console.log('moduleCompat');
+    }
+
+    return moduleCompat;
+});
+```
