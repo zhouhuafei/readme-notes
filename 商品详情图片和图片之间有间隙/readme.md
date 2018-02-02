@@ -1,4 +1,21 @@
-# markdown笔记
-* 记录工作中遇到的问题
-* 记录学习中遇到的问题
-* 记录成长中遇到的问题
+# pc端解决方案
+```
+img {
+  vertical-align: middle;
+}
+```
+# 手机端解决方案
+```
+img {
+  vertical-align: bottom;
+}
+```
+# 终级解决方案
+* js判断如果是pc端加vertical-align: middle;
+* js判断如果不是pc加vertical-align: bottom;
+# 其他解决方案
+```
+img {
+  vertical-align: -4px;
+}
+```

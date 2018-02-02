@@ -1,4 +1,8 @@
-# markdown笔记
-* 记录工作中遇到的问题
-* 记录学习中遇到的问题
-* 记录成长中遇到的问题
+```
+var divDom = document.querySelector('div');
+if (getComputedStyle(divDom).position === 'static') {
+    if (divDom.style.position === '' || divDom.style.position === 'static') {
+        divDom.style.position = 'relative';
+    }
+}
+```
