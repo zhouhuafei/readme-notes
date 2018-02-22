@@ -52,7 +52,7 @@ server {
 * 禁止某些ip访问我的网站
   - 找到你对应的网站的配置
   - 在location参数的起始位置添加
-  - deny 禁止 
+  - deny 禁止
   - allow 允许
 ```
 server {
