@@ -55,3 +55,8 @@ npm update -g
 ```
 npm install --production
 ```
+
+* 切换版本
+```
+https://yarnpkg.com/zh-Hans/package/n
+```
