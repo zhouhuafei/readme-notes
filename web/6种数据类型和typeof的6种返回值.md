@@ -12,6 +12,8 @@
     - Boolean
     - null
     - undefined
+* 1种对象类型
+    - Object
 * 6种typeof返回值
     - 'object'
     - 'string'
