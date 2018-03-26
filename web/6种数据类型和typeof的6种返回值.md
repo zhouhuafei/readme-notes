@@ -1,13 +1,12 @@
 # es5
-* 7种数据类型
+* 6种数据类型
     - Object
     - String
     - Number
     - Boolean
-    - Array
     - null
     - undefined
-* 5种基本数据类型
+* 5种原始类型
     - String
     - Number
     - Boolean
@@ -22,9 +21,7 @@
     - 'undefined'
 
 # es6
-* 新增数据类型
+* 新增原始类型
     - Symbol
-    - Map
-    - Set
 * 新增typeof返回值
     - 'symbol'
