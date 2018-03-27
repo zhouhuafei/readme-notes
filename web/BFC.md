@@ -14,7 +14,7 @@
     - 默认取绝对值大的那个
     - 不想折叠的话，只需要给子级设置display:inline-block或者float为left都可以解决
 * BFC可以包含浮动的元素，所以计算BFC高度时，浮动元素也参与计算。
-    - 受欢迎的.clear-fix:after可以清除浮动
+    - 一般使用.clear-fix:after用来清除浮动
     - 但是通过BFC也可以清除浮动，只需要给父级加overflow:hidden，加完之后父级就会包裹着子元素
 * BFC的区域不会与float的元素区域重叠，BFC可以阻止元素被浮动元素覆盖
     - 给图片加浮动，可以做文字环绕图片效果，给文字容器加overflow:hidden;可以去掉文字环绕效果
