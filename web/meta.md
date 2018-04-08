@@ -5,7 +5,7 @@
 <!-- 搜索引擎抓取 -->
 <meta name="robots" content="index,follow">
 <!-- 让ie以最高级模式渲染文档 -->
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 <!-- 让360浏览器默认使用极速核 -->
 <meta name="renderer" content="webkit">
 <!-- 窗口宽度等于设备宽度以及禁止缩放 -->
