@@ -4,8 +4,10 @@
 <meta charset="UTF-8">
 <!-- 搜索引擎抓取 -->
 <meta name="robots" content="index,follow">
-<!-- ie以最高级模式渲染文档 -->
+<!-- 让ie以最高级模式渲染文档 -->
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- 让360浏览器默认使用极速核 -->
+<meta name="renderer" content="webkit">
 <!-- 窗口宽度等于设备宽度以及禁止缩放 -->
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <!-- 是否需要默认的工具栏和菜单栏(针对苹果手机,默认值yes,需要) -->
