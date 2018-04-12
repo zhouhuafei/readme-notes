@@ -7,6 +7,7 @@ if (getComputedStyle(divDom).position === 'static') {
 ```
 
 # 下面是我脑抽了，请大家无视
+* 大家？不存在的，这里就你自己（/手动滑稽）。
 * 脑抽的行为还留下了important的bug。
 ```
 var divDom = document.querySelector('div');
