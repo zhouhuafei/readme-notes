@@ -1,3 +1,13 @@
+# 直接下面这样就行，得到计算后的css属性
+```
+var divDom = document.querySelector('div');
+if (getComputedStyle(divDom).position === 'static') {
+    divDom.style.position = 'relative';
+}
+```
+
+# 下面是我脑抽了，请大家无视
+* 脑抽的行为还留下了important的bug。
 ```
 var divDom = document.querySelector('div');
 // 先判断有优先级高的
