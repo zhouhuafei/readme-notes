@@ -1,3 +1,5 @@
+* 1em 等于当前元素的字体尺寸
+
 * 快速回弹滚动
 ```
 .xxx {overflow: auto;-webkit-overflow-scrolling: touch;}
