@@ -22,7 +22,7 @@ https://github.com/ma6174/vim
     - write的权重是2
     - exec的权重是4
 * sudo chmod -R 755 node_modules
-    - chmod 这是Linux系统管理员最常用到的命令之一,它用于改变文件或目录的访问权限。
+    - chmod 这是Linux系统管理员最常用到的命令之一,它用于改变文件或目录的访问权限
     - 第1个7表示owner的权限 rwx 1+2+4 7
     - 第2个5表示group的权限 r-x 1+0+4 5
     - 第3个5表示other的权限 r-x 1+0+4 5
