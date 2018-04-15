@@ -1,6 +1,6 @@
 * 使用默认的配置来创建package.json文件
 ```
-npm init --yes 
+npm init --yes
 ```
 * 全局安装
 ```
@@ -13,7 +13,7 @@ npm outdated
 ```
 * 查看全局环境下哪些包需要被更新
 ```
-npm outdated -g 
+npm outdated -g
 ```
 * 项目内安装
 ```
@@ -45,7 +45,7 @@ npm list -g --depth 0
 ```
 * 查看全局环境下哪些包需要被更新
 ```
-npm outdated -g 
+npm outdated -g
 ```
 * 更新全局环境下的包
 ```
@@ -59,4 +59,10 @@ npm install --production
 * 切换版本
 ```
 https://yarnpkg.com/zh-Hans/package/n
+https://yarnpkg.com/zh-Hans/package/nvm
+```
+
+* git提交之前进行检测
+```
+https://www.npmjs.com/package/husky
 ```
