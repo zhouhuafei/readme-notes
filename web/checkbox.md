@@ -9,9 +9,10 @@
 
 # 服务端接收的数据
 * post时，传的数据是
-```
-'hobby=1&hobby=2&hobby=2&hobby=3&hobby=4'
-```
+    - 下面这种格式的数据，使用jq可以通过serialize方法得到。
+    ```
+    'hobby=1&hobby=2&hobby=2&hobby=3&hobby=4'
+    ```
 * 服务端接收时，hobby的值就是
 ```
 [1, 2, 2, 3, 4]
