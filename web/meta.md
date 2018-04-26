@@ -2,8 +2,6 @@
 ```
 <!-- 字符编码 -->
 <meta charset="UTF-8">
-<!-- 搜索引擎抓取 -->
-<meta name="robots" content="index,follow">
 <!-- 窗口宽度等于设备宽度以及禁止缩放 -->
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <!-- 让ie以最高级模式渲染文档(ie浏览器) -->
@@ -22,10 +20,12 @@
 <meta name="screen-orientation" content="portrait">
 <!-- qq浏览器强制竖屏(qq浏览器) -->
 <meta name="x5-orientation" content="portrait">
+<!-- 搜索引擎抓取 -->
+<meta name="robots" content="index, follow">
 <!-- 页面关键词 -->
-<meta name="keywords" content="zhouhuafei,周华飞">
+<meta name="keywords" content="zhouhuafei, 周华飞">
 <!-- 页面描述 -->
-<meta name="description" content="zhouhuafei,周华飞">
+<meta name="description" content="zhouhuafei, 周华飞">
 <!-- 页面作者 -->
-<meta name="author" content="zhouhuafei,周华飞,1123486116@qq.com">
+<meta name="author" content="zhouhuafei, 周华飞, 1123486116@qq.com">
 ```
