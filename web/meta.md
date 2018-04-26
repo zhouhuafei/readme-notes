@@ -8,9 +8,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 <!-- 启用360浏览器的极速模式(360浏览器) -->
 <meta name="renderer" content="webkit">
-<!-- 是否需要默认的工具栏和菜单栏(safari浏览器,默认值yes,需要) -->
+<!-- 是否需要默认的工具栏和菜单栏(safari浏览器, 默认值yes, 需要) -->
 <meta name="apple-mobile-web-app-capable" content="yes">
-<!-- 控制状态栏的样式(safari浏览器,黑色) -->
+<!-- 控制状态栏的样式(safari浏览器, 黑色) -->
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <!-- 禁止把数字转化为电话号码(safari浏览器) -->
 <meta name="format-detection" content="telephone=no">
