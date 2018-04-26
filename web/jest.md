@@ -23,15 +23,15 @@ module.exports = sum;
 ```
 
 * 写测试脚本 sum.test.js
-```
-const sum = require('./sum');
+    - 更多expect方法 http://facebook.github.io/jest/docs/en/expect.html
+    - 对象和数组使用toEqual进行验证
+    ```
+    const sum = require('./sum');
 
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3); 
-  // 对象和数组使用toEqual进行验证
-  // 更多expect方法 http://facebook.github.io/jest/docs/en/expect.html
-});
-```
+    test('adds 1 + 2 to equal 3', () => {
+      expect(sum(1, 2)).toBe(3);
+    });
+    ```
 
 * 把命令加入package.json文件
 ```

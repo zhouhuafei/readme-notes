@@ -56,13 +56,6 @@ npm update -g
 npm install --production
 ```
 
-* 切换版本
-```
-https://yarnpkg.com/zh-Hans/package/n
-https://yarnpkg.com/zh-Hans/package/nvm
-```
-
-* git提交之前进行检测
-```
-https://www.npmjs.com/package/husky
-```
+* nodejs版本管理，切换安装其他版本(个人倾向这个) https://yarnpkg.com/zh-Hans/package/n
+* nodejs版本管理，切换安装其他版本 https://yarnpkg.com/zh-Hans/package/nvm
+* git提交之前进行检测 https://www.npmjs.com/package/husky
