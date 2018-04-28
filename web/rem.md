@@ -3,6 +3,32 @@
 * 因浏览器限制页面的最小字体是12px。(高倍屏例外，高倍屏字体可以小于12px，即便如此，你也不能把字体设置的小于12px，毕竟一倍屏还是存在的，没被市场淘汰，你就需要兼容)。
 * 所以给html设置字体大小时，最小不能小于12px。
 * 因此js计算rem时，动态分割成10份，保证每份不会小于12px。
+* js计算rem动态分割成10份的计算公式(个人倾向这个)。
+    - js计算公式
+    ```
+        html.style.fontSize = wrap.offsetWidth / 10 + 'px';
+    ```
+    - scss的px2rem计算公式
+    ```
+        @function px2rem($px,$psd:320) {
+            @return $px / $psd * 10rem;
+        }
+    ```
+* js计算rem的最佳解决方案(这个更适合那些不会使用scss的玩家，这个切换到其他宽度设备上，html的font-size，看起来不直观)。
+    - 动态分割成100份，1rem等于1px，给html设置font-size:1px，此时无效。
+    - 动态分割成设计图宽度的份数（此处假设设计图宽度是320px），再放大100倍，这样1rem就是100px，给html设置font-size:100px，此时有效且方便计算以及更直观的体现计算后的数值。
+    - js计算公式 -> html的font-size = 网站最大宽度 / 设计图宽度 * 100
+    ```
+        html.style.fontSize = wrap.offsetWidth / 320 * 100 + 'px';
+    ```
+    - scss的px2rem计算公式 -> px2rem = $px / (设计图宽度 / 默认设计图宽度 * 100)
+    ```
+        @function px2rem($px,$psd:320) {
+            $defaultPsdW: 320;
+            @return $px / ($psd / $defaultPsdW * 100) * 1rem;
+        }
+    ```
+    - 默认设计图宽度，为什么有这个，因为以前遇到过前期375px，后期750px的设计图，所以此处做了兼容处理，当然如果你遇到这种情况，完全可以重新封装一个px2rem2b函数。
 
 # 写手机端自适应页面时的注意事项
 * 例如设计图是750px，我们要兼容的最小屏宽是320px。
