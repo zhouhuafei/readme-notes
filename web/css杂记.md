@@ -45,7 +45,7 @@ input,textarea {-webkit-appearance: none;}
 * 手机拍照和上传图片
 ```
 <!-- 选择照片 -->
-<input type=file accept="image/gif,image/jpeg,image/png">
+<input type=file accept="image/gif, image/jpeg, image/png">
 <input type=file accept="image/vnd.microsoft.icon">
 <!-- 选择视频 -->
 <input type=file accept="video/mp4">
