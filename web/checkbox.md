@@ -5,6 +5,7 @@
 # 总结
 * 表单submit时，如果name出现了重复，则带到服务端的就是个数组，否则就是字符串。
     - 例如两个input类型为text的name值重复了，表单submit带过去的就是个数组。
+    - 例如两个input类型为hidden的name值重复了，表单submit带过去的就是个数组。
     - 例如同name名的checkbox，被选中多个，表单submit带过去的就是个数组。
 
 # 服务端接收的数据
