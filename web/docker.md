@@ -33,3 +33,6 @@ choco install docker-for-windows --pre
 choco upgrade docker-for-windows --pre
 ```
 
+# docker应用
+* docker默认ip 192.168.99.100
+
