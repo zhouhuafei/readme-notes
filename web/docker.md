@@ -1,4 +1,23 @@
-* 页面访问不到会返回404
-* 当然你可以把这个404页面做的好看一点，但是状态码是404还是404，所以并不会影响到别的
-* 即使你访问一个不存在的js文件，他返回给你的也是你这个404对应的结果，只要状态码还是404，你在network里就可以清晰的看到这个文件请求是失败的
-* 所以不要去改变404这个状态码
+注册账号 https://hub.docker.com/
+
+# windows安装
+
+* 安装
+```
+choco install docker-for-windows --pre
+```
+
+* 安装目录
+    - chocolatey的安装路径在哪，通过choco安装的东西就会在对应的地方。
+    - 我本地把chocolatey的安装路径定制到了D盘
+    - 详情请参阅同级目录里的chocolatey.md文件
+    ```
+    D:\chocolatey\lib\docker-for-windows\
+    ```
+
+
+* 更新
+```
+choco upgrade docker-for-windows --pre
+```
+
