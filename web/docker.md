@@ -8,12 +8,10 @@
 * 注册账号 https://hub.docker.com/
 
 # Windows10x64 安装
-
 * 安装
 ```
 choco install docker-for-windows --pre
 ```
-
 * 安装目录
     - chocolatey的安装路径在哪，通过choco安装的东西就会在对应的地方。
     - 我本地把chocolatey的安装路径定制到了D盘。
@@ -24,8 +22,6 @@ choco install docker-for-windows --pre
     tools\chocolateyinstall.ps1
     tools\chocolateyuninstall.ps1
     ```
-
-
 * 更新
 ```
 choco upgrade docker-for-windows --pre
