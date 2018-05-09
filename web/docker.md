@@ -7,6 +7,11 @@
 # 官网
 * 注册账号 https://hub.docker.com/
 
+# Windows7 安装
+* 下载Docker Toolbox
+* 一路next即可完成安装
+* 我是win7，所以是按照这种方式安装的，下面的Windows10x64 安装，我并没有进行亲自尝试。
+
 # Windows10x64 安装
 * 安装
 ```
