@@ -34,5 +34,8 @@ choco upgrade docker-for-windows --pre
 ```
 
 # docker应用
-* docker默认ip 192.168.99.100
+* docker默认ip 192.168.99.100 查看命令如下
+```
+docker-machine ip default
+```
 
