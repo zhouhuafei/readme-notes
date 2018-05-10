@@ -46,7 +46,9 @@ input,textarea {-webkit-appearance: none;}
 ```
 <!-- 选择照片 -->
 <input type=file accept="image/gif, image/jpeg, image/png">
+<!-- 下面这两个都可以只选ico类型的图片 -->
 <input type=file accept="image/vnd.microsoft.icon">
+<input type=file accept="image/x-icon">
 <!-- 选择视频 -->
 <input type=file accept="video/mp4">
 <!-- 选择音频 -->
