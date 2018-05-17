@@ -39,3 +39,13 @@ choco upgrade docker-for-windows --pre
 docker-machine ip default
 ```
 
+* 搜索可用的docker镜像
+```
+docker search 镜像名字
+```
+
+* 下载容器镜像
+```
+docker pull 镜像名字
+```
+
