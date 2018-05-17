@@ -35,10 +35,20 @@ choco upgrade docker-for-windows --pre
 
 # docker应用
 * docker-machine ip default -> 命令查看docker默认ip 默认ip 192.168.99.100
+
 * docker search 镜像名字 -> 命令搜索可用的docker镜像
 * docker pull 镜像名字 -> 命令下载镜像
-* docker ps -> 命令可以查看所有正在运行中的容器列表。
-* docker inspect 容器id -> 命令查看容器的信息。无需拷贝完整的id，通常来讲最开始的三至四个字母即可区分。
-* docker commit 容器id -> 命令保存对容器的修改。无需拷贝完整的id，通常来讲最开始的三至四个字母即可区分。
-* docker push -> 命令可以将某一个镜像发布到官方网站。
 * docker images -> 命令可以列出所有安装过的镜像。
+* docker push -> 命令可以将某一个镜像发布到官方网站。
+
+* 上面都是镜像，下面都是容器，我是有点懵逼的，这两个概念我目前还是没有理清的。
+
+* docker ps -> 命令可以查看所有正在运行中的容器列表。
+    - docker ps
+    - docker ps -a
+* docker inspect 容器id -> 命令查看容器的信息。无需拷贝完整的id，通常来讲最开始的三至四个字母即可区分。
+* docker rm 容器id -> 命令可以删除容器。
+    - docker ps -a
+    - docker rm f070
+    - docker rm db19
+* docker commit 容器id -> 命令保存对容器的修改。无需拷贝完整的id，通常来讲最开始的三至四个字母即可区分。
