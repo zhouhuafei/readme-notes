@@ -33,15 +33,22 @@ choco install docker-for-windows --pre
 choco upgrade docker-for-windows --pre
 ```
 
-# docker应用
+# docker镜像
+docker镜像是一个构建容器的只读模板，它包含了容器启动所需的所有信息，包括运行程序和配置数据。
+
+# docker容器
+docker容器可以理解为在沙盒中运行的进程。这个沙盒包含了该进程运行所必须的资源，包括文件系统、系统类库、shell 环境等等。但这个沙盒默认是不会运行任何程序的。你需要在沙盒中运行一个进程来启动某一个容器。这个进程是该容器的唯一进程，所以当该进程结束的时候，容器也会完全的停止。
+
+# docker基础命令
 * docker-machine ip default -> 命令查看docker默认ip 默认ip 192.168.99.100
 
-* docker search 镜像名字 -> 命令搜索可用的docker镜像
-* docker pull 镜像名字 -> 命令下载镜像
-* docker images -> 命令可以列出所有安装过的镜像。
+* docker search 镜像名字 -> 命令搜索可用的docker镜像。
+* docker pull 镜像名字 -> 命令下载镜像。
 * docker push -> 命令可以将某一个镜像发布到官方网站。
-
-* 上面都是镜像，下面都是容器，我是有点懵逼的，这两个概念我目前还是没有理清的。
+* docker images -> 命令可以列出所有安装过的镜像。
+* docker rmi 镜像id -> 命令可以删除镜像。
+    - docker images -a
+    - docker rmi e38bc
 
 * docker ps -> 命令可以查看所有正在运行中的容器列表。
     - docker ps
@@ -52,3 +59,8 @@ choco upgrade docker-for-windows --pre
     - docker rm f070
     - docker rm db19
 * docker commit 容器id -> 命令保存对容器的修改。无需拷贝完整的id，通常来讲最开始的三至四个字母即可区分。
+
+# docker删除镜像的注意点
+* 删除前需要保证容器是停止的 stop
+* 需要注意删除镜像和容器的命令不一样。 docker rmi ID，其中 容器(rm) 和 镜像(rmi)
+* 需要先删除容器
