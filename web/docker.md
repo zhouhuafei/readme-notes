@@ -1,3 +1,6 @@
+# 教程
+http://www.runoob.com/docker/docker-tutorial.html
+
 # 下载
 * Docker for Windows 在Windows上运行Docker。系统要求，Windows10x64位，支持Hyper-V。
 * Docker for Mac 在Mac上运行Docker。系统要求，OS X 10.10.3 或者更高版本，至少4G内存，4.3.30版本以前的VirtualBox会与Docker for Mac产生冲突，所以请卸载旧版本的VitrualBox。
@@ -65,3 +68,17 @@ docker容器可以理解为在沙盒中运行的进程。这个沙盒包含了�
 * 删除前需要保证容器是停止的 stop
 * 需要注意删除镜像和容器的命令不一样。 docker rmi ID，其中 容器(rm) 和 镜像(rmi)
 * 需要先删除容器
+
+# 容器操作
+* docker run 容器名 运行一个容器
+* docker run -it 容器名 通过docker的两个参数 -i -t，让docker运行的容器实现"对话"的能力
+    - -t:在新容器内指定一个伪终端或终端。
+    - -i:允许你对容器内的标准输入 (STDIN) 进行交互。
+    - -d:让容器在后台运行。
+    - -p:将容器内部使用的网络端口映射到我们使用的主机上。
+* docker run -it centos
+    - 此时我们已进入一个 centos 系统的容器
+* 使用 docker stop 命令来停止容器
+* 通过运行 exit 命令或者使用 Ctrl + d 来退出容器。
+
+
