@@ -92,12 +92,13 @@ FROM centos:6.8
 # 维护者信息
 MAINTAINER zhouhuafei "1123486116@qq.com"
 
+# 安装nodejs
+RUN yum install -y nodejs
+
+
 # Create app directory
 # RUN mkdir -p /home/Service
 # WORKDIR /home/Service
-
-# 安装nodejs
-RUN yum install -y nodejs
 
 # Bundle app source
 # COPY . /home/Service
@@ -110,5 +111,5 @@ EXPOSE 8000
 # 使用命令 pm2 start app.js 之后, pm2 默认在后台运行, 如果使用了Docker后,容器运行并立即退出,需要手动给“pm2”指定参数 --no-daemon
 CMD pm2 start pm2.json --no-daemon
 ```
-* 通过Docker Build 路径 创建镜像。
+* 通过 |-> Docker Build 命名 路径 <-| 创建镜像。
     - 命令读取指定路径下（包括子目录）所有的Dockefile，并且把目录下所有内容发送到服务端，由服务端创建镜像。
