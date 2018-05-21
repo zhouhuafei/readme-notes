@@ -82,8 +82,9 @@ docker容器可以理解为在沙盒中运行的进程。这个沙盒包含了�
 * 通过运行 exit 命令或者使用 Ctrl + d 来退出容器。
 
 # Dockerfile 创建自定义的Docker镜像
-* .dockerignore文件 作用和 .gitignore 类似
-* 创建Dockerfile文件，无后缀，名字就是Dockerfile，里面具体怎么写，还请自行搜索吧。
+* .dockerignore文件 作用和 .gitignore 类似。
+* 创建Dockerfile文件，无后缀，名字就是Dockerfile。
+* 以下是我个人nodejs项目的Docker镜像配置文件。未完待续...
 ```
 # 从一个基础镜像centos:6.8开始构建
 FROM centos:6.8
