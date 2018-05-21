@@ -1,1 +1,15 @@
-* 未完待续... 等docker写完，去里面复制出安装命令部分，贴在这里即可。
+* yum install -y nodejs
+
+* yum install -y php
+
+* yum install -y nginx
+    - service nginx start
+
+* yum install -y redis
+    - service redis start
+
+* yum install -y mongod-org
+    - service mongod start
+
+* yum install mysql-server
+    - service mysqld start
