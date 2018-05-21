@@ -81,6 +81,33 @@ docker容器可以理解为在沙盒中运行的进程。这个沙盒包含了�
 * 使用 docker stop 命令来停止容器
 * 通过运行 exit 命令或者使用 Ctrl + d 来退出容器。
 
-# 实战
+# Dockerfile 创建自定义的Docker镜像
+* .dockerignore文件 作用和 .gitignore 类似
+* 创建Dockerfile文件，无后缀，名字就是Dockerfile，里面具体怎么写，还请自行搜索吧。
+```
+# 从一个基础镜像centos:6.8开始构建
+FROM centos:6.8
 
+# 维护者信息
+MAINTAINER zhouhuafei "1123486116@qq.com"
 
+# Create app directory
+# RUN mkdir -p /home/Service
+# WORKDIR /home/Service
+
+# 安装nodejs
+RUN yum install -y nodejs
+
+# Bundle app source
+# COPY . /home/Service
+# RUN npm install
+
+# 暴露8000端口
+EXPOSE 8000
+
+# 每个容器只能执行一条CMD命令，多个CMD命令时，只最后一条被执行。
+# 使用命令 pm2 start app.js 之后, pm2 默认在后台运行, 如果使用了Docker后,容器运行并立即退出,需要手动给“pm2”指定参数 --no-daemon
+CMD pm2 start pm2.json --no-daemon
+```
+* 通过Docker Build 路径 创建镜像。
+    - 命令读取指定路径下（包括子目录）所有的Dockefile，并且把目录下所有内容发送到服务端，由服务端创建镜像。
