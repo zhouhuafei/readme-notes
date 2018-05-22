@@ -1,6 +1,7 @@
 * yum install -y nodejs
 
 * yum install -y php
+    - yum 安装 php5.6版本 还请自行搜索教程
 
 * yum install -y nginx
     - service nginx start
