@@ -13,3 +13,6 @@
 
 * yum install mysql-server
     - service mysqld start
+
+* 安装npm中canvas模块需要的依赖
+    - yum install -y cairo cairo-devel cairomm-devel libjpeg-turbo-devel pango pango-devel pangomm pangomm-devel giflib-devel
