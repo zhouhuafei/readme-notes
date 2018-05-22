@@ -1,3 +1,7 @@
+* centos版本
+    - 6.8
+    - 听说这个版本稳定，生态圈里的包也多。
+
 * yum install -y nodejs
 
 * yum install -y php
