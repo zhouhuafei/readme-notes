@@ -17,3 +17,5 @@
 * null > 1; // false
 * null < -1; // false
 * null > -1; // true
+
+* Number(null); // 0
