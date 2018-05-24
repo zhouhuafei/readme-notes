@@ -138,3 +138,8 @@ RUN yum install -y cairo cairo-devel cairomm-devel libjpeg-turbo-devel pango pan
     - CMD
 * 通过-v参数，冒号前为宿主机目录，必须为绝对路径，冒号后为镜像内挂载的路径。
 * 数据库中数据的存储位置都可以使用挂载，挂载到本地目录。
+
+# 注意
+* 容器内部的改动，停止之后，再开启就没了，因为还是老的容器。
+    - 解决方案1. 停止之前，把改动之后的容器进行commit，变成新的镜像，开启新的容器。
+    - 解决方案2. 挂载到宿主机。 -v
