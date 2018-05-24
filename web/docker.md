@@ -112,7 +112,7 @@ EXPOSE 80
 # 使用命令 pm2 start app.js 之后, pm2 默认在后台运行, 如果使用了Docker后,容器运行并立即退出,需要手动给“pm2”指定参数 --no-daemon
 CMD pm2 start pm2.json --no-daemon
 ```
-* 通过 |-> Docker Build 命名 路径 <-| 创建镜像。
+* 通过 ( Docker Build 命名 路径 ) 创建镜像。
     - 命令读取指定路径下（包括子目录）所有的Dockefile，并且把目录下所有内容发送到服务端，由服务端创建镜像。
     - docker build -t friendly-hello .
 * 运行应用程序，使用以下命令将计算机的端口4000映射到容器的已发布端口80 -p：
