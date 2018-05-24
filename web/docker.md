@@ -94,6 +94,12 @@ MAINTAINER zhouhuafei "1123486116@qq.com"
 
 # 安装git
 RUN yum install -y git
+
+# 安装nodejs
+RUN yum install -y nodejs
+
+# 在centos里安装npm中canvas模块需要的依赖
+RUN yum install -y cairo cairo-devel cairomm-devel libjpeg-turbo-devel pango pango-devel pangomm pangomm-devel giflib-devel
 ```
 * 通过 | docker Build 命名 路径 | 创建镜像。
     - 命令读取指定路径下（包括子目录）所有的Dockefile，并且把目录下所有内容发送到服务端，由服务端创建镜像。
