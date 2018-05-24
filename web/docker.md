@@ -126,6 +126,7 @@ RUN yum install -y cairo cairo-devel cairomm-devel libjpeg-turbo-devel pango pan
     - 每次开发完都要重新生成新的镜像。发到dockerhub。
     - 然后到服务器上更新镜像。
 * 我想要的无非是docker挂载本地目录，实现文件共享，就是这样。
+* docker适合本地开发，保证了生产环境和开发环境的一致性
 
 # docker 启动，端口映射，挂载本地目录
 * docker run -it -p 8070:8080 -v /e/www/suibianxiexie/:/root/suibianxiexie/ --privileged=true docker.io/centos /bin/bash
