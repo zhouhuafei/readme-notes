@@ -85,7 +85,7 @@ docker容器可以理解为在沙盒中运行的进程。这个沙盒包含了�
 # Dockerfile 创建自定义的Docker镜像
 * .dockerignore文件 作用和 .gitignore 类似。
 * 创建Dockerfile文件，无后缀，名字就是Dockerfile。
-* 以下是我个人nodejs项目的Docker镜像配置文件。里面怎么配置我目前还是晕乎乎的。未完待续...
+* 以下配置和docker的一个容器一个进程的原则有冲突。
 ```
 # 从一个基础镜像centos:6.8开始构建
 FROM centos:6.8
@@ -133,17 +133,17 @@ RUN npm install -g vue-cli
 # 安装npm的其他模块
 RUN npm install
 
-# 暴露80端口
-EXPOSE 80
+# 暴露5551端口
+EXPOSE 5551
 
 # 使用命令 pm2 start app.js 之后, pm2 默认在后台运行, 如果使用了Docker后,容器运行并立即退出,需要手动给“pm2”指定参数 --no-daemon
 CMD pm2 start pm2.json --no-daemon
 ```
-* 通过 ( Docker Build 命名 路径 ) 创建镜像。
+* 通过 | docker Build 命名 路径 | 创建镜像。
     - 命令读取指定路径下（包括子目录）所有的Dockefile，并且把目录下所有内容发送到服务端，由服务端创建镜像。
     - docker build -t friendly-hello .
-* 运行应用程序，使用以下命令将计算机的端口4000映射到容器的已发布端口80 -p：
-    - docker run -p 4000:80 friendly-hello
+* 运行应用程序，使用以下命令将计算机的端口4000映射到容器的已发布端口5551 -p：
+    - docker run -p 4000:5551 friendly-hello
 
 # 使用docker请尽量遵从一个容器一个进程的原则
 * 容器里如果一个进程都没有，则会自动停止。
