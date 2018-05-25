@@ -160,3 +160,6 @@ services:
 ```
 * docker-compose up
     - -d 后台运行
+* docker exec -it containerID bash
+    - /bin/bash
+    - 进入容器的命令行交互界面
