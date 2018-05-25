@@ -4,7 +4,7 @@ ps aux | grep nginx
 ```
 * cd 切换目录
 * ls 查看目录
-* mkdir 创建目录
+* mkdir 创建目录 -p 表示递归创建目录
 * touch 创建文件
 * cat 查看文件内容
 * vim 编辑器
