@@ -143,3 +143,13 @@ RUN yum install -y cairo cairo-devel cairomm-devel libjpeg-turbo-devel pango pan
 * 容器内部的改动，停止之后，再开启就没了，因为还是老的容器。
     - 解决方案1. 停止之前，把改动之后的容器进行commit，变成新的镜像，开启新的容器。
     - 解决方案2. 挂载到宿主机。 -v
+
+# docker-compose
+* Compose 是一个用户定义和运行多个容器的 Docker 应用程序。
+* 在 Compose 中你可以使用 YAML 文件来配置你的应用服务。
+* 然后，只需要一个简单的命令，就可以创建并启动你配置的所有服务。
+* docker-compose.yml
+```
+```
+* docker-compose up
+    - -d 后台运行
