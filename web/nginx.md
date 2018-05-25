@@ -6,12 +6,12 @@ brew install nginx
 * 启动
 ```
 nginx
-``` 
+```
 * 重启
 ```
 nginx -s reload
 ```
-* 停止 
+* 停止
   - 找到主进程master process的id
   - 杀死主进程
 ```
@@ -60,6 +60,7 @@ server {
         server_name www.xxx.com xxx.com;
         location / {
             deny 192.168.51.93;
+            deny 192.168.51.94;
             proxy_pass http://127.0.0.1:8080;
             proxy_set_header x-real-ip $remote_addr;
             proxy_set_header x-forwarded-for $proxy_add_x_forwarded_for;
@@ -82,7 +83,7 @@ nginx -s reload
 http {
     include       mime.types;
     default_type  application/octet-stream;
-    
+
     # 自动显示目录
     autoindex on;
     # 默认为on，显示出文件的确切大小，单位是bytes。改为off后，显示出文件的大概大小，单位是kB或者MB或者GB
