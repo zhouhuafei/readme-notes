@@ -129,6 +129,9 @@ RUN yum install -y cairo cairo-devel cairomm-devel libjpeg-turbo-devel pango pan
     - 每次开发完都要重新生成新的镜像。发到dockerhub。
     - 然后到服务器上更新镜像。
 * 我想要的无非是docker挂载本地目录，实现文件共享，就是这样。
+* docker可以做到目录挂载，并可以通过一个文件方便的部署项目所需要的环境，进而管理多个容器。
+    - -v 参数了解一下
+    - docker-compose 了解一下
 * docker适合本地开发，保证了生产环境和开发环境的一致性
 
 # docker 启动，端口映射，挂载本地目录
@@ -153,5 +156,6 @@ RUN yum install -y cairo cairo-devel cairomm-devel libjpeg-turbo-devel pango pan
 * 然后，只需要一个简单的命令，就可以创建并启动你配置的所有服务。
 * 在某个目录创建一个docker-compose.yml文件并写配置。以下是我尝试配置的一些东西。
     - https://github.com/zhouhuafei/docker-compose-config
+    - 上面的配置里还记录了一些坑点，请自行参阅。
 * docker-compose up
     - -d 后台运行
