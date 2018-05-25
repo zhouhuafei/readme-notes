@@ -156,6 +156,6 @@ RUN yum install -y cairo cairo-devel cairomm-devel libjpeg-turbo-devel pango pan
 * 然后，只需要一个简单的命令，就可以创建并启动你配置的所有服务。
 * 在某个目录创建一个docker-compose.yml文件并写配置。以下是我尝试配置的一些东西。
     - https://github.com/zhouhuafei/docker-compose-config
-    - 上面的配置里还记录了一些坑点，请自行参阅。
+    - 上面的配置里还记录了一些坑点，以及一些配置教程，还请自行参阅。
 * docker-compose up
     - -d 后台运行
