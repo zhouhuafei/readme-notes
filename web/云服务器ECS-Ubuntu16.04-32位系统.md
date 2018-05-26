@@ -20,7 +20,7 @@ npm i -g n
 ```
 * 更新nodejs到6.11.4版本
 ```
-n 6.11.4 
+n 6.11.4
 ```
 * 更新nodejs到最新稳定版
 ```
@@ -48,3 +48,6 @@ n stable
 # 安装mysql
 * apt install mysql-server
 * service mysql start
+
+# 安装docker
+* apt install docker.io
