@@ -50,4 +50,5 @@ n stable
 * service mysql start
 
 # 安装docker
-* apt install docker.io
+* apt install -y docker.io
+    - -y 默认yes 不询问我
