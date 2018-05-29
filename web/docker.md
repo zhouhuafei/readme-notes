@@ -74,10 +74,11 @@ docker容器可以理解为在沙盒中运行的进程。这个沙盒包含了�
 # 容器操作
 * docker run 容器名 运行一个容器
 * docker run -it 容器名 通过docker的两个参数 -i -t，让docker运行的容器实现"对话"的能力
-    - -t:在新容器内指定一个伪终端或终端。
-    - -i:允许你对容器内的标准输入 (STDIN) 进行交互。
-    - -d:让容器在后台运行。
-    - -p:将容器内部使用的网络端口映射到我们使用的主机上。
+    - -t: 在新容器内指定一个伪终端或终端。
+    - -i: 允许你对容器内的标准输入 (STDIN) 进行交互。
+    - -d: 让容器在后台运行。
+    - -p: 将容器内部使用的网络端口映射到我们使用的主机上。
+    - --name="containerName": 为容器指定一个名称。
 * docker run -it centos
     - 此时我们已进入一个 centos 系统的容器
 * docker exec -it containerID bash
