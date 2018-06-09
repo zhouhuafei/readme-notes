@@ -33,6 +33,24 @@ server {
         }
 }
 ```
+* nginx配置独立域名
+    - 问题1:静态资源访问不到。
+    - 问题2:路由重定向时路径错误。
+    - 问题1的解决方案:静态资源放到正确的目录以及打包时，根据环境不同，打包出不同路径。
+    - 问题2的解决方案:区分开发环境和线上环境，根据环境的差异，设置不同的路由初始路径。
+    - 建议开发环境和线上环境保持一致。
+```
+server {
+        listen 80;
+        server_name admin.xxx.com;
+        location / {
+            proxy_pass http://127.0.0.1:8080/admin/;
+            proxy_set_header x-real-ip $remote_addr;
+            proxy_set_header x-forwarded-for $proxy_add_x_forwarded_for;
+            proxy_set_header host $http_host;
+        }
+}
+```
 * 禁止用户通过服务器的ip地址直接访问nginx的服务
   - 找到默认配置
   - 在默认配置里的server里最后面加一句return 403;
