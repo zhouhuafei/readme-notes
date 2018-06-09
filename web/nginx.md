@@ -1,8 +1,9 @@
-# mac
-* 安装
+# mac 安装
 ```
 brew install nginx
 ```
+
+# 常用命令
 * 启动
 ```
 nginx
@@ -18,9 +19,18 @@ nginx -s reload
 ps aux | grep nginx
 kill id
 ```
-* nginx80端口转发其他端口
-  - 找到存放配置的文件夹，新建一个配置文件，然后写入下面的代码，就可以转发端口了
-  - ip的配置和host的配置请不要忘记，否则nginx代理之后，请求信息request带过来的ip和host就变成匿名的了
+* 无异常重启nginx
+```
+nginx -s reload
+```
+* 检测nginx配置是否异常
+```
+nginx -t
+```
+
+# nginx80端口转发其他端口
+* 找到存放配置的文件夹，新建一个配置文件，然后写入下面的代码，就可以转发端口了
+* ip的配置和host的配置请不要忘记，否则nginx代理之后，请求信息request带过来的ip和host就变成匿名的了
 ```
 server {
         listen 80;
@@ -33,28 +43,30 @@ server {
         }
 }
 ```
-* nginx配置独立域名
-    - 问题1:静态资源访问不到。
-    - 问题2:路由重定向时路径错误。
-    - 问题1的解决方案:静态资源放到正确的目录以及打包时，根据环境不同，打包出不同路径。
-    - 问题2的解决方案:区分开发环境和线上环境，根据环境的差异，设置不同的路由初始路径。
-    - 建议开发环境和线上环境保持一致。
-    - nginx可以代理静态资源，所以问题1不存在，问题二也可以通过nginx的代理解决，至于改变url应该需要代码里调整，nginx重定向是否可行，有待测试。
+
+# nginx配置独立域名
+* 问题1：静态资源访问不到。
+    - 解决方案：nginx通过location进行代理。
+* 问题2：路由错误，重定向错误，api路由错误。
+    - nginx通过rewrite进行路由重定向。
+* 问题3：api重定向时post变成了get
+    - 如果要保证重定向后的请求方法，需要在服务端返回307(临时)或者308(永久)状态码，这两个状态码不会更改原请求方法（需要客户端支持）
+* 建议：
+    - 路由的处理在程序代码里处理，当是生产环境时，更改路由前缀。
 ```
 server {
     listen 80;
-    server_name admin.xxx.com;
+    server_name admin.sbxx.com;
     location / {
-        proxy_pass http://127.0.0.1:8080/admin/;
+        proxy_pass http://127.0.0.1:5551/admin/;
         proxy_set_header x-real-ip $remote_addr;
         proxy_set_header x-forwarded-for $proxy_add_x_forwarded_for;
         proxy_set_header host $http_host;
     }
     location ^~ /admin/ {
-        proxy_pass http://127.0.0.1:5551/admin/;
-        proxy_set_header x-real-ip $remote_addr;
-        proxy_set_header x-forwarded-for $proxy_add_x_forwarded_for;
-        proxy_set_header host $http_host;
+        rewrite ^/admin/(.*)$ /$1 permanent;
+        # 这里是错误配置，正确配置待续...
+        return 307;
     }
     location ^~ /static-cache/ {
         proxy_pass http://127.0.0.1:5551/static-cache/;
@@ -86,11 +98,12 @@ server {
         return 403;
 }
 ```
-* 禁止某些ip访问我的网站
-  - 找到你对应的网站的配置
-  - 在location参数的起始位置添加
-  - deny 禁止
-  - allow 允许
+
+# 禁止某些ip访问我的网站
+* 找到你对应的网站的配置
+* 在location参数的起始位置添加
+* deny 禁止
+* allow 允许
 ```
 server {
         listen 80;
@@ -104,14 +117,6 @@ server {
             proxy_set_header host $http_host;
         }
 }
-```
-* 检测nginx配置是否异常
-```
-nginx -t
-```
-* 无异常重启nginx
-```
-nginx -s reload
 ```
 
 # 开启nginx目录文件列表显示功能
@@ -137,3 +142,13 @@ http {
     - ~* ：忽略大小写
     - ^~ ：只需匹配uri部分
     - @  ：内部服务跳转
+
+# rewrite
+* 语法
+    - rewrite regex replacement [flag];
+    - 重写 正则 替换内容 标识
+* flag
+    - last，本条规则匹配完成后，继续向下匹配新的location URI规则
+    - break，本条规则匹配完成即终止，不再匹配后面的任何规则
+    - redirect，返回302临时重定向，浏览器地址会显示跳转后的URL地址
+    - permanent，返回301永久重定向，浏览器地址栏会显示跳转后的URL地址
