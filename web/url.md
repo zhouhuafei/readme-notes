@@ -6,4 +6,4 @@
 
 * swiper http://www.swiper.com.cn/
 
-* 切图工具 http://www.cutterman.cn/zh/cutterman
+* photoshop一键切图工具 http://www.cutterman.cn/zh/cutterman
