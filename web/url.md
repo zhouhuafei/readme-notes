@@ -5,3 +5,5 @@
 * 富文本编辑器 http://www.wangeditor.com/
 
 * swiper http://www.swiper.com.cn/
+
+* 切图工具 http://www.cutterman.cn/zh/cutterman
