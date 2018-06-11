@@ -10,3 +10,9 @@
     - replace() 方法不会在 History 对象中生成一个新的记录。当使用该方法时，新的 URL 将覆盖 History 对象中的当前记录。
 * 金钱格式化
     - /(?!\b)(?=(\d{3})+$)/g
+* 6至16位字符且包含数字和字母
+    ```
+    var str = '0000000000a';
+    var result = str.length >=6 && str.length <=16 && /\d/.test(str) && /[a-zA-Z]/.test(str);
+    console.log(result);
+    ```
