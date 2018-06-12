@@ -5,5 +5,3 @@
 * 富文本编辑器 http://www.wangeditor.com/
 
 * swiper http://www.swiper.com.cn/
-
-* photoshop一键切图工具(ps cc 2014及以上 不支持ps6) http://www.cutterman.cn/zh/cutterman
