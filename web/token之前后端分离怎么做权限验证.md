@@ -20,3 +20,4 @@
 
 # token的安全性
 * 别人拿到token和uid，也就拿到了登录权限。
+* 不跨主域，可以把token存cookie里，加上httponly，会相对安全很多。
