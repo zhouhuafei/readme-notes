@@ -11,3 +11,9 @@
 # 后端生成token的原理
 * 首先网站要允许被跨域请求 Access-Control-Allow-Origin: *
 * 待续...
+
+# token的存储
+* 待续...
+
+# token的更新
+* 待续...
