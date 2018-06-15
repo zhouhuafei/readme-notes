@@ -1,0 +1,7 @@
+# 商品信息表
+* 通过关联goodsId去生成 - 商品规格项spec-item表
+    - 通过关联规格项的id去生成 - 商品规格项对应的规格值spec-value表
+* 通过关联goodsId去生成 - 货品(product)表。
+* 通过关联productId去生成 - 订单(order)表。
+* 通过关联orderId去生成 - 支付订单(payment-order)表。
+* 通过关联orderId去生成 - 售后订单(after-sale-order)表。
