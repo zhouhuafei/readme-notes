@@ -4,7 +4,7 @@
 * null > 0; // false
 * null < 0; // false
 * null == 0; // false
-* null == undefined; // true
+* null == undefined; // true undefined派生于null
 * null >= 0; // true
 * null <= 0; // true
 
