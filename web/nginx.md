@@ -51,23 +51,31 @@ server {
     - nginx通过rewrite进行路由重定向。
 * 问题3：api重定向时post变成了get
     - 如果要保证重定向后的请求方法，需要在服务端返回307(临时)或者308(永久)状态码，这两个状态码不会更改原请求方法（需要客户端支持）
+* rewrite导致出来了问题2和问题3，实在没有解决方案。配置return 307 或者 return 308一直失败。所以我就使用了location ^~ /admin/ 代理。
+    - 此时跳转路由和请求接口不会报404，但是路由上会有多余的路径/admin/。因为我再程序里写的路由是/admin/。本想通过308或者307重定向解决。奈何一直没有找到解决方案
+    - 所有还是去程序代码里处理吧。毕竟就算我通过307或者308重定向成功了。我还是要去程序里修改的。因为我不喜欢重定向。
 * 建议：
     - 路由的处理在程序代码里处理，当是生产环境时，更改路由前缀。
+* 307或者308重定向待续...
 ```
 server {
     listen 80;
     server_name admin.sbxx.com;
-    location / {
+    location ^~ / {
         proxy_pass http://127.0.0.1:5551/admin/;
         proxy_set_header x-real-ip $remote_addr;
         proxy_set_header x-forwarded-for $proxy_add_x_forwarded_for;
         proxy_set_header host $http_host;
     }
     location ^~ /admin/ {
-        rewrite ^/admin/(.*)$ /$1 permanent;
-        # 这里是错误配置，正确配置待续...
-        return 307;
+        proxy_pass http://127.0.0.1:5551/admin/;
+        proxy_set_header x-real-ip $remote_addr;
+        proxy_set_header x-forwarded-for $proxy_add_x_forwarded_for;
+        proxy_set_header host $http_host;
     }
+    #location ^~ /admin/ {
+    #    rewrite ^/admin/(.*)$ /$1 permanent;
+    #}
     location ^~ /static-cache/ {
         proxy_pass http://127.0.0.1:5551/static-cache/;
         proxy_set_header x-real-ip $remote_addr;
