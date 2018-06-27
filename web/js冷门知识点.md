@@ -26,3 +26,5 @@ location.reload(true); // 刷新页面，无缓存
         return v1 + v2;
     });
     ```
+
+* checkbox,radio,select没有readonly属性
