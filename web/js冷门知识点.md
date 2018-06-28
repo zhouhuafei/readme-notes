@@ -28,3 +28,20 @@ location.reload(true); // 刷新页面，无缓存
     ```
 
 * checkbox,radio,select没有readonly属性
+
+* parseInt(string, radix) 此函数可解析一个字符串，并返回一个整数。
+    - 当参数 radix 的值为 0，或没有设置该参数时，parseInt() 会根据 string 来判断数字的基数。如果 string 以 "0x" 开头，parseInt() 会把 string 的其余部分解析为16进制的整数。否则解析为十进制的整数。
+    - radix 可选。表示要解析的数字的基数。该值介于 2 ~ 36 之间。
+    - radix为1或者大于36返回的是NaN
+    - string的值转成数字如果大于等于radix返回的是NaN
+    ```
+    ['1', '2', '3'].map(parseInt); // [1, NaN, NaN]
+    parseInt('1', 0); // 1
+    parseInt('2', 1); // NaN
+    parseInt('3', 2); // NaN
+    ```
+
+* 077777 只要0后面的后续位数每个都小于8，就会被认为是8进制数字。输出时会自动转成10进制。
+    - 此时无论是使用String(077777)或者(077777).toString()或者parseInt(077777)，都会把这个数字由八进制转成10进制。
+    - 只要0后面的后续位数每个都小于2，就会被认为是2进制数字。输出时会自动转成10进制。
+    - 如果0x开头表示是16进制。同理。十六进制的0xf会被转成十进制的15。
