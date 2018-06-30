@@ -1,20 +1,20 @@
-* 定时器
+* 定时器。
 ```
 setTimeout(function (parameter) {
     console.log(parameter);
 }, 3000, '我是实参');
 ```
 
-* reload刷新页面
+* reload刷新页面。
 ```
 location.reload(); // 刷新页面，有缓存
 location.reload(true); // 刷新页面，无缓存
 ```
 
-* visibilitychange事件
+* visibilitychange事件。
     - 浏览器切换窗口的时候，会触发这个事件。
     - document.hidden属性返回布尔值true和false
-    - document.visibilityStatus属性返回字符串'visible'和'hidden'
+    - document.visibilityStatus属性返回字符串'visible'和'hidden'。
     - 以上两条属性可以判断本次切换是隐藏窗口还是显示窗口。
 
 * reduce
@@ -30,7 +30,7 @@ location.reload(true); // 刷新页面，无缓存
 * checkbox,radio,select没有readonly属性。
     - 具有disabled属性的表单元素，表单提交(submit)时，name和value不会被带过去(这个不算冷门知识)。
 
-* form的submit只支持get和post(非冷门)
+* form的submit只支持get和post(非冷门)。
     - 小知识，submit时进行拦截，然后ajax提交处理。
 
 * parseInt(string, radix) 此函数可解析一个字符串，并返回一个整数。
@@ -48,3 +48,7 @@ location.reload(true); // 刷新页面，无缓存
 * 在浏览器的控制台中，00000011，这种类型的数字，只要0后面的后续位数每个都小于8，就会被认为是8进制数字。输出时会自动转成10进制。
     - 例如00000011会被转成十进制的9。
     - 如果0x开头则表示是16进制。例如0xf会被转成10进制的15。
+
+* jq的serialize会过滤掉input类型(type)为file的值(非冷门)。
+    - new FormData()不会过滤掉input类型(type)为file的值。
+    - 没有name以及拥有disabled属性的表单元素会被上面的两种方法都过滤掉。
