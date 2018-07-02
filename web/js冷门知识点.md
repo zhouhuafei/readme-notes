@@ -52,3 +52,6 @@ location.reload(true); // 刷新页面，无缓存
 * jq的serialize会过滤掉input类型(type)为file的值(非冷门)。
     - new FormData()不会过滤掉input类型(type)为file的值。
     - 没有name以及拥有disabled属性的表单元素会被上面的两种方法都过滤掉。
+
+* scrollHeight
+    - Element.scrollHeight 这个只读属性是一个元素内容高度的度量，包括由于溢出导致的视图中不可见内容。没有垂直滚动条的情况下，scrollHeight值与元素视图填充所有内容所需要的最小值clientHeight相同。包括元素的padding，但不包括元素的border和margin。scrollHeight也包括 ::before 和 ::after这样的伪元素。
