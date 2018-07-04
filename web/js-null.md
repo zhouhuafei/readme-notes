@@ -33,3 +33,24 @@
 * undefined == null; // true undefined派生于null
 * undefined >= 0; // true
 * undefined <= 0; // true
+
+# 原因
+* 后来在[ECMAScript 6入门（链接）](http://es6.ruanyifeng.com/?search=%E9%80%97%E5%8F%B7&x=4&y=9#docs/spec)找到==和===的算法细节：
+* 规格对每一种语法行为的描述，都分成两部分：先是总体的行为描述，然后是实现的算法细节。相等运算符的总体描述，只有一句话。
+* “The comparison x == y, where x and y are values, producestrue or false.”
+* 上面这句话的意思是，相等运算符用于比较两个值，返回true或false。
+* 下面是算法细节：
+    - 1、如果x不是正常值（比如抛出一个错误），中断执行。
+    - 2、如果y不是正常值，中断执行。
+    - 3、如果Type(x)与Type(y)相同，执行严格相等运算x === y。
+    - 4、如果x是null，y是undefined，返回true。
+    - 5、如果x是undefined，y是null，返回true。
+    - 6、如果Type(x)是数值，Type(y)是字符串，返回x == ToNumber(y)的结果。
+    - 7、如果Type(x)是字符串，Type(y)是数值，返回ToNumber(x) == y的结果。
+    - 8、如果Type(x)是布尔值，返回ToNumber(x) == y的结果。
+    - 9、如果Type(y)是布尔值，返回x == ToNumber(y)的结果。
+    - 10、如果Type(x)是字符串或数值或Symbol值，Type(y)是对象，返回x == ToPrimitive(y)的结果。
+    - 11、如果Type(x)是对象，Type(y)是字符串或数值或Symbol值，返回ToPrimitive(x) == y的结果。
+    - 12、返回false。
+* 由于0的类型是数值，null的类型是Null（这是规格4.3.13小节的规定，是内部Type运算的结果，跟typeof运算符无关）。因此上面的前11步都得不到结果，要到第12步才能得到false。
+* null==0 // false
