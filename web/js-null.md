@@ -49,8 +49,8 @@
     - 7、如果Type(x)是字符串，Type(y)是数值，返回ToNumber(x) == y的结果。
     - 8、如果Type(x)是布尔值，返回ToNumber(x) == y的结果。这里我是不是可以理解，布尔值和其他类型进行比较全部都是转成数字进行比较。
     - 9、如果Type(y)是布尔值，返回x == ToNumber(y)的结果。这里我是不是可以理解，布尔值和其他类型进行比较全部都是转成数字进行比较。
-    - 10、如果Type(x)是字符串或数值或Symbol值，Type(y)是对象，返回x == ToPrimitive(y)的结果。ToPrimitive是原始值的意思。
-    - 11、如果Type(x)是对象，Type(y)是字符串或数值或Symbol值，返回ToPrimitive(x) == y的结果。ToPrimitive是原始值的意思。
+    - 10、如果Type(x)是字符串或数值或Symbol值，Type(y)是对象，返回x == ToPrimitive(y)的结果。ToPrimitive是转成原始值的意思。
+    - 11、如果Type(x)是对象，Type(y)是字符串或数值或Symbol值，返回ToPrimitive(x) == y的结果。ToPrimitive是转成原始值的意思。
     - 12、返回false。
 * 由于0的类型是数值，null的类型是 Null（这是规格[4.3.13 小节](http://www.ecma-international.org/ecma-262/6.0/#sec-terms-and-definitions-null-type)的规定，是内部 Type 运算的结果，跟typeof运算符无关）。因此上面的前 11 步都得不到结果，要到第 12 步才能得到false。
 * null==0; // false
