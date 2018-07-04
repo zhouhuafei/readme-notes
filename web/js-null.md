@@ -54,4 +54,5 @@
     - 12、返回false。
 * 由于0的类型是数值，null的类型是 Null（这是规格[4.3.13 小节](http://www.ecma-international.org/ecma-262/6.0/#sec-terms-and-definitions-null-type)的规定，是内部 Type 运算的结果，跟typeof运算符无关）。因此上面的前 11 步都得不到结果，要到第 12 步才能得到false。
 * null == 0; // false
-* [==比较规则的算法原文链接](http://www.ecma-international.org/ecma-262/5.1/#sec-11.9.3)
+* 5.1版本[==比较操作符规则的算法原文链接](http://www.ecma-international.org/ecma-262/5.1/#sec-11.9.3)
+* 6.0版本[==比较操作符规则的算法原文链接](http://www.ecma-international.org/ecma-262/6.0/#sec-abstract-equality-comparison)
