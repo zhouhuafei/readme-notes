@@ -52,5 +52,5 @@
     - 10、如果Type(x)是字符串或数值或Symbol值，Type(y)是对象，返回x == ToPrimitive(y)的结果。
     - 11、如果Type(x)是对象，Type(y)是字符串或数值或Symbol值，返回ToPrimitive(x) == y的结果。
     - 12、返回false。
-* 由于0的类型是数值，null的类型是Null（这是第25章读懂规格的第4小节里相等运算符的规定，是内部Type运算的结果，跟typeof运算符无关）。因此上面的前11步都得不到结果，要到第12步才能得到false。
+* 由于0的类型是数值，null的类型是 Null（这是规格[4.3.13 小节](http://www.ecma-international.org/ecma-262/6.0/#sec-terms-and-definitions-null-type)的规定，是内部 Type 运算的结果，跟typeof运算符无关）。因此上面的前 11 步都得不到结果，要到第 12 步才能得到false。
 * null==0; // false
