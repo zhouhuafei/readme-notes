@@ -57,44 +57,58 @@ server {
 * 建议：
     - 路由的处理在程序代码里处理，当是生产环境时，更改路由前缀。
     - 最好的解决方案是，让开发环境和生产环境路由保持一致。
-* 307 或者 308重定向待续...
+* 307(临时) 或者 308（永久）重定向，会保留原有的请求方式。不像301(永久) 或者 302(临时)重定向，会把请求方式变成get。
 ```
 server {
+    # 端口
     listen 80;
+
+    # 配置独立域名
     server_name admin.sbxx.com;
+
+    # 代理/
     location ^~ / {
         proxy_pass http://127.0.0.1:5551/admin/;
         proxy_set_header x-real-ip $remote_addr;
         proxy_set_header x-forwarded-for $proxy_add_x_forwarded_for;
         proxy_set_header host $http_host;
     }
-    location ^~ /admin/ {
-        proxy_pass http://127.0.0.1:5551/admin/;
-        proxy_set_header x-real-ip $remote_addr;
-        proxy_set_header x-forwarded-for $proxy_add_x_forwarded_for;
-        proxy_set_header host $http_host;
-    }
-    #location ^~ /admin/ {
-    #    rewrite ^/admin/(.*)$ /$1 permanent;
-    #}
-    # 307和308的正确配置应该如下，尚未测试待续...
-    location ~ ^/admin/(?<method>.*)$ {
-        if ($request_method != get) {
-            return 308 http://127.0.0.1:5551/$method$is_args$args;
-        }
-        rewrite ^/admin/(.*)$ /$1 permanent;
-    }
+
+    # 代理/static-cache/路径
     location ^~ /static-cache/ {
         proxy_pass http://127.0.0.1:5551/static-cache/;
         proxy_set_header x-real-ip $remote_addr;
         proxy_set_header x-forwarded-for $proxy_add_x_forwarded_for;
         proxy_set_header host $http_host;
     }
+
+    # 代理/static-no-cache/路径
     location ^~ /static-no-cache/ {
         proxy_pass http://127.0.0.1:5551/static-no-cache/;
         proxy_set_header x-real-ip $remote_addr;
         proxy_set_header x-forwarded-for $proxy_add_x_forwarded_for;
         proxy_set_header host $http_host;
+    }
+
+    # 代理的方法无法改变程序内部的路由。
+    #location ^~ /admin/ {
+        #proxy_pass http://127.0.0.1:5551/admin/;
+        #proxy_set_header x-real-ip $remote_addr;
+        #proxy_set_header x-forwarded-for $proxy_add_x_forwarded_for;
+        #proxy_set_header host $http_host;
+    #}
+
+    # 重定向的这种写法会导致只能使用get方式的请求
+    #location ^~ /admin/ {
+    #    rewrite ^/admin/(.*)$ /$1 permanent;
+    #}
+
+    # 307和308的正确配置应该如下，尚未测试待续...
+    location ~ ^/admin/(?<method>.*)$ {
+        if ($request_method != get) {
+            return 308 http://127.0.0.1:5551/$method$is_args$args;
+        }
+        rewrite ^/admin/(.*)$ /$1 permanent;
     }
 }
 ```
