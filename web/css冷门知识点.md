@@ -6,5 +6,5 @@
 
 * background:bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit;
     - position/bg-size 平常很少这样使用，所以此时记录一下还可以这样用
-    - background: url("./xxx.jpg") center/cover no-repeat;
-    - background: url("./xxx.jpg") right top/50% 10% no-repeat;
+    - background: url("./xxx.jpg") center/cover no-repeat; /* 居中，覆盖背景区域，不平铺 */
+    - background: url("./xxx.jpg") 50% 20%/50% 10% no-repeat; /* 距离左边50%，距离上边20%，图片宽度50%，图片高度10% */
