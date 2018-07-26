@@ -9,3 +9,23 @@
 # 引申
 * 用box-shadow模拟遮罩可以做出更灵巧的透明。
 * 一个div定位到某个地方，加宽高背景透明定位到某一个位置，然后通过box-shadow去模拟一个超大的遮罩出来，就可以实现一种很灵巧的透明穿透遮罩的层。
+* 这样做有个问题那就是，遮罩部分可以被点击到，因为不是真实的遮罩，所以要再用一个透明的遮罩配合。如此方是完美的。
+```
+.g-mask-transparent {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    z-index: 500;
+    left: 488px;
+    top: 200px;
+}
+.g-mask-through {
+    box-shadow: 0 0 0 1000px rgba(0,0,0,0.8);
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    z-index: 501;
+    left: 488px;
+    top: 200px;
+}
+```
