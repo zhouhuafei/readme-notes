@@ -17,3 +17,9 @@
 # 总结:
 * api请求的响应状态是200就算是成功，成功的状态又分为业务上的成功success和业务上的失败failure。
 * api请求的响应状态不是200就算是出错了，出错的状态是error。
+
+# 其他
+* 封装ajax时，以下http状态的响应码均可认定为响应成功。
+```
+const isSuccess = status >= 200 && status < 300 || status === 304;
+```
