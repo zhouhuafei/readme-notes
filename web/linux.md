@@ -12,6 +12,20 @@ ps aux | grep nginx
 * rm -r 删除目录或者文件
 * kill 杀死进程
 * find ./ -name xxx.txt 查找xxx.txt文件
+* grep 我是要被搜索的字符串 ./test.html 搜索test.html文件里是否包含某个字符串
+    - 递归查找目录下含有该字符串的所有文件
+    ```
+    grep -rn 我是要被搜索的字符串 ./
+    ```
+    - grep选项：
+    ```
+    *  表示当前目录所有文件，也可以是某个文件名
+    -r 是递归查找
+    -n 是显示行号
+    -R 查找所有文件包含子目录
+    -i 忽略大小写
+    -w 只匹配整个单词，而不是字符串的一部分（如匹配‘magic’，而不是‘magical’）
+    ```
 * sudo chown -R zhouhuafei:admin node_modules
     - chown命令改变某个文件或目录的所有者和所属的组
 * 权限的权重
