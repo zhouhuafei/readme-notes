@@ -55,3 +55,25 @@ PASS  ./sum.test.js
 
 # 更多使用说明
 * 请参阅官网 http://facebook.github.io/jest/
+
+# git commit 自动测试会报错
+* 使用husky包可以配置precommit从而让git在commit之前进行预检测。
+```
+"scripts": {
+    "codeLint": "eslint --ext .js,.vue,.html ./",
+    "codeFix": "eslint --fix --ext .js,.vue,.html ./",
+    "gulp": "gulp",
+    "test": "jest",
+    "precommit": "npm run codeLint && npm run test"
+},
+```
+* 但是git commit时出现了以下报错信息
+```
+FAIL
+● Test suite failed to run
+
+SecurityError: localStorage is not available for opaque origins at Window.get localStorage [as localStorage] (node_modules/jsdom/lib/jsdom/browser/Window.js:257:15)
+      at Array.forEach (<anonymous>)
+```
+* 解决方案，增加配置文件
+ - https://github.com/zhouhuafei/zhf.time-count-down/blob/master/jest.config.js
