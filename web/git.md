@@ -48,5 +48,13 @@ git remote remove origin
 ```
 * 每次提交输入密码太麻烦,以下是解决方案
 ```
-git config --global credential.helper store 
+git config --global credential.helper store
 ```
+* git打tag(标签)
+    - https://git-scm.com/book/zh/v1/Git-%E5%9F%BA%E7%A1%80-%E6%89%93%E6%A0%87%E7%AD%BE
+    ```
+    git tag v1.0.0 // 打标签
+    git tag // 查看标签
+    git push origin v1.0.0 // 推送本地新增的标签
+    git push origin --tags // 推送本地新增的所有标签
+    ```
