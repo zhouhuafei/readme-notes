@@ -1,4 +1,4 @@
- # git - 虽然经常使用,但还是随手记录一下吧
+# git - 虽然经常使用,但还是随手记录一下吧
 * 新建分支
 ```
 git checkout -b branchName
