@@ -80,3 +80,7 @@
     }(window, document));
 </script>
 ```
+
+# 坑点
+* 手机上使用rem，宽高过小时，使用border-radius:50%会不圆。
+    - 解决方案：使用px。
