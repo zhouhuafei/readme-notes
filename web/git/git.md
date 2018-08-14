@@ -60,6 +60,7 @@ git config --global credential.helper store
     ```
 
 * git commit 添加表情
+
     - ![图片加载中...](./images/1.png)
     ```
     git commit "message :trollface:"
