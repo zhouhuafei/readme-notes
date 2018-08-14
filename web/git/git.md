@@ -58,3 +58,9 @@ git config --global credential.helper store
     git push origin v1.0.0 // 推送本地新增的标签
     git push origin --tags // 推送本地新增的所有标签
     ```
+
+* git commit 添加表情
+    - ![图片加载中...](./images/1.png)
+    ```
+    git commit "message :trollface:"
+    ```
