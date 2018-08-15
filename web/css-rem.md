@@ -87,6 +87,6 @@
 * canvas无法使用rem，所以使用画布的画，还需要将rem转回px，如果屏幕分成10份，转回公式如下
 ```
 function rem2px(rem) {
-  return rem * document.documentElement.clientWidth / 10;
+  return rem * wrap.offsetWidth / 10;
 }
 ```
