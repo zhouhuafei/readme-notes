@@ -84,7 +84,7 @@
 # 坑点
 * 手机上使用rem，宽高过小时，使用border-radius:50%会不圆。
     - 解决方案：使用px。
-* canvas 让px可以自适应，原理就是等比放大。
+* canvas 让px可以自适应，原理就是等比缩放。
 ```
 function px2px(px) {
   return px * (wrap.offsetWidth / 375); // 设计图是375的
