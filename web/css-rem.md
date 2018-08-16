@@ -87,6 +87,6 @@
 * canvas 让px可以自适应，原理就是等比缩放。
 ```
 function px2px(px) {
-  return px * (wrap.offsetWidth / 375); // 设计图是375的
+  return px * (wrap.offsetWidth / 375); // 设计图是375的。
 }
 ```
