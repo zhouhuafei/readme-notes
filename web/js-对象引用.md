@@ -16,3 +16,6 @@ console.log(obj.json === obj2.json); // true; obj.json和obj2.json之间存在�
 
 * 一般不会把obj作为变量提出来写，这样就没有可操作的空间，也就不用担心存在引用关系了。
     - 一般都是直接传参的方式写入$.extend({}, { a: 1, b: 2, json: { key: 'value'} });
+
+* 如果想移除对象引用，可以使用对象的深拷贝方法，拷贝出一份新的对象。
+    - https://github.com/zhouhuafei/zhf.obj-remove-quote
