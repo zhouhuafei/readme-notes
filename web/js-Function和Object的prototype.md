@@ -13,20 +13,22 @@ js中一切皆是对象
 ```
 * obj.getO能找到的原因是：
 ```
-console.log(obj.constructor === Object); // true
+console.log(obj.__proto__ === Object.prototype); // true; obj的原型指向Object.prototype
 ```
 * Object.getF能找到的原因是：
 ```
-console.log(Object.constructor === Function); // true;
+console.log(Object.__proto__ === Function.prototype); // true; Object的原型指向Function.prototype
 ```
 * Number.getF能找到的原因是：
 ```
-console.log(Number.constructor === Function); // true;
+console.log(Number.__proto__ === Function.prototype); // true; Number的原型指向Function.prototype
 ```
 * Function.getO能找到的原因是：
 ```
-console.log(Function.prototype.__proto__.constructor === Object); // true;
+console.log(Function.__proto__.__proto__ === Object.prototype); // true; Function的原型的原型指向Object.prototype
 ```
 
-# 坑
-* 其实这里我理的还不是很清晰。待续...
+# 其他
+```
+console.log(Object.prototype.__proto__); // null; Object的原型的原型指向null
+```
