@@ -10,6 +10,12 @@ CDN的全称是Content Delivery Network，即内容分发网络。其基本思�
     - CDN服务提供商，对开启了CDN服务的域名进行DNS解析，解析到你访问时，距离你最近的那台CDN节点服务器上。具体内部是怎么实现的，无需关心。
     - 注意：要启用CDN加速服务，需要将您的加速域名指向CDN节点的CNAME地址，这样访问加速域名的请求才能转发到CDN节点上，达到加速效果。
 
+* 源站域名，加速域名，CNAME，OSS
+    - OSS(Object Storage Service对象存储服务)
+    - 源站域名：CDN回源拉取资源。源站可以是你自己的服务器，也可以是OSS。
+    - 加速域名：访问这个域名时，可以进行CDN加速，需要绑定服务商提供的CNAME。
+    - 加速域名不能和源站域名相同。
+
 * 文档
     - https://help.aliyun.com/product/27099.html?spm=a2c4g.750001.2.15.cH5sdP
 
