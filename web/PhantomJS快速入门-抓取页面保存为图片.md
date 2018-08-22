@@ -14,13 +14,14 @@
 ```
 phantomjs test.js
 ```
-* test.js内容如下1，page.open的回调其实就是page.onLoadFinished，所以执行结果和test.js内容如下2是一样的。
+* test.js内容如下：
 ```
 var page = require('webpage').create();
 page.viewportSize = {
     width: 750,
     height: 1334
 };
+// 写法一：和写法二是一样的。
 page.open('http://d11678.s438520.m.whd.weishangye.com/poster?goods_id=53&style=1', function (status) {
     if (status === 'success') {
         page.render('test.png');
@@ -29,19 +30,14 @@ page.open('http://d11678.s438520.m.whd.weishangye.com/poster?goods_id=53&style=1
     }
     phantom.exit(0);
 });
-```
-* test.js内容如下2，page.onLoadFinished其实和page.open的回调是一样的，所以执行结果和test.js内容如下1是一样的。
-```
-var page = require('webpage').create();
+// 写法二：和写法一是一样的。
+/*
 page.onLoadFinished = function () {
     page.render('test.png');
     phantom.exit(0);
 };
-page.viewportSize = {
-    width: 750,
-    height: 1334
-};
 page.open('http://d11678.s438520.m.whd.weishangye.com/poster?goods_id=53&style=1');
+*/
 ```
 * 存在问题：
     - js异步渲染的结构和图片抓取不到
