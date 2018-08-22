@@ -25,17 +25,16 @@
     - 待续...
 
 # 掌握的技术
+* css，scss，less。
+* js，jq，zepto，vue。
 * 前端自动化：gulp，webpack。
 * 前端模块化：seajs，requirejs，webpack。
-* css，scss，less。
-* js，zepto。
 * 面向对象封装组件，组件的继承。
 * eslint代码规范检测。
-* vue。
 * 微信小程序。
 * Node.js，express。
 * CDN。
-* nginx端口转发，代理配置。
+* nginx端口转发。
 * 待续...
 
 # 前端入行经历
