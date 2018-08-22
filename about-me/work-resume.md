@@ -24,15 +24,18 @@
     - 代码管理：git
     - 待续...
 
-# 工作中做过什么，用到了哪些技术？
-* 前端自动化，gulp，webpack。
-* 前端模块化，我们的项目用的是seajs，基于此进行维护。我个人倾向webpack。
-* css使用scss书写。我以前使用less。
-* jq，zepto
+# 掌握的技术
+* 前端自动化：gulp，webpack。
+* 前端模块化：seajs，requirejs，webpack。
+* css，scss，less。
+* js，zepto。
 * 面向对象封装组件，组件的继承。
 * eslint代码规范检测。
-* vue
-* 微信小程序
+* vue。
+* 微信小程序。
+* Node.js，express。
+* CDN。
+* nginx端口转发，代理配置。
 * 待续...
 
 # 前端入行经历
