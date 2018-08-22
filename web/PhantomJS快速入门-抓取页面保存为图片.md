@@ -14,10 +14,14 @@
 ```
 phantomjs test.js
 ```
-* test.js内容如下
+* test.js内容如下1，page.open的回调其实就是page.onLoadFinished，所以执行结果和test.js内容如下2是一样的。
 ```
 var page = require('webpage').create();
-page.open('http://d11678.s438520.m.whd.weishangye.com/product-3.html', function (status) {
+page.viewportSize = {
+    width: 750,
+    height: 1334
+};
+page.open('http://d11678.s438520.m.whd.weishangye.com/poster?goods_id=53&style=1', function (status) {
     if (status === 'success') {
         page.render('test.png');
     } else {
@@ -26,21 +30,19 @@ page.open('http://d11678.s438520.m.whd.weishangye.com/product-3.html', function 
     phantom.exit(0);
 });
 ```
+* test.js内容如下2，page.onLoadFinished其实和page.open的回调是一样的，所以执行结果和test.js内容如下1是一样的。
+```
+var page = require('webpage').create();
+page.onLoadFinished = function () {
+    page.render('test.png');
+    phantom.exit(0);
+};
+page.viewportSize = {
+    width: 750,
+    height: 1334
+};
+page.open('http://d11678.s438520.m.whd.weishangye.com/poster?goods_id=53&style=1');
+```
 * 存在问题：
-    - 页面没加载完毕，就抓取了。导致页面上的某些图片不能被渲染出来。
-* 解决方案1：
-    - 使用事件配合，test.js内容如下
-    ```
-    var page = require('webpage').create();
-    page.onLoadFinished = function () {
-        page.render('test.png');
-        phantom.exit(0);
-    };
-    page.open('http://d11678.s438520.m.whd.weishangye.com/product-3.html');
-    ```
-* 解决方案1存在的问题：
     - js异步渲染的结构和图片抓取不到
     - 使用了图片懒加载的图片也抓取不到
-
-* 解决方案2：
-    - 海报页的图片使用base64格式。仅仅是猜想，未做验证，如果此方案行不通，还需使用解决方案1。
