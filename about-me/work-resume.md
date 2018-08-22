@@ -46,7 +46,7 @@
     - webpack
     - es6
     - vue
-    - 小程序
+    - 微信小程序
     - wepy
     - mpvue
 
