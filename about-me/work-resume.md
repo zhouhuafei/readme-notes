@@ -84,4 +84,4 @@
     - 小游戏之五子棋：http://suibianxiexie.top/phone/game-wuziqi/
     - 小游戏之别踩白块：http://suibianxiexie.top/phone/game-biecaibaikuai/
     - 画心：http://suibianxiexie.top/static-no-cache/test/canvas/heart/
-    - 画坦克大战，画抽奖转盘，画闹钟，画五角星等。git
+    - 画坦克大战，画抽奖转盘，画闹钟，画五角星等。
