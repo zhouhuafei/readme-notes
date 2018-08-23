@@ -1,5 +1,6 @@
 # 个人简介
 * 姓名：周华飞
+* 性别：男
 * 出生日期：1993/02/14
 * 籍贯：皖
 * 民族：汉
@@ -14,28 +15,28 @@
 # 工作经历
 * 上海邦泰集团 - 医疗
     - 工作时间：2014/04 - 2016/04
-    - 项目：给江城和南宁医院做静态页面，有手机端页面，也有pc端页面，使用ftp更新文件。
-        - 没有太高深的技术，主要写一些布局和效果，例如粘性导航，懒加载，切换，css3动画。
-        - 这两年期间是我自学东西最多的一段时间。也让我扎实了我的css和js基础知识。
+    - 项目：给江城和南宁医院做页面，有pc端页面，也有手机端页面，使用ftp更新文件。
+        - 主要写一些布局和效果，例如粘性导航，图片懒加载，tab切换，css3动画，抽奖转盘，视频文件懒加载等。
+        - 这两年期间是我自学时间最充足的一段时间，扎实了我的html，css，js基础知识。
 * 上海商派网络科技有限公司 - 电商
     - 工作时间：2016/04 - 至今
     - 项目：微商城后台，微商城前台h5，微商城前台pc，小程序。
     - 项目类型：sass服务
     - 代码管理：git
-    - 待续...
+    - 主要写业务和功能，接口对接，功能完善，使用面向对象的方式进行组件的封装以及组件的继承，模块化开发。
 
-# 掌握的技术
-* css，scss，less。
-* js，jq，zepto，vue。
+# 使用过的技术
+* 布局：html+css，html5+css3，scss，iconfont。
+* 功能：JavaScript，jQuery，Zepto，ES6，Vue，微信小程序。
 * 前端自动化：gulp，webpack。
-* 前端模块化：seajs，requirejs，webpack。
-* 面向对象封装组件，组件的继承。
-* eslint代码规范检测。
-* 微信小程序。
-* Node.js，express。
-* CDN。
-* nginx端口转发。
-* 待续...
+* 前端模块化：Seajs，Browserify，webpack。
+* 代码规范：ESLint。
+* 代码测试：Jest。
+* 插件：SuperSlide，TouchSlide，Swiper，layDate，ECharts，Highcharts，百度地图，腾讯地图等。
+* 工具类：Firefox，Chrome，FlashFXP 5(ftp)，Git Bash，Fiddler 4，PUTTY，Browsersync，Photoshop CC 切图和快速导图，微信开发者工具等。
+* 编辑器：Dreamweaver，Sublime，PhpStorm，WebStorm。
+* nodejs：Express，EJS，Mongoose。
+* 后端：Smarty套模板，nginx配置端口转发，CDN开通与使用，linux基础命令。
 
 # 前端入行经历
 * 2013/11出校门实习，找工作，迷茫，进过工厂，做过网管。
@@ -44,7 +45,7 @@
 * 2014/04在上海邦泰医疗入职，开始了前端之旅。
 
 # 前端学习经历
-* 前期看视频教程，后来看书，现在看文档。
+> 前期看视频教程，后来看书，现在看文档。
 * 看过的视频教程
     - 智能社 - html+css，js，这是我看的第一份教程，可以说出视频的人是我的引路人，非常感谢，虽然我最后买了别人家的vip。
     - 李炎恢 - js，jq，html+css，html5+css3，bootstrap
@@ -57,17 +58,19 @@
     - 《JavaScript高级程序设计》，《JavaScript权威指南》，《HTML5与CSS3权威指南上册》，《HTML5与CSS3权威指南下册》，《HTML5权威指南》，《高性能JavaScript》，《JavaScript语言精粹》
 * 没看完偶尔继续看的书
     - 《HTML5 Canvas核心技术》，《ES6标准入门》，《Node与Express开发》，《深入浅出Node.js》
-* 看过的文档
-    - gulp
-    - webpack
-    - es6
-    - vue
-    - 微信小程序
-    - wepy
-    - mpvue
+* 看过的文档：gulp，webpack，es6，vue，微信小程序，wepy，mpvue等。
 
 # 为前端这个行业做过什么贡献？
-* 到目前为止，在npm上贡献了50多个包，虽然没什么人使用哈。
+* 在npm上贡献了50+的包。
 
 # 其他
-* 用canvas写过小游戏，例如五子棋，别踩白块。也写过抽奖转盘。
+* github：https://github.com/zhouhuafei
+* nodejs项目demo(MVC)
+    - 网址：http://suibianxiexie.top/
+    - 源码：https://github.com/zhouhuafei/suibianxiexie
+* nodejs项目demo(websocket)
+    - 网址：http://chat.suibianxiexie.top/
+    - 源码：https://github.com/zhouhuafei/come-chat
+* nodejs项目demo(axios服务端通信，Vue)
+    - 网址：http://sign.suibianxiexie.top/
+    - 源码：https://github.com/zhouhuafei/shopex-sign
