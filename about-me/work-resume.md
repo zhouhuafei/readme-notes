@@ -73,9 +73,6 @@
 # 为前端这个行业做过什么贡献？
 * 在npm上贡献了50+的包。
 
-# 兴趣爱好
-* 写原生的js
-
 # 其他
 * github：https://github.com/zhouhuafei
 * nodejs项目demo(MVC)
@@ -94,3 +91,10 @@
     - 画坦克大战，画抽奖转盘，画闹钟，画五角星等。
 * 笔记：
     - https://github.com/zhouhuafei/readme-notes/tree/master/web
+
+# 兴趣爱好
+* 热爱工作，热爱学习。偏爱原生js，工作中我个人也是写原生js居多。
+* 做饭，打乒乓球，看动漫。
+
+# 座右铭
+* 食君之禄，忠君之事，担君之忧。
