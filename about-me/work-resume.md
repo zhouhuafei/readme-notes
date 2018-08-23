@@ -41,7 +41,7 @@
 * 代码规范：ESLint。
 * 代码测试：Jest。
 * 插件：SuperSlide，TouchSlide，Swiper，layDate，ECharts，Highcharts，百度地图，腾讯地图等。
-* 工具类：Firefox，Chrome，FlashFXP 5(ftp)，Git Bash，Fiddler 4，PUTTY，Browsersync，Photoshop CC 切图和快速导图，微信开发者工具等。
+* 工具：Photoshop，Sketch，Firefox，Chrome，FlashFXP，Git Bash，Fiddler，PUTTY，Browsersync，微信开发者工具等。
 * 编辑器：Dreamweaver，Sublime，PhpStorm，WebStorm。
 * nodejs：Express，EJS，Mongoose。
 * 后端：Smarty套模板，nginx配置端口转发，CDN开通与使用，linux基础命令。
