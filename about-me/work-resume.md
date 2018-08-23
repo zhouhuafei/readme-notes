@@ -18,12 +18,18 @@
     - 项目：给江城和南宁医院做页面，有pc端页面，也有手机端页面，使用ftp更新文件。
         - 主要写一些布局和效果，例如粘性导航，图片懒加载，tab切换，css3动画，抽奖转盘，视频文件懒加载等。
         - 这两年期间是我自学时间最充足的一段时间，扎实了我的html，css，js基础知识。
+        - 案例：
+            - http://jcpc.skinjc.com/
+            - http://jcpc.skinjc.com/js/banner.js 这个js是我以前写的，还在被使用，顶部还有我以前留下的痕迹，rookie QQ:1123486116。案例无法一一列举，这么多年过去了，经手了那么多人，很多东西都已经不是当初的样子了。
 * 上海商派网络科技有限公司 - 电商
     - 工作时间：2016/04 - 至今
-    - 项目：微商城后台，微商城前台h5，微商城前台pc，小程序。
-    - 项目类型：sass服务
+    - 项目：云起微商城后台，云起微商城前台h5，云起微商城前台pc，小程序。
+    - 项目类型：店铺后台管理系统，saas服务。
+    - 项目功能：店铺装修，营销模块，
     - 代码管理：git
     - 主要写业务和功能，接口对接，功能完善，使用面向对象的方式进行组件的封装以及组件的继承，模块化开发。
+    - 案例：
+        - http://fy.xyunqi.com
 
 # 使用过的技术
 * 布局：html+css，html5+css3，scss，iconfont。
@@ -74,3 +80,8 @@
 * nodejs项目demo(axios服务端通信)
     - 网址：http://sign.suibianxiexie.top/
     - 源码：https://github.com/zhouhuafei/shopex-sign
+* canvas
+    - 小游戏之五子棋：http://suibianxiexie.top/phone/game-wuziqi/
+    - 小游戏之别踩白块：http://suibianxiexie.top/phone/game-biecaibaikuai/
+    - 画心：http://suibianxiexie.top/static-no-cache/test/canvas/heart/
+    - 画坦克大战，画抽奖转盘，画闹钟，画五角星等。git
