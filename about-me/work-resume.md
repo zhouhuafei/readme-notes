@@ -27,7 +27,7 @@
 
 # 使用过的技术
 * 布局：html+css，html5+css3，scss，iconfont。
-* 功能：JavaScript，jQuery，Zepto，ES6，Vue，微信小程序。
+* 功能：JavaScript，jQuery，Zepto，ES6，Vue，Vue Router，axios，微信小程序。
 * 前端自动化：gulp，webpack。
 * 前端模块化：Seajs，Browserify，webpack。
 * 代码规范：ESLint。
@@ -71,6 +71,6 @@
 * nodejs项目demo(websocket)
     - 网址：http://chat.suibianxiexie.top/
     - 源码：https://github.com/zhouhuafei/come-chat
-* nodejs项目demo(axios服务端通信，Vue)
+* nodejs项目demo(axios服务端通信)
     - 网址：http://sign.suibianxiexie.top/
     - 源码：https://github.com/zhouhuafei/shopex-sign
