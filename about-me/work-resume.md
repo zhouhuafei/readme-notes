@@ -73,6 +73,9 @@
 # 为前端这个行业做过什么贡献？
 * 在npm上贡献了50+的包。
 
+# 兴趣爱好
+* 写原生的js
+
 # 其他
 * github：https://github.com/zhouhuafei
 * nodejs项目demo(MVC)
