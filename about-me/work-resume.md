@@ -56,9 +56,6 @@
     - 《HTML5 Canvas核心技术》，《ES6标准入门》，《Node与Express开发》，《深入浅出Node.js》
 * 看过的文档：gulp，webpack，es6，vue，微信小程序，wepy，mpvue等。
 
-# 为前端这个行业做过什么贡献？
-* 在npm上贡献了50+的包。
-
 # 个人项目案例
 * github：https://github.com/zhouhuafei
 * nodejs项目demo(MVC)
@@ -77,6 +74,9 @@
     - 画坦克大战，画抽奖转盘，画闹钟，画五角星等。
 * 笔记：
     - https://github.com/zhouhuafei/readme-notes/tree/master/web
+
+# 为前端这个行业做过什么贡献？
+* 在npm上贡献了50+的包。
 
 # 个人简介
 * 姓名：周华飞
