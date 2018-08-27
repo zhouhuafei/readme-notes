@@ -16,7 +16,7 @@ window.onpopstate = function (ev) {
     总结：如果使用href不使用replace，回退会导致在url页和支付结果页之间进行无限循环跳转。使用了replace之后，尽量往前去跳一个新页面，不要往后跳老页面，否则体验会很怪异。
     */
     /*
-    window.location.replace(url); // 跳转到指定的url页面。
+    window.location.replace(url); // 跳转到指定的url页面。例如跳到订单详情页(对于上面流程中的记录来说，这是一个新页面)。
     */
 
     /*
