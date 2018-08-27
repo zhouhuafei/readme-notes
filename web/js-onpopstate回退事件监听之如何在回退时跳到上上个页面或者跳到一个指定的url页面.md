@@ -28,6 +28,8 @@ window.onpopstate = function (ev) {
     伪正确原因：回退->订单详情页，再退->支付结果页，再退->订单详情页，再退->支付结果页。回退2，4，6，8无限偶数次都是支付结果页。
     正确解法：无。
     */
+
+    // 总结：监听回退时。如果往前跳，建议使用location.href属性。如果往后跳，建议使用history.go方法。
 };
 // 添加并激活一个历史记录条目。如果不加这些，触发不了上面的事件。
 history.pushState({state1: 'state data 1'}, 'title1', '#url1');
