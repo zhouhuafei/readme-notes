@@ -16,7 +16,7 @@ window.onpopstate = function (ev) {
     正确原因：回退->支付页，再退->下单页，前进->支付页，再进->微信支付页。
     */
     /*
-    ev.preventDefault(); // 先阻止掉浏览器的默认回退行为。
+    ev.preventDefault(); // 先阻止掉浏览器的默认回退行为，其实不阻止也没关系。
     window.history.go(-2); // 然后回退到上上个页面(支付页)。此时再点击前进会跳到微信支付页，但是这样的体验并不会感觉到怪异。注：history.go(-2)会回退到上上个页面(支付页)和pushState的次数无关。
     */
 
