@@ -103,7 +103,7 @@ server {
     #    rewrite ^/admin/(.*)$ /$1 permanent;
     #}
 
-    # 307和308的正确配置应该如下，尚未测试待续...
+    # 307和308的正确配置应该如下，尚未测试(http://127.0.0.1:5551是不是应该去掉才对)待续...
     location ~ ^/admin/(?<method>.*)$ {
         if ($request_method != get) {
             return 308 http://127.0.0.1:5551/$method$is_args$args;
