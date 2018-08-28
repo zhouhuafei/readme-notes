@@ -98,7 +98,7 @@ server {
         #proxy_set_header host $http_host;
     #}
 
-    # 重定向的这种写法会导致只能使用get方式的请求
+    # 重定向的这种写法会导致只能使用get方式的请求。
     #location ^~ /admin/ {
     #    rewrite ^/admin/(.*)$ /$1 permanent;
     #}
@@ -182,3 +182,7 @@ http {
     - break，本条规则匹配完成即终止，不再匹配后面的任何规则
     - redirect，返回302临时重定向，浏览器地址会显示跳转后的URL地址
     - permanent，返回301永久重定向，浏览器地址栏会显示跳转后的URL地址
+
+# 踩坑
+* ```sudo nginx -s reload```报错：```nginx: [error] open() "/usr/local/var/run/nginx.pid" failed (2: No such file or directory)```
+    - 解决方案：找到你的nginx.conf的文件夹目录，然后运行这个```sudo nginx -c /usr/local/etc/nginx/nginx.conf```命令，再运行```sudo nginx -s reload```，就可以了
