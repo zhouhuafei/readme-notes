@@ -98,7 +98,7 @@ server {
         #proxy_set_header host $http_host;
     #}
 
-    # 重定向的这种写法会导致只能使用get方式的请求。
+    # 301和302重定向的这种写法会导致只能使用get方式的请求。
     #location ^~ /admin/ {
     #    rewrite ^/admin/(.*)$ /$1 redirect;
     #}
