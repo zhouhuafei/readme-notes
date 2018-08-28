@@ -98,12 +98,12 @@ server {
         #proxy_set_header host $http_host;
     #}
 
-    # 301和302重定向的这种写法会导致只能使用get方式的请求。
+    # 301和302重定向，这种写法会导致post方式的请求变成get方式的请求。
     #location ^~ /admin/ {
     #    rewrite ^/admin/(.*)$ /$1 redirect;
     #}
 
-    # 307和308的正确配置应该如下，尚未测试(http://127.0.0.1:5551是不是应该去掉才对)待续...
+    # 307和308重定向，才是正确的思路。正确配置应该如下。尚未测试(http://127.0.0.1:5551是不是应该去掉才对)待续...
     location ~ ^/admin/(?<method>.*)$ {
         if ($request_method != get) {
             return 308 http://127.0.0.1:5551/$method$is_args$args;
