@@ -61,6 +61,6 @@ location.reload(true); // 刷新页面，无缓存
 
 * ++ 和 + +
 ```
-console.log(1++'1'); // 报错：Uncaught ReferenceError: Invalid left-hand side expression in postfix operation
-console.log(1+ +'1'); // 2
+console.log(1 ++ '1'); // 报错：Uncaught ReferenceError: Invalid left-hand side expression in postfix operation
+console.log(1 + + '1'); // 2
 ```
