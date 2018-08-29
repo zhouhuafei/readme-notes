@@ -33,3 +33,6 @@ Super.prototype.power = function () {
     });
 };
 ```
+
+# 建议
+* 不能给外部调用的方法使用下划线(_)当前缀进行命名。
