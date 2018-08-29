@@ -66,6 +66,6 @@ npm install --production
 npm deprecate <pkg>[@<version>] <message>
 ```
 > 案例
-``
+```
 npm deprecate my-thing@"< 0.2.3" "critical bug fixed in v0.2.3"`
-``
+```
