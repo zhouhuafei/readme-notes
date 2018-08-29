@@ -58,3 +58,9 @@ location.reload(true); // 刷新页面，无缓存
 
 * contains 检测当前节点是否包含某个节点，如果是节点自身，也会返回true，应该过滤掉自身。
     - nowNode.contains(otherNode)
+
+* ++ 和 + +
+```
+console.log(1++'1'); // 报错：Uncaught ReferenceError: Invalid left-hand side expression in postfix operation
+console.log(1+ +'1'); // 2
+```
