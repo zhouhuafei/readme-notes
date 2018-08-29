@@ -39,8 +39,10 @@ git push
 * 将本地的一个普通目录与远程仓库进行关联
 ```
 git init
+git remote -v
 git remote add origin https://github.com/zhouhuafei/test.git
 git push --set-upstream origin master
+git remote -v
 ```
 * 取消本地目录下关联的远程库：
 ```
