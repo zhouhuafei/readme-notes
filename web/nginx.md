@@ -48,10 +48,12 @@ server {
 * 问题1：静态资源访问不到。
     - 解决方案：nginx通过location进行代理。
 * 问题2：路由错误，重定向错误，api路由错误。
-    - nginx通过rewrite进行路由重定向。
-* 问题3：api重定向时post变成了get
-    - 如果要保证重定向后的请求方法，需要在服务端返回307(临时)或者308(永久)状态码，这两个状态码不会更改原请求方法（需要客户端支持）
-* rewrite导致出来了问题2和问题3，实在没有解决方案。配置return 307 或者 return 308一直失败。所以我就使用了location ^~ /admin/ 代理。
+    - 解决方案：nginx通过rewrite进行路由重定向。
+    - 存在问题：问题3。
+* 问题3：api重定向时post变成了get。
+    - 如果要保证重定向后的请求方法，需要在服务端返回307(临时)或者308(永久)状态码，这两个状态码不会更改原请求方法（需要客户端支持）。
+    - 解决方案：待续...
+* rewrite导致出来了问题3，实在没有解决方案。配置return 307 或者 return 308一直失败。所以我就使用了location ^~ /admin/ 代理。
     - 此时跳转路由和请求接口不会报404，但是路由上会有多余的路径/admin/。因为我在程序里写的路由是/admin/。本想通过308或者307重定向解决。奈何一直没有找到解决方案(已有解决方案，在下面的代码配置里，尚未进行测试待续...)。
     - 所有还是去程序代码里处理吧。毕竟就算我通过307或者308重定向成功了。我还是要去程序里修改的。因为我不喜欢重定向。
 * 建议：
@@ -98,17 +100,17 @@ server {
         #proxy_set_header host $http_host;
     #}
 
-    # 重定向的这种写法会导致只能使用get方式的请求
+    # 301和302重定向，这种写法会导致post方式的请求变成get方式的请求。
     #location ^~ /admin/ {
-    #    rewrite ^/admin/(.*)$ /$1 permanent;
+    #    rewrite ^/admin/(.*)$ /$1 redirect;
     #}
 
-    # 307和308的正确配置应该如下，尚未测试(http://127.0.0.1:5551是不是应该去掉才对)待续...
+    # 307和308重定向，才是正确的思路。正确配置应该如下。尚未测试(http://127.0.0.1:5551是不是应该去掉才对)待续...
     location ~ ^/admin/(?<method>.*)$ {
         if ($request_method != get) {
             return 308 http://127.0.0.1:5551/$method$is_args$args;
         }
-        rewrite ^/admin/(.*)$ /$1 permanent;
+        rewrite ^/admin/(.*)$ /$1 redirect;
     }
 }
 ```
@@ -182,3 +184,7 @@ http {
     - break，本条规则匹配完成即终止，不再匹配后面的任何规则
     - redirect，返回302临时重定向，浏览器地址会显示跳转后的URL地址
     - permanent，返回301永久重定向，浏览器地址栏会显示跳转后的URL地址
+
+# 踩坑
+* ```sudo nginx -s reload```报错：```nginx: [error] open() "/usr/local/var/run/nginx.pid" failed (2: No such file or directory)```
+    - 解决方案：找到你的nginx.conf的文件夹目录，然后运行这个```sudo nginx -c /usr/local/etc/nginx/nginx.conf```命令，再运行```sudo nginx -s reload```，就可以了
