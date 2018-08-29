@@ -75,7 +75,7 @@
     - 《JavaScript高级程序设计》，《JavaScript权威指南》，《HTML5与CSS3权威指南上册》，《HTML5与CSS3权威指南下册》，《HTML5权威指南》，《高性能JavaScript》，《JavaScript语言精粹》
 * 没看完偶尔继续看的书
     - 《HTML5 Canvas核心技术》，《ES6标准入门》，《Node与Express开发》，《深入浅出Node.js》
-* 看过的文档：gulp，webpack，es6，vue，微信小程序，wepy，mpvue等。
+* 看过的文档：gulp，webpack，es6，vue，微信小程序，wepy，mpvue，nginx，nodejs，express等等等。
 
 # 个人项目案例
 * github：https://github.com/zhouhuafei
