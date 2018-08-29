@@ -64,3 +64,7 @@ location.reload(true); // 刷新页面，无缓存
 console.log(1 ++ '1'); // 报错：Uncaught ReferenceError: Invalid left-hand side expression in postfix operation
 console.log(1 + + '1'); // 2
 ```
+
+* ie：```window.navigator.userAgent.match(/msie\s([\d\.]+)/i)```
+
+* ie8：```!-[1,]```
