@@ -37,3 +37,34 @@
 
 # 其他
 * cookie的存储只和域名domain以及路径path有关，和端口无关，并不会因为不同的端口而导致cookie不一致。
+
+# 后端允许ajax跨域请求，以及ajax请求携带cookie。
+* nodejs使用cors模块或者
+```
+# express
+app.all('*', function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', 'http://s438520.m.whd.weishangye.com'); // 允许指定域名跨域
+    // res.header('Access-Control-Allow-Headers', 'X-Requested-With');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    res.header('Access-Control-Allow-Methods', 'PUT,POST,GET,DELETE,OPTIONS');
+    res.header('X-Powered-By', '3.2.1');
+    res.header('Access-Control-Allow-Credentials', true); // 允许带cookie(则Access-Control-Allow-Origin不允许是*号)
+    // res.header("Content-Type", "application/json;charset=utf-8");
+    next();
+});
+```
+* jq的ajax
+```
+$.ajax({
+    url: 'http://127.0.0.1:5551/admin/api/verify-code-canvas/',
+    xhrFields: {
+        withCredentials: true, // 允许带cookie
+    },
+    crossDomain: true, // 允许跨域
+});
+```
+* 总结：在后端允许，以及ajax请求设置上允许携带cookie以后，一下言论纯属猜测，测试下来，其实并没有带过去。待续...
+    - 请求头里会有cookie信息。
+    - 响应头里也可以进行set-cookie。
+    - 此时跨主域设置cookie就没有任何问题了。
+    - 你只需要给接口加上验签处理，可以防止一些非法请求。
