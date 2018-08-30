@@ -39,7 +39,8 @@
 * cookie的存储只和域名domain以及路径path有关，和端口无关，并不会因为不同的端口而导致cookie不一致。
 
 # 后端允许ajax跨域请求，以及ajax请求携带cookie。
-* nodejs使用cors模块或者
+* 注意：经测试，ajax跨域携带cookie，Firefox浏览器支持，Chrome浏览器不支持，所以用此法验证登录不可行。
+* nodejs使用cors模块或者如下：
 ```
 # express
 app.all('*', function (req, res, next) {
@@ -63,7 +64,7 @@ $.ajax({
     crossDomain: true, // 允许跨域
 });
 ```
-* 总结：在后端允许，以及ajax请求设置上允许携带cookie以后，一下言论纯属猜测，测试下来，其实并没有带过去。待续...
+* 总结：在后端允许，以及ajax请求设置上允许携带cookie以后，
     - 请求头里会有cookie信息。
     - 响应头里也可以进行set-cookie。
     - 此时跨主域设置cookie就没有任何问题了。
