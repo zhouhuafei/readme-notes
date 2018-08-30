@@ -44,13 +44,21 @@
 ```
 # express
 app.all('*', function (req, res, next) {
-    res.header('Access-Control-Allow-Origin', 'http://s438520.m.whd.weishangye.com'); // 允许指定域名跨域，本地开发需配置域名。
+    /*
+    # Access-Control-Allow-Origin：允许指定域名跨域，本地开发需配置域名。*号表示全部域名。
+    * 线上配置被允许跨域的域名案例：
+        - http://s438520.m.whd.weishangye.com
+    * 本地配置被允许跨域的域名案例：
+        - http://127.0.0.1:5552
+        - http://m.fy.shopex.loc.whd.cn:9056
+    */
+    res.header('Access-Control-Allow-Origin', 'http://127.0.0.1:5552');
     // res.header('Access-Control-Allow-Headers', 'X-Requested-With');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     res.header('Access-Control-Allow-Methods', 'PUT,POST,GET,DELETE,OPTIONS');
     res.header('X-Powered-By', '3.2.1');
     res.header('Access-Control-Allow-Credentials', true); // 允许带cookie(则Access-Control-Allow-Origin不允许是*号)
-    // res.header("Content-Type", "application/json;charset=utf-8");
+    // res.header('Content-Type', 'application/json;charset=utf-8');
     next();
 });
 ```
