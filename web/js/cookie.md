@@ -51,6 +51,7 @@ app.all('*', function (req, res, next) {
     * 本地配置被允许跨域的域名案例：
         - http://127.0.0.1:5552
         - http://m.fy.shopex.loc.whd.cn:9056
+    * 本地如果配置了虚拟域名，绑定了host，那么把这个虚拟域名填入即可。
     */
     res.header('Access-Control-Allow-Origin', 'http://127.0.0.1:5552');
     // res.header('Access-Control-Allow-Headers', 'X-Requested-With');
