@@ -69,3 +69,15 @@ npm deprecate <pkg>[@<version>] <message>
 ```
 npm deprecate my-thing@"< 0.2.3" "critical bug fixed in v0.2.3"`
 ```
+
+# 线上
+* 2018/08/30
+* npm上zhf.xxx系列我总共发布了61个包，github上zhf.xxx系列我总共发布了58个包，zhf.g-ui尚未发布。58 - 1 = 57
+* 其中4个是重命名的 61 - 4 = 57
+    - zhf.event 重命名为了 zhf.event-emitter
+    - zhf.dom-create 重命名为了 zhf.html-to-dom
+    - zhf.str-type 重命名为了 zhf.check-str
+    - zhf.ip 重命名为了 get-client-ip
+* 其中有6个包打了不推荐使用标识
+    - 因重命名不再维护：zhf.event，zhf.dom-create，zhf.str-type，zhf.ip
+    - 因纯依赖不再维护：zhf.tools，zhf.applications
