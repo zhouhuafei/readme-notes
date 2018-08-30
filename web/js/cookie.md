@@ -43,6 +43,14 @@
 * nodejs使用cors模块或者如下：
 ```
 # express
+/*
+设置跨域访问：此处配置的是全部请求('*')都允许跨域，其实应该指定某些接口允许跨域。
+可以去api-super里，响应之前设置某一类接口都允许跨域。
+也可以去某一个控制器里，单独对某一个接口设置跨域。
+app.all的第一个参数'*'号换成特定的路由，也是可以的。例如：'/admin/'，'/admin/*'，'/admin/log*n/'，'/a*n/login/'。
+app.all的第一个参数'*'号换成数组匹配多个路由，也是可以的。例如：['/admin/', '/admin/login/']。
+app.all的第一个参数'*'号表示任意可有可无的单个或多个字符。
+*/
 app.all('*', function (req, res, next) {
     /*
     # Access-Control-Allow-Origin：允许指定域名跨域，本地开发需配置域名。*号表示全部域名。
@@ -58,7 +66,7 @@ app.all('*', function (req, res, next) {
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     res.header('Access-Control-Allow-Methods', 'PUT,POST,GET,DELETE,OPTIONS');
     res.header('X-Powered-By', '3.2.1');
-    res.header('Access-Control-Allow-Credentials', true); // 允许带cookie(则Access-Control-Allow-Origin不允许是*号)
+    res.header('Access-Control-Allow-Credentials', true); // 允许带cookie(则Access-Control-Allow-Origin不允许是*号)(亲测Firefox浏览器支持，Chrome浏览器不支持)
     // res.header('Content-Type', 'application/json;charset=utf-8');
     next();
 });
