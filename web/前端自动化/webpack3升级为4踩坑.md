@@ -1,8 +1,5 @@
 # 配置案例以及说明
-* 配置案例地址：https://github.com/zhouhuafei/zhf.g-ui
-* 配置案例代码以及注释：
-```
-```
+* 配置案例地址：https://github.com/zhouhuafei/zhf.g-ui/blob/master/webpack.config.js
 
 # 踩坑 - extract-text-webpack-plugin报错
 * 报错信息：
