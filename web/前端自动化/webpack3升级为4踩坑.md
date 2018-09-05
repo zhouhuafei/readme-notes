@@ -75,3 +75,7 @@ splitChunks: {
 },
 ```
 * 提取css: 使用mini-css-extract-plugin模块。
+
+# webpack-dev-server
+* openPage的路径是相对于哪的？
+    - 待续...
