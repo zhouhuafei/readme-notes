@@ -69,3 +69,10 @@ optimization: {
 Path variable [contenthash] not implemented in this context
 ```
 * 解决方案：extract-text-webpack-plugin 换成 mini-css-extract-plugin 来提取css文件。
+
+# 多入口提取公共js和css时和webpack3不同
+* 提取公共js：在optimization.splitChunks里配置。
+* 提取css: 使用mini-css-extract-plugin模块。
+* 发现common.js里有好几个入口js里独有的内容。
+* 发现common.css里有好几个入口js里对应css的内容。
+* 猜测：如果入口总内容的大小不达到一定的阀值，则会全部都打进公共文件(common)里，不会进行提取出来。
