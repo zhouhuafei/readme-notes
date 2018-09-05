@@ -72,7 +72,25 @@ Path variable [contenthash] not implemented in this context
 
 # 多入口提取公共js和css时和webpack3不同
 * 提取公共js：在optimization.splitChunks里配置。
+```
+splitChunks: {
+    chunks: 'initial', // 只对入口文件处理
+    cacheGroups: {
+        // 如果引入(require/import)了node_modules里都包，则提取为this-is-global-file-vendor(.css/.js)
+        vendor: {
+            test: /node_modules/,
+            name: 'this-is-global-file-vendor',
+            priority: 10,
+            enforce: true,
+        },
+        // 如果引入(require/import)了commons/common，则提取为this-is-global-file-common(.css/.js)
+        commons: {
+            test: /commons\/common/,
+            name: 'this-is-global-file-common',
+            priority: 9,
+            enforce: true,
+        },
+    },
+},
+```
 * 提取css: 使用mini-css-extract-plugin模块。
-* 发现common.js里有好几个入口js里独有的内容。
-* 发现common.css里有好几个入口js里对应css的内容。
-* 猜测：如果入口总内容的大小不达到一定的阀值，则会全部都打进公共文件(common)里，不会进行提取出来。

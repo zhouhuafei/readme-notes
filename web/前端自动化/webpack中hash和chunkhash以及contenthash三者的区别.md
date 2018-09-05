@@ -14,7 +14,13 @@
 # contenthash
 * contenthash表示由文件内容产生的hash值，内容不同产生的contenthash值也不一样。在项目中，通常做法是把项目中css都抽离出对应的css文件来加以引用。
 
-# 总结
+# webpack3总结
 * 图片、字体、音频等静态资源使用```[hash:8]```
 * js使用```[chunkhash]```
 * css使用```[contenthash]```
+
+# webpack4总结
+* 图片、字体、音频等静态资源使用```[hash:8]```
+* js使用```[contenthash]```
+* css使用```[contenthash]```
+* webpack4时，js和css使用的hash都需要是```[contenthash]```才可以。否则修改css会导致js改变。
