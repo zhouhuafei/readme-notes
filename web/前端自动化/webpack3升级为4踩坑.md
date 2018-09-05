@@ -1,7 +1,7 @@
 # 配置案例以及说明
 * 配置案例地址：https://github.com/zhouhuafei/zhf.g-ui/blob/master/webpack.config.js
 
-# 踩坑 - extract-text-webpack-plugin报错
+# 踩坑 - 提取css之extract-text-webpack-plugin报错
 * 报错信息：
 ```
 (node:5216) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
@@ -11,30 +11,20 @@
 ```
 npm install --save-dev extract-text-webpack-plugin@next
 ```
-* 建议使用：mini-css-extract-plugin模块
 
-# 踩坑 - webpack.optimize.CommonsChunkPlugin报错
+# 踩坑 - 提取css之contenthash报错
+* 报错信息：
+```
+Path variable [contenthash] not implemented in this context
+```
+* 解决方案：extract-text-webpack-plugin 换成 mini-css-extract-plugin 来提取css文件。
+
+# 踩坑 - 提取公共模块之webpack.optimize.CommonsChunkPlugin报错
 * 报错信息：
 ```
 webpack.optimize.CommonsChunkPlugin has been removed, please use config.optimization.splitChunks instead.
 ```
-* 解决方案：
-```
-optimization: {
-    runtimeChunk: {
-        name: 'manifest'
-    },
-    splitChunks: {
-        cacheGroups: {
-            commons: {
-                test: /[\\/]node_modules[\\/]/,
-                name: 'vendor',
-                chunks: 'all'
-            }
-        }
-    }
-},
-```
+* 解决方案：使用optimization.splitChunks属性进行配置。
 * optimization参数介绍：
 ```
 optimization: {
@@ -62,16 +52,7 @@ optimization: {
     },
 },
 ```
-
-# 踩坑 - contenthash报错
-* 报错信息：
-```
-Path variable [contenthash] not implemented in this context
-```
-* 解决方案：extract-text-webpack-plugin 换成 mini-css-extract-plugin 来提取css文件。
-
-# 多入口提取公共js和css时和webpack3不同
-* 提取公共js：在optimization.splitChunks里配置。
+* 多入口提取公共js和css时和webpack3不同
 ```
 splitChunks: {
     chunks: 'initial', // 只对入口文件处理
