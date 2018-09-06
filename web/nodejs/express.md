@@ -1,0 +1,16 @@
+* req.params
+    - 接收路由匹配数据：/list/:id
+    - 案例路由：/list/1/
+    - 获取数据：req.params.id
+    - 数据结果：1
+* req.query
+    - 接收get数据：/list/?key=value
+    - 案例路由：/list/?id=1
+    - 获取数据：req.query.id
+    - 数据结果：1
+* req.body
+    - 接收非get数据，需使用body-parse模块进行解析。
+    - 案例路由：/list/
+    - 案例数据：id=1
+    - 获取数据：req.body.id
+    - 数据结果：1
