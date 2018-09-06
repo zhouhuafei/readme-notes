@@ -25,56 +25,37 @@ Path variable [contenthash] not implemented in this context
 webpack.optimize.CommonsChunkPlugin has been removed, please use config.optimization.splitChunks instead.
 ```
 * 解决方案：使用optimization.splitChunks属性进行配置。
-* optimization参数介绍：
+* optimization参数介绍：https://webpack.js.org/plugins/split-chunks-plugin/
+* 多入口提取公共js和css时和webpack3不同，需要配置optimization的splitChunks属性，多入口提取公共模块，配置如下：
 ```
 optimization: {
     splitChunks: {
-        chunks: 'initial', // 必须三选一： "initial" | "all"(默认就是all) | "async"
-        minSize: 0, // 最小尺寸，默认0
-        minChunks: 1, // 最小 chunk ，默认1
-        maxAsyncRequests: 1, // 最大异步请求数， 默认1
-        maxInitialRequests: 1, // 最大初始化请求书，默认1
-        name: () => {}, // 名称，此选项课接收 function
-        cacheGroups: { // 这里开始设置缓存的 chunks
-            priority: '0', // 缓存组优先级 false | object |
-            vendor: { // key 为entry中定义的 入口名称
-                chunks: 'initial', // 必须三选一： "initial" | "all" | "async"(默认就是异步)
-                test: /react|lodash/, // 正则规则验证，如果符合就提取 chunk
-                name: 'vendor', // 要缓存的 分隔出来的 chunk 名称
-                minSize: 0,
-                minChunks: 1,
-                enforce: true,
-                maxAsyncRequests: 1, // 最大异步请求数， 默认1
-                maxInitialRequests: 1, // 最大初始化请求书，默认1
-                reuseExistingChunk: true, // 可设置是否重用该chunk（查看源码没有发现默认值）
+        chunks: 'all', // 表示显示块的范围。有三个可选值：initial(初始块)、async(按需加载块)、all(全部块)。默认值：async。
+        cacheGroups: {
+            // 如果引入(require/import)了node_modules里都包，则提取为this-is-global-file-vendor(.css/.js)
+            vendor: {
+                test: /node_modules/, // 匹配符合规则的块。
+                name: 'this-is-global-file-vendor', // 提取成此文件
+                priority: 10, // 优先级10
+                enforce: true, // 强制拆出块，否则不达到一定容量，拆不出来。应该是如果拆出的块，达不到minSize(默认30kb)值，则不会进行拆出。
+            },
+            // 如果引入(require/import)了common模块，则提取为this-is-global-file-common(.css/.js)
+            commons: {
+                test: /common/, // 匹配符合规则的块。
+                name: 'this-is-global-file-common', // 提取成此文件
+                priority: 9, // 优先级10
+                enforce: true, // 强制拆出块，否则不达到一定容量，拆不出来。应该是如果拆出的块，达不到minSize(默认30kb)值，则不会进行拆出。
             },
         },
     },
 },
 ```
-* 多入口提取公共js和css时和webpack3不同
-```
-splitChunks: {
-    chunks: 'initial', // 只对入口文件处理
-    cacheGroups: {
-        // 如果引入(require/import)了node_modules里都包，则提取为this-is-global-file-vendor(.css/.js)
-        vendor: {
-            test: /node_modules/,
-            name: 'this-is-global-file-vendor',
-            priority: 10,
-            enforce: true,
-        },
-        // 如果引入(require/import)了common模块，则提取为this-is-global-file-common(.css/.js)
-        commons: {
-            test: /common/,
-            name: 'this-is-global-file-common',
-            priority: 9,
-            enforce: true,
-        },
-    },
-},
-```
 * 提取css: 使用mini-css-extract-plugin模块。
+
+# 修改css结果js的hash值也跟着变化了
+* 解决方案：把webpack3时，js使用的```[chunkhash]```换成```[contenthash]```。
+* webpack3时：css使用```[contenthash]```，js使用```[chunkhash]```。
+* webpack4时：css使用```[contenthash]```，js使用```[contenthash]```。
 
 # webpack-dev-server
 * openPage的路径是相对于哪的？
