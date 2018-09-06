@@ -93,4 +93,4 @@ splitChunks: {
     - 坑点：publicPath不能设置为相对路径。
     - 例如：publicPath设置成'./'或者设置成'../../'都会导致访问不了。
 * 总结：
-    - 正确的访问路径是：output.publicPath 拼接上 output.path之后的路径。
+    - 正确的访问路径是：output.publicPath 拼接上 output.path之后的路径
