@@ -75,3 +75,5 @@ optimization: {
     - 例如：publicPath设置成'./'或者设置成'../../'都会导致访问不了。
 * 总结：
     - 正确的访问路径是：output.publicPath 拼接上 output.path之后的路径
+    - 手动输入url时，访问路径前面是要带反斜杠的，这是常识。但是使用openPage配置时，前面不要带反斜杠，否则浏览器上会出现两个反斜杠。
+    - 案例：openPage: 'views/pages/ui.html'。views前面不要带反斜杠。
