@@ -20,7 +20,7 @@
 * 食君之禄，忠君之事，担君之忧。
 
 # 使用过的技术
-* 布局：html+css，html5+css3，scss，iconfont。
+* 布局：html+css，html5+css3，less，sass(scss)，iconfont。
 * 功能：JavaScript，jQuery，Zepto，ES6，Vue，Vue Router，axios，微信小程序。
 * 前端自动化：gulp，webpack。
 * 前端模块化：Seajs，Browserify，webpack。
@@ -75,7 +75,7 @@
     - 《JavaScript高级程序设计》，《JavaScript权威指南》，《HTML5与CSS3权威指南上册》，《HTML5与CSS3权威指南下册》，《HTML5权威指南》，《高性能JavaScript》，《JavaScript语言精粹》
 * 没看完偶尔继续看的书
     - 《HTML5 Canvas核心技术》，《ES6标准入门》，《Node与Express开发》，《深入浅出Node.js》
-* 看过的文档：gulp，webpack，es6，vue，微信小程序，wepy，mpvue，nginx，nodejs，express等等等。
+* 看过的文档：gulp，webpack，es6，vue，微信小程序，wepy，mpvue，nginx，nodejs，express，mongoose等等等。
 
 # 个人项目案例
 * github：https://github.com/zhouhuafei
