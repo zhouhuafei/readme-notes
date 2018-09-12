@@ -68,3 +68,7 @@ console.log(1 + + '1'); // 2
 * ie：```window.navigator.userAgent.match(/msie\s([\d\.]+)/i)```
 
 * ie8：```!-[1,]```
+
+* 默认true：```flag === true```
+
+* 默认false: ```flag !== false```
