@@ -21,14 +21,14 @@
 
 # 使用过的技术
 * 布局：html+css，html5+css3，less，sass(scss)，iconfont。
-* 功能：JavaScript，jQuery，Zepto，ES6，Vue，Vue Router，axios，微信小程序，混合开发uni-app(研究中)。
+* 功能：JavaScript，jQuery，Zepto，ES6，Vue，Vue Router，axios，微信小程序，混合开发uni-app(研究中，待续...)。
 * 前端自动化：gulp，webpack。
 * 前端模块化：Seajs，Browserify，webpack。
 * 代码规范：ESLint。
 * 代码测试：Jest。
 * 插件：SuperSlide，TouchSlide，Swiper，layDate，ECharts，Highcharts，百度地图，腾讯地图等。
 * 工具：Photoshop，Sketch，Firefox，Chrome，FlashFXP，Git Bash，Fiddler，PUTTY，Browsersync，微信开发者工具等。
-* 编辑器：Dreamweaver，Sublime，PhpStorm，WebStorm，HBuilderX(研究中)。
+* 编辑器：Dreamweaver，Sublime，PhpStorm，WebStorm，HBuilderX(研究中，待续...)。
 * nodejs：Express，EJS，Mongoose。
 * 后端：Smarty套模板，nginx配置端口转发，CDN开通与使用，linux基础命令。
 
