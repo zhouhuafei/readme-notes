@@ -2,7 +2,7 @@
     - 解决方案：将canvas的width和height属性放大1倍进行绘制，然后再使用css3缩放将整个canvas元素或者其父元素缩小1倍。
     - 需要注意绘制的坐标和大小，canvas的自适应方法(px2remCanvas)封装时，要在内部乘以放大的倍数。如果是手机端，放大到手机的设备物理像素比(devicePixelRatio)即可。
 
-* font
+* font属性
     - 设置方式参考css。
     - 如果设置错误，或者设置了无效的值，则默认是：'10px sans-serif'。
     - 设置参数时，至少要有两个值。ctx.font = '40px Arial';
