@@ -18,6 +18,8 @@
     // 还原
     canvas.style.width = width + 'px';
     canvas.style.height = height + 'px';
+    // 不加这句话，位置和宽高都要变化到指定的倍数。
+    ctx.scale(2, 2);
     ```
 
 * font属性
