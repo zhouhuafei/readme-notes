@@ -11,6 +11,14 @@
     - 重点：ctx.scale(2, 2);需要将绘画环境也放大到指定倍数。
     - 放大到设备物理像素比(devicePixelRatio)的倍数即可。如果不放心的话，可以在设备物理像素比倍数的基础上再放大指定倍数。
     - 手机端，canvas的自适应方法(px2remCanvas)封装时，不受影响，内部无需放大到指定倍数，正常封装即可。
+    ```
+    // 放大两倍
+    canvas.setAttribute('width', width * 2);
+    canvas.setAttribute('height', height * 2);
+    // 还原
+    canvas.style.width = width + 'px';
+    canvas.style.height = height + 'px';
+    ```
 
 * font属性
     - 设置方式参考css。
