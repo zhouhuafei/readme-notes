@@ -21,7 +21,7 @@ dom.addEventListener('click', function () {
 
 # 案例
 ```
-class Fn {
+class Super {
     constructor(cbBeforeRender, cbRendered) {
         this.cbBeforeRender = cbBeforeRender; // 渲染之前的回调函数被定义(提供给用户使用)
         this.cbRendered = cbRendered; // 渲染之后的回调函数被定义(提供给用户使用)
