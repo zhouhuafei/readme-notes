@@ -11,9 +11,7 @@ dom.addEventListener('click', function () {
 });
 ```
 
-* 区别：
-    - 钩子函数会第一时间触发。
-    - 回调函数是在钩子函数内执行的函数。
+* 区别：感觉没多大区别。如上，区别就是钩子函数触发了之后，才会去触发回调函数。但是不同场景下，什么时候触发都是不一样的，不能如此下定论，还请继续往下阅读。
 
 # 自我理解
 * 封装构造函数的时候，如果你预留一个方法，可以让用户改写。那么你这个方法，在流程中被调用，这个方法就是钩子函数。
@@ -22,7 +20,7 @@ dom.addEventListener('click', function () {
 # 案例
 ```
 class Super {
-    constructor(cbBeforeRender, cbRendered) {
+    constructor(cbBeforeRender=function(){}, cbRendered=function(){}) {
         this.cbBeforeRender = cbBeforeRender; // 渲染之前的回调函数被定义(提供给用户使用)
         this.cbRendered = cbRendered; // 渲染之后的回调函数被定义(提供给用户使用)
         this.init();
