@@ -60,6 +60,8 @@ input,textarea {-webkit-appearance: none;}
 .css{
     -webkit-transform-style: preserve-3d;
     -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
 }
 ```
 
