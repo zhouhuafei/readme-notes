@@ -21,7 +21,7 @@
 
 # 使用过的技术
 * 布局：html+css，html5+css3，less，sass(scss)，iconfont。
-* 功能：JavaScript，jQuery，Zepto，ES6，Vue，Vue Router，axios，微信小程序，uni-app。
+* 功能：JavaScript，jQuery，Zepto，ES6，Vue，Vue Router，axios，微信小程序，混合开发框架uni-app。
 * 前端自动化：gulp，webpack。
 * 前端模块化：Seajs，Browserify，webpack。
 * 代码规范：ESLint。
