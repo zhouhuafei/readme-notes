@@ -68,3 +68,6 @@ console.log(1 + + '1'); // 2
 * ie：```window.navigator.userAgent.match(/msie\s([\d\.]+)/i)```
 
 * ie8：```!-[1,]```
+
+* 默认true：```flag !== false```，传入的不是false，就默认为true。
+* 默认false: ```flag === true```，传入的不是true，就默认为false。
