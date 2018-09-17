@@ -66,3 +66,13 @@ git config --global credential.helper store
     ```
     git commit "message :trollface:"
     ```
+
+# add之后，取消add
+```
+git reset HEAD xxx.txt
+```
+
+# add之后，取消add并取消对文件的修改
+```
+git checkout -- xxx.txt
+```
