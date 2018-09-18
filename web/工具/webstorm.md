@@ -5,3 +5,4 @@
 
 # 微信小程序语法提示
 * https://github.com/miaozhang9/wecharCodejar
+* 希望后续WebStorm官方可以提供微信小程序的语法支持。如果开发微信小程序的话，```HBuilderX编辑器```的语法提示做的就非常完善。
