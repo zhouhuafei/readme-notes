@@ -99,4 +99,4 @@
     - https://github.com/zhouhuafei/readme-notes/tree/master/web
 
 # 为前端这个行业做过什么贡献？
-* 在npm上贡献了60+的包。
+* 在npm上贡献了60+的包。可搜索关键字zhf.进行查看。github上有对应源码。
