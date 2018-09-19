@@ -28,7 +28,7 @@
 * 代码测试：Jest。
 * 插件：SuperSlide，TouchSlide，Swiper，layDate，ECharts，Highcharts，百度地图，腾讯地图等。
 * 工具：Photoshop，Sketch，Firefox，Chrome，FlashFXP，Git Bash，Fiddler，PUTTY，Browsersync，微信开发者工具等。
-* 编辑器：Dreamweaver，Sublime，PhpStorm，WebStorm，HBuilderX。
+* 编辑器：Dreamweaver，Sublime，PhpStorm，WebStorm，微信开发者工具，HBuilderX。
 * nodejs：Express，EJS，Mongoose。
 * 后端：Smarty套模板，nginx配置端口转发，CDN开通与使用，linux基础命令。
 
