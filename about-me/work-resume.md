@@ -27,10 +27,12 @@
 * 代码规范：ESLint。
 * 代码测试：Jest。
 * 插件：SuperSlide，TouchSlide，Swiper，layDate，ECharts，Highcharts，百度地图，腾讯地图等。
-* 工具：Photoshop，Sketch，Firefox，Chrome，FlashFXP，Git Bash，Fiddler，PUTTY，Browsersync，微信开发者工具等。
+* 工具：Photoshop，Sketch，Firefox，Chrome，FlashFXP，Git Bash，Fiddler，PUTTY，Browsersync等。
 * 编辑器：Dreamweaver，Sublime，PhpStorm，WebStorm，微信开发者工具，HBuilderX。
 * nodejs：Express，EJS，Mongoose。
 * 后端：Smarty套模板，nginx配置端口转发，CDN开通与使用，linux基础命令。
+* 设计模式：工厂模式，单例模式，订阅发布模式。
+* 算法：枚举算法。
 
 # 工作经历
 * 上海邦泰集团 - 医疗
