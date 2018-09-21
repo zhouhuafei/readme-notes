@@ -5,3 +5,16 @@
 
 # 又不需要写周报了(2018/08/01)
 * 但是我写习惯了，继续保持吧。
+
+# 微商城小程序
+* 测试的时候
+    - appid：wx0cbee15036c4aa54
+    - extAppid：wx0cbee15036c4aa54
+    - 因是吴伟个人的appid，受微信官方限制，无法发起支付。
+* 上线的时候
+    - appid：wx52e69a20960968e9
+    - extAppid：不需要extAppid，需把dist目录里的ext.json删除。因为即使把extAppid的值换成wx52e69a20960968e9也不行，会提示没有权限。
+
+# 微好店小程序
+    - appid：wxd10aec12c954efcd
+    - extAppid：wxd10aec12c954efcd
