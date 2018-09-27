@@ -17,4 +17,4 @@
 * 鼠标移入div和移出div时，判断ev.relatedTarget属性。如果这个属性得到的dom对象是div本身或者是div的子级，则不触发。
 
 # 冷门知识点
-* mouseenter和mouseleave原生js有这两个事件，不过这两个事件是没有办法冒泡的。
+* mouseenter和mouseleave原生js有这两个事件，不过这两个事件是没有办法冒泡的。所以可以使用mouseover和mouseout进行模拟这两个事件。
