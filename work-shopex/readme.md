@@ -23,3 +23,8 @@
 # 微好店小程序
     - appid：wxd10aec12c954efcd
     - extAppid：wxd10aec12c954efcd
+
+# 登录
+* 微好店小程序判断是否登录，是根据open_id是否存在。在指定入口跳去授权登录。授权登录完获取open_id和userInfo。
+* 微商城小程序判断是否登录，是根据open_id以及userInfo是否存在。在指定入口跳去授权登录。授权登录完获取open_id和userInfo。
+* 门店小程序判断是否登录，是根据isLogin是否存在，在接口底层直接跳授权登录页去登陆。授权登录完调getUserInfo获取open_id和userInfo。
