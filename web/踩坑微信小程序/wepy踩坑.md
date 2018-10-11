@@ -26,3 +26,6 @@ module.exports = {
 ```
 
 * redux增加了开发负担，脚手架安装时，我选择了不安装。使用全局变量(globalData)绑在app上即可。
+
+# 缺点：
+* 我不喜欢wepy的语法。
