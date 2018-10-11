@@ -71,9 +71,9 @@ npm deprecate my-thing@"< 0.2.3" "critical bug fixed in v0.2.3"`
 ```
 
 # 线上
-* 2018/08/30
-* npm上zhf.xxx系列我总共发布了61个包，github上zhf.xxx系列我总共发布了58个包，zhf.g-ui尚未发布。58 - 1 = 57
-* 其中4个是重命名的 61 - 4 = 57
+* 2018/10/11
+* npm上zhf.xxx系列我总共发布了64个包，github上zhf.xxx系列我总共发布了60个包
+* 其中4个是重命名的 64 - 4 = 60
     - zhf.event 重命名为了 zhf.event-emitter
     - zhf.dom-create 重命名为了 zhf.html-to-dom
     - zhf.str-type 重命名为了 zhf.check-str
