@@ -12,6 +12,7 @@
 * 记录到此处只是方便了自己，当然我也会在对应的项目中也记录一份。
 
 # 微商城商家自有小程序
+* 位置：yunqi-mstore项目的whd-mstore分支
 * 测试的时候
     - appid：wx0cbee15036c4aa54
     - extAppid：wx0cbee15036c4aa54
@@ -21,14 +22,17 @@
     - extAppid：不需要extAppid，需把dist目录里的ext.json删除。因为即使把extAppid的值换成wx52e69a20960968e9也不行，会提示没有权限。
 
 # 微商城门店小程序
+* 位置：wsc-mstore-offline项目的dev分支
     - appid：wxab6cd8a4e5573a25
     - extAppid：wxab6cd8a4e5573a25
 
 # 微好店商家自有小程序
+* 位置：yunqi-mstore项目的master分支
     - appid：wxd10aec12c954efcd
     - extAppid：wxd10aec12c954efcd
 
 # 微好店门店小程序
+* 位置：wsc-mstore-offline项目的whd-mstore分支
     - appid：wxc770f9ef01572ccd
     - extAppid：wxc770f9ef01572ccd
 
