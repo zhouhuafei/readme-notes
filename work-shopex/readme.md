@@ -28,4 +28,4 @@
 * 微好店小程序判断是否登录，是根据open_id是否存在。在指定入口跳去授权登录。授权登录完获取open_id和userInfo。
 * 微商城小程序判断是否登录，是根据open_id以及userInfo是否存在。在指定入口跳去授权登录。授权登录完获取open_id和userInfo。
 * 门店小程序判断是否登录，是根据isLogin是否存在，在接口底层直接跳授权登录页去登陆。授权登录完调getUserInfo获取open_id和userInfo。
-* 我主张的做法。判断是否登录需open_id存在且hasUserInfo存在。存open_id不存userInfo。获取userInfo失败移掉hasUserInfo。
+* 我主张的做法。判断是否登录需open_id存在且hasUserInfo存在。存open_id不存userInfo。获取userInfo因未授权导致失败就移掉hasUserInfo(让isLogin方法通不过)并跳到授权登录页进行登录。
