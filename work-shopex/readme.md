@@ -11,7 +11,7 @@
 * 对应的数据如果记录到对应项目的readme.md文件中，查阅起来可以方便他人。
 * 记录到此处只是方便了自己，当然我也会在对应的项目中也记录一份。
 
-# 微商城小程序
+# 微商城商家自有小程序
 * 测试的时候
     - appid：wx0cbee15036c4aa54
     - extAppid：wx0cbee15036c4aa54
@@ -20,9 +20,17 @@
     - appid：wx52e69a20960968e9
     - extAppid：不需要extAppid，需把dist目录里的ext.json删除。因为即使把extAppid的值换成wx52e69a20960968e9也不行，会提示没有权限。
 
-# 微好店小程序
+# 微商城门店小程序
+    - appid：wxab6cd8a4e5573a25
+    - extAppid：wxab6cd8a4e5573a25
+
+# 微好店商家自有小程序
     - appid：wxd10aec12c954efcd
     - extAppid：wxd10aec12c954efcd
+
+# 微好店门店小程序
+    - appid：wxab6cd8a4e5573a25
+    - extAppid：wxab6cd8a4e5573a25
 
 # 登录
 * 微好店小程序判断是否登录，是根据open_id是否存在。在指定入口跳去授权登录。授权登录完获取open_id和userInfo。
