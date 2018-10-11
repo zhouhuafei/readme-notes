@@ -20,8 +20,9 @@
 * 食君之禄，忠君之事，担君之忧。
 
 # 使用过的技术
-* 布局：html+css，html5+css3，less，sass(scss)，iconfont。
-* 功能：JavaScript，jQuery，Zepto，ES6，Vue，Vue Router，axios，微信小程序，wepy，mpvue，uni-app。
+* 布局：html+css，html5+css3，less，sass(推荐)，iconfont。
+* 功能：JavaScript，jQuery，Zepto，ES6，Vue，Vue Router，Vuex，axios。
+* 微信小程序：原生，wepy，mpvue(推荐)，uni-app。
 * 前端自动化：gulp，webpack。
 * 前端模块化：Seajs，Browserify，webpack。
 * 代码规范：ESLint。
