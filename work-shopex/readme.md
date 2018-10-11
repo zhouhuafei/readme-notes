@@ -29,8 +29,8 @@
     - extAppid：wxd10aec12c954efcd
 
 # 微好店门店小程序
-    - appid：wxab6cd8a4e5573a25
-    - extAppid：wxab6cd8a4e5573a25
+    - appid：wxc770f9ef01572ccd
+    - extAppid：wxc770f9ef01572ccd
 
 # 登录
 * 微好店小程序判断是否登录，是根据open_id是否存在。在指定入口跳去授权登录。授权登录完获取open_id和userInfo。
