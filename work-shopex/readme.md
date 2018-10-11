@@ -36,6 +36,9 @@
     - appid：wxc770f9ef01572ccd
     - extAppid：wxc770f9ef01572ccd
 
+# 小程序注意事项
+* 因不同分支对应不同品牌，ext.json不一样。所以不同互相merge。除非把ext.json从版本库里移除且ext.json应该从版本库里移除才是正确做法。
+
 # 登录
 * 微好店小程序判断是否登录，是根据open_id是否存在。在指定入口跳去授权登录。授权登录完获取open_id和userInfo。
 * 微商城小程序判断是否登录，是根据open_id以及userInfo是否存在。在指定入口跳去授权登录。授权登录完获取open_id和userInfo。
