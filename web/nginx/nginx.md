@@ -190,5 +190,8 @@ http {
     - 解决方案：找到你的nginx.conf的文件夹目录，然后运行这个```sudo nginx -c /usr/local/etc/nginx/nginx.conf```命令，再运行```sudo nginx -s reload```，就可以了
 
 # server_name
-* saas服务，给server_name配置*.h5.sbxxx.top。是个不错的解决方案。
+* saas服务，给server_name配置```*.h5.sbxxx.top```。是个不错的解决方案。
     - s39210.h5.sbxxx.top
+* server_name还可以通过正则配置：这个才是saas服务配域名的正确解决方案。
+    - ```~^s\d+\.h5.sbxxx\.top$```
+    - 虚拟主机必须以波浪线```~```起始，否则该名字会被认为是个确切的名字。
