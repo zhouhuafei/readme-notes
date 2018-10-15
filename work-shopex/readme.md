@@ -36,7 +36,7 @@
     - appid：wxc770f9ef01572ccd
     - extAppid：wxc770f9ef01572ccd
 
-# 微好店平台小程序
+# 微好店精选平台小程序
 * 位置：wxStore项目的dev分支
     - appid：wx25fde2e8e4f68887
 
