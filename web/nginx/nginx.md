@@ -188,3 +188,6 @@ http {
 # 踩坑
 * ```sudo nginx -s reload```报错：```nginx: [error] open() "/usr/local/var/run/nginx.pid" failed (2: No such file or directory)```
     - 解决方案：找到你的nginx.conf的文件夹目录，然后运行这个```sudo nginx -c /usr/local/etc/nginx/nginx.conf```命令，再运行```sudo nginx -s reload```，就可以了
+
+# server_name
+* saas服务，给server_name配置*.h5.sbxxx.top。是个不错的解决方案。
