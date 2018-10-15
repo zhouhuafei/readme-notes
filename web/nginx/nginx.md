@@ -191,3 +191,4 @@ http {
 
 # server_name
 * saas服务，给server_name配置*.h5.sbxxx.top。是个不错的解决方案。
+    - s39210.h5.sbxxx.top
