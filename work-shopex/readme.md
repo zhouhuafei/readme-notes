@@ -36,6 +36,10 @@
     - appid：wxc770f9ef01572ccd
     - extAppid：wxc770f9ef01572ccd
 
+# 微好店平台小程序
+* 位置：wxStore项目的dev分支
+    - appid：wx25fde2e8e4f68887
+
 # 小程序注意事项
 * 因不同分支对应不同品牌，ext.json不一样。所以不同分支不能互相merge。除非把ext.json从版本库里移除或者在merge之前把ext.json备份起来，不同分支对应不同品牌时ext.json从版本库里移除才是正确做法。
 
