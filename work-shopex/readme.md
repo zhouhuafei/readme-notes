@@ -30,6 +30,7 @@
 * 位置：yunqi-mstore项目的master分支
     - appid：wxd10aec12c954efcd
     - extAppid：wxd10aec12c954efcd
+* 调试别人家的小程序：```src/ext.json```中把```site_id```换了，然后打包```npm run dev```即可。
 
 # 微好店门店小程序
 * 位置：wsc-mstore-offline项目的whd-mstore分支
