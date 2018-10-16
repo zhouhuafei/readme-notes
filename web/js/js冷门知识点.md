@@ -73,3 +73,5 @@ console.log(1 + + '1'); // 2
 * 默认false: ```flag === true```，传入的不是true，就默认为false。
 
 * es6中，通过class定义的构造函数Super，无法使用Super.call(this)调用，当然Super.apply(this)也不行，也无法直接Super()调用，会报错。
+
+* Object.values在低版本ios上不支持。
