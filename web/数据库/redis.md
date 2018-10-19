@@ -95,3 +95,19 @@ $ redis-cli ping
 redis-cli
 keys *
 ```
+
+# 应用
+* Redis支持五种数据类型：string（字符串），hash（哈希），list（列表），set（集合）及zset(sorted set：有序集合)。
+```
+set key 123
+get key 会输出 '123'
+set key {a: 1, b: 2}
+get key 会输出 '{a: 1, b: 2}'
+```
+* 我在nodejs中使用的redis模块
+```
+redisClient.set('key', 123);
+redisClient.get('key', function(error, value){}); // value是'123'
+redisClient.set('key', {a: 1, b: 2});
+redisClient.get('key', function(error, value){}); // value是'[object Object]'
+```
