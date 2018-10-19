@@ -106,8 +106,8 @@ get key 会输出 '{a: 1, b: 2}'
 ```
 * 我在nodejs中使用的redis模块
 ```
-redisClient.set('key', 123);
+redisClient.set('key', 123); // 存储，这里其实也是异步的
 redisClient.get('key', function(error, value){}); // value是'123'
-redisClient.set('key', {a: 1, b: 2});
+redisClient.set('key', {a: 1, b: 2}); // 存储，这里其实也是异步的
 redisClient.get('key', function(error, value){}); // value是'[object Object]'
 ```
