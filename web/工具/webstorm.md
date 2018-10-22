@@ -13,4 +13,4 @@
 * 如果没开启es6，使用const定义变量时，eslint检测工具会报错：```Const definitions are not supported by current JavaScript version```
 
 # 快捷键
-* （选中多个相同的字符串）Alt+J可以，和sublime的Ctrl+D的作用一样。
+* ```Alt+J```可以选中多个相同的字符串，和sublime的Ctrl+D的作用一样。
