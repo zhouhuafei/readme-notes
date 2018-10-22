@@ -81,5 +81,5 @@ git checkout -- xxx.txt
 ```
 git commit -am xxx
 git add .
-git commit --amend yyy
+git commit --amend
 ```
