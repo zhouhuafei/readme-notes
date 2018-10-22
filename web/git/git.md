@@ -76,3 +76,8 @@ git reset HEAD xxx.txt
 ```
 git checkout -- xxx.txt
 ```
+
+# commit之后，改写commit信息。
+```
+git commit --amend xxx
+```
