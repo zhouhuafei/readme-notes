@@ -77,7 +77,9 @@ git reset HEAD xxx.txt
 git checkout -- xxx.txt
 ```
 
-# commit之后，改写commit信息。
+# commit之后，未push之前，发现漏了文件，继续add，然后用下一个commit信息替换掉上一个commit信息。
 ```
-git commit --amend xxx
+git commit -am xxx
+git add .
+git commit --amend yyy
 ```
