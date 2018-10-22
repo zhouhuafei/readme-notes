@@ -1,4 +1,4 @@
-# git - 虽然经常使用,但还是随手记录一下吧
+# git - 虽然经常使用，但还是随手记录一下吧
 * 新建分支
 ```
 git checkout -b branchName
@@ -13,7 +13,7 @@ git push origin :branchName
 或
 git push origin --delete branchName
 ```
-* 更新远程分支, -p表示如果远程被删除了,本地的也会被删除
+* 更新远程分支， -p表示如果远程被删除了，本地的也会被删除
 ```
 git pull -p
 ```
@@ -48,7 +48,7 @@ git remote -v
 ```
 git remote remove origin
 ```
-* 每次提交输入密码太麻烦,以下是解决方案
+* 每次提交输入密码太麻烦，以下是解决方案
 ```
 git config --global credential.helper store
 ```
@@ -77,7 +77,7 @@ git reset HEAD xxx.txt
 git checkout -- xxx.txt
 ```
 
-# commit之后，未push之前，修改commit(用当前的commit信息替换掉上一个commit信息)。
+# commit之后，未push之前，修改/改写commit(用当前的commit信息替换掉上一个commit信息)。
 * --amend 之后，会有一个vim编辑器让你修改之前的commit信息。
 ```
 git commit -am xxx
@@ -90,3 +90,13 @@ git commit --amend
     - --mixed 会保留源码，只是将git commit和index 信息回退到了某个版本。(会回退到add之前)
     - --soft 保留源码，只回退到commit信息到某个版本。不涉及index的回退，如果还需要提交，直接commit即可。(会回退到add之后)
     - --hard 源码也会回退到某个版本，commit和index 都会回退到某个版本。(注意，这种方式是改变本地代码仓库源码)
+* 回退之后，可能会提示需要pull，其实你并不需要pull了，你可以强制提交。```git push --force``` 强制提交。
+
+# git revert
+* commit push 代码已经更新到远程仓库
+* 对于已经把代码push到线上仓库，你回退本地代码其实也想同时回退线上代码，回滚到某个指定的版本，线上，线下代码保持一致.你要用到下面的命令。
+```
+git revert <commit_id>
+```
+* revert 之后你的本地代码会回滚到指定的历史版本，这时你再 git push 既可以把线上的代码更新。
+* 注意：git revert是用一次新的commit来回滚之前的commit，git reset是直接删除指定的commit，看似达到的效果是一样的，其实完全不同。
