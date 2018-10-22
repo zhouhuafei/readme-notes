@@ -77,7 +77,8 @@ git reset HEAD xxx.txt
 git checkout -- xxx.txt
 ```
 
-# commit之后，未push之前，发现漏了文件，继续add，然后用下一个commit信息替换掉上一个commit信息。(修改commit)
+# commit之后，未push之前，修改commit(用当前的commit信息替换掉上一个commit信息)。
+* --amend 之后，会有一个vim编辑器让你修改之前的commit信息。
 ```
 git commit -am xxx
 git add .
@@ -89,8 +90,3 @@ git commit --amend
     - --mixed 会保留源码，只是将git commit和index 信息回退到了某个版本。(会回退到add之前)
     - --soft 保留源码，只回退到commit信息到某个版本。不涉及index的回退，如果还需要提交，直接commit即可。(会回退到add之后)
     - --hard 源码也会回退到某个版本，commit和index 都会回退到某个版本。(注意，这种方式是改变本地代码仓库源码)
-
-# commit之后，push之后，回到上个版本。（回滚）
-```
-git  reset --hard commitId
-```
