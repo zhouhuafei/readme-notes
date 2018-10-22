@@ -77,7 +77,7 @@ git reset HEAD xxx.txt
 git checkout -- xxx.txt
 ```
 
-# commit之后，未push之前，修改/改写commit(用当前的commit信息替换掉上一个commit信息)。
+# commit之后，修改/改写commit(用当前的commit信息替换掉上一个commit信息)。
 * --amend 之后，会有一个vim编辑器让你修改之前的commit信息。
 ```
 git commit -am xxx
@@ -85,7 +85,7 @@ git add .
 git commit --amend
 ```
 
-# commit之后，未push之前，取消commit。
+# commit之后，取消commit。
 * git reset --soft|--mixed|--hard <commit_id>
     - --mixed 会保留源码，只是将git commit和index 信息回退到了某个版本。(会回退到add之前)
     - --soft 保留源码，只回退到commit信息到某个版本。不涉及index的回退，如果还需要提交，直接commit即可。(会回退到add之后)
