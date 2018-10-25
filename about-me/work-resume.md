@@ -22,7 +22,8 @@
 # 使用过的技术
 * 布局：html+css，html5+css3，less，sass(推荐)，iconfont。
 * 功能：JavaScript，jQuery，Zepto，ES6，Vue，Vue Router，Vuex，axios。
-* 微信小程序：原生，wepy，mpvue(推荐)，uni-app。
+* 微信小程序：原生配合gulp，wepy，mpvue(推荐)，uni-app。
+* 百度小程序：原生配合gulp。
 * 前端自动化：gulp，webpack。
 * 前端模块化：Seajs，Browserify，webpack(推荐)。
 * 代码规范：ESLint。
