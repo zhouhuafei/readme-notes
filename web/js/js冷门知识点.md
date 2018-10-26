@@ -30,7 +30,7 @@ location.reload(true); // 刷新页面，无缓存
 * checkbox,radio,select没有readonly属性。
     - 具有disabled属性的表单元素，表单提交(submit)时，name和value不会被带过去(这个不算冷门知识)。
 
-* form的submit只支持get和post(非冷门)。
+* form的submit只支持GET和POST(非冷门)。
     - 小知识，submit时进行拦截，然后ajax提交处理。
 
 * parseInt(string, radix) 此函数可解析一个字符串，并返回一个整数。

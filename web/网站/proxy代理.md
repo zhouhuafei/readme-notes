@@ -33,7 +33,7 @@
  }
 ```
 2. postMessage
-3. jsonp  仅支持get
+3. jsonp  仅支持GET
 4. domain
 5. 服务器代理
 

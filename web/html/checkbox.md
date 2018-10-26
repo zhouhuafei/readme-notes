@@ -9,7 +9,7 @@
     - 例如同name名的checkbox，被选中多个，表单submit带过去的就是个数组。
 
 # 服务端接收的数据
-* post时，传的数据是
+* POST时，传的数据是
     - 下面这种格式的数据，使用jq可以通过serialize方法得到。
     ```
     'hobby=1&hobby=2&hobby=2&hobby=3&hobby=4'
