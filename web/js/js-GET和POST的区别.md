@@ -17,4 +17,4 @@
 
 # 请求方式应该大写
 * 根据RFC2616，HTTP Method是区分大小写的。GET/POST/PUT/DELETE。
-* RFC2616：超文本传输协议HTTP/1.1
+* RFC2616：超文本传输协议HTTP/1.1。
