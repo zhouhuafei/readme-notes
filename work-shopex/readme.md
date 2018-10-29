@@ -54,3 +54,5 @@
 * 引入css ```css/xxx/yyy.css```
     - 错误示范：```<{$static_url}>css/xxx/yyy.css```
     - 导致问题：这种写法会导致打包后的文件丢失md5。
+* 后台js打包去缓存。后台系统，线上如果开启了```Cache-Control: max-age=3600```缓存，后台js如果修改了，打包之前应该要修改掉seajs中的版本号。
+    - 文件位置：```./root/user_components/admin/src/js/base/sea.js```
