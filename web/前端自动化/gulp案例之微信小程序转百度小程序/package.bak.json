@@ -8,7 +8,6 @@
         "baiduBuild": "cross-env NODE_ENV=production gulp baiduBuild",
         "weixinDev": "cross-env NODE_ENV=development gulp weixinDev",
         "weixinBuild": "cross-env NODE_ENV=production gulp weixinBuild",
-        "dev": "cross-env NODE_ENV=development npm run weixinDev && npm run baiduDev",
         "build": "cross-env NODE_ENV=production npm run weixinBuild && npm run baiduBuild"
     },
     "repository": {

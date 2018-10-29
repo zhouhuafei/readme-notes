@@ -9,7 +9,8 @@ const imagemin = require('gulp-imagemin');
 const through = require('through2'); // 编写gulp插件
 // const replace = require('gulp-replace'); // 内容替换(这个替换的不完整，会漏掉某些文件。我使用此包时，有些文件并没有被转换成功)
 const replace = require('gulp-batch-replace'); // 内容替换(这个没问题，上个包出的问题，这个包没出类似的问题)
-const isProduction = process.env.NODE_ENV === 'production'; // 是否是生产环境
+const envName = process.env.NODE_ENV; // 当前环境
+const isProduction = envName === 'production'; // 是否是生产环境
 
 function fn(name) {
     gulp.task(`dev-diff-${name}`, function () { // 此项和业务有关。不同平台的小程序，用不同的富文本解析模板template。
@@ -24,6 +25,7 @@ function fn(name) {
             .pipe(plumber())
             .pipe(replace([
                 [isProduction ? 'domainPathBuild' : 'domainPathDev', 'domainPath'], // 生产环境和开发环境使用的domainPath不同
+                [isProduction ? 'h5DomainBuild' : 'h5DomainDev', 'h5Domain'], // 生产环境和开发环境使用的h5Domain不同
             ]))
             .pipe(gulp.dest(`dist/`));
         // 百度小程序使用ext.js，因目前不支持第三方
@@ -31,6 +33,7 @@ function fn(name) {
             .pipe(plumber())
             .pipe(replace([
                 [isProduction ? 'domainPathBuild' : 'domainPathDev', 'domainPath'], // 生产环境和开发环境使用的domainPath不同
+                [isProduction ? 'h5DomainBuild' : 'h5DomainDev', 'h5Domain'], // 生产环境和开发环境使用的h5Domain不同
             ]))
             .pipe(gulp.dest(`dist/`));
     });
@@ -42,6 +45,7 @@ function fn(name) {
             // .pipe(replace([
             //     ['"mp_platform": "weixin",', name === 'baidu' ? '"mp_platform": "baidu",' : '"mp_platform": "weixin",'], // ext.json中微信的某个字段换成百度的字段。
             //     [isProduction ? 'domainPathBuild' : 'domainPathDev', 'domainPath'], // 生产环境和开发环境使用的domainPath不同
+            //     [isProduction ? 'h5DomainBuild' : 'h5DomainDev', 'h5Domain'], // 生产环境和开发环境使用的h5Domain不同
             // ]))
             .pipe(gulp.dest(`dist/${name}/`));
     });
@@ -78,7 +82,8 @@ function fn(name) {
             .pipe(plumber())
             .pipe(replace([
                 ['wx.', name === 'baidu' ? 'swan.' : 'wx.'], // 微信小程序的api换成百度小程序的api。
-                [`// ${name}-valid `, ''], // 不同的打包，从注释里解放不同的js。
+                [`// ${name}-valid `, ''], // 不同平台的小程序(百度小程序和微信小程序)，从注释里解放不同的js。
+                [`// ${envName}-valid `, ''], // 不同环境的小程序(生产环境和开发环境)，从注释里解放不同的js。
             ]))
             .pipe(gulp.dest(`dist/${name}/`));
     });
