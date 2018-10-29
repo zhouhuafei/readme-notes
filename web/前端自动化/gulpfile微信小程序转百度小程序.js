@@ -1,4 +1,7 @@
 /*
+这是我对whd-mp-baidu项目配置的一份微信小程序转百度小程序的gulp配置。
+*/
+/*
 1. 关于.wxml后缀：我本想使用.html后缀进行开发，但是本项目要拷贝另外一个项目，另外一个项目是.wxml后缀，所以我就保留了.wxml后缀
 */
 const gulp = require('gulp');

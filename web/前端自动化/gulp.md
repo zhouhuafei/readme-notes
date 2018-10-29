@@ -9,3 +9,6 @@ const through = require('through2'); // 编写gulp插件
 const replace = require('gulp-batch-replace'); // 内容替换(这个没问题，上个包出的问题，这个包没出类似的问题)
 ```
 * js转义，压缩，css自动补全等，自行查找，不一一列举了。
+
+# 微信小程序转百度小程序
+* ```./gulpfile微信小程序转百度小程序.js```
