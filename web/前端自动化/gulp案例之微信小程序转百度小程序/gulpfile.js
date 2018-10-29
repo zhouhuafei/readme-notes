@@ -9,6 +9,7 @@ const imagemin = require('gulp-imagemin');
 const through = require('through2'); // 编写gulp插件
 // const replace = require('gulp-replace'); // 内容替换(这个替换的不完整，会漏掉某些文件。我使用此包时，有些文件并没有被转换成功)
 const replace = require('gulp-batch-replace'); // 内容替换(这个没问题，上个包出的问题，这个包没出类似的问题)
+const isProduction = process.env.NODE_ENV === 'production'; // 是否是生产环境
 
 function fn(name) {
     gulp.task(`dev-diff-${name}`, function () { // 此项和业务有关。不同平台的小程序，用不同的富文本解析模板template。
@@ -21,10 +22,16 @@ function fn(name) {
         // 微信小程序使用ext.json，因支持第三方
         gulp.src(`diff/**/ext.json`)
             .pipe(plumber())
+            .pipe(replace([
+                [isProduction ? 'domainPathBuild' : 'domainPathDev', 'domainPath'], // 生产环境和开发环境使用的domainPath不同
+            ]))
             .pipe(gulp.dest(`dist/`));
         // 百度小程序使用ext.js，因目前不支持第三方
         gulp.src(`diff/**/ext.js`)
             .pipe(plumber())
+            .pipe(replace([
+                [isProduction ? 'domainPathBuild' : 'domainPathDev', 'domainPath'], // 生产环境和开发环境使用的domainPath不同
+            ]))
             .pipe(gulp.dest(`dist/`));
     });
 
@@ -34,6 +41,7 @@ function fn(name) {
             // 这里先隐掉，后续百度平台支持第三方平台的时候可以放出来，不过后续出的今日头条小程序是否支持就另说了。如果后续这里放出来，diff里的ext.js和ext.json就可以删掉，然后放这里统一处理就行了。
             // .pipe(replace([
             //     ['"mp_platform": "weixin",', name === 'baidu' ? '"mp_platform": "baidu",' : '"mp_platform": "weixin",'], // ext.json中微信的某个字段换成百度的字段。
+            //     [isProduction ? 'domainPathBuild' : 'domainPathDev', 'domainPath'], // 生产环境和开发环境使用的domainPath不同
             // ]))
             .pipe(gulp.dest(`dist/${name}/`));
     });
@@ -99,8 +107,12 @@ function fn(name) {
         gulp.watch('src/fonts/**/*.*', [`dev-fonts-${name}`]);
     });
 
-    gulp.task(name, function () {
+    gulp.task(`${name}Dev`, function () {
         gulp.start(`dev-diff-${name}`, `dev-json-${name}`, `dev-wxml-${name}`, `dev-css-${name}`, `dev-js-${name}`, `dev-img-${name}`, `dev-fonts-${name}`, `watch-${name}`);
+    });
+
+    gulp.task(`${name}Build`, function () {
+        gulp.start(`dev-diff-${name}`, `dev-json-${name}`, `dev-wxml-${name}`, `dev-css-${name}`, `dev-js-${name}`, `dev-img-${name}`, `dev-fonts-${name}`);
     });
 }
 
