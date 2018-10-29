@@ -1,5 +1,5 @@
 {
-    "name": "suibianxiexie_mp-baidu",
+    "name": "whd-mp-baidu",
     "version": "1.0.0",
     "description": "",
     "main": "",
@@ -13,14 +13,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/zhouhuafei/suibianxiexie_mp-baidu.git"
+        "url": "git+https://git.ishopex.cn/zhouhuafei/whd-mp-baidu.git"
     },
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/zhouhuafei/suibianxiexie_mp-baidu/issues"
+        "url": "https://git.ishopex.cn/zhouhuafei/whd-mp-baidu/issues"
     },
-    "homepage": "https://github.com/zhouhuafei/suibianxiexie_mp-baidu#readme",
+    "homepage": "https://git.ishopex.cn/zhouhuafei/whd-mp-baidu#readme",
     "devDependencies": {
         "cross-env": "^5.2.0",
         "gulp": "^3.9.1",
