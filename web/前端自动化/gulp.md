@@ -11,4 +11,4 @@ const replace = require('gulp-batch-replace'); // 内容替换(这个没问题�
 * js转义，压缩，css自动补全等，自行查找，不一一列举了。
 
 # 微信小程序转百度小程序
-* ```./gulpfile微信小程序转百度小程序.js```
+* 我给whd-mp-baidu项目配置了一份微信小程序转百度小程序的配置：```./gulpfile微信小程序转百度小程序.js```。
