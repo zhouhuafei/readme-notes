@@ -1,6 +1,6 @@
 ```
 const gulp = require('gulp');
-const gulpRename = require('gulp-rename'); // 重命名
+const rename = require('gulp-rename'); // 重命名
 const plumber = require('gulp-plumber'); // 报错就中断？使用这个处理一下即可。
 const sass = require('gulp-sass'); // scss转css
 const imagemin = require('gulp-imagemin'); // 图片压缩
