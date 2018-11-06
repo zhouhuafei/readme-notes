@@ -15,11 +15,12 @@
 # 快捷键
 * ```Alt+J```可以选中多个相同的字符串，和sublime的Ctrl+D的作用一样。
 
-# 卡顿
-* 找到WebStorm.exe.vmoptions这个文件
+# WebStorm做Vue项目时卡顿，加了内存条变成16G内存还是卡。
+* 找到WebStorm.exe.vmoptions这个文件。
 * 第二行和第三行更改为：
     ```
-    -Xms1024m
-    -Xmx2048m
+    -Xms128m
+    -Xmx1024m
     ```
-* 重启
+* 重启。
+* 亲测无效，于是我下载了最新版的WebStorm，发现居然神奇的不卡了。
