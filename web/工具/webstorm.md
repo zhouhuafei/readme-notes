@@ -14,3 +14,12 @@
 
 # 快捷键
 * ```Alt+J```可以选中多个相同的字符串，和sublime的Ctrl+D的作用一样。
+
+# 卡顿
+* 找到WebStorm.exe.vmoptions这个文件
+* 第二行和第三行更改为：
+    ```
+    -Xms512m
+    -Xmx1024m
+    ```
+* 重启
