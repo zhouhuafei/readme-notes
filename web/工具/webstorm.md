@@ -19,7 +19,7 @@
 * 找到WebStorm.exe.vmoptions这个文件
 * 第二行和第三行更改为：
     ```
-    -Xms128m
+    -Xms1024m
     -Xmx2048m
     ```
 * 重启
