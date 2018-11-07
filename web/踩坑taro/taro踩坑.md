@@ -10,3 +10,6 @@ sudo npm install -g @tarojs/cli
 
 # Redux和TypeScript
 * 因增加了开发负担，没有安装使用。
+
+# 富文本
+* 坑的一比。不同的项目用不同的文件。
