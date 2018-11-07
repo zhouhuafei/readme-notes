@@ -19,3 +19,7 @@
     - 注意：属性如果本来就没有，直接绑定到模板template上会导致报错，所以应该在模板渲染之前处理数据，所以应该在created钩子中处理数据。
 
 * 生产版本，不能被浏览器上的Vue Devtools工具调试。
+
+# 父子通信
+* 父传子 props
+* 子传父 this.$emit(fnName, data);
