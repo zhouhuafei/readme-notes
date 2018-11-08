@@ -31,7 +31,7 @@
 * 插件：SuperSlide，TouchSlide，Swiper，layDate，ECharts，Highcharts，百度地图，腾讯地图等。
 * 工具：Photoshop，Sketch，Firefox，Chrome，FlashFXP，Git Bash，Fiddler，PUTTY，Browsersync等。
 * 编辑器：Dreamweaver，Sublime，PhpStorm，WebStorm，HBuilderX，微信开发者工具，百度开发者工具等。
-* nodejs：Express，EJS，Mongoose，shelljs等。
+* nodejs：Express，EJS，Mongoose，ShellJS等。
 * 后端：Smarty套模板，nginx配置端口转发，CDN开通与使用，linux基础命令。
 * 设计模式：工厂模式，构造函数模式，原型模式，混合模式(构造函数模式加原型模式)，动态原型模式，单例模式，订阅发布模式，代理模式。
 * 算法：枚举算法，冒泡算法。
