@@ -23,4 +23,4 @@ ReactDOM.render(
 
 # 父子通信
 * 父传子 props
-* 子传父 待续...
+* 子传父 子组件调用父组件通过props穿过来的方法即可。和jsonp原理相似。
