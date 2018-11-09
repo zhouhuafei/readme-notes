@@ -84,5 +84,5 @@ npm deprecate my-thing@"< 0.2.3" "critical bug fixed in v0.2.3"`
 
 # npm报错
 * ```npm i```时报错：```npm ERR! Unexpected end of JSON input while parsing near```
-    - 网上的解决方案：删```package.lock```文件，然后```npm cache clean --force```。
+    - 网上的解决方案：删```package-lock.json```文件，然后```npm cache clean --force```。
     - 我的解决方案：先```npm i -g cnpm```然后```cnpm i```。
