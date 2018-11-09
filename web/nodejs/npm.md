@@ -81,3 +81,8 @@ npm deprecate my-thing@"< 0.2.3" "critical bug fixed in v0.2.3"`
 * 其中有6个包打了不推荐使用标识
     - 因重命名不再维护：zhf.event，zhf.dom-create，zhf.str-type，zhf.ip
     - 因纯依赖不再维护：zhf.tools，zhf.applications
+
+# npm报错
+* ```npm i```时报错：```npm ERR! Unexpected end of JSON input while parsing near```
+    - 网上的解决方案：删```package.lock```文件，然后```npm cache clean --force```。
+    - 我的解决方案：先```npm i -g cnpm```然后```cnpm i```。
