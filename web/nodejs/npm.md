@@ -86,3 +86,7 @@ npm deprecate my-thing@"< 0.2.3" "critical bug fixed in v0.2.3"`
 * ```npm i```时报错：```npm ERR! Unexpected end of JSON input while parsing near```
     - 网上的解决方案：删```package-lock.json```文件，然后```npm cache clean --force```。
     - 我的解决方案：先```npm i -g cnpm```然后```cnpm i```。
+
+# 版本
+* ```~```会匹配最近的小版本依赖包，比如```~1.2.3```会匹配所有```1.2.x```版本，但是不包括```1.3.0```
+* ```^```会匹配最新的大版本依赖包，比如```^1.2.3```会匹配所有```1.x.x的```包，包括```1.3.0```，但是不包括```2.0.0```
