@@ -11,6 +11,6 @@ const replace = require('gulp-batch-replace'); // 内容替换(这个没问题�
 * js转义，压缩，css自动补全等，自行查找，不一一列举了。
 
 # 微信小程序转百度小程序
-* 我给whd-mp-baidu项目配置了一份微信小程序转百度小程序的配置：```./gulp案例之微信小程序转百度小程序/gulpfile.js```。
+* 我给 https://github.com/zhouhuafei/suibianxiexie_mp-baidu 项目配置了一份微信小程序转百度小程序的配置。
     - 能同时开发微信小程序和百度小程序。后续是否兼容其他小程序（支付宝小程序，今日头条小程序等）这个就需要看业务了。
-    - package.bak.json这样命名是为了过滤掉编辑器的依赖安装提示(WebStorm编辑器会根据package.json文件的内容，进行依赖安装的提示)。
+    - 具体配置详情，还请到仓库中自行查看。
