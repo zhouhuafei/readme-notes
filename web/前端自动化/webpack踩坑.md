@@ -29,4 +29,11 @@
 * 待续...
 
 # 如何根据让output的filename能根据入口的路径进行变化？
-* 使用```rename-output-webpack-plugin```插件包可以做到。
+* 方式1：使用```rename-output-webpack-plugin```插件包可以做到。
+* 方式2：配置entry时，把路径带上，案例如下：
+```
+const entry = {
+  'components_dom/g-confirm/index': './src/js/components_dom/g-confirm/index.js',
+  'components_dom/g-message/index': './src/js/components_dom/g-message/index.js',
+}
+```
