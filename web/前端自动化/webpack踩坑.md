@@ -26,7 +26,7 @@
 ```
 
 # 打包的时候只进行转义，不要注入webpack库和依赖代码怎么做？
-* 待续...
+* 暂时无解，建议使用gulp。待续...
 
 # 如何根据让output的filename能根据入口的路径进行变化？
 * 方式1：使用```rename-output-webpack-plugin```插件包可以做到。
