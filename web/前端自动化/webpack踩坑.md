@@ -3,7 +3,7 @@
 * es6文件和vue单文件要转成es5文件(gulp可以实现，此处针对webpack的实现做简单的记录)。
 
 # es6怎么转es5？
-* 使用babel-loader
+* 使用```babel-loader```包可以做到。
 
 # 不同的环境使用不同api的url怎么做？
 * 使用```webpack.DefinePlugin```插件，编译时期可以创建全局变量，打包后满足条件会转成```if(true){}```。
@@ -29,4 +29,4 @@
 * 待续...
 
 # 如何根据让output的filename能根据入口的路径进行变化？
-* 待续...
+* 使用```rename-output-webpack-plugin```插件包可以做到。
