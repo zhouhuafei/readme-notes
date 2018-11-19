@@ -25,3 +25,6 @@ sudo npm install -g @tarojs/cli
 # options
 * 微信小程序：onLoad(options)
 * taro：this.$router.params
+
+# getUserInfo一直失败，一直失败，一直失败。202。
+* 业务变成时更换了小程序的app_id，修改完之后没给我的小程序账号授权。
