@@ -24,4 +24,13 @@ ReactDOM.render(
 # 父子通信
 * 父传子 props
 * 子传父 子组件调用父组件通过props穿过来的方法即可。和jsonp原理相似。
+    - 如果传递参数：
+    ```
+    this.customFn.bind(this, arg1, arg2)
+    ```
+    - ev在函数内可通过最后一个参数获取到。
+    ```
+    customFn(arg1, arg2, ev){
+    }
+    ```
 * props是只读的，请遵守这个原则。
