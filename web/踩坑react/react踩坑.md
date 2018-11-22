@@ -34,3 +34,6 @@ ReactDOM.render(
     }
     ```
 * props是只读的，请遵守这个原则。
+
+# React的setState是异步的
+* 又踩到一个坑。

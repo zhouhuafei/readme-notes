@@ -38,3 +38,6 @@ const a=obj.a;
 WxParse.wxParse('content', 'html', content, this.$scope, 5);
 ```
 * 上面如果传的是this，则wxParse.js中需要把this.setData换成this.setState。
+
+# React的setState是异步的
+* 又踩到一个坑。
