@@ -32,3 +32,9 @@ const a=obj.a;
 * this.$apply()没有。挨个换成this.setState({a,b,c});。
 * 事件调用的函数传参时customFn.bind(this,arg1)一下。
 * 等等等。
+
+# wxParse
+```
+WxParse.wxParse('content', 'html', content, this.$scope, 5);
+```
+* 上面如果传的是this，则wxParse.js中需要把this.setData换成this.setState。
