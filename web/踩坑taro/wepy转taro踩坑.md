@@ -41,3 +41,4 @@ WxParse.wxParse('content', 'html', content, this.$scope, 5);
 
 # React的setState是异步的
 * wepy转taro踩坑时踩到一个坑。
+* 如果想提前获取到数据，可以使用```this.getState().attrName```。
