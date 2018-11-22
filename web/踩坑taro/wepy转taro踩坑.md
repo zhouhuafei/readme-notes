@@ -41,8 +41,9 @@ WxParse.wxParse('content', 'html', content, this.$scope, 5);
 
 # React的setState是异步的
 * wepy转taro踩坑时踩到一个坑。
-* 如果想setState之后立即获取到数据(实时获取)，可以使用```this.getState().attrName```。
+* 错误思路：如果想setState之后立即获取到数据(实时获取)，可以使用```this.getState().attrName```。
     - getState()应该是state的实时备份，等内部操作完了，才会赋值给state。【未经查证，纯属猜测】
+    - 经过测试发现，如果通过```this.getState().attrName```获取属性，会导致dom更新异常，所以不能这么玩，还是老老实实的写回调吧。
 * 异步的原因：
     - 保证内部的一致性
     - 性能优化
