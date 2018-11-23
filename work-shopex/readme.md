@@ -13,7 +13,7 @@
 
 # 微商城商家自有小程序
 * 位置：yunqi-mstore项目的master分支
-* 测试的时候
+* 开发的时候
     - appid：wx0cbee15036c4aa54
     - extAppid：wx0cbee15036c4aa54
     - 因是吴伟个人的appid，受微信官方限制，无法发起支付。
