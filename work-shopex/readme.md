@@ -12,7 +12,7 @@
 * 记录到此处只是方便了自己，当然我也会在对应的项目中也记录一份。
 
 # 微商城商家自有小程序
-* 位置：yunqi-mstore项目的whd-mstore分支
+* 位置：yunqi-mstore项目的master分支
 * 测试的时候
     - appid：wx0cbee15036c4aa54
     - extAppid：wx0cbee15036c4aa54
@@ -27,7 +27,7 @@
     - extAppid：wxab6cd8a4e5573a25
 
 # 微好店商家自有小程序
-* 位置：yunqi-mstore项目的master分支
+* 位置：yunqi-mstore项目的whd-mstore分支
     - appid：wxd10aec12c954efcd
     - extAppid：wxd10aec12c954efcd
 * 调试别人家的小程序：```src/ext.json```中把```site_id```换了，然后打包```npm run dev```即可。
