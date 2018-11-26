@@ -61,7 +61,7 @@ const store = {
  modules: {
    account: {
      namespaced: true, // 你可以通过添加 namespaced: true 的方式使其成为带命名空间的模块。
-     // 模块内容（module assets）
+     // 模块内容(module assets)
      state: { ... }, // 模块内的状态已经是嵌套的了，使用 `namespaced` 属性不会对其产生影响
      getters: {
        isAdmin () { ... } // -> getters['account/isAdmin']
@@ -75,4 +75,11 @@ const store = {
    }
  }
 };
+```
+* 不加namespaced: true属性的话。当前模块的mutations和actions和其他模块的mutations和actions有重名的风险，注意规避即可。
+```
+store.state.moduleA.count
+store.getters.moduleA.count
+store.commit('login')
+store.dispatch('login')
 ```
