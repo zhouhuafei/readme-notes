@@ -25,6 +25,11 @@
 * 子传父 this.$emit(fnName, data);
 * props是只读的，请遵守这个原则。
 
+# vue-router
+* afterEach和beforeEach中this不是Vue的实例。
+* 如果需要使用$store。直接使用定义好的变量store即可。
+* 如果需要使用$route。回调的参数中就有。
+
 # 对象没有属性的时候会报错
 * v-if判断，有值的时候才渲染即可。
 
