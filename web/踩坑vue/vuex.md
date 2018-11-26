@@ -51,5 +51,28 @@ const store = {
       context.commit('increment')
     }
   }
-}
+};
+store.dispatch('increment');
+```
+
+# 模块
+```
+const store = {
+ modules: {
+   account: {
+     namespaced: true, // 你可以通过添加 namespaced: true 的方式使其成为带命名空间的模块。
+     // 模块内容（module assets）
+     state: { ... }, // 模块内的状态已经是嵌套的了，使用 `namespaced` 属性不会对其产生影响
+     getters: {
+       isAdmin () { ... } // -> getters['account/isAdmin']
+     },
+     actions: {
+       login () { ... } // -> dispatch('account/login')
+     },
+     mutations: {
+       login () { ... } // -> commit('account/login')
+     }
+   }
+ }
+};
 ```
