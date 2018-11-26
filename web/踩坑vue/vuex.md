@@ -30,6 +30,7 @@ const store = {
   }
 };
 store.commit('increment');
+store.commit('increment', {}); // 可以带一个参数，所以建议带json。
 ```
 
 # Action
@@ -53,6 +54,7 @@ const store = {
   }
 };
 store.dispatch('increment');
+store.dispatch('increment', {}); // 可以带一个参数，所以建议带json。
 ```
 
 # 模块和命名空间
