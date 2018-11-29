@@ -11,4 +11,21 @@
 * 待续...
 
 # nodejs为网站配置SSL证书
-* 待续...
+```javascript
+const fs = require('fs');
+const http = require('http');
+const https = require('https');
+const httpServer = http.createServer(app);
+const privateKey = fs.readFileSync('./https/index.key', 'utf8');
+const certificate = fs.readFileSync('./https/index.pem', 'utf8');
+const credentials = {key: privateKey, cert: certificate};
+const httpsServer = https.createServer(credentials, app);
+// http
+const serverHttp = httpServer.listen('5551', function () {
+    console.log('server connection open to:\n', `http://localhost:${serverHttp.address().port}`);
+});
+// https
+const serverHttps = httpsServer.listen('55551', function () {
+    console.log('server connection open to:\n', `https://localhost:${serverHttps.address().port}`);
+});
+```
