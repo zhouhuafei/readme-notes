@@ -86,18 +86,18 @@
 # 个人项目案例
 * github：https://github.com/zhouhuafei
 * nodejs项目demo(MVC)
-    - 网址：http://suibianxiexie.top/
+    - 网址：http://sbxx.top/
     - 源码：https://github.com/zhouhuafei/suibianxiexie
 * nodejs项目demo(websocket)
-    - 网址：http://chat.suibianxiexie.top/
+    - 网址：http://chat.sbxx.top/
     - 源码：https://github.com/zhouhuafei/come-chat
 * nodejs项目demo(axios服务端通信)
-    - 网址：http://sign.suibianxiexie.top/
+    - 网址：http://sign.sbxx.top/
     - 源码：https://github.com/zhouhuafei/shopex-sign
 * canvas：
-    - 小游戏之五子棋：http://suibianxiexie.top/phone/game-wuziqi/
-    - 小游戏之别踩白块：http://suibianxiexie.top/phone/game-biecaibaikuai/
-    - 画心：http://suibianxiexie.top/static-no-cache/test/canvas/heart/
+    - 小游戏之五子棋：http://sbxx.top/phone/game-wuziqi/
+    - 小游戏之别踩白块：http://sbxx.top/phone/game-biecaibaikuai/
+    - 画心：http://sbxx.top/static-no-cache/test/canvas/heart/
     - 画坦克大战，画抽奖转盘，画闹钟，画五角星等。
 * 笔记：
     - https://github.com/zhouhuafei/readme-notes/tree/master/web
