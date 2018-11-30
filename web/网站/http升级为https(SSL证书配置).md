@@ -47,6 +47,24 @@ server {
 }
 ```
 
+# nginx检测到http就跳转到https
+```
+server {
+    listen 80;
+    server_name www.sbxx.top sbxx.top;
+    # 这是ngixn早前的写法，现在还可以使用。
+    rewrite ^(.*)$  https://$host$1 permanent;
+    # 这是nginx最新支持的写法。
+    return 301 https://$server_name$request_uri;
+    location / {
+        proxy_pass http://127.0.0.1:5551;
+        proxy_set_header x-real-ip $remote_addr;
+        proxy_set_header x-forwarded-for $proxy_add_x_forwarded_for;
+        proxy_set_header host $http_host;
+    }
+}
+```
+
 # ssl证书的key和pem放到github上安全么？
 * 不安全，https通过key和pem进行加密解密可以防止数据被篡改，如果别人知道了你的加密和解密方式，那么你的数据就不安全了。
 * 以上言论纯属个人猜测。
