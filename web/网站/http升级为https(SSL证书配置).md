@@ -28,6 +28,7 @@ const serverHttps = httpsServer.listen('55551', function () {
 ```
 
 # nginx为网站配置SSL证书
+* 建议参考这个：https://aotu.io/notes/2016/08/16/nginx-https/index.html
 ```
 server {
     listen 443;
