@@ -105,12 +105,17 @@ server {
     #    rewrite ^/admin/(.*)$ /$1 redirect;
     #}
 
-    # 307和308重定向，才是正确的思路。正确配置应该如下。尚未测试(http://127.0.0.1:5551是不是应该去掉才对)待续...
-    location ~ ^/admin/(?<method>.*)$ {
-        if ($request_method != GET) {
-            return 308 http://127.0.0.1:5551/$method$is_args$args;
-        }
-        rewrite ^/admin/(.*)$ /$1 redirect;
+    # 307和308重定向，才是正确的思路。正确配置应该如下。尚未测试(http://127.0.0.1:5551是不是应该去掉才对)。此方案经过测试发现不行。
+    #location ~ ^/admin/(?<method>.*)$ {
+    #    if ($request_method != GET) {
+    #        return 308 http://127.0.0.1:5551/$method$is_args$args;
+    #    }
+    #    rewrite ^/admin/(.*)$ /$1 redirect;
+    #}
+
+    # 307和308重定向，才是正确的思路。正确配置应该如下。上面一个不行的话就试试这个。待续...
+    location ^~ /admin/ {
+        return 308 http://$server_name$request_uri;
     }
 }
 ```
