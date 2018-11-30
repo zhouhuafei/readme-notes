@@ -4,11 +4,8 @@
 * 域名解析的时候会多加一条```_dnsauth```记录，记录类型是```TXT```，这条记录是系统自动加上的(我购买的阿里的域名，申请SSL证书的流程中，勾选对应选项系统可以自动添加)。
 
 # 默认端口
-* http: 80
-* https: 443
-
-# nginx为网站配置SSL证书
-* 待续...
+* http: 80(云服务器上要开启这个端口)
+* https: 443(云服务器上要开启这个端口)
 
 # nodejs为网站配置SSL证书
 ```javascript
@@ -28,4 +25,24 @@ const serverHttp = httpServer.listen('5551', function () {
 const serverHttps = httpsServer.listen('55551', function () {
     console.log('server connection open to:\n', `https://localhost:${serverHttps.address().port}`);
 });
+```
+
+# nginx为网站配置SSL证书
+```
+server {
+    listen 443;
+    server_name www.sbxx.top sbxx.top;
+
+    ssl on;
+    ssl_certificate /root/suibianxiexie/https/index.pem;
+    ssl_certificate_key /root/suibianxiexie/https/index.key;
+    ssl_session_timeout 5m;
+
+    location / {
+        proxy_pass https://127.0.0.1:55551;
+        proxy_set_header x-real-ip $remote_addr;
+        proxy_set_header x-forwarded-for $proxy_add_x_forwarded_for;
+        proxy_set_header host $http_host;
+    }
+}
 ```
