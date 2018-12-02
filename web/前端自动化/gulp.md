@@ -11,13 +11,16 @@ const babel = require('gulp-babel'); // es6转es5
 const uglify = require('gulp-uglify'); // js压缩
 const imagemin = require('gulp-imagemin'); // 图片压缩
 const htmlmin = require('gulp-htmlmin'); // html压缩
-// const through = require('through2'); // 编写gulp插件
-// const replace = require('gulp-replace'); // 内容替换(这个替换的不完整，会漏掉某些文件。我使用此包时，有些文件并没有被转换成功)
+const through = require('through2'); // 编写gulp插件
 const replace = require('gulp-batch-replace'); // 内容替换(这个没问题，上个包出的问题，这个包没出类似的问题)
-// const gulpSequence = require('gulp-sequence'); // 同步
-const runSequence = require('run-sequence'); // 同步
+const runSequence = require('run-sequence'); // 同步(要保证task中return了一个Promise，否则无效)
+const rev = require('gulp-rev'); // 生成md5文件以及生成md的映射文件
+const revCollector = require('gulp-rev-collector'); // 替换html中引入的内容(css，js，images)。替换css中引入的内容(images)。也可以用来替换路径。
+const sourcemaps = require('gulp-sourcemaps'); // 生成sourcemap
 ```
-* js转义，压缩，css自动补全等，自行查找，不一一列举了。
+
+# 实践
+* https://github.com/zhouhuafei/luck-draw_scroll
 
 # 微信小程序转百度小程序
 * 我给 https://github.com/zhouhuafei/hello-world_mp-baidu 项目配置了一份微信小程序转百度小程序的配置。
