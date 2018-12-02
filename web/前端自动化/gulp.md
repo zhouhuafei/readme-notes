@@ -15,7 +15,7 @@ const through = require('through2'); // 编写gulp插件
 const replace = require('gulp-batch-replace'); // 内容替换(这个没问题，上个包出的问题，这个包没出类似的问题)
 const runSequence = require('run-sequence'); // 同步(要保证task中return了一个Promise，否则无效)
 const rev = require('gulp-rev'); // 生成md5文件以及生成md的映射文件
-const revCollector = require('gulp-rev-collector'); // 替换html中引入的内容(css，js，images)。替换css中引入的内容(images)。也可以用来替换路径。
+const revCollector = require('gulp-rev-collector'); // 替换html中引入的文件名(css，js，images)。替换css中引入的文件名(images)。也就是说此包可以用来替换被引入文件的路径以及文件名。
 const sourcemaps = require('gulp-sourcemaps'); // 生成sourcemap
 ```
 
