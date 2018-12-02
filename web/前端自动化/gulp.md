@@ -28,7 +28,7 @@ const concat = require('gulp-concat'); // 文件合并
     - 能同时开发微信小程序和百度小程序。后续是否兼容其他小程序（支付宝小程序，今日头条小程序等）这个就需要看业务了。
     - 具体配置详情，还请到仓库中自行查看。
 
-# gulp-rev和gulp-rev-collector
+# gulp-rev和gulp-rev-collector踩坑
 * gulp-rev可以对静态文件加md5以及生成rev-manifest.json映射文件。
 * 然后配置gulp-rev-collector的replaceReved属性可以替换md5文件名。dirReplacements替换路径。如下：
 ```
@@ -56,3 +56,4 @@ const concat = require('gulp-concat'); // 文件合并
 ```
 * 以上就可以做到开发的时候不生成md5又可以替换路径了。
 * 后续：开发的时候其实使用gulp-batch-replace包直接替换路径即可。没必要像上面那样麻烦。
+* 具体案例请参考实战的链接：https://github.com/zhouhuafei/luck-draw_scroll
