@@ -37,4 +37,5 @@ sudo npm install -g @tarojs/cli
 
 # 坑点
 * setState是异步的
-    - 使用oninput事件的时候，会出现覆盖现象，需要使用函数去抖处理。恶心。我对react渐渐失去好感了。
+    - 如果setState的回调中还使用了setState导致setState慢的话，使用oninput事件的时候，会出现覆盖现象。
+    - 解决方案：使用函数去抖(debounce)处理。恶心。我对react渐渐失去好感了。
