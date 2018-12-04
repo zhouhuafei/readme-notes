@@ -57,3 +57,11 @@ const concat = require('gulp-concat'); // 文件合并
 * 以上就可以做到开发的时候不生成md5又可以替换路径了。
 * 后续：开发的时候其实使用gulp-batch-replace包直接替换路径即可。没必要像上面那样麻烦。
 * 具体案例请参考实战的链接：https://github.com/zhouhuafei/luck-draw_scroll
+
+# 怎么根据不同的环境定义api不同的url
+* 生产环境和开发环境api的url不一样。
+* 如果使用webpack可以配合插件webpack.DefinePlugin去定义一些变量到业务逻辑中。
+* gulp我没找类似的插件。只能提供一个思路。
+    - 有几份预定义的配置文件，案例：config-development.js，config-production.js。
+    - 当打包dev时，把config-development.js重命名为config.js然后留给业务代码使用即可。
+    - 当打包build时，把config-production.js重命名为config.js然后留给业务代码使用即可。
