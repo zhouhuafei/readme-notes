@@ -200,3 +200,11 @@ http {
 * server_name还可以通过正则配置：这个是saas服务配域名的正确解决方案。
     - ```~^s\d+\.h5.sbxx\.top$```
     - 虚拟主机必须以波浪线```~```起始，否则该名字会被认为是个确切的名字。
+
+# 开启```Content-Encoding: gzip```
+```
+```
+
+# 开启```Cache-Control: public, max-age=31536000```
+```
+```
