@@ -59,6 +59,7 @@ npm install --production
 * nodejs版本管理，切换安装其他版本(个人倾向这个) https://yarnpkg.com/zh-Hans/package/n
 * nodejs版本管理，切换安装其他版本 https://yarnpkg.com/zh-Hans/package/nvm
 * git提交之前进行检测 https://www.npmjs.com/package/husky
+* git提交之前把代码按照eslint的规范进行格式修复 https://www.npmjs.com/package/lint-staged
 
 # 打不推荐使用标识
 > 语法
