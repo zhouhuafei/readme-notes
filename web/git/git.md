@@ -100,3 +100,12 @@ git revert <commit_id>
 ```
 * revert 之后你的本地代码会回滚到指定的历史版本，这时你再 git push 既可以把线上的代码更新。
 * 注意：git revert是用一次新的commit来回滚之前的commit，git reset是直接删除指定的commit，看似达到的效果是一样的，其实完全不同。
+
+# github fork 出的仓库怎样与原仓库保持一致
+github 开发程中， 我们常需要fork出一个仓库进行开发， 但是原来的仓库更新之后，fork出的仓库需要进行一波同步。
+1. git remote -v 查看远程库地址；
+2. git remote add upstream XXXXXXXXXXXXXXX.git     //upstream 设置原仓库的名字，后面是原仓库的地址；
+3. git fetch upstream   //抓取原仓库的修改文件
+4. git checkout XXX  // 切换到需要合并的本地仓库的本地分支。
+5. git  merge upstream/dev   //将原仓库的Dev 分支与本地仓库的当前分支合并
+6. git push origin XXX_branch   //将当前仓库的本地分支推送到远程分支！
