@@ -109,3 +109,9 @@ github 开发程中， 我们常需要fork出一个仓库进行开发， 但是�
 4. ```git checkout XXX``` // 切换到需要合并的本地仓库的本地分支。
 5. ```git merge upstream/dev``` // 将原仓库的Dev 分支与本地仓库的当前分支合并。
 6. ```git push origin XXX_branch``` // 将当前仓库的本地分支推送到远程分支。
+
+# Pull Request
+"Pull Request 是一种通知机制。你修改了他人的代码，将你的修改通知原来的作者，希望他合并你的修改，这就是 Pull Request。"
+* 第一步，你需要把别人的代码，克隆到你自己的仓库，Github 的术语叫做 fork。
+* 第二步，在你仓库的修改后的分支上，按下"New pull request"按钮。
+* 第三步，填写说明，帮助别人理解你的提交，然后按下"create pull request"按钮即可。
