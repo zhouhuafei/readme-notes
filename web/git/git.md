@@ -115,3 +115,8 @@ github 开发程中， 我们常需要fork出一个仓库进行开发， 但是�
 * 第一步，你需要把别人的代码，克隆到你自己的仓库，Github 的术语叫做 fork。
 * 第二步，在你仓库的修改后的分支上，按下"New pull request"按钮。
 * 第三步，填写说明，帮助别人理解你的提交，然后按下"create pull request"按钮即可。
+
+# 更新remote的url
+```
+git remote set-url origin https://git.ishopex.cn/thomas/baihui-baidu-fenxiao.git
+```
