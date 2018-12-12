@@ -84,9 +84,8 @@
 * 没看完偶尔继续看的书
     - 《Node与Express开发》，《深入浅出Node.js》
     - 《HTML5 Canvas核心技术》
-* 还没看的书
     - 《图解HTTP》，《图解TCP/IP》
-    - 《Redis实战》，《MongoDB权威指南》
+    - 《高性能MySQL》，《Redis实战》，《MongoDB权威指南》
 * 看过的文档：gulp，webpack，es6，vue，微信小程序，wepy，mpvue，nginx，nodejs，express，mongoose等等等。
 * 吐槽：不经常使用的技术，看了会忘，需要用的时候再翻翻文档，如此如此，这般这般。
 
