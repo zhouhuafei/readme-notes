@@ -78,13 +78,12 @@
     - 韩顺平 - html5
     - 秒味课堂 - 2017年以前出的视频教程我几乎都看完了，当时有至少1200多集视频，记得当时还需要特定的视频播放器，后来才出的网页版。是的，我开了他家的会员。
 * 看且看完全本的书
-    - 《JavaScript高级程序设计》，《JavaScript权威指南》，《高性能JavaScript》，《JavaScript语言精粹》
+    - 《JavaScript高级程序设计》，《JavaScript权威指南》，《高性能JavaScript》，《JavaScript语言精粹》，《ES6标准入门》
     - 《HTML5与CSS3权威指南上册》，《HTML5与CSS3权威指南下册》，《HTML5权威指南》，《Bootstrap实战》
     - 《MySQL必知必会》
 * 没看完偶尔继续看的书
     - 《Node与Express开发》，《深入浅出Node.js》
     - 《HTML5 Canvas核心技术》
-    - 《ES6标准入门》
 * 还没看的书
     - 《图解HTTP》，《图解TCP/IP》
     - 《Redis实战》，《MongoDB权威指南》
