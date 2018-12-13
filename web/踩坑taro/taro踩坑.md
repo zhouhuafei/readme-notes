@@ -36,10 +36,17 @@ sudo npm install -g @tarojs/cli
     - 把字体打成base64引入。
 
 # 坑点
-* setState是异步的
+* setState是异步的。
     - onInput卡顿。出现了覆盖现象。
     - 出现这个问题的原因是：我把一个好几兆的全国地址数据列表放到了state上。
-* ''会解析成true。
+* ''会解析成true。(等taro官方修复)。
 ```
 onClick={this.viewOrder.bind(this, 'DONE', '')}
+```
+* 使用&&时，false会被渲染出来。(等taro官方修复)。
+```
+// 这个会渲染出isShow
+{1 === 2 && (<View>isShow</View>)}
+{3 === 3 && (<View>isShow</View>)}
+// 这个会渲染成false
 ```
