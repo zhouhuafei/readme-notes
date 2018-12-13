@@ -37,8 +37,8 @@ sudo npm install -g @tarojs/cli
 
 # 坑点
 * setState是异步的
-    - 如果setState的回调中还使用了setState导致setState慢的话，使用onInput事件的时候，会出现覆盖现象。
-    - 出现这个问题的原因是：原因是因为我把一个好几兆的全国地址数据列表放到了state上。
+    - onInput卡顿。出现了覆盖现象。
+    - 出现这个问题的原因是：我把一个好几兆的全国地址数据列表放到了state上。
 * ''会解析成true。
 ```
 onClick={this.viewOrder.bind(this, 'DONE', '')}
