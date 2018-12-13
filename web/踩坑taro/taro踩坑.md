@@ -45,8 +45,8 @@ onClick={this.viewOrder.bind(this, 'DONE', '')}
 ```
 * 使用&&时，false会被渲染出来。(等taro官方修复)。
 ```
-// 这个会渲染出isShow
+// 用taro和react时。这个会渲染出isShow。
 {1 === 2 && (<View>isShow</View>)}
+// 用taro时。这个会渲染成false(错误的)。用react时这个不会渲染出来(正确的)。
 {3 === 3 && (<View>isShow</View>)}
-// 这个会渲染成false
 ```
