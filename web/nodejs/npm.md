@@ -91,3 +91,8 @@ npm deprecate my-thing@"< 0.2.3" "critical bug fixed in v0.2.3"`
 # 版本
 * ```~```会匹配最近的小版本依赖包，比如```~1.2.3```会匹配所有```1.2.x```版本，但是不包括```1.3.0```
 * ```^```会匹配最新的大版本依赖包，比如```^1.2.3```会匹配所有```1.x.x的```包，包括```1.3.0```，但是不包括```2.0.0```
+
+# 设置环境变量
+* Linux：```export NODE_ENV=production```
+* Windows：```set NODE_ENV=production```
+* 跨平台：https://github.com/kentcdodds/cross-env
