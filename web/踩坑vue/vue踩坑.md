@@ -40,3 +40,14 @@
 * 设置参数只能通过meta。
 * params接收路由匹配的动态路由数据。例如：路由设置为：```/user/:id```，访问：```/user/10```，可以得到```{id: 10}```。
 * query接收路由匹配的query数据。例如：路由设置为：```/user/```，访问：```/user/?id=10```，可以得到```{id: 10}```。
+
+# 报错
+* 用webpack3打包vue之后报错：```Cannot read property 'call' of undefined```
+    - 报错原因：webpack插件使用错误。```new ExtractTextPlugin(`css/pages/[name].${configEnvironment.contenthash}css`)```。
+    - 解决方案：
+    ```
+    new ExtractTextPlugin({
+        filename: `css/pages/[name].${configEnvironment.contenthash}css`,
+        allChunks: true,
+    })
+    ```
