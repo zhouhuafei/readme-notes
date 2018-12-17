@@ -56,24 +56,3 @@ optimization: {
 * 解决方案：把webpack3时，js使用的```[chunkhash]```换成```[contenthash]```。
 * webpack3时：css使用```[contenthash]```，js使用```[chunkhash]```。
 * webpack4时：css使用```[contenthash]```，js使用```[contenthash]```。
-
-# webpack-dev-server
-* openPage的路径是相对于哪的？
-    - 和```output```上的```publicPath```属性有关，如果配置成```/```，则沿着```output```上的```path```属性进行查找就可以访问到资源。
-    - 案例1：demo目录下有views/pages/ui.html，如果是以下配置，则直接访问/views/pages/ui.html就可以访问到了。
-    ```
-    path: `${__dirname}/dist/demo/`, // 出口路径，必须是绝对路径
-    publicPath: `/`, // 静态资源引入的路径方式
-    ```
-    - 案例2：demo目录下有views/pages/ui.html，如果是以下配置，则直接访问/hello/views/pages/ui.html就可以访问到了。
-    ```
-    path: `${__dirname}/dist/demo/`, // 出口路径，必须是绝对路径
-    publicPath: `/hello/`, // 静态资源引入的路径方式
-    ```
-* 如果记不住的话，直接访问/webpack-dev-server，里面有指引链接。
-    - 坑点：publicPath不能设置为相对路径。
-    - 例如：publicPath设置成'./'或者设置成'../../'都会导致访问不了。
-* 总结：
-    - 正确的访问路径是：output.publicPath 拼接上 output.path之后的路径。
-    - 手动输入url时，访问路径前面是要带反斜杠的，这是常识。但是使用openPage配置时，前面不要带反斜杠，否则浏览器上会出现两个反斜杠。
-    - 案例：openPage: 'views/pages/ui.html'。views前面不要带反斜杠。
