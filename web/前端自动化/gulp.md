@@ -65,3 +65,11 @@ const concat = require('gulp-concat'); // 文件合并
     - 有几份预定义的配置文件，案例：config-development.js，config-production.js。
     - 当打包dev时，把config-development.js重命名为config.js然后留给业务代码使用即可。
     - 当打包build时，把config-production.js重命名为config.js然后留给业务代码使用即可。
+
+# 报错
+* ```gulp.hasTask is not a function```
+* 原因：版本不匹配。```全局```安装的是```3.9.1```。```局部```安装的是```4.0.0```。导致出了这个问题
+* del报错
+    - ```Cannot delete files/folders outside the current working directory. Can be overriden with the `force` option.```
+    - 原因：del默认不能删除配置目录外部的文件。
+    - 解决方案：```del([`${__dirname}/../dist/${name}/static/decoration`], {force: true})```
