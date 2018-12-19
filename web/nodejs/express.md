@@ -1,3 +1,4 @@
+# 基础
 * req.params
     - 接收路由匹配数据：/list/:id
     - 语法：app.get('/list/:id', function (req, res) {});
@@ -17,3 +18,12 @@
     - 案例数据：id=1
     - 获取数据：req.body.id
     - 数据结果：1
+
+# 踩坑中间件
+* connect-history-api-fallback
+* 重点：这句代码需要在express.static上面
+```
+app.use(history({
+  index: '/decoration/index.html'
+}));
+```
