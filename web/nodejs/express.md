@@ -21,9 +21,20 @@
 
 # 踩坑中间件
 * connect-history-api-fallback
-* 重点：这句代码需要在express.static上面
-```
-app.use(history({
-  index: '/decoration/index.html'
-}));
-```
+    - 重点：这句代码需要在express.static上面
+    ```
+    app.use(history({
+      index: '/decoration/index.html'
+    }));
+    ```
+* http-proxy-middleware
+    - 后缀不一样，需要设置pathRewrite，进行后缀匹配。
+    ```
+    app.use('/api/', proxy({
+     target: 'https://yapi.ishopex.cn', // 目标服务器 host
+     pathRewrite: {
+       '/api/': '/mock/103/',     // 重写请求，比如我们源访问的是/api，那么请求会被解析为/mock/103/
+     },
+     changeOrigin: true,
+    }));
+    ```
