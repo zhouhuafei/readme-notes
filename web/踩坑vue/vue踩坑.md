@@ -78,3 +78,48 @@ router.afterEach(transition => {
         allChunks: true,
     })
     ```
+
+# 修饰符.sync
+从 2.3.0 起我们重新引入了 .sync 修饰符，但是这次它只是作为一个编译时的语法糖存在。它会被扩展为一个自动更新父组件属性的 v-on 监听器。
+* 示例：```<comp :foo.sync="bar"></comp>```
+* 会被扩展为：```<comp :foo="bar" @update:foo="val => bar = val"></comp>```
+* 当子组件需要更新 foo 的值时，它需要显式地触发一个更新事件：```this.$emit('update:foo', newValue)```
+* 完整示例如下：
+```
+<template>
+    <div class="details">
+        <myComponent :show.sync='valueChild' style="padding: 30px 20px 30px 5px;border:1px solid #ddd;margin-bottom: 10px;"></myComponent>
+        <button @click="changeValue">toggle</button>
+    </div>
+</template>
+<script>
+import Vue from 'vue'
+Vue.component('myComponent', {
+      template: `<div v-if="show">
+                    <p>默认初始值是{{show}}，所以是显示的</p>
+                    <button @click.stop="closeDiv">关闭</button>
+                 </div>`,
+      props:['show'],
+      methods: {
+        closeDiv() {
+          this.$emit('update:show', false); //触发 input 事件，并传入新值
+        }
+      }
+})
+export default{
+    data(){
+        return{
+            valueChild:true,
+        }
+    },
+    methods:{
+        changeValue(){
+            this.valueChild = !this.valueChild
+        }
+    }
+}
+</script>
+```
+
+# vue 自定义组件使用v-model
+* 待续...
