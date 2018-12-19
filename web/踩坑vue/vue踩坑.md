@@ -41,13 +41,17 @@
 * params接收路由匹配的动态路由数据。例如：路由设置为：```/user/:id```，访问：```/user/10```，可以得到```{id: 10}```。
 * query接收路由匹配的query数据。例如：路由设置为：```/user/```，访问：```/user/?id=10```，可以得到```{id: 10}```。
 * 踩坑之 - nprogress插件卡顿。进度条超级缓慢增长且一直转圈圈。
-    - 触发条件：```beforeEach```中检测续费是否到期了，如果到期了则使用```next```方法跳到续费页。当自动跳到续费页之后，如果在续费到期页点击别的页面想要跳转则会造成卡顿。
-    - 造成卡顿的原因：虽然```afterEach```函数中有```NProgress.done()```，但是```next```函数如果重定向则当前的导航被中断。导致不会走到```afterEach```函数中。
+    - 触发条件：```beforeEach```中检测续费是否到期了，如果到期了则使用```next({path: 'no-auth'})```方法跳到续费页。当自动跳到续费页之后，如果在续费到期页不续费然后点击别的页面想要跳转则会造成卡顿。
+    - 造成卡顿的原因：虽然```afterEach```函数中有```NProgress.done()```，但是在使用```next```函数时，因传递了参数进行重定向路由，造成当前的导航被中断。以至于不会走到```afterEach```函数中。
     - 解决方案：```next```跳到续费页之后要使用```NProgress.done()```方法手动触发一下结束。
     ```
     next({path: 'no-auth'});
     NProgress.done();
     ```
+    - 参考文档：https://router.vuejs.org/zh/guide/advanced/navigation-guards.html#%E5%85%A8%E5%B1%80%E5%AE%88%E5%8D%AB
+    - 文档摘录：
+        - ```next()```：进行管道中的下一个钩子。如果全部钩子执行完了，则导航的状态就是 confirmed (确认的)。
+        - ```next('/')``` 或者 ```next({ path: '/' })```：跳转到一个不同的地址。当前的导航被中断，然后进行一个新的导航。
 
 # 报错
 * 用webpack3打包vue之后报错：```Cannot read property 'call' of undefined```
