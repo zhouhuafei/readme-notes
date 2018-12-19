@@ -42,7 +42,7 @@
 * query接收路由匹配的query数据。例如：路由设置为：```/user/```，访问：```/user/?id=10```，可以得到```{id: 10}```。
 
 # vue-router踩坑之 - nprogress插件卡顿。进度条超级缓慢增长且一直转圈圈。
-* 简洁化之后的代码如下：
+* 简洁化之后有问题的代码如下：
 ```
 router.beforeEach((to, from, next) => {
   NProgress.start();
