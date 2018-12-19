@@ -40,6 +40,14 @@
 * 设置参数只能通过meta。
 * params接收路由匹配的动态路由数据。例如：路由设置为：```/user/:id```，访问：```/user/10```，可以得到```{id: 10}```。
 * query接收路由匹配的query数据。例如：路由设置为：```/user/```，访问：```/user/?id=10```，可以得到```{id: 10}```。
+* 踩坑之 - nprogress插件卡顿。进度条超级缓慢增长且一直转圈圈。
+    - 触发条件：```beforeEach```中检测续费是否到期了，如果到期了则使用```next```方法跳到续费页。当自动跳到续费页之后，如果在续费到期页点击别的页面想要跳转则会造成卡顿。
+    - 造成卡顿的原因：虽然```afterEach```函数中有```NProgress.done()```，但是```next```函数如果重定向则当前的导航被中断。导致不会走到```afterEach```函数中。
+    - 解决方案：```next```跳到续费页之后要使用```NProgress.done()```方法手动触发一下结束。
+    ```
+    next({path: 'no-auth'});
+    NProgress.done();
+    ```
 
 # 报错
 * 用webpack3打包vue之后报错：```Cannot read property 'call' of undefined```
