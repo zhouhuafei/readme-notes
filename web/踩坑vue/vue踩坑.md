@@ -65,8 +65,8 @@ router.afterEach(transition => {
     2. 点首页路由的按钮，触发```beforeEach```，因首页路由的```path```是```/```，则触发```next({path: '/no-auth/'});```。因重定向的路由```/no-auth/```和当前路由```/no-auth/```相同，则不会触发```afterEach```。
 * 解决方案：```next({path: 'no-auth'});```的下一行加一句：```NProgress.done();```
 * 总结：
-    - next重定向的路由如果和当前路由相同，则不会走afterEach。
-    - 经测试。如果每次```next```的路由和当前的路由不一致。是会触发```afterEach```的。
+    - next重定向的路由如果和当前路由相同，则不会触发```afterEach```。
+    - 经测试。如果每次```next```的路由和当前的路由不一致。是会触发```afterEach```的。所以我得出的结论是正确的。
 
 # 报错
 * 用webpack3打包vue之后报错：```Cannot read property 'call' of undefined```
