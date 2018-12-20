@@ -19,21 +19,21 @@
 * 根据RFC2616，HTTP Method是区分大小写的。GET/POST/PUT/DELETE。
 * RFC2616：超文本传输协议HTTP/1.1。
 
-# 请求时带数据
-* get请求的headers中没有Content-Type这个字段。
-```
-* Request Method: GET
-    - Query String Parameters
-```
-* post请求的headers中常用的Content-Type如下。
-```
-* Request Method: POST
-    - Content-Type: application/x-www-form-urlencoded
-    - Form Data
-* Request Method: POST
-    - Content-Type: multipart/form-data
-    - Form Data
-* Request Method: POST
-    - Content-Type: application/json
-    - Request Payload
-```
+# 请求带数据时在chrome浏览器中的表现
+> get请求的headers中没有Content-Type这个字段。
+* GET
+    - 在General中```Request Method: GET```
+    - 数据在Query String Parameters中可以看到
+> post请求的headers中常用的Content-Type如下。
+* POST
+    - 在General中```Request Method: POST```
+    - 在Request Headers中```Content-Type: application/x-www-form-urlencoded```
+    - 数据在Form Data中可以看到
+* POST
+    - 在General中```Request Method: POST```
+    - 在Request Headers中```Content-Type: multipart/form-data```
+    - 数据在Form Data中可以看到
+* POST
+    - 在General中```Request Method: POST```
+    - 在Request Headers中```Content-Type: application/json```
+    - 数据在Request Payload中可以看到
