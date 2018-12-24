@@ -10,6 +10,7 @@
     - 因为跨主域cookie带不过去，所以绑定到cookie上只是方便前端后续拿token，带给后端是带不过去的。
     - token的有效时间应该要和后端确认，对应的cookie也要存对应的时长。
 * https://www.cnblogs.com/pingfan1990/p/4905065.html
+* https://blog.csdn.net/qq_37261367/article/details/81387107
 
 # 后端生成token的原理
 * 待续...
