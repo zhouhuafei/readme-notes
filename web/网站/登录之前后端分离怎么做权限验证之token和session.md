@@ -13,13 +13,13 @@
 * https://blog.csdn.net/qq_37261367/article/details/81387107
 
 # 后端生成token的原理
-* 待续...
+* nodejs可以使用jsonwebtoken去生成token。验证token。
 
 # token的存储
-* 待续...
+* 存redis数据库。
 
 # token的更新
-* 待续...
+* 重新生成token即可。
 
 # token的安全性
 * 别人拿到token和uid，也就拿到了登录权限。
