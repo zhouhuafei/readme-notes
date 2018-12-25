@@ -26,5 +26,8 @@
 * https://github.com/auth0/node-jsonwebtoken
 
 # 存储
-存redis
-* 那过期时间呢？待续...
+* 存redis数据库。
+
+# 过期时间
+* jsonwebtoken本身可以设置过期时间。redis存储页有过期时间。需要怎么处理？
+    - 使用token的过期时间当做redis的过期时间。
