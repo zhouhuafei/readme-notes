@@ -9,6 +9,9 @@
     - 通过token省却了用户不断的认证过程。
     - 因为http协议的无状态性，服务端需要持久化token，一般是放在数据库和缓存中。
 
+# jsonwebtoken
+* 我个人根据文档得到的结果是：jsonwebtoken就是第一种解决方案。
+
 # 官网
 * https://jwt.io/
 
