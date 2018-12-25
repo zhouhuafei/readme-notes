@@ -21,6 +21,10 @@
 # token的更新
 * 重新生成token即可。
 
+# token的过期时间
+* token本身有过期时间。redis存储有过期时间。怎么处理？
+    - 使用token的过期时间当做redis的过期时间。
+
 # token的安全性
 * 别人拿到token和uid，也就拿到了登录权限。
 * 不跨主域，可以把token存cookie里，加上httponly，会相对安全很多。
