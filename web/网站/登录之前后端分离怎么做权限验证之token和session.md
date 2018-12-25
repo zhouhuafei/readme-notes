@@ -5,30 +5,20 @@
 * 接口验签（这里的接口验签只是防止别人拿到接口一直请求罢了。如果别人破解了验签的加密方式，依然是可以重复打接口的。）
 
 # token
-* 登录，后端会返回utoken和uid。
-* 后续请求带上utoken和uid即可。
+* 登录，后端会返回utoken。
+* 后续请求带上utoken即可。
     - 因为跨主域cookie带不过去，所以绑定到cookie上只是方便前端后续拿token，带给后端是带不过去的。
     - token的有效时间应该要和后端确认，对应的cookie也要存对应的时长。
 * https://www.cnblogs.com/pingfan1990/p/4905065.html
 * https://blog.csdn.net/qq_37261367/article/details/81387107
 
-# 后端生成token的原理
-* nodejs可以使用jsonwebtoken去生成token。验证token。
-
-# token的存储
-* 存redis数据库。
-
-# token的更新
-* 重新生成token即可。
-
 # token的安全性
-* 别人拿到token和uid，也就拿到了登录权限。
+* 别人拿到token，也就拿到了登录权限。
 * 不跨主域，可以把token存cookie里，加上httponly，会相对安全很多。
 
-# token的弊端
-* 没有中间层做代理，token验证权限无法做登录注册的图文验证码，因为没有sessionid关联，无法识别图文验证码的归属。
-    - 生成图片验证码的时候，可以生成一个当前验证码对应的token存储到redis上。
-    - 如此可以生成图文验证码。但是生成多了是否会导致redis爆掉？这个犹未可知。所以过期时间尽量设置短一点。1-2分钟即可。
+# token怎么做图文验证码
+* 方案1：打获取验证码打接口时，利用jsonwebtoken生成图片的token存储到客户端，客户端请求时，把token和验证码带过来，后端进行解密即可。
+* 方案2：随机token配合redis。
 
 # session
 * 只要不跨主域，是可以把登录状态保存到session上的，所以没问题。

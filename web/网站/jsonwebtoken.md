@@ -9,25 +9,15 @@
     - 通过token省却了用户不断的认证过程。
     - 因为http协议的无状态性，服务端需要持久化token，一般是放在数据库和缓存中。
 
-# jsonwebtoken
-* 我个人根据文档得到的结果是：jsonwebtoken就是第一种解决方案。
-
-# 一般会两者结合。
-* 后端一般会把token口令当做键存到redis里。用户信息当做值存在对应的键里。
-* 前端在操作时会提前5分钟。拿老token去换新token。防止操作一会儿就没权限了，要跳到登录页去登录，这样很繁琐，体验不好，所以要在token即将过期的时候去自动更新token。
-
-# 官网
+# jsonwebtoken官网
 * https://jwt.io/
 
 # jsonwebtoken认知
 * http://www.ruanyifeng.com/blog/2018/07/json_web_token-tutorial.html
 
-# nodejs使用的库是jsonwebtoken
+# nodejs使用jsonwebtoken库生成token
 * https://github.com/auth0/node-jsonwebtoken
 
 # 存储
-* 存redis数据库。
-
-# 过期时间
-* jsonwebtoken本身可以设置过期时间。redis存储页有过期时间。需要怎么处理？
-    - 使用token的过期时间当做redis的过期时间。
+* 解决方案1是存客户端。过期时间jsonwebtoken内部会自行处理。
+* 解决方案2是存redis数据库。过期时间需要用redis处理。
