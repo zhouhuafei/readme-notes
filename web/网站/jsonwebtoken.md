@@ -24,3 +24,7 @@
 
 # nodejs使用的库是jsonwebtoken
 * https://github.com/auth0/node-jsonwebtoken
+
+# 存储
+存redis
+* 那过期时间呢？待续...
