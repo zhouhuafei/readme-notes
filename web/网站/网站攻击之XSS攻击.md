@@ -18,7 +18,7 @@
 * 给关键cookie设置httpOnly上防止cookie被盗。
 * 后端渲染时需要对内容进行过滤。例如不使用```<%= userInputContent %>```注入用户输入的内容(ejs模板)。使用```<%- userInputContent %>```代替。
     - 问：如果是富文本内容呢？怎么过滤？有现成的包么？
-    - 答：富文本的话。ejs模板渲染```<%= userInputContent %>```时，是会把```&，<，>，"，'，，/```这几个字符转义掉的。也就是说ejs本身是有防御XSS攻击能力的。
+    - 答：富文本的话。ejs模板渲染```<%= userInputContent %>```时，是会把```&，<，>，"，'，/```这几个字符转义掉的。也就是说ejs本身是有防御XSS攻击能力的。
     - 问：那能在接口保存的时候就进行转义么？有现成的包么？
     - 答：https://github.com/leizongmin/js-xss
 * 前端渲染时需要对内容进行过滤。例如不使用innerHTML注入用户输入的内容。使用innerText代替。
