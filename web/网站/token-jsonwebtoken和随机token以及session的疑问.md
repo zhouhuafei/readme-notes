@@ -34,10 +34,16 @@
 * 应用：
     - 自家网站使用session和token都行。
     - 如果是和第三方对接。则token更方便。
-    - 复制别人的内容：在存储过等同的情况下，在只是简单运用上，我只能说session与token没有本质的区别，二者不都是一串被加密过的字符串，拿他来做校验都一样。以上，是因为你把token拿来当作用户是不是当事人做这么一个简单的校验的情况下。当然，如果我们抛开一些比较极端的操作，token比session也有很大的区别：token可以存在任何位置（cookie、local storage）token比session更容易跨域。CORS预检查时token比较更简单。token有更多的控制权，比如当token过期时，你可以拿通过刷新token，让用户一直保持有效登录等。其实如果你只是单纯拿着token做一下自己网站内用户登录检验的话是无太多区别的。但假如token指的是OAuth Token提供认证和授权这类机制的话，那么就可以把session甩开N条街了，甚至是已经完全是两种不同的概念。假设有这么一个场景，你们用户在你们网站产生的订单，而另一家公司是专业ERP公司；而你的用户希望他的订单同时授权给这家ERP公司使用的情况下，难道你希望用户拿在你家网站的用户名和密码给这家ERP公司吗？这时候OAuth Token就有意义了，OAuth Token的授权大概是这样的：ERP需要调用我们提供的登录界面。用户输入用户名和密码后，我们再向ERP发送一个TOKEN。ERP拿TOKEN换数据。总之，如果你只是在自己网站内部上使用二者没有什么太多区别。而如果你的API是在不同终端上使用，token会更方便。
-    - 个人对于第三方对接的理解感觉没上面说的那么复杂。也许是我的理解出现了偏差。如下：
-        - 使用session和第三方对接。第三方打我们的登录成功之后存储sessionid(在```response.headers['set-cookie']```中获取)。下次请求时带在请求头的cookie上。如果过期则重新登录。
-        - 使用token和第三方对接。第三方打我们的登录成功之后存储token(在```response.data```中获取)。下次请求时带在请求头的Authorization上。如果过期则重新登录。
+
+# 个人对于第三方对接的理解：
+* 使用session和第三方对接。第三方打我们的登录成功之后存储sessionid(在```response.headers['set-cookie']```中获取)。下次请求时带在请求头的cookie上。如果过期则重新登录。
+    - 使用axios在服务端互打接口是可以获取到```response.headers['set-cookie']```的。
+    - 使用axios在客户端获取不到，无论我是使用'set-cookie'或者'Set-Cookie'都获取不到，和httpOnly的值也无关，因为我把httpOnly设置为false也没获取到。
+    - 别人测试在微信小程序客户端的响应里使用```response.headers['set-cookie']```可以获取到'set-cookie'。手机中需要使用大写的```response.headers['Set-Cookie']```获取。
+* 使用token和第三方对接。第三方打我们的登录成功之后存储token(在```response.data```中获取)。下次请求时带在请求头的Authorization上。如果过期则重新登录。
+
+# 别人对于session和token以及第三方对接的理解：
+在存储过等同的情况下，在只是简单运用上，我只能说session与token没有本质的区别，二者不都是一串被加密过的字符串，拿他来做校验都一样。以上，是因为你把token拿来当作用户是不是当事人做这么一个简单的校验的情况下。当然，如果我们抛开一些比较极端的操作，token比session也有很大的区别：token可以存在任何位置（cookie、local storage）token比session更容易跨域。CORS预检查时token比较更简单。token有更多的控制权，比如当token过期时，你可以拿通过刷新token，让用户一直保持有效登录等。其实如果你只是单纯拿着token做一下自己网站内用户登录检验的话是无太多区别的。但假如token指的是OAuth Token提供认证和授权这类机制的话，那么就可以把session甩开N条街了，甚至是已经完全是两种不同的概念。假设有这么一个场景，你们用户在你们网站产生的订单，而另一家公司是专业ERP公司；而你的用户希望他的订单同时授权给这家ERP公司使用的情况下，难道你希望用户拿在你家网站的用户名和密码给这家ERP公司吗？这时候OAuth Token就有意义了，OAuth Token的授权大概是这样的：ERP需要调用我们提供的登录界面。用户输入用户名和密码后，我们再向ERP发送一个TOKEN。ERP拿TOKEN换数据。总之，如果你只是在自己网站内部上使用二者没有什么太多区别。而如果你的API是在不同终端上使用，token会更方便。
 
 * Authorization: Bearer token
     - 格式为什么要这样？
