@@ -16,12 +16,31 @@
     - 总结：使用token的情况下，图文验证码需要配合redis来实现。
 * 随机token可以模拟session么？
     - 不跨主域的情况下，把token带到Set-Cookie中返回，并设置上httponly，可以说很类似session了。
+* 总结：随机token类似session。都需要在服务端存储。
 
-# token对比session的优缺点
-* token优势：
-* token弊端：
+# jsonwebtoken对比session的区别
+* jsonwebtoken在服务端不需要存储。是无状态的。拿到客户端带来到token进行解密即可。
+* session在服务端需要存储。拿到客户端带来的sessionid之后再去session中查找有没有记录。
+
+# jsonwebtoken对比session的优缺点
+* jsonwebtoken优势：
+    - 可扩展性强。因无状态。不存储在服务端。所以在分布式系统中不用考虑token共享的问题。
+* jsonwebtoken弊端：
+    - 安全性相对较弱。
 * session优势：
+    - 安全性相对较高。
 * session弊端：
+    - 可扩展性弱。在分布式系统中。要考虑session共享的问题。session共享可以使用redis解决。
+* 应用：
+    - 自家网站使用session和token都行。
+    - 如果是和第三方对接。则token更方便。
+    - 复制别人的内容：在存储过等同的情况下，在只是简单运用上，我只能说session与token没有本质的区别，二者不都是一串被加密过的字符串，拿他来做校验都一样。以上，是因为你把token拿来当作用户是不是当事人做这么一个简单的校验的情况下。当然，如果我们抛开一些比较极端的操作，token比session也有很大的区别：token可以存在任何位置（cookie、local storage）token比session更容易跨域。CORS预检查时token比较更简单。token有更多的控制权，比如当token过期时，你可以拿通过刷新token，让用户一直保持有效登录等。其实如果你只是单纯拿着token做一下自己网站内用户登录检验的话是无太多区别的。但假如token指的是OAuth Token提供认证和授权这类机制的话，那么就可以把session甩开N条街了，甚至是已经完全是两种不同的概念。假设有这么一个场景，你们用户在你们网站产生的订单，而另一家公司是专业ERP公司；而你的用户希望他的订单同时授权给这家ERP公司使用的情况下，难道你希望用户拿在你家网站的用户名和密码给这家ERP公司吗？这时候OAuth Token就有意义了，OAuth Token的授权大概是这样的：ERP需要调用我们提供的登录界面。用户输入用户名和密码后，我们再向ERP发送一个TOKEN。ERP拿TOKEN换数据。总之，如果你只是在自己网站内部上使用二者没有什么太多区别。而如果你的API是在不同终端上使用，token会更方便。
+    - 个人对于第三方对接的理解感觉没上面说的那么复杂。也许是我的理解出现了偏差。如下：
+        - 使用session和第三方对接。第三方打我们的登录成功之后存储sessionid(在```response.headers['set-cookie']```中获取)。下次请求时带在请求头的cookie上。如果过期则重新登录。
+        - 使用token和第三方对接。第三方打我们的登录成功之后存储token(在```response.data```中获取)。下次请求时带在请求头的Authorization上。如果过期则重新登录。
+
+* Authorization: Bearer token
+    - 格式为什么要这样？
 
 # 其他
 * token存在哪？
