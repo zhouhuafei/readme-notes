@@ -32,7 +32,10 @@
     - jsonwebtoken存在客户端安全性相对较弱。
     - 登录状态需要续签。token过期之前拿老token换新token。
     - 退出登录无法自动注销token。解决方案上面已经给了。
+    - 不能存储私密的数据，如果token被解密了，存在数据泄露的风险。
+    - 使用token难道CSRF攻击就不存在了？待续...
 * session优势：
+    - 可以存储任何私密的数据，因为存在服务器上，不用担心数据泄露。
     - session存在服务端安全性相对较高。
 * session弊端：
     - cooike的安全性不好，攻击者可以利用本地cookie进行欺骗和CSRF攻击。
@@ -69,6 +72,9 @@
     - 存在localStorage里无法做单点登录。
     - 存在cookie里domain设置成顶级域名可以做单点登录。
     - 视场景而定。
+* token一般格式？
+    - 至于为什么要这种格式我也不清楚：```Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJo```。
+    - 可能是为了混淆视听吧。以为别人不知道token只是```Bearer ```后面的部分。而不是整个```Authorization```字段的值。
 * 用户信息应该每次都从数据库里读取么？
     - 注册的时候用户信息是存到mongodb或者mysql数据库里的。
     - 如果登录的时候把用户信息存到jsonwebtoken或者session或者redis里。

@@ -21,3 +21,10 @@
 # 存储
 * 解决方案1是存客户端。过期时间jsonwebtoken内部会自行处理。
 * 解决方案2是存redis数据库。过期时间需要用redis处理。
+
+# Payload在JWT标准所定义的五个字段。
+* iss: 该JWT的签发者。
+* sub: 该JWT所面向的用户。
+* aud: 接收该JWT的一方。
+* exp(expires): 什么时候过期，这里是一个Unix时间戳。
+* iat(issued at): 在什么时候签发的。

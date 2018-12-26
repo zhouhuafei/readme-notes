@@ -122,4 +122,5 @@ export default{
 ```
 
 # vue 自定义组件使用v-model
-* 待续...
+* v-model只是个语法糖。自定义组件也能用。可以参考文档。https://cn.vuejs.org/v2/guide/components-custom-events.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%9A%84-v-model
+* 我写的简单案例：https://github.com/zhouhuafei/hello-world/tree/master/vue
