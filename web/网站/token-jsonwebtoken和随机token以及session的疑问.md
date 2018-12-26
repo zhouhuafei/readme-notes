@@ -24,6 +24,10 @@
 * session弊端：
 
 # 其他
+* token存在哪？
+    - 存在localStorage里无法做单点登录。
+    - 存在cookie里domain设置成顶级域名可以做单点登录。
+    - 视场景而定。
 * 用户信息应该每次都从数据库里读取么？
     - 注册的时候用户信息是存到mongodb或者mysql数据库里的。
     - 如果登录的时候把用户信息存到jsonwebtoken或者session或者redis里。
