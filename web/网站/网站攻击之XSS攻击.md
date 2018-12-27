@@ -5,7 +5,23 @@
 * 和SQL注入类似。
 
 # 原理
-* 注入js脚本。获取用户信息。
+* 注入js脚本。伺机进行一系列攻击。
+
+# 反射型 XSS
+反射型XSS：非持久化，需要欺骗用户自己去点击链接才能触发XSS代码（服务器中没有这样的页面和内容），一般容易出现在搜索页面。
+* 总结：把js脚本注入到url的查询字符串中。
+
+# 存储型 XSS
+存储型XSS：存储型XSS，持久化，代码是存储在服务器中的，如在个人信息或发表文章等地方，加入代码，如果没有过滤或过滤不严，那么这些代码将储存到服务器中，用户访问该页面的时候触发代码执行。这种XSS比较危险，容易造成蠕虫，盗窃cookie（虽然还有种DOM型XSS，但是也还是包括在存储型XSS内）。
+* 总结：把js脚本注入到数据库中存储。渲染模板的时候，则会触发。
+* DOM型XSS案例：```<img src="null" onerror='alert(document.cookie)' />```
+
+# 危害
+* 通过document.cookie盗取cookie。
+* 使用js或css破坏页面正常的结构与样式。
+* 流量劫持（通过访问某段具有window.location.href定位到其他页面）。
+* Dos攻击：利用合理的客户端请求来占用过多的服务器资源，从而使合法用户无法得到服务器响应。
+* 利用iframe、frame、XMLHttpRequest或上述Flash等方式，以（被攻击）用户的身份执行一些管理动作，或执行一些一般的如发微博、加好友、发私信等操作。
 
 # 供给渠道
 * 留言板中输入js代码。如果后端渲染时不做处理，则js代码就会被触发。
@@ -16,15 +32,18 @@
 
 # 防御
 * 给关键cookie设置httpOnly上防止cookie被盗。
-* 后端渲染时需要对内容进行过滤。例如不使用```<%= userInputContent %>```注入用户输入的内容(ejs模板)。使用```<%- userInputContent %>```代替。
-    - 问：如果是富文本内容呢？怎么过滤？有现成的包么？
-    - 答：富文本的话。ejs模板渲染```<%= userInputContent %>```时，是会把```&，<，>，"，'，/```这几个字符转义掉的。也就是说ejs本身是有防御XSS攻击能力的。
-    - 问：那能在接口保存的时候就进行转义么？有现成的包么？
-    - 答：https://github.com/leizongmin/js-xss
-* 前端渲染时需要对内容进行过滤。例如不使用innerHTML注入用户输入的内容。使用innerText代替。
-    - 问：如果是富文本内容呢？怎么过滤？有现成的包么？
-    - 答：像vue这种框架默认就可以防止XSS攻击。
-    - 问：如果原生js呢？有防止XSS攻击的包么？
-    - 答：https://github.com/leizongmin/js-xss
-* 小总结：其实成熟的富文本插件以及成熟的模板渲染包。本身就自带防御XSS攻击的能力。
-* 重点总结：对需要渲染html内容的地方。要进行XSS防御处理。
+* 使用成熟的富文本插件。因成熟的富文本插件自带XSS防御能力。例如：wangEditor。https://github.com/wangfupeng1988/wangEditor/
+    - 如果富文本有源码编辑能力。那么请不要使用。因为源码编辑能力更容易遭到XSS攻击(如果后端接收内容时或者前端接收内容时没有对内容进行过滤的话)。
+* 后端接收的内容和前端接收的内容都可以使用 https://github.com/leizongmin/js-xss 进行过滤之后再使用。
+* 使用成熟的框架：像vue这种框架默认就可以防止XSS攻击。
+* 后端渲染：使用成熟的模板渲染插件。因成熟的模板渲染插件自带XSS防御能力。例如：ejs。https://github.com/mde/ejs
+    - ejs模板的防御能力也是有限的。
+    - 建议1：非富文本内容，使用```<%- content %>```渲染。
+    - 建议2：富文本内容使用 https://github.com/leizongmin/js-xss 过滤之后再使用```<%= content %>```进行渲染。
+* 前端渲染：innerHTML可以防御XSS攻击，但是防御能力有限。
+    - 例如可以防御```<script>alert(document.cookie)</script>```。
+    - 例如无法防御```<img src="null" onerror='alert(document.cookie)' />```。
+    - 建议1：非富文本内容，使用innerText进行渲染。
+    - 建议2：富文本内容使用 https://github.com/leizongmin/js-xss 过滤之后再使用innerHTML进行渲染。
+* 不要使用```document.write```去渲染。因为```document.write```无法防御XSS攻击。
+* 不要使用eval方法。
