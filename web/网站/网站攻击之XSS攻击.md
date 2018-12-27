@@ -35,15 +35,21 @@
 * 使用成熟的富文本插件。因成熟的富文本插件自带XSS防御能力。例如：wangEditor。https://github.com/wangfupeng1988/wangEditor/
     - 如果富文本有源码编辑能力。那么请不要使用。因为源码编辑能力更容易遭到XSS攻击(如果后端接收内容时或者前端接收内容时没有对内容进行过滤的话)。
 * 后端接收的内容和前端接收的内容都可以使用 https://github.com/leizongmin/js-xss 进行过滤之后再使用。
-* 使用成熟的框架：像vue这种框架默认就可以防止XSS攻击。
 * 后端渲染：使用成熟的模板渲染插件。因成熟的模板渲染插件自带XSS防御能力。例如：ejs。https://github.com/mde/ejs
     - ejs模板的防御能力也是有限的。
     - 建议1：非富文本内容，使用```<%- content %>```渲染。
     - 建议2：富文本内容使用 https://github.com/leizongmin/js-xss 过滤之后再使用```<%= content %>```进行渲染。
 * 前端渲染：innerHTML可以防御XSS攻击，但是防御能力有限。
-    - 例如可以防御```<script>alert(document.cookie)</script>```。
-    - 例如无法防御```<img src="null" onerror='alert(document.cookie)' />```。
+    - 例如可以防御```<script>alert(document.cookie)</script>```。渲染的时候，虽然源码里有内容，但是在页面中不会有内容表现出来，相当于渲染出来的是''(谷歌浏览器测试所得结果)。
+    - 例如无法防御```<img src="null" onerror="alert(document.cookie)"/>```。
     - 建议1：非富文本内容，使用innerText进行渲染。
     - 建议2：富文本内容使用 https://github.com/leizongmin/js-xss 过滤之后再使用innerHTML进行渲染。
+* 使用成熟的框架：像vue这种框架默认就可以防止XSS攻击。但是防御能力依然有限。
+    - vue默认可以防御XSS攻击但是防御能力有限。
+    - 原生js使用innerHTML渲染```<script>alert(123)</script>```时，不会渲染出来东西。可以说是进行了一次XSS过滤。
+    - v-html渲染```<script>alert(123)</script>```时，会对标签进行转义。渲染出来的是字符串：```<script>alert(123)</script>```。可以说是进行了一次XSS过滤。
+    - 但是原生js的innerHTML和vue框架的v-html都无法过滤```<img src="null" onerror="alert(document.cookie)"/>```这种DOM类型的XSS攻击。
+    - 建议1：非富文本内容使用v-text或者{{}}渲染。
+    - 建议2：富文本内容使用 https://github.com/leizongmin/js-xss 过滤之后。再使用v-html进行渲染。
 * 不要使用```document.write```去渲染。因为```document.write```无法防御XSS攻击。
 * 不要使用eval方法。
