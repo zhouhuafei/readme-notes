@@ -25,7 +25,7 @@
 * 微信小程序：原生配合gulp，wepy，mpvue，uni-app，taro。
 * 百度小程序：原生配合gulp，taro。
 * 前端自动化：gulp，webpack。
-* 前端模块化：Seajs，Browserify，webpack(推荐)。
+* 前端模块化：Seajs，RequireJS，Browserify，webpack(推荐)。
 * 代码规范：ESLint。
 * 代码测试：Jest。
 * 插件：SuperSlide，TouchSlide，Swiper，layDate，ECharts，Highcharts，百度地图，腾讯地图等。
