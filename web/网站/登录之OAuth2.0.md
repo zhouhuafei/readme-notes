@@ -1,0 +1,12 @@
+参考文档：http://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html
+
+参考文档：https://www.cnblogs.com/flashsun/p/7424071.html
+
+# OAuth2.0登录
+OAuth是一个关于授权（authorization）的开放网络标准，在全世界得到广泛应用，目前的版本是2.0版。
+* 待续...
+
+# 为什么OAuth2.0中access_token不能被直接返回，code可以。
+* 因为浏览器的redirect_uri是一个不安全的信道，虽然HTTPS安全但是可能会存在浏览器的cache或者log文件中，这就给攻击者盗取access_token带来了很多机会。但authorization_code不像access_token那么敏感。因为交换access_token不仅需要authorization_code还需要认证client的身份（即app_id，app_secret等）
+* 个人觉的：如果直接返回access_token，如果被非法第三方内嵌iframe。回打到了他们的url。那不就直接盗走了access_token。
+    - 这条感悟需要看完oauth登录之后。再看感悟的是否是正确的。待续...
