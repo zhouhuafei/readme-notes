@@ -124,3 +124,9 @@ export default{
 # vue 自定义组件使用v-model
 * v-model只是个语法糖。自定义组件也能用。可以参考文档。https://cn.vuejs.org/v2/guide/components-custom-events.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%9A%84-v-model
 * 我写的简单案例：https://github.com/zhouhuafei/hello-world/tree/master/vue
+
+# vue scope slot
+> 作用域插槽
+* https://cn.vuejs.org/v2/guide/components-slots.html#%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%8F%92%E6%A7%BD
+* 步骤一：子组件内部给slot标签上绑定一个属性```<slot v-bind:todo="todo"></slot>```。
+* 步骤二：父组件中使用```slot-scope="slotProps"```接收。然后就可以是```{{slotProps.todo}}```获取到了。
