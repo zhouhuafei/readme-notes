@@ -23,7 +23,3 @@
 ```
 const isSuccess = status >= 200 && status < 300 || status === 304;
 ```
-
-# axios和jq的ajax最新版
-* return axios().then().catch()之后。如果后续还接着使用.then()的话。即使失败了。也是会走进then()的。所以我才先catch处理再then处理。
-    - catch时把错误的数据整理好。return出去。最后统一走到then里。想处理就二次处理。
