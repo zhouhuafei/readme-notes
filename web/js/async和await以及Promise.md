@@ -3,6 +3,19 @@
 
 # await
 * await后面调用的方法需要返回一个Promise。
+* 案例1：先等待(非并发请求)。
+```
+const fn1 = await promiseFn1();
+const fn2 = await promiseFn2();
+// 等fn1有结果了再执行fn2，等fn2也有结果了，才会走到这一行。如此写法无并发请求。
+```
+* 案例2：先不等待(并发请求)。
+```
+const fn1 = promiseFn1();
+const fn2 = promiseFn2();
+const obj = await fn1 && await fn2;
+// 等fn1和fn2执行都有结果了，才会走到这一行。如此写法会并发请求。相当于Promise.all。
+```
 
 # Promise之axios和jq的ajax最新版
 * return axios().then().catch()之后。如果后续还接着使用.then()的话。即使失败了。也是会走进then()的。所以我才先catch处理再then处理。
