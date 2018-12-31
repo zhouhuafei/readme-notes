@@ -8,4 +8,4 @@
 * 图片裁切
     - https://github.com/fengyuanchen/cropper
     - https://github.com/fengyuanchen/cropperjs
-* 前端加密 https://github.com/brix/crypto-js
+* js加密 https://github.com/brix/crypto-js
