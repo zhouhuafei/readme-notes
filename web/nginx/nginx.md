@@ -49,21 +49,16 @@ server {
 ```
 
 # nginx配置独立域名
-* 问题1：静态资源访问不到。
+* 问题1：视图路由太丑。
     - 解决方案：nginx通过location进行代理。
-* 问题2：路由错误，重定向错误，api路由错误。
+* 问题2：api路由404。
     - 解决方案：nginx通过rewrite进行路由重定向。
-    - 存在问题：问题3。
-* 问题3：api重定向时POST变成了GET。
-    - 如果要保证重定向后的请求方法，需要在服务端返回307(临时)或者308(永久)状态码，这两个状态码不会更改原请求方法（需要客户端支持）。
-    - 解决方案：待续...
-* rewrite导致出来了问题3，实在没有解决方案。配置return 307 或者 return 308一直失败。所以我就使用了location ^~ /admin/ 代理。
-    - 此时跳转路由和请求接口不会报404，但是路由上会有多余的路径/admin/。因为我在程序里写的路由是/admin/。本想通过308或者307重定向解决。奈何一直没有找到解决方案(已有解决方案，在下面的代码配置里，尚未进行测试待续...)。
-    - 所有还是去程序代码里处理吧。毕竟就算我通过307或者308重定向成功了。我还是要去程序里修改的。因为我不喜欢重定向。
-* 建议：
-    - 路由的处理在程序代码里处理，当是生产环境时，更改路由前缀。
-    - 最好的解决方案是，让开发环境和生产环境路由保持一致。
-* 307(临时) 或者 308（永久）重定向，会保留原有的请求方式。不像301(永久) 或者 302(临时)重定向，会把请求方式变成GET。
+* 问题3：nginx的rewrite重定向会导致api的POST请求变成GET请求。
+    - 解决方案：如果要保证重定向后的请求方法，需要在服务端返回307(临时)或者308(永久)状态码，这两个状态码不会更改原请求方法（需要客户端支持）。
+* 总结：
+    - 独立域名需要通过nginx配置location进行代理。路由看起来才好看。
+    - 307(临时) 或者 308（永久）重定向，会保留原有的请求方式。不像301(永久) 或者 302(临时)重定向，会把请求方式变成GET。
+    - 如果不使用nginx代理的话，生产环境时要更改路由。
 ```
 server {
     # 端口
@@ -96,12 +91,12 @@ server {
         proxy_set_header host $http_host;
     }
 
-    # 代理的方法无法改变程序内部的路由。
+    # 代理的方法无法改变程序内部的路由（路由看起来会很丑）。
     #location ^~ /admin/ {
-        #proxy_pass http://127.0.0.1:5551/admin/;
-        #proxy_set_header x-real-ip $remote_addr;
-        #proxy_set_header x-forwarded-for $proxy_add_x_forwarded_for;
-        #proxy_set_header host $http_host;
+    #    proxy_pass http://127.0.0.1:5551/admin/;
+    #    proxy_set_header x-real-ip $remote_addr;
+    #    proxy_set_header x-forwarded-for $proxy_add_x_forwarded_for;
+    #    proxy_set_header host $http_host;
     #}
 
     # 301和302重定向，这种写法会导致POST方式的请求变成GET方式的请求。
