@@ -111,7 +111,11 @@ server {
 
     # 307和308重定向，才是正确的思路。正确配置应该如下。
     location ^~ /admin/ {
-        return 307 /login;
+        set $url_query /;
+        if ($request_uri ~ ^/admin/(.*)$) {
+            set $url_query /$1;
+        }
+        return 307 $url_query;
     }
 }
 ```
