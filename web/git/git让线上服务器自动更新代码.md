@@ -6,6 +6,15 @@
 * 编写脚本：```vim ./.git/hooks/post-receive```。
 ```
 #!/bin/bash
+
+# 如果不是远程仓库就退出
+IS_BARE=$(git rev-parse --is-bare-repository)
+if [ -z "$IS_BARE" ];then
+    echo >&2 "fatal: post-receive: IS_NOT_BARE"
+    exit 1
+fi
+
+# 如果是master分支才触发
 while read oldrev newrev ref
 do
     if [[ $ref =~ .*/master$ ]];
@@ -25,3 +34,12 @@ done
 * 在develop分支上开发，然后通过打包。把代码打到其他分支上的工具如下：
     - https://github.com/tschaub/gh-pages
     - https://github.com/shinnn/gulp-gh-pages
+
+# 建议
+* 如果只是一台服务器的部署。建议手动更新。因为可能还涉及到npm包的更新。以上写法无法满足。```git pull -p```之后可能还需要追加：
+```
+npm i --production 或者 cnpm i --production
+pm2 restart all
+```
+* 如果是多台服务器的更新。还是走自动化吧。否则会累死的。
+* 市面上应该有自动化管理的工具。可以尝试一下。例如：https://github.com/jenkinsci/jenkins
