@@ -199,12 +199,12 @@ http {
     - 解决方案：找到你的nginx.conf的文件夹目录，然后运行这个```sudo nginx -c /usr/local/etc/nginx/nginx.conf```命令，再运行```sudo nginx -s reload```，就可以了
 
 # server_name
-* saas服务，给server_name配置```*.h5.sbxx.top```。是个不错的解决方案，但是还不够完善。
-    - s39210.h5.sbxx.top
+* saas服务，给server_name配置通配符```*.h5.sbxx.top```。是个不错的解决方案。例如可以匹配到：s39210.h5.sbxx.top。
+    - 以上亲测可用。但是还不够精确。
+    - 想要精确匹配。可以如下：
 * server_name还可以通过正则配置：这个是saas服务配域名的正确解决方案。
     - ```~^s\d+\.h5.sbxx\.top$```
-    - 虚拟主机必须以波浪线```~```起始，否则该名字会被认为是个确切的名字。
-* 配置出上述格式。待续...
+    - 虚拟主机必须以波浪线```~```起始，否则该名字会被认为是个确切的名字(亲测，确实如此，必须以波浪线```～```起始)。
 
 # 开启```Content-Encoding: gzip```
 ```
