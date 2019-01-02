@@ -1,3 +1,7 @@
+# 文档
+* http://nginx.org/en/docs/
+* http://www.nginx.cn/doc/
+
 # mac 安装
 ```
 brew install nginx
@@ -113,7 +117,7 @@ server {
     #    rewrite ^/admin/(.*)$ /$1 redirect;
     #}
 
-    # 307和308重定向，才是正确的思路。正确配置应该如下。上面一个不行的话就试试这个。待续...
+    # 307和308重定向，才是正确的思路。正确配置应该如下。上面一个不行的话就试试这个。测试待续...(如果这个成功了，就删掉上面那个错误的)
     location ^~ /admin/ {
         return 308 http://$server_name$request_uri;
     }
