@@ -109,20 +109,21 @@ server {
     #    rewrite ^/admin/(.*)$ /$1 redirect;
     #}
 
-    # 307和308重定向，才是正确的思路。正确配置应该如下。尚未测试(http://127.0.0.1:5551是不是应该去掉才对)。此方案经过测试发现不行。
-    #location ~ ^/admin/(?<method>.*)$ {
-    #    if ($request_method != GET) {
-    #        return 308 http://127.0.0.1:5551/$method$is_args$args;
-    #    }
-    #    rewrite ^/admin/(.*)$ /$1 redirect;
-    #}
-
-    # 307和308重定向，才是正确的思路。正确配置应该如下。上面一个不行的话就试试这个。测试待续...(如果这个成功了，就删掉上面那个错误的)
+    # 307和308重定向，才是正确的思路。正确配置应该如下。
     location ^~ /admin/ {
-        return 308 http://$server_name$request_uri;
+        return 307 /login;
     }
 }
 ```
+* 发现：
+    - 301 和 307 对应（永久）。
+    - 302 和 308 对应（临时）。
+    - 上面nginx配置307的地方如果配置成308的话会报错：
+    ```
+    无法访问此网站
+    网址为 http://local.admin.sbxx.com/admin/ 的网页可能暂时无法连接，或者它已永久性地移动到了新网址。
+    ERR_INVALID_RESPONSE
+    ```。
 * 禁止用户通过服务器的ip地址直接访问nginx的服务
   - 找到默认配置
   - 在默认配置里的server里最后面加一句return 403;
