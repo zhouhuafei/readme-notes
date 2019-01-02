@@ -123,7 +123,7 @@ server {
     无法访问此网站
     网址为 http://local.admin.sbxx.com/admin/ 的网页可能暂时无法连接，或者它已永久性地移动到了新网址。
     ERR_INVALID_RESPONSE
-    ```。
+    ```
 * 禁止用户通过服务器的ip地址直接访问nginx的服务
   - 找到默认配置
   - 在默认配置里的server里最后面加一句return 403;
