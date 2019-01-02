@@ -8,6 +8,3 @@
 # ejs定义变量
 * <% var page = dataInfo.page; %> 定义变量
 * <%= page.attr %> 使用变量输出标签（HTML标签会被浏览器解析成文本）
-
-# ejs常用过滤器
-* 待续...
