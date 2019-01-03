@@ -122,15 +122,16 @@ export default{
 ```
 
 # vue 自定义组件使用v-model
-* v-model只是个语法糖。type="text"和textarea原理类似。
-```
-<input v-model="value"/>
-等同于
-<input :value="value" @input="value=$event.target.value"/>
-```
+* v-model只是个语法糖。
+    - type="text"和textarea标签对v-model的应用原理类似。如下：
+    ```
+    <input v-model="value"/>
+    等同于
+    <input :value="value" @input="value=$event.target.value"/>
+    ```
 * 自定义组件也能用。
-    - 只需在子组件内部需要修改value值的地方，触发一下```this.$emit('input', 'newValue')```。
-    - 一个组件上的 v-model 默认会利用名为 value 的 prop 和名为 input 的事件，但是像单选框、复选框等类型的输入控件可能会将 value 特性用于不同的目的。
+    - 一个组件上的 v-model 默认会利用名为 value 的 prop 和名为 input 的事件。
+    - 但是像单选框、复选框等类型的输入控件可能会将 value 特性用于不同的目的。
     - model 选项可以用来避免这样的冲突：
     ```
     Vue.component('base-checkbox', {
@@ -150,12 +151,17 @@ export default{
       `
     })
     ```
+    - 只需在子组件内部需要修改value值的地方，触发一下```this.$emit('input', 'newValue')```。
     - 官方v-model文档：https://cn.vuejs.org/v2/guide/components-custom-events.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%9A%84-v-model
 * 我写的简单案例：https://github.com/zhouhuafei/hello-world/tree/master/vue
 
-# radio和checkbox的v-model理解
-* 待续...
+# radio和checkbox以及select的v-model理解
+* 原生的input表单。不同类型。vue的v-model进行了不同的处理。
 * v-model源码：https://github.com/vuejs/vue/blob/dev/src/platforms/web/compiler/directives/model.js#L96
+* 当我们使用v-model自定义一个radio或者checkbox或者select时，我们需要根据v-model这个语法糖进行我们自己的处理。
+    - 不用思考vue的v-model对原生的表单是怎么处理的。
+    - 只需要知道v-model这个语法糖用在自定义组件上时表达的意思即可：```一个组件上的 v-model 默认会利用名为 value 的 prop 和名为 input 的事件```。
+    - 然后根据v-model所表达的意思去做你想实现的东西。
 
 # vue scope slot
 > 作用域插槽
