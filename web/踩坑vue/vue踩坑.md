@@ -129,7 +129,7 @@ export default{
     等同于
     <input :value="value" @input="value=$event.target.value"/>
     ```
-* 自定义组件也能用。
+* 自定义组件也能用v-model。只需在子组件内部需要修改value值的地方，触发一下```this.$emit('input', 'newValue')```。就可以实现双向数据绑定了。
     - 一个组件上的 v-model 默认会利用名为 value 的 prop 和名为 input 的事件。
     - 但是像单选框、复选框等类型的输入控件可能会将 value 特性用于不同的目的。
     - model 选项可以用来避免这样的冲突：
@@ -151,7 +151,6 @@ export default{
       `
     })
     ```
-    - 只需在子组件内部需要修改value值的地方，触发一下```this.$emit('input', 'newValue')```。
     - 官方v-model文档：https://cn.vuejs.org/v2/guide/components-custom-events.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%9A%84-v-model
 * 我写的简单案例：https://github.com/zhouhuafei/hello-world/tree/master/vue
 
