@@ -154,6 +154,7 @@ export default{
 * 我写的简单案例：https://github.com/zhouhuafei/hello-world/tree/master/vue
 
 # radio和checkbox的v-model理解
+* 待续...
 * v-model源码：https://github.com/vuejs/vue/blob/dev/src/platforms/web/compiler/directives/model.js#L96
 
 # vue scope slot
