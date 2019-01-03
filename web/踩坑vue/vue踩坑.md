@@ -122,31 +122,47 @@ export default{
 ```
 
 # vue 自定义组件使用v-model
-* v-model只是个语法糖。自定义组件也能用。
+* v-model只是个语法糖。type="text"和textarea原理类似。
+```
+<input v-model="value"/>
+等同于
+<input :value="value" @input="value=$event.target.value"/>
+```
+* 自定义组件也能用。
     - 只需在子组件内部需要修改value值的地方，触发一下```this.$emit('input', 'newValue')```。
     - 一个组件上的 v-model 默认会利用名为 value 的 prop 和名为 input 的事件，但是像单选框、复选框等类型的输入控件可能会将 value 特性用于不同的目的。
     - model 选项可以用来避免这样的冲突：
     ```
-    model: {
+    Vue.component('base-checkbox', {
+      model: {
         prop: 'checked',
-        event: 'change',
-    },
-    props: {
-        checked: Boolean,
-    },
+        event: 'change'
+      },
+      props: {
+        checked: Boolean
+      },
+      template: `
+        <input
+          type="checkbox"
+          v-bind:checked="checked"
+          v-on:change="$emit('change', $event.target.checked)"
+        >
+      `
+    })
     ```
     - 官方v-model文档：https://cn.vuejs.org/v2/guide/components-custom-events.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%9A%84-v-model
 * 我写的简单案例：https://github.com/zhouhuafei/hello-world/tree/master/vue
 
+# radio和checkbox的v-model理解
+* v-model源码：https://github.com/vuejs/vue/blob/dev/src/platforms/web/compiler/directives/model.js#L96
+
 # vue scope slot
 > 作用域插槽
-* https://cn.vuejs.org/v2/guide/components-slots.html#%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%8F%92%E6%A7%BD
 * 步骤一：子组件内部给slot标签上绑定一个属性```<slot v-bind:todo="todo"></slot>```。
 * 步骤二：父组件中使用```slot-scope="slotProps"```接收。然后就可以是```{{slotProps.todo}}```获取到了。
+* 文档：https://cn.vuejs.org/v2/guide/components-slots.html#%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%8F%92%E6%A7%BD
 
 # 在动态组件上使用 keep-alive
-* 用来缓存组件,避免多次加载相应的组件,减少性能消耗,可以保存组件状态。
+* keep-alive 是Vue的内置组件，能在组件切换过程中将状态保留在内存中，防止重复渲染DOM。
+* 注意：注意这个 <keep-alive> 要求被切换到的组件都有自己的名字，不论是通过组件的 name 选项还是局部/全局注册。
 * 文档：https://cn.vuejs.org/v2/guide/components-dynamic-async.html#%E5%9C%A8%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6%E4%B8%8A%E4%BD%BF%E7%94%A8-keep-alive
-
-# radio和checkbox的v-model理解
-待续...
