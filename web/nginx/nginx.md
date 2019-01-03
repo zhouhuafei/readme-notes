@@ -227,6 +227,9 @@ http {
 ```
 
 # 开启```Cache-Control: public, max-age=31536000```
-* 待续...
 ```
+location / {
+    #客户端缓存7天，有修改时则向服务器请求最新文件。
+    add_header Cache-Control max-age=604800;
+}
 ```
