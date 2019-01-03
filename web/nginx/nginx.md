@@ -229,7 +229,14 @@ http {
 # 开启```Cache-Control: public, max-age=31536000```
 ```
 location / {
-    #客户端缓存7天，有修改时则向服务器请求最新文件。
-    add_header Cache-Control max-age=604800;
+    #客户端缓存1年，有修改时则向服务器请求最新文件。
+    add_header Cache-Control public, max-age=31536000;
 }
 ```
+* public
+    - 因为默认值是private，表示其他代理都不要缓存，只有服务器缓存。
+    - 设置public的意思就是允许其他各级代理缓存资源。
+* 关于Cache-Control的体现(nodejs express下的体现)
+    - 应和响应头有关，此处就不深究了，直接看结果吧。
+    - 静态html页面。返回：```304 Not Modified```。
+    - 静态css，js，img，视频，音频等。返回：```200 OK (from memory cache)```。
