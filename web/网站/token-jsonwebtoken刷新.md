@@ -20,6 +20,45 @@
     - 1、为了防止多次刷新token。先弄个计数器默认为0。需要刷新token时让计数器++，当计数器为1的时候才刷新token。刷新完重置为0。
         - 或者弄个isRefreshing默认为false的开关。和计数器原理是一样的。刷新时为true。刷新完重置为false。
     - 2、如果发现需要刷新token，则执行请求之前，把要请求的数据先存到一个数组中。当token刷新完毕之后，循环去发起请求。循环完毕再清空数组。
+    - 3、防止刷新token的请求也被存储起来。需要在入参中控制一下。
+* 简单代码实现(盲写，未测试)：
+```
+var requestArr = [];
+var isRefreshing = false;
+function ajax(opts){
+    var isRefreshToken = Date.now() - Cookies.get('tokenExpiresTime') < 600; // 提前10分钟刷新token。
+    if(isRefreshToken){
+        // 存储请求，此处会把刷新token的数据也存储起来。需要通过传参再特殊处理一下。
+        if(opts.isSaveRequestWhenRefreshToken !== false){
+            requestArr.push(opts);
+        }
+        // 刷新token，此处会无限递归。因为其他并发的请求会走到这里。刷新token的请求也会走到这里。所以需要一个变量做开关。
+        if(!isRefreshing){
+            isRefreshing = true;
+            ajax({
+                isSaveRequestWhenRefreshToken:false,
+            }).then((res)=>{
+                if(res.status === 'success'){
+                    // 设置token到cookie等流程在这里执行。
+                    Cookies.set('token', res.token, res.expiresDay);
+                    Cookies.set('tokenExpiresTime', res.tokenExpiresTime, res.expiresDay);
+                    // token刷新完毕。执行要触发的多条并发请求。
+                    requestArr.forEach((opts2)=>{
+                        ajax(opts2);
+                    });
+                    // 状态还原。
+                    isRefreshing = false;
+                    requestArr = [];
+                }
+            })
+        }
+        return;
+    }
+    // 后面是正式发起请求的流程。略。
+}
+
+module.exports=ajax;
+```
 
 # 交互体验
 * 过期弹窗提示：登录信息已过期。去新页面登录。登录完毕再回来继续操作。
