@@ -1,4 +1,6 @@
 * 任意时间最多只有一个 Selection，但是这个 Selection 可以包含多个 Range。（按住 Ctrl 来多选）
+    - Chrome测试得到结果：按住 Ctrl 不能多选。
+    - Chrome版本号：70.0.3538.77。
 * IE
     - document.selection
     - document.selection.createRange()
