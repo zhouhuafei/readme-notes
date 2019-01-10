@@ -64,8 +64,8 @@ location.reload(true); // 刷新页面，无缓存
     ```
     - jQuery的方法不包含自身。
     ```
-    $.contains (document.querySelector('html'), document.querySelector('body')); // true
-    $.contains (document.querySelector('html'), document.querySelector('html')); // false
+    $.contains(document.querySelector('html'), document.querySelector('body')); // true
+    $.contains(document.querySelector('html'), document.querySelector('html')); // false
     ```
 
 * ++ 和 + +
