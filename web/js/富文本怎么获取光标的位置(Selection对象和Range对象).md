@@ -1,5 +1,19 @@
-摘自文章：https://www.jianshu.com/p/ad2f818cc3b0
-个人案例：https://github.com/zhouhuafei/hello-world/blob/master/html/%E5%AF%8C%E6%96%87%E6%9C%AC%E6%80%8E%E4%B9%88%E8%8E%B7%E5%8F%96%E5%85%89%E6%A0%87%E7%9A%84%E4%BD%8D%E7%BD%AE(Selection%E5%AF%B9%E8%B1%A1%E5%92%8CRange%E5%AF%B9%E8%B1%A1).html
+# 个人总结
+* 获取光标位置主要使用的几个方法：
+```
+var Selection = document.getSelection();
+var hasRange = Selection.rangeCount;
+var Range = Selection.getRangeAt(0);
+Range.insertNode(node);
+```
+* 主要细节：
+    - 富文本容器失去焦点时要保存Range。
+    - Range不存在的话要看保存的Range存不存在。
+    - 插入节点的时候。要判断Range的选中区域是否是富文本容器的区域。
+* 案例：https://github.com/zhouhuafei/hello-world/blob/master/html/%E5%AF%8C%E6%96%87%E6%9C%AC%E6%80%8E%E4%B9%88%E8%8E%B7%E5%8F%96%E5%85%89%E6%A0%87%E7%9A%84%E4%BD%8D%E7%BD%AE(Selection%E5%AF%B9%E8%B1%A1%E5%92%8CRange%E5%AF%B9%E8%B1%A1).html
+
+以下摘自文章：https://www.jianshu.com/p/ad2f818cc3b0
+
 # 一：Range对象的概念
 * Range对象代表页面上一段连续的区域，通过Range对象可以获取或者修改页面上任何区域的内容。也可以通过Range的方法进行复制和移动页面任何区域的元素。
 * 在Js的document文档中有一个方法用来创建一个Range对象，代码如下：
