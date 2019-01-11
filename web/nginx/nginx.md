@@ -113,6 +113,7 @@ server {
         return 307 $url_query;
     }
     # 上面的307配置无法匹配：/admin、/admin?a=1、/admin#a=1。所以我又加了这条。测试可行性。待续...
+    # /admin[/]测试可行性。如果可行。就没必要写两个307了。
     location ^~ /admin {
         set $url_query /;
         if ($request_uri ~ ^/admin/(.*)$) {
