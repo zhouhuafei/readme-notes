@@ -112,7 +112,7 @@ server {
         }
         return 307 $url_query;
     }
-    # nginx上面的307换成这个试试。因为上面的307配置无法匹配：/admin、/admin?a=1、/admin#a=1。
+    # 上面的307配置无法匹配：/admin、/admin?a=1、/admin#a=1。所以我又加了这条。测试可行性。待续...
     location ^~ /admin {
         set $url_query /;
         if ($request_uri ~ ^/admin/(.*)$) {
