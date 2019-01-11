@@ -23,3 +23,5 @@
 ```
 const isSuccess = status >= 200 && status < 300 || status === 304;
 ```
+* xhr.open的第三参数默认为true。表示异步。如果设置为false。则表示是同步。
+    - 不建议设置为false。
