@@ -118,7 +118,7 @@ server {
         if ($request_uri ~ ^/admin$) {
             return 307 /;
         }
-        if ($request_uri ~ ^/admin?(.*)$) {
+        if ($request_uri ~ ^/admin\?(.*)$) {
             return 307 /?$1;
         }
         if ($request_uri ~ ^/admin#(.*)$) {
