@@ -105,29 +105,28 @@ server {
     #}
 
     # 307和308重定向，才是正确的思路。但又因使用308重定向需要跳到一个新网址。所以正确配置应该如下。
-    location ^~ /admin/ {
-        set $url_query /;
-        if ($request_uri ~ ^/admin/(.*)$) {
-            set $url_query /$1;
-        }
-        return 307 $url_query;
-    }
-    # 上面的307配置无法匹配：/admin、/admin?a=1、/admin#a=1。所以我又加了这条。测试可行性。待续...
-    # /admin[/]测试可行性。如果可行。就没必要写两个307了。测试。待续...
-    # 不带反斜杠可以匹配到反斜杠么？测试。待续...
-    # 我觉的[/]不行。?号不行。{0,1}可行么？测试。待续...
+    #location ^~ /admin/ {
+    #    set $url_query /;
+    #    if ($request_uri ~ ^/admin/(.*)$) {
+    #        set $url_query /$1;
+    #    }
+    #    return 307 $url_query;
+    #}
+
+    # 上面的307配置无法匹配：/admin、/admin?a=1、/admin#a=1。下面这种写法可以完美兼容。
     location ^~ /admin {
-        set $url_query /;
+        if ($request_uri ~ ^/admin$) {
+            return 307 /;
+        }
+        if ($request_uri ~ ^/admin?(.*)$) {
+            return 307 /?$1;
+        }
+        if ($request_uri ~ ^/admin#(.*)$) {
+            return 307 $url_query /#$1;
+        }
         if ($request_uri ~ ^/admin/(.*)$) {
-            set $url_query /$1;
+            return 307 /$1;
         }
-        if ($request_uri ~ ^/admin\?(.*)$) {
-            set $url_query /?$1;
-        }
-        if ($request_uri ~ ^/admin\#(.*)$) {
-            set $url_query /#$1;
-        }
-        return 307 $url_query;
     }
 }
 ```
