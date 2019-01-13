@@ -121,9 +121,10 @@ server {
         if ($request_uri ~ ^/admin\?(.*)$) {
             return 307 /?$1;
         }
-        if ($request_uri ~ ^/admin#(.*)$) {
-            return 307 $url_query /#$1;
-        }
+        # 震惊，不写这句也能匹配到/admin#a=1并重定向为/#a=1。
+        #if ($request_uri ~ ^/admin#(.*)$) {
+        #    return 307 $url_query /#$1;
+        #}
         if ($request_uri ~ ^/admin/(.*)$) {
             return 307 /$1;
         }
