@@ -19,21 +19,20 @@
 # 座右铭
 * 食君之禄，忠君之事，担君之忧。
 
-# 使用或了解过的技术
+# 使用过的技术
 * 布局：html+css，html5+css3，less，sass(推荐)，iconfont。
 * 功能：JavaScript，jQuery，Zepto，ES6，Vue，Vue Router，Vuex，axios，react。
-* 微信小程序：原生配合gulp，wepy，mpvue，uni-app，taro。
-* 百度小程序：原生配合gulp，taro。
+* 微信/百度/字节跳动/支付宝小程序：原生配合gulp，wepy，taro。
 * 前端自动化：gulp，webpack。
-* 前端模块化：Seajs，RequireJS，Browserify，webpack(推荐)。
+* 前端模块化：Seajs，Browserify，webpack(推荐)。
 * 代码规范：ESLint。
 * 代码测试：Jest。
 * 插件：SuperSlide，TouchSlide，Swiper，layDate，ECharts，Highcharts，百度地图，腾讯地图等。
 * 工具：Photoshop，Sketch，Firefox，Chrome，FlashFXP，Git Bash，Fiddler，PUTTY，Browsersync等。
-* 编辑器：Dreamweaver，Sublime，PhpStorm，WebStorm，HBuilderX，微信开发者工具，百度开发者工具等。
+* 编辑器：Dreamweaver，Sublime，PhpStorm，WebStorm，微信/百度/字节跳动/支付宝开发者工具等。
 * nodejs：Express，EJS，Mongoose，ShellJS等。
 * 身份验证：session，jsonwebtoken，OAuth2.0。
-* web安全：XSS，CSRF，SQL注入，iframe防钓鱼。
+* web安全：XSS，XST，CSRF，SQL注入，iframe防钓鱼。
 * 算法：枚举算法，冒泡算法。
 * 设计模式：工厂模式，构造函数模式，原型模式，混合模式(构造函数模式加原型模式)，动态原型模式，单例模式，订阅发布模式，代理模式。
 * 其他：Smarty套模板，nginx配置端口转发，CDN开通与使用，linux基础命令。
