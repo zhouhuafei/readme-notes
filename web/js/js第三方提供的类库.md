@@ -9,3 +9,6 @@
     - https://github.com/fengyuanchen/cropper
     - https://github.com/fengyuanchen/cropperjs
 * Crypto-JS加密 https://github.com/brix/crypto-js
+* vConsole https://github.com/Tencent/vConsole
+    - 2.5.1版本我用的时候有效果。
+    - 3.2.0版本我用的时候无效果。
