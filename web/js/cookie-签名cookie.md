@@ -24,6 +24,8 @@
     set-cookie: key1=value1; Path=/
     set-cookie: key2=value2; Path=/
     ```
+
+# 签名的应用
 * 签名可以防止数据被篡改，很多地方都有应用。例如：
     - JWT：```Header.Payload.Signature```。
     - 接口验签。
