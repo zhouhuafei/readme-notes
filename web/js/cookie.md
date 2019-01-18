@@ -98,4 +98,11 @@ $.ajax({
     - set-cookie小写？
     - 是的。axios会把headers中所有的字段都转成小写格式。
 * axios应用在客户端和服务端通信的时候，无法使用```response.headers['set-cookie']```获取到要设置的cookie。
-    - 换成大写也获取不到，因为根本没有对应字段。本质原因是xhr的协议规定客户端的response中不返回set-cookie字段。
+    - 换成大写也获取不到，因为根本没有对应字段。
+    - 本质原因是xhr的协议规定客户端的response中不返回set-cookie字段。
+* 服务端响应的时候，在响应头里设置时，Set-Cookie两个单词一般都是首字母大写。
+    - 因在Chrome浏览器请求的响应头里看到过全小写的set-cookie。所以我不能确定首字母是否要必须大写。
+* 真理补充：
+    - http协议规定，Method是区分大小写的,而Header是不区分的。
+    - 所以 GET/POST/PUT/DELETE等需要大写。
+    - set-cookie大写小写都行。
