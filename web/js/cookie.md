@@ -96,5 +96,6 @@ $.ajax({
 # set-cookie的大小写问题
 * axios应用在服务端和服务端通信的时候，可以使用```response.headers['set-cookie']```获取到要设置的cookie。
     - set-cookie小写？
+    - 是的。axios会把headers中所有的字段都转成小写格式。
 * axios应用在客户端和服务端通信的时候，无法使用```response.headers['set-cookie']```获取到要设置的cookie。
     - 换成大写也获取不到，因为根本没有对应字段。本质原因是xhr的协议规定客户端的response中不返回set-cookie字段。
