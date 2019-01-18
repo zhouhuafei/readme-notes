@@ -1,6 +1,6 @@
 # 为什么要使用签名cookie？
 * 防止cookie被篡改。
-    - 题外话：set-cookie时设置上HttpOnly可以防止客户端js读写cookie。
+    - 题外话：set-cookie时设置上HttpOnly可以防止客户端js读取cookie。
 
 # 签名cookie案例
 * sessionID
