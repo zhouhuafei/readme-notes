@@ -21,7 +21,7 @@
     - 所以图文验证码应该使用随机token作为键配合redis。或者使用jsonwebtoken生成的token作为键值配合redis。
     - 总结：使用token的情况下，图文验证码需要配合redis来实现。
 * 随机token可以模拟session么？
-    - 不跨主域的情况下，把token带到Set-Cookie中返回，并设置上httponly，可以说很类似session了。
+    - 不跨主域的情况下，把token带到Set-Cookie中返回，并设置上HttpOnly，可以说很类似session了。
 * 总结：随机token类似session。都需要在服务端存储。
 
 # jsonwebtoken对比session的区别

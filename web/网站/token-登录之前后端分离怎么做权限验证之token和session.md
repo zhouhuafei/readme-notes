@@ -14,7 +14,7 @@
 
 # token的安全性
 * 别人拿到token，也就拿到了登录权限。
-* 不跨主域，可以把token存cookie里，加上httponly，会相对安全很多。
+* 不跨主域，可以把token存cookie里，加上HttpOnly，会相对安全很多。
 
 # token怎么做图文验证码
 * 方案1：打获取验证码打接口时，利用jsonwebtoken生成图片的token存储到客户端，客户端请求时，把token和验证码带过来，后端进行解密即可。

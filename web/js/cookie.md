@@ -22,7 +22,7 @@
 # secure属性
 * 当设置为true时，表示创建的cookie会被以安全的形式向服务器传输，也就是只能在HTTPS连接中被浏览器传递到服务器端进行会话验证，如果是HTTP连接则不会传递该信息，所以不会被窃取到cookie的具体内容
 
-# httponly
+# HttpOnly
 * 后端用这个属性设置cookie，前端用js无法读取被后端设置的cookie
 
 # 跨域
@@ -92,3 +92,6 @@ $.ajax({
     - 响应头里也可以进行set-cookie。
     - 此时跨主域设置cookie就没有任何问题了。那跨主域验证登录也就不成问题了。
     - 注意：Firefox浏览器支持，Chrome浏览器不支持，所以此法还是行不通的。
+
+# set-cookie的大小写问题
+
