@@ -12,7 +12,7 @@
 * 1、在服务端以某个格式组合cookieValue和cookieSecret，然后进行MD5单向加密。
 * 2、生成如下格式的cookie值：```cookieValue.cookieSigned```，然后响应到客户端。
 * 3、接收到客户端请求的cookie时，服务端会把接收到的cookieValue和服务端的cookieSecret再次进行组合以及加密得到一个新的签名，如果这个新的签名和接收到的cookieSigned一致。则表示cookie未被篡改。
-* 4、防止cookieValue明文暴露，会对cookieValue进行HSA算法(对称加密算法)或者RSA算法(非对称加密算法)进行加密。案例中使用的是对称加密算法。
+* 4、为了防止cookieValue明文暴露，会对cookieValue进行HSA算法(对称加密算法)或者RSA算法(非对称加密算法)进行加密。案例中使用的是对称加密算法。
 
 # 其他
 * 服务端set-cookie时，响应头里可以看到格式如下：
