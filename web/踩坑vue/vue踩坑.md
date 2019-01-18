@@ -78,6 +78,34 @@ router.afterEach(transition => {
         allChunks: true,
     })
     ```
+* jx-pc项目打包时element-ui报错
+    - 报错信息如下：
+    ```
+    ERROR in static/js/vendor.73b56240afcbef7912d1.js from UglifyJs
+    Unexpected token: name (idSeed) [./~/_element-ui@1.4.13@element-ui/src/utils/popup/index.js:7,0][static/js/vendor.73b56240afcbef7912d1.js:18381,4]
+    ```
+    - 报错原因：因后续使用了cnpm安装依赖包。目录树不一致。
+    ```
+    {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        include: [
+          resolve('node_modules/element-ui/packages'),
+          resolve('node_modules/element-ui/src')
+        ]
+    }
+    ```
+    - 解决方案：使用正确的包名或者用npm安装依赖。
+    ```
+    {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        include: [
+          resolve('node_modules/_element-ui@1.4.13@element-ui/packages'),
+          resolve('node_modules/_element-ui@1.4.13@element-ui/src')
+        ]
+    }
+    ```
 
 # 修饰符.sync
 从 2.3.0 起我们重新引入了 .sync 修饰符，但是这次它只是作为一个编译时的语法糖存在。它会被扩展为一个自动更新父组件属性的 v-on 监听器。
