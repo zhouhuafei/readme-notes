@@ -56,6 +56,7 @@
     - 使用axios在服务端互打接口是可以获取到```response.headers['set-cookie']```的。
     - 使用axios在客户端获取不到，无论我是使用'set-cookie'或者'Set-Cookie'都获取不到，和httpOnly的值也无关，因为我把httpOnly设置为false也没获取到。
     - 别人测试在微信小程序客户端的响应里使用```response.headers['set-cookie']```可以获取到'set-cookie'。手机中需要使用大写的```response.headers['Set-Cookie']```获取。
+    - 建议：Set-Cookie两个单词的首字母大写。
 * 使用token和第三方对接。第三方打我们的登录成功之后存储token(在```response.data```中获取)。下次请求时带在请求头的Authorization上。如果过期则重新登录。
 * 以上理解太过片面。因两者数据库账号密码不同享，互相不信任。直接打接口账号密码登录是不现实的。
     - 对接的约定不同。实现起来就会不一样。建议根据```OAuth2.0协议```进行对接。
