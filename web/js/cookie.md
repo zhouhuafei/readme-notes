@@ -104,5 +104,7 @@ $.ajax({
     - 因在Chrome浏览器请求的响应头里看到过全小写的set-cookie。所以我不能确定首字母是否要必须大写。
 * 真理补充：
     - http协议规定，Method是区分大小写的,而Header是不区分的。
-    - 所以 GET/POST/PUT/DELETE等需要大写。
-    - set-cookie大写小写都行。
+    - 所以请求时设置GET/POST/PUT/DELETE等需要大写。
+    - 响应时设置set-cookie大写小写都行。
+    - 服务端接收request.headers中的信息时，键一般都是小写。
+    - 客户端接收response.headers中的信息时，键一般都是小写。
