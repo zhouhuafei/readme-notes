@@ -10,6 +10,7 @@
     - 错误一般统一处理。
     - 常见的错误有404，500。
 * ajax(XmlHttpRequest)的readyState状态为4就可以通过responseText获取到完整的数据了。
+    - readyState状态为4对应xhr2中的load事件。
     - ajax,status状态为200时(这里其实就是服务端的响应状态)，即为成功，一般会在此时把responseText输出。此时就算是成功了，然后再细分为业务上的成功(success)和失败(failure)，如果内部出现数据库的查询错误，也算是业务上的失败。
     - ajax,status状态不是200(这里其实就是服务端的响应状态)，即为失败，一般不会把responseText输出。此时就算是error，常见的error也就是404和500了，其他错误，例如数据库查询的错误都按照失败(failure)处理。
     - 更多ajax细节，请自行查询ajax的原理，这里就不详述了。
