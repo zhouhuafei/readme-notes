@@ -1,7 +1,7 @@
 ```
-function getYMRegion(oldV = [2019, 3], newV = [2019, 6]) {
-    const Y = newV[0] - oldV[0];
-    const result = [];
+function getYMRegion(oldV, newV) {
+    var Y = newV[0] - oldV[0];
+    var result = [];
     for (var i = 0; i <= Y; i++) {
         var arr = [];
         for (var j = 1; j <= 12; j++) {
@@ -19,4 +19,6 @@ function getYMRegion(oldV = [2019, 3], newV = [2019, 6]) {
     }
     return result;
 }
+getYMRegion([2019, 3], [2019, 6]);
+getYMRegion([2017, 3], [2019, 6]);
 ```
