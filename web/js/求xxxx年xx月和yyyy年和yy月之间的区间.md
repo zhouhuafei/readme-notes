@@ -17,6 +17,6 @@ function getYMRegion(oldV = [2019, 3], newV = [2019, 6]) {
         }
         result.push(arr);
     }
-    console.log(result);
+    return result;
 }
 ```
