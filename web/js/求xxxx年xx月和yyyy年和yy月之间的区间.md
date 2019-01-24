@@ -16,6 +16,7 @@ function getYMRegion(oldV, newV) {
             }
         }
         result.push(arr);
+        // result = result.concat(arr);
     }
     return result;
 }
