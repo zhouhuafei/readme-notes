@@ -1,7 +1,6 @@
 ```
 function getYMRegion(oldV = [2019, 3], newV = [2019, 6]) {
     const Y = newV[0] - oldV[0];
-    const M = newV[1] - oldV[1];
     const result = [];
     for (var i = 0; i <= Y; i++) {
         var arr = [];
