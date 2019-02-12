@@ -25,7 +25,7 @@
 # 防御
 * get一般不需要防御。所以功能型的接口不要使用get类型的请求。get应只用来做查询。但是要小心SQL注入。请看另一篇文章```./网站攻击之SQL注入.md```。
 * 方案1：判断请求头中的 Referer 如果来源是自己网站的。才允许请求。
-    - 请求头上的Host，Referer，Origin能否被篡改？
+    - 客户端使用xhr发送请求时，请求头上的Host，Referer，Origin能否被篡改？
     - 不能。修改会导致报错：
     - ```Refused to set unsafe header "Host"```
     - ```Refused to set unsafe header "Referer"```
@@ -37,7 +37,7 @@
     - 感觉和图文验证码机制有相似之处。
 * 方案3(推荐)：使用jsonwebtoken做登录认证。jsonwebtoken在服务端验证时不依赖cookie中的数据。天生就可以防御。
 
-# xhr发送请求时不允许被设置的请求头字段
+# 客户端使用xhr发送请求时不允许被设置的请求头字段
 w3c规定，当请求的header匹配以下不安全字符时，将被终止。
 ```
 Accept-Charset
