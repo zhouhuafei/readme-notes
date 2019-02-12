@@ -36,3 +36,26 @@
     - 可以参考```./token-防止表单重复提交.md```。
     - 感觉和图文验证码机制有相似之处。
 * 方案3(推荐)：使用jsonwebtoken做登录认证。jsonwebtoken在服务端验证时不依赖cookie中的数据。天生就可以防御。
+
+# xhr发送请求时不允许被设置的请求头字段
+w3c规定，当请求的header匹配以下不安全字符时，将被终止。
+```
+Accept-Charset
+Accept-Encoding
+Connection
+Content-Length
+Cookie
+Cookie2
+Content-Transfer-Encoding
+Date
+Expect
+Host
+Keep-Alive
+Referer
+TE
+Trailer
+Transfer-Encoding
+Upgrade
+User-Agent
+Via
+```
