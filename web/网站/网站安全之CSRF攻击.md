@@ -29,7 +29,7 @@
     - 不能。修改会导致报错：```Refused to set unsafe header "Referer"```
     - 所以可以用请求头上的```Referer```属性防止CSRF攻击。
 * 方案2：在请求参数中加入```csrftoken```字段。
-    - npm网站使用的字段就是```csrftoken```。
+    - npm网站的登录页使用的字段就是```csrftoken```。
     - 服务端生成一个随机token存储到redis。过期时间设置为30分钟即可。然后渲染到表单的隐藏域中。提交的时候验证token。验证失败则提示对应的错误。
     - 可以参考```./token-防止表单重复提交.md```。
     - 感觉和图文验证码机制有相似之处。
