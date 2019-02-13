@@ -53,6 +53,7 @@ function ajax(opts){
         return;
     }
     // 后面是正式发起请求的流程。略。
+    // return $.ajax({}); // 略。
 }
 
 module.exports=ajax;
