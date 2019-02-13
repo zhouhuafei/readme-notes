@@ -25,12 +25,9 @@
 # 防御
 * get一般不需要防御。所以功能型的接口不要使用get类型的请求。get应只用来做查询。但是要小心SQL注入。请看另一篇文章```./网站攻击之SQL注入.md```。
 * 方案1：判断请求头中的 Referer 如果来源是自己网站的。才允许请求。
-    - 客户端使用xhr发送请求时，请求头上的Host，Referer，Origin能否被篡改？
-    - 不能。修改会导致报错：
-    - ```Refused to set unsafe header "Host"```
-    - ```Refused to set unsafe header "Referer"```
-    - ```Refused to set unsafe header "Origin"```
-    - 所以可以用请求头上的```Host```或```Referer```或```Origin```属性防止CSRF攻击。
+    - 客户端使用xhr发送请求时，请求头上的```Referer```能否被篡改？
+    - 不能。修改会导致报错：```Refused to set unsafe header "Referer"```
+    - 所以可以用请求头上的```Referer```属性防止CSRF攻击。
 * 方案2：在请求参数中加入 csrf token。
     - 服务端生成一个随机token存储到redis。过期时间设置为30分钟即可。然后渲染到表单的隐藏域中。提交的时候验证token。验证失败则提示对应的错误。
     - 可以参考```./token-防止表单重复提交.md```。
@@ -51,6 +48,7 @@ Date
 Expect
 Host
 Keep-Alive
+Origin
 Referer
 TE
 Trailer
