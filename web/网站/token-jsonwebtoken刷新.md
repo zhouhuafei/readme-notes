@@ -110,6 +110,9 @@ module.exports=ajax;
     - 3.完善 refreshToken
         * 借鉴 oauth2 的设计，返回给客户端一个 refreshToken，允许客户端主动刷新 jwt。一般而言，jwt 的过期时间可以设置为数小时，而 refreshToken 的过期时间设置为数天。我认为该方案并可行性是存在的，但是为了解决 jwt 的续签把整个流程改变了，为什么不考虑下 oauth2 的 password 模式和 client 模式呢？
         * 步骤：后端生成返回俩个token给前端：accessToken、refreshToken。前者用于访问鉴权，后者用于刷新token。区别在于前者过期时间短，后者过期时间长。具体时长自己开心就好。
+        * refreshToken也需要一个无效化的戳。建议存在redis上。
+        * 问：为什么要用refreshToken而不是直接把accessToken设置为一个很长的时间？
+        * 答：出于安全考虑才如此设计(相对安全)。因accessToken可以用来访问敏感数据。而refreshToken只有刷新token的接口使用(如此，刷新token的接口就要做成不登录也能使用的接口)。
     - 4.使用 redis 记录独立的过期时间
         * 实际上我的项目中由于历史遗留问题，就是使用 jwt 来做登录和会话管理的，为了解决续签问题，我们在 redis 中单独会每个 jwt 设置了过期时间，每次访问时刷新 jwt 的过期时间，若 jwt 不存在与 redis 中则认为过期。
         * 同样改变了 jwt 的流程，不过嘛，世间安得两全法。我只能奉劝各位还未使用 jwt 做会话管理的朋友，尽量还是选用传统的 session+cookie 方案，有很多成熟的分布式 session 框架和安全框架供你开箱即用。
