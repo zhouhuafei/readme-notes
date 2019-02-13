@@ -37,10 +37,15 @@ reader.onload = function(e){
 // 传入一个参数对象即可得到基于该参数对象的文本内容
 reader.rederAsDataURL(file);
 ```
+* btoa和atob
+    - btoa base64编码
+    - atob base64解码
 * FileReader介绍
     - https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader
+    - FileReader 对象允许Web应用程序异步读取存储在用户计算机上的文件（或原始数据缓冲区）的内容，使用 File 或 Blob 对象指定要读取的文件或数据。
 * Uint8Array介绍
     - https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array
+    - Uint8Array 数组类型表示一个8位无符号整型数组，创建时内容被初始化为0。创建完后，可以以对象的方式或使用数组下标索引的方式引用数组中的元素。
 
 # Blob对象转成File对象
 ```
