@@ -66,8 +66,10 @@ module.exports=ajax;
         // 在发送请求之前做些什么
         // return config; // config是请求的配置参数。重点：此处如果返回Promise对象，可以阻塞接口请求。如此直接就可以解决刷新token时的接口并发问题。
         // 以下是返回Promise对象的案例。
+        // 注意：此处需要判断isInterceptRequest为false的话，直接return config，否则才return一个Promise对象。这么做的原因是因为刷新token的接口不需要拦截，否则会无线递归卡死。
         return new Promise(function (resolve, reject) {
-            setTimeout(function () { // 模拟等待refreshToken
+            // 注意：此处判断token是否过期了。如果过期了做过期的处理。如果没过期做没过期的处理。
+            setTimeout(function () { // 模拟等待refreshToken。注意：此处再次使用axios时，需要使用isInterceptRequest为false的字段过滤一下(实参)。否则会无限递归卡死。axios封装的函数中也要接收一下isInterceptRequest(形参)并给个默认值。
                 resolve(config);
             }, 5000);
         });
@@ -88,7 +90,11 @@ module.exports=ajax;
     - 问：响应拦截器中怎么获取配置数据？
     - 答：```response.config```。
     - 问：为什么请求拦截器中返回Promise对象就可以阻塞接口的请求？
-    - 答：待续...
+    - 答：Promise可以被其他Promise锁定。
+    - 案例：待续...
+    ```
+
+    ```
 
 # 交互体验1
 * 过期弹窗提示：登录信息已过期。去新页面登录。登录完毕再回来继续操作。
