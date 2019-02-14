@@ -13,6 +13,20 @@
     - 完成挂载。
     - 此时dom已被渲染到页面中。
 
+# 其他生命周期钩子
+* beforeUpdate
+    - 组件更新之前调用
+* updated
+    - 组件更新之后调用
+* beforeDestroy
+    - 组件销毁之前调用
+* Destroyed
+    - 组件销毁之后调用
+* activated
+    - keep-alive 组件激活时调用
+* deactivated
+    - keep-alive 组件停用时调用
+
 # 其他
 * 父组件内覆盖子组件样式
     - 方案1，style标签不使用scoped属性。弊端应该是会影响到全局所有的吧。
