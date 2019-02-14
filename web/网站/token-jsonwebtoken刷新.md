@@ -61,6 +61,24 @@ module.exports=ajax;
 * 使用axios拦截器可以自动实现上述代码？
     - 百汇项目就是运用拦截器，实现过程看起来很简洁，可以在刷新token的时候，阻塞掉其他请求。刷新token完毕其他请求才继续执行。
     - 具体实现代码以及原理是啥？待续...
+    ```
+    // 添加请求拦截器
+    axios.interceptors.request.use(function (config) {
+        // 在发送请求之前做些什么
+        return config;
+    }, function (error) {
+        // 对请求错误做些什么
+        return Promise.reject(error);
+    });
+    // 添加响应拦截器
+    axios.interceptors.response.use(function (response) {
+        // 对响应数据做点什么
+        return response;
+    }, function (error) {
+        // 对响应错误做点什么
+        return Promise.reject(error);
+    });
+    ```
 
 # 交互体验1
 * 过期弹窗提示：登录信息已过期。去新页面登录。登录完毕再回来继续操作。
