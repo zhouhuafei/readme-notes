@@ -58,21 +58,26 @@ function ajax(opts){
 
 module.exports=ajax;
 ```
-* 使用axios拦截器可以自动实现上述代码？
-    - 百汇项目就是运用拦截器，实现过程看起来很简洁，可以在刷新token的时候，阻塞掉其他请求。刷新token完毕其他请求才继续执行。
-    - 具体实现代码以及原理是啥？
-    - 基础原理如下：
+* 使用axios拦截器可以自动实现上述代码。
+    - 代码如下：
     ```
     // 添加请求拦截器
     axios.interceptors.request.use(function (config) {
         // 在发送请求之前做些什么
-        return config;
+        // return config; // config是请求的配置参数。重点：此处如果返回Promise对象，可以阻塞接口请求。如此直接就可以解决刷新token时的接口并发问题。
+        // 以下是返回Promise对象的案例。
+        return new Promise(function (resolve, reject) {
+            setTimeout(function () { // 模拟等待refreshToken
+                resolve(config);
+            }, 5000);
+        });
     }, function (error) {
         // 对请求错误做些什么
         return Promise.reject(error);
     });
     // 添加响应拦截器
     axios.interceptors.response.use(function (response) {
+        // const config = response.config; // config是请求的配置参数
         // 对响应数据做点什么
         return response;
     }, function (error) {
@@ -80,10 +85,10 @@ module.exports=ajax;
         return Promise.reject(error);
     });
     ```
-    - 请求拦截器是我们所需要的。所以可以改写如下：
-    ```
-    // 待续...
-    ```
+    - 问：响应拦截器中怎么获取配置数据？
+    - 答：```response.config```。
+    - 问：为什么请求拦截器中返回Promise对象就可以阻塞接口的请求？
+    - 答：待续...
 
 # 交互体验1
 * 过期弹窗提示：登录信息已过期。去新页面登录。登录完毕再回来继续操作。
