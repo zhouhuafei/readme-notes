@@ -1,6 +1,14 @@
 # 文档
 https://react.docschina.org/
 
+# 常用生命周期
+* componentWillMount
+* componentDidMount
+* componentWillMount和componentDidMount的区别
+    - 1、componentWillMount  将要装载，在render之前调用；componentDidMount，（装载完成），在render之后调用
+    - 2、componentWillMount  每一个组件render之前立即调用；componentDidMount  render之后并不会立即调用，而是所有的子组件都render完之后才可以调用
+    - 3、componentWillMount  可以在服务端被调用，也可以在浏览器端被调用；componentDidMount  只能在浏览器端被调用，在服务器端使用react的时候不会被调用
+
 # jsx
 * ```{}```
     - 大括号内部可以写表达式，不可以写语句。例如循环语句，条件语句是不可以写的。
