@@ -1,6 +1,19 @@
-* 生命周期
-    - ![图片加载中...](./images/1.png)
+# 生命周期
+![图片加载中...](./images/1.jpg)
 
+# 常用生命周期比对
+* beforecreated
+    - ```el```和```data```并未初始化。
+* created
+    - 完成了```data```数据的初始化，```el```没有。
+* beforeMount
+    - 完成了```el```初始化。
+    - 此时dom尚未被渲染到页面中。
+* mounted
+    - 完成挂载。
+    - 此时dom已被渲染到页面中。
+
+# 其他
 * 父组件内覆盖子组件样式
     - 方案1，style标签不使用scoped属性。弊端应该是会影响到全局所有的吧。
     - 方案2，使用两个style标签。一个不使用scoped属性，用来覆盖子组件样式。一个使用scoped属性，用来写父组件样式。弊端应该是会影响到全局所有的吧。
@@ -200,3 +213,38 @@ export default{
 * keep-alive 是Vue的内置组件，能在组件切换过程中将状态保留在内存中，防止重复渲染DOM。
 * 注意：注意这个 <keep-alive> 要求被切换到的组件都有自己的名字，不论是通过组件的 name 选项还是局部/全局注册。
 * 文档：https://cn.vuejs.org/v2/guide/components-dynamic-async.html#%E5%9C%A8%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6%E4%B8%8A%E4%BD%BF%E7%94%A8-keep-alive
+
+# 监听路由变化
+```
+const User = {
+  template: '...',
+  watch: {
+    '$route' (to, from) {
+      // 对路由变化作出响应...
+    }
+  }
+}
+```
+或使用组件内守卫```beforeRouteUpdate```
+```
+const Foo = {
+  template: `...`,
+  beforeRouteEnter (to, from, next) {
+    // 在渲染该组件的对应路由被 confirm 前调用
+    // 不！能！获取组件实例 `this`
+    // 因为当守卫执行前，组件实例还没被创建
+  },
+  beforeRouteUpdate (to, from, next) {
+    // 在当前路由改变，但是该组件被复用时调用
+    // 举例来说，对于一个带有动态参数的路径 /foo/:id，在 /foo/1 和 /foo/2 之间跳转的时候，
+    // 由于会渲染同样的 Foo 组件，因此组件实例会被复用。而这个钩子就会在这个情况下被调用。
+    // 可以访问组件实例 `this`
+  },
+  beforeRouteLeave (to, from, next) {
+    // 导航离开该组件的对应路由时调用
+    // 可以访问组件实例 `this`
+  }
+}
+```
+
+# nextTick
