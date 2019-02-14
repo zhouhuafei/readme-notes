@@ -90,9 +90,27 @@ module.exports=ajax;
     - 问：响应拦截器中怎么获取配置数据？
     - 答：```response.config```。
     - 问：为什么请求拦截器中返回Promise对象就可以阻塞接口的请求？
-    - 答：Promise可以被其他Promise锁定。
-    - 案例：待续...
+    - 答：Promise可以被其他Promise锁定。axios内部应是做了更为细节的处理。
     ```
+    Promise.resolve(
+        new Promise((resolve,reject) => {
+            console.log('inner Promise');
+            resolve('123');
+        }).then(data=>{
+            console.log(1, typeof(data), data);
+            return data+'4';
+        })
+    ).then(data=>{
+        return Promise.resolve('Randy'+data);
+    }).then(data=>{
+        console.log(2, typeof(data), data)
+    });
+    ```
+    输出
+    ```
+    inner Promise
+    1 "string" "123"
+    2 "string" "Randy1234"
     ```
 
 # 交互体验1
