@@ -93,7 +93,6 @@ module.exports=ajax;
     - 答：Promise可以被其他Promise锁定。
     - 案例：待续...
     ```
-
     ```
 
 # 交互体验1
