@@ -80,7 +80,7 @@ module.exports=ajax;
         return Promise.reject(error);
     });
     ```
-    - 请求拦截器使我们所需要的。所以可以改写如下：
+    - 请求拦截器是我们所需要的。所以可以改写如下：
     ```
     // 待续...
     ```
