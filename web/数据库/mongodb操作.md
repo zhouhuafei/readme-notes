@@ -13,3 +13,4 @@ db.collection.update(criteria,objNew,upsert,multi)
 ```
 db.User.update({},{$unset:{'address':''}},false, true)
 ```
+* 注：```{'address':''}```值写成空是对的。即使```address```值不为空也可以删掉，如果需要过滤，在第一个```{}```中添加条件过滤即可。
