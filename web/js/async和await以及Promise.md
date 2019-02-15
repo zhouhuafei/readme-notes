@@ -16,10 +16,31 @@ const fn2 = promiseFn2();
 const obj = await fn1 && await fn2;
 // 等fn1和fn2执行都有结果了，才会走到这一行。如此写法会并发请求。相当于Promise.all。
 ```
+* 示例代码如下，请问：obj会得到怎样的结果？
+    ```
+    var obj = await fn();
+    console.log(obj);
+    ```
+    - 接口不出错：如果```axios()```后的```.then()```中有返回值。则obj就是这个返回值。
+    - 接口不出错：如果```axios()```后的```.then()```中无返回值。则obj就是undefined。
+    - 接口不出错：如果```axios()```后无```.then()```操作。则obj就是接口的返回值。
+    - 接口出错：如果```axios()```后的```.catch()```中有返回值。则obj就是这个返回值。
+    - 接口出错：如果```axios()```后的```.catch()```中无返回值。则obj就是undefined。
+    - 接口出错：如果```axios()```后无```.catch()```操作。则obj打印不出来值。因```var obj = await fn();```会直接抛出错误，所以代码走不到```console.log(obj);```。
+    - 总结：```await```返回```Promise```对象的处理结果。如果等待的不是```Promise```对象，则返回该值本身。
 
 # Promise之axios和jq的ajax最新版
 * return axios().then().catch()之后。如果后续还接着使用.then()的话。即使失败了。也是会走进then()的。所以我才先catch处理再then处理。
     - catch时把错误的数据整理好。return出去。最后统一走到then里。想处理就二次处理。
+* Promise的特性总结：
+    - 如果成功(resolve)，就能走到所有的then里。
+    - 如果失败(reject)，会走到第一个catch以及第一个catch之后的所有then中。
+* 案例1：```axios().then().catch().then().catch().then().catch()```。
+    - 如果成功，所有的then都会执行。
+    - 如果失败，第一个catch以及第一个catch之后的所有then都会执行。
+* 案例2：```axios().catch().then().catch().then().catch().then()```。
+    - 如果成功，所有的then都会执行。
+    - 如果失败，第一个catch以及第一个catch之后的所有then都会执行。
 
 # Promise.all
 * Promise.all可以将多个Promise实例包装成一个新的Promise实例。同时，成功和失败的返回值是不同的，成功的时候返回的是一个结果数组，而失败的时候则返回最先被reject失败状态的值。

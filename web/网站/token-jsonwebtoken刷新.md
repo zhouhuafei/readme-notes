@@ -58,9 +58,60 @@ function ajax(opts){
 
 module.exports=ajax;
 ```
-* 使用axios拦截器可以自动实现上述代码？
-    - 百汇项目就是运用拦截器，实现过程看起来很简洁，可以在刷新token的时候，阻塞掉其他请求。刷新token完毕其他请求才继续执行。
-    - 具体实现代码以及原理是啥？待续...
+* 使用axios拦截器可以自动实现上述代码。
+    - 代码如下：
+    ```
+    // 添加请求拦截器
+    axios.interceptors.request.use(function (config) {
+        // 在发送请求之前做些什么
+        // return config; // config是请求的配置参数。重点：此处如果返回Promise对象，可以阻塞接口请求。如此直接就可以解决刷新token时的接口并发问题。
+        // 以下是返回Promise对象的案例。
+        // 注意：此处需要判断isInterceptRequest为false的话，直接return config，否则才return一个Promise对象。这么做的原因是因为刷新token的接口不需要拦截，否则会无线递归卡死。
+        return new Promise(function (resolve, reject) {
+            // 注意：此处判断token是否过期了。如果过期了做过期的处理。如果没过期做没过期的处理。
+            setTimeout(function () { // 模拟等待refreshToken。注意：此处再次使用axios时，需要使用isInterceptRequest为false的字段过滤一下(实参)。否则会无限递归卡死。axios封装的函数中也要接收一下isInterceptRequest(形参)并给个默认值。
+                resolve(config);
+            }, 5000);
+        });
+    }, function (error) {
+        // 对请求错误做些什么
+        return Promise.reject(error);
+    });
+    // 添加响应拦截器
+    axios.interceptors.response.use(function (response) {
+        // const config = response.config; // config是请求的配置参数
+        // 对响应数据做点什么
+        return response;
+    }, function (error) {
+        // 对响应错误做点什么
+        return Promise.reject(error);
+    });
+    ```
+    - 问：响应拦截器中怎么获取配置数据？
+    - 答：```response.config```。
+    - 问：为什么请求拦截器中返回Promise对象就可以阻塞接口的请求？
+    - 答：Promise可以被其他Promise锁定。axios内部应是做了更为细节的处理。
+    ```
+    Promise.resolve(
+        new Promise((resolve,reject) => {
+            console.log('inner Promise');
+            resolve('123');
+        }).then(data=>{
+            console.log(1, typeof(data), data);
+            return data+'4';
+        })
+    ).then(data=>{
+        return Promise.resolve('Randy'+data);
+    }).then(data=>{
+        console.log(2, typeof(data), data)
+    });
+    ```
+    输出
+    ```
+    inner Promise
+    1 "string" "123"
+    2 "string" "Randy1234"
+    ```
 
 # 交互体验1
 * 过期弹窗提示：登录信息已过期。去新页面登录。登录完毕再回来继续操作。
@@ -119,7 +170,7 @@ module.exports=ajax;
         * 答：出于安全考虑才如此设计(相对安全)。因accessToken可以用来访问敏感数据。而refreshToken只有刷新token的接口使用(如此，刷新token的接口就要做成不登录也能使用的接口)。
         * 客户端刷新token的流程：接口如果返回401则打刷新token的接口进行token刷新，如果刷新token的接口也返回401则进行重新登录操作。其中还涉及到并发多条请求时要对请求进行存储以及当前是否正在进行token的刷新等一些细节处理。
         * 问：如果是在接口返回401之后处理。那要怎样存储并发的接口呢？
-        * 答：思路错误，不应该在请求返回之后处理，应该在请求之前根据过期时间进行处理(建议提前5分钟刷新，这样可以防止临界值时间接口401)。任何接口响应了401，都应该去重新登录。如果refreshToken过期就没必要打刷新token的接口了，直接重新登录即可。
+        * 答：思路错误，不应该在请求返回之后处理，应该在请求之前根据过期时间进行处理(建议提前5分钟刷新，这样可以防止临界值时间接口401)。任何接口响应了401(按照流程应该是只有刷新token的接口会返回401。因为token过期了应该先调刷新token的接口并阻塞其他接口)，都应该去重新登录。如果refreshToken过期就没必要打刷新token的接口了，直接重新登录即可。
     - 4.使用 redis 记录独立的过期时间
         * 实际上我的项目中由于历史遗留问题，就是使用 jwt 来做登录和会话管理的，为了解决续签问题，我们在 redis 中单独会每个 jwt 设置了过期时间，每次访问时刷新 jwt 的过期时间，若 jwt 不存在与 redis 中则认为过期。
         * 同样改变了 jwt 的流程，不过嘛，世间安得两全法。我只能奉劝各位还未使用 jwt 做会话管理的朋友，尽量还是选用传统的 session+cookie 方案，有很多成熟的分布式 session 框架和安全框架供你开箱即用。
