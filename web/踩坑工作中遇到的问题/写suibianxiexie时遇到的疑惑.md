@@ -16,7 +16,8 @@ SaaS是Software-as-a-Service（软件即服务）的简称。
 * 个人方案：用查询字符串```?uid=abcdefg```。
 * 为什么修改博客园中的动态路由会渲染404？
     - 应该是在业务代码中判断的。如果找不到用户就渲染制定好的404模板。
-    - express：```res.status(404);```;
+    - express获取响应状态：```res.statusCode```;
+    - express设置响应状态：```res.status(404)```;
     - 这真是一个不错的方案。我之前还在想缺少参数或者参数错误怎么办！
 
 # 我做的是SaaS么？
