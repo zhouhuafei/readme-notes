@@ -107,7 +107,7 @@
 * canvas：
     - 小游戏之五子棋：http://sbxx.top/h5/game-wuziqi/
     - 小游戏之别踩白块：http://sbxx.top/h5/game-biecaibaikuai/
-    - 小游戏之十滴水：http://sbxx.top/h5/game-shidishui/
+    - 小游戏之十滴水(未完待续...)：http://sbxx.top/h5/game-shidishui/
     - 画心：http://sbxx.top/static-no-cache/test/canvas/heart/
     - 画坦克大战，画抽奖转盘，画钟表，画五角星等。
 * 笔记：
