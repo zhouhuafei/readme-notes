@@ -5,6 +5,9 @@ SaaS是Software-as-a-Service（软件即服务）的简称。
 * 博客园用的动态路由。
     - 文章：```https://www.cnblogs.com/zdfjf/p/6179691.html```。
     - 其中```zdfjf```可以标识用户的身份。
+* CSDN用的也是动态路由
+    - 文章：```https://blog.csdn.net/u011113654/article/details/80353013```
+    - 其中```011113654```可以标识用户的身份。```80353013```标识文章。
 * 简书用的也是动态路由(推荐)。
     - 我的主页：```https://www.jianshu.com/u/776b5465c5a4```。
     - 其中```776b5465c5a4```可以标识用户的身份。
