@@ -335,3 +335,8 @@ p.age; // 此时会打印：'age 被读取'。然后打印出：3。
 * Model 数据层
 * View 视图层
 * ViewModel：把Model和View关联起来的就是ViewModel。ViewModel负责把Model的数据同步到View显示出来，还负责把View的修改同步回Model。
+
+# MVC
+* Model 数据层
+* View 视图层
+* Controller 控制层
