@@ -281,3 +281,13 @@ new Vue({
   }
 })
 ```
+
+# 使用手机端ui框架时，怎么做rem适配？
+* 使用```postcss-px2rem```插件。
+    - https://github.com/songsiqi/px2rem-postcss
+* 或者```px2rem-loader```。
+    - https://github.com/Jinjiang/px2rem-loader
+* 总结：
+    - 我看网上教程的案例里，设置的都是75。应该是按照750设计图搞的。
+    - 这样的话ui库的样式会变小吧。因为ui库一般是按照320或者375设计的。
+    - 理应设置为32或者37.5。然后做网页的时候设计师也应该给320或者375的设计图。如果是静态图片再单独给高倍图。
