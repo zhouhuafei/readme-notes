@@ -292,3 +292,41 @@ new Vue({
     - 这样的话ui库的样式会变小吧。因为ui库一般是按照320或者375设计的。
     - 理应设置为32或者37.5。然后做网页的时候设计师也应该给320或者375的设计图。如果是静态图片再单独给高倍图。
     - 尚未亲自实践。以上言论纯属理论。
+
+# Vue实现双向数据绑定时使用的基础方法
+> 细节就不进行深入了解了。
+* vue2：```Object.defineProperty方法```
+* 文档 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
+```
+var obj = {};
+Object.defineProperty(obj, 'txt', {
+    get: function () {
+        console.log('获取');
+        return obj;
+    },
+    set: function (newValue) {
+        console.log('设置');
+        return newValue;
+    },
+});
+obj.txt = '123'; // 此时会打印：'设置'。
+obj.txt; // 此时会打印：'获取'。然后打印出：{}。
+```
+* vue3：```Proxy```
+* 文档：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy
+```
+var obj = {};
+var handler = {
+    get(target, property) {
+        console.log(`${property} 被读取`);
+        return property in target ? target[property] : 3;
+    },
+    set(target, property, newValue) {
+        console.log(`${property} 被设置为 ${newValue}`);
+        target[property] = newValue;
+    },
+};
+var p = new Proxy(obj, handler);
+p.name = 'tom'; // 此时会打印：'name 被设置为 tom'。
+p.age; // 此时会打印：'age 被读取'。然后打印出：3。
+```
