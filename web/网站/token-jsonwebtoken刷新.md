@@ -5,7 +5,7 @@
     - jsonwebtoken生成新token，老token如果还没过期，是可以继续使用的。
     - 所以使用登陆戳进行校验可以让老token验证通不过。
     - 登陆戳我是存在user表中的。每次登录都修改登陆戳。
-    - 登陆戳也可以用来做单设备登录。
+    - 登陆戳也可以用来做单设备登录(刷新token让token无效化其实做的就是单设备登录的功能)。
 * 打了更新token的接口之后。客户端的token也要更新。
 
 # 刷新token时怎么解决并发问题？
@@ -165,7 +165,7 @@ module.exports=ajax;
     - 3.完善 refreshToken
         * 借鉴 oauth2 的设计，返回给客户端一个 refreshToken，允许客户端主动刷新 jwt。一般而言，jwt 的过期时间可以设置为数小时，而 refreshToken 的过期时间设置为数天。我认为该方案并可行性是存在的，但是为了解决 jwt 的续签把整个流程改变了，为什么不考虑下 oauth2 的 password 模式和 client 模式呢？
         * 步骤：后端生成返回俩个token给前端：accessToken、refreshToken。前者用于访问鉴权，后者用于刷新token。区别在于前者过期时间短，后者过期时间长。具体时长自己开心就好。
-        * refreshToken也需要一个无效化的戳(登陆戳)。建议存在账号密码表中，因每个用户都有每个用户自己的refreshToken，建议命名为```loginStampRefreshToken```。accessToken的失效戳建议命名为```loginStampAccessToken```。如果用的session。建议命名为```loginStampSession```。
+        * refreshToken也需要一个无效化的戳(登陆戳)。建议存在账号密码表中，因每个用户都有每个用户自己的refreshToken，建议命名为```loginStampRefreshToken```。accessToken的失效戳建议命名为```loginStampAccessToken```。如果用的session。建议命名为```loginStampSession```因历史遗留原因目前我对它的命名是```loginStamp```。
         * 问：为什么要用refreshToken而不是直接把accessToken设置为一个很长的时间？
         * 答：出于安全考虑才如此设计(相对安全)。因accessToken可以用来访问敏感数据。而refreshToken只有刷新token的接口使用(如此，刷新token的接口就要做成不登录也能使用的接口)。
         * 客户端刷新token的流程：接口如果返回401则打刷新token的接口进行token刷新，如果刷新token的接口也返回401则进行重新登录操作。其中还涉及到并发多条请求时要对请求进行存储以及当前是否正在进行token的刷新等一些细节处理。
