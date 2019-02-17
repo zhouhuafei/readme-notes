@@ -41,3 +41,12 @@
 
 # express动态路由解析用的什么包？
 * https://github.com/pillarjs/path-to-regexp
+
+# 动态路由跳转
+* vue-router可以使用路由的name配合params自动填充参数进行跳转(```如果提供了path，params会被忽略```)。
+```
+this.$router.push({name: 'user', params: {userId: 123}});
+```
+* express呢？个人建议：
+    - 定一个```route```字段，存储路由规则。
+    - 定一个```routerPath```字段，可用来直接跳转。
