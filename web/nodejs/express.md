@@ -56,3 +56,4 @@ this.$router.push({name: 'user', params: {userId: 123}});
 * vue-router有些做法真的很赞
     - 例如有查询字符串时，vue-router跳转路由可以自动拼接。我用express时，还需要手动封装方法或者手动拼接进行跳转。
     - 例如是动态路由的情况，vue-router跳转路由可以自动拼接。我用express时，还需要手动封装方法或者手动拼接进行跳转。
+    - vue-router提供跳转方法直接就可以进行拼接。这点是赞的。express中使用ejs模版渲染路由路径时还需要自己封装方法并调用。
