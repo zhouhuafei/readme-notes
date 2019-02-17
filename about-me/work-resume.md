@@ -96,7 +96,6 @@
     - 《图解TCP/IP》
     - 《高性能MySQL》，《Redis实战》，《MongoDB权威指南》
 * 看过的文档：gulp，webpack，es6，vue，微信小程序，wepy，mpvue，nginx，nodejs，express，mongoose等等等。
-* 吐槽：不经常使用的技术，看了会忘，需要用的时候再翻翻文档，如此如此，这般这般。
 
 # 个人项目案例
 * 关于域名：sbxx是随便写写的意思，不是煞笔叉叉的意思。
