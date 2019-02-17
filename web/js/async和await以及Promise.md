@@ -1,3 +1,7 @@
+# 有些浏览器不支持Promise和async以及await怎么兼容？
+* 引入```babel-polyfill```包即可。
+* ```babel-polyfill```源码地址：https://github.com/babel/babel/tree/master/packages/babel-polyfill
+
 # async
 * async定义的方法返回值是一个Promise。
 * 怎么接收async函数返回的具体结果么？
@@ -23,6 +27,7 @@
 
 # await
 * await后面调用的方法需要返回一个Promise。
+* await只能在使用了```async function```定义的方法中使用。
 * 案例1：先等待(非并发请求)。
 ```
 const fn1 = await promiseFn1();
