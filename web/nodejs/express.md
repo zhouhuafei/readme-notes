@@ -48,6 +48,6 @@
 this.$router.push({name: 'user', params: {userId: 123}});
 ```
 * express呢？个人建议：
-    - 定一个```routeFormat```字段，存储路由格式。
-    - 定一个```routerPath```字段，可用来直接跳转。
+    - 定一个```routeFormat```字段，存储路由格式。我的suibianxiexie项目中定义的字段名是route。
+    - 然后路由的路径根绝路由格式进行动态拼接。
     - 动态路由部分建议放到末尾。如此，跳转路径时进行路由路径(route)拼接会方便一点。或者像vue-router那样，封装一个可以根据name和params配合路由格式自动生成正确路径的方法。
