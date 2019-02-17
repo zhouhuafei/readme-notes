@@ -21,14 +21,14 @@
 # 使用过以及了解过的技术
 * 布局：html+css，html5+css3，less，sass(推荐)，iconfont。
 * 功能：JavaScript，jQuery，Zepto，ES6，Vue，Vue Router，Vuex，axios，react。
-* 小程序(微信/百度/字节跳动/支付宝)：原生配合gulp，wepy，mpvue，taro。
+* 小程序(微信/百度/字节跳动/支付宝)：原生配合gulp，wepy，mpvue，uni-app，taro。
 * 前端自动化：gulp，webpack。
 * 前端模块化：SeaJS，RequireJS，Browserify，webpack(推荐)。
 * 代码规范：ESLint。
 * 代码测试：Jest。
 * 插件：SuperSlide，TouchSlide，Swiper，layDate，ECharts，Highcharts，百度地图，腾讯地图等。
 * 工具：Photoshop，Sketch，Firefox，Chrome，FlashFXP，Git Bash，Fiddler，PUTTY，Browsersync等。
-* 编辑器：Dreamweaver，Sublime，PhpStorm，WebStorm，微信/百度/字节跳动/支付宝开发者工具等。
+* 编辑器：Dreamweaver，Sublime，PhpStorm，WebStorm，HBuilderX，微信/百度/字节跳动/支付宝开发者工具等。
 * nodejs：Express，EJS，Mongoose，ShellJS等。
 * 身份验证：session，jsonwebtoken，OAuth2.0。
 * web安全：XSS，XST，CSRF，SQL注入，iframe防钓鱼。
