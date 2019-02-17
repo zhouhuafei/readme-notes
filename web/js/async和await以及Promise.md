@@ -1,5 +1,25 @@
 # async
 * async定义的方法返回值是一个Promise。
+* 怎么接收async函数返回的具体结果么？
+    - 1、使用then方法，在回调里接收。
+    ```
+    async function getOne() {
+        return 1;
+    }
+
+    getOne().then(result => console.log(result));
+    ```
+    - 2、在另外一个async方法中，使用await接收。
+    ```
+    async function returnOne() {
+        return 1;
+    }
+    async function getOne() {
+        var result = await returnOne();
+        console.log(result);
+    }
+    getOne();
+    ```
 
 # await
 * await后面调用的方法需要返回一个Promise。
