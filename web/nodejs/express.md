@@ -48,5 +48,6 @@
 this.$router.push({name: 'user', params: {userId: 123}});
 ```
 * express呢？个人建议：
-    - 定一个```route```字段，存储路由规则。
+    - 定一个```routeFormat```字段，存储路由规则。
     - 定一个```routerPath```字段，可用来直接跳转。
+    - 动态路由部分建议放到末尾。如此，跳转路径时进行路由路径(route)拼接会方便一点。或者像vue-router那样，封装一个可以根据name和params参数自动生成正确路径的方法。
