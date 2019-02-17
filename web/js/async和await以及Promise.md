@@ -26,8 +26,9 @@
     ```
 
 # await
-* await后面调用的方法需要返回一个Promise。
-* await只能在使用了```async function```定义的方法中使用。
+> ```await```操作符用于等待一个```Promise```对象。它只能在异步函数```async function```中使用。
+* await后面需要是一个Promise对象。
+* await只能在异步函数```async function```中使用。
 * 案例1：先等待(非并发请求)。
 ```
 const fn1 = await promiseFn1();
