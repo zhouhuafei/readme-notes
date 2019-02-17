@@ -21,14 +21,14 @@
 # 使用过以及了解过的技术
 * 布局：html+css，html5+css3，less，sass(推荐)，iconfont。
 * 功能：JavaScript，jQuery，Zepto，ES6，Vue，Vue Router，Vuex，axios，react。
-* 微信/百度/字节跳动/支付宝小程序：原生配合gulp，wepy，mpvue，uni-app，taro。
+* 小程序(微信/百度/字节跳动/支付宝)：原生配合gulp，wepy，mpvue，taro。
 * 前端自动化：gulp，webpack。
 * 前端模块化：SeaJS，RequireJS，Browserify，webpack(推荐)。
 * 代码规范：ESLint。
 * 代码测试：Jest。
 * 插件：SuperSlide，TouchSlide，Swiper，layDate，ECharts，Highcharts，百度地图，腾讯地图等。
 * 工具：Photoshop，Sketch，Firefox，Chrome，FlashFXP，Git Bash，Fiddler，PUTTY，Browsersync等。
-* 编辑器：Dreamweaver，Sublime，PhpStorm，WebStorm，HBuilderX，微信/百度/字节跳动/支付宝开发者工具等。
+* 编辑器：Dreamweaver，Sublime，PhpStorm，WebStorm，微信/百度/字节跳动/支付宝开发者工具等。
 * nodejs：Express，EJS，Mongoose，ShellJS等。
 * 身份验证：session，jsonwebtoken，OAuth2.0。
 * web安全：XSS，XST，CSRF，SQL注入，iframe防钓鱼。
@@ -48,13 +48,12 @@
     - 案例：
         - http://jcpc.skinjc.com/
         - http://jcpc.skinjc.com/js/banner.js 这个js是我以前写的，还在被使用，顶部还有我以前留下的痕迹，rookie QQ:1123486116。案例无法一一列举，这么多年过去了，经手了那么多人，很多东西都已经不是当初的样子了。
-    - 待遇：月薪从2k两年内涨到12k(到手薪资)，包吃住，工资是现金(无五险一金，无社保，后来得知有三险一金，需要自己申请)。
     - 离职原因：工作内容相对简单，能力得不到施展。此时的我对五险一金没那么看中，所以无这方面对原因。
 * 上海商派网络科技有限公司 - 电商
     - 工作时间：2016/04 - 至今
     - 代码管理：git
     - 开发模式：SeaJS模块化开发，使用面向对象的方式进行组件的封装和继承。有些项目使用的Vue框架则按照Vue的规范进行开发。
-    - 项目：云起微商城后台，云起微商城前台h5，云起微商城前台pc(Vue)，百汇后台系统(Vue)，微信小程序，百度小程序，字节跳动小程序(头条)，支付宝小程序(暂未对接)。
+    - 项目：云起微商城后台，云起微商城前台h5，云起微商城前台pc(Vue)，百汇后台系统(Vue)，微信小程序，百度小程序，字节跳动小程序(头条)。
     - 项目类型：店铺后台管理系统，SaaS服务。
     - 项目功能：店铺装修，营销模块（优惠券，满减满送，积分商城，会员卡，预售，拼团，秒杀，砍价，刮刮卡等），商品，订单，客户，门店，推广员，小程序等。
     - 工作内容：主要写电商后台系统以及移动端h5和各个平台的小程序(支付宝小程序暂未对接)。业务和功能包括秒杀，拼团，砍价，优惠券，会员卡，分销等等等。
@@ -63,8 +62,6 @@
         - http://fy.xyunqi.com
     - 获奖：
         - 因能力突出获得过公司发的```商派之星```奖。
-        - 因在职满三年获得公司发的```比翼双飞```奖(4月份发这个奖，目前暂未到手)。
-    - 待遇：税前薪资**k(因在职，暂时保密)。
     - 职位：高级web前端开发工程师。
 
 # 期望薪资
