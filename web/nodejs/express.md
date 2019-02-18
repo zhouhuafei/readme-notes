@@ -72,4 +72,4 @@ this.$router.push({name: 'user', params: {userId: 123}});
     });
     ```
     - 或者所有链接都使用动态路由```/:platform```。入口链接上加```/platformValue```。然后同上需要检测有无```platform```字段，有则存，然后检测有无存储，有则设置。
-* 如果不是内嵌的web-view。只需要打接口的时候带着```platform```字段即可。
+* 如果不是内嵌的web-view。只需要打接口的时候带着```platform```字段即可。上述的目的其实也是为了打接口的时候带着```platform```字段。
