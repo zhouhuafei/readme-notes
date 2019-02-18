@@ -340,3 +340,7 @@ p.age; // 此时会打印：'age 被读取'。然后打印出：3。
 * Model 数据层
 * View 视图层
 * Controller 控制层
+
+# v-for为什么要加key
+* https://cn.vuejs.org/v2/guide/list.html#key
+* https://www.jianshu.com/p/4bd5e745ce95
