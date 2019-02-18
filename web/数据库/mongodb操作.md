@@ -17,3 +17,6 @@ db.User.update({},{$unset:{'address':''}},false, true)
 
 # 联合表操作
 待续...
+
+# 事物
+待续...

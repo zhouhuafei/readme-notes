@@ -24,7 +24,7 @@ const a=obj.a;
 ```
 总结：es6的模块化，导出的如果是默认模块。只能用一个变量进行统一接收。
 
-# 改的我心累
+# wepy转taro改的我心累
 * globalData字段换成从app上读取。
 * options换成从this.$router.params上读取。
 * 套页面换成jsx的语法。
