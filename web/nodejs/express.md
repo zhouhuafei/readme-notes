@@ -58,7 +58,7 @@ this.$router.push({name: 'user', params: {userId: 123}});
     - 例如是动态路由的情况，vue-router跳转路由可以自动拼接。我用express时，还需要手动封装方法或者手动拼接进行跳转。
     - vue-router提供跳转方法直接就可以进行拼接。这点是赞的。express中使用ejs模版渲染路由路径时还需要自己封装方法并调用。
 
-# ios和安卓或者小程序环境判断。
+# 内嵌web-view时ios和安卓或者小程序环境判断。
 * 微信和百度小程序提供的都有SDK可以使用。
 * 如果没有SDK的话。
     - 微好店中，使用的查询字符串，后端是php。如果用express，入口链接上加```?platform=platformValue```。然后超类里进行拦截设置即可。
@@ -72,3 +72,4 @@ this.$router.push({name: 'user', params: {userId: 123}});
     });
     ```
     - 或者所有链接都使用动态路由```/:platform```。入口链接上加```/platformValue```。然后同上需要检测有无```platform```字段，有则存，然后检测有无存储，有则设置。
+* 如果不是内嵌的web-view。只需要打接口的时候带着```platform```字段即可。
