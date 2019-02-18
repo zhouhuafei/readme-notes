@@ -61,14 +61,14 @@ this.$router.push({name: 'user', params: {userId: 123}});
 # ios和安卓或者小程序环境判断。
 * 微信和百度小程序提供的都有SDK可以使用。
 * 如果没有SDK的话。
-    - 微好店中，使用的查询字符串，后端是php。如果用express，入口链接上加```?platform=wx```。然后超类里进行拦截设置即可。
+    - 微好店中，使用的查询字符串，后端是php。如果用express，入口链接上加```?platform=platformValue```。然后超类里进行拦截设置即可。
     ```
     req.query.platform = 'wx'; // 在设置之前，还需检测来源有无```platform```字段，有则存，然后检测存储的有无，有则设置。(设置后，虽然url上无法呈现，但是内存里有值，可输出给js使用)
     ```
-    - 如果用的vue，入口链接上加```?platform=wx```。然后则只需要在vue-router的beforeEach守卫中拦截设置接口。
+    - 如果用的vue，入口链接上加```?platform=platformValue```。然后则只需要在vue-router的beforeEach守卫中拦截设置接口。
     ```
     router.beforeEach((to, from, next) => {
         to.query.platform = 'wx'; // 在设置之前，还需检测来源有无```platform```字段，有则存，然后检测存储的有无，有则设置。(设置后，虽然url上无法呈现，但是内存里有值。可直接使用)
     });
     ```
-    - 或者所有链接都使用动态路由```/:platform```。入口链接上加```/platformValue```。然后同上需要检测有无。
+    - 或者所有链接都使用动态路由```/:platform```。入口链接上加```/platformValue```。然后同上需要检测有无```platform```字段，有则存，然后检测有无存储，有则设置。
