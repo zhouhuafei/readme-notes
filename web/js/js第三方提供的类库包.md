@@ -16,3 +16,4 @@
     - https://github.com/mescroll/mescroll
 * 移动端富文本编辑插件```vue-html5-editor```插件。
     - https://github.com/PeakTai/vue-html5-editor
+    - star比较多，在移动端应也可应用：https://github.com/surmon-china/vue-quill-editor
