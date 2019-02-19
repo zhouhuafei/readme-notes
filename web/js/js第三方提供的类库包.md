@@ -13,4 +13,6 @@
     - 2.5.1版本我用的时候有效果。
     - 3.2.0版本我用的时候无效果。
 * 移动端vue上拉加载下拉刷新插件```mescroll.js```插件。
+    - https://github.com/mescroll/mescroll
 * 移动端富文本编辑插件```vue-html5-editor```插件。
+    - https://github.com/PeakTai/vue-html5-editor
