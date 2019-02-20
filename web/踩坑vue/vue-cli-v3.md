@@ -65,10 +65,10 @@ cnpm i --save-dev node-sass sass-loader
     - px2rem的js代码包：```amfe-flexible```。
 
 # 以上疑惑的解决案例
+https://github.com/zhouhuafei/hello-world_vue-cli3_vant
 
-# 注
-* 看vue-cli3的官方文档可以得到答案。
-    - https://cli.vuejs.org/zh/
+# 官方文档
+https://cli.vuejs.org/zh/
 
 # 可视化配置
 ```
