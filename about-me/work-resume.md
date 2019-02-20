@@ -10,31 +10,8 @@
 * 联系电话：15551992700
 * 现居地区：上海市松江区
 * 户籍所在地：安徽省亳州市
-
-# 兴趣爱好
-* 热爱工作，热爱学习。偏爱原生js，工作中我个人也是写原生js居多。
-* 做饭，打乒乓球，看动漫。
-
-# 座右铭
-* 食君之禄，忠君之事，担君之忧。
-
-# 使用过以及了解过的技术
-* 布局：html+css，html5+css3，less，sass(推荐)，iconfont。
-* 功能：JavaScript，jQuery，Zepto，ES6，Vue，Vue Router，Vuex，axios，react。
-* 小程序(微信/百度/字节跳动/支付宝)：原生配合gulp，wepy，mpvue，uni-app，taro。
-* 前端自动化：gulp，webpack。
-* 前端模块化：SeaJS，RequireJS，Browserify，webpack(推荐)。
-* 代码规范：ESLint。
-* 代码测试：Jest。
-* 插件：SuperSlide，TouchSlide，Swiper，layDate，ECharts，Highcharts，百度地图，腾讯地图等。
-* 工具：Photoshop，Sketch，Firefox，Chrome，FlashFXP，Git Bash，Fiddler，PUTTY，Browsersync等。
-* 编辑器：Dreamweaver，Sublime，PhpStorm，WebStorm，HBuilderX，微信/百度/字节跳动/支付宝开发者工具等。
-* nodejs：Express，EJS，Mongoose，ShellJS等。
-* 身份验证：session，jsonwebtoken，OAuth2.0。
-* web安全：XSS，XST，CSRF，SQL注入，iframe防钓鱼。
-* 算法：枚举算法，冒泡算法。
-* 设计模式：工厂模式，构造函数模式，原型模式，混合模式(构造函数模式加原型模式)，动态原型模式，单例模式，订阅发布模式，代理模式。
-* 其他：Smarty套模板，nginx配置端口转发，CDN开通与使用，linux基础命令。
+* 座右铭：食君之禄，忠君之事，担君之忧。
+* 兴趣爱好：热爱工作，热爱学习。偏爱原生js。
 
 # 工作经历
 * 上海邦泰集团 - 医疗
@@ -68,6 +45,48 @@
 # 期望薪资
 * 期望税前**k-**k。
 
+# 使用过以及了解过的技术
+* 布局：html+css，html5+css3，less，sass(推荐)，iconfont。
+* 功能：JavaScript，jQuery，Zepto，ES6，Vue，Vue Router，Vuex，axios，react。
+* 小程序(微信/百度/字节跳动/支付宝)：原生配合gulp，wepy，mpvue，uni-app，taro。
+* 前端自动化：gulp，webpack。
+* 前端模块化：SeaJS，RequireJS，Browserify，webpack(推荐)。
+* 代码规范：ESLint。
+* 代码测试：Jest。
+* 插件：SuperSlide，TouchSlide，Swiper，layDate，ECharts，Highcharts，百度地图，腾讯地图等。
+* 工具：Photoshop，Sketch，Firefox，Chrome，FlashFXP，Git Bash，Fiddler，PUTTY，Browsersync等。
+* 编辑器：Dreamweaver，Sublime，PhpStorm，WebStorm，HBuilderX，微信/百度/字节跳动/支付宝开发者工具等。
+* nodejs：Express，EJS，Mongoose，ShellJS等。
+* 身份验证：session，jsonwebtoken，OAuth2.0。
+* web安全：XSS，XST，CSRF，SQL注入，iframe防钓鱼。
+* 算法：枚举算法，冒泡算法。
+* 设计模式：工厂模式，构造函数模式，原型模式，混合模式(构造函数模式加原型模式)，动态原型模式，单例模式，订阅发布模式，代理模式。
+* 其他：Smarty套模板，nginx配置端口转发，CDN开通与使用，linux基础命令。
+
+# 个人项目案例
+* 关于域名：sbxx是随便写写的意思，不是煞笔叉叉的意思。
+* github：https://github.com/zhouhuafei
+* nodejs项目demo(MVC)
+    - 网址：http://sbxx.top/
+    - 源码：https://github.com/zhouhuafei/suibianxiexie
+* nodejs项目demo(websocket)
+    - 网址：http://chat.sbxx.top/
+    - 源码：https://github.com/zhouhuafei/come-chat
+* nodejs项目demo(axios服务端通信)
+    - 网址：http://sign.sbxx.top/
+    - 源码：https://github.com/zhouhuafei/shopex-sign
+* canvas：
+    - 小游戏之五子棋：http://sbxx.top/h5/game-wuziqi/
+    - 小游戏之别踩白块：http://sbxx.top/h5/game-biecaibaikuai/
+    - 小游戏之十滴水(未完待续...)：http://sbxx.top/h5/game-shidishui/
+    - 画心：http://sbxx.top/static-no-cache/test/canvas/heart/
+    - 画坦克大战，画抽奖转盘，画钟表，画五角星等。
+* 笔记：
+    - https://github.com/zhouhuafei/readme-notes/tree/master/web
+
+# 为前端这个行业做过什么贡献？
+* 在npm上贡献了60+的包。可搜索关键字```zhf.```进行查看。github上有对应源码。
+
 # 前端入行经历
 * 2013/11出校门实习，找工作，迷茫，进过工厂，做过网管。
 * 后来想几年大学不能白上，想起学校里学过已经跟不上社会节奏的网页三剑客，于是想着把自己会的东西做好，既然跟不上节凑那就自学深入吧。
@@ -97,27 +116,3 @@
     - 《图解TCP/IP》
     - 《高性能MySQL》，《Redis实战》，《MongoDB权威指南》
 * 看过的文档：gulp，webpack，es6，vue，微信小程序，wepy，mpvue，nginx，nodejs，express，mongoose等等等。
-
-# 个人项目案例
-* 关于域名：sbxx是随便写写的意思，不是煞笔叉叉的意思。
-* github：https://github.com/zhouhuafei
-* nodejs项目demo(MVC)
-    - 网址：http://sbxx.top/
-    - 源码：https://github.com/zhouhuafei/suibianxiexie
-* nodejs项目demo(websocket)
-    - 网址：http://chat.sbxx.top/
-    - 源码：https://github.com/zhouhuafei/come-chat
-* nodejs项目demo(axios服务端通信)
-    - 网址：http://sign.sbxx.top/
-    - 源码：https://github.com/zhouhuafei/shopex-sign
-* canvas：
-    - 小游戏之五子棋：http://sbxx.top/h5/game-wuziqi/
-    - 小游戏之别踩白块：http://sbxx.top/h5/game-biecaibaikuai/
-    - 小游戏之十滴水(未完待续...)：http://sbxx.top/h5/game-shidishui/
-    - 画心：http://sbxx.top/static-no-cache/test/canvas/heart/
-    - 画坦克大战，画抽奖转盘，画钟表，画五角星等。
-* 笔记：
-    - https://github.com/zhouhuafei/readme-notes/tree/master/web
-
-# 为前端这个行业做过什么贡献？
-* 在npm上贡献了60+的包。可搜索关键字```zhf.```进行查看。github上有对应源码。
