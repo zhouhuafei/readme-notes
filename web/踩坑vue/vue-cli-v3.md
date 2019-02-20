@@ -84,9 +84,8 @@ cnpm i --save-dev node-sass sass-loader
 # 以上疑惑的解决案例
 https://github.com/zhouhuafei/hello-world_vue-cli3_vant
 
-# 文档
-官方文档：https://cli.vuejs.org/zh/
-脚本之家特性文档：https://www.jb51.net/article/138703.htm
+# 官方文档
+https://cli.vuejs.org/zh/
 
 # 可视化配置
 ```
