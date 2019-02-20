@@ -32,7 +32,6 @@ cnpm i --save-dev node-sass sass-loader
     - 待续...
 * 怎么配置```publicPath```？
     - 在```vue.config.js```中配置。
-
 * vue-cli2、vue-cli3的postcss-pxtorem插件 px转换rem
     - 在vue-cli2中的设置：是在.postcssrc.js文件中设置。
     ```
@@ -63,6 +62,9 @@ cnpm i --save-dev node-sass sass-loader
       }
     }
     ```
+    - px2rem的js代码包：```amfe-flexible```。
+
+# 以上疑惑的解决案例
 
 # 注
 * 看vue-cli3的官方文档可以得到答案。
