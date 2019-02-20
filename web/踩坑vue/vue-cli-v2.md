@@ -11,3 +11,6 @@ cnpm i --save-dev node-sass sass-loader
 # 判断环境
 * 在代码和配置中都可以通过```process.env.NODE_ENV```。
 
+# 开发环境进行跨域
+* 配置devServer中的proxy。
+
