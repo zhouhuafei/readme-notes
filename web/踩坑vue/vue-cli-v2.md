@@ -5,4 +5,9 @@ cnpm i --save-dev node-sass sass-loader
 ```
 
 # 打包build的时候上传到七牛
-* 使用七牛webpack包```qn-webpack```。
+* 在生产环境的配置文件中使用七牛webpack包```qn-webpack```。
+* 并需改publicPath为cdn的路径即可。
+
+# 判断环境
+* 在代码和配置中都可以通过```process.env.NODE_ENV```。
+
