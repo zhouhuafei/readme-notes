@@ -27,8 +27,22 @@ cnpm i --save-dev node-sass sass-loader
     },
     ```
 * 怎么增加预发布环境的配置？
-    - 待续...
-* 怎么在生产时把静态资源上传到七牛?
+    - 1、package.json的```scripts```字段上添加：
+    ```
+    "alpha": "vue-cli-service build --mode alpha"
+    ```
+    - 2、在项目根目录添加文件“.env.alpha”，其内容：
+    ```
+    NODE_ENV = 'production'
+    VUE_APP_TITLE = 'alpha'
+    ```
+    - 如果环境很多建议使用这个包来跨平台设置环境变量，然后在打包之前执行一段脚本动态生成```.env.alpha```文件：https://github.com/kentcdodds/cross-env 。此处就不贴脚本内容了。
+    ```
+    "scripts": {
+        "create-env": "cross-env NODE_ENV=dev1 node ./create-env.js && cross-env NODE_ENV=dev2 node ./create-env.js"
+    }
+    ```
+* 怎么在生产时把静态资源上传到七牛云存储和腾讯云存储?
     - 待续...
 * 怎么配置```publicPath```？
     - 在```vue.config.js```中配置。
