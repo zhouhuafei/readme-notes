@@ -42,8 +42,11 @@ cnpm i --save-dev node-sass sass-loader
         "create-env": "cross-env NODE_ENV=dev1 node ./create-env.js && cross-env NODE_ENV=dev2 node ./create-env.js"
     }
     ```
-* 怎么在生产时把静态资源上传到七牛云存储和腾讯云存储?
-    - 待续...
+* 怎么在生产时把静态资源上传到七牛云存储或者腾讯云存储?
+    - https://github.com/bluedapp/gulp-qn
+    - https://github.com/TabSpace/gulp-qcloud-cos-upload
+    - https://github.com/lyfeyaj/qn-webpack
+    - https://github.com/takashiki/cos-webpack
 * 怎么配置```publicPath```？
     - 在```vue.config.js```中配置。
 * vue-cli2、vue-cli3的postcss-pxtorem插件 px转换rem
