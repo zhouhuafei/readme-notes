@@ -10,8 +10,9 @@ cnpm i --save-dev node-sass sass-loader
     - ```process.env.NODE_ENV```。
 * 怎么在生产时把静态资源上传到七牛？
 * 怎么修改eslint的配置？
-* 怎么增加预发布环境的配置？
+    - package.json中修改。
 * 怎么配置跨域？
+* 怎么增加预发布环境的配置？
 
 # 可视化配置
 ```
