@@ -2,6 +2,13 @@
 * 引入```babel-polyfill```包即可。
 * ```babel-polyfill```源码地址：https://github.com/babel/babel/tree/master/packages/babel-polyfill
 
+# 微信原生小程序怎么使用async和await？
+* 小程序开发工具-详情-开启ES6转ES5。
+* 下载 regenerator 库 https://github.com/facebook/regenerator 。
+* 将库中packages文件夹下 regenerator-runtime 文件夹全部复制到小程序项目中。
+* 小程序项目全局引入 regenerator 库。
+* 在app.js中引入```runtime.js```。
+
 # async
 * async定义的方法返回值是一个Promise。
 * 怎么接收async函数返回的具体结果么？
