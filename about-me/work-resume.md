@@ -78,7 +78,7 @@
 * 功能：JavaScript，jQuery，Zepto，ES6，Vue，Vue Router，Vuex，axios，react。
 * 小程序(微信/百度/字节跳动/支付宝)：原生配合gulp，wepy，mpvue，uni-app，taro。
 * 前端自动化：gulp，webpack。
-* 前端模块化：SeaJS，RequireJS，Browserify，webpack(推荐)。
+* 前端模块化：SeaJS，Browserify，webpack(推荐)。
 * 代码规范：ESLint。
 * 代码测试：Jest。
 * 插件：SuperSlide，TouchSlide，Swiper，layDate，ECharts，Highcharts，百度地图，腾讯地图等。
