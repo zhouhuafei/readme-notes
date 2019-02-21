@@ -60,7 +60,7 @@ cnpm i --save-dev node-sass sass-loader
     - 插件可以在```vue.config.js```中配置。具体还请参阅文档。https://cli.vuejs.org/zh/
 * 怎么配置```publicPath```？
     - 在```vue.config.js```中配置。
-* vue-cli2、vue-cli3的postcss-pxtorem插件 px转换rem
+* vue-cli2、vue-cli3的postcss-pxtorem插件 px转换rem。
     - 在vue-cli2中的设置：是在.postcssrc.js文件中设置。
     ```
     module.exports = {
@@ -91,8 +91,15 @@ cnpm i --save-dev node-sass sass-loader
     }
     ```
     - px2rem的js代码包：```amfe-flexible```。
-* ```vue.config.js```中无法引入其他模块
+* ```vue.config.js```中无法引入其他模块?
     - 经测试，引入任何模块都会导致```npm run serve```报错。
+
+* ```vue.config.js```中```baseUrl```和```publicPath```的区别?
+    - 待续...
+
+* favicon为什么要放到public目录，为什么不直接通过base64的形式?
+    - index.html中的案例：```<link rel="icon" href="<%= BASE_URL %>favicon.ico">```
+    - 待续...
 
 # 以上疑惑的解决案例
 https://github.com/zhouhuafei/hello-world_vue-cli3_vant
