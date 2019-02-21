@@ -8,6 +8,8 @@
 * 将库中packages文件夹下 regenerator-runtime 文件夹全部复制到小程序项目中。
 * 小程序项目全局引入 regenerator 库。
 * 在app.js中引入```runtime.js```。
+* 疑问 - 小程序中提供的那些api都是回调形式的该怎么破？
+    - 建议使用taro框架。
 
 # async
 * async定义的方法返回值是一个Promise。
