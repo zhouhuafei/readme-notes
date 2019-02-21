@@ -92,7 +92,7 @@
 * 其他：Smarty套模板，nginx配置端口转发，CDN开通与使用，linux基础命令。
 
 # 个人项目案例
-* 关于域名：sbxx是随便写写的意思，不是煞笔叉叉的意思。
+* 关于域名：sbxx是随便写写的意思。
 * github：https://github.com/zhouhuafei
 * nodejs项目demo(MVC)
     - 网址：http://sbxx.top/
