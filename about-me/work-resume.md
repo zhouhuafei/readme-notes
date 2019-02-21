@@ -94,7 +94,6 @@
 # 个人项目案例
 * 关于域名：sbxx是随便写写的意思，不是煞笔叉叉的意思。
 * github：https://github.com/zhouhuafei
-    - 技术栈：nodejs + express + ejs + vue + vue-router + vuex + webpack
 * nodejs项目demo(MVC)
     - 网址：http://sbxx.top/
     - 源码：https://github.com/zhouhuafei/suibianxiexie
