@@ -58,7 +58,7 @@
 * 微好店商城微信/百度/头条小程序
     - 技术栈：gulp+原生微信小程序兼容多平台
 * 百汇商城的后台系统(维护)
-    - 技术栈：vue+vue-router+vuex
+    - 技术栈：vue + vue-router + vuex + element-ui
 * 百汇商城的微信/百度小程序
     - 技术栈：wepy/taro
 * 还有一些公司接的第三方项目
