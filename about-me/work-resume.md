@@ -143,4 +143,4 @@
 * 还没看的书
     - 《图解TCP/IP》
     - 《高性能MySQL》，《Redis实战》，《MongoDB权威指南》
-* 看过的文档：gulp，webpack，es6，vue，微信小程序，wepy，mpvue，nginx，nodejs，express，mongoose等等等。
+* 看过的文档：gulp，webpack，es6，vue，微信小程序，wepy，mpvue，nginx，nodejs，express，mongoose，redis等等等。
