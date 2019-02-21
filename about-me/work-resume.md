@@ -73,7 +73,7 @@
 # 期望薪资
 * 期望税前26k左右。
 
-# 使用过以及了解过的技术
+# 使用过或了解过的技术
 * 布局：html+css，html5+css3，less，sass(推荐)，iconfont。
 * 功能：JavaScript，jQuery，Zepto，ES6，Vue，Vue Router，Vuex，axios，react。
 * 小程序(微信/百度/字节跳动/支付宝)：原生配合gulp，wepy，mpvue，uni-app，taro。
