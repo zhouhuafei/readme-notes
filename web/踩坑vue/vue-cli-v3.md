@@ -91,6 +91,8 @@ cnpm i --save-dev node-sass sass-loader
     }
     ```
     - px2rem的js代码包：```amfe-flexible```。
+* ```vue.config.js```中无法引入其他模块
+    - 经测试，引入任何模块都会导致```npm run serve```报错。
 
 # 以上疑惑的解决案例
 https://github.com/zhouhuafei/hello-world_vue-cli3_vant
