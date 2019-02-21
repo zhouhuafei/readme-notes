@@ -2,7 +2,7 @@
 * https://github.com/facebook/jest
 
 # e2e测试包
-* vue内推荐的是Cypress和Nightwatch
+* vue内推荐的是Cypress框架和Nightwatch框架。
 
 # 单元测试和E2E测试
 > 前端的测试主要有两种，单元测试和E2E测试。
