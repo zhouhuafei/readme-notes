@@ -47,6 +47,7 @@ cnpm i --save-dev node-sass sass-loader
     - https://github.com/TabSpace/gulp-qcloud-cos-upload
     - https://github.com/lyfeyaj/qn-webpack
     - https://github.com/takashiki/cos-webpack
+    - 插件可以在```vue.config.js```中配置。具体还请参阅文档。https://cli.vuejs.org/zh/
 * 怎么配置```publicPath```？
     - 在```vue.config.js```中配置。
 * vue-cli2、vue-cli3的postcss-pxtorem插件 px转换rem
