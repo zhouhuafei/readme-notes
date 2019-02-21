@@ -31,11 +31,21 @@ cnpm i --save-dev node-sass sass-loader
     ```
     "alpha": "vue-cli-service build --mode alpha"
     ```
-    - 2、在项目根目录添加文件“.env.alpha”，其内容：
+    - 2、在项目根目录添加文件```.env.alpha```和```.env.build```，其内容：
     ```
     NODE_ENV = 'production'
     VUE_APP_TITLE = 'alpha'
     ```
+    ```
+    NODE_ENV = 'production'
+    VUE_APP_TITLE = 'production'
+    ```
+    - 3、区分环境
+    ```
+    var env = process.env.NODE_ENV === 'development' ? 'development' :
+    process.env.VUE_APP_TITLE === 'alpha' ? 'alpha' : 'production';
+    ```
+    - 参考文档：https://www.cnblogs.com/XHappyness/p/9337229.html
     - 建议：如果环境很多建议使用这个包来跨平台设置环境变量，然后在打包之前执行一段脚本动态生成```.env.alpha```文件：https://github.com/kentcdodds/cross-env 。此处就不贴脚本```create-env.js```的内容了。
     ```
     "scripts": {
