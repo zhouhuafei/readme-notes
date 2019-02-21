@@ -39,7 +39,7 @@
     - 职位：web前端开发工程师。
     - 案例：
         - http://jcpc.skinjc.com/
-        - http://jcpc.skinjc.com/js/banner.js 这个js是我以前写的，还在被使用，顶部还有我以前留下的痕迹，rookie QQ:1123486116。案例无法一一列举，这么多年过去了，经手了那么多人，很多东西都已经不是当初的样子了。
+        - http://jcpc.skinjc.com/js/banner.js 这个js是我以前写的，还在被使用，顶部还有我以前留下的痕迹，rookie QQ:1123486116。
     - 离职原因：工作内容相对简单，能力得不到施展。
 
 # 项目经历
