@@ -71,7 +71,7 @@
     - 技术栈：jq+js
 
 # 期望薪资
-* 期望税前26k左右。
+* 期望税前21k-26k左右。
 
 # 使用过或了解过的技术
 * 布局：html+css，html5+css3，less，sass(推荐)，iconfont。
