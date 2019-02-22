@@ -31,8 +31,8 @@
 * undefined < 0; // false
 * undefined == 0; // false undefined在做相等判断时，不进行转型，所以undefined和0为不同类型数据，结果为false
 * undefined == null; // true undefined派生于null
-* undefined >= 0; // true
-* undefined <= 0; // true
+* undefined >= 0; // false
+* undefined <= 0; // false
 
 # 原因
 * 后来在[ECMAScript 6入门（链接）](http://es6.ruanyifeng.com/?search=%E9%80%97%E5%8F%B7&x=4&y=9#docs/spec)找到==和===的算法细节：
