@@ -86,3 +86,13 @@ console.log(1 + + '1'); // 2
 * Object.values在低版本ios的微信上不支持。
 
 * ```fn.call()```不传参数时```this```指向```window```对象。严格模式下```"use strict"```指向```undefined```。
+
+* 怎么才能得知被new出来的对象所属的构造函数是谁？
+```
+function A(){}
+var a = new A(){}
+// 方法1
+console.log(a.constructor.name); // 打印 'A'
+// 方法2
+console.log(Object.getPrototypeOf(a).constructor.name); // 打印 'A'
+```
