@@ -95,6 +95,8 @@ var a = new A(){}
 console.log(a.constructor.name); // 打印 'A'
 // 方法2
 console.log(Object.getPrototypeOf(a).constructor.name); // 打印 'A'
+// 方法3
+console.log(a.__proto__.constructor.name); // 打印 'A'
 ```
 
 * 三种不常用的方法
