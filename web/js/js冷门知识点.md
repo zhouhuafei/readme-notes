@@ -84,3 +84,5 @@ console.log(1 + + '1'); // 2
 * es6中，通过class定义的构造函数Super，无法使用Super.call(this)调用，当然Super.apply(this)也不行，也无法直接Super()调用，会报错。
 
 * Object.values在低版本ios的微信上不支持。
+
+* ```fn.call()``` 不传参数指向```window```对象。
