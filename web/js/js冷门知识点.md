@@ -96,3 +96,9 @@ console.log(a.constructor.name); // 打印 'A'
 // 方法2
 console.log(Object.getPrototypeOf(a).constructor.name); // 打印 'A'
 ```
+
+* 三种不常用的方法
+    - isPrototypeOf
+    - getPrototypeOf
+    - hasOwnProperty
+    - 解释待续...
