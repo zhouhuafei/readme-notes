@@ -89,8 +89,10 @@ console.log(1 + + '1'); // 2
 
 * 怎么才能得知被new出来的对象所属的构造函数是谁？
 ```
-function A(){}
-var a = new A(){}
+function A(){
+    this.mm = 'mm';
+}
+var a = new A();
 // 方法1
 console.log(a.constructor.name); // 打印 'A'
 // 方法2
@@ -98,9 +100,16 @@ console.log(Object.getPrototypeOf(a).constructor.name); // 打印 'A'
 // 方法3
 console.log(a.__proto__.constructor.name); // 打印 'A'
 ```
-
-* 三种不常用的方法
-    - isPrototypeOf
-    - getPrototypeOf
-    - hasOwnProperty
-    - 解释待续...
+  - 三种不常用的方法
+    - isPrototypeOf：方法用于测试一个对象是否存在于另一个对象的原型链上。
+    ```
+    A.prototype.isPrototypeOf(a); // true
+    ```
+    - getPrototypeOf：方法返回指定对象的原型
+    ```
+    Object.getPrototypeOf(a); // 返回原型。
+    ```
+    - hasOwnProperty：方法会返回一个布尔值，指示对象自身属性中是否具有指定的属性。
+    ```
+    a.hasOwnProperty('mm'); // 'a'
+    ```
