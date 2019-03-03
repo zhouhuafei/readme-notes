@@ -8,3 +8,68 @@
     $g-color-danger: #ff0000 !default;
     ```
 
+# 占位符%
+占位符选择器(Placeholder Selector)是以%而不是.作为开始符的选择器。它自身不会出现在编译后的CSS文件中, 只会出现在@extend了它的那些选择器中。
+
+# @extend的限制
+@extend有个限制, 就是你不能@extend不同@media块中的样式。这个限制同样对%选择器有效。
+```
+%icon {
+  transition: background-color ease .2s;
+  margin: 0 .5em;
+}
+
+@media screen {
+  .error-icon {
+    @extend %icon;
+  }
+
+  .info-icon {
+    @extend %icon;
+  }
+}
+```
+这会导致编译错误:
+```
+You may not @extend an outer selector from within @media.
+You may only @extend selectors within the same directive.
+From "@extend %icon" on line 8 of icons.scss
+```
+这是由于@extend的实现方式其实是用调用@extend的类替换被@extend的类, 上例中即用.error-icon, .info-icon替换%icon。但是由于这些调用@extend的类属于@media块, 这样直接替换会导致替换后的规则脱离@media块, 因此是非法的。
+
+但是, 反过来就没事儿。因为%icon属性原本就是在@media内部生效的, .error-icon, .info-icon继承来的这部分规则自然也只应该在该@media下生效。
+```
+@media screen {
+  %icon {
+    transition: background-color ease .2s;
+    margin: 0 .5em;
+  }
+}
+
+.error-icon {
+  @extend %icon;
+  background-color: red;
+}
+
+.info-icon {
+  @extend %icon;
+  background-color: green;
+}
+```
+会被编译成
+```
+@media screen {
+  .error-icon, .info-icon {
+    transition: background-color ease .2s;
+    margin: 0 .5em;
+  }
+}
+
+.error-icon {
+  background-color: red;
+}
+
+.info-icon {
+  background-color: green;
+}
+```
