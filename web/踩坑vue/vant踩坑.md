@@ -1,6 +1,6 @@
 # 怎么做表单验证？
 * 是否内置表单验证规则？
-    - 待续...
+    - 无内置表单验证规则。需要自己写验证规则。
 
 # 微信小程序的组件 - van-datetime-picker
 * 时间选择器```bindchange```时得不到```event.detail.value```的值，直接报错说```detail```是```undefined```。
