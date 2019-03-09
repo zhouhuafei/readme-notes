@@ -1,3 +1,9 @@
+# _id的类型
+* mongodb自动生成的```_id```是```ObjectId```类型的数据。
+```
+ObjectId("5bdd9083764ad117a550c712")
+```
+
 # 删除一个字段
 使用update命令
 * update命令格式：
