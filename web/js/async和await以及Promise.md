@@ -65,6 +65,7 @@ const obj = await fn1 && await fn2;
     - 总结：```await```返回```Promise```对象的处理结果。如果等待的不是```Promise```对象，则返回该值本身。
 * 怎么防止await因接口报错，导致流程走不下去？
     - 答：根据上述原理，可对axios进行二次Promise封装，接口报错的时候axios会走catch，在catch中执行reject({status:'error'});
+    - 上述乃错误答案，只执行reject，就一定会抛出错误，想要解决必须使用catch捕获，并在catch中返回json```return {status:'error'}```。
     - 如果想带错误信息，也可以把错误信息带上，这样的话，await就不会报错，因为```Promise```对象的处理结果不是抛出一个错误，而是抛出一个json了。
 
 # Promise之axios和jq的ajax最新版
