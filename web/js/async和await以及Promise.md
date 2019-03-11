@@ -97,3 +97,9 @@ const obj = await fn1 && await fn2;
 
 # Promise库
 https://github.com/petkaantonov/bluebird/
+
+# 自问自答
+* 问题1：await时怎么防止Promise抛错。
+    - 答：对Promise进行catch操作，并返回结果。
+* 问题2：Promise.all中的Promise什么情况下会走进Promise.all的catch中。
+    - 答：只要有一个失败了就会走进去。如果这些失败全被Promise.all中的Promise捕获了(catch)，则不会走进catch，而是会走进then。
