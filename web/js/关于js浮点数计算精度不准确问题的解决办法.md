@@ -20,6 +20,7 @@ console.log( 0.1+ 0.2);
 ```
 
 # 解决方案
+> 以下是拷贝网上的代码
 ```javascript
 /**
  ** 加
@@ -110,3 +111,8 @@ function divide(arg1, arg2) {
   }
 }
 ```
+
+# 包
+* https://github.com/nefe/number-precision
+* https://github.com/MikeMcl/decimal.js
+* https://github.com/MikeMcl/bignumber.js
