@@ -84,6 +84,9 @@ const obj = await fn1 && await fn2;
 * 需要特别注意的是，Promise.all获得的成功结果的数组里面的数据顺序和Promise.all接收到的数组顺序是一致的，即p1的结果在前，即便p1的结果获取的比p2要晚。这带来了一个绝大的好处：在前端开发请求数据的过程中，偶尔会遇到发送多个请求并根据请求顺序获取和使用数据的场景，使用Promise.all毫无疑问可以解决这个问题。
 * 问：使用Promise.all处理多条请求时(假如发送请求使用的是axios)，如果有一条请求失败了，则会走到catch中，只能得到一个失败的结果，那怎么才能得到其他成功了的结果呢？
     - 答：all的特性是所有的都成功才会走then，那么只要想办法让axios不返回失败就可以了。所以只要对axios进行二次的Promise封装。无论axios失败了还是成功了。都走resolve(myData)。然后对myData进行打标识即可。
+* 问：我对axios进行了二次封装，封装时是先走的catch，然后走的then。会导致什么问题？
+    - 二次封装核心代码如右所示：```return axios(opts).catch(res=>res).then(res=>res)```
+    - 答：Promise.all时，二次封装的接口即使404了，也会走进then里。不会走到catch里。
 
 # Promise.race
 * 顾名思义，Promse.race就是赛跑的意思，意思就是说，```Promise.race([p1, p2, p3])```里面哪个结果获得的快，就返回那个结果，不管结果本身是成功状态还是失败状态。
