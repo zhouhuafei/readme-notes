@@ -89,7 +89,7 @@ const obj = await fn1 && await fn2;
     - 答：all的特性是所有的都成功才会走then，那么只要想办法让axios不返回失败就可以了。只需对axios进行catch捕获即可。
 * 问：我对axios进行了二次封装，封装时是先走的catch，然后走的then。会导致什么问题？
     - 二次封装核心代码如右所示：```return axios(opts).catch(res=>res).then(res=>res)```。
-    - 答：Promise.all时，二次封装的接口即使404了，也会走进then里。不会走到catch里。其实只要对错误进行了捕获(catch)，就不会走进catch里了。
+    - 答：Promise.all时，二次封装的接口即使404了，也会走进then里。不会走到catch里。其实只要对接口错误进行了捕获(catch)，就不会走进Promise.all的catch里了。
 
 # Promise.race
 * 顾名思义，Promse.race就是赛跑的意思，意思就是说，```Promise.race([p1, p2, p3])```里面哪个结果获得的快，就返回那个结果，不管结果本身是成功状态还是失败状态。
