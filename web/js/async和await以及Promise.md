@@ -102,3 +102,8 @@ https://github.com/petkaantonov/bluebird/
     - 答：对Promise进行catch操作，并返回结果。
 * 问题2：Promise.all中的Promise什么情况下会走进Promise.all的catch中。
     - 答：只要有一个失败了就会走进去。如果这些失败全被Promise.all中的Promise捕获了(catch)，则不会走进catch，而是会走进then。
+
+# 总结
+* 如今看来，我对axios进行对二次封装竟是如此对完美。完美的避开了报错。
+    - 二次封装的弊端：Promise.all需要二次判断是否全都请求成功了。其实就算我不二次封装，响应的数据也需要二次判断，因为请求成功不代表业务成功。
+    - 二次封装的优点：await得到的结果不会出现js抛错导致后续代码不执行。
