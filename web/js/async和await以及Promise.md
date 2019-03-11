@@ -63,6 +63,9 @@ const obj = await fn1 && await fn2;
     - 接口出错：如果```axios()```后的```.catch()```中无返回值。则obj就是undefined。
     - 接口出错：如果```axios()```后无```.catch()```操作。则obj打印不出来值。因```var obj = await fn();```会直接抛出错误，所以代码走不到```console.log(obj);```。
     - 总结：```await```返回```Promise```对象的处理结果。如果等待的不是```Promise```对象，则返回该值本身。
+* 怎么防止await因接口报错，导致流程走不下去？
+    - 答：根据上述原理，可对axios进行二次Promise封装，接口报错的时候axios会走catch，在catch中执行reject({status:'error'});
+    - 如果想带错误信息，也可以把错误信息带上，这样的话，await就不会报错，因为```Promise```对象的处理结果不是一个错误，而是一个json了。
 
 # Promise之axios和jq的ajax最新版
 * return axios().then().catch()之后。如果后续还接着使用.then()的话。即使失败了。也是会走进then()的。所以我才先catch处理再then处理。
