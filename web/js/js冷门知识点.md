@@ -119,3 +119,11 @@ console.log(a.__proto__.constructor.name); // 打印 'A'
     - 序列化时是深度序列化的。会把对象和数组中的内容全部转成字符串。
     - 序列化时，会忽略：空数组，空对象，undefined。
     - 序列化时，会把null转成空字符串。
+    ```javascript
+    import qs from 'qs';
+    qs.stringify({a: []}); // ''
+    qs.stringify({a: {}}); // ''
+    qs.stringify({a: [{}]}); // ''
+    qs.stringify({a: {b: []}}); // ''
+    qs.stringify({a: {b: {}}}); // ''
+    ```
