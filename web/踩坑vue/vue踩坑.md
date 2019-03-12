@@ -344,3 +344,13 @@ p.age; // 此时会打印：'age 被读取'。然后打印出：3。
 # v-for为什么要加key
 * https://cn.vuejs.org/v2/guide/list.html#key
 * https://www.jianshu.com/p/4bd5e745ce95
+
+#  $emit与$on
+```
+vue中$emit与$on
+const Event = new Vue(); // 相当于又new了一个vue实例，Event中含有vue的全部方法。
+Event.$emit('msg', {msg: 'msg'}); // 发送数据，第一个参数是发送数据的名称，接收时还用这个名字接收，第二个参数是这个数据现在的位置。
+Event.$on('msg', function (json) { // 接收数据，第一个参数是数据的名字，与发送时的名字对应，第二个参数是一个方法，要对数据的操作。
+  // 这里是对数据的操作
+});
+```
