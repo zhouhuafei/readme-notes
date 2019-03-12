@@ -50,6 +50,7 @@ const fn1 = promiseFn1();
 const fn2 = promiseFn2();
 const obj = await fn1 && await fn2;
 // 等fn1和fn2执行都有结果了，才会走到这一行。如此写法会并发请求。相当于Promise.all。
+// 其实并不尽然，因为obj只是```await fn2```的结果。测试分行写，是否会并发。待续...
 ```
 * 示例代码如下，请问：obj会得到怎样的结果？
     ```
