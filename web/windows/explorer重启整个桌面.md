@@ -4,4 +4,5 @@
     - 文件->新建任务->输入explorer(无需输入.exe后缀)->回车。
     
 # win10
-* 我在任务管理器中没找到explorer.exe进程。
+* ```explorer.exe```被命名为了中文名```Windows 资源管理器```
+    - 右键即可重启。
