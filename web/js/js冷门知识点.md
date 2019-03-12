@@ -127,3 +127,8 @@ console.log(a.__proto__.constructor.name); // 打印 'A'
     qs.stringify({a: {b: []}}); // ''
     qs.stringify({a: {b: {}}}); // ''
     ```
+
+* qs库踩坑：
+    - 数组里如果超过21条json数据```[{a:1},{a:1}]```。
+    - stringify之后再parse会导致数组变成json对象。
+    - 解决方案：parse时有第二参数可以控制```{arrayLimit:9999}```。
