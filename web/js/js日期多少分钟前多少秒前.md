@@ -36,5 +36,5 @@ function dateDiff(hisTime, nowTime) {
   return result;
 }
 
-dateDiff(new Date('1987-04-03').getTime()); //一定要转换成时间戳
+dateDiff(new Date('1987-04-03').getTime()); // 一定要转换成时间戳
 ```
