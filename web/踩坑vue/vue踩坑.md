@@ -354,3 +354,6 @@ Event.$on('msg', function (json) { // 接收数据，第一个参数是数据的
   // 这里是对数据的操作
 });
 ```
+
+# vue模版可以把布尔值true和false渲染出来。
+* react的jsx语法不会把布尔值true和false渲染出来。
