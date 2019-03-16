@@ -111,3 +111,31 @@ https://cli.vuejs.org/zh/
 ```
 vue ui
 ```
+
+# 为什么vue-cli3的官网在手机上访问时，可以有添加到桌面的功能？
+* 因为使用了manifest https://cli.vuejs.org/manifest.json
+```
+<link rel="manifest" href="/manifest.json">
+```
+```
+{
+    "name": "Vue CLI",
+    "short_name": "Vue CLI",
+    "icons": [
+        {
+        "src": "/icons/android-chrome-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+        },
+        {
+        "src": "/icons/android-chrome-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+        }
+    ],
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#fff",
+    "theme_color": "#3eaf7c"
+}
+```
