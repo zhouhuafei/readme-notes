@@ -114,13 +114,15 @@ console.log(a.__proto__.constructor.name); // 打印 'A'
     a.hasOwnProperty('mm'); // 'a'
     ```
 
-* 多为数组扁平化。
-    - 1、使用toString成字符串
+* 多为数组扁平化 - 方案1：
+    - 1、使用toString成字符串。
     ```javascript
     [1,[2,[3]]].toString(); // 1,2,3
     ```
-    - 2、使用toString成字符串
-    - 方案2：
+    - 2、使用toString成字符串。
+    - 劣势：会把所有值全部都转成字符串，所以解析不了函数和json对象以及布尔值等复合类型和基本类型的数据。
+* 多为数组扁平化 - 方案2：
+    - 使用数组的flat方法。
     ```javascript
     [1,[2,[3]]].flat(2); // 1,2,3
     ```
