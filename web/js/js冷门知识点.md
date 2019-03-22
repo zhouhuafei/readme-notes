@@ -113,3 +113,14 @@ console.log(a.__proto__.constructor.name); // 打印 'A'
     ```
     a.hasOwnProperty('mm'); // 'a'
     ```
+
+* 多为数组扁平化。
+    - 1、使用toString成字符串
+    ```javascript
+    [1,[2,[3]]].toString(); // 1,2,3
+    ```
+    - 2、使用toString成字符串
+    - 方案2：
+    ```javascript
+    [1,[2,[3]]].flat(2); // 1,2,3
+    ```
