@@ -118,7 +118,7 @@
     - https://github.com/zhouhuafei/readme-notes/tree/master/web
 
 # 为前端这个行业做过什么贡献？
-* 在npm上贡献了60+的垃圾包。可搜索关键字```zhf.```进行查看。github上有对应源码。
+* 在npm上贡献了60+的npm包。可搜索关键字```zhf.```进行查看。github上有对应源码。
 
 # 前端入行经历
 * 2013/11出校门实习，找工作，迷茫，进过工厂，做过网管。
