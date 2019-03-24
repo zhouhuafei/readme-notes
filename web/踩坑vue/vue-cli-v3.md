@@ -3,6 +3,10 @@
 ```
 cnpm i --save-dev node-sass sass-loader
 ```
+* 或使用dart-sass代替node-sass
+```
+cnpm i --save-dev dart-sass sass-loader
+```
 
 # 几点疑惑
 > vue-cli3中，默认没有配置文件。
