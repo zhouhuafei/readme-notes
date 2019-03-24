@@ -101,3 +101,7 @@ function px2remCanvas(px) {
   return px * (wrap.offsetWidth / 375); // 设计图是375的。
 }
 ```
+
+# 对比vw
+* vw不需要使用js适配。是相对于视口宽度进行计算的。100vw等于整个视口宽度。
+* rem在pc上更灵活，可以根据外层容器宽度配合js适配到想要的大小，而vw只能根据视口宽度适配。
