@@ -3,7 +3,7 @@
 ```
 cnpm i --save-dev node-sass sass-loader
 ```
-* 或使用dart-sass代替node-sass
+* 建议使用dart-sass代替node-sass。因为node-sass太难安装了。
 ```
 cnpm i --save-dev dart-sass sass-loader
 ```
