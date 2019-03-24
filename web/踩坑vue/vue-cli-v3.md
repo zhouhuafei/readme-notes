@@ -95,11 +95,14 @@ npm i --save-dev node-sass sass-loader
     - 经测试，引入任何模块都会导致```npm run serve```报错。
 
 * ```vue.config.js```中```baseUrl```和```publicPath```的区别?
-    - 待续...
+    - 建议使用```publicPath```，因为使用```baseUrl```时，打包build会给出以下警告。
+    - ```WARN  "baseUrl" option in vue.config.js is deprecated now, please use "publicPath" instead```。
+    - 所以两者理应没有区别。只是前者会被逐渐废弃掉罢了。
 
-* favicon为什么要放到public目录，为什么不直接通过base64的形式?
+* favicon为什么要放到public目录，为什么不直接通过base64的形式引入?
     - index.html中的案例：```<link rel="icon" href="<%= BASE_URL %>favicon.ico">```
-    - 待续...
+    - 不知道！
+    - 建议：打成base64的数据进行引入或者引入远程的资源。
 
 # 以上疑惑的解决案例
 https://github.com/zhouhuafei/hello-world_vue-cli3_vant
