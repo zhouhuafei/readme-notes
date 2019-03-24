@@ -3,9 +3,9 @@
 ```
 cnpm i --save-dev node-sass sass-loader
 ```
-* 建议使用dart-sass代替node-sass。因为node-sass太难安装了。
+* 建议使用dart-sass代替node-sass。因为node-sass太难安装了。此处我使用npm的原因是因为我使用cnpm安装一直报错。
 ```
-cnpm i --save-dev dart-sass sass-loader
+npm i --save-dev dart-sass sass-loader
 ```
 
 # 几点疑惑
@@ -142,4 +142,13 @@ vue ui
     "background_color": "#fff",
     "theme_color": "#3eaf7c"
 }
+```
+
+# 个人使用vue-cli3的流程如下
+* 我选择的默认配置
+```
+vue create project-name
+npm i --save-dev dart-sass sass-loader
+vue add router
+vue add vuex
 ```
