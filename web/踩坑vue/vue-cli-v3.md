@@ -3,10 +3,6 @@
 ```
 cnpm i --save-dev node-sass sass-loader
 ```
-* 建议使用dart-sass代替node-sass。因为node-sass太难安装了。此处我使用npm的原因是因为我使用cnpm安装一直报错。
-```
-npm i --save-dev dart-sass sass-loader
-```
 
 # 几点疑惑
 > vue-cli3中，默认没有配置文件。
@@ -148,7 +144,9 @@ vue ui
 * 我选择的默认配置
 ```
 vue create project-name
-npm i --save-dev dart-sass sass-loader
+cnpm i --save-dev node-sass sass-loader
 vue add router
 vue add vuex
 ```
+* 等依赖安装完毕之后，如果我删除了node_modules之后，再使用```cnpm i```会报错。
+    - 所以我又删除了node_modules文件夹，然后使用```npm i```老老实实的安装，就没出线报错的问题了。
