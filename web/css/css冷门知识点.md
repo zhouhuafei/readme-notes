@@ -14,3 +14,9 @@
     - 从距离top为10px的位置，距离left为60px的位置，距离top为200px的位置，距离left为10px的位置，裁切出一个矩形。
 
 * 子元素的position:fixed;默认根据根节点进行定位，如果某个父节点使用了transform属性，则会根据这个父节点进行定位且会丢失fixed的悬浮特性。
+
+* 减除字体动画震颤效果
+```
+font-variant: tabular-nums;
+font-feature-settings: tnum;
+```
