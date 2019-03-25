@@ -62,4 +62,6 @@ https://github.com/necolas/normalize.css
 
 # 我又燃起来希望。
 * 因为```element```打包生成的css中是没有清零样式的。
+
+# 应该拿生成后的css文件进行对比。
 * 待续...
