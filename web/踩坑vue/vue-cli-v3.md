@@ -144,7 +144,7 @@ vue ui
 ```
 
 # 个人使用vue-cli3的流程如下
-* 我选择的默认配置
+* 我选择的默认配置(建议自定义配置，把eslint和postcss的配置剥离出来，不放到package.json中)
 ```
 vue create project-name
 npm i --save-dev node-sass sass-loader
