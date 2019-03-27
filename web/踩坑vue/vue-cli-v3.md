@@ -157,6 +157,6 @@ vue add vuex
 # 建议自定义配置
 * Babel
 * Router
-* vuex 
+* vuex
 * CSS Pre-processors
 * Linter / Formatter
