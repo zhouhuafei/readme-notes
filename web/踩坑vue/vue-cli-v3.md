@@ -153,3 +153,10 @@ vue add vuex
 ```
 * 等依赖安装完毕之后，如果我删除了```node_modules```文件夹，转而使用```cnpm i```安装依赖，最后```npm run build```会报错。
     - 所以我又删除了node_modules文件夹，然后使用```npm i```老老实实的安装，就没出线报错的问题了。
+
+# 建议自定义配置
+* Babel
+* Router
+* vuex 
+* CSS Pre-processors
+* Linter / Formatter
