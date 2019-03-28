@@ -15,7 +15,6 @@ function dateDiff(hisTime, nowTime) {
     minute = 1000 * 60,
     hour = minute * 60,
     day = hour * 24,
-    halfamonth = day * 15,
     month = day * 30,
     year = month * 12,
 
