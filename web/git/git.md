@@ -57,10 +57,11 @@ git config --global credential.helper store
     ```
     git tag v1.0.0 // 打tag
     git tag // 查看本地tag
-    git tag -d test_tag // 本地删除tag
+    git tag -d test_tag // 删除本地tag
     git push origin v1.0.0 // 推送本地新增的tag
     git push origin --tags // 推送本地新增的所有tag
     git show-ref --tags // 查看远程tag
+    git push origin :refs/tags/v1.0.0 // 删除远程tag
     ```
 
 * git commit 添加表情
