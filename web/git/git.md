@@ -52,7 +52,7 @@ git remote remove origin
 ```
 git config --global credential.helper store
 ```
-* git打tag(标签)
+* git打tag(标签)(方便追溯指定版本存在的问题以及回溯到某个指定版本)
     - https://git-scm.com/book/zh/v1/Git-%E5%9F%BA%E7%A1%80-%E6%89%93%E6%A0%87%E7%AD%BE
     ```
     git tag v1.0.0 // 打标签
