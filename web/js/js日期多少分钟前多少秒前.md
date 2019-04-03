@@ -3,7 +3,7 @@
  * [dateDiff 算时间差]
  * @param  {Number} hisTime - 历史时间戳，必传
  * @param  {Number} nowTime - 当前时间戳，不传将获取当前时间戳
- * @return {string} - string
+ * @return {string} - 返回时间差
  */
 function dateDiff(hisTime, nowTime) {
   if (!arguments.length) return '';
