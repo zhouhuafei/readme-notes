@@ -91,5 +91,5 @@ store.dispatch('login');
 # 辅助函数
 * mapState和mapGetters应该绑定到computed上。
     - 就算mapGetters中有些getters返回的是个函数，也应该绑定到computed上，然后在模版里直接调用即可。```<div>{{ fn(args) }}<div>```
-    - 如果绑定到mapGetters中有些getters返回的是个函数，你把它绑定到了methods上，那么在模版里你需要调用两次。```<div>{{ fn()(args)  }}<div>```
+    - 如果mapGetters中有些getters返回的是个函数，你把它绑定到了methods上，那么在模版里你需要调用两次。```<div>{{ fn()(args)  }}<div>```
 * mapMutations和mapActions应该绑定到methods上。
