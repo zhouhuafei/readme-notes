@@ -55,10 +55,13 @@ git config --global credential.helper store
 * git打tag(标签)(方便追溯指定版本存在的问题以及回溯到某个指定版本)
     - https://git-scm.com/book/zh/v1/Git-%E5%9F%BA%E7%A1%80-%E6%89%93%E6%A0%87%E7%AD%BE
     ```
-    git tag v1.0.0 // 打标签
-    git tag // 查看标签
-    git push origin v1.0.0 // 推送本地新增的标签
-    git push origin --tags // 推送本地新增的所有标签
+    git tag v1.0.0 // 打tag
+    git tag // 查看本地tag
+    git tag -d test_tag // 删除本地tag
+    git push origin v1.0.0 // 推送本地新增的tag
+    git push origin --tags // 推送本地新增的所有tag
+    git show-ref --tags // 查看远程tag
+    git push origin :refs/tags/v1.0.0 // 删除远程tag
     ```
 
 * git commit 添加表情

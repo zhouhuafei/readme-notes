@@ -72,3 +72,9 @@ new webpack.DefinePlugin({
     - 正确的访问路径是：output.publicPath 拼接上 output.path之后的路径。
     - 手动输入url时，访问路径前面是要带反斜杠的，这是常识。但是使用openPage配置时，前面不要带反斜杠，否则浏览器上会出现两个反斜杠。
     - 案例：openPage: 'views/pages/ui.html'。views前面不要带反斜杠。
+
+# scss中的import加波浪号是什么意思
+* 前面加 ~ 表示你后面的值为 alias, 然后就会去 webpack alias 配置中找相应的值, 然后拼接成最后的地址
+```scss
+@import "~element-ui/packages/theme-chalk/src/index";
+```
