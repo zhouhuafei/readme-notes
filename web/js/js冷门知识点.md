@@ -126,3 +126,8 @@ console.log(a.__proto__.constructor.name); // 打印 'A'
     ```javascript
     [1,[2,[3]]].flat(2); // 1,2,3
     ```
+    
+* 生成10条数据
+```javascript
+Array.apply(null, new Array(10)).map(() => ({ code: 'code123', name: '岗位名称', remark: '备注', status: '启用' }))
+```
