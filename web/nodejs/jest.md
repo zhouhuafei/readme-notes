@@ -77,3 +77,16 @@ SecurityError: localStorage is not available for opaque origins at Window.get lo
 ```
 * 解决方案，增加配置文件
  - https://github.com/zhouhuafei/zhf.time-count-down/blob/master/jest.config.js
+
+# git commit 自动修复语法错误
+```
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "src/**/*.{js,vue}": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+```
