@@ -94,3 +94,7 @@ https://www.jianshu.com/p/cdd749c624d9
     ]
   }
 ```
+* 解释：
+    - ```pre-commit```可以换成```precommit```。
+    - ```git add```表示将处理过的代码重新```add```到```git```中。
+    - 然后再触发```commit```。
