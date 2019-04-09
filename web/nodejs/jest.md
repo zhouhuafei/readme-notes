@@ -79,6 +79,7 @@ SecurityError: localStorage is not available for opaque origins at Window.get lo
  - https://github.com/zhouhuafei/zhf.time-count-down/blob/master/jest.config.js
 
 # git commit 自动修复语法错误
+https://www.jianshu.com/p/cdd749c624d9
 * 1、配置eslint(略)
 * 2、安装lint-staged包
 * 3、package.json中增加如下字段
