@@ -115,5 +115,6 @@ https://github.com/petkaantonov/bluebird/
     - 二次封装的优点：await得到的结果不会出现js抛错导致后续代码不执行(其实不算优点，如果得不到结果还继续走依然会导致读不到数据，还是会抛出错误的)。
 * 当优点不存在了，那上面这套二次封装就失去了意义。所以还是直接对axios套一层Promise进行二次封装吧。如此Promise.all就不用二次判断了。
     - 请求失败和业务失败都走reject。请求成功且业务成功走resolve。
-    - reject和resolve返回处理后的json结果。状态分为error，failure，success。
+    - reject和resolve返回处理后的json结果。状态分为error(请求错误或响应错误，即响应状态非200)，failure(请求成功，业务失败)，success(请求成功，业务成功)。
     - 加是否处理错误(默认开启)，是否处理失败(默认开启)，是否处理成功(默认关闭)的开关。
+    - 如此，请求失败和业务失败都可以直接弹层提示。如果失败了需要再次请求，只需要关掉业务失败的提示，判断如果failure了直接递归即可。
