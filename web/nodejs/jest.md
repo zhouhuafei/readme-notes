@@ -80,9 +80,9 @@ SecurityError: localStorage is not available for opaque origins at Window.get lo
 
 # git commit 自动修复语法错误
 https://www.jianshu.com/p/cdd749c624d9
-* 1、配置eslint(略)
-* 2、安装lint-staged包
-* 3、package.json中增加如下字段
+* 1、配置```eslint```(略)
+* 2、安装```husky```和```lint-staged```包
+* 3、```package.json```中增加如下字段
 ```
   "gitHooks": {
     "pre-commit": "lint-staged"
