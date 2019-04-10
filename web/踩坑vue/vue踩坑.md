@@ -344,8 +344,8 @@ p.age; // 此时会打印：'age 被读取'。然后打印出：3。
 * https://cn.vuejs.org/v2/guide/list.html#key
 * https://www.jianshu.com/p/4bd5e745ce95
 * 防止Vue对DOM的就地复用，让DOM具有唯一性。否则会出现一些不必要的bug。
-    - 案例：使用v-if处理A和B两个input框时(默认为空值)，当其中一个输入框A里输入了值之后，再让另外一个输入框B显示时，会发现其中的值也被输入了。因Vue的就地复用策略导致的这个原因。
-    - 解决方案：加唯一kei值。
+    - 案例：使用v-if处理A和B两个input框时(默认为空值)，当其中一个输入框A里输入了值之后，再让另外一个输入框B显示时，会发现输入框B中也有了和A输入框一模一样的值。因Vue的就地复用策略导致的这个原因。
+    - 解决方案：给两个输入框加不同的key值。
     - https://blog.csdn.net/qq_17832583/article/details/80567697
 
 #  $emit与$on
