@@ -274,8 +274,7 @@ new Vue({
       // DOM 还没有更新
       this.$nextTick(function () {
         // DOM 现在更新了
-        // `this` 绑定到当前实例，此处使用箭头函数或者function关键字都可以正确获取到this。
-        this.doSomethingElse()
+        this.doSomethingElse() // this指向Vue的实例，此处使用箭头函数或者function关键字都可以正确获取到this。
       })
     }
   }
