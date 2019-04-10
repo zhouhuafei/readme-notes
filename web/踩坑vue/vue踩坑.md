@@ -353,6 +353,19 @@ Event.$on('msg', function (json) { // 接收数据，第一个参数是数据的
   // 这里是对数据的操作
 });
 ```
+* 上述操作可用来进行非父子组件之间的通信(如果不使用vuex)。在created或者mounted钩子中使用$on监听即可。在需要通信的地方使用$emit进行通信即可。
 
 # vue模版可以把布尔值true和false渲染出来
 * react的jsx语法不会把布尔值true和false渲染出来。
+
+# 普通数组如果使用以下两种方式进行修改是无法驱动视图的
+* 以下两种方式是无法驱动视图的。
+    - 1、```arr[0] = 'abc'```
+    - 2、```arr.length = 1```
+* 但是如果数组中的每一项是对象。
+    - 可以通过索引```arr[0].name = 'name'```驱动视图。
+    - 此时。紧跟着再使用```arr[0] = {name: 'name1'}```或者```arr.length = 1```也是可以驱动视图的。
+* 其他方法
+    - https://cn.vuejs.org/v2/guide/list.html#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9
+    - ```vm.$set(vm.items, indexOfItem, newValue)```
+    - ```vm.items.splice(newLength)```
