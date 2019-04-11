@@ -17,9 +17,9 @@
 * 请求接口明明是GET和POST，然而请求时却先进行了OPTIONS请求，后进行了正常的请求。
     - https://www.cnblogs.com/scharfsinnig/archive/2017/04/27/6769737.html
     - https://itbilu.com/javascript/js/VkiXuUcC.html
-    - 导致这个问题的原因是因为使用了自定义的请求头信息。
+    - 导致这个问题的原因：1、因为使用了自定义的请求头信息。2、使用的```Content-Type```值为```application/json```。
     ![图片加载中...](./images/1.png)
-    - 解决方案1：不使用自定义的头信息。
+    - 解决方案1：不使用自定义的请求头信息。使用传统的```Content-Type```值，例如```application/x-www-form-urlencoded```或```multipart/form-data```或```text/plain```。
     - 解决方案2：待续...
 
 # 请求方式应该大写
