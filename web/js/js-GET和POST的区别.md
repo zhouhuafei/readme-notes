@@ -14,13 +14,12 @@
 * OPTIONS请求方法的主要用途有两个：
     - 获取服务器支持的HTTP请求方法；也是黑客经常使用的方法。
     - 用来检查服务器的性能。例如：AJAX进行跨域请求时的预检，需要向另外一个域名的资源发送一个HTTP OPTIONS请求头，用以判断实际发送的请求是否安全。
-* 请求接口明明是GET和POST，然而请求时却先进行了OPTIONS请求，后进行了正常的请求。
-    - https://www.cnblogs.com/scharfsinnig/archive/2017/04/27/6769737.html
-    - https://itbilu.com/javascript/js/VkiXuUcC.html
-    - 导致这个问题的原因：1、因为使用了自定义的请求头信息。2、使用的```Content-Type```值为```application/json```。
-    ![图片加载中...](./images/1.png)
-    - 解决方案1：不使用自定义的请求头信息。使用传统的```Content-Type```值，例如```application/x-www-form-urlencoded```或```multipart/form-data```或```text/plain```。
-    - 解决方案2：待续...
+* 请求接口明明是GET和POST，然而请求时却先进行了OPTIONS请求，后进行了正常的请求。(问题)
+    - 请求以 GET, HEAD 或者 POST 以外的方法发起请求。或者，使用 POST，但请求数据为 application/x-www-form-urlencoded, multipart/form-data 或者 text/plain 以外的数据类型。比如说，用 POST 发送数据类型为 application/json 或者 application/xml 或者 text/xml 的 XML 数据的请求。
+    - 使用自定义(非标准)请求头（比如添加诸如 X-PINGOTHER）
+* 请求接口明明是GET和POST，然而请求时却先进行了OPTIONS请求，后进行了正常的请求。(解决方案)
+    - 
+    - 使用标准的请求头。例如使用Authorization而不是使用token。
 
 # 请求方式应该大写
 * 根据RFC2616，HTTP Method是区分大小写的。GET/POST/PUT/DELETE。
