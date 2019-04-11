@@ -128,6 +128,11 @@ console.log(a.__proto__.constructor.name); // 打印 'A'
     ```
     
 * 生成10条数据
-```javascript
-Array.apply(null, new Array(10)).map(() => ({ code: 'code123', name: '岗位名称', remark: '备注', status: '启用' }))
-```
+    - 方法1
+    ```javascript
+    Array.apply(null, new Array(10)).map(() => ({ code: 'code123', name: '岗位名称', remark: '备注', status: '启用' }))
+    ```
+    - 方法2
+    ```javascript
+    [...new Array(10)].map(() => ({ code: 'code123', name: '岗位名称', remark: '备注', status: '启用' }))
+    ```
