@@ -13,7 +13,8 @@
 * 如果没开启es6，使用const定义变量时，eslint检测工具会报错：```Const definitions are not supported by current JavaScript version```
 
 # 快捷键
-* ```Alt+J```可以选中多个相同的字符串，和sublime的Ctrl+D的作用一样。
+* ```Alt + J```可以选中多个相同的字符串，和sublime的Ctrl+D的作用一样。
+* ```Ctrl + Shift + U```光标所在位置大小写转换。
 
 # WebStorm做Vue项目时卡顿，加了内存条变成16G内存还是卡。
 * 找到WebStorm.exe.vmoptions这个文件。
