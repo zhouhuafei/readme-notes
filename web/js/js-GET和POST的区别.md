@@ -17,6 +17,10 @@
 * 请求接口明明是GET和POST，然而请求时却先进行了OPTIONS请求，后进行了正常的请求。(问题)
     - 1、请求以 GET, HEAD 或者 POST 以外的方法发起请求。或者，使用 POST，但请求数据为 application/x-www-form-urlencoded, multipart/form-data 或者 text/plain 以外的数据类型。比如说，用 POST 发送数据类型为 application/json 或者 application/xml 或者 text/xml 的 XML 数据的请求。
     - 2、使用自定义(非标准)请求头（比如添加诸如 X-PINGOTHER）
+    - 其他如图所示
+
+    ![图片加载中...](./images/OPTIONS.png)
+
 * 请求接口明明是GET和POST，然而请求时却先进行了OPTIONS请求，后进行了正常的请求。(解决方案)
     - 1、针对第一点，可在服务端处理，代码如下。
     ```
