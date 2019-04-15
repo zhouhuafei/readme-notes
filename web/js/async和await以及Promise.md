@@ -109,7 +109,7 @@ https://github.com/petkaantonov/bluebird/
 * 问题2：Promise.all中的Promise什么情况下会走进Promise.all的catch中。
     - 答：只要有一个失败了就会走进去。如果这些失败全被Promise.all中的Promise捕获了(catch)，则不会走进catch，而是会走进then。
 
-# 总结
+# axios的二次封装优化历程
 * 1、我之前对axios的二次封装是套一层普通函数，在函数中```return axios.catch().then()```。
     - 弊端，Promise.all处理并发请求时，就算某些请求出错了也走不进catch中。
 * 2、优化axios的二次封装
@@ -118,6 +118,8 @@ https://github.com/petkaantonov/bluebird/
     const res = {};
     if(res.status !== 'success') return;
     ```
+    
+# 总结
 * 直接对axios套一层Promise进行二次封装吧。如此Promise.all就不用二次判断了(如果按照1、的方式进行axios的二次封装，则需要二次判断，因为全都会走进then中，需要在then中判断每一项的status是否等于success)。
     - 请求失败和业务失败都走reject。请求成功且业务成功走resolve。
     - reject和resolve返回处理后的json结果。状态分为error(请求错误或响应错误，即响应状态非200)，failure(请求成功，业务失败)，success(请求成功，业务成功)。
