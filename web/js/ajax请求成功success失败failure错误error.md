@@ -26,3 +26,21 @@ const isSuccess = status >= 200 && status < 300 || status === 304;
 ```
 * xhr.open方法的第三参数默认为true。表示异步。如果设置为false。则表示是同步。
     - 不建议设置为false。
+
+# axios
+> axios在客户端使用的是xhr2
+* 问：xhr2中，请求在进行到什么状态下会触发onload事件？
+    - 答：xhr.readyState状态为4，表示响应已返回。此时会触发onload事件。
+* 问：axios什么时候才算请求成功？
+    - 答：axios在onload事件中处理方式是，HTTP状态码大于等于200且小于300就算请求成功，以下代码摘自axios源码。
+    ```javascript
+    const defaults = {
+      validateStatus: function validateStatus(status) {
+        return status >= 200 && status < 300;
+      }
+    }
+    ```
+* 问：axios什么时候算请求失败？
+    - 答：HTTP状态码小于200或大于等于300就算请求失败，请求失败会抛出错误信息```new Error('Request failed with status code')```。
+* 问：xhr2的onerror事件什么时候会触发？
+    - 例如没有网络就会触发请求错误，请求错误会抛出错误信息```new Error('Network Error')```。
