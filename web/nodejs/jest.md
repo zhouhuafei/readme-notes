@@ -101,7 +101,7 @@ https://www.jianshu.com/p/cdd749c624d9
     - ```git add```表示将处理过的代码重新```add```到```git```中。
     - 然后再触发```commit```。
     
-# git commit 自动检测/修复语法错误2
+# git commit 自动检测并修复语法错误2
 * ```eslint```和```husky```配合使用，在```package.json```中增加如下字段
 * 此处省略了```jest```包的使用配置
 ```json
@@ -115,5 +115,5 @@ https://www.jianshu.com/p/cdd749c624d9
 }
 ```
 
-# 使用husky就可以修复，为什么还要使用lint-staged？
+# 使用husky配合eslint在提交代码时就可以自动修复，为什么还要使用lint-staged？
 * lint-staged：只检测和修复改动的代码。
