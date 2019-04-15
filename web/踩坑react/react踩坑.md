@@ -14,7 +14,8 @@ https://react.docschina.org/
     
 # 为什么react一般在componentDidMount发送ajax，而vue一般在created发送ajax？
 * 1、之所以react推荐在componentDidMount钩子中使用而不是componentWillMount的原因：因为请求是异步的，所以无论你放在两个中的任何一个里面，几乎绝对都会在组件渲染之后，再进行数据渲染，也就是说避免不了二次渲染(第一次渲染为默认值，第二次为请求后的数据渲染)，所以效果上放到哪里都一样，但是在DidMount中可以使用refs了。然后重要的是（是在Stack Overflow中的回答看到）：未来的react版本可能会对componentWillMount进行调整，可能在某些情况下触发多次，所以官方是推荐在componentDidMount中进行请求。 当然放到willMount中可能会快那么几毫秒，毕竟先运行嘛。
-* 2、vue的渲染前的钩子函数比react多两个：beforeCreat与created。而vue的例子为什么在created中写的，可能是因为是个demo也没有考虑那么多。一样的道理，无论放到created或者beforeMount中也同样避免不了二次渲染，差别也可能是那么几毫秒。
+* 2、vue的渲染前的钩子函数比react多两个：beforeCreate与created。而vue的例子为什么在created中写的，可能是因为是个demo也没有考虑那么多。一样的道理，无论放到beforeCreate、created、beforeMount或者mounted中也同样避免不了二次渲染，差别也可能是那么几毫秒。
+    - beforeCreate中```el```和```data```并未初始化。但是如果加了定时器setTimeout，则是可以获取到的。所以在ajax的回调中也是可以获取到的。
 
 # jsx
 * ```{}```
