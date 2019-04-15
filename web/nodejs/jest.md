@@ -25,6 +25,7 @@ module.exports = sum;
 * 写测试脚本 sum.test.js
     - 更多expect方法 http://facebook.github.io/jest/docs/en/expect.html
     - 对象和数组使用toEqual进行验证
+    - toBe用来比较字符串和数字，toEqual亦可用来比较字符串和数字
     ```
     const sum = require('./sum');
 
