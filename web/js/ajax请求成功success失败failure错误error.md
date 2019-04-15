@@ -42,5 +42,6 @@ const isSuccess = status >= 200 && status < 300 || status === 304;
     ```
 * 问：axios什么时候算请求失败？
     - 答：HTTP状态码小于200或大于等于300就算请求失败，请求失败会抛出错误信息```new Error('Request failed with status code')```。
+    - 因此：即使服务端处理404时返回的是个json，也会变成```new Error(json)```。
 * 问：xhr2的onerror事件什么时候会触发？
     - 例如没有网络就会触发请求错误，请求错误会抛出错误信息```new Error('Network Error')```。
