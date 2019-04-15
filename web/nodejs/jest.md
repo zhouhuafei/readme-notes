@@ -78,7 +78,7 @@ SecurityError: localStorage is not available for opaque origins at Window.get lo
 * 解决方案，增加配置文件
  - https://github.com/zhouhuafei/zhf.time-count-down/blob/master/jest.config.js
 
-# git commit 自动检测并修复语法错误
+# git commit 自动检测并修复语法错误1
 https://www.jianshu.com/p/cdd749c624d9
 * 1、配置```eslint```(略)
 * 2、安装```husky```和```lint-staged```包
@@ -101,7 +101,7 @@ https://www.jianshu.com/p/cdd749c624d9
     - ```git add```表示将处理过的代码重新```add```到```git```中。
     - 然后再触发```commit```。
     
-# git commit 自动检测语法错误
+# git commit 自动检测/修复语法错误2
 * ```eslint```和```husky```配合使用，在```package.json```中增加如下字段
 * 此处省略了```jest```包的使用配置
 ```json
@@ -110,7 +110,10 @@ https://www.jianshu.com/p/cdd749c624d9
         "codeLint": "eslint --ext .js,.vue,.html ./",
         "codeFix": "eslint --fix --ext .js,.vue,.html ./",
         "test": "jest",
-        "precommit": "npm run codeLint && npm run test"
+        "precommit": "npm run codeFix && npm run codeLint && npm run test"
     }
 }
 ```
+
+# 使用husky就可以修复，为什么还要使用lint-staged？
+* lint-staged：只检测和修复改动的代码。
