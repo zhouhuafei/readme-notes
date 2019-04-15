@@ -2,7 +2,7 @@
 ![图片加载中...](./images/1.jpg)
 
 # 常用生命周期比对
-* beforecreated
+* beforeCreate
     - ```el```和```data```并未初始化。
 * created
     - 完成了```data```数据的初始化，```el```没有。
