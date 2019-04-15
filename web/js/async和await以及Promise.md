@@ -119,6 +119,7 @@ https://github.com/petkaantonov/bluebird/
     if(res.status !== 'success') return;
     ```
 * 是优化还是退化？请看下述```总结2```。
+    - 答：退化。
     
 # 总结
 * 直接对axios套一层Promise进行二次封装吧。如此Promise.all就不用二次判断了(如果按照```二次封装方式1、```的方式进行axios的二次封装，则需要二次判断，因为全都会走进then中，需要在then中判断每一项的status是否等于success)。
