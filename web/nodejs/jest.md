@@ -83,7 +83,8 @@ https://www.jianshu.com/p/cdd749c624d9
 * 1、配置```eslint```(略)
 * 2、安装```husky```和```lint-staged```包
 * 3、```package.json```中增加如下字段
-```
+```json
+{
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
@@ -93,6 +94,18 @@ https://www.jianshu.com/p/cdd749c624d9
       "git add"
     ]
   }
+}
+```
+* 4、```eslint```和```husky```配合使用
+```json
+{
+    "scripts": {
+        "codeLint": "eslint --ext .js,.vue,.html ./",
+        "codeFix": "eslint --fix --ext .js,.vue,.html ./",
+        "test": "jest",
+        "precommit": "npm run codeLint && npm run test"
+    }
+}
 ```
 * 解释：
     - ```pre-commit```可以换成```precommit```。
