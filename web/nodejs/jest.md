@@ -78,7 +78,7 @@ SecurityError: localStorage is not available for opaque origins at Window.get lo
 * 解决方案，增加配置文件
  - https://github.com/zhouhuafei/zhf.time-count-down/blob/master/jest.config.js
 
-# git commit 自动修复语法错误
+# git commit 自动检测并修复语法错误
 https://www.jianshu.com/p/cdd749c624d9
 * 1、配置```eslint```(略)
 * 2、安装```husky```和```lint-staged```包
@@ -96,7 +96,13 @@ https://www.jianshu.com/p/cdd749c624d9
   }
 }
 ```
-* 4、```eslint```和```husky```配合使用
+* 解释：
+    - ```pre-commit```可以换成```precommit```。
+    - ```git add```表示将处理过的代码重新```add```到```git```中。
+    - 然后再触发```commit```。
+    
+# git commit 自动检测语法错误
+* ```eslint```和```husky```配合使用，在```package.json```中增加如下字段
 ```json
 {
     "scripts": {
@@ -107,7 +113,3 @@ https://www.jianshu.com/p/cdd749c624d9
     }
 }
 ```
-* 解释：
-    - ```pre-commit```可以换成```precommit```。
-    - ```git add```表示将处理过的代码重新```add```到```git```中。
-    - 然后再触发```commit```。
