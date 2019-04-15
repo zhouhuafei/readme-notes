@@ -103,6 +103,7 @@ https://www.jianshu.com/p/cdd749c624d9
     
 # git commit 自动检测语法错误
 * ```eslint```和```husky```配合使用，在```package.json```中增加如下字段
+* 此处省略了```jest```包的使用配置
 ```json
 {
     "scripts": {
