@@ -110,10 +110,15 @@ https://github.com/petkaantonov/bluebird/
     - 答：只要有一个失败了就会走进去。如果这些失败全被Promise.all中的Promise捕获了(catch)，则不会走进catch，而是会走进then。
 
 # 总结
-* 如今看来，我对axios进行对二次封装竟是如此对完美。完美的避开了报错(狗屁)。
-    - 二次封装的弊端：Promise.all需要二次判断是否全都请求成功了。其实就算我不二次封装，响应的数据也需要二次判断，因为请求成功不代表业务成功。
-    - 二次封装的优点：await得到的结果不会出现js抛错导致后续代码不执行(其实不算优点，如果得不到结果还继续走依然会导致读不到数据，还是会抛出错误的)。
-* 当优点不存在了，那上面这套二次封装就失去了意义。所以还是直接对axios套一层Promise进行二次封装吧。如此Promise.all就不用二次判断了。
+* 1、我之前对axios的二次封装是套一层普通函数，在函数中```return axios.catch().then()```。
+    - 弊端，Promise.all处理并发请求时，就算某些请求出错了也走不进catch中。
+* 2、优化axios的二次封装
+    - 外部套一层new Promise进行axios的二次封装即可，请求成功且业务成功走resolve，请求成功但是业务失败走reject，请求错误走reject。然后写业务逻辑代码时判断下状态即可。
+    ```javascript
+    const res = {};
+    if(res.status !== 'success') return;
+    ```
+* 直接对axios套一层Promise进行二次封装吧。如此Promise.all就不用二次判断了(如果按照1、的方式进行axios的二次封装，则需要二次判断，因为全都会走进then中，需要在then中判断每一项的status是否等于success)。
     - 请求失败和业务失败都走reject。请求成功且业务成功走resolve。
     - reject和resolve返回处理后的json结果。状态分为error(请求错误或响应错误，即响应状态非200)，failure(请求成功，业务失败)，success(请求成功，业务成功)。
     - 加是否处理错误(默认开启)，是否处理失败(默认开启)，是否处理成功(默认关闭)的开关。
