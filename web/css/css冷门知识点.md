@@ -29,3 +29,10 @@ font-feature-settings: tnum;
         filter: grayscale(100%);
     }
     ```    
+
+* CSS3 zoom 设置或检索对象的缩放比例。
+```css
+div {
+    zoom: 0.5;
+}
+```
