@@ -160,3 +160,5 @@ vue add vuex
 * vuex
 * CSS Pre-processors
 * Linter / Formatter
+* 不要选择```Lint on save```，对WebStorm编辑器太不友好了。
+    - WebStorm编辑器使用者建议选择：```Lint and fix on commit```。
