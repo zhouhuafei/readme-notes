@@ -2,7 +2,7 @@
 * type属性值为
     - type="email" value不为''就具有验证规则。
     - type="url" value不为''就具有验证规则。
-    - type="number" value不为''就具有验证规则。(可以输入小数点和e，不过最后提交的格式如果非法的话，依然会验证不通过)
+    - type="number" value不为''就具有验证规则。(type设置为number之后，就不可以输入英文字母了，不过却可以输入小数点和e，不过最后提交的格式如果非法的话，依然会验证不通过)
     - 总结
         - 以上：不会验证value为''，除非配合required属性。
         - 以上：会验证value为'  '。
