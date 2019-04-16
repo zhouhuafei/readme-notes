@@ -40,7 +40,7 @@ div {
 * css3之sticky悬浮导航(存在兼容性问题，小程序中可以使用)。
     - 滚动到class为sticky的标签时，标签会自动悬浮。
     - 如果top为100px，则滚动到标签top距离顶部100px的位置时就悬浮。
-    ```
+    ```css
     .sticky {
       position: -webkit-sticky;
       position: sticky;
