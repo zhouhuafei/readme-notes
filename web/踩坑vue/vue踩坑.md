@@ -221,6 +221,7 @@ export default{
 > 作用域插槽
 * 步骤一：子组件内部给slot标签上绑定一个属性```<slot v-bind:todo="todo"></slot>```。
 * 步骤二：父组件中使用```slot-scope="slotProps"```接收。然后就可以是```{{slotProps.todo}}```获取到了。
+* slot-scope已被废弃，最新语法为v-slot。
 * 文档：https://cn.vuejs.org/v2/guide/components-slots.html#%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%8F%92%E6%A7%BD
 
 # 在动态组件上使用 keep-alive
