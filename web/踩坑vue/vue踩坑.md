@@ -398,3 +398,4 @@ Event.$on('msg', function (json) { // 接收数据，第一个参数是数据的
     - 每次修改都会触发computed中的方法。(有缓存，数据变化时才会重新求值)
 * 4、如果需要修改，可使用methods。
     - 每次修改都会触发methods中的方法。(无缓存，每次都会重新求值)
+* computed VS methods对比 https://cn.vuejs.org/v2/guide/computed.html#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E7%BC%93%E5%AD%98-vs-%E6%96%B9%E6%B3%95
