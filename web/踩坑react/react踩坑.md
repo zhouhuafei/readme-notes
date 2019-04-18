@@ -36,6 +36,10 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
+* 疑问：三目遇到需要返回多个并列的div怎么处理？
+    - vue有template
+    - 微信小程序有block
+    - jsx有？待续...
 
 # 父子通信
 * 父传子 props
