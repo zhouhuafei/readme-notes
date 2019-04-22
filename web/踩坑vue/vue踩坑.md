@@ -424,5 +424,11 @@ Event.$on('msg', function (json) { // 接收数据，第一个参数是数据的
 * computed VS methods对比 https://cn.vuejs.org/v2/guide/computed.html#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E7%BC%93%E5%AD%98-vs-%E6%96%B9%E6%B3%95
 
 # 禁用特性继承
-* element的input框是怎么封装的？怎么获取一些未赋值到props上的原生属性。
-https://cn.vuejs.org/v2/guide/components-props.html#%E7%A6%81%E7%94%A8%E7%89%B9%E6%80%A7%E7%BB%A7%E6%89%BF
+* element的input框是怎么封装的？怎么获取一些未赋值到props上的原生属性给input。
+    - inheritAttrs: false
+    - $attrs
+    - https://cn.vuejs.org/v2/guide/components-props.html#%E7%A6%81%E7%94%A8%E7%89%B9%E6%80%A7%E7%BB%A7%E6%89%BF
+* 将原生事件绑定到组件
+    - .native修饰符有局限性
+    - Vue 提供了一个 $listeners 属性，它是一个对象，里面包含了作用在这个组件上的所有监听器。
+    - https://cn.vuejs.org/v2/guide/components-custom-events.html#%E5%B0%86%E5%8E%9F%E7%94%9F%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A%E5%88%B0%E7%BB%84%E4%BB%B6
