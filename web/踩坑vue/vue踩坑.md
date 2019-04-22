@@ -43,7 +43,8 @@
     - 先把数据清空，再赋值即可。
 
 * 后续给对象添加属性，不会更新视图，需要使用Vue.set(obj, attr, value)才行。
-    - 注意：属性如果本来就没有，直接绑定到模板template上会导致报错，所以应该在模板渲染之前处理数据，所以应该在created钩子中处理数据。
+    - https://cn.vuejs.org/v2/guide/reactivity.html#%E5%A6%82%E4%BD%95%E8%BF%BD%E8%B8%AA%E5%8F%98%E5%8C%96
+    - 注意：属性如果本来就没有，直接绑定到模板template上会导致报错，所以应该使用v-if过滤防止报错。
 
 * 生产版本，不能被浏览器上的Vue Devtools工具调试。
 
