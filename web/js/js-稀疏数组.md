@@ -18,3 +18,12 @@
     [undefined, undefined, undefined, undefined, undefined].map(() => 1); // [1, 1, 1, 1, 1]
     ```
 
+* map、forEach、filter等方法不会处理稀疏数组。
+
+* 怎么把稀疏数组变成非稀疏数组
+    - ```Array.apply(Array, new Array(10))```
+    - ```[...new Array(10)]```
+
+* 类数组转数组
+    - ```Array.apply(Array, {length:10})```
+    - ```Array.from({length:10})```
