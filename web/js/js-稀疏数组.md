@@ -18,15 +18,15 @@
     [undefined, undefined, undefined, undefined, undefined].map(() => 1); // [1, 1, 1, 1, 1]
     ```
 
-* map、forEach、filter等方法不会处理稀疏数组中的稀疏项。
+* map、forEach、filter等方法不会处理稀疏数组中的空项。
     - 案例：
     ```javascript
     const arr = [1, 2, 3];
     arr.length = 5;
     arr.forEach(v => { console.log(v) }); // 只会打印1 2 3
     ```
-    - 稀疏项(空项)：
-        - 稀疏项(空项)：empty，完全是空项，不是null，不是空字符串，也不是undefined。
+    - 空项：
+        - 空项：empty，完全是空项，不是null，不是空字符串，也不是undefined。
         - 在Chrome浏览器的控制台中打印上述整个数组时，展现出来的就是```[1, 2, 3, empty x 2]```，通过索引获取稀疏项时，返回undefined。
     - 解决方案：把稀疏数组变成非稀疏数组(正常的普通数组)。
     ```javascript
