@@ -434,3 +434,8 @@ Event.$on('msg', function (json) { // 接收数据，第一个参数是数据的
     - .native修饰符有局限性
     - Vue 提供了一个 $listeners 属性，它是一个对象，里面包含了作用在这个组件上的所有监听器。
     - https://cn.vuejs.org/v2/guide/components-custom-events.html#%E5%B0%86%E5%8E%9F%E7%94%9F%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A%E5%88%B0%E7%BB%84%E4%BB%B6
+
+# $refs
+* 一个对象，持有注册过 ref 特性 的```所有 DOM 元素```和```组件实例```。
+    - 如果 ref 注册到html标签上，那获取到的就是 DOM 元素。
+    - 如果 ref 注册到组件上，那获取到的就是组件实例。
