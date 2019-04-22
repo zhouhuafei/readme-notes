@@ -228,6 +228,8 @@ export default{
 # 在动态组件上使用 keep-alive
 * keep-alive 是Vue的内置组件，能在组件切换过程中将状态保留在内存中，防止重复渲染DOM。
 * 注意：注意这个 <keep-alive> 要求被切换到的组件都有自己的名字，不论是通过组件的 name 选项还是局部/全局注册。
+* 组件激活时调用钩子：activated
+* 组件停用时调用钩子：deactivated
 * 文档：https://cn.vuejs.org/v2/guide/components-dynamic-async.html#%E5%9C%A8%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6%E4%B8%8A%E4%BD%BF%E7%94%A8-keep-alive
 
 # 监听路由变化
