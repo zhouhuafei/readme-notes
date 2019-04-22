@@ -428,6 +428,7 @@ Event.$on('msg', function (json) { // 接收数据，第一个参数是数据的
     - inheritAttrs: false
     - $attrs
     - https://cn.vuejs.org/v2/guide/components-props.html#%E7%A6%81%E7%94%A8%E7%89%B9%E6%80%A7%E7%BB%A7%E6%89%BF
+    - https://github.com/ElemeFE/element/blob/dev/packages/input/src/input.vue
 * 将原生事件绑定到组件
     - .native修饰符有局限性
     - Vue 提供了一个 $listeners 属性，它是一个对象，里面包含了作用在这个组件上的所有监听器。
