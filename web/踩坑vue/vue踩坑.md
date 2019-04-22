@@ -225,6 +225,9 @@ export default{
 * ```slot-scope="slotProps"```已被废弃，最新语法为```v-slot="slotProps"```。
 * 文档：https://cn.vuejs.org/v2/guide/components-slots.html#%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%8F%92%E6%A7%BD
 
+# transition
+* 待续...
+
 # 在动态组件上使用 keep-alive
 * keep-alive 是Vue的内置组件，能在组件切换过程中将状态保留在内存中，防止重复渲染DOM。
 * 注意：注意这个 <keep-alive> 要求被切换到的组件都有自己的名字，不论是通过组件的 name 选项还是局部/全局注册。
