@@ -18,12 +18,22 @@
     [undefined, undefined, undefined, undefined, undefined].map(() => 1); // [1, 1, 1, 1, 1]
     ```
 
-* map、forEach、filter等方法不会处理稀疏数组。
+* map、forEach、filter等方法不会处理稀疏数组中的稀疏项。
+    - 案例：
+    ```javascript
+    const arr = [1, 2, 3];
+    arr.length = 5;
+    arr.forEach(v => { console.log(v) }); // 只会打印1 2 3
+    ```
     - 解决方案：把稀疏数组变成非稀疏数组(正常的普通数组)。
-
-* 怎么把稀疏数组变成非稀疏数组
-    - ```Array.apply(Array, new Array(10))```
-    - ```[...new Array(10)]```
+    ```javascript
+    const arr = [1, 2, 3];
+    arr.length = 5;
+    [...arr].forEach(v => { console.log(v) }); // 会打印1 2 3 undefined undefined
+    ```
+    - 怎么把稀疏数组变成非稀疏数组
+        - ```Array.apply(Array, new Array(10))```
+        - ```[...new Array(10)]```
 
 * 类数组转数组
     - ```Array.apply(Array, {length:10})```
