@@ -25,6 +25,9 @@
     arr.length = 5;
     arr.forEach(v => { console.log(v) }); // 只会打印1 2 3
     ```
+    - 稀疏项：
+        - 稀疏项：empty，完全是空项，不是null，不是空字符串，也不是undefined。
+        - 在chrome上打印上述整个数组时，展现出来的就是```[1, 2, 3, empty x 2]```，通过索引获取稀疏项时，返回undefined。
     - 解决方案：把稀疏数组变成非稀疏数组(正常的普通数组)。
     ```javascript
     const arr = [1, 2, 3];
