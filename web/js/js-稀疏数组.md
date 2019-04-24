@@ -39,5 +39,6 @@
         - ```[...new Array(10)]```
 
 * 类数组转数组
-    - ```Array.apply(Array, {length:10})```
-    - ```Array.from({length:10})```
+    - ```Array.apply(Array, {length:10})```转出来的不是稀疏数组
+    - ```Array.from({length:10})```转出来的不是稀疏数组
+    - ```Array.prototype.slice.call({length:10})```转出来的是稀疏数组

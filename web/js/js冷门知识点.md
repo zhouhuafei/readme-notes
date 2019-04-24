@@ -144,3 +144,5 @@ console.log(a.__proto__.constructor.name); // 打印 'A'
     ```javascript
     [...new Array(10)].map(() => ({ code: 'code123', name: '岗位名称', remark: '备注', status: '启用' }))
     ```
+    - 方法5```Array.prototype.slice.call({length:10})```转出来的是稀疏数组
+
