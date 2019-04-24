@@ -136,6 +136,7 @@ console.log(a.__proto__.constructor.name); // 打印 'A'
     ```javascript
     Array.apply(Array, {length:10}).map(() => ({ code: 'code123', name: '岗位名称', remark: '备注', status: '启用' }))
     ```
+    - 方法2的引申知识点：```Array.prototype.slice.call({length:10})```转出来的是稀疏数组。稀疏数组使用map，filter，forEach等方法时不会处理稀疏数组中的空项。
     - 方法3
     ```javascript
     Array.from({length:10}).map(() => ({ code: 'code123', name: '岗位名称', remark: '备注', status: '启用' }))
@@ -144,5 +145,4 @@ console.log(a.__proto__.constructor.name); // 打印 'A'
     ```javascript
     [...new Array(10)].map(() => ({ code: 'code123', name: '岗位名称', remark: '备注', status: '启用' }))
     ```
-    - 方法2的引申知识点：```Array.prototype.slice.call({length:10})```转出来的是稀疏数组。稀疏数组使用map，filter，forEach等方法时不会处理稀疏数组中的空项。
 
