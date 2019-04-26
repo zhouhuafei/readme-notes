@@ -86,6 +86,21 @@ console.log(1 + + '1'); // 2
 * Object.values在低版本ios的微信上不支持。
 
 * ```fn.call()```不传参数时```this```指向```window```对象。严格模式下```"use strict"```指向```undefined```。
+    - call的实现核心：
+    ```
+    Function.prototype.call2 = function (content) {
+        content = content || window;
+        content.randomFn = this; // 重点一：this就是fn
+        content.randomFn([...arguments].slice(1)); // 重点二：参数传递
+        delete content.randomFn;
+    };
+    
+    function fn() {
+        console.log(this);
+    }
+    
+    fn.call2({}, 1, 2);
+    ```
 
 * 怎么才能得知被new出来的对象所属的构造函数是谁？
 ```

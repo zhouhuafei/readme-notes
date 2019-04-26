@@ -12,14 +12,14 @@ export default {a:1};
 之后
 ```
 第一种导入可以如此写：
-import {a} from './a.ja'; 这样写的话a是1，因webpack打包是按照commonjs规范进行打包
+import {a} from './a.js'; 这样写的话a是1，因webpack打包是按照commonjs规范进行打包
 第二种导入不可以如此写：
-import {a} from './a.ja'; 这样写的话a是undefined，因webpack打包是按照es6的模块化规范进行打包
+import {a} from './a.js'; 这样写的话a是undefined，因webpack打包是按照es6的模块化规范进行打包
 第二种导入的正确写法1：
-import {default as obj} form './a.ja';
+import {default as obj} form './a.js';
 const a=obj.a;
 第二种导入的正确写法2：
-import obj from './a.ja';
+import obj from './a.js';
 const a=obj.a;
 ```
 总结：es6的模块化，导出的如果是默认模块。只能用一个变量进行统一接收。
