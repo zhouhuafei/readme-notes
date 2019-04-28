@@ -37,15 +37,22 @@ div {
 }
 ```
 
-* css3之sticky悬浮导航(存在兼容性问题，小程序中可以使用)。
+* css3之sticky悬浮导航(存在兼容性问题，小程序中可以使用，手机端可以使用，pc端目前不支持)。
     - 滚动到class为sticky的标签时，标签会自动悬浮。
     - 如果top为100px，则滚动到标签top距离顶部100px的位置时就悬浮。
+    - 特点：占据文档流，无需js即可写粘性导航的导航悬浮那部分功能。
+    - 重点：无论父级有无定位，都是根据父级定位。所以如果做粘性导航导航悬浮的那部分功能时，则只能给导航的最外层元素加sticky。且最外层元素的直属父级需要是body。
     ```css
+    /* 
+    .sticky的直属父级一般是body，如此，当滚动到.sticky的位置时，.sticky就会相对于body悬浮到可视区的指定位置。
+    如果.sticky的直属父级是div，则div滚动到.sticky的位置时，.sticky就会相对于div悬浮到可视区的指定位置。
+    总结：position: sticky属性是相对于直属父级进行定位的。
+    */
     .sticky {
       position: -webkit-sticky;
       position: sticky;
       top: 0;
       z-index: 9999;
       background: #ff0000;
-    }
+    }  
     ```
