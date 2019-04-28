@@ -53,18 +53,40 @@
 * 子传父 this.$emit(fnName, data);
 * props是只读的，请遵守这个原则。
 
-# vue-router
-* afterEach和beforeEach中this不是Vue的实例。
-* 如果需要使用$store。直接使用定义好的变量store即可。
-* 如果需要使用$route。回调的参数中就有。
-
 # 对象没有属性的时候会报错
 * v-if判断，有值的时候才渲染即可。
 
 # v-for
 * 需要有key且key不能绑定到template标签上。
 
-# vue-router
+# vue-router导航守卫
+* afterEach和beforeEach中this不是Vue的实例。
+* 如果需要使用$store。直接使用定义好的变量store即可。
+* 如果需要使用$route。回调的参数中就有。
+
+# vue-router重置路由
+https://github.com/vuejs/vue-router/issues/1234
+```javascript
+import Vue from 'vue'
+import Router from 'vue-router'
+
+Vue.use(Router)
+
+const createRouter = () => new Router({
+  routes: []
+})
+
+const router = createRouter()
+
+export function resetRouter () {
+  const newRouter = createRouter()
+  router.matcher = newRouter.matcher // the relevant part
+}
+
+export default router
+```
+
+# vue-router设置参数
 * 设置参数只能通过meta。
 * params接收路由匹配的动态路由数据。例如：路由设置为：```/user/:id```，访问：```/user/10```，可以得到```{id: 10}```。
 * query接收路由匹配的query数据。例如：路由设置为：```/user/```，访问：```/user/?id=10```，可以得到```{id: 10}```。
