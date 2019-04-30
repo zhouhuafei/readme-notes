@@ -1,9 +1,11 @@
 # 图
 ![图片加载中...](./images/arr.png)
-* 为上图最后一句话的添加解释：视为undefined，不是说会转成字符串'undefined'，最后还是会转为空字符串。
-```javascript
-[1, , 2, null, undefined].join(''); // '12'
-```
+* 上图最后一句话应该如此说：
+    - ```join()```和```toString()```会将空位视为```undefined```，而```undefined```和```null```又会被处理成空字符串。
+    - 所以```join()```和```toString()```会将空位也处理成空字符串。
+    ```javascript
+    [1, , 2, null, undefined].join(''); // '12'
+    ```
 
 # 稀疏数组
 * 如果指定的属性在指定的对象或其原型链中，则in 运算符返回true。以下皆是稀疏数组。
