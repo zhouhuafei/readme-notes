@@ -49,5 +49,6 @@
 
 * 类数组转数组
     - ```Array.apply(Array, {length:10})```转出来的不是稀疏数组
+        - apply的第二参数是一个数组或者类数组对象
     - ```Array.from({length:10})```转出来的不是稀疏数组
     - ```Array.prototype.slice.call({length:10})```转出来的是稀疏数组
