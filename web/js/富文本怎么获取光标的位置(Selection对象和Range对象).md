@@ -15,12 +15,12 @@ Range.insertNode(node);
 以下摘自文章：https://www.jianshu.com/p/ad2f818cc3b0
 
 # 一：Range对象的概念
-* Range对象代表页面上一段连续的区域，通过Range对象可以获取或者修改页面上任何区域的内容。也可以通过Range的方法进行复制和移动页面任何区域的元素。
+* ```Range对象代表页面上一段连续的区域```，通过Range对象可以获取或者修改页面上任何区域的内容。也可以通过Range的方法进行复制和移动页面任何区域的元素。
 * 在Js的document文档中有一个方法用来创建一个Range对象，代码如下：
 ```
 var  range = document.createRange();
 ```
-* 在html5中，每一个浏览器窗口都会有一个Selection对象，代表用户鼠标在页面中所选取的区域，(注意：经过测试IE9以下的浏览器不支持Selection对象), 可以通过如下语句创建selection对象；
+* 在html5中，每一个浏览器窗口都会有一个```Selection对象，代表用户鼠标在页面中所选取的区域```，(注意：经过测试IE9以下的浏览器不支持Selection对象), 可以通过如下语句创建selection对象；
 ```
 var  selection = document.getSelection();
 或者
