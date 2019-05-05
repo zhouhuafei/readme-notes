@@ -46,6 +46,7 @@
     - 怎么把稀疏数组变成非稀疏数组
         - ```Array.apply(Array, new Array(10))```
         - ```[...new Array(10)]```
+        - 以上```new Array```换成```Array```也是对的。
 
 * 类数组转数组
     - ```Array.apply(Array, {length:10})```转出来的不是稀疏数组
