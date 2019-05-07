@@ -115,7 +115,7 @@ https://github.com/petkaantonov/bluebird/
     - catch时返回的状态设置为error(请求错误或响应错误，即响应状态非200)。
     - then时，请求成功且业务成功状态设置为success。请求成功且业务失败状态设置为failure。
     - 如此封装方式，相当于```二次封装方式2、```全都走resolve并设置对应状态。
-* 二次封装方式2、
+* 二次封装方式2(推荐)、
     - 外部套一层new Promise进行axios的二次封装即可.
     - 请求成功且业务成功走resolve。状态设置为success(请求成功，业务成功)。
     - 请求成功但是业务失败走reject。状态设置为failure(请求成功，业务失败)。
@@ -135,4 +135,4 @@ https://github.com/petkaantonov/bluebird/
     - 1、Promise.all如果遇到失败的请求，可以在catch中捕获到。
     - 2、Promise的then中只会出现成功的请求，失败的不会走进去。所以不用做多余的if判断。
 * ```二次封装方式2、```弊端：
-    - 1、以Promise的方式使用时，遇到ajax请求完之后需要改变开关的场景时，需要在then和catch中都处理开关状态。
+    - 1、以Promise的方式使用时，遇到ajax请求完之后需要改变开关的场景时，需要在then和catch中都处理开关状态。如果使用async/await的方式，则此弊端可忽略。
