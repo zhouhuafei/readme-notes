@@ -161,3 +161,4 @@ console.log(a.__proto__.constructor.name); // 打印 'A'
     [...new Array(10)].map(() => ({ code: 'code123', name: '岗位名称', remark: '备注', status: '启用' })) // ```new Array```换成```Array```也是对的。
     ```
 
+* 对象```{1: 'a'}```的```key```会自动转成字符串类型。
