@@ -466,3 +466,7 @@ Event.$on('msg', function (json) { // 接收数据，第一个参数是数据的
 * 一个对象，持有注册过 ref 特性 的```所有 DOM 元素```和```组件实例```。
     - 如果 ref 注册到html标签上，那获取到的就是 DOM 元素。
     - 如果 ref 注册到组件上，那获取到的就是组件实例。
+
+# element-ui踩坑
+* el-popover在表单中使用的时候，最后一行按钮对应的弹窗会显示不出来。
+    - 解决方案：按钮放在el-popover中并加上slot="reference"属性以及去掉v-popover:popover指令即可。
