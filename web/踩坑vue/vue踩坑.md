@@ -470,7 +470,7 @@ Event.$on('msg', function (json) { // 接收数据，第一个参数是数据的
 # element-ui踩坑
 * el-popover在表单中使用的时候，最后一行按钮对应的弹窗会显示不出来。
     - 解决方案：按钮放在el-popover中并加上slot="reference"属性以及去掉v-popover:popover指令即可。
-* 只允许输入整数
+* 只允许输入整数(element-ui做的处理)
 ```html
 <el-form-item
 prop="validHour"
