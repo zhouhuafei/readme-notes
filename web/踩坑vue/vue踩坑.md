@@ -470,7 +470,7 @@ Event.$on('msg', function (json) { // 接收数据，第一个参数是数据的
 # element-ui踩坑
 * el-popover在表单中使用的时候，最后一行按钮对应的弹窗会显示不出来。
     - 解决方案：按钮放在el-popover中并加上slot="reference"属性以及去掉v-popover:popover指令即可。
-* 不被允许输入小数点(element-ui做的处理)
+* 不被允许输入小数点(element-ui做的处理，但是不是很完美，第1个位置如果是数字，后续就不可以输入小数点，但是第一个位置之前还是可以输入小数点的，如果想完美，仍需自行处理)
 ```html
 <el-form-item
 prop="validHour"
