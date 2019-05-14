@@ -12,7 +12,7 @@
     - 父级触发了BFC，margin就不会穿透父级了，而是撑开父级
 * 同一个BFC内，子元素上下margin会发生折叠
     - 默认取绝对值大的那个
-    - 不想折叠的话，只需要给子级设置display:inline-block或者float为left都可以解决
+    - 不想折叠的话，只需要给子级设置display:inline-block或者float为left都可以解决。或者给父级加display:flex;flex-wrap:wrap;子级的上下margin就不会折叠了。
 * BFC可以包含浮动的元素，所以计算BFC高度时，浮动元素也参与计算。
     - 一般使用.clear-fix:after用来清除浮动
     - 但是通过BFC也可以清除浮动，只需要给父级加overflow:hidden，加完之后父级就会包裹着子元素
