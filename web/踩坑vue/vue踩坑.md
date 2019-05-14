@@ -478,8 +478,7 @@ label="成团时效"
 class="w500">
 <el-input
   :disabled="see"
-  v-model.number="form.validHour"
-  :min="0">
+  v-model.number="form.validHour">
   <template slot="append">小时</template>
 </el-input>
 </el-form-item>
