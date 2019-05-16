@@ -1,5 +1,6 @@
 ```scss
 .hairline {
+  position: relative;
   &::after {
     content: '';
     display: block;
