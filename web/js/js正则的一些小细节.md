@@ -16,3 +16,6 @@
     var result = str.length >=6 && str.length <=16 && /\d/.test(str) && /[a-zA-Z]/.test(str);
     console.log(result);
     ```
+
+* ```(exp)```捕获分组
+* ```(?:exp)```非捕获分组
