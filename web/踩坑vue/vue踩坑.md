@@ -484,3 +484,8 @@ class="w500">
 </el-input>
 </el-form-item>
 ```
+
+# $set
+> https://cn.vuejs.org/v2/guide/reactivity.html#%E6%A3%80%E6%B5%8B%E5%8F%98%E5%8C%96%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9
+* 受现代 JavaScript 的限制 (而且 Object.observe 也已经被废弃)，Vue 无法检测到对象属性的添加或删除。由于 Vue 会在初始化实例时对属性执行 getter/setter 转化，所以属性必须在 data 对象上存在才能让 Vue 将它转换为响应式的。
+* 对于已经创建的实例，Vue 不允许动态添加根级别的响应式属性。但是，可以使用 ```Vue.set(object, propertyName, value)``` 方法向嵌套对象添加响应式属性。
