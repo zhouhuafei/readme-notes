@@ -390,6 +390,7 @@ Event.$on('msg', function (json) { // 接收数据，第一个参数是数据的
 
 # vue模版可以把布尔值true和false渲染出来
 * react的jsx语法不会把布尔值true和false渲染出来。
+    - null和undefined也不会被渲染出来。
 
 # 普通数组如果使用以下两种方式进行修改是无法驱动视图的
 * 以下两种方式是无法驱动视图的。
