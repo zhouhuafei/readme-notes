@@ -398,8 +398,8 @@ Event.$on('msg', function (json) { // 接收数据，第一个参数是数据的
     - 2、```arr.length = 1```
 * 所以要使用以下两种替代方案
     - https://cn.vuejs.org/v2/guide/list.html#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9
-    - ```vm.$set(vm.items, indexOfItem, newValue)```
-    - ```vm.items.splice(newLength)```
+    - ```Vue.set(vm.items, indexOfItem, newValue)```
+    - ```vm.items.splice(indexOfItem, 1, newValue)```
 * 但是我发现如果数组中的每一项是对象。
     - 可以通过索引```arr[0].name = 'name'```驱动视图。
     - 此时。紧跟着再使用```arr[0] = {name: 'name1'}```或者```arr.length = 1```也是可以驱动视图的。
