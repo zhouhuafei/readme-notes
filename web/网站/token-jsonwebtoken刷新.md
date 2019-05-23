@@ -63,6 +63,7 @@ module.exports=ajax;
     ```
     // 添加请求拦截器
     axios.interceptors.request.use(function (config) {
+        // 注：请求拦截器中config.method的值默认为get(外部不设置method，method值为get)，所以如果要兼容type和method的话，应该把type放在前面。即：config.method = config.type || config.method || 'GET'
         // 在发送请求之前做些什么
         // return config; // config是请求的配置参数。重点：此处如果返回Promise对象，可以阻塞接口请求。如此直接就可以解决刷新token时的接口并发问题。
         // 以下是返回Promise对象的案例。
