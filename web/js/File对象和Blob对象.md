@@ -60,7 +60,7 @@ axios({
     url: `${window.VUE_APP_API_URL + window.VUE_APP_BASE_API}miniapp/qrcode?token=${Cookie.get('Admin-Token')}&width=750&scene=${encodeURIComponent(`storeCode=${storeCode}`)}`,
     responseType: 'arraybuffer', // `responseType` 表示服务器响应的数据类型，可以是 'arraybuffer', 'blob', 'document', 'json', 'text', 'stream'。默认是'json'。
 }).then((res) => {
-    console.log(Object.prototype.toString.call(res.data)); // data是[object ArrayBuffer]类型的数据
+    console.log(Object.prototype.toString.call(res.data)); // data会被处理成[object ArrayBuffer]类型的数据，因为入参时axios的responseType设置为了arraybuffer。
     downloadImg(res.data, name + '二维码');
 });
 
