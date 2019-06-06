@@ -16,7 +16,7 @@ npm i --save-dev node-sass sass-loader
     devServer: {
         proxy: {
             '/api': {
-                target: 'https://sbxx.top/admin/api',
+                target: 'http://sbxx.top/admin/api',
                 changeOrigin: true,
                 ws: true,
                 pathRewrite: {
