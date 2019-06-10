@@ -257,3 +257,11 @@ location / {
     - 应和响应头有关，此处就不深究了，直接看结果吧。
     - 静态html页面。返回：```304 Not Modified```。
     - 静态css，js，img，视频，音频等。返回：```200 OK (from memory cache)```。
+
+# vue-router 
+> History 模式
+```
+location / {
+  try_files $uri $uri/ /index.html;
+}
+```

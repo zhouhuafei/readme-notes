@@ -5,3 +5,5 @@
 ```
 <a href="http://sbxx.top/static-no-cache/test/zero/img.jpg" download="rename">
 ```
+* 注意事项：
+    - href的指向需要同源，跨域下载不下来。

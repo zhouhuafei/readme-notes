@@ -51,3 +51,42 @@ reader.rederAsDataURL(file);
 ```
 let file = new window.File([blob], file.name, {type: file.type})
 ```
+
+# 案例
+```javascript
+import axios from 'axios';
+
+axios({
+    url: `${window.VUE_APP_API_URL + window.VUE_APP_BASE_API}miniapp/qrcode?token=${Cookie.get('Admin-Token')}&width=750&scene=${encodeURIComponent(`storeCode=${storeCode}`)}`,
+    responseType: 'arraybuffer', // `responseType` 表示服务器响应的数据类型，可以是 'arraybuffer', 'blob', 'document', 'json', 'text', 'stream'。默认是'json'。
+}).then((res) => {
+    console.log(Object.prototype.toString.call(res.data)); // data会被处理成[object ArrayBuffer]类型的数据，因为入参时axios的responseType设置为了arraybuffer。
+    downloadImg(res.data, name + '二维码');
+});
+
+// 下载 excel 文件
+function downloadExcel(data, filename) {
+    const blob = new Blob([data], {type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+    const objectUrl = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    document.body.appendChild(a);
+    a.setAttribute('style', 'display:none');
+    a.setAttribute('href', objectUrl);
+    a.setAttribute('download', filename);
+    a.click();
+    URL.revokeObjectURL(objectUrl);
+}
+
+// 下载 img 文件
+function downloadImg(data, filename) {
+    const blob = new Blob([data], {type: 'image/png'});
+    const objectUrl = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    document.body.appendChild(a);
+    a.setAttribute('style', 'display:none');
+    a.setAttribute('href', objectUrl);
+    a.setAttribute('download', filename);
+    a.click();
+    URL.revokeObjectURL(objectUrl);
+}
+```
