@@ -29,23 +29,23 @@ ps aux | grep nginx
 * sudo chown -R zhouhuafei:admin node_modules
     - chown命令改变某个文件或目录的所有者和所属的组
 * 权限的权重
-    - read的权重是1
+    - read的权重是4
     - write的权重是2
-    - exec的权重是4
+    - exec的权重是1
 * sudo chmod -R 755 node_modules
     - -f表示强制删除文件或目录
     - -r或-R表示递归处理,将指定目录下的所有文件与子目录一并处理
     - chmod 这是Linux系统管理员最常用到的命令之一,它用于改变文件或目录的访问权限
-    - 第1个7表示owner的权限 rwx 1+2+4 7
-    - 第2个5表示group的权限 r-x 1+0+4 5
-    - 第3个5表示other的权限 r-x 1+0+4 5
+    - 第1个7表示owner的权限 rwx 4+2+1 7
+    - 第2个5表示group的权限 r-x 4+0+1 5
+    - 第3个5表示other的权限 r-x 4+0+1 5
 * drwxr-xr-x 和 -rwxr-xr-x
     - d表示目录
     - -表示普通文件
     - r读 w写 x执行
-    - rwx 表示owner的权限 1+2+4 7
-    - r-x 表示group的权限 1+0+4 5
-    - r-x 表示other的权限 1+0+4 5
+    - rwx 表示owner的权限 4+2+1 7
+    - r-x 表示group的权限 4+0+1 5
+    - r-x 表示other的权限 4+0+1 5
 
 * linux 重命名文件和文件夹
 > linux下重命名文件或文件夹的命令mv既可以重命名，又可以移动文件或文件夹。
