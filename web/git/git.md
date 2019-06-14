@@ -87,6 +87,7 @@ git commit -am xxx
 git add .
 git commit --amend
 ```
+* 使用这项技术的时候你必须小心，因为修正会改变提交的SHA-1值。这个很像是一次非常小的rebase——不要在你最近一次提交被推送后还去修正它。
 
 # commit之后，取消commit。
 * ```git reset --soft|--mixed|--hard <commit_id>```
