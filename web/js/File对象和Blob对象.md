@@ -44,6 +44,7 @@ reader.onload = function(e){
 }
 // 传入一个参数对象即可得到基于该参数对象的文本内容
 reader.rederAsDataURL(file);
+// reader.readAsText(file, 'utf-8'); // 此方法可以将 Blob 或者 File 对象根据特殊的编码格式转化为内容(字符串形式)。第二参数不传，则默认为 utf-8 编码。
 ```
 * btoa和atob
     - btoa base64编码
