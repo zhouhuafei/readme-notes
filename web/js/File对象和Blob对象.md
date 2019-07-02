@@ -16,9 +16,10 @@
 * File 对象是特殊类型的 Blob，且可以用在任意的 Blob 类型的 context 中。比如说， FileReader, URL.createObjectURL(), createImageBitmap(), 及 XMLHttpRequest.send() 都能处理 Blob 和 File。
 * 示例
 ```javascript
-var file = new File(["foo"], "foo.txt", {
-  type: "text/plain",
-});
+const file = new File(['foo'], 'foo.txt', {
+  type: 'text/plain'
+})
+// 配合FormData可以直接做文件上传。没测。理论上我觉的可以。
 ```
 
 # File对象转成Blob对象
