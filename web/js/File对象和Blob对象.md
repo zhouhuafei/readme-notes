@@ -20,6 +20,7 @@ const file = new File(['foo'], 'foo.txt', {
   type: 'text/plain'
 })
 // 配合FormData可以直接做文件上传。没测。理论上我觉的可以。
+// 经测试，上述file实例，可被FileReader读取。
 ```
 
 # File对象转成Blob对象
