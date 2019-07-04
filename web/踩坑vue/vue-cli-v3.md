@@ -171,7 +171,7 @@ vue add vuex
 * 不要选择```Lint on save```，对WebStorm编辑器太不友好了。
     - WebStorm编辑器使用者建议选择：```Lint and fix on commit```。
 
-# history模式配置二级目录
+# history模式配置二级目录(正确的设置方式，在最后的建议中)
 * vue-router配置
 ```javascript
 new Router({
@@ -226,10 +226,11 @@ module.exports = {
 * 以上设置，尚且没有把```favicon.ico```文件和```index.html```文件放到test目录。
     - 设置index.html文件的路径```indexPath: 'test/index.html'```
     - 设置favicon.ico文件的路径。暂时无解。
-* 建议：只设置一个publicPath。
-    - 如此，路由代码不用改，依然使用process.env.BASE_URL变量。
+* 建议：只设置一个publicPath。这才是最优解。
+    - 如此，路由代码不用改，依然使用process.env.BASE_URL变量即可。outputDir和assetsDir也不需要设置，直接走默认即可。
     - 其他文件使用nodejs写个脚本剪切到对应目录。如果也可以解决favicon.ico文件无法换目录的问题。
     - 不想剪切的话，可以直接使用scp2模块，把整个dist目录里的文件上传到服务器对应的目录(相当于剪切了)。
+    - 案例：https://github.com/zhouhuafei/hello-world_vue-cli3_vant
 * 注意：把dist中的全部文件都放到test目录之后，nginx的配置也要修改。
     - 以下
     ```
