@@ -229,8 +229,10 @@ module.exports = {
     - 设置favicon.ico文件的路径。暂时无解。
 * 建议：只设置一个publicPath。这才是最优解。
     - 如此，路由代码不用改，依然使用process.env.BASE_URL变量即可。outputDir和assetsDir也不需要设置，直接走默认即可。
-    - 其他文件使用nodejs写个脚本剪切到对应目录。如果也可以解决favicon.ico文件无法换目录的问题。
-    - 不想剪切的话，可以直接使用scp2模块，把整个dist目录里的文件上传到服务器对应的目录(相当于剪切了)。
+    - 文件如果想挪到指定目录，可以使用nodejs写个脚本剪切到对应目录。如此也可以解决favicon.ico文件无法换目录的问题。
+    - 例如test环境打包出来的文件全部都放到dist/test目录下，因vue-cli对外暴露的参数配不出预期的效果，所以我才想要使用nodejs写个脚本做这些事。
+    - 文件剪切可以使用```待续...```模块。可以用正则的方式批量处理文件。
+    - 不想剪切的话，可以直接使用```scp2```模块，把整个dist目录里的文件上传到服务器对应的目录(相当于剪切了)。
     - 案例：https://github.com/zhouhuafei/hello-world_vue-cli3_vant
 * 注意：把dist中的全部文件都放到test目录之后，nginx的配置也要修改。
     - 以下
