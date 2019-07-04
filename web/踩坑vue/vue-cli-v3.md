@@ -216,8 +216,8 @@ module.exports = {
     - 转而使用```router-link```配合```路由name```去跳转。```<router-link :to="{ name: 'TaskArticle', query: { id: 10 }}">任务文章转发</router-link>```。
     - 建议，全部都使用```router-link```配合```路由name```去跳转。
 * 以上设置，尚且没有把```favicon.ico```文件和```index.html```文件放到test目录。
-    - 设置index.html的路径```indexPath: 'test/index.html'```
-    - 设置favicon.ico的路径。暂时无解。待续...
+    - 设置index.html文件的路径```indexPath: 'test/index.html'```
+    - 设置favicon.ico文件的路径。暂时无解。待续...
 
 # vue-cli版本升级
 * 经windows测试，发现安装了vue-cli之后，如果继续安装，会报错，导致安装不上去。
