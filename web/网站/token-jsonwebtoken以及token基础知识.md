@@ -58,3 +58,24 @@ JWT 作为一个令牌（token），有些场合可能会放到 URL（比如 api
 # 应用
 * 适用于认证服务器
 * 适用于前后端分离的项目
+
+# jsonwebtoken每次生成的token是一致的么？
+* 生成token时，如果入参是一致的，则生成的token就是一致的。
+* 如果带过期时间呢？如果生成token时没有时间差，则生成的token是一致的。如果有时间差，则生成的token就是不一致的。
+```javascript
+const jwt = require('jsonwebtoken');
+const token1 = jwt.sign({foo: 'bar'}, 'shhhhh');
+const token2 = jwt.sign({foo: 'bar'}, 'shhhhh');
+const token3 = jwt.sign({foo: 'bar', exp: Math.floor(Date.now() / 1000) + (60 * 60)}, 'shhhhh');
+const token4 = jwt.sign({foo: 'bar', exp: Math.floor(Date.now() / 1000) + (60 * 60)}, 'shhhhh');
+console.log('token1', token1);
+console.log('token2', token2);
+console.log('token3', token3);
+console.log('token4', token4);
+console.log('token1===token2', token1 === token2); // true
+console.log('token3===token4', token3 === token4); // true
+setTimeout(() => {
+    const token5 = jwt.sign({foo: 'bar', exp: Math.floor(Date.now() / 1000) + (60 * 60)}, 'shhhhh');
+    console.log('token4===token5', token4 === token5); // false
+}, 1000);
+```
