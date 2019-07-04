@@ -50,7 +50,7 @@ jti (JWT ID)：编号
   "admin": true
 }
 ```
-* Signature 部分是对前两部分的签名，防止数据篡改。
+* Signature 部分是对前两部分的签名，防止数据被篡改。
 
 # Base64URL算法
 JWT 作为一个令牌（token），有些场合可能会放到 URL（比如 api.example.com/?token=xxx）。Base64 有三个字符```+```、```/```和```=```，在 URL 里面有特殊含义，所以要被替换掉：```=```被省略、```+```替换成```-```，```/```替换成```_``` 。这就是 Base64URL 算法。
@@ -66,7 +66,7 @@ JWT 作为一个令牌（token），有些场合可能会放到 URL（比如 api
     - 答：不清楚！经测试，setTimeout设置为500毫秒以下时，true的几率大于false。设置为900毫秒时，true的几率小于false。设置为1000毫秒时，就已经全是false了。
     - 以上测试结果是和exp对应的值有关的。因为exp对应的值是秒级别的。
     - 总结：生成token时，如果入参是一致的，则生成的token就是一致的。
-* 总结：其实生成的token就是函数的返回值罢了，入参一致，返回结果肯定一致。
+* 总结：其实生成的token就是函数的返回值罢了，入参一致的情况下，只要函数内部参与运算的部分没有掺杂随机数和时间戳，返回结果肯定一致。
 ```javascript
 const jwt = require('jsonwebtoken');
 const token1 = jwt.sign({foo: 'bar'}, 'shhhhh');
