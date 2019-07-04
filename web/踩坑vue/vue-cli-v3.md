@@ -40,10 +40,18 @@ npm i --save-dev node-sass sass-loader
     NODE_ENV = 'production'
     VUE_APP_TITLE = 'production'
     ```
+    ```
+    // 注意：NODE_ENV都要设置为'production'，否则打包打不出东西。如此做法相当于走build的流程，但又可以让你根据VUE_APP_TITLE做一个特定的处理。
+    // 增加```.env.development```文件，此文件是开发环境需要的文件。因默认没有这个文件，所以开发环境下通过process.env.VUE_APP_TITLE获取不到值，为了能获取到值，我就新增了此文件。文件内容如下：
+    NODE_ENV = 'development'
+    VUE_APP_TITLE = 'development'
+    ```
     - 3、区分环境
     ```
     var env = process.env.NODE_ENV === 'development' ? 'development' :
     process.env.VUE_APP_TITLE === 'alpha' ? 'alpha' : 'production';
+    // 以上是因为没增加```.env.development```文件，开发环境获取不到process.env.VUE_APP_TITLE的值，所以才有了上述判断。
+    // 如果每个环境都有对应的```.env.xxx```文件，则可以直接使用process.env.VUE_APP_TITLE的值来区分环境。就不必像上述那么麻烦了。
     ```
     - 参考文档：https://www.cnblogs.com/XHappyness/p/9337229.html
     - 建议：如果环境很多建议使用这个包来跨平台设置环境变量，然后在打包之前执行一段脚本动态生成```.env.alpha```文件：https://github.com/kentcdodds/cross-env 。此处就不贴脚本```create-env.js```的内容了。
@@ -217,7 +225,27 @@ module.exports = {
     - 建议，全部都使用```router-link```配合```路由name```去跳转。
 * 以上设置，尚且没有把```favicon.ico```文件和```index.html```文件放到test目录。
     - 设置index.html文件的路径```indexPath: 'test/index.html'```
-    - 设置favicon.ico文件的路径。暂时无解。待续...
+    - 设置favicon.ico文件的路径。暂时无解。
+* 建议：只设置一个publicPath。
+    - 如此，路由代码不用改，依然使用process.env.BASE_URL变量。
+    - 其他文件使用nodejs写个脚本剪切到对应目录。如果也可以解决favicon.ico文件无法换目录的问题。
+    - 不想剪切的话，可以直接使用scp2模块，把整个dist目录里的文件上传到服务器对应的目录(相当于剪切了)。
+* 注意：把dist中的全部文件都放到test目录之后，nginx的配置也要修改。
+    - 以下
+    ```
+    location / {
+      try_files $uri $uri/ /index.html;
+    }
+    ```
+    - 需要改为
+    ```
+    location / {
+      try_files $uri $uri/ /index.html;
+    }
+    location /test/ {
+      try_files $uri $uri/ /test/index.html;
+    }
+    ```
 
 # vue-cli版本升级
 * 经windows测试，发现安装了vue-cli之后，如果继续安装，会报错，导致安装不上去。
