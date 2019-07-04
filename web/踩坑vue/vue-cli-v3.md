@@ -162,3 +162,57 @@ vue add vuex
 * Linter / Formatter
 * 不要选择```Lint on save```，对WebStorm编辑器太不友好了。
     - WebStorm编辑器使用者建议选择：```Lint and fix on commit```。
+
+# 配置二级目录
+* vue-router配置（不需要改，默认就是process.env.BASE_URL）
+```javascript
+new Router({
+ mode: 'history',
+ base: process.env.BASE_URL,
+ routes: [
+   {
+     path: '*',
+     name: 'NotFound',
+     component: () => import(/* webpackChunkName: "NotFound" */ '@/views/NotFound'),
+     meta: { title: '404' }
+   }
+ ]
+})
+```
+* vue.config.js配置
+```javascript
+module.exports = {
+  outputDir: './dist',
+  assetsDir: './test',
+  publicPath: '/test',
+  css: {
+    loaderOptions: {
+      postcss: {
+        plugins: [
+          autoprefixer(),
+          pxtorem({
+            rootValue: 37.5,
+            propList: ['*'],
+            minPixelValue: 2
+          })
+        ]
+      },
+      // 向所有 scss 样式传入共享的全局变量、mixins、函数等。
+      sass: {
+        data: `@import "@/styles/config.scss";`
+      }
+    }
+  }
+}
+```
+* 经测试发现```vue-cli 3.5.0```版本，以上配置打包出来的```index.html```，静态资源引入时会多一层目录，理应为```/test/```却变为了```/test/test/```。
+    - 我猜是当前版本的bug，然后我对```vue-cli```进行版本升级，升级为了```3.9.1```版本之后，发现此问题依然存在。升级时还遇到了一些问题。在下面也进行了记录。
+    - 所以，问题是我配置的不对，所以我把上述的配置中的```publicPath: '/test',```注释掉了，发现就没问题了。
+
+# vue-cli版本升级
+* 经windows测试，发现安装了vue-cli之后，如果继续安装，会报错，导致安装不上去。
+* 需要先卸载 ```npm uninstall -g @vue/cli```
+* 然后再安装 ```npm install -g @vue/cli```
+* 然后发现，还是不行，然后我用windows自带的PowerShell下载，还是不行。
+* 然后我去npm的安装包中删除@vue文件夹，然后对PowerShell进行右键，然后以管理员身份运行，再安装就行了。
+* 总结：要删除老版本的文件，然后还要有足够的权限才能安装成功。
