@@ -41,7 +41,7 @@ npm i --save-dev node-sass sass-loader
     VUE_APP_TITLE = 'production'
     ```
     ```
-    // 注意：NODE_ENV都要设置为'production'，否则打包打不出东西。如此做法相当于走build的流程，但又可以让你根据VUE_APP_TITLE做一个特定的处理。
+    // 注意：NODE_ENV都要设置为'production'，否则打包打不出和生产环境类似的文件。如此做法相当于走build的流程，但又可以让你根据VUE_APP_TITLE做一个特定的处理。
     // 增加```.env.development```文件，此文件是开发环境需要的文件。因默认没有这个文件，所以开发环境下通过process.env.VUE_APP_TITLE获取不到值，为了能获取到值，我就新增了此文件。文件内容如下：
     // 开发环境默认读取```.env.development```文件，生产环境默认读取```.env.production```文件。
     NODE_ENV = 'development'
