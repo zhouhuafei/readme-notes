@@ -65,6 +65,7 @@ JWT 作为一个令牌（token），有些场合可能会放到 URL（比如 api
     - 时间差的临界值是多少？
     - 答：不清楚！经测试，setTimeout设置为500毫秒以下时，true的几率大于false。设置为900毫秒时，true的几率小于false。设置为1000毫秒时，就已经全是false了。
     - 以上测试结果是和exp对应的值有关的。因为exp对应的值是秒级别的。
+    - 总结：生成token时，如果入参是一致的，则生成的token就是一致的。
 ```javascript
 const jwt = require('jsonwebtoken');
 const token1 = jwt.sign({foo: 'bar'}, 'shhhhh');
