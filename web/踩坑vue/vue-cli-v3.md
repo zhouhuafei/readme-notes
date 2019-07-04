@@ -164,11 +164,12 @@ vue add vuex
     - WebStorm编辑器使用者建议选择：```Lint and fix on commit```。
 
 # 配置二级目录
-* vue-router配置（不需要改，默认就是process.env.BASE_URL）
+* vue-router配置
 ```javascript
 new Router({
  mode: 'history',
- base: process.env.BASE_URL,
+ // base: process.env.BASE_URL,
+ base: '/test',
  routes: [
    {
      path: '*',
@@ -184,7 +185,7 @@ new Router({
 module.exports = {
   outputDir: './dist',
   assetsDir: './test',
-  publicPath: '/test',
+  // publicPath: '/test',
   css: {
     loaderOptions: {
       postcss: {
@@ -208,6 +209,7 @@ module.exports = {
 * 经测试发现```vue-cli 3.5.0```版本，以上配置打包出来的```index.html```，静态资源引入时会多一层目录，理应为```/test/```却变为了```/test/test/```。
     - 我猜是当前版本的bug，然后我对```vue-cli```进行版本升级，升级为了```3.9.1```版本之后，发现此问题依然存在。升级时还遇到了一些问题。在下面也进行了记录。
     - 所以，问题是我配置的不对，所以我把上述的配置中的```publicPath: '/test',```注释掉了，发现就没问题了。
+    - 但是又引申出另外一个问题，那就是路由不对，因为process.env.BASE_URL值跟着publicPath的默认值(```/```)走。所以要手动调整路由的base为```/test```。
 
 # vue-cli版本升级
 * 经windows测试，发现安装了vue-cli之后，如果继续安装，会报错，导致安装不上去。
