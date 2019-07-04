@@ -238,7 +238,7 @@ module.exports = {
         - 此方案是本地每生成一个环境对应的文件，就立马上传到服务器对应的目录。相当于把指定环境的文件放到指定目录。
         - 具体点的说法就是，在dist文件中生成test环境对应的所有文件，然后立马把本地dist目录里所有的文件都上传到服务器上dist目录里对应的test目录中。
     - 案例：https://github.com/zhouhuafei/hello-world_vue-cli3_vant
-* 其他：nodejs命令行上的数据可通过```process.argv```获取。亦或者使用```yargs```模块接收。
+* 其他：nodejs命令行上的数据可通过```process.argv```获取。亦或者使用```yargs```模块进行接收和解析。
 * 注意：把dist中的全部文件都放到test目录之后，nginx的配置也要修改。
     - 以下
     ```
