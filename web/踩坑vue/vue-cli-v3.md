@@ -163,7 +163,7 @@ vue add vuex
 * 不要选择```Lint on save```，对WebStorm编辑器太不友好了。
     - WebStorm编辑器使用者建议选择：```Lint and fix on commit```。
 
-# 配置二级目录
+# history模式配置二级目录
 * vue-router配置
 ```javascript
 new Router({
@@ -183,9 +183,10 @@ new Router({
 * vue.config.js配置
 ```javascript
 module.exports = {
-  outputDir: './dist',
-  assetsDir: './test',
-  // publicPath: '/test',
+  outputDir: 'dist', // 当运行 vue-cli-service build 时生成的生产环境构建文件的目录。
+  assetsDir: 'test', // 放置生成的静态资源 (js、css、img、fonts) 的 (相对于 outputDir 的) 目录。
+  // publicPath: '/test', // 此处不注释掉的话，引入的资源路径会变为/test/test/，多了一个/test/。
+  // indexPath: 'test/index.html', // 指定生成的 index.html 的输出路径 (相对于 outputDir)。也可以是一个绝对路径。
   css: {
     loaderOptions: {
       postcss: {
@@ -210,6 +211,13 @@ module.exports = {
     - 我猜是当前版本的bug，然后我对```vue-cli```进行版本升级，升级为了```3.9.1```版本之后，发现此问题依然存在。升级时还遇到了一些问题。在下面也进行了记录。
     - 所以，问题是我配置的不对，所以我把上述的配置中的```publicPath: '/test',```注释掉了，发现就没问题了。
     - 但是又引申出另外一个问题，那就是路由不对，因为process.env.BASE_URL值跟着publicPath的默认值(```/```)走。所以要手动调整路由的base为```/test```。
+* 重要：路由如果加了二级路由。
+    - 那么内部路由的跳转就不要直接使用```:href="`/task/article`"```去跳转。
+    - 转而使用```router-link```配合```路由name```去跳转。```<router-link :to="{ name: 'TaskArticle', query: { id: 10 }}">任务文章转发</router-link>```。
+    - 建议，全部都使用```router-link```配合```路由name```去跳转。
+* 以上设置，尚且没有把```favicon.ico```文件和```index.html```文件放到test目录。
+    - 设置index.html的路径```indexPath: 'test/index.html'```
+    - 设置favicon.ico的路径。暂时无解。待续...
 
 # vue-cli版本升级
 * 经windows测试，发现安装了vue-cli之后，如果继续安装，会报错，导致安装不上去。
