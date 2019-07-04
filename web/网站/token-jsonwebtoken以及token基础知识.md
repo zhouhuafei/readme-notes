@@ -61,7 +61,10 @@ JWT 作为一个令牌（token），有些场合可能会放到 URL（比如 api
 
 # jsonwebtoken每次生成的token是一致的么？
 * 生成token时，如果入参是一致的，则生成的token就是一致的。
-* 如果带过期时间呢？如果生成token时没有时间差，则生成的token是一致的。如果有时间差，则生成的token就是不一致的。
+* 如果带过期时间呢？如果生成token时没有时间差或者时间差小于临界值，则生成的token是一致的。如果有时间差，则生成的token就是不一致的。
+    - 时间差的临界值是多少？
+    - 答：不清楚！经测试，setTimeout设置为500毫秒以下时，true的几率大于false。设置为900毫秒时，true的几率小于false。设置为1000毫秒时，就已经全是false了。
+    - 以上测试结果是和exp对应的值有关的。因为exp对应的值是秒级别的。
 ```javascript
 const jwt = require('jsonwebtoken');
 const token1 = jwt.sign({foo: 'bar'}, 'shhhhh');
@@ -76,6 +79,6 @@ console.log('token1===token2', token1 === token2); // true
 console.log('token3===token4', token3 === token4); // true
 setTimeout(() => {
     const token5 = jwt.sign({foo: 'bar', exp: Math.floor(Date.now() / 1000) + (60 * 60)}, 'shhhhh');
-    console.log('token4===token5', token4 === token5); // false
+    console.log('token4===token5', token4 === token5); // false 此处比对结果和setTimeout设置的时间有关，具体测试，请看上述言论。
 }, 1000);
 ```
