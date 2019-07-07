@@ -44,6 +44,7 @@
     [...arr].forEach(v => { console.log(v) }); // 会打印1 2 3 undefined undefined
     ```
     - 怎么把稀疏数组变成非稀疏数组
+        - ```Array.apply(Array, Array(10))```
         - ```Array.apply(Array, new Array(10))```
         - ```[...new Array(10)]```
         - 以上```new Array```换成```Array```也是对的。
