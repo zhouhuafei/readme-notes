@@ -61,7 +61,7 @@ jti (JWT ID)：编号
     ```
     HMACSHA256(base64UrlEncode(Header) + "." + base64UrlEncode(Payload), secret)
     ```
-    - JWT验证token是否有效的时候，也要把密钥（secret）传入进去进行验证的。
+    - JWT生成token以及验证token是否有效的时候，都需把密钥（secret）传入进去，进行token的生成以及token的校验。
 
 # Base64URL算法
 > JWT 作为一个令牌（token），有些场合可能会放到 URL（比如 api.example.com/?token=xxx）。Base64 有三个字符```+```、```/```和```=```，在 URL 里面有特殊含义，所以要被替换掉：```=```被省略、```+```替换成```-```，```/```替换成```_``` 。这就是 Base64URL 算法。
