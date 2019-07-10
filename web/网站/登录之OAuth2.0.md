@@ -57,7 +57,7 @@ OAuth是一个关于授权（authorization）的开放网络标准，在全世�
 # 单页面登录
 * 登录页内嵌iframe，iframe是第三方平台的登录页。
 * 登陆完，页面会回跳到当前应用指定的路由，这个路由因是前端控制，所以前端要去拿code，拿到之后打后端登陆接口。
-    - 后端得到code之后，带着code和第三方的accessToken去拿用户信息。
+    - 后端得到code之后，带着code和第三方的access_token去拿用户信息。
     - 拿到用户信息之后返回当前应用的token给前端。
     - 前端存储token并跳到应用对应的业务页面。
 
@@ -70,12 +70,12 @@ OAuth是一个关于授权（authorization）的开放网络标准，在全世�
 * 步骤
     - 1、打接口时，带上当前页面的url(命名为callUrl且如果url上带有token则需要过滤掉)，接口检测此条请求有没有带token，如果没带token则返回302，并给一个重定向地址。js跳入这个地址，这个地址就是微信的授权地址，其中会附带上redirectUrl和callUrl。
     - 2、用户点击授权按钮，微信那边会跳入redirectUrl并附带code码。
-    - 3、后端根据code码和秘钥换取accessToken，然后再用accessToken去换取微信的当前用户信息。再然后就是后端重定向到callUrl的链接，并附带当前应用的token。
+    - 3、后端根据code码和秘钥换取access_token，然后再用access_token去换取微信的当前用户信息。再然后就是后端重定向到callUrl的链接，并附带当前应用的token。
     - 4、前端从url上拿到token。并存储token。后续打接口带上这个token即可。
 * 优化：好处在于token不会暴露于url上。
     - 1、打接口时如果没有token，则前端拼接并跳往微信授权页，并附带callUrl和redirectUrl。
     - 2、用户点击授权按钮，微信那边会跳入redirectUrl并附带code码。
-    - 3、前端在redirectUrl页接收code，并附带code码去打后端login接口。后端根据code码和秘钥换取accessToken，然后再用accessToken去换取微信的当前用户信息。并返回前端当前应用的token。
+    - 3、前端在redirectUrl页接收code，并附带code码去打后端login接口。后端根据code码和秘钥换取access_token，然后再用access_token去换取微信的当前用户信息。并返回前端当前应用的token。
     - 4、前端从xhr的响应中拿到token。并存储token。后续打接口带上这个token即可。
 * 官方文档：
     - https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140842
