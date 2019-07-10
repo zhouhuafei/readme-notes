@@ -77,7 +77,9 @@ OAuth是一个关于授权（authorization）的开放网络标准，在全世�
     - 2、用户点击授权按钮，微信那边会跳入redirectUrl并附带code码。
     - 3、前端在redirectUrl页接收code，并附带code码去打后端login接口。后端根据code码和秘钥换取accessToken，然后再用accessToken去换取微信的当前用户信息。并返回前端当前应用的token。
     - 4、前端从xhr的响应中拿到token。并存储token。后续打接口带上这个token即可。
-* 官方文档：https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140842
+* 官方文档：
+    - https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140842
+    - https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=open1419318590&token=&lang=zh_CN
 * 链接分解
 ```
 https://open.weixin.qq.com/connect/oauth2/authorize
