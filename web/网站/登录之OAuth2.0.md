@@ -65,3 +65,27 @@ OAuth是一个关于授权（authorization）的开放网络标准，在全世�
 * 如果是用户端的第三方授权登陆，则需要跳到第三方平台的授权登录页去登陆。可以让用户有安全感。总不在自家平台让用户输入qq的账号和密码对吧。这对用户来说很不安全。
 * 如果是自家的管理系统，要用自家的用户平台账号登陆，则内嵌iframe更为合适。
     - 自家的管理系统打用户中心的接口，是为了拿一些用户的数据进行同步，例如账号有没有到期，有没有续费等数据。其他数据还是存在当前应用对应的数据库中的。
+
+# 案例：草动商城h5页面(单页面应用)进行微信授权登陆
+* 步骤
+    - 1、打接口时，带上当前页面的url(命名为callUrl且如果url上带有token则需要过滤掉)，接口检测此条请求有没有带token，如果没带token则返回302，并给一个重定向地址。js跳入这个地址，这个地址就是微信的授权地址，其中会附带上redirectUrl和callUrl。
+    - 2、用户点击授权按钮，微信那边会跳入redirectUrl并附带code码。
+    - 3、后端根据code码和秘钥换取accessToken，然后再用accessToken去换取微信的当前用户信息。再然后就是后端重定向到callUrl的链接，并附带当前应用的token。
+    - 4、前端从url上拿到token。并存储token。后续打接口带上这个token即可。
+* 优化：好处在于token不会暴露于url上。
+    - 1、打接口时如果没有token，则前端拼接并跳往微信授权页，并附带callUrl和redirectUrl。
+    - 2、用户点击授权按钮，微信那边会跳入redirectUrl并附带code码。
+    - 3、前端在redirectUrl页接收code，并附带code码去打后端login接口。后端根据code码和秘钥换取accessToken，然后再用accessToken去换取微信的当前用户信息。并返回前端当前应用的token。
+    - 4、前端从xhr的响应中拿到token。并存储token。后续打接口带上这个token即可。
+* 官方文档：https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140842
+* 链接分解
+```
+https://open.weixin.qq.com/connect/oauth2/authorize
+?appid=wxbe39e7b6d26ff982
+&redirect_uri=https://apiuat.icaodong.com/miniapp/wechat/login_callback
+&response_type=code
+&scope=snsapi_userinfo
+&state=https%3A%2F%2Fh5.icaodong.com%2Ftest%2Ftask%2Farticle%3FtaskId%3D252%26ruleId%3D327%26step%3D4%26userId%3D8%26empId%3D31580
+&component_appid=wxb2674d5aa8163384
+#wechat_redirect
+```
