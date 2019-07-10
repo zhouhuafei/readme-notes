@@ -59,6 +59,11 @@
 # v-for
 * 需要有key且key不能绑定到template标签上。
 
+# vue-router的fullPath属性
+* 如果设置了应用的基路径(即：设置了base属性)。假如基路径为```/base/```。
+* 我访问的页面路径是```127.0.0.1:8080/base/goods/detail```。
+* 则fullPath的值是```/goods/detail```。
+
 # vue-router导航守卫
 * afterEach和beforeEach中this不是Vue的实例。
 * 如果需要使用$store。直接使用定义好的变量store即可。
