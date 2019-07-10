@@ -12,7 +12,7 @@
 * 第一步，用户访问普通网站A并在普通网站A登录。服务端返回sessionid记录到cookie，因设置cookie时有httpOnly，所以不用担心cookie被盗取。
 * 第二步，用户访问攻击网站B。虽说攻击网站B无法获取到用户在普通网站A中的cookie(不是因为cookie设置的有httpOnly，而是因为浏览器限制了cookie无法跨主域携带)。
     - 但是重点是：从浏览器向普通网站A发出的任何请求中(此处特指以表单的submit形式进行提交的请求以及普通url触发的get请求)，默认都会携带普通网站A的cookie，无论是从哪个网站发出(划重点)。
-    - form表单提交没有跨域问题。
+    - form表单的submit提交没有跨域问题。
 * 第三步，利用第二步的原理。攻击网站B中请求了普通网站A中的一个点赞接口。
     - 请求方式可以是普通的url触发的get请求，例如：```<img src="http://www.a.com/praise" />```。
     - 请求方式可以是表单的submit方法触发的get请求和post请求。```<form method="post" action="http://www.a.com/praise"><button type="submit"></button></form>```
