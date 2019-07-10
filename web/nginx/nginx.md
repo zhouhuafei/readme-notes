@@ -265,3 +265,27 @@ location / {
   try_files $uri $uri/ /index.html;
 }
 ```
+
+# nginx反向代理vue访问时浏览器加载失败，出现```ERR_CONTENT_LENGTH_MISMATCH```问题。
+* nginx在做代理时，其工作进程对大文件做了缓存，这个缓存在 %nginx%/proxy_temp 目录下，主进程在读取缓存的时候由于权限问题而无法访问。
+* 可以: ```sudo chmod 777 proxy_temp ```。
+
+# nginx负载均衡
+```
+upstream tomcats {
+    server 127.0.0.1:9001;
+    server 127.0.0.1:9002;
+}
+
+server {
+    listen 80;
+    server_name  www.lianggzone.com;
+    location / {
+        proxy_pass_header Server;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Scheme $scheme;
+        proxy_pass http://tomcats;
+    }
+}
+```
