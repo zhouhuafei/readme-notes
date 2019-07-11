@@ -53,6 +53,9 @@
 * 子传父 this.$emit(fnName, data);
 * props是只读的，请遵守这个原则。
 
+# Vue.config.productionTip = false
+* 设置为 false 以阻止 vue 在启动时生成生产提示。
+
 # 对象没有属性的时候会报错
 * v-if判断，有值的时候才渲染即可。
 
