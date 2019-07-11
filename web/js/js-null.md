@@ -56,3 +56,14 @@
 * null == 0; // false
 * 5.1版本[==比较操作符规则的算法原文链接](http://www.ecma-international.org/ecma-262/5.1/#sec-11.9.3)
 * 6.0版本[==比较操作符规则的算法原文链接](http://www.ecma-international.org/ecma-262/6.0/#sec-abstract-equality-comparison)
+
+# 其他
+* ```{} == {}```直接放到控制台打印不会报错。但是和其他类型的数据比较会报错。
+* 以下直接放到控制台打印会报错。报错信息：```Uncaught SyntaxError: Unexpected token ==```。
+    - ```{} == []```
+    - ```{} == 2```
+    - ```{} == true```
+* 加上括号之后就不会报错了。以下直接放到控制台打印就不会报错。
+    - ```({} == [])```
+    - ```({} == 2)```
+    - ```({} == true)```
