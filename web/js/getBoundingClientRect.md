@@ -1,6 +1,6 @@
-> getBoundingClientRect用于获取某个元素相对于视窗的位置集合。集合中有top, right, bottom, left等属性。
+> getBoundingClientRect用于获取某个元素相对于视窗的位置集合。集合中有top, right, bottom, left, width, height属性。
 * 语法：
-    - ```domRect = dom.getBoundingClientRect();```。
+    - ```domRect = dom.getBoundingClientRect();```
 * 返回值类型：
     - ```domRect.top``` 元素上边到视窗上边的距离。
     - ```domRect.right``` 元素右边到视窗左边的距离。
