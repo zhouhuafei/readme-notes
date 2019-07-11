@@ -6,8 +6,8 @@
     - ```domRect.right``` 元素右边到视窗左边的距离。
     - ```domRect.bottom``` 元素下边到视窗上边的距离。
     - ```domRect.left``` 元素左边到视窗左边的距离。
-    - ```domRect.width``` 元素计算后的宽度(如果是标准盒模型则包含padding和border)。
-    - ```domRect.height``` 元素计算后的的高度(如果是标准盒模型则包含padding和border)。
+    - ```domRect.width``` 元素计算后的宽度(如果是标准盒模型则要计算上padding和border，如果是怪异盒模型则就是元素被设置的css属性width对应的值)。
+    - ```domRect.height``` 元素计算后的的高度(如果是标准盒模型则要计算上padding和border，如果是怪异盒模型则就是元素被设置的css属性height对应的值)。
 * 标准盒模型
     - ```box-sizing: content-box;```
 * 怪异盒模型
