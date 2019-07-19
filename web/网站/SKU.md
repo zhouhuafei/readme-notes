@@ -3,7 +3,10 @@
 * 第1个数组和第2个数组拼接
 * 拼接完的结果和第3个数组拼接
 * 拼接完的结果和第4个数组拼接
-* 案例：
+* 案例 - 源码：
+    - https://github.com/zhouhuafei/zhf.sku
+    - https://github.com/zhouhuafei/zhf.sku/blob/master/src/index.js
+* 案例 - 代码：
 ```
 (function (name, factory) {
     if (typeof exports === 'object' && typeof module !== 'undefined') { // nodejs - commonjs canon
