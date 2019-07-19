@@ -42,3 +42,6 @@
 * 假如浏览器本来是要向百度的服务器发送一条请的，设置了代理之后。
 * 浏览器的请求就发送给了Fiddler服务器，Fiddler再转发给百度的服务器，接收到响应之后，Fiddler再反馈给浏览器。
 * 所以Fiddler中可以看到所有的用户请求，至于拦截和篡改请求，就是Fiddler的开发人员开发的功能了。这些功能可以方便开发人员的调试。
+
+# Fiddler抓HTTPS请求
+https://blog.csdn.net/qq_15283475/article/details/62224149
