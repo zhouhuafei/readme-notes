@@ -502,6 +502,9 @@ class="w500">
     - 解决方案：给```el-table-column```组件加```:show-overflow-tooltip="true"```。
     - 如果还是错位？
     - 解决方案：看下内容中是否有img标签。如果有，则把img标签转成块元素。或者加```vertical-align: middle;```。```bottom || top```也行。
+* 表单验证时，提示错位。
+    - 问题原因：我使用css修改了el-form-item组件中label的width。
+    - 解决方案：在el-form组件上使用label-width控制label的width。
 
 # $set
 > https://cn.vuejs.org/v2/guide/reactivity.html#%E6%A3%80%E6%B5%8B%E5%8F%98%E5%8C%96%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9
