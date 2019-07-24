@@ -30,7 +30,7 @@ font-feature-settings: tnum;
     }
     ```    
 
-* CSS3 zoom 设置或检索对象的缩放比例。 (微信小程序的switch组件没有提供修改大小的属性，使用zoom可解决修改大小的问题)
+* CSS3 zoom 设置或检索对象的缩放比例。 (微信小程序的switch组件没有提供修改大小的属性，使用zoom可解决修改大小的问题，比transform的scale好用)
 ```css
 div {
     zoom: 0.5;
