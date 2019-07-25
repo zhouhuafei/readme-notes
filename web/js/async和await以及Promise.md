@@ -12,7 +12,7 @@
     - 建议使用taro框架或者别的小程序框架。
 
 # async
-* 返回值：async函数的返回值是 Promise 对象。
+* 返回值：返回 Promise 对象。
 * async定义的方法返回值是一个Promise。
 * 怎么接收async函数返回的具体结果么？
     - 1、使用then方法，在回调里接收。
