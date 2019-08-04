@@ -12,6 +12,7 @@
     - 建议使用taro框架或者别的小程序框架。
 
 # async
+* 返回值：返回 Promise 对象。
 * async定义的方法返回值是一个Promise。
 * 怎么接收async函数返回的具体结果么？
     - 1、使用then方法，在回调里接收。
@@ -35,6 +36,7 @@
     ```
 
 # await
+* 返回值：返回 Promise 对象的处理结果。如果等待的不是 Promise 对象，则返回该值本身。
 > ```await```操作符用于等待一个```Promise```对象。它只能在异步函数```async function```中使用。
 * await后面需要是一个Promise对象。
 * await只能在异步函数```async function```中使用。
