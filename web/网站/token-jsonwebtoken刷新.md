@@ -34,7 +34,7 @@ function ajax(opts){
         if(!isRefreshing){ // 防止客户端并发请求多次刷新token。
             isRefreshing = true;
             ajax({
-                isValidateExpiresTime:false,
+                isValidateExpiresTime: false,
             }).then((res)=>{
                 if(res.status === 'success'){
                     // 设置token到cookie等流程在这里执行。
