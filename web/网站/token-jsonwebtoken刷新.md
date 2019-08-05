@@ -28,13 +28,13 @@ var requestArr = [];
 var isRefreshing = false;
 function ajax(opts){
     var isRefreshToken = Date.now() - Cookies.get('tokenExpiresTime') < 600; // 提前10分钟刷新token。
-    // 这里如果不用isValidateExpiresTime过滤一下，则刷新token的请求也会走到内部去。
-    if(isValidateExpiresTime !== false && isRefreshToken){
+    // 这里如果不用opts.isValidateExpiresTime过滤一下，则刷新token的请求也会走到内部去。
+    if(opts.isValidateExpiresTime !== false && isRefreshToken){
         requestArr.push(opts); // 存储请求。
         if(!isRefreshing){ // 防止客户端并发请求多次刷新token。
             isRefreshing = true;
             ajax({
-                isValidateExpiresTime:false,
+                isValidateExpiresTime: false,
             }).then((res)=>{
                 if(res.status === 'success'){
                     // 设置token到cookie等流程在这里执行。
