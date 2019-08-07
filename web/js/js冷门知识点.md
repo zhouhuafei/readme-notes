@@ -128,6 +128,19 @@ console.log(a.__proto__.constructor.name); // 打印 'A'
     ```
     a.hasOwnProperty('mm'); // 'a'
     ```
+    
+* 检测子类继承于哪个类？
+```
+class A {}
+class B extends A {}
+等同于
+function A() {}
+function B() {}
+B.prototype.__proto__ = A.prototype
+B.__proto__ = A
+以上可被使用以下方法进行检测
+Object.getPrototypeOf(B).name // 'A' 
+```
 
 * 多为数组扁平化 - 方案1：
     - 1、使用toString成字符串。
