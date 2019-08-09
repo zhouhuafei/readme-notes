@@ -505,6 +505,9 @@ class="w500">
 * 表单验证时，提示错位。
     - 问题原因：我使用css修改了el-form-item组件中label的width。
     - 解决方案：在el-form组件上使用label-width控制label的width。
+* el-form-item渲染的字段错位。
+    - 问题原因：使用v-if区别渲染了分销商和导购的字段。因vue的就地复用策略导致如此问题。
+    - 解决方案：```:key="String(Math.random()).substring(1)"```。
 
 # $set
 > https://cn.vuejs.org/v2/guide/reactivity.html#%E6%A3%80%E6%B5%8B%E5%8F%98%E5%8C%96%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9
