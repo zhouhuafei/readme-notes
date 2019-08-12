@@ -10,7 +10,7 @@
     - 解决方案：将canvas的width和height属性放大指定倍数进行绘制，然后再使用css3缩放(scale)将整个canvas元素或者其父元素缩小指定倍数，或者使用style设置宽高(canvas的style设置宽高，其实是对canvas的缩放)将整个canvas元素缩小到指定倍数。
     - 重点：ctx.scale(2, 2);需要将绘画环境也放大到指定倍数。
     - 放大到设备物理像素比(devicePixelRatio)的倍数即可。如果不放心的话，可以在设备物理像素比倍数的基础上再放大指定倍数。
-    - 手机端，canvas的自适应方法(px2remCanvas)封装时，不受影响，内部无需放大到指定倍数，正常封装即可。
+    - 手机端，canvas自适应方法(px2remCanvas)封装时，不受影响，内部无需放大到指定倍数，正常封装即可。
     ```
     // 放大两倍
     canvas.setAttribute('width', width * 2);
