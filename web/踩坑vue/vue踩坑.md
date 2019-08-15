@@ -508,7 +508,7 @@ class="w500">
 * el-form-item渲染的字段错位。
     - 问题原因：使用v-if区别渲染了分销商和导购的字段。因vue的就地复用策略导致如此问题。
     - 解决方案：```:key="String(Math.random()).substring(1)"```。
-* el-dialog，后弹出的，被前面弹出的覆盖掉了。
+* el-dialog组件后弹出的，被前面弹出的覆盖掉了。
     - 解决方案：给el-dialog加```append-to-body```属性。
 
 # $set
