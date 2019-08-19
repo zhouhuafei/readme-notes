@@ -26,3 +26,22 @@ class Person {
 }
 new Person({name: 'name', age: 18}) // 正确的传入参数，则不会报错。
 ```
+```typescript
+interface Animal {
+    eat()
+}
+// Sheep 实现 Animal 则需要实现接口中的eat方法。
+class Sheep implements Animal {
+    eat () {
+        console.log('我吃草')
+    }
+}
+new Sheep().eat();
+// Tiger 实现 Animal 则需要实现接口中的eat方法。
+class Tiger implements Animal {
+    eat () {
+        console.log('我吃肉')
+    }
+}
+new Tiger().eat();
+```
