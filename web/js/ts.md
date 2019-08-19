@@ -14,6 +14,7 @@ myArray.push(1);
 
 # 接口(interface)
 > 用来建立某种代码约定，使得其开发者在调用某个方法或创建新的类时必须遵循接口所定义的代码约定。
+* interface
 ```typescript
 interface IPerson {
     name: string; // 分号
@@ -26,6 +27,7 @@ class Person {
 }
 new Person({name: 'name', age: 18}) // 正确的传入参数，则不会报错。
 ```
+* implements
 ```typescript
 interface Animal {
     eat()
