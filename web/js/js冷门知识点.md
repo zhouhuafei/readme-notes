@@ -152,7 +152,7 @@ Object.getPrototypeOf(B).name // 'A'
 * 多为数组扁平化 - 方案2：
     - 使用数组的flat方法。
     ```javascript
-    [1,[2,[3]]].flat(2); // 1,2,3
+    [1,[2,[3]]].flat(2); // [1,2,3]
     ```
     
 * 生成10条数据
