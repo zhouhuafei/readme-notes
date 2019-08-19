@@ -50,3 +50,25 @@ new Tiger().eat();
 
 # 注解(annotation)
 > 注解为程序的元素(类、方法、变量)加上更直观更明了的说明，这些说明信息与程序的业务逻辑无关，而是供指定的工具或框架使用的。
+* 告诉框架读取什么文件，渲染到什么位置。
+* @Component就是注解，由Angular2提供，告诉Angular2框架如何处理AppComponent这个类。
+```
+import { Component } from '@angular/core';
+
+@Component({
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
+})
+
+export class AppComponent {
+    title = 'app works!';
+}
+```
+
+# 类型定义文件
+> 类型定义文件用来帮助开发者在TypeScript中使用已有的JavaScript的工具包，如JQuery等。
+* 类型定义文件的以```.d.ts```结尾，里面主要用来定义类型。
+    - 在ts里直接使用```$```符号会报错，如果文件夹下有对应的jq的类型定义文件，则就不会报错了。
+* 常用```*.d.ts```：https://github.com/DefinitelyTyped/DefinitelyTyped
+* 使用typing工具安装```*.d.ts```文件：https://github.com/typings/typings
