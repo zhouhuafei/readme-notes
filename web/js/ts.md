@@ -9,3 +9,14 @@ myArray.push(new Person());
 
 # 接口(interface)
 > 用来建立某种代码约定，使得其开发者在调用某个方法或创建新的类时必须遵循接口所定义的代码约定。
+```typescript
+interface IPerson {
+    name: string; // 分号
+    age: number;
+    height?: number; // 可选属性
+}
+class Person {
+    // 此处接口作为一个方法的类型声明，此时ts会检查你传入的参数是否满足接口声明的属性要求。
+    constructor(public config: IPerson) {}
+}
+```
