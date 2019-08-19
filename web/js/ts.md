@@ -70,5 +70,5 @@ export class AppComponent {
 > 类型定义文件用来帮助开发者在TypeScript中使用已有的JavaScript的工具包，如JQuery等。
 * 类型定义文件的以```.d.ts```结尾，里面主要用来定义类型。
     - 在ts里直接使用```$```符号会报错，如果文件夹下有对应的jq的类型定义文件，则就不会报错了。
-* 常用```*.d.ts```：https://github.com/DefinitelyTyped/DefinitelyTyped
-* 使用typing工具安装```*.d.ts```文件：https://github.com/typings/typings
+* 常用类型定义文件```*.d.ts```：https://github.com/DefinitelyTyped/DefinitelyTyped
+* 使用typing工具安装```*.d.ts```类型定义文件：https://github.com/typings/typings
