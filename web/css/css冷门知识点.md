@@ -56,3 +56,5 @@ div {
       background: #ff0000;
     }  
     ```
+
+* ```display: flex;```会让单行省略号失效。
