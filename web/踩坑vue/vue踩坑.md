@@ -464,6 +464,7 @@ Event.$on('msg', function (json) { // 接收数据，第一个参数是数据的
 * element的input框是怎么封装的？怎么获取一些未赋值到props上的原生属性给input。
     - inheritAttrs: false
     - $attrs
+    - ```v-bind="$attrs"```
     - https://cn.vuejs.org/v2/guide/components-props.html#%E7%A6%81%E7%94%A8%E7%89%B9%E6%80%A7%E7%BB%A7%E6%89%BF
     - https://github.com/ElemeFE/element/blob/dev/packages/input/src/input.vue
 * 将原生事件绑定到组件
