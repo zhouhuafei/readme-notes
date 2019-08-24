@@ -464,6 +464,7 @@ Event.$on('msg', function (json) { // 接收数据，第一个参数是数据的
 * element的input框是怎么封装的？怎么获取一些未赋值到props上的原生属性给input。
     - inheritAttrs: false
     - $attrs
+    - ```v-bind="$attrs"```
     - https://cn.vuejs.org/v2/guide/components-props.html#%E7%A6%81%E7%94%A8%E7%89%B9%E6%80%A7%E7%BB%A7%E6%89%BF
     - https://github.com/ElemeFE/element/blob/dev/packages/input/src/input.vue
 * 将原生事件绑定到组件
@@ -507,7 +508,7 @@ class="w500">
     - 解决方案：在el-form组件上使用label-width控制label的width。
 * el-form-item渲染的字段错位。
     - 问题原因：使用v-if区别渲染了分销商和导购的字段。因vue的就地复用策略导致如此问题。
-    - 解决方案：```:key="String(Math.random()).substring(1)"```。
+    - 解决方案：```:key="String(Math.random()).substring(2)"```。
 * el-dialog组件，后弹出的，被前面弹出的覆盖掉了。
     - 解决方案：给el-dialog加```append-to-body```属性。
 
