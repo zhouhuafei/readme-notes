@@ -94,11 +94,11 @@ console.log(1 + + '1'); // 2
         content.randomFn([...arguments].slice(1)); // 重点二：参数传递
         delete content.randomFn;
     };
-    
+
     function fn() {
         console.log(this);
     }
-    
+
     fn.call2({}, 1, 2);
     ```
 
@@ -128,18 +128,20 @@ console.log(a.__proto__.constructor.name); // 打印 'A'
     ```
     a.hasOwnProperty('mm'); // 'a'
     ```
-    
+
 * 检测子类继承于哪个类？
 ```
 class A {}
 class B extends A {}
-等同于
+// 等同于
 function A() {}
 function B() {}
 B.prototype.__proto__ = A.prototype
 B.__proto__ = A
-以上可被使用以下方法进行检测
-Object.getPrototypeOf(B).name // 'A' 
+// 以上可被使用以下方法进行检测
+Object.getPrototypeOf(B).name // 'A'
+// 其他(和以上无关) - 检测实例源自哪个构造函数
+Object.getPrototypeOf(new B()).constructor.name // 'B'
 ```
 
 * 多为数组扁平化 - 方案1：
@@ -154,7 +156,7 @@ Object.getPrototypeOf(B).name // 'A'
     ```javascript
     [1,[2,[3]]].flat(2); // [1,2,3]
     ```
-    
+
 * 生成10条数据
     - 方法1
     ```javascript
