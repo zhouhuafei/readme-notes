@@ -519,3 +519,6 @@ class="w500">
 
 # SSR和预渲染
 * 官方文档：https://ssr.vuejs.org/zh/#什么是服务器端渲染-ssr-？
+
+# vue-cli能读取项目根目录以外的文件么？
+* 能。
