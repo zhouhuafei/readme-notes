@@ -51,8 +51,8 @@
     - 4、再联网即可。
     - 弊端：重启WebStorm，需要重新走上述流程。
 * 其他解决方案：版本回退。
-    - https://www.jetbrains.com/webstorm/download/other.html
     - 去WebStorm官网，下载2018.3.6版本的WebStorm，然后按照2018.3.5的方式进行2018.3.6的破解即可。
+    - 其他版本的下载网址：https://www.jetbrains.com/webstorm/download/other.html
 > 2019.2.1
 * 破解：
     - 暂时没破解，使用的试用码。
