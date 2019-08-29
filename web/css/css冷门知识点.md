@@ -58,3 +58,7 @@ div {
     ```
 
 * ```display: flex;```会让单行省略号失效。
+
+* 贝塞尔曲线
+    - 工具：https://cubic-bezier.com/
+    - `transition: 0.4s cubic-bezier(0, 0, .76, 1.45);`
