@@ -7,7 +7,7 @@
 * http: 80(云服务器上要开启这个端口)
 * https: 443(云服务器上要开启这个端口)
 
-# nodejs为网站配置SSL证书
+# nodejs(express)为网站配置SSL证书
 ```javascript
 const fs = require('fs');
 const http = require('http');
