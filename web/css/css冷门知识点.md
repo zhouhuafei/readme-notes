@@ -11,11 +11,11 @@
 
 * clip:rect(10px, 60px, 200px, 10px);
     - clip属性剪裁绝对定位元素。
-    - 从上边开始算起，距离top为10px的位置。
-    - 从右边开始算起，距离left为60px的位置。
-    - 从下边开始算起，距离top为200px的位置。
-    - 从左边开始算起，距离left为10px的位置。
     - 裁切出一个矩形。
+    - 这个矩形的top边，在原矩形top为10px的位置。
+    - 这个矩形的right边，在原矩形left为60px的位置。
+    - 这个矩形的bottom边，在原矩形top为200px的位置。
+    - 这个矩形的left边，在原矩形left为10px的位置。
 
 * 子元素的position:fixed;默认根据根节点进行定位，如果某个父节点使用了transform属性，则会根据这个父节点进行定位且会丢失fixed的悬浮特性。
 
@@ -32,7 +32,7 @@ font-feature-settings: tnum;
         -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
         filter: grayscale(100%);
     }
-    ```    
+    ```
 
 * CSS3 zoom 设置或检索对象的缩放比例。 (微信小程序的switch组件没有提供修改大小的属性，使用zoom可解决修改大小的问题，比transform的scale好用)
 ```css
@@ -47,7 +47,7 @@ div {
     - 特点：占据文档流，无需js即可写粘性导航的导航悬浮那部分功能。
     - 重点：无论父级有无定位，都是根据父级定位。所以如果做粘性导航导航悬浮的那部分功能，务必给导航的最外层元素加sticky。且最外层元素的直属父级需要是body。
     ```css
-    /* 
+    /*
     .sticky的直属父级一般是body，如此，当滚动到.sticky的位置时，.sticky就会相对于body悬浮到可视区的指定位置。
     如果.sticky的直属父级是div，则div滚动到.sticky的位置时，.sticky就会相对于div悬浮到可视区的指定位置。
     总结：position: sticky属性是相对于直属父级进行定位的。
@@ -58,7 +58,7 @@ div {
       top: 0;
       z-index: 9999;
       background: #ff0000;
-    }  
+    }
     ```
 
 * ```display: flex;```会让单行省略号失效。
