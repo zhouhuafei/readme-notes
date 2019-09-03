@@ -42,5 +42,5 @@ animation-fill-mode: forwards;
 # css3 景深
 * `transform-style: preserve-3d;`
     - (加给父级)让转换的子元素保留3D转换。
-* `perspective:150;`
+* `perspective: 150px;`
     - (加给父级)设置元素被查看位置的视图。
