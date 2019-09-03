@@ -1,3 +1,5 @@
+> 摘自：https://zhuanlan.zhihu.com/p/65393365
+
 # nginx如何实现负载均衡
 ```
 upstream balanceServer {
