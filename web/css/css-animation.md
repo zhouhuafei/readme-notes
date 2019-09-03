@@ -18,3 +18,23 @@
 ```
 animation-fill-mode: forwards;
 ```
+
+# 微信小程序动画默认停留在最后一帧？
+> 答：不是的，动画特性和web中的动画特性是一致的。动画完成之后，都是停留在容器本来的位置的。
+```
+@keyframes footer-right-enter {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.filter-popup-footer {
+  animation-duration: 300ms;
+  animation-name: footer-right-enter;
+}
+```
+* 以上代码，容器会从右移动到左，并停留。让我误以为动画停留在了最后一帧。
+* 实则不然，其实是运动的最后一个轨迹，刚好和容器的本来位置一致罢了。
