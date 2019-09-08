@@ -327,7 +327,7 @@ server {
     index index.html;
     gzip on;
     location / {
-        valid_referers none blocked server_names *.sbxxx.top;
+        valid_referers none blocked server_names *.sbxx.top;
         if ($invalid_referer) {
             return 403;
         }
