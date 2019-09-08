@@ -242,6 +242,8 @@ http {
     #IE6对Gzip不怎么友好，不给它Gzip了
     gzip_disable "MSIE [1-6]\.";
 ```
+* 请求头：`Accept-Encoding: gzip`
+* 响应头：`Content-Encoding: gzip`
 
 # 开启```Cache-Control: public, max-age=31536000```
 ```
