@@ -326,9 +326,6 @@ server {
     root /root/hello-world_crawler/pages/;
     index index.html;
     gzip on;
-    if ($http_host ~* 'comic.sbxx.top') {
-        return 403;
-    }
     location / {
         add_header Cache-Control max-age=31536000;
         add_header X-Frame-Options SAMEORIGIN;
