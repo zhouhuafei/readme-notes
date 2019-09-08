@@ -325,13 +325,17 @@ server {
 	server_name comic.sbxx.top;
     root /root/hello-world_crawler/pages/;
     index index.html;
+    gzip on;
+    if ($http_host ~* 'comic.sbxx.top') {
+        return 403;
+    }
     location / {
-        add_header X-Frame-Options SAMEORIGIN;
         add_header Cache-Control max-age=31536000;
+        add_header X-Frame-Options SAMEORIGIN;
     }
     location /images/ {
-         proxy_pass https://bnpic.comic123.net/images/;
-         proxy_set_header referer https://www.baidu.com/;
+        proxy_pass https://bnpic.comic123.net/images/;
+        proxy_set_header referer https://www.baidu.com/;
     }
     location /upload/ {
         proxy_pass https://bnpic.comic123.net/upload/;
