@@ -327,6 +327,10 @@ server {
     index index.html;
     gzip on;
     location / {
+        valid_referers none blocked server_names *.sbxxx.top;
+        if ($invalid_referer) {
+            return 403;
+        }
         add_header Cache-Control max-age=31536000;
         add_header X-Frame-Options SAMEORIGIN;
     }
@@ -340,3 +344,4 @@ server {
     }
 }
 ```
+* 上述防盗链，无效。待续...
