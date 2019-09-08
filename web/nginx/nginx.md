@@ -300,3 +300,21 @@ server {
     return 301 https://$server_name$request_uri;
 }
 ```
+
+# nginx 配置comic.sbxx.top的静态服务器时，出现403。
+> 一定要先看错误日志。否则只是白白浪费时间。
+* 在nginx.conf中可以看到访问日志和错误日志。
+    - access_log /var/log/nginx/access.log;
+    - error_log /var/log/nginx/error.log;
+* 错误日志表示：nginx没有访问```/root/hello-world_crawler/pages/```目录的权限。
+* 配置如下：
+```
+server {
+	listen 80;
+	server_name comic.sbxx.top;
+    root /root/hello-world_crawler/pages/;
+    index index.html;
+}
+```
+* 解决方案1：在nginx.conf中把```user www-data;```改为```user root;```。
+* 解决方案2：把```/root/hello-world_crawler/pages/```目录的权限改为755。
