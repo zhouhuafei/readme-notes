@@ -258,7 +258,7 @@ location / {
     - 静态html页面。返回：```304 Not Modified```。
     - 静态css，js，img，视频，音频等。返回：```200 OK (from memory cache)```。
 
-# vue-router 
+# vue-router
 > History 模式
 ```
 location / {
@@ -287,5 +287,14 @@ server {
         proxy_set_header X-Scheme $scheme;
         proxy_pass http://tomcats;
     }
+}
+```
+
+# http重定向到https
+```
+server {
+	listen 80;
+	server_name www.sbxx.top sbxx.top;
+    return 301 https://$server_name$request_uri;
 }
 ```
