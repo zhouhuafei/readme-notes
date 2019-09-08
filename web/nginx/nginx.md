@@ -322,13 +322,20 @@ server {
 ```
 server {
 	listen 80;
-	server_name www.sbxx.top sbxx.top;
-    return 301 https://$server_name$request_uri;
-	location / {
-        proxy_pass http://127.0.0.1:5551;
-        proxy_set_header x-real-ip $remote_addr;
-        proxy_set_header x-forwarded-for $proxy_add_x_forwarded_for;
-        proxy_set_header host $http_host;
-	}
+	server_name comic.sbxx.top;
+    root /root/hello-world_crawler/pages/;
+    index index.html;
+    location / {
+        add_header X-Frame-Options SAMEORIGIN;
+        add_header Cache-Control max-age=31536000;
+    }
+    location /images/ {
+         proxy_pass https://bnpic.comic123.net/images/;
+         proxy_set_header referer https://www.baidu.com/;
+    }
+    location /upload/ {
+        proxy_pass https://bnpic.comic123.net/upload/;
+        proxy_set_header referer https://www.baidu.com/;
+    }
 }
 ```
