@@ -318,3 +318,17 @@ server {
 ```
 * 解决方案1：在nginx.conf中把```user www-data;```改为```user root;```。
 * 解决方案2：把```/root/hello-world_crawler/pages/```目录的权限改为755。
+* 完整配置
+```
+server {
+	listen 80;
+	server_name www.sbxx.top sbxx.top;
+    return 301 https://$server_name$request_uri;
+	location / {
+        proxy_pass http://127.0.0.1:5551;
+        proxy_set_header x-real-ip $remote_addr;
+        proxy_set_header x-forwarded-for $proxy_add_x_forwarded_for;
+        proxy_set_header host $http_host;
+	}
+}
+```
