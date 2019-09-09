@@ -522,3 +522,6 @@ class="w500">
 
 # vue-cli能读取项目根目录以外的文件么？
 * 能。
+
+# node-sass安装不上
+* 解决方案：`npm i node-sass --sass_binary_site=https://npm.taobao.org/mirrors/node-sass/`
