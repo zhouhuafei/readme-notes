@@ -327,21 +327,24 @@ server {
     index index.html;
     gzip on;
     location / {
-        valid_referers none blocked server_names *.sbxx.top;
-        if ($invalid_referer) {
-            return 403;
-        }
         add_header Cache-Control max-age=31536000;
         add_header X-Frame-Options SAMEORIGIN;
     }
     location /images/ {
+        valid_referers none blocked comic.sbxx.top;
+        if ($invalid_referer) {
+            return 403;
+        }
         proxy_pass https://bnpic.comic123.net/images/;
         proxy_set_header referer https://www.baidu.com/;
     }
     location /upload/ {
+        valid_referers none blocked comic.sbxx.top;
+        if ($invalid_referer) {
+            return 403;
+        }
         proxy_pass https://bnpic.comic123.net/upload/;
         proxy_set_header referer https://www.baidu.com/;
     }
 }
 ```
-* 上述防盗链，无效。待续...
