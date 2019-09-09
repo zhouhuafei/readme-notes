@@ -1,5 +1,6 @@
 # 文档
-* http://nginx.org/en/docs/
+* http://www.nginx.cn/
+* http://www.nginx.cn/nginx-how-to
 * http://www.nginx.cn/doc/
 
 # mac 安装
