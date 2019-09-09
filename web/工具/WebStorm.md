@@ -67,3 +67,8 @@
 * 解决方案：
     - `Editor > Emmet > CSS`。
     - 第1、2、4项全部勾选即可。
+    
+# 设置js代码风格
+* 位置
+    - `Editor > Code Style > JavaSript`
+    - `Punctuation选项`和`Spaces选项`
