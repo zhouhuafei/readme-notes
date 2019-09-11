@@ -269,6 +269,50 @@ export default{
     - include - 字符串或正则表达式。只有名称匹配的组件会被缓存。
     - exclude - 字符串或正则表达式。任何名称匹配的组件都不会被缓存。
     - max - 数字。最多可以缓存多少组件实例。
+    
+# 使用keep-alive缓存路由页面
+* 缓存路由的原理
+```
+<template>
+    <keep-alive :include="keepAliveInclude">
+        <router-view />
+    </keep-alive>
+</template>
+<script>
+export default {
+  computed: {
+    keepAliveInclude () {
+      return this.$store.getters.keepAliveInclude // ['homePage', 'myPage']
+    }
+  }
+}
+</script>
+```
+* 增加缓存
+```
+router.afterEach((to, from) => {
+  setTimeout(() => {
+    // 不加定时器的话，此处的执行会快于$fnDelKeepAliveInclude对应的点击事件。
+    // 如此，点击router-link时，此处先执行，先增加了缓存，但是点击后执行，又清理了缓存。
+    // 故，需要定时器异步一下。让同步的click执行完，再执行定时器的异步回调。
+    if (to.meta.keepAlive) store.dispatch('AddKeepAliveInclude', to.name)
+  }, 0)
+  NProgress.done()
+})
+```
+* 想移除缓存就
+```
+<router-link
+  :to="to"
+  @click.native="$fnDelKeepAliveInclude"><slot/>
+</router-link>
+```
+* 其他代码
+```
+Vue.prototype.$fnDelKeepAliveInclude = () => {
+  store.dispatch('DelKeepAliveInclude')
+}
+```
 
 # 监听路由变化
 ```
