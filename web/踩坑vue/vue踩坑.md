@@ -264,6 +264,11 @@ export default{
 * 组件激活时调用钩子：activated
 * 组件停用时调用钩子：deactivated
 * 文档：https://cn.vuejs.org/v2/guide/components-dynamic-async.html#%E5%9C%A8%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6%E4%B8%8A%E4%BD%BF%E7%94%A8-keep-alive
+* 文档：https://cn.vuejs.org/v2/api/#keep-alive
+* keep-alive组件属性：
+    - include - 字符串或正则表达式。只有名称匹配的组件会被缓存。
+    - exclude - 字符串或正则表达式。任何名称匹配的组件都不会被缓存。
+    - max - 数字。最多可以缓存多少组件实例。
 
 # 监听路由变化
 ```
