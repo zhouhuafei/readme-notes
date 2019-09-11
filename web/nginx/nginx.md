@@ -337,7 +337,8 @@ server {
             return 403;
         }
         proxy_pass https://bnpic.comic123.net/images/;
-        proxy_set_header referer https://www.baidu.com/;
+        #proxy_set_header referer https://www.baidu.com/;
+        proxy_set_header referer https://m.bnmanhua.com;
     }
     location /upload/ {
         valid_referers none blocked comic.sbxx.top;
@@ -345,17 +346,18 @@ server {
             return 403;
         }
         proxy_pass https://bnpic.comic123.net/upload/;
-        proxy_set_header referer https://www.baidu.com/;
+        #proxy_set_header referer https://www.baidu.com/;
+        proxy_set_header referer https://m.bnmanhua.com;
     }
 }
 ```
 
 # 配置跨域
 ```
-location / {  
+location / {
     add_header Access-Control-Allow-Origin *;
     # add_header Access-Control-Allow-Headers X-Requested-With;
     add_header Access-Control-Allow-Headers Content-Type,Content-Length,Authorization,Accept,X-Requested-With,yourHeaderFeild;
     add_header Access-Control-Allow-Methods GET,POST,PUT,DELETE,PATCH,OPTIONS;
-} 
+}
 ```
