@@ -354,6 +354,7 @@ server {
 ```
 location / {  
     add_header Access-Control-Allow-Origin *;
+    # add_header Access-Control-Allow-Headers X-Requested-With;
     add_header Access-Control-Allow-Headers Content-Type,Content-Length,Authorization,Accept,X-Requested-With,yourHeaderFeild;
     add_header Access-Control-Allow-Methods GET,POST,PUT,DELETE,PATCH,OPTIONS;
 } 
