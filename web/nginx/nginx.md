@@ -364,3 +364,15 @@ location / {
     add_header Access-Control-Allow-Methods GET,POST,PUT,DELETE,PATCH,OPTIONS;
 }
 ```
+
+# 正向代理和反向代理
+> 反向代理与正向代理是相对的。正向代理是替代客户端去发起请求，而反向代理是替代服务器接受客户端的请求。
+* 正向代理案例
+    - 翻墙
+    - Shadowsocks
+    - 各种上网代理/VPN
+* 反向代理案例
+    - nginx
+    - 负载均衡
+    - 上面的nginx代理配置都属于反向代理，都是替代服务器接受客户端的请求。
+    - nginx也可以用来配置正向代理。但是主要是用来做反向代理的。

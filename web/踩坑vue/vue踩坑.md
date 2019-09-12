@@ -288,7 +288,7 @@ export default {
 }
 </script>
 ```
-* 增加缓存
+* 增加缓存：方式1
 ```
 router.afterEach((to, from) => {
   setTimeout(() => {
@@ -297,6 +297,16 @@ router.afterEach((to, from) => {
     // 故，需要定时器异步一下。让同步的click执行完，再执行定时器的异步回调。
     if (to.meta.keepAlive) store.dispatch('AddKeepAliveInclude', to.name)
   }, 0)
+  NProgress.done()
+})
+```
+* 增加缓存：方式2 
+```
+router.afterEach(async (to, from) => {
+  // afterEach 钩子执行之后会触发 DOM 更新（需在下次 DOM 更新循环结束之后延迟执行）
+  await Vue.nextTick()
+  if (to.meta.keepAlive) store.dispatch('AddKeepAliveInclude', to.name)
+
   NProgress.done()
 })
 ```
@@ -313,6 +323,12 @@ Vue.prototype.$fnDelKeepAliveInclude = () => {
   store.dispatch('DelKeepAliveInclude')
 }
 ```
+* 领悟`Vue.nextTick`和`this.$nextTick`和关系。
+    - this.$nextTick是对Vue.nextTick的二次封装。
+    - `this.$nextTick === Vue.nextTick // false`。
+* 领悟`Vue.set`和`this.$set`和关系。
+    - this.$set是对Vue.set的引用。
+    - `this.$set === Vue.set // true`。
 
 # 监听路由变化
 ```
