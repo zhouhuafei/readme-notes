@@ -334,23 +334,21 @@ server {
         add_header Cache-Control max-age=31536000;
         add_header X-Frame-Options SAMEORIGIN;
     }
-    location /images/ {
+    location /1/ {
         valid_referers none blocked comic.sbxx.top;
         if ($invalid_referer) {
             return 403;
         }
-        proxy_pass https://bnpic.comic123.net/images/;
-        #proxy_set_header referer https://www.baidu.com/;
+        proxy_pass https://bnpic.comic123.net/;
         proxy_set_header referer https://m.bnmanhua.com;
     }
-    location /upload/ {
+    location /2/ {
         valid_referers none blocked comic.sbxx.top;
         if ($invalid_referer) {
             return 403;
         }
-        proxy_pass https://bnpic.comic123.net/upload/;
-        #proxy_set_header referer https://www.baidu.com/;
-        proxy_set_header referer https://m.bnmanhua.com;
+        proxy_pass https://res.nbhbzl.com/;
+        proxy_set_header referer https://www.manhuaniu.com;
     }
 }
 ```
