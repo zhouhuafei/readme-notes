@@ -7,4 +7,5 @@
     <div style="width: inherit;height: inherit;background: #f00;position: fixed;"></div>
 </div>
 ```
+* 上述代码在微信小程序里无效。在小程序中，需要加bottom或者top子元素(第二个div/view)才会显示。
 
