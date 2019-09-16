@@ -3,9 +3,9 @@
     - 就不用给body之类的标签加padding-bottom来补充这段悬浮的差距了。
 * 代码示例：
 ```
-<div style="height: 80px;width: 300px;">
+<div style="height: 80px;width: 300px;background: #000;">
     <div style="width: inherit;height: inherit;background: #f00;position: fixed;"></div>
 </div>
 ```
-* 上述代码在微信小程序里无效。在小程序中，需要加bottom或者top子元素(第二个div/view)才会显示。
+* 注：如果初始位置不在首屏，子元素(第二个div)需要加bottom或者top才会显示。
 
