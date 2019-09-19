@@ -98,15 +98,6 @@ git commit --amend
 * 修改commit
     - https://git-scm.com/book/zh/v1/Git-%E5%B7%A5%E5%85%B7-%E9%87%8D%E5%86%99%E5%8E%86%E5%8F%B2
 
-# git revert
-* commit push 代码已经更新到远程仓库
-* 对于已经把代码push到线上仓库，你回退本地代码其实也想同时回退线上代码，回滚到某个指定的版本，线上，线下代码保持一致.你要用到下面的命令。
-```
-git revert <commit_id>
-```
-* revert 之后你的本地代码会回滚到指定的历史版本，这时你再 git push 既可以把线上的代码更新。
-* 注意：git revert是用一次新的commit来回滚之前的commit，git reset是直接删除指定的commit，看似达到的效果是一样的，其实完全不同。
-
 # github fork 出的仓库怎样与原仓库保持一致
 github 开发程中， 我们常需要fork出一个仓库进行开发， 但是原来的仓库更新之后，fork出的仓库需要进行一波同步。
 1. ```git remote -v``` // 查看远程库地址。
@@ -126,3 +117,7 @@ github 开发程中， 我们常需要fork出一个仓库进行开发， 但是�
 ```
 git remote set-url origin https://git.ishopex.cn/thomas/baihui-baidu-fenxiao.git
 ```
+
+# gir revert commitId
+* 把某次commit的内容清理掉。然后再直接push即可。
+* 不放心可以`git diff -p`一下看看改变了啥。
