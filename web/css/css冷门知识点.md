@@ -62,6 +62,7 @@ div {
     ```
 
 * ```display: flex;```会让单行省略号失效。
+* ```flex: 1;```会导致自身或者子级的单行省略号失效。除非指定`max-width`。
 
 * 贝塞尔曲线
     - 工具：https://cubic-bezier.com/
