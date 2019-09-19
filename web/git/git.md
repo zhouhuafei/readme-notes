@@ -105,8 +105,8 @@ git commit -am xxx
 git add .
 git commit --amend
 ```
-* 使用这项技术的时候你必须小心，因为修正会改变提交的SHA-1值。这个很像是一次非常小的rebase——不要在你最近一次提交被推送后还去修正它。
-* 修改已经提交过的commit(不建议)
+* 使用这项技术的时候你必须小心，因为修正会改变提交的SHA-1值。这个很像是一次非常小的rebase——不要在你最近一次提交被推送(`push`)后还去修正它。
+* 修改已经提交(`push`)过的commit(不建议)
     - https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E9%87%8D%E5%86%99%E5%8E%86%E5%8F%B2
 
 # commit之后，取消commit。
