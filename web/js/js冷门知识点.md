@@ -86,6 +86,7 @@ console.log(1 + + '1'); // 2
 * Object.values在低版本ios的微信上不支持。
 
 * ```fn.call()```不传参数时```this```指向```window```对象。严格模式下```"use strict"```指向```undefined```。
+    - 手写call
     - call的实现核心：
     ```
     Function.prototype.call2 = function (content) {
