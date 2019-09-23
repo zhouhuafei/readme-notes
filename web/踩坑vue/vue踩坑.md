@@ -577,7 +577,10 @@ class="w500">
 * el-dialog组件，后弹出的，被前面弹出的覆盖掉了。
     - 解决方案：给el-dialog加```append-to-body```属性。
 * el-form，rule校验，怎么把不需要带给后端的数据，不放到form对象里，并能使校验生效？
-    - 待续...
+    - 错误案例：
+        - 待续...
+    - 正确案例：
+        - 待续...
 
 # $set
 > https://cn.vuejs.org/v2/guide/reactivity.html#%E6%A3%80%E6%B5%8B%E5%8F%98%E5%8C%96%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9
