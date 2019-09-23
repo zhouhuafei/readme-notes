@@ -269,7 +269,7 @@ export default{
     - include - 字符串或正则表达式。只有名称匹配的组件会被缓存。
     - exclude - 字符串或正则表达式。任何名称匹配的组件都不会被缓存。
     - max - 数字。最多可以缓存多少组件实例。
-    
+
 # 使用keep-alive缓存路由页面
 * 缓存路由的原理
 ```
@@ -300,7 +300,7 @@ router.afterEach((to, from) => {
   NProgress.done()
 })
 ```
-* 增加缓存：方式2 
+* 增加缓存：方式2
 ```
 router.afterEach(async (to, from) => {
   // afterEach 钩子执行之后会触发 DOM 更新（需在下次 DOM 更新循环结束之后延迟执行）
@@ -576,6 +576,8 @@ class="w500">
     - 解决方案：```:key="String(Math.random()).substring(2)"```。
 * el-dialog组件，后弹出的，被前面弹出的覆盖掉了。
     - 解决方案：给el-dialog加```append-to-body```属性。
+* el-form，rule校验，怎么把不需要带给后端的数据，不放到form对象里，并能使校验生效？
+    - 待续...
 
 # $set
 > https://cn.vuejs.org/v2/guide/reactivity.html#%E6%A3%80%E6%B5%8B%E5%8F%98%E5%8C%96%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9
