@@ -586,11 +586,74 @@ class="w500">
     - 解决方案：```:key="String(Math.random()).substring(2)"```。
 * el-dialog组件，后弹出的，被前面弹出的覆盖掉了。
     - 解决方案：给el-dialog加```append-to-body```属性。
-* el-form，rule校验，怎么把不需要带给后端的数据，不放到form对象里，并能使校验生效？
-    - 错误案例：
-        - 待续...
-    - 正确案例：
-        - 待续...
+* el-form，rules校验，怎么把不需要带给后端的数据，不放到form对象里，并能使校验生效？
+    - 答：无解。如果想要校验，就需要把数据放到form对象里，配合上prop属性。如此才能被el-form的校验规则识别。
+    - 如果不想把无关数据提交给后端，则无关数据用下划线开头，并在提交数据前进行过滤即可。
+    ```
+    <template>
+      <el-form
+        ref="form"
+        :model="form"
+        :rules="rules"
+        label-width="100px">
+        <el-form-item
+          label="活动名称1"
+          prop="name1">
+          <el-input v-model="form.name1" />
+        </el-form-item>
+        <el-form-item
+          :rules="rules._name2"
+          label="活动名称2"
+          prop="_name2">
+          <el-input v-model="form._name2" />
+        </el-form-item>
+        <el-form-item>
+          <el-button
+            type="primary"
+            @click="submitForm('form')">立即创建
+          </el-button>
+          <el-button @click="resetForm('form')">重置</el-button>
+        </el-form-item>
+      </el-form>
+    </template>
+    <script>
+    export default {
+      data () {
+        return {
+          form: {
+            name1: '',
+            _name2: '_name2不在form中(不传给后端)，但是也要能被校验。怎么做？'
+          },
+          rules: {
+            name1: [{ required: true, message: '请输入活动名称1', trigger: 'blur' }],
+            _name2: [{ required: true, message: '请输入活动名称2', trigger: 'blur' }]
+          }
+        }
+      },
+      methods: {
+        submitForm (formName) {
+          this.$refs[formName].validate((valid) => {
+            if (valid) {
+              const submitData = {}
+              Object.keys(this.form).forEach(key => {
+                if (key[0] !== '_') {
+                  submitData[key] = this.form[key]
+                }
+              })
+              console.log('过滤后的submitData数据', submitData)
+            } else {
+              console.log('error submit!!')
+              return false
+            }
+          })
+        },
+        resetForm (formName) {
+          this.$refs[formName].resetFields()
+        }
+      }
+    }
+    </script>
+    ```
 
 # $set
 > https://cn.vuejs.org/v2/guide/reactivity.html#%E6%A3%80%E6%B5%8B%E5%8F%98%E5%8C%96%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9
