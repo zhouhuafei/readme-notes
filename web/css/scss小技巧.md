@@ -73,3 +73,73 @@ From "@extend %icon" on line 8 of icons.scss
   background-color: green;
 }
 ```
+
+# scss变量共享给js
+* 定义_variables.scss
+```
+// 基础灰色
+$white:     #fff !default;
+$gray-100:  #f8f9fa !default;
+$gray-200:  #e9ecef !default;
+$gray-300:  #dee2e6 !default;
+$gray-400:  #ced4da !default;
+$gray-500:  #adb5bd !default;
+$gray-600:  #6c757d !default;
+$gray-650:  #606266 !default;
+$gray-700:  #495057 !default;
+$gray-800:  #343a40 !default;
+$gray-900:  #212529 !default;
+$black:     #000 !default;
+
+// 基础彩色
+$navy-blue:  #99a9bf !default;
+
+// 主题色
+$blue:    #2276ff !default;
+$red:     #ee5959 !default;
+$yellow:  #f0a22e !default;
+$green:   #67c23a !default;
+
+// 语义化
+$primary:    $blue !default;
+$secondary:  $gray-600 !default;
+$success:    $green !default;
+$info:       $gray-500 !default;
+$warning:    $yellow !default;
+$danger:     $red !default;
+$light:      $gray-100 !default;
+$muted:      $gray-400 !default;
+$dark:       $gray-800 !default;
+
+// :export 指令被 webpack 用于在 js 中共享 sass 变量
+// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
+:export {
+  primary:         $primary;
+  success:         $success;
+  info:            $info;
+  warning:         $warning;
+  danger:          $danger;
+}
+```
+* 使用
+```
+import variables from '@/styles/_variables.scss'
+```
+* 每个页面的scss文件都要引入scss定义的配置太麻烦了，webpack可以帮你自动引入。
+```
+// 更多配置参见 https://cli.vuejs.org/config/
+module.exports = {
+  css: {
+    loaderOptions: {
+      // 向所有 sass 样式传入共享的全局变量、mixins
+      sass: {
+        data: `
+          @import "@/styles/_variables.scss";
+          @import "@/styles/_mixins.scss";
+          @import "@/styles/_functions.scss";
+        `
+      }
+    }
+  }
+}
+```
