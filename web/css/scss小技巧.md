@@ -111,7 +111,7 @@ $light:      $gray-100 !default;
 $muted:      $gray-400 !default;
 $dark:       $gray-800 !default;
 
-// :export 指令被 webpack 用于在 js 中共享 sass 变量
+// :export 指令被 webpack 用于在 js 中共享 scss 变量
 // https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
 :export {
   primary:         $primary;
@@ -131,7 +131,7 @@ import variables from '@/styles/_variables.scss'
 module.exports = {
   css: {
     loaderOptions: {
-      // 向所有 sass 样式传入共享的全局变量、mixins
+      // 向所有 scss 样式传入共享的全局变量、mixins
       sass: {
         data: `
           @import "@/styles/_variables.scss";
