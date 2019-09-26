@@ -671,5 +671,8 @@ class="w500">
 # node-sass安装不上
 * 解决方案：`npm i node-sass --sass_binary_site=https://npm.taobao.org/mirrors/node-sass/`
 
-# 刷新页面时，create钩子中获取不到userInfo
+# 刷新页面时，create钩子中获取不到vuex里的userInfo
 * 解决方案：在```router.beforeEach```中进行控制，当接口返回之后，再触发```next()```。
+
+# vue长列表优化
+* 插件：https://github.com/tangbc/vue-virtual-scroll-list
