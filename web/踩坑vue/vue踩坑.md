@@ -676,3 +676,4 @@ class="w500">
 
 # vue长列表优化
 * 插件：https://github.com/tangbc/vue-virtual-scroll-list
+* 别人的总结：https://www.cnblogs.com/imwtr/p/10428819.html
