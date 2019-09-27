@@ -145,4 +145,6 @@ module.exports = {
 ```
 
 # scss颜色命名
-* 可以参考element-ui的命名方式。贴链接。待续...
+* 可以参考element-ui的命名方式。
+* https://github.com/ElemeFE/element/blob/dev/packages/theme-chalk/src/common/var.scss
+* https://github.com/ElemeFE/element/blob/dev/packages/theme-chalk/src/index.scss
