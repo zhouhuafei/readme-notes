@@ -48,4 +48,4 @@ https://blog.csdn.net/qq_15283475/article/details/62224149
 * 电脑安装证书：
     - `Fiddler` -> `Tools` -> `Options` -> `HTTPS` -> `Actions` -> `Trust Root Certificate` -> `Yes`
 * 手机安装Fiddler证书：
-    - 打开手机浏览器，在浏览器地址输入代理服务器IP和端口，会看到一个Fiddler提供的页面。
+    - 打开手机浏览器，在浏览器地址输入代理服务器IP和端口，会看到一个Fiddler提供的证书页面。
