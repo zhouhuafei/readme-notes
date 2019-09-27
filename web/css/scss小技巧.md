@@ -143,3 +143,6 @@ module.exports = {
   }
 }
 ```
+
+# scss颜色命名
+* 可以参考element-ui的命名方式。贴链接。待续...
