@@ -108,3 +108,15 @@ $.ajax({
     - 响应时设置set-cookie大写小写都行。
     - 服务端接收request.headers中的信息时，headers中的键一般都是小写。
     - 客户端接收response.headers中的信息时，headers中的键一般都是小写。
+
+# js - 删除全部的cookie
+* https://github.com/js-cookie/js-cookie
+    - 没提供删除全部cookie的方法
+    - 但是提供了获取全部cookie的方法
+    - 代码案例：
+    ```
+    const Cookies = require('js-cookie')
+    Cookies.get() // { a: '1', b: '2' }
+    ```
+* 获取到每个cookie对应的key。然后一个一个的`Cookies.remove(keyName)`即可。
+* 删除cookie的原理：让cookie对应的key过期即可。
