@@ -44,13 +44,13 @@ class Fn {
     }
 
     publicMethod() {
-        privateMethod();
+        privateFunction();
         console.log(this.name);
     }
 }
 
 // 局部函数不对外暴露 - 模拟私有方法
-function privateMethod() {
+function privateFunction() {
 }
 
 export default Fn;
