@@ -35,4 +35,23 @@ Super.prototype.power = function () {
 ```
 
 # 建议
-* 不能给外部调用的方法使用下划线(_)当前缀进行命名。
+* 不能给外部调用的方法使用下划线(_)或者($_)当前缀再加上命名空间进行命名。
+* 更好的做法：
+```
+class Fn {
+    constructor() {
+        this.name = 'name';
+    }
+
+    publicMethod() {
+        privateMethod();
+        console.log(this.name);
+    }
+}
+
+// 局部函数不对外暴露 - 模拟私有方法
+function privateMethod() {
+}
+
+export default Fn;
+```
