@@ -1,3 +1,5 @@
+> 风格指南：https://cn.vuejs.org/v2/style-guide/
+
 # 生命周期
 ![图片加载中...](./images/1.jpg)
 
