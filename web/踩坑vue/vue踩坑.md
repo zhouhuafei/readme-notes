@@ -685,4 +685,8 @@ class="w500">
     - 那既然元素太多导致的问题，解决方法不就很明显了吗？没错，就是 **减少页面元素**。
     - 别人的方案：https://github.com/hejianxian/vue-list
     - 别人的DEMO：https://hejx.herokuapp.com/vue-list/
+    - 别人方案的表象：
+        - 1. 基于容器wrap进行滚动。内部item的数量是固定的，内部item的高度是固定的。
+        - 2. list的padding-top默认为0，越往下滚动，值越大，越往上滚，值越小。
+        - 3. list的padding-bottom默认很大，越往下滚动，值越小，当值为0出现loading，loading完毕，padding-bottom又变为大值。
 * 个人总结：分页展示，一页10个，要拉到底部1000次才1万条数据。我觉的不优化也可以哈。
