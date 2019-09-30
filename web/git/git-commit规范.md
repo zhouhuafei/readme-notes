@@ -24,6 +24,27 @@
 * misc: 一些未归类或不知道将它归类到什么方面的提交
 
 # 校验 commit 是否符合规范
+> https://github.com/vuejs/vue 使用的是工具是 commitizen git-cz
+* 官网：https://npm.taobao.org/package/git-cz
+* github：https://github.com/streamich/git-cz
+* commitizen：https://github.com/commitizen/cz-cli
+* 安装依赖
+```
+npm install -g commitizen
+npm install --save-dev git-cz
+```
+* 在`package.json`配置
+```
+{
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
+  }
+}
+```
+
+# 校验 commit 是否符合规范
 * https://github.com/ghooks-org/ghooks
 * 在`package.json`配置`ghooks`
 ```
