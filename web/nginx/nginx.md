@@ -339,6 +339,7 @@ server {
 * 解决方案1：在nginx.conf中把```user www-data;```改为```user root;```。
 * 解决方案2：把```/root/hello-world_crawler/pages/```目录的权限改为755。
 * 完整配置
+> 下述代码示例中包含防盗链的代码
 ```
 server {
 	listen 80;
