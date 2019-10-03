@@ -5,6 +5,7 @@
 ```
 /**
  * @api {get} /user/:id Request User information
+ * @apiVersion 1.0.0
  * @apiName GetUser
  * @apiGroup User
  *
@@ -12,6 +13,8 @@
  *
  * @apiSuccess {String} firstname Firstname of the User.
  * @apiSuccess {String} lastname  Lastname of the User.
+ * @apiSuccess {Object} data 数据对象数组
+ * @apiSuccess {String} data.r_name 提问者名字, 如： 巴菲特
  */
 ```
 
