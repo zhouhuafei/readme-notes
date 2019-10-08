@@ -556,7 +556,7 @@ Event.$on('msg', function (json) { // 接收数据，第一个参数是数据的
     - 如果 ref 注册到组件上，那获取到的就是组件实例。
 
 # element-ui踩坑
-> element-ui没有清零样式。
+> element-ui没有清零样式。这点很赞，没有全局的清零样式，就不会覆盖markdown的默认样式。
 * el-popover在表单中使用的时候，最后一行按钮对应的弹窗会显示不出来。
     - 解决方案：按钮放在el-popover中并加上slot="reference"属性以及去掉v-popover:popover指令即可。
 * 初始位置如果是数字则初始位置之后不被允许输入小数点(element-ui做的处理)
