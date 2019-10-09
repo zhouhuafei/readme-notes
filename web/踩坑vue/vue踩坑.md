@@ -659,6 +659,10 @@ class="w500">
     }
     </script>
     ```
+* `el-tabs`导致`el-table`闪烁。
+    - 原因：我给`el-table-column`加了`:key="String(Math.random()).substring(2)"`。
+    - 经过测试，发现只要给`el-table-column`加key，就会闪烁。
+    - 解决方案：不给`el-table-column`加key。
 
 # $set
 > https://cn.vuejs.org/v2/guide/reactivity.html#%E6%A3%80%E6%B5%8B%E5%8F%98%E5%8C%96%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9
