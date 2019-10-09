@@ -585,9 +585,6 @@ class="w500">
 * 表单验证时，提示错位。
     - 问题原因：我使用css修改了el-form-item组件中label的width。
     - 解决方案：在el-form组件上使用label-width控制label的width。
-* el-form-item渲染的字段错位。
-    - 问题原因：使用v-if区别渲染了分销商和导购的字段。因vue的就地复用策略导致如此问题。
-    - 解决方案：```:key="String(Math.random()).substring(2)"```。
 * el-dialog组件，后弹出的，被前面弹出的覆盖掉了。
     - 解决方案：给el-dialog加```append-to-body```属性。
 * el-form，rules校验，怎么把不需要带给后端的数据，不放到form对象里，并能使校验生效？
@@ -663,6 +660,10 @@ class="w500">
     - 原因：我给`el-table-column`加了`:key="String(Math.random()).substring(2)"`。
     - 经过测试，发现只要给`el-table-column`加key，就会闪烁。
     - 解决方案：不给`el-table-column`加key。
+    - 不加的话，又可能会导致下面的问题。还请自行思量。
+* el-table-column渲染的字段错位。
+    - 问题原因：使用v-if区别渲染了分销商和导购的字段。因vue的就地复用策略导致如此问题。
+    - 解决方案：```:key="String(Math.random()).substring(2)"```。
 
 # $set
 > https://cn.vuejs.org/v2/guide/reactivity.html#%E6%A3%80%E6%B5%8B%E5%8F%98%E5%8C%96%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9
