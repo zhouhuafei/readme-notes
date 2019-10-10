@@ -4,7 +4,7 @@ nginx: [emerg] unknown directive "if($host)" in /usr/local/etc/nginx/servers/tes
 ```
 
 # 报错原因
-> `Nginx`对语法的格式比较严格，使用`$host`时，`if`与`$host`之间需要空格隔开。
+> `nginx`对语法的格式比较严格，使用`$host`时，`if`与`$host`之间需要空格隔开。
 
 # 正确案例
 ```
