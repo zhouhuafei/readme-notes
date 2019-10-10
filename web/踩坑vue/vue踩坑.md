@@ -696,3 +696,7 @@ class="w500">
         - 2. list的padding-top默认为0，越往下滚动，值越大，越往上滚，值越小。
         - 3. list的padding-bottom默认很大，越往下滚动，值越小，当值为0出现loading，loading完毕，padding-bottom又变为大值。
 * 个人总结：分页展示，一页10个，要拉到底部1000次才1万条数据。我觉的不优化也可以哈。
+
+# $event
+* 在原生事件中，$event是事件对象。
+* 在自定义组件的自定义事件中，$event是传递过来的数据。
