@@ -67,8 +67,10 @@
 * 解决方案：
     - `Editor > Emmet > CSS`。
     - 第1、2、4项全部勾选即可。
-    
+
 # 设置js代码风格
 * 位置
-    - `Editor > Code Style > JavaSript`
+    - `Editor > Code Style > JavaScript`
     - `Punctuation选项`和`Spaces选项`
+* 快捷设置方式
+  - `Editor > Code Style > JavaScript > Set from > Predefined Style > JavaScript Standard Style | Google JavaScript Style Guide`
