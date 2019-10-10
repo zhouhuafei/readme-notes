@@ -60,9 +60,14 @@ div {
       background: #ff0000;
     }
     ```
-
 * ```display: flex;```会让单行省略号失效。
 * ```flex: 1;```会导致自身或者子级的单行省略号失效。除非指定`max-width`。
+* flex主侧轴简介
+    - 主轴：默认水平线(x轴)
+        - align-items: center; 控制主轴对齐方式
+    - 侧轴：默认垂直线(y轴)
+        - justify-content: center; 控制侧轴对齐方式
+    - 修改主侧轴：flex-direction: column; 修改主轴为垂直线(y轴)，则侧轴自动变为水平线(x轴)。
 
 * 贝塞尔曲线
     - 工具：https://cubic-bezier.com/
