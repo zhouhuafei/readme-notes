@@ -98,3 +98,93 @@ npm deprecate my-thing@"< 0.2.3" "critical bug fixed in v0.2.3"`
 * Linux：```export NODE_ENV=production```
 * Windows：```set NODE_ENV=production```
 * 跨平台：https://github.com/kentcdodds/cross-env
+
+# package.json指定路径为github上的路径
+* 方式1：package.json中配置`"sass-export": "git://github.com/zhouhuafei-team/sass-export.git#master"`。
+* 方式2：`npm i git://github.com/zhouhuafei-team/sass-export.git#master`。`npm i`默认是`--save`。
+* 潜在问题：若工具包的文件入口在dist目录里，而github的仓库又忽略了dist目录。这种场景怎么破？
+* 解决方案：在仓库的`package.json`中使用`prepare`钩子。
+    - `prepare`钩子会在两种情况前运行，一是`npm publish`命令前，二是`npm install(不带任何参数)`命令前；它会在`prepublish`之后、`prepublishOnly`之前执行。注：`cnpm i`不行。
+    - `prepublishOnly`钩子，是`npm 4`到`npm 5`时，过渡`prepublish`和`prepare`时才有的。
+    - 使用案例如下：
+    ```
+    "scripts": {
+      "build": "gulp build",
+      "prepare": "npm run build"
+    }
+    ```
+* 测试`prepare`钩子是否是解决问题的关键。
+    - 我把`sass-export`项目里的`prepare`钩子删掉之后。
+    - 再通过`npm i`去安装`github`上的`sass-export`包时，发现包里无`dist\`目录了。
+    - 证实`prepare`钩子是解决问题的关键。
+* 测试`package.json`的`files`属性是否是控制指定的目录才会被发到npm上的关键。
+    - 我把`sass-export`项目里的`files`属性删掉之后。
+    - 再通过`npm i`去安装`github`上的`sass-export`包时，发现包里多了很多开发时的目录，例如：`src`目录、`exported-examples`目录、`test`目录。
+    - 证实`package.json`的`files`属性是控制npm上传和下载哪些目录的关键。
+* 其他钩子具体请参考下述：`npm 钩子`。
+  
+# npm 钩子
+> ###### 参考文档：http://www.ruanyifeng.com/blog/2016/10/npm_scripts.html
+> ###### 参考文档：https://segmentfault.com/a/1190000008832423
+* `npm`脚本有`pre`和`post`两个钩子。举例来说，`build`脚本命令的钩子就是`prebuild`和`postbuild`。
+* 用户执行`npm run build`的时候，会自动按照下面的顺序执行。
+```
+npm run prebuild && npm run build && npm run postbuild
+```
+* `npm`默认提供下面这些钩子。
+```
+prepublish，postpublish // 在npm publish命令执行前后触发
+preinstall，postinstall // 在npm install命令执行前后触发
+preuninstall，postuninstall // 在npm uninstall命令执行前后触发
+preversion，postversion // 在改变包的version前后触发 提交之前
+pretest，posttest
+prestop，poststop
+prestart，poststart
+prerestart，postrestart
+```
+* 自定义的脚本命令也可以加上`pre`和`post`钩子。比如，`myscript`这个脚本命令，也有`premyscript`和`postmyscript`钩子。不过，双重的`pre`和`post`无效，比如`prepretest`和`postposttest`是无效的。
+* 注意，`prepublish`这个钩子不仅会在`npm publish`命令之前运行，还会在`npm install(不带任何参数)`命令之前运行。这种行为很容易让用户感到困惑，所以 `npm 4` 引入了一个新的钩子`prepare`，行为等同于`prepublish`，而从 `npm 5` 开始，`prepublish`将只在`npm publish`命令之前运行。
+
+# package.json属性
+> 参考文档：https://www.cnblogs.com/tzyy/p/5193811.html
+* main
+    - 指定程序的主入口文件。
+* files
+    - "files"属性的值是一个数组，内容是模块下文件名或者文件夹名，如果是文件夹名，则文件夹下所有的文件也会被包含进来（除非文件被另一些配置排除了）。
+    - 你也可以在模块根目录下创建一个".npmignore"文件（windows下无法直接创建以"."开头的文件，使用linux命令行工具创建如git bash），写在这个文件里边的文件即便被写在files属性里边也会被排除在外，这个文件的写法".gitignore"类似。
+    - 注：配置了这个属性，则只有指定的目录会被发到npm上。
+    - 例如sass-export有以下配置。`npm publish`之后，我安装的`sass-export`包中，只有`bin\`,`dist\`,`LICENSE`,`package.json`,`README.md`文件。
+    ```
+    "files": [
+      "bin",
+      "dist"
+    ]
+    ```
+* bin
+    - 很多模块有一个或多个需要配置到PATH路径下的可执行模块，npm让这个工作变得十分简单（实际上npm本身也是通过bin属性安装为一个可执行命令的）。
+    - 如果要用npm的这个功能，在package.json里边配置一个bin属性。bin属性是一个已命令名称为key。
+    ```
+    "bin": {
+      "sass-export": "./bin/sass-export"
+    }
+    ```
+  
+# github的LICENSE文件
+* MIT 许可证 -- 只要用户在项目副本中包含了版权声明和许可声明，他们就可以拿你的代码做任何想做的事情，你也无需承担任何责任。
+* Apache 许可证 -- 类似 MIT 许可证，但它同时还包含了贡献者向用户提供专利授权相关的条款。
+* GPL 许可证 -- 这是一种copyleft许可证，要求修改项目代码的用户再次分发源码或二进制代码时，必须公布他的相关修改。V3版本与V2类似，但其进一步约束了在某些限制软件更改的硬件上的使用范围。
+* 创建LICENSE文件，GitHub有提供最直接的创建方式。
+    - 1、点击`Create new file`按钮。
+    - 2、在输入`LICENSE`后会自动出现`Choose a license template`选项按钮，点击此按钮。
+    - 3、以`MIT License`为例，选择`MIT License`，选好所需许可后点击`Review and submit`按钮。
+    - 4、在页面下方会有两个选择
+        - 选择一 `Commit directly to the master branch.`直接将此许可证提交到`master`分支。
+        - 选择二 `Create a new branch for this commit and start a pull request.`新建立一个分支。
+        - 我们选择`Commit directly to the master branch.`提交到`master`分支的选项，然后点击`Commit new file`即可创建完成。
+
+# 四个常用的 npm 脚本有简写形式。
+* `npm start`是`npm run start`的简写。
+* `npm stop`是`npm run stop`的简写。
+* `npm test`是`npm run test`的简写。
+* `npm restart`是`npm run stop && npm run restart && npm run start`的简写。
+* `npm restart`是一个复合命令，实际上会执行三个脚本命令：`stop、restart、start`。
