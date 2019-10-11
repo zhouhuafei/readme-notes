@@ -166,11 +166,20 @@ vue add vuex
 # 建议自定义配置
 * Babel
 * Router
+    - Use history mode for router? (Requires proper server setup for index fallback in production)
 * vuex
 * CSS Pre-processors
+    - Sass/SCSS (with dart-sass)
 * Linter / Formatter
+    - ESLint + Standard config
 * 不要选择```Lint on save```，对WebStorm编辑器太不友好了。
     - WebStorm编辑器使用者建议选择：```Lint and fix on commit```。
+* 然后选择专用配置文件选项`In dedicated config files`，不要把所有配置都放到`package.json`文件中，故不要选择`In package.json`选项。
+
+# Linter / Formatter
+> `vue-cli3`生成的项目，当`Linter / Formatter`选项由`ESLint with error prevention only`切换为`ESLint + Standard config`后。项目中哪些文件被改动了？
+* 1、`package.json`文件的`devDependencies`字段中多了`@vue/eslint-config-standard`包。
+* 2、`.eslintrc.js`文件的`extends`字段中的`eslint:recommended`变为了`@vue/standard`。
 
 # history模式配置二级目录(正确的设置方式，在最后的建议中)
 * vue-router配置
