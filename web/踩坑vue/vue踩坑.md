@@ -666,6 +666,85 @@ class="w500">
     - 解决方案：```:key="String(Math.random()).substring(2)"```。
 * el-dialog封装成组件A时，要使用`:before-close`修改组件A的props上控制组件A是否显示的那个属性，否则会抛错。
     - 因为组件A的props不可被更改，el-dialog的`@close`被触发，就会修改组件A的props上控制组件A是否显示的那个属性。
+* el-date-picker只允许选取上下浮动30天的日期。
+```
+<template>
+  <div>
+    <el-date-picker
+      :picker-options="pickerOptions"
+      v-model="date2"
+      :default-time="['00:00:00', '23:59:59']"
+      format="yyyy-MM-dd HH:mm:ss"
+      value-format="yyyy-MM-dd HH:mm:ss"
+      type="datetimerange"
+      size="small"
+      range-separator="至"
+      start-placeholder="开始日期"
+      end-placeholder="结束日期"
+      @change="dateChange2" />
+  </div>
+</template>
+<script>
+import { dateFormat } from '@/utils/index'
+
+export default {
+  data () {
+    return {
+      date2: [dateFormat(new Date().setDate(new Date().getDate() - 7), '{y}-{m}-{d}' + ' 00:00:00'), dateFormat(new Date(), '{y}-{m}-{d}' + ' 23:59:59')],
+      pickerMinDate: '',
+      pickerOptions: {
+        onPick: ({ maxDate, minDate }) => {
+          this.pickerMinDate = minDate.getTime()
+          if (maxDate) {
+            this.pickerMinDate = ''
+          }
+        },
+        disabledDate: (time) => {
+          if (this.pickerMinDate !== '') {
+            let one = (30 - 1) * 24 * 3600 * 1000
+            let minTime = this.pickerMinDate - one
+            let maxTime = this.pickerMinDate + one
+            // 不能选取大于当前日期的日期
+            // if (maxTime > new Date()) {
+            //   maxTime = new Date()
+            // }
+            return time.getTime() < minTime || time.getTime() > maxTime
+          }
+          return false
+          // 不能选取大于当前日期的日期
+          // return time.getTime() > Date.now()
+        },
+        shortcuts: [
+          {
+            text: '最近一周',
+            onClick (picker) {
+              const end = new Date()
+              const start = new Date()
+              start.setTime(start.getTime() - 3600 * 1000 * 24 * (7 - 1))
+              picker.$emit('pick', [start, end])
+            }
+          },
+          {
+            text: '最近一个月',
+            onClick (picker) {
+              const end = new Date()
+              const start = new Date()
+              start.setTime(start.getTime() - 3600 * 1000 * 24 * (30 - 1))
+              picker.$emit('pick', [start, end])
+            }
+          }
+        ]
+      }
+    }
+  },
+  methods: {
+    dateChange2 (val) {
+      console.log('dateChange2', val)
+    }
+  }
+}
+</script>
+```
 
 # $set
 > https://cn.vuejs.org/v2/guide/reactivity.html#%E6%A3%80%E6%B5%8B%E5%8F%98%E5%8C%96%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9
