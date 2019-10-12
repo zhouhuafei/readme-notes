@@ -75,6 +75,6 @@
 * 快捷设置方式
   - `Editor > Code Style > JavaScript > Set from > Predefined Style > JavaScript Standard Style | Google JavaScript Style Guide`
 * `Code Style`导出和导入
-  - 导出：`Editor > Code Style > 设置图标 > Export`
+  - 导出：`Editor > Code Style > 设置图标 > Export > Intellij IDEA code style XML`
   - 导入：`Editor > Code Style > 设置图标 > Import Scheme > Intellij IDEA code style XML`
   - 我的个人配置：`./WebStorm-CodeStyle.xml`
