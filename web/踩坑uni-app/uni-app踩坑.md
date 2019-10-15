@@ -8,7 +8,8 @@
 * 存放应用引用静态资源（如图片、视频等）的地方，注意：静态资源只能存放于此，如果不放在这个目录，会导致静态资源引入失败。
 
 # 条件编译
-https://ask.dcloud.net.cn/article/35441
+> ###### 官方文档：https://uniapp.dcloud.io/platform?id=%e6%9d%a1%e4%bb%b6%e7%bc%96%e8%af%91
+> ###### 其他文档：https://ask.dcloud.net.cn/article/35441
 ```
 // #ifdef MP-WEIXIN
 wx.onAppRoute((route) => {
