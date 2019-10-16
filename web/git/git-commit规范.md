@@ -45,7 +45,10 @@ npm install --save-dev git-cz
 ```
 
 # 校验 commit 是否符合规范
-* 亲测，无效。待续...
+* https://github.com/conventional-changelog/commitlint
+
+# 校验 commit 是否符合规范
+* 以下，亲测，无效。
 * https://github.com/ghooks-org/ghooks
 * 在`package.json`配置`ghooks`
 ```
