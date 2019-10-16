@@ -122,7 +122,7 @@ npm deprecate my-thing@"< 0.2.3" "critical bug fixed in v0.2.3"`
     - 再通过`npm i`去安装`github`上的`sass-export`包时，发现包里多了很多开发时的目录，例如：`src`目录、`exported-examples`目录、`test`目录。
     - 证实`package.json`的`files`属性是控制npm上传和下载哪些目录的关键。
 * 其他钩子具体请参考下述：`npm 钩子`。
-  
+
 # npm 钩子
 > ###### 参考文档：http://www.ruanyifeng.com/blog/2016/10/npm_scripts.html
 > ###### 参考文档：https://segmentfault.com/a/1190000008832423
@@ -148,6 +148,7 @@ prerestart，postrestart
 # package.json属性
 > 参考文档：https://www.cnblogs.com/tzyy/p/5193811.html
 * main
+    > `require`引入的是这个属性里对应的程序主入口文件。
     - 指定程序的主入口文件。
 * files
     - "files"属性的值是一个数组，内容是模块下文件名或者文件夹名，如果是文件夹名，则文件夹下所有的文件也会被包含进来（除非文件被另一些配置排除了）。
@@ -161,6 +162,7 @@ prerestart，postrestart
     ]
     ```
 * bin
+    > 让自己的npm包在命令行里可以运行，需要使用到这个属性。
     - 很多模块有一个或多个需要配置到PATH路径下的可执行模块，npm让这个工作变得十分简单（实际上npm本身也是通过bin属性安装为一个可执行命令的）。
     - 如果要用npm的这个功能，在package.json里边配置一个bin属性。bin属性是一个已命令名称为key。
     ```
@@ -168,7 +170,7 @@ prerestart，postrestart
       "sass-export": "./bin/sass-export"
     }
     ```
-  
+
 # github的LICENSE文件
 * MIT 许可证 -- 只要用户在项目副本中包含了版权声明和许可声明，他们就可以拿你的代码做任何想做的事情，你也无需承担任何责任。
 * Apache 许可证 -- 类似 MIT 许可证，但它同时还包含了贡献者向用户提供专利授权相关的条款。
