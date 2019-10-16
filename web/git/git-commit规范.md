@@ -46,6 +46,8 @@ npm install --save-dev git-cz
 
 # 校验 commit 是否符合规范
 * https://github.com/conventional-changelog/commitlint
+* https://github.com/typicode/husky
+* https://commitlint.js.org/#/guides-local-setup
 
 # 校验 commit 是否符合规范
 * 以下，亲测，无效。
