@@ -781,3 +781,47 @@ export default {
 # $event
 * 在原生事件中，$event是事件对象。
 * 在自定义组件的自定义事件中，$event是传递过来的数据。
+
+# Vue.extend
+> 使用基础 Vue 构造器，创建一个“子类”。参数是一个包含组件选项的对象。
+* 注意：extend创建的是一个组件构造器(构造函数)，而不是一个具体的组件实例。
+* 案例：
+```
+// 创建构造器
+var Profile = Vue.extend({
+  template: '<p>{{firstName}} {{lastName}} aka {{alias}}</p>',
+  data: function () {
+    return {
+      firstName: 'Walter',
+      lastName: 'White',
+      alias: 'Heisenberg'
+    }
+  }
+})
+```
+* 用法1：创建 Profile 实例，并挂载到一个元素上。
+```
+new Profile().$mount('#mount-point')
+```
+* 用法2：注册全局组件
+```
+Vue.component('Profile', Profile)
+```
+* 用法3：注册局部组件
+```
+{
+  components: {
+    Profile: Profile
+  }
+}
+```
+// 用法4：vue单文件改造为ts，使用Vue.extend，改动最小
+```
+<script lang="ts">
+export default Vue.extend({
+  data () {
+    return {}
+  }
+})
+</script>
+```
