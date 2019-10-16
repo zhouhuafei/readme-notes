@@ -815,7 +815,7 @@ Vue.component('Profile', Profile)
   }
 }
 ```
-// 用法4：vue单文件改造为ts，使用Vue.extend，改动最小
+// 用法4：vue单文件改造为ts，使用Vue.extend，改动最小。
 ```
 <script lang="ts">
 export default Vue.extend({
