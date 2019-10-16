@@ -23,56 +23,12 @@
 * workflow：工作流程
 * misc: 一些未归类或不知道将它归类到什么方面的提交
 
-# 校验 commit 是否符合规范
-> https://github.com/vuejs/vue 使用的是工具是 commitizen git-cz
-* 官网：https://npm.taobao.org/package/git-cz
-* github：https://github.com/streamich/git-cz
-* commitizen：https://github.com/commitizen/cz-cli
-* 安装依赖
-```
-npm install -g commitizen
-npm install --save-dev git-cz
-```
-* 在`package.json`配置
-```
-{
-  "config": {
-    "commitizen": {
-      "path": "git-cz"
-    }
-  }
-}
-```
-* 上述的目的是使用`git cz`取代`git commit`。
-
-# 校验 commit 是否符合规范
-* https://github.com/conventional-changelog/commitlint
-* https://github.com/typicode/husky
-* https://commitlint.js.org/#/guides-local-setup
-
-# 校验 commit 是否符合规范
-* 以下，亲测，无效。
-* https://github.com/ghooks-org/ghooks
-* 在`package.json`配置`ghooks`
-```
-"config": {
-  "ghooks": {
-    "commit-msg": "validate-commit-msg"
-  },
-  "validate-commit-msg": {
-    "types": ["feat", "fix", "docs", "style", "refactor", "perf", "test", "build", "ci", "chore", "revert", "polish", "workflow", "misc"],
-    "scope": {
-      "required": false,
-      "allowed": ["*"],
-      "validate": false,
-      "multiple": false
-    },
-    "warnOnFail": false,
-    "maxSubjectLength": 100,
-    "subjectPattern": ".+",
-    "subjectPatternErrorMsg": "subject does not match subject pattern!",
-    "helpMessage": "",
-    "autoFix": false
-  }
-}
-```
+# 工具
+* 使用`commitlint`校验`commit`是否符合规范。
+    - https://github.com/conventional-changelog/commitlint
+    - https://github.com/typicode/husky
+    - https://commitlint.js.org/#/guides-local-setup
+* 使用`git cz`取代`git commit`。
+    - 案例：https://github.com/vuejs/vue 使用的是工具是 commitizen git-cz
+    - commitizen：https://github.com/commitizen/cz-cli
+    - git-cz：https://github.com/streamich/git-cz
