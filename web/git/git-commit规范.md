@@ -53,7 +53,7 @@ npm install --save-dev git-cz
     "commit-msg": "validate-commit-msg"
   },
   "validate-commit-msg": {
-    "types": ["feat", "fix", "docs", "style", "refactor", "perf", "test", "build", "ci", "chore", "revert"],
+    "types": ["feat", "fix", "docs", "style", "refactor", "perf", "test", "build", "ci", "chore", "revert", "polish", "workflow", "misc"],
     "scope": {
       "required": false,
       "allowed": ["*"],
