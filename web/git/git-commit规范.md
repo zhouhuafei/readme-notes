@@ -43,6 +43,7 @@ npm install --save-dev git-cz
   }
 }
 ```
+* 上述的目的是使用`git cz`取代`git commit`。
 
 # 校验 commit 是否符合规范
 * https://github.com/conventional-changelog/commitlint
