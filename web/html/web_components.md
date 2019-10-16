@@ -76,7 +76,7 @@
       }
       .container > .name {
         font-size: 20px;
-        font-weight: 600;
+        font-weight: 600; // 无效 值应为bold
         line-height: 1;
         margin: 0;
         margin-bottom: 5px;
@@ -260,7 +260,7 @@ window.customElements.define('user-card', UserCard);
 
                 .container > .name {
                     font-size: 20px;
-                    font-weight: 600;
+                    font-weight: 600; // 无效 值应为bold
                     line-height: 1;
                     margin-bottom: 5px;
                 }
