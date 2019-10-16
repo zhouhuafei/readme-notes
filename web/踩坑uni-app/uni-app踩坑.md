@@ -28,3 +28,9 @@ wx.onAppRoute((route) => {
 
 # 路由监听
 https://github.com/SilurianYang/uni-simple-router
+
+# rpx单位默认是基于750px设计的
+* 问题：如果设计图是375px的呢？
+* 解决方案1：scss封装一个名为`rpx2`的`function`，函数内部乘以2即可。写css时，使用函数包装下量取的数值即可。
+* 解决方案2：px转成rpx。
+    - 工具 > 设置 > 编辑器配置 > 启用px转rpx/upx提示 > px转rpx/upx的比例由1变为2即可 | px转rpx/upx小数部分保留长度由2变为6即可
