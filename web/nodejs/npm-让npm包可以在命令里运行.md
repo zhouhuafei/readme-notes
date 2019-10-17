@@ -9,22 +9,38 @@
 ```
 * 2、bin的入口文件的顶部加一句话`#!/usr/bin/env node`。
 * 3、发布、安装、使用。
-* 原理(windows)：在`./node_modules/.bin/`目录中会生成`wx-get-pages-json`文件和`wx-get-pages-json.cmd`文件。
-    - cmd文件 是 一个 windows 内核脚本文件，可以直接双击运行
-    - 而 window 下 npm run 调用的也是这个 cmd 文件
-* 原理(linux)：待续...
+* 说明：
+    - `npm install`在`./node_modules/.bin/`目录中会生成`wx-get-pages-json`文件和`wx-get-pages-json.cmd`文件。
+    - `cmd`文件是一个`windows`内核脚本文件，可以直接双击运行。而`window`下`npm run`调用的也是这个`cmd`文件。
+    - 无后缀文件是给`linux`系统使用的shell脚本文件。文件内容第一行是：`#!/bin/sh`。
 
 # 开发阶段
 * 问题：开发npm包时，想安装之后，运行看看，但是又不想发布到npm上。
-* 解决方案1：本地局部安装。待续...
-```
-npm install file:../../wx-get-pages-json
-```
-* 解决方案2：本地全局安装。待续...
+* 我的位置-运行命令时所处路径：`/Users/zhouhuafei/Desktop/www/github-zhouhuafei/wx-get-pages-json/test`。
+* 解决方案-1：`npm link`别名`npm ln`。不推荐：因不会在`package.json`中增加依赖，不方便多人协作开发和调试。
+    - 本地`npm link`之后，会在全局的`npm`目录中会生成`wx-get-pages-json`文件和`wx-get-pages-json.cmd`文件。在全局的`npm/node_modules`目录中，会生成对应的`wx-get-pages-json`软连接目录。
 ```
 npm link ../wx-get-pages-json
+# 等同于
+npm link ../
+# 不等同于(会报错)
+npm link ..
+# 如果所处位置为wx-get-pages-json目录可直接运行
+npm link
+# 等同于
+npm link ./
 ```
-* 上述建立的全是软连接？待续...
+* 解决方案-2：`npm install`别名`npm i`。推荐：因会在`package.json`中增加依赖，方便多人协作开发和调试。
+    - 本地安装之后，对应目录的`./node_modules/.bin/`目录中会生成`wx-get-pages-json`文件和`wx-get-pages-json.cmd`文件。在`./node_modules`目录中，会生成对应的`wx-get-pages-json`软连接目录。
+    - 也可本地进行全局安装，`npm i`带`-g`参数即可。全局安装，效果等同于`npm link`。
+```
+npm install file:../../wx-get-pages-json
+# 等同于
+npm install file:../
+# 等同于
+npm install file:..
+```
+* 上述建立的链接都是软连接，相当于快捷方式。开发包中的文件内容改变了，软连接中的文件内容亦会跟着改变。
 
 # 硬链接和软连接
 > 待续...
