@@ -2,6 +2,7 @@
 > ###### 安装：https://github.com/openresty/echo-nginx-module#installation
 
 # 下述安装，我并没有安装成功，正确的安装方式是怎么样的？
+https://blog.csdn.net/nrsc272420199/article/details/89323868
 待续...
 
 # mac `brew`安装`nginx`扩展
