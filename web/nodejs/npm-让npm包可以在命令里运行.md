@@ -18,8 +18,7 @@
 * 问题：开发npm包时，想安装之后，运行看看，但是又不想发布到npm上。
 * 我的位置-运行命令时所处路径：`/Users/zhouhuafei/Desktop/www/github-zhouhuafei/wx-get-pages-json/test`。
 * 解决方案-1：`npm link`别名`npm ln`。不推荐：因不会在`package.json`中增加依赖，不方便多人协作开发和调试。
-    - `npm link`：Symlink(符号链接即软连接)一个package文件夹。
-    - `npm link`命令可以将一个任意位置的npm包链接到全局执行环境，从而在任意位置使用命令行都可以直接运行该npm包。
+    - `npm link`：Symlink(符号链接即软连接)一个package文件夹。`npm link`命令可以将一个任意位置的npm包链接到全局执行环境，从而在任意位置使用命令行都可以直接运行该npm包。
     - 本地`npm link`之后，会在全局的`npm`目录中会生成`wx-get-pages-json`文件和`wx-get-pages-json.cmd`文件(不同系统全局文件所在位置不同)。在全局的`npm/node_modules`目录中，会生成对应的`wx-get-pages-json`软连接目录。
 ```
 npm link ../wx-get-pages-json
