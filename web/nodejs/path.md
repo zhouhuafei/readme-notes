@@ -16,6 +16,7 @@ console.log(path.join('./', '/a')) // a
 console.log(path.join('../', 'a')) // ../a
 console.log(path.join('../', '/a')) // ../a
 
+console.log(path.resolve('a')) // /Users/zhouhuafei/Desktop/www/github-zhouhuafei/wx-get-pages-json/a
 console.log(path.resolve(__dirname, 'a')) // /Users/zhouhuafei/Desktop/www/github-zhouhuafei/wx-get-pages-json/a
 console.log(path.resolve('./', 'a')) // /Users/zhouhuafei/Desktop/www/github-zhouhuafei/wx-get-pages-json/test/a
 console.log(path.resolve('./', '/a')) // /a
