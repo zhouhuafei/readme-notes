@@ -20,27 +20,27 @@
 * 解决方案-1：`npm link`别名`npm ln`。不推荐：因不会在`package.json`中增加依赖，不方便多人协作开发和调试。
     - `npm link`：Symlink(符号链接即软连接)一个package文件夹。`npm link`命令可以将一个任意位置的npm包链接到全局执行环境，从而在任意位置使用命令行都可以直接运行该npm包。
     - 本地`npm link`之后，会在全局的`npm`目录中会生成`wx-get-pages-json`文件和`wx-get-pages-json.cmd`文件(不同系统全局文件所在位置不同)。在全局的`npm/node_modules`目录中，会生成对应的`wx-get-pages-json`软连接目录。
-```
-npm link ../wx-get-pages-json
-# 等同于
-npm link ../
-# 不等同于(会报错)
-npm link ..
-# 如果所处位置为wx-get-pages-json目录可直接运行
-npm link
-# 等同于
-npm link ./
-```
+    ```
+    npm link ../wx-get-pages-json
+    # 等同于
+    npm link ../
+    # 不等同于(会报错)
+    npm link ..
+    # 如果所处位置为wx-get-pages-json目录可直接运行
+    npm link
+    # 等同于
+    npm link ./
+    ```
 * 解决方案-2：`npm install`别名`npm i`。推荐：因会在`package.json`中增加依赖，方便多人协作开发和调试。
     - 本地安装之后，对应目录的`./node_modules/.bin/`目录中会生成`wx-get-pages-json`文件和`wx-get-pages-json.cmd`文件。在`./node_modules`目录中，会生成对应的`wx-get-pages-json`软连接目录。
     - 也可本地进行全局安装，`npm i`带`-g`参数即可。全局安装，效果等同于`npm link`。
-```
-npm install file:../../wx-get-pages-json
-# 等同于
-npm install file:../
-# 等同于
-npm install file:..
-```
+    ```
+    npm install file:../../wx-get-pages-json
+    # 等同于
+    npm install file:../
+    # 等同于
+    npm install file:..
+    ```
 * 上述建立的链接都是软连接，相当于快捷方式。开发包中的文件内容改变了，软连接中的文件内容亦会跟着改变。
 
 # 硬链接和软连接
