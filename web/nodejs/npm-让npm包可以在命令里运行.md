@@ -18,7 +18,7 @@
 * 问题：开发npm包时，想安装之后，运行看看，但是又不想发布到npm上。
 * 解决方案1：本地局部安装。待续...
 ```
-npm install file:../wx-get-pages-json
+npm install file:../../wx-get-pages-json
 ```
 * 解决方案2：本地全局安装。待续...
 ```
