@@ -72,7 +72,7 @@ class MyChild extends React.Component {
   }
 
   render () {
-    // 事件传递参数
+    // 事件传递参数 - 事件配合bind(this)可防止this指向被改变。
     return (
       <div onClick={this.childFn.bind(this, 'arg1', 'arg2')}>my-child</div>
     )
@@ -100,13 +100,11 @@ class MyParent extends React.Component {
   }
 
   render () {
-    // 事件不传递参数
     return (
       <MyChild parentFn={this.parentFn.bind(this)}></MyChild>
     )
   }
 
-  // ev在函数内可通过最后一个参数获取到。
   parentFn (arg1, arg2) {
     console.log(arg1, arg2) // 'arg1' 'arg2'
   }
