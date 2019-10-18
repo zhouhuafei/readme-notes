@@ -22,6 +22,7 @@ console.log(path.resolve('./', '/a')) // /a
 console.log(path.resolve('../', 'a')) // /Users/zhouhuafei/Desktop/www/github-zhouhuafei/wx-get-pages-json/a
 console.log(path.resolve('../', '/a')) // /a
 console.log(path.resolve('a', '/b', 'c')) // /b/c
+console.log(path.resolve('a')) // /Users/zhouhuafei/Desktop/www/github-zhouhuafei/wx-get-pages-json/test/a
 console.log(path.resolve('a', 'b', 'c')) // /Users/zhouhuafei/Desktop/www/github-zhouhuafei/wx-get-pages-json/test/a/b/c
 console.log(path.resolve('/')) // /
 console.log(path.resolve()) // /Users/zhouhuafei/Desktop/www/github-zhouhuafei/wx-get-pages-json/test
