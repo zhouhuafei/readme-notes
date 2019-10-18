@@ -100,7 +100,7 @@ class MyParent extends React.Component {
   }
 
   render () {
-    // 事件传递参数
+    // 事件不传递参数
     return (
       <MyChild parentFn={this.parentFn.bind(this)}></MyChild>
     )
