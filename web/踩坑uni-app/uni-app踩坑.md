@@ -48,3 +48,7 @@ https://github.com/SilurianYang/uni-simple-router
 * 解决方案2(不推荐)：px转成rpx。
     - 工具 > 设置 > 编辑器配置 > 启用px转rpx/upx提示 > px转rpx/upx的比例由1变为0.5即可 | px转rpx/upx小数部分保留长度由2变为6即可。
     - 不推荐原因：并不能直接把px转成rpx。而是写代码时，出现100px->200rpx的选项，让你选，我不喜欢这种方式。
+
+# uni-app默认支持async和await么？
+* `支持`。
+* 非同步Api返回的是Promise。
