@@ -257,6 +257,15 @@ export default{
     - `slot-scope="slotProps"`已被废弃，最新语法为`v-slot:default="slotProps"`。
     - `name="default"`和`:default`可省略。
 * 文档：https://cn.vuejs.org/v2/guide/components-slots.html#%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%8F%92%E6%A7%BD
+* slot 和 scope slot 实践：https://github.com/zhouhuafei/hello-world/blob/master/vue/slot.html
+  - 细节1：具名插槽接收时，如果有多个，则只识别最后一个。
+  - 细节2：具名或非具名插槽，如果定义了多个，则会渲染多个。
+    - 所有没有`v-slot:slotName`属性的结构，都算是一个非具名插槽的内容，会被插入到定义时的非具名插槽里，如果定义了多个非具名插槽，则插入多次。
+    - 如果定义了多个具名插槽，则把具名插槽插入到对应的定义点，定义了多个就插入多次。
+    - 但是接收时，如果遇到名字相同的具名插槽，则只识别最后一个具名插槽，识别到之后插入到对应到定义点，定义了多次，则插入的多次。和细节1对应。
+  - 总结：
+    - 定义插槽时：定义多次，则插入多次。
+    - 接收插槽时：有名字的只识别最后一个，没名字的都算作一个。
 
 # transition
 * https://cn.vuejs.org/v2/guide/transitions.html

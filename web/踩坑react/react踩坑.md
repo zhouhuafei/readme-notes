@@ -122,6 +122,10 @@ export default MyParent
 * react的onChange事件和原生的oninput事件一样。输入就触发。
 
 # react中有没有类似vue中slot的功能？
-> 有
-* 摘自：https://zhuanlan.zhihu.com/p/33728369
-* 待续...
+> 有：https://zhuanlan.zhihu.com/p/33728369
+* 实践：https://github.com/zhouhuafei/hello-world/blob/master/react/react%E4%B8%AD%E7%B1%BB%E4%BC%BCvue%E4%B8%ADslot%E7%9A%84%E5%8A%9F%E8%83%BD.html
+* 关键知识点
+  - 模拟具名和非具名插槽：使用`this.props.children`。
+  - 模拟作用域插槽：传给子组件一个方法，让子组件调用即可。
+    - 在父组件中定义方法并绑定给子组件，定义方法时使用行参接收数据，并返回JSX的布局结构。
+    - 在子组件中接收方法并调用方法，调用方法时使用实参传输数据，并接收返回值用以渲染布局信息。
