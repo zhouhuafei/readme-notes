@@ -577,6 +577,7 @@ class="w500">
 </el-input>
 </el-form-item>
 ```
+* `slot="append"`的是否显示，`element-ui`是通过`v-if="$slots.append"`控制的。
 * 做草动商城时，需要做选择拼团的弹窗。需要支持单选和多选。点击一行也需要选中。需要支持回显。单选用的el-radio。多选用的el-table自带的多选。以下是踩坑时刻。
     - table的rowClick会导致el-radio的change事件触发不了。如果想监听el-radio的变化，则只能使用watch。
     - 弹窗应用table多选或者单选，回显时带id进去即可，选择完也只传回id即可。如果需要具体参数，则根据id打接口拿具体数据。多选编辑时注意数据回传处理，别丢数据。单选没有这个问题。
