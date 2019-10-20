@@ -52,3 +52,6 @@ https://github.com/SilurianYang/uni-simple-router
 # uni-app默认支持async和await么？
 * `支持`。
 * 非同步Api返回的是Promise。
+
+# 富文本怎么渲染？
+* 使用`rich-text`组件即可。
