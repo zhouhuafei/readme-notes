@@ -1,3 +1,15 @@
+# Sass是什么
+* Sass(Scss)是世界上最成熟、稳定和强大的专业级CSS扩展语言 (Syntactically Awesome StyleSheets)。
+
+# Sass和SCSS的区别
+* SCSS 是 Sass 3 引入新的语法，其语法完全兼容 CSS3，并且继承了 Sass 的强大功能。Sass 和 SCSS 其实是同一种东西，我们平时都称之为 Sass，两者之间不同之处有以下两点。
+  - 1、文件扩展名不同，Sass 是以`.sass`后缀为扩展名，而 SCSS 是以`.scss`后缀为扩展名。
+  - 2、语法书写方式不同，Sass 是以严格的缩进式语法规则来书写，不带大括号({})和分号(;)，而 SCSS 的语法书写和我们的 CSS 语法书写方式非常类似。
+  
+# CSS预处理器
+> CSS预处理器是用一种专门的编程语言，进行Web页面样式设计，然后再编译成正常的CSS文件，以供项目使用。
+* Sass(Scss)就是CSS预处理器的一种。固Sass(Scss)也是编程语言。
+    
 # 文档
 * https://www.sass.hk/
 
