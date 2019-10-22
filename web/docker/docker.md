@@ -151,6 +151,12 @@ RUN yum install -y cairo cairo-devel cairomm-devel libjpeg-turbo-devel pango pan
 * 容器内部的改动，停止之后，再开启就没了，因为还是老的容器。
     - 解决方案1. 停止之前，把改动之后的容器进行commit，变成新的镜像，开启新的容器。
     - 解决方案2. 挂载到宿主机。 -v
+    
+# 挂载踩坑
+* 在windows系统下面使用Docker Toolbox的vitualbox创建的默认虚拟主机默认只挂载了c盘到虚拟主机上。
+    - 所以在使用docker run -v参数挂载数据卷的时候，只能挂载windows下的c盘到容器中。 
+    - 如果需要挂载e盘到虚拟主机，需要到vitualbox的设置下面去设置共享文件夹。增加e盘的共享。然后重启虚拟机。
+* linux系统下只需要把用户加进docker分组就行 sudo usermod -aG docker 用户名。
 
 # docker-compose
 * Compose 是一个用户定义和运行多个容器的 Docker 应用程序。
