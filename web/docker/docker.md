@@ -18,6 +18,7 @@ http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html
 * 本人参考了这篇博客 https://blog.csdn.net/qq2712193/article/details/54576313
 
 # Windows10x64 安装
+* 注：需`以管理员的身份运行`命令行。
 * 安装
 ```
 choco install docker-for-windows --pre
@@ -25,7 +26,7 @@ choco install docker-for-windows --pre
 * 安装目录
     - chocolatey的安装路径在哪，通过choco安装的东西就会在对应的地方。
     - 我本地把chocolatey的安装路径定制到了D盘。
-    - 详情请参阅同级目录里的chocolatey.md文件。
+    - 详情请参阅`../工具/chocolatey.md`文件。
     - https://chocolatey.org/packages/docker-for-windows
     ```
     D:\chocolatey\lib\docker-for-windows\tools\
