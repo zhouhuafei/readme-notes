@@ -31,6 +31,25 @@
 | npm install react --save-dev      |	yarn add react --dev    |
 | npm update --save                 |	yarn upgrade            |
 
+# yarn安装
+> 官网：https://yarn.bootcss.com/
+* macOS平台
+```
+brew install yarn
+```
+* windows平台
+```
+choco install yarn
+```
+* ubuntu平台
+```
+apt-get install yarn
+```
+* 跨平台
+```
+npm i install -g yarn
+```
+
 # npm的未来：npm5.0
 > 有了yarn的压力之后，npm做了一些类似的改进。
 * 默认新增了类似yarn.lock的 package-lock.json；
