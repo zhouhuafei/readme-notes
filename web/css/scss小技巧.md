@@ -5,86 +5,56 @@
 * SCSS 是 Sass 3 引入新的语法，其语法完全兼容 CSS3，并且继承了 Sass 的强大功能。Sass 和 SCSS 其实是同一种东西，我们平时都称之为 Sass，两者之间不同之处有以下两点。
   - 1、文件扩展名不同，Sass 是以`.sass`后缀为扩展名，而 SCSS 是以`.scss`后缀为扩展名。
   - 2、语法书写方式不同，Sass 是以严格的缩进式语法规则来书写，不带大括号({})和分号(;)，而 SCSS 的语法书写和我们的 CSS 语法书写方式非常类似。
-  
+
 # CSS预处理器
 > CSS预处理器是用一种专门的编程语言，进行Web页面样式设计，然后再编译成正常的CSS文件，以供项目使用。
 * Sass(Scss)就是CSS预处理器的一种。固Sass(Scss)也是编程语言。
-    
+
 # 文档
 * https://www.sass.hk/
 
 # 其他
-* 小技巧之变量```!default```
-    - 如果$g-color-danger变量的上面定义的有$g-color-danger，则使用$g-color-danger的值，如果没有则使用#ff0000作为默认值。
-    ```
-    $g-color-danger: #ff0000 !default;
-    ```
+* 小技巧之变量`!default`：如果变量没被赋值，则使用默认值。如果变量被赋值了，则使用被赋予的值。在默认值的前面赋值同样有效(即默认值不会生效)。
+```
+// 在这里赋值(默认值的上边)，值也会生效，即默认值会被替换为被赋予的新值。
+$g-color-danger: #ff0000 !default; // 这里是默认值。
+// 在这里赋值(默认值的下边)，则值更会生效。
+```
 
 # 占位符%
 占位符选择器(Placeholder Selector)是以%而不是.作为开始符的选择器。它自身不会出现在编译后的CSS文件中, 只会出现在@extend了它的那些选择器中。
 
 # @extend的限制
-@extend有个限制, 就是你不能@extend不同@media块中的样式。这个限制同样对%选择器有效。
+* 在指令中使用 @extend 时（比如在 @media 中）有一些限制：Sass 不可以将 @media 层外的 CSS 规则延伸给指令层内的 CSS，这样会生成大量的无用代码。也就是说，如果在 @media （或者其他 CSS 指令）中使用 @extend，必须延伸给相同指令层中的选择器。
+* 下面的例子是可行的：
 ```
-%icon {
-  transition: background-color ease .2s;
-  margin: 0 .5em;
-}
-
-@media screen {
-  .error-icon {
-    @extend %icon;
+@media print {
+  .error {
+    border: 1px #f00;
+    background-color: #fdd;
   }
-
-  .info-icon {
-    @extend %icon;
+  .seriousError {
+    @extend .error;
+    border-width: 3px;
   }
 }
 ```
-这会导致编译错误:
+* 但不可以这样：
 ```
-You may not @extend an outer selector from within @media.
-You may only @extend selectors within the same directive.
-From "@extend %icon" on line 8 of icons.scss
-```
-这是由于@extend的实现方式其实是用调用@extend的类替换被@extend的类, 上例中即用.error-icon, .info-icon替换%icon。但是由于这些调用@extend的类属于@media块, 这样直接替换会导致替换后的规则脱离@media块, 因此是非法的。
+.error {
+  border: 1px #f00;
+  background-color: #fdd;
+}
 
-但是, 反过来就没事儿。因为%icon属性原本就是在@media内部生效的, .error-icon, .info-icon继承来的这部分规则自然也只应该在该@media下生效。
-```
-@media screen {
-  %icon {
-    transition: background-color ease .2s;
-    margin: 0 .5em;
+@media print {
+  .seriousError {
+    // INVALID EXTEND: .error is used outside of the "@media print" directive
+    @extend .error;
+    border-width: 3px;
   }
 }
-
-.error-icon {
-  @extend %icon;
-  background-color: red;
-}
-
-.info-icon {
-  @extend %icon;
-  background-color: green;
-}
 ```
-会被编译成
-```
-@media screen {
-  .error-icon, .info-icon {
-    transition: background-color ease .2s;
-    margin: 0 .5em;
-  }
-}
-
-.error-icon {
-  background-color: red;
-}
-
-.info-icon {
-  background-color: green;
-}
-```
+* 上述限制对占位符%同样有效。
 
 # scss变量共享给js
 * 定义_variables.scss
