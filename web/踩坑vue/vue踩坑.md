@@ -671,6 +671,7 @@ class="w500">
     }
     </script>
     ```
+    - el-form校验：el-form组件上绑定了model和rules属性且el-form-item组件上绑定了prop属性才会校验，注：el-form-item组件不存在(不被渲染)时则对应规则不会被校验。
 * `el-tabs`导致`el-table`闪烁。
     - 原因：我给`el-table-column`加了`:key="String(Math.random()).substring(2)"`。
     - 经过测试，发现只要给`el-table-column`加key，就会闪烁。
