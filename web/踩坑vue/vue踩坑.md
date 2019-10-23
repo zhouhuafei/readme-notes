@@ -570,6 +570,11 @@ new Vue({
         return this.value + ' - ' + val
       }
     }
+  },
+  created () {
+    setTimeout(() => {
+      this.value = 'new - hello'
+    }, 2000)
   }
 })
 </script>
