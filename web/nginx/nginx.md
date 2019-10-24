@@ -17,12 +17,16 @@ nginx
 ```
 nginx -s reload
 ```
-* 停止
+* 停止 - 方式1
   - 找到主进程master process的id
   - 杀死主进程
 ```
 ps aux | grep nginx
 kill id
+```
+* 停止 - 方式2
+```
+nginx -s stop
 ```
 * 无异常重启nginx
 ```
