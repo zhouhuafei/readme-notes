@@ -1,0 +1,35 @@
+{
+  "name": "readme-notes",
+  "version": "1.0.0",
+  "description": "记录工作中遇到的问题 记录学习中遇到的问题 记录成长中遇到的问题",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhouhuafei/readme-notes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhouhuafei/readme-notes/issues"
+  },
+  "homepage": "https://github.com/zhouhuafei/readme-notes#readme",
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "commitizen": "^4.0.3",
+    "git-cz": "^3.2.1",
+    "husky": "^3.0.9"
+  }
+}
