@@ -35,7 +35,7 @@
     
 # `git cz`实操流程。
 * 1、安装：`npm install --save-dev git-cz commitizen`。
-* 2、配置：package.json中新增如下代码即可。
+* 2、配置：`package.json`文件中新增如下代码即可。
 ```
 {
   "config": {
@@ -44,4 +44,39 @@
     }
   }
 }
+```
+
+# `commitlint`实操流程。
+* 1、安装并生成配置文件。
+```
+# Install commitlint cli and conventional config
+npm install --save-dev @commitlint/{config-conventional,cli}
+# For Windows:
+npm install --save-dev @commitlint/config-conventional @commitlint/cli
+
+# Configure commitlint to use conventional config
+echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js
+```
+* 2、在`package.json`文件中新增如下配置。
+```
+{
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }  
+  }
+}
+```
+* 3、把生成的`commitlint.config.js`文件中的双引号去掉。
+  - 把
+  ```
+  "module.exports = {extends: ['@commitlint/config-conventional']}"
+  ```
+  - 变为
+  ```
+  module.exports = {extends: ['@commitlint/config-conventional']}
+  ```
+* 4、安装husky。
+```
+npm install --save-dev husky
 ```
