@@ -34,14 +34,14 @@
     - git-cz：https://github.com/streamich/git-cz
     
 # `git cz`实操流程。
-    - 1、安装：`npm install --save-dev git-cz commitizen`。
-    - 2、配置：package.json中新增如下代码即可。
-    ```
-    {
-      "config": {
-        "commitizen": {
-          "path": "git-cz"
-        }
-      }
+* 1、安装：`npm install --save-dev git-cz commitizen`。
+* 2、配置：package.json中新增如下代码即可。
+```
+{
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
     }
-    ```
+  }
+}
+```
