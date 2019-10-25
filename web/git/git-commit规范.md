@@ -32,7 +32,7 @@
     - 案例：https://github.com/vuejs/vue 使用的是工具是 commitizen git-cz
     - commitizen：https://github.com/commitizen/cz-cli
     - git-cz：https://github.com/streamich/git-cz
-    
+
 # `git-cz`实操流程
 * 1、安装：`npm install --save-dev git-cz commitizen`。
 * 2、配置：`package.json`文件中新增如下代码即可。
@@ -45,6 +45,9 @@
   }
 }
 ```
+* 场景：项目A，在windows上，直接配好，直接可用。项目B，在mac上，直接配好，直接可用。
+  - 问题：项目B，拿到windows系统中，`npm i`安装好依赖之后，运行`git cz`居然无效。
+  - 解决：在项目B中，先运行一次`npx git cz`，后续再使用`git cz`就有效了。
 
 # `commitlint`实操流程
 * 1、安装并生成配置文件。
@@ -63,7 +66,7 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitl
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }  
+    }
   }
 }
 ```
