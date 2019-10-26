@@ -92,4 +92,4 @@ npm install --save-dev husky
 
 # 使`git cz`附带表情包
 > 上述的`git cz`并不具有表情包功能，然而这个包可以使`git cz`具有表情包的能力：https://github.com/streamich/git-cz
-* 直接进行`npm i --save-dev git-cz`安装即可，安装完了就能用。
+* 使用方式：本人在mac上，直接进行`npm i --save-dev git-cz`安装，安装完了就能用。
