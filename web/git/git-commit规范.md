@@ -95,4 +95,5 @@ npm install --save-dev husky
 * 使用方式：本人在mac上，直接进行`npm i --save-dev git-cz`安装，安装完了就能用。
 
 # 根据commit信息生成更新日志
+> test
 > https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog
