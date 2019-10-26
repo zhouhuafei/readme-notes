@@ -31,6 +31,7 @@
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
     "commitizen": "^4.0.3",
+    "conventional-changelog-cli": "^2.0.25",
     "cz-conventional-changelog": "^3.0.2",
     "git-cz": "^3.3.0",
     "husky": "^3.0.9"
