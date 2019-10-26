@@ -1,9 +1,11 @@
 {
   "name": "readme-notes",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "记录工作中遇到的问题 记录学习中遇到的问题 记录成长中遇到的问题",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "release:note": "node scripts/gen-release-note.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zhouhuafei/readme-notes.git"
@@ -29,8 +31,10 @@
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
     "commitizen": "^4.0.3",
+    "conventional-changelog": "^3.1.12",
     "cz-conventional-changelog": "^3.0.2",
     "git-cz": "^3.3.0",
-    "husky": "^3.0.9"
+    "husky": "^3.0.9",
+    "standard-version": "^7.0.0"
   }
 }
