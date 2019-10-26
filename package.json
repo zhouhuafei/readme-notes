@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "记录工作中遇到的问题 记录学习中遇到的问题 记录成长中遇到的问题",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zhouhuafei/readme-notes.git"

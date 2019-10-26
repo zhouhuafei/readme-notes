@@ -3,6 +3,7 @@
 
 ### Bug Fixes
 
+* 🐛 changelog ([1c5659b](https://github.com/zhouhuafei/readme-notes/commit/1c5659bf6dbe4c3a1485d5af23f02478859ec14e))
 * 🐛 git cz ([bbd536f](https://github.com/zhouhuafei/readme-notes/commit/bbd536f15641140951798132caf265511ee25bd7))
 * 🐛 record fix ([5e6cc98](https://github.com/zhouhuafei/readme-notes/commit/5e6cc98e80fc44bec832b96175d32ef67013827b))
 * 🐛 windows中若发现git cz无效，使用npx git cz运行一下，后续使用git cz就有效了。 ([02a8705](https://github.com/zhouhuafei/readme-notes/commit/02a87054a2a40f18607f0b9cee8fd30392c313ef))
