@@ -24,6 +24,7 @@
 * misc: 一些未归类或不知道将它归类到什么方面的提交
 
 # 工具
+> 主要工具是`commitlint`和`commitizen`。
 * 使用`commitlint`校验`commit`是否符合规范。
     - https://github.com/conventional-changelog/commitlint
     - https://github.com/typicode/husky
@@ -34,11 +35,7 @@
     - git-cz：https://github.com/streamich/git-cz
 
 # `git-cz`实操流程
-* 1、安装：
-```
-npm install -g commitizen
-npm install --save-dev git-cz
-```
+* 1、安装：`npm install -g commitizen git-cz`。
 * 2、配置：`package.json`文件中新增如下代码即可。
 ```
 {
@@ -84,7 +81,3 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitl
 ```
 npm install --save-dev husky
 ```
-
-# cz-conventional-changelog
-> 根据commit信息生成更新日志
-http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html
