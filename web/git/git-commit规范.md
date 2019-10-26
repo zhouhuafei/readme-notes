@@ -111,4 +111,24 @@ conventional-changelog -p angular -i CHANGELOG.md -s
 
 # 根据commit信息生成更新日志 - vue是怎么做的
 * https://github.com/vuejs/vue/blob/dev/scripts/gen-release-note.js
+  - 1、在`.gitignore`文件中忽略`RELEASE_NOTE*.md`文件。
+  - 2、写js脚本。
+  ```
+  const version = process.argv[2] || process.env.VERSION
+  const cc = require('conventional-changelog')
+  const file = `./RELEASE_NOTE${version ? `_${version}` : ``}.md`
+  const fileStream = require('fs').createWriteStream(file)
+
+  cc({
+    preset: 'angular',
+    pkg: {
+      transform (pkg) {
+        pkg.version = `v${version}`
+        return pkg
+      }
+    }
+  }).pipe(fileStream).on('close', () => {
+    console.log(`Generated release note at ${file}`)
+  })
+  ```
 * https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog
