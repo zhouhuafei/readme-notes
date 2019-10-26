@@ -21,19 +21,17 @@ function sum(a, b) {
 }
 module.exports = sum;
 ```
-
 * 写测试脚本 sum.test.js
-    - 更多expect方法 http://facebook.github.io/jest/docs/en/expect.html
-    - 对象和数组使用```toEqual```进行验证。
-    - ```toBe```用来比较字符串、数字等基础类型的数据，```toEqual```亦可用来比较字符串、数字等基础类型的数据。
-    ```
-    const sum = require('./sum');
+  - 更多expect方法 http://facebook.github.io/jest/docs/en/expect.html
+  - 对象和数组使用`toEqual`进行验证。
+  - `toBe`用来比较字符串、数字等基础类型的数据，`toEqual`亦可用来比较字符串、数字等基础类型的数据。
+  ```
+  const sum = require('./sum');
 
-    test('adds 1 + 2 to equal 3', () => {
-      expect(sum(1, 2)).toBe(3);
-    });
-    ```
-
+  test('adds 1 + 2 to equal 3', () => {
+    expect(sum(1, 2)).toBe(3);
+  });
+  ```
 * 把命令加入package.json文件
 ```
 {
@@ -42,12 +40,10 @@ module.exports = sum;
     }
 }
 ```
-
 * 运行命令进行测试
 ```
 npm run test
 ```
-
 * 得到结果
 ```
 PASS  ./sum.test.js
@@ -57,18 +53,8 @@ PASS  ./sum.test.js
 # 更多使用说明
 * 请参阅官网 http://facebook.github.io/jest/
 
-# git commit 自动测试会报错
-* 使用husky包可以配置precommit从而让git在commit之前进行预检测。
-```
-"scripts": {
-    "codeLint": "eslint --ext .js,.vue,.html ./",
-    "codeFix": "eslint --fix --ext .js,.vue,.html ./",
-    "gulp": "gulp",
-    "test": "jest",
-    "precommit": "npm run codeLint && npm run test"
-},
-```
-* 但是git commit时出现了以下报错信息
+# jest报错
+> 报错内容如下
 ```
 FAIL
 ● Test suite failed to run
@@ -76,18 +62,16 @@ FAIL
 SecurityError: localStorage is not available for opaque origins at Window.get localStorage [as localStorage] (node_modules/jsdom/lib/jsdom/browser/Window.js:257:15)
       at Array.forEach (<anonymous>)
 ```
-* 解决方案，增加配置文件
- - https://github.com/zhouhuafei/zhf.time-count-down/blob/master/jest.config.js
+* 解决方案：https://github.com/zhouhuafei/zhf.time-count-down/blob/master/jest.config.js
 
-# git commit 自动检测并修复语法错误1
-https://www.jianshu.com/p/cdd749c624d9
-* 1、配置```eslint```(略)
-* 2、安装```husky```和```lint-staged```包
-* 3、```package.json```中增加如下字段
+# git commit 之前进行代码风格的检测和修复(检测改动部分)
+> 在`package.json`中增加如下内容
 ```json
 {
-  "gitHooks": {
-    "pre-commit": "lint-staged"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "src/**/*.{js,vue}": [
@@ -97,24 +81,18 @@ https://www.jianshu.com/p/cdd749c624d9
   }
 }
 ```
-* 解释：
-    - ```pre-commit```可以换成```precommit```。
-    - ```git add```表示将处理过的代码重新```add```到```git```中。
-    - 然后再触发```commit```。
-    
-# git commit 自动检测并修复语法错误2
-* ```eslint```和```husky```配合使用，在```package.json```中增加如下字段
-* 此处省略了```jest```包的使用配置
+* 需：配置`eslint`以及安装`husky`和`lint-staged`包。`lint-staged`只检测和修复改动的代码。
+* 注：修复完毕，`git add`会将修复后的代码重新`add`到`git`中。然后再触发`commit`。
+
+# git commit 之前进行代码风格的检测和修复(检测全部内容)
+> 在`package.json`中增加如下内容
 ```json
 {
     "scripts": {
         "codeLint": "eslint --ext .js,.vue,.html ./",
         "codeFix": "eslint --fix --ext .js,.vue,.html ./",
         "test": "jest",
-        "precommit": "npm run codeFix && npm run codeLint && npm run test"
+        "precommit": "npm run codeFix && npm run test && git add ."
     }
 }
 ```
-
-# 使用husky配合eslint在提交代码时就可以自动修复，为什么还要使用lint-staged？
-* lint-staged：只检测和修复改动的代码。
