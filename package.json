@@ -1,6 +1,6 @@
 {
   "name": "readme-notes",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "description": "记录工作中遇到的问题 记录学习中遇到的问题 记录成长中遇到的问题",
   "main": "index.js",
   "scripts": {
@@ -34,7 +34,6 @@
     "conventional-changelog": "^3.1.12",
     "cz-conventional-changelog": "^3.0.2",
     "git-cz": "^3.3.0",
-    "husky": "^3.0.9",
-    "standard-version": "^7.0.0"
+    "husky": "^3.0.9"
   }
 }
