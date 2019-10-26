@@ -34,7 +34,11 @@
     - git-cz：https://github.com/streamich/git-cz
 
 # `git-cz`实操流程
-* 1、安装：`npm install --save-dev git-cz commitizen`。
+* 1、安装：
+```
+npm install -g commitizen
+npm install --save-dev git-cz
+```
 * 2、配置：`package.json`文件中新增如下代码即可。
 ```
 {
@@ -45,13 +49,6 @@
   }
 }
 ```
-* 场景和问题以及解决方案。
-  - 项目A，在win上，直接配好并安装依赖后，直接就可用。
-  - 项目B，在win上，直接配好并安装依赖后，居然不可用。
-  - 项目C，在mac上，直接配好并安装依赖后，直接就可用。
-  - 项目D，在mac上，直接配好并安装依赖后，居然不可用。
-  - 项目B的解决方案：先`npx git cz`运行一次，后续居然就可以直接使用`git cz`了。这个方案有点玄学且这个方案对项目D无效。
-  - 项目D的解决方案：全局安装`git-cz`：`npm install -g git-cz`。这个方案更靠谱一点。
 
 # `commitlint`实操流程
 * 1、安装并生成配置文件。
@@ -88,5 +85,6 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitl
 npm install --save-dev husky
 ```
 
-# 根据commit信息生成更新日志
+# cz-conventional-changelog
+> 根据commit信息生成更新日志
 http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html
