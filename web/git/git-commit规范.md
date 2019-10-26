@@ -87,3 +87,6 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitl
 ```
 npm install --save-dev husky
 ```
+
+# 根据commit信息生成更新日志
+http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html
