@@ -96,7 +96,14 @@ npm install --save-dev husky
 
 # 根据commit信息生成更新日志
 > https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-cli
+* 安装工具。
 ```
 npm install -g conventional-changelog-cli
-conventional-changelog -p angular -i CHANGELOG.md -s
 ```
+* 如果这是您第一次使用此工具，并且想要生成所有以前的变更日志，则可以执行。
+```
+conventional-changelog -p angular -i CHANGELOG.md -s -r 0
+* 下面命令不会覆盖以前的`Change log`，只会在`CHANGELOG.md`的头部加上自从上次发布以来的变动。
+```
+conventional-changelog -p angular -i CHANGELOG.md -s
+``````

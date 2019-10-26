@@ -30,6 +30,7 @@
 
 ### Features
 
+* 🎸 changelog ([07c4b41](https://github.com/zhouhuafei/readme-notes/commit/07c4b41ce912549499dc51bdaf409f0775004b36))
 * 🎸 commitizen ([cabbf33](https://github.com/zhouhuafei/readme-notes/commit/cabbf33538fc633f98ba5d1e2b0a4153b5ab605c))
 * 🎸 cz-conventional-changelog ([dbef56c](https://github.com/zhouhuafei/readme-notes/commit/dbef56c8c3d162961adeab9e26231d83e6661415))
 * 🎸 gen ([970dd5d](https://github.com/zhouhuafei/readme-notes/commit/970dd5d453c3124ccfb57dd480178b091bbaa139))
