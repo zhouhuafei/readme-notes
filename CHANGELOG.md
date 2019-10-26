@@ -1,35 +1,11 @@
 <a name="1.0.0"></a>
-# [1.0.0](https://github.com/zhouhuafei/readme-notes/compare/v1.0.2...v1.0.0) (2019-10-26)
-
-
-
-<a name="1.0.2"></a>
-## [1.0.2](https://github.com/zhouhuafei/readme-notes/compare/v1.0.1...v1.0.2) (2019-10-26)
-
-
-### Features
-
-* 🎸 changelog2 ([dcc183c](https://github.com/zhouhuafei/readme-notes/commit/dcc183c))
-
-
-
-<a name="1.0.1"></a>
-## [1.0.1](https://github.com/zhouhuafei/readme-notes/compare/v1.0.0...v1.0.1) (2019-10-26)
+# 1.0.0 (2019-10-26)
 
 
 ### Bug Fixes
 
 * 🐛 changelog ([b344be4](https://github.com/zhouhuafei/readme-notes/commit/b344be4))
 * 🐛 changelog ([19dcab6](https://github.com/zhouhuafei/readme-notes/commit/19dcab6))
-
-
-
-<a name="1.0.0"></a>
-# [1.0.0](https://github.com/zhouhuafei/readme-notes/compare/b1ba8df...v1.0.0) (2019-10-26)
-
-
-### Bug Fixes
-
 * 🐛 changelog ([1c5659b](https://github.com/zhouhuafei/readme-notes/commit/1c5659b))
 * 🐛 git cz ([bbd536f](https://github.com/zhouhuafei/readme-notes/commit/bbd536f))
 * 🐛 record fix ([5e6cc98](https://github.com/zhouhuafei/readme-notes/commit/5e6cc98))
@@ -58,12 +34,14 @@
 ### Features
 
 * 🎸 changelog ([07c4b41](https://github.com/zhouhuafei/readme-notes/commit/07c4b41))
+* 🎸 changelog2 ([dcc183c](https://github.com/zhouhuafei/readme-notes/commit/dcc183c))
 * 🎸 commitizen ([cabbf33](https://github.com/zhouhuafei/readme-notes/commit/cabbf33))
 * 🎸 cz-conventional-changelog ([dbef56c](https://github.com/zhouhuafei/readme-notes/commit/dbef56c))
 * 🎸 gen ([970dd5d](https://github.com/zhouhuafei/readme-notes/commit/970dd5d))
 * 🎸 git remote add upstream x.git-git pull upstream master ([5ad13ea](https://github.com/zhouhuafei/readme-notes/commit/5ad13ea))
 * 🎸 jest ([33f3494](https://github.com/zhouhuafei/readme-notes/commit/33f3494))
 * 🎸 test ([8b6855c](https://github.com/zhouhuafei/readme-notes/commit/8b6855c))
+* 🎸 什么鬼啊。 ([adcb825](https://github.com/zhouhuafei/readme-notes/commit/adcb825))
 * 🎸 如何手动调用Vue的钩子函数？ ([1a23cba](https://github.com/zhouhuafei/readme-notes/commit/1a23cba))
 * 🎸 折腾了一天，还是没明白conventional-changelog怎么用。打了tag就不知道咋用了。 ([f0204e3](https://github.com/zhouhuafei/readme-notes/commit/f0204e3))
 * 🎸 消费者通过导购转发进入小程序，登陆之后，如果没授权头像和昵称，则去授权头像和昵称。 ([5683701](https://github.com/zhouhuafei/readme-notes/commit/5683701))
