@@ -1,5 +1,15 @@
 <a name="1.0.0"></a>
-# [1.0.0](https://github.com/zhouhuafei/readme-notes/compare/v1.0.1...v1.0.0) (2019-10-26)
+# [1.0.0](https://github.com/zhouhuafei/readme-notes/compare/v1.0.2...v1.0.0) (2019-10-26)
+
+
+
+<a name="1.0.2"></a>
+## [1.0.2](https://github.com/zhouhuafei/readme-notes/compare/v1.0.1...v1.0.2) (2019-10-26)
+
+
+### Features
+
+* 🎸 changelog2 ([dcc183c](https://github.com/zhouhuafei/readme-notes/commit/dcc183c))
 
 
 
