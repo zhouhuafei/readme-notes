@@ -34,6 +34,7 @@
 ### Features
 
 * 🎸 changelog ([07c4b41](https://github.com/zhouhuafei/readme-notes/commit/07c4b41))
+* 🎸 changelog application ([8408b25](https://github.com/zhouhuafei/readme-notes/commit/8408b25))
 * 🎸 changelog2 ([dcc183c](https://github.com/zhouhuafei/readme-notes/commit/dcc183c))
 * 🎸 commitizen ([cabbf33](https://github.com/zhouhuafei/readme-notes/commit/cabbf33))
 * 🎸 cz-conventional-changelog ([dbef56c](https://github.com/zhouhuafei/readme-notes/commit/dbef56c))
@@ -44,6 +45,7 @@
 * 🎸 什么鬼啊。 ([adcb825](https://github.com/zhouhuafei/readme-notes/commit/adcb825))
 * 🎸 如何手动调用Vue的钩子函数？ ([1a23cba](https://github.com/zhouhuafei/readme-notes/commit/1a23cba))
 * 🎸 折腾了一天，还是没明白conventional-changelog怎么用。打了tag就不知道咋用了。 ([f0204e3](https://github.com/zhouhuafei/readme-notes/commit/f0204e3))
+* 🎸 根据commit信息生成更新日志 - vue是怎么做的 ([04eed43](https://github.com/zhouhuafei/readme-notes/commit/04eed43))
 * 🎸 消费者通过导购转发进入小程序，登陆之后，如果没授权头像和昵称，则去授权头像和昵称。 ([5683701](https://github.com/zhouhuafei/readme-notes/commit/5683701))
 * BFF ([3dcb270](https://github.com/zhouhuafei/readme-notes/commit/3dcb270))
 * BFF ([43c9087](https://github.com/zhouhuafei/readme-notes/commit/43c9087))
