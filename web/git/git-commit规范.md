@@ -133,6 +133,12 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
 ```
 conventional-changelog -p angular -i CHANGELOG.md -s
 ```
+* 说明：`conventional-changelog-cli`工具可进行局部安装和使用(npm上的工具包都可进行局部安装和使用，我个人也推荐进行局部安装和使用，好处就是包的版本在项目中是固定的，不容易出问题)。
+```
+npm install --save-dev conventional-changelog-cli
+npx conventional-changelog -p angular -i CHANGELOG.md -s -r 0
+npx conventional-changelog -p angular -i CHANGELOG.md -s
+```
 
 # 根据commit信息生成更新日志 - vue是怎么做的
 * https://github.com/vuejs/vue/blob/dev/scripts/gen-release-note.js
