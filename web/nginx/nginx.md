@@ -218,6 +218,16 @@ server {
     }
 }
 ```
+* @ 用来定义一个命名 location。主要用于内部重定向，不能用来处理正常的请求。其用法如下：
+```
+location / {
+    try_files $uri $uri/ @custom
+}
+location @custom {
+    # ...do something
+}
+```
+* 上例中，当尝试访问 url 找不到对应的文件就重定向到我们自定义的命名 location(此处为 custom)。值得注意的是，命名 location 中不能再嵌套其它的命名 location。
 
 # location 匹配的优先级(与location在配置文件中的顺序无关)
 * = 精确匹配会第一个被处理。如果发现精确匹配，nginx停止搜索其他匹配。普通字符匹配，正则表达式规则和长的块规则将被优先和查询匹配，也就是说如果该项匹配还需去看有没有正则表达式匹配和更长的匹配。
