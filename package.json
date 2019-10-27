@@ -9,6 +9,16 @@
     "changelog": "npx conventional-changelog -p angular -i CHANGELOG.md -s",
     "release:note": "node scripts/gen-release-note.js"
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zhouhuafei/readme-notes.git"
@@ -20,16 +30,7 @@
     "url": "https://github.com/zhouhuafei/readme-notes/issues"
   },
   "homepage": "https://github.com/zhouhuafei/readme-notes#readme",
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
-  "config": {
-    "commitizen": {
-      "path": "git-cz"
-    }
-  },
+  "dependencies": {},
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
