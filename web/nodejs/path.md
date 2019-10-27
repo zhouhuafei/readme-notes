@@ -31,6 +31,6 @@ console.log(path.resolve('../')) // /Users/zhouhuafei/Desktop/www/github-zhouhua
 ```
 
 # 总结
-* 在`path.resolve`中，参数如果不存在以`/`开头的路径，则是以node运行时的目录进行拼接的。
+* 在`path.resolve`中，参数如果不存在以`/`开头的路径(`__dirname`算是以`/`开头的路径)，则是以node运行时的目录进行拼接的。
   - 此时`./`和`../`则是相对于node运行时的目录。
   - 此时`./`等同于`process.cwd()`。
