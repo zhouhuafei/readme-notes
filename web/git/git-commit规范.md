@@ -139,6 +139,15 @@ npm install --save-dev conventional-changelog-cli
 npx conventional-changelog -p angular -i CHANGELOG.md -s -r 0
 npx conventional-changelog -p angular -i CHANGELOG.md -s
 ```
+* 我的使用方式：在`package.json`文件中增加以下命令。
+```
+{
+  "scripts": {
+    "changelog:init": "npx conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "changelog": "npx conventional-changelog -p angular -i CHANGELOG.md -s"
+  }
+}
+```
 
 # 根据commit信息生成更新日志 - vue是怎么做的
 * https://github.com/vuejs/vue/blob/dev/scripts/gen-release-note.js
@@ -176,6 +185,7 @@ npx conventional-changelog -p angular -i CHANGELOG.md -s
   ```
 * https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog
 
-# commit信息的生成依赖什么？
+# changelog的生成依赖什么？
 * 1、依赖 `规范的commit信息`。
 * 2、依赖 `git的tag`。
+* 3、初始化(`npm run changelog:init`)生成的`CHANGELOG.md`文件，其内容中的版本号，依赖`package.json中的version字段`。
