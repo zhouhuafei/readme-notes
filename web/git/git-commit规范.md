@@ -91,8 +91,33 @@ npm install --save-dev husky
 * 配置完毕，即可使用`git cz`命令。
 
 # 使`git cz`附带表情包
-> 上述的`git cz`并不具有表情包功能，然而这个包可以使`git cz`具有表情包的能力：https://github.com/streamich/git-cz
-* 使用方式：本人在mac上，直接进行`npm i --save-dev git-cz`安装，安装完了就能用。
+> 上述的`git cz`并不具有表情包功能，然而右边链接中的这个包可以使`git cz`具有表情包的能力：https://github.com/streamich/git-cz
+* 1、安装依赖`npm i --save-dev git-cz`。
+* 2、修改`package.json`配置，把`"path": "cz-conventional-changelog"`更换为`"path": "git-cz"`。
+```
+{
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
+  }
+}
+```
+
+# 还可以使用npm执行`git cz`。
+> 配置`package.json`。
+```
+{
+  "scripts": {
+    "commit": "git-cz"
+  }
+}
+```
+> 运行：`npm run commit`即可。
+* 说明：上述配置使得运行`npm run commit`相当于运行`git-cz`命令。
+  - `commitizen`包提供了`git-cz`命令。
+  - `git-cz`包也提供了`git-cz`命令，还提供了`gitcz`命令。
+  - 上述`"commit": "git-cz"`可以更改为`"commit": "npx git-cz"`，还可以更改为`"commit": "git cz"`，也可以更改为`"commit": "gitcz"`。
 
 # 根据commit信息生成更新日志
 > https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-cli
@@ -104,7 +129,7 @@ npm install -g conventional-changelog-cli
 ```
 conventional-changelog -p angular -i CHANGELOG.md -s -r 0
 ```
-* 下面命令不会覆盖以前的`Change log`，只会在`CHANGELOG.md`的头部加上自从上次发布以来的变动。
+* 下面命令不会覆盖以前的`change log`，只会在`CHANGELOG.md`的头部加上自从上次发布以来的变动。
 ```
 conventional-changelog -p angular -i CHANGELOG.md -s
 ```
@@ -130,5 +155,17 @@ conventional-changelog -p angular -i CHANGELOG.md -s
   }).pipe(fileStream).on('close', () => {
     console.log(`Generated release note at ${file}`)
   })
+  ```
+  - 3、配置`package.json`。
+  ```
+  {
+    "scripts": {
+      "release:note": "node scripts/gen-release-note.js"
+    }
+  }
+  ```
+  - 4、运行(2.6.6前不用带v前缀，脚本内部自动加了v前缀)。
+  ```
+  npm run release:note 2.6.6
   ```
 * https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog
