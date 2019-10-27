@@ -169,3 +169,7 @@ conventional-changelog -p angular -i CHANGELOG.md -s
   npm run release:note 2.6.6
   ```
 * https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog
+
+# commit信息的生成依赖什么？
+* 1、依赖 `规范的commit信息`。
+* 2、依赖 `git的tag`。
