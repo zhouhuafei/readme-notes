@@ -1,6 +1,18 @@
 # 文档
 * https://git-scm.com/book/zh/v2
 
+# Git查看与修改用户名、邮箱
+* 查看
+```
+git config user.name
+git config user.email
+```
+* 修改
+```
+git config --global user.name "xxx"
+git config --global user.email "xxx"
+```
+
 # 新建分支
 ```
 git checkout -b branchName
