@@ -54,3 +54,14 @@ server {
         server 10.1.22.35:12345;
     }
     ```
+    
+# 其他
+* 负载均衡时，如果某个服务器down掉了，会被自动剔除。
+* weight(权重)默认为1，权重越高，被分配的客户端越多。
+```
+upstream balanceServer {
+    server 10.1.22.33:12345 weight=1;
+    server 10.1.22.34:12345 weight=5;
+    server 10.1.22.35:12345 weight=10;
+}
+```
