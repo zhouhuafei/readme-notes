@@ -198,6 +198,40 @@ http {
 }
 ```
 
+# error_page
+> 指令error_page的作用是当发生错误的时候能够显示一个预定义的uri。
+* 用法1-1：产生了一个内部跳转(internal redirect)，当访问出现502、503的时候就能返回50x.html中的内容。
+```
+error_page 500 502 503 504 /50x.html
+location = /50x.html {
+    root /usr/share/nginx/html;
+}
+```
+* 用法1-2：这样用户访问产生502 、503的时候给用户的返回状态是200，内容是50x.html。
+```
+error_page 502 503 =200 /50x.html;
+location = /50x.html {
+    root /usr/share/nginx/html;
+}
+```
+* 用法2：设置一个named location，然后在里边做对应的处理。
+```
+error_page 500 502 503 504 @jump_to_error;
+location @jump_to_error {    
+    # ...do something
+}
+```
+* 用法3-1：能够通过使客户端进行302、301等重定向的方式处理错误页面，默认状态码为302。
+```
+error_page 403      http://example.com/forbidden.html;
+error_page 404 =301 http://example.com/notfound.html;
+```
+* 用法3-2：自定义404错误页面配置中有无等号的区别。
+```
+error_page 404   /404.html 可显示自定义404页面内容，正常返回404状态码。
+error_page 404 = /404.html 可显示自定义404页面内容，但返回200状态码。
+```
+
 # location
 * 前缀含义(匹配)
   - =   ：表示精确匹配。只有请求的 url 路径与后面的字符串完全相等时，才会命中。命中后nginx停止搜索其他匹配。
