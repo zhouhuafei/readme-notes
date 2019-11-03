@@ -1,3 +1,7 @@
+* 设置淘宝源
+```
+npm config set registry https://registry.npm.taobao.org
+```
 * 使用默认的配置来创建package.json文件
 ```
 npm init --yes

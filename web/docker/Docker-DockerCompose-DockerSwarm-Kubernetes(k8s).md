@@ -18,3 +18,9 @@ Kubernetes它本身的角色定位是和Docker Swarm 是一样的，也就是说
 
 # 总结
 Docker是容器技术的核心、基础，Docker Compose是一个基于Docker的单主机容器编排工具，功能并不像Docker Swarm和Kubernetes是基于Dcoker的跨主机的容器管理平台那么丰富。
+
+# 个人感悟
+* 个人项目以及中小型项目使用`Docker-Compose`即可。
+* `Kubernetes`超出我目前的知识范畴了，就暂且搁置吧。
+* `Kubernetes`是运维人员的主攻方向，很多概念我都没听过，暂且就不在`Kubernetes`上浪费时间了。
+* 术业有专攻。

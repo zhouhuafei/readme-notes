@@ -11,4 +11,4 @@ fatal: early EOF
 fatal: index-pack failed
 ```
 * 原因：移动宽带网络问题
-* 解决方案：使用手机热点
+* 解决方案：使用手机热点(我使用的是联通手机热点)

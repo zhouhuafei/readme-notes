@@ -189,3 +189,9 @@ npx conventional-changelog -p angular -i CHANGELOG.md -s
 * 1、依赖 `规范的commit信息`。
 * 2、依赖 `git的tag`。
 * 3、初始化(`npm run changelog:init`)生成的`CHANGELOG.md`文件，其内容中的版本号，依赖`package.json中的version字段`。
+
+# 全局安装`git-cz`的好处
+* 不用安装`commitizen`。
+* 不用配置`git-cz`。
+* 在项目中直接使用`git cz`进行`commit`即可。
+* 亲测，全局安装`git-cz`，即可直接使用`git cz`。
