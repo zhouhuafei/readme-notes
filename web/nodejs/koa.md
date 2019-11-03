@@ -1,5 +1,5 @@
 # 异步响应-居然无效
-* 错误写法
+* 错误写法。接口会返回`Not Found`。状态码为`404`。
 ```
 router.get('/crawler', (ctx, next) => {
   setTimeout(function () {
@@ -15,12 +15,51 @@ router.get('/crawler', (ctx, next) => {
   return new Promise(function (resolve, reject) {
     setTimeout(function () {
       ctx.body = JSON.stringify({
-        html: 'hehe'
+        html: 'hello world'
       })
       resolve(next())
     }, 3000)
   })
 })
+```
+* 如果路由的第二参数和第三参数都存在，则都需要返回`Promise`。否则接口会返回`Not Found`。状态码为`404`。
+```
+router.get(
+  '/crawler',
+  (ctx, next) => {
+    return new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        resolve(next())
+      }, 3000)
+    })
+  },
+  (ctx, next) => {
+    return new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        ctx.body = JSON.stringify({
+          html: 'hello world'
+        })
+        resolve(next())
+      }, 3000)
+    })
+  }
+)
+```
+* 去掉定时器可改为
+```
+
+router.get(
+  '/crawler',
+  async (ctx, next) => {
+    return next()
+  },
+  async (ctx, next) => {
+    ctx.body = JSON.stringify({
+      html: 'hello world'
+    })
+    return next()
+  }
+)
 ```
 
 # 文件上传`koa-multer`
