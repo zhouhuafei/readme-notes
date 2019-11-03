@@ -48,15 +48,23 @@ docker容器可以理解为在沙盒中运行的进程。这个沙盒包含了�
 * docker run 容器名 运行一个容器
 * docker run -it 容器名 通过docker的两个参数 -i -t，让docker运行的容器实现"对话"的能力
     - -t: 在新容器内指定一个伪终端或终端。
-    - -i: 允许你对容器内的标准输入 (STDIN) 进行交互。
+    - -i: 以交互模式运行容器，通常与 -t 同时使用。允许你对容器内的标准输入(STDIN)进行交互。
     - -d: 让容器在后台运行。
     - -p: 将容器内部使用的网络端口映射到我们使用的主机上。
     - --name="containerName": 为容器指定一个名称。
 * docker run -it centos
     - 此时我们已进入一个 centos 系统的容器
+* docker run -ti node
+    - 进入nodejs的命令行交互界面
+* docker run -ti node bash
+    - 进入node镜像所在系统的命令行交互界面
 * docker exec -it containerID bash
     - /bin/bash
     - 进入容器的命令行交互界面
+    - `docker exec`：在运行的容器中执行命令。
+* `docker run -it nginx:latest /bin/bash`
+  - 使用镜像nginx:latest以交互模式启动一个容器,在容器内执行/bin/bash命令。
+  - 这样写和上边是一样的效果：`docker run -it nginx bash`
 * 使用 docker stop 命令来停止容器
 * 通过运行 exit 命令或者使用 Ctrl + d 来退出容器。
 
@@ -127,7 +135,7 @@ RUN yum install -y cairo cairo-devel cairomm-devel libjpeg-turbo-devel pango pan
 
 # win7 - docker挂载踩坑
 * 在windows系统下面使用Docker Toolbox的vitualbox创建的默认虚拟主机默认只挂载了c盘到虚拟主机上。
-  - 所以在使用docker run -v参数挂载数据卷的时候，只能挂载windows下的c盘到容器中。 
+  - 所以在使用docker run -v参数挂载数据卷的时候，只能挂载windows下的c盘到容器中。
   - 如果需要挂载e盘到虚拟主机，需要到vitualbox的设置下面去设置共享文件夹。增加e盘的共享。然后重启虚拟机。
 * linux系统下只需要把用户加进docker分组就行 sudo usermod -aG docker 用户名。
 
