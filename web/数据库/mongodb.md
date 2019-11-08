@@ -26,6 +26,10 @@ fork = true
 ```
 $ launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist
 ```
+* 我亲测，上面的停止mongodb server的自启动无效，需要进行如下次操作才行。
+```
+rm /Users/zhouhuafei/Library/LaunchAgents/homebrew.mxcl.mongodb.plist
+```
 * 启动mongodb数据库
 ```
 brew services start mongodb
