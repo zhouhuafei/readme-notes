@@ -455,3 +455,27 @@ location / {
     - 负载均衡
     - 上面的nginx代理配置都属于反向代理，都是替代服务器接受客户端的请求。
     - nginx也可以用来配置正向代理。但是主要是用来做反向代理的。
+
+# `root`和`alias`的区别
+* `root`的处理结果是：`root路径＋location路径`。
+* `alias`的处理结果是：`使用alias路径替换location路径`。
+  - 使用`alias`时，`alias`目录后面带不带`/` 需要跟`location`保持一致。
+  - `alias`只能位于`location`块中。`root`可以不放在`location`中。
+  - `alias`在使用正则匹配时，必须捕捉要匹配的内容并在指定的内容处使用。
+  ```
+  location ~ ^/static/(.+\.(?:gif|jpe?g|png))$ {
+    alias /usr/share/nginx/html/$1;
+  }
+  ```
+* 如果一个请求的`URI`是`/static/a.html`时，web服务器将会返回服务器上的`/usr/share/nginx/html/static/a.html`的文件。
+```
+location ^~ /static/ {
+  root /usr/share/nginx/html/;
+}
+``` 
+* 如果一个请求的`URI`是`/static/a.html`时，web服务器将会返回服务器上的`/usr/share/nginx/html/a.html`的文件。
+```
+location ^~ /static/ {
+  alias /usr/share/nginx/html/;
+}
+``` 
