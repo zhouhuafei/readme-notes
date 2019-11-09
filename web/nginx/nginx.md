@@ -472,10 +472,15 @@ location / {
 location ^~ /static/ {
   root /usr/share/nginx/html/;
 }
-``` 
+```
 * 如果一个请求的`URI`是`/static/a.html`时，web服务器将会返回服务器上的`/usr/share/nginx/html/a.html`的文件。
 ```
 location ^~ /static/ {
   alias /usr/share/nginx/html/;
 }
-``` 
+```
+```
+location ^~ /static {
+  alias /usr/share/nginx/html;
+}
+```
