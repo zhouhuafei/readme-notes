@@ -151,7 +151,7 @@ RUN yum install -y cairo cairo-devel cairomm-devel libjpeg-turbo-devel pango pan
 
 # 在`ubuntu`中使用`Docker`
 ```
-# 安装docker
+# 安装docker-ce(社区版-免费) docker-ee(企业版-收费)
 sudo apt-get install docker-ce
 
 # 启动docker
