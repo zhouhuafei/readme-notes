@@ -148,3 +148,18 @@ RUN yum install -y cairo cairo-devel cairomm-devel libjpeg-turbo-devel pango pan
     - 上面的配置里还记录了一些坑点，以及一些配置教程，还请自行参阅。
 * docker-compose up
     - -d 后台运行
+
+# 在`ubuntu`中使用`Docker`
+```
+# 安装docker
+sudo apt-get install docker-ce
+
+# 启动docker
+sudo service docker start
+
+# 停止docker
+sudo service docker stop
+
+# 重启docker
+sudo service docker restart
+```
