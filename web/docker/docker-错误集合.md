@@ -37,6 +37,7 @@ Error response from daemon: Get https://index.docker.io/v1/search?q=ubuntu&n=25:
   > 或者
   - 先找到守护进程文件：`sudo find / -name daemon.json`。
   - 再修改守护进程文件：在`registry-mirrors`对应的数组中加入：http://141e5461.m.daocloud.io
-    - https://3laho3y3.mirror.aliyuncs.com
-    - http://f1361db2.m.daocloud.io
+    - http://141e5461.m.daocloud.io 亲测可用，但是mysql镜像总是pull失败。
+    - https://3laho3y3.mirror.aliyuncs.com 亲测可用，mysql镜像可以pull成功。
+    - http://f1361db2.m.daocloud.io 没测。
   - 重启`docker`。
