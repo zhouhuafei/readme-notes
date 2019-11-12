@@ -100,3 +100,6 @@ app.listen(8080, () => {
   console.log('127.0.0.1:8080')
 })
 ```
+
+# `koa-body`接收文件流
+* 客户端以`file`字段进行传输：`ctx.request.body.files.file`。
