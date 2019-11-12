@@ -147,7 +147,8 @@ RUN yum install -y cairo cairo-devel cairomm-devel libjpeg-turbo-devel pango pan
     - `-d`：后台运行。
   - `docker-compose down`：停止并删除所有容器。
   - `docker-compose restart`：重启所有容器。
-* 案例：https://github.com/zhouhuafei/readme-notes/blob/master/web/docker/docker-compose.md
+* 案例1：https://github.com/zhouhuafei/readme-notes/blob/master/web/docker/docker-compose.md
+* 案例2：https://github.com/zhouhuafei/docker-compose-config
 
 # 在`ubuntu`中使用`Docker`
 ```
