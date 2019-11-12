@@ -127,7 +127,7 @@ app.use(koaBody({
     onFileBegin: (name, file) => { // 文件上传前的设置。
       // console.log('name', name)
       // console.log('file', file)
-      file.path = file.path.replace('upload_', 'upload-new_')
+      // file.path = file.path.replace('upload_', 'upload-new_')
     }
   }
 }))
