@@ -37,4 +37,6 @@ Error response from daemon: Get https://index.docker.io/v1/search?q=ubuntu&n=25:
   > 或者
   - 先找到守护进程文件：`sudo find / -name daemon.json`。
   - 再修改守护进程文件：在`registry-mirrors`对应的数组中加入：http://141e5461.m.daocloud.io
+    - https://3laho3y3.mirror.aliyuncs.com
+    - http://f1361db2.m.daocloud.io
   - 重启`docker`。
