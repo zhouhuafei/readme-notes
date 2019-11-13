@@ -9,6 +9,7 @@ async function onChange (e) {
   formData.append('b', '2')
   formData.append('c', '3')
   const files = e.target.files
+  if (!files.length) return
   Object.keys(files).forEach(key => {
     formData.append('file', files[key]) // 单张或多张图片上传。
   })
