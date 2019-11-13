@@ -10,6 +10,8 @@ async function onChange (e) {
   formData.append('c', '3')
   formData.append('file', e.target.files[0]) // 多张图片要多个键值对，后端也是多个键值对接收，建议多次打接口。
   // formData.append('file2', e.target.files[1]) // 多张图片要多个键值对，后端也是多个键值对接收，建议多次打接口。
+  for (let item of formData) console.log(item) // 读取formData中的数据，不能通过formData.a的形式获取。
+  formData.forEach((v, i, a) => console.log(v, i, a)) // 读取formData中的数据，不能通过formData.a的形式获取。
   const res = await axios({
     method: 'post',
     url: 'http://127.0.0.1:3000/upload',
