@@ -123,7 +123,7 @@ app.use(koaBody({
   formidable: {
     keepExtensions: true, // 保持文件的后缀。
     uploadDir: path.join(__dirname, 'upload'), // 设置文件上传目录。
-    maxFieldsSize: 2 * 1024 * 1024, // 设置上传文件大小最大限制，默认2M。
+    maxFileSize: 2 * 1024 * 1024, // 设置上传文件大小最大限制，默认2M。
     onFileBegin: (name, file) => { // 文件上传前的设置。
       // console.log('name', name)
       // console.log('file', file)
