@@ -64,6 +64,7 @@ router.get(
 * 同步直接`next()`即可。不需要返回值，只要涉及到异步，则全都需要返回`Promise`。
 
 # 文件上传`koa-multer`
+> 没必要使用这个包，使用`koa-body`包就足够了。
 ```
 const Koa = require('koa')
 const path = require('path')
