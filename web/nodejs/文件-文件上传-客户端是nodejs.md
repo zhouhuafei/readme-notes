@@ -8,8 +8,10 @@ async function onChange (e) {
   formData.append('a', '1')
   formData.append('b', '2')
   formData.append('c', '3')
-  formData.append('file', e.target.files[0]) // 多张图片要多个键值对，后端也是多个键值对接收，建议多次打接口。
-  // formData.append('file2', e.target.files[1]) // 多张图片要多个键值对，后端也是多个键值对接收，建议多次打接口。
+  const files = e.target.files
+  Object.keys(files).forEach(key => {
+    formData.append('file', files[key]) // 单张或多张图片上传。
+  })
   for (let item of formData) console.log(item) // 读取formData中的数据，不能通过formData.a的形式获取。
   formData.forEach((v, i, a) => console.log(v, i, a)) // 读取formData中的数据，不能通过formData.a的形式获取。
   const res = await axios({
@@ -46,15 +48,18 @@ const FormData = require('form-data')
 module.exports = (ctx, next) => {
   const req = ctx.request
   const body = req.body // multipart/form-data 类型的普通数据
-  const file = req.files.file //  multipart/form-data 类型的文件数据(文件被上传到服务器之后的数据，其中包含文件在服务端的存储路径和文件大小等)
+  let file = req.files.file //  multipart/form-data 类型的文件数据(文件被上传到服务器之后的数据，其中包含文件在服务端的存储路径和文件大小等)
+  if (!file.length) file = [file]  // 单张图片上传兼容多张图片上传
   // 从本服务器把图片上传到另外一台服务器。
   return new Promise(async (resolve) => {
-    const fileData = fs.createReadStream(file.path)
     const formData = new FormData()
     formData.append('a', '1')
     formData.append('b', '2')
     formData.append('c', '3')
-    formData.append('file', fileData) // 多张图片要多个键值对，后端也是多个键值对接收，建议多次打接口。
+    file.forEach(v => {
+      const fileData = fs.createReadStream(v.path)
+      formData.append('file', fileData)
+    })
     await axios({
       method: 'post',
       url: 'http://127.0.0.1:3001/upload',
