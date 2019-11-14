@@ -140,3 +140,23 @@ require('./router/index')(app)
 app.listen(3000)
 console.log('http://127.0.0.1:3000')
 ```
+* `koa-body`的正确使用方式：配合`koa-router`使用。
+> 非全局使用，路由可控，毕竟不是所有的路由都需要图片上传功能。
+```
+const Koa = require('koa')
+const app = new Koa()
+const router = require('koa-router')()
+const koaBody = require('koa-body')
+
+router.post(
+  '/users',
+  koaBody(),
+  (ctx) => {
+    ctx.body = JSON.stringify(ctx.request.body)
+  }
+)
+
+app.use(router.routes()).use(router.allowedMethods())
+
+app.listen(3000)
+```
