@@ -1,3 +1,11 @@
+# ArrayBuffer
+* https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer
+* ArrayBuffer 对象用来表示通用的、固定长度的原始二进制数据缓冲区。
+* ArrayBuffer 不能直接操作，而是要通过类型数组对象或 DataView 对象来操作，它们会将缓冲区中的数据表示为特定的格式，并通过这些格式来读写缓冲区的内容。
+
+# DataView
+* DataView 视图是一个可以从 ArrayBuffer 对象中读写多种数值类型的底层接口，使用它时，不用考虑不同平台的字节序问题。
+
 # Blob对象
 * https://developer.mozilla.org/zh-CN/docs/Web/API/Blob
 * Blob 对象表示一个不可变、原始数据的类文件对象。Blob 表示的不一定是JavaScript原生格式的数据。File 接口基于Blob，继承了 blob 的功能并将其扩展使其支持用户系统上的文件。
