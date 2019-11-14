@@ -178,3 +178,16 @@ git reflog
 ```
 git reset --hard f82cfd2
 ```
+
+# 忽略目录`upload`但是不忽略目录`upload/.gitkeep`文件
+> 在`.gitignore`增加一下内容即可。注：如果排除了该文件的父级目录，则使用`!`也不会再次被包含。
+* 错误写法：
+```
+upload
+!upload/.gitkeep
+```
+* 正确写法：
+```
+upload/*
+!upload/.gitkeep
+```
