@@ -45,23 +45,21 @@ router.get(
   }
 )
 ```
-* 去掉定时器可改为
+* 建议使用`async`，`async`定义的方法，默认返回Promise对象。
 ```
-
 router.get(
   '/crawler',
   async (ctx, next) => {
     return next()
   },
   async (ctx, next) => {
-    ctx.body = JSON.stringify({
-      html: 'hello world'
-    })
+    ctx.body = ctx.request.query
     return next()
   }
 )
 ```
 * 同步直接`next()`即可。不需要返回值，只要涉及到异步，则全都需要返回`Promise`。
+* 建议都按照上述`async`的使用方式进行使用。
 
 # 文件上传`koa-multer`
 > 没必要使用这个包，使用`koa-body`包就足够了。
