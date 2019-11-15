@@ -10,5 +10,5 @@
 * delete：delete from tableName;
 * update：update tableName set key=val;
 * select：select col from tableName;
-* asc 升序
-* desc 降序
+  - asc：升序
+  - desc：降序
