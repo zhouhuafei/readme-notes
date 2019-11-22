@@ -5,15 +5,14 @@
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-      word-break: break-all;
     }
     ```
     - 多行省略号
     ```css
     .g-ellipsis {
       overflow: hidden;
-      text-overflow: ellipsis;
       white-space: normal;
+      text-overflow: ellipsis;
       word-break: break-all;
       display: -webkit-box;
       -webkit-box-orient: vertical;
