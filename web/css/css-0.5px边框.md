@@ -10,6 +10,8 @@
     bottom: -50%;
     transform: scale(0.5);
     border: 1px solid #f00;
+    box-sizing: border-box;
+    pointer-events: none;
   }
 }
 ```
