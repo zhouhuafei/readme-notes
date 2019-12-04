@@ -191,3 +191,18 @@ Object.getPrototypeOf(new B()).constructor.name // 'B'
         - 如果参数是个数字，它代表有多少的空格；上限为10。该值若小于1，则意味着没有空格；
         - 如果该参数为字符串(字符串的前十个字母)，该字符串将被作为空格；
         - 如果该参数没有提供（或者为null）将没有空格。
+
+* 数组上移和下移
+```
+/**
+ * @param {Array} arr - 数组本身
+ * @param {Number} num - 数组索引
+ * @param {Number} dir - 1上移 -1下移
+ * */
+function move (arr, num, dir) {
+  if (dir === -1 && num === arr.length - 1) return arr
+  if (dir === 1 && num === 0) return arr
+  arr[num] = arr.splice(num - dir, 1, arr[num])[0]
+  return arr
+}
+```
