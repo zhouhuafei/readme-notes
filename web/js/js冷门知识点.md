@@ -197,7 +197,7 @@ Object.getPrototypeOf(new B()).constructor.name // 'B'
 /**
  * @param {Array} arr - 数组本身
  * @param {Number} num - 数组索引
- * @param {Number} dir - 1上移 -1下移
+ * @param {Number} dir - 1上移(左移) -1下移(右移)
  * */
 function move (arr, num, dir) {
   if (dir === -1 && num === arr.length - 1) return arr
