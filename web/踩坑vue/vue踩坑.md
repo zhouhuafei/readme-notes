@@ -871,6 +871,7 @@ export default Vue.extend({
 ```
 
 # 如何手动调用`Vue`的钩子函数？
+> 调用时需注意this指向。可使用call或者apply进行this指向修正。
 * 在`Vue`实例中，钩子方法是直接绑定在`$options`上的，直接使用`this.$options`调用即可。
 * 在`VueComponent`实例中，钩子方法是绑定在`$options`的`__proto__`上的，使用`this.$options`调用即可。
 
