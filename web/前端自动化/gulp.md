@@ -21,7 +21,7 @@ const concat = require('gulp-concat'); // 文件合并
 ```
 
 # 实践
-* https://github.com/zhouhuafei/luck-draw_scroll
+* https://github.com/zhouhuafei/luck-draw_scroll/blob/master/gulpfile.js
 
 # 微信小程序转百度小程序
 * 我给 https://github.com/zhouhuafei/hello-world_mp-baidu 项目配置了一份微信小程序转百度小程序的配置。
