@@ -73,3 +73,11 @@ const concat = require('gulp-concat'); // 文件合并
     - ```Cannot delete files/folders outside the current working directory. Can be overriden with the `force` option.```
     - 原因：del默认不能删除配置目录外部的文件。
     - 解决方案：```del([`${__dirname}/../dist/${name}/static/decoration`], {force: true})```
+
+# gulp.series 和 gulp.parallel
+> gulp 4
+* gulp.series 用于串行(顺序)执行
+* gulp.parallel 用于并行执行
+```
+gulp.task('build', gulp.series('clean-dist', 'create-wxss', 'min-img', 'min-js', 'dev-json', 'dev-wxml', 'dev-wxs', 'dev-wxss'))
+```
