@@ -67,9 +67,9 @@ div {
   - 解决方案2：使用多行省略号模拟单行省略号。
 * flex主侧轴简介
     - 主轴：默认水平线(x轴)
-        - align-items: center; 控制主轴对齐方式
+        - justify-content: center; 控制主轴对齐方式
     - 侧轴：默认垂直线(y轴)
-        - justify-content: center; 控制侧轴对齐方式
+        - align-items: center; 控制侧轴对齐方式
     - 修改主侧轴：flex-direction: column; 修改主轴为垂直线(y轴)，则侧轴自动变为水平线(x轴)。
 
 * 贝塞尔曲线
