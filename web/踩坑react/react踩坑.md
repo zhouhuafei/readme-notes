@@ -54,6 +54,16 @@ ReactDOM.render(
       );
     }
     ```
+    - 其他方案：返回一个数组。
+    ```
+    render() {
+      return [
+        <div key="id1">div1</div>,
+        <div key="id2">div2</div>,
+        <div key="id3">div3</div>
+      ]
+    }
+    ```
 
 # 父子通信
 * 父传子 props
