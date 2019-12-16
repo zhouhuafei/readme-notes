@@ -38,8 +38,10 @@
 # js
 ### es5
 * js有哪些数据类型？
-  - 7种原始数据类型：`Boolean、Null、Undefined、Number、String、Symbol、BigInt`。
-  - 1中Object类型。
+```
+1、7种原始数据类型：`Boolean、Null、Undefined、Number、String、Symbol、BigInt`。
+2、1种Object类型。
+```
 * 字符串变数组？`split`。
 * 数组变字符串？`join`。
 * 数组常用方法？`unshift、shift、push、pop、slice、splice、find、findIndex、forEach、filter、map`。
@@ -47,20 +49,23 @@
 * 数组左移右移？`arr[num] = arr.splice(num - dir, 1, arr[num])[0]`。
 * 类数组转数组怎么转？`Array.from(arrayLike)`。
 * 数组扁平化？`[[1], [2]].flat(2)`。
+* 数组排序？`sort、reverse`。
 * 什么是稀疏数组？稀疏数组能使用forEach、map、filter等方法么？稀疏数组怎么转密集数组？
 ```
-* Array.apply(null, Array(5))
-* [...Array(5)]
+1、Array.apply(null, Array(5))
+2、[...Array(5)]
 ```
 * 类数组转数组
 ```
-* Array.from({length: 5}) // 转出来的是密集数组
-* Array.prototype.slice.call({length:10}) // 转出来的是稀疏数组
+1、Array.from({length: 5}) // 转出来的是密集数组
+2、Array.prototype.slice.call({length:10}) // 转出来的是稀疏数组
 ```
 * 有以下3个判断数组的方法，请分别介绍它们之间的区别和优劣`Object.prototype.toString.call()`、`instanceof`以及`Array.isArray()`。
-  - Object.prototype.toString.call无法判断自定义的构造函数。 自定义的会返回`[object Object]`。
-  - Array.isArray优于instanceof，因为Array.isArray和Object.prototype.toString.call可以检测出iframe中的arr，而instanceof不能。
-  - instanceof只能用来判断对象类型，原始类型不可以。并且所有对象类型instanceof Object都是 true，且不同于其他两种方法的是它不能检测出iframe。
+```
+1、Object.prototype.toString.call无法判断自定义的构造函数。 自定义的会返回`[object Object]`。
+2、Array.isArray优于instanceof，因为Array.isArray和Object.prototype.toString.call可以检测出iframe中的arr，而instanceof不能。
+3、instanceof只能用来判断对象类型，原始类型不可以。并且所有对象类型instanceof Object都是 true，且不同于其他两种方法的是它不能检测出iframe。
+```
 * `===` 与 `==` 的区别？`前者不会隐式类型转换，后者会`。
 * null和undefined的区别？`undefined派生于null`。
 * [] == ![]？`true`。
@@ -72,10 +77,11 @@
 * 事件冒泡和事件捕获?
 * 怎么阻止事件冒泡和事件的默认行为？
 * 事件委托？
-* call和apply以及bind的区别？
+* call和apply以及bind的区别？取数组最大值？
 * 什么是函数去抖？什么是函数节流？
-* 什么是作用域链？
-* 什么是原型链？
+* 什么是变量预解析和函数预解析？函数声明式和函数表达式哪种会预解析？预解析的权重？`函数>形参>变量`。
+* 作用域链的工作流程？
+* 原型链的工作流程？
 * Object.create 有什么作用？`Object.create()方法创建一个新对象，使用现有的对象来提供新创建的对象的__proto__`。
 * new 的原理是什么？通过 new 的方式创建对象和通过字面量创建有什么区别？`字面量创建对象，不会调用 Object构造函数, 简洁且性能更好`。
 * new操作符具体干了什么呢？
@@ -85,18 +91,27 @@
 3、执行构造函数，将this绑定到新对象上，通常是给新对象赋值
 4、如果函数没有返回其他对象，那么this指向这个新对象，否则this指向构造函数中返回的对象
 ```
+* 什么是闭包？为什么要使用闭包？`闭包就是能够读取其他函数内部变量的函数。为了访问其他函数内部的变量，防止全局变量污染，可以用私有变量模拟私有属性，可以用私有函数模拟私有方法`。
+### 应用
+* 写一个简单校验手机号的正则？`/^1\d{10}$/`。
+* 写一个1-3的随机数？`Math.round(Math.random() * (3 - 1)) + 1`。
+* `['1', '2', '3'].map(parseInt)` 答案是多少？`[1, NaN, NaN]`。
+### 高级
+* 什么是函数柯里化？实现sum(1)(2)(3)返回结果是1,2,3之和？待续...
+* 什么是函数式编程？待续...
 ### es6
-* 什么是变量提升？什么是暂时性死区？`使用let命令声明变量之前，该变量都是不可用的。这在语法上，称为暂时性死区`。
 * var let const？
-* 解构赋值？
+* 什么是暂时性死区？`使用let命令声明变量之前，该变量都是不可用的。这在语法上，称为暂时性死区`。
+* 解构赋值？实现变量交换。
 * 字符串模板？
-* 模块？
-* 类？
-* 扩展运算符？
+* 扩展运算符？用在函数的入参里？用在对象上？
+* 模块？导出和导入？
+* 类？原型如何实现继承？Class 如何实现继承？Class 本质是什么？
 ### Promise和async以及await
-* Promise是怎么使用的？
+* Promise是怎么使用的？使用Promise实现串行和并行？
 * async和await怎么使用？
-* await的返回值？
+* 使用async定义的函数的返回值？await的返回值？
+* async内多个await如何并行请求？
 
 # html5
 * canvas和svg图形的区别是什么？`位图和矢量图`。
@@ -114,11 +129,28 @@
 * 设置什么属性可以使某条cookie不能被js获取到？`httpOnly`。
 
 # token
-* CSRF是什么？
+* CSRF是什么？怎么预防？
 
 # vue
-* 基础语法？
-* $set的作用？
+* v-if 和 v-show 有什么区别?
+* v-for与v-if当它们处于同一节点的优先级？`v-for 具有比 v-if 更高的优先级`。
+* 如何将原生事件绑定到组件？`.native、$listeners`。
+* Vue 组件中 data 为什么必须是函数？`当 data 的值是一个对象时，它会在这个组件的所有实例之间共享`。
+* vue更新数组时触发视图更新的方法？`Vue.set或this.$set`。
+* $nextTick 的作用？`在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM`。
+* 如何让 CSS 只在当前组件中起作用？`scoped`。
+* key的作用？`防止Vue对DOM的就地复用，让DOM具有唯一性`。
+* vue生命周期钩子函数有哪些？
+* .sync修饰符？
+* 父子组件通信？
+* vue的单向数据流和双向数据绑定？
+```
+1、单项数据流是指所有的 prop 都使得其父子 prop 之间形成了一个单向下行绑定。父级 prop 的更新会向下流动到子组件中，但是反过来则不行。这样会防止从子组件意外改变父级组件的状态，从而导致你的应用的数据流向难以理解。
+2、双向数据绑定v-model是语法糖，本质还是单项数据流。
+```
+* v-model是什么的简写？自定义组件怎么使用v-model？
+* vue是怎么实现数据响应式更新的？`Object.defineProperty set get`。
+
 # vue-router
 # vuex
 # 字体图标
