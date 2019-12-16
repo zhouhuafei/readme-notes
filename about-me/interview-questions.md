@@ -6,8 +6,20 @@
 
 # css
 ### css2
+* 标准盒模型和怪异盒模型？
+* box-sizing的用途？
+* flex怎么用？
+* 不定宽高如何让盒子垂直水平居中？
+* 如果让兄弟盒子上下margin不重叠？
+* 如果让margin-top和margin-bottom不穿透父级？
 ### css3
+* 如果加过渡效果？transition
+* 如果定义动画？@keyframes
+* nth-of-type和nth-child的区别？
 ### scss
+* 如何定义变量？
+* 如果定义函数？
+* 如果定义mixin？
 
 # js
 ### es5
@@ -21,7 +33,10 @@
 * async和await怎么使用？
 * await的返回值？
 
+# html5
+
 # cookie
+* 请求跨域了，默认会携带cookie么？跨域怎么携带cookie？
 
 # token
 
@@ -34,3 +49,5 @@
 # mini program
 
 # git
+
+# http
