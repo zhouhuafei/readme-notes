@@ -46,6 +46,9 @@
 * await的返回值？
 
 # html5
+* 视频音频api？
+* canvas？
+* 导航？
 
 # cookie
 * cookie的基础格式？
@@ -60,9 +63,14 @@
 * $set的作用？
 # vue-router
 # vuex
+# 字体图标
 
 # mini program
+* 循环和判断？
+* 跳转方式？
 
 # git
+* 常用命令？
 
 # http
+* 常见状态码？
