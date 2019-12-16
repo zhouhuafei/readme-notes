@@ -87,11 +87,27 @@ $.ajax({
     crossDomain: true, // 允许跨域
 });
 ```
-* 总结：在后端允许，以及ajax请求设置上允许携带cookie以后。(Firefox浏览器支持，Chrome浏览器不支持，此法行不通)
+* 总结：在后端允许，以及ajax请求设置上允许携带cookie以后。
     - 请求头里会有cookie信息。
     - 响应头里也可以进行set-cookie。
     - 此时跨主域设置cookie就没有任何问题了。那跨主域验证登录也就不成问题了。
-    - 注意：Firefox浏览器支持，Chrome浏览器不支持，所以此法还是行不通的。
+    - 问题：Firefox浏览器支持，Chrome浏览器不支持。
+    - 解决方案：`res.cookie('key', 'value', { sameSite: 'none' })`。
+
+# SameSite属性
+> http://www.ruanyifeng.com/blog/2019/09/cookie-samesite.html
+* Cookie 的SameSite属性用来限制第三方 Cookie，从而减少安全风险。它可以设置三个值：`Strict、Lax、None`。
+* Strict最为严格，完全禁止第三方 Cookie，跨站点时，任何情况下都不会发送 Cookie。
+* Lax规则稍稍放宽，大多数情况也是不发送第三方 Cookie，但是导航到目标网址的 Get 请求除外。
+* Chrome 计划将Lax变为默认设置。这时，网站可以选择显式关闭SameSite属性，将其设为None。不过，前提是必须同时设置Secure属性（Cookie 只能通过 HTTPS 协议发送），否则无效。
+  - 下面的设置无效。
+  ```
+  Set-Cookie: key=value; SameSite=None
+  ```
+  - 下面的设置有效。
+  ```
+  Set-Cookie: key=value; SameSite=None; Secure
+  ```
 
 # set-cookie的大小写问题
 * axios应用在服务端和服务端通信的时候，可以使用```response.headers['set-cookie']```获取到要设置的cookie。

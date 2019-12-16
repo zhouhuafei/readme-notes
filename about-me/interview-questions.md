@@ -67,9 +67,8 @@
 * 怎么新增cookie？`document.cookie='a=1; domain=.baidu.com'`。
 * 设置cookie时怎么跨子域？`document.cookie='a=1; domain=.baidu.com'`。
 * 请求跨主域了，默认会携带cookie么？`不会`。
-* 跨域怎么携带cookie？`xhr.withCredentials = true`。
-* Chrome浏览器不支持怎么办？待续...
-* 跨域了怎么设置cookie？`iframe postMessage`。
+* 请求跨主域了怎么携带cookie？`xhr.withCredentials = true`。
+* 跨主域怎么设置cookie？例如A网站怎么给B网站设置cookie？`iframe postMessage`。
 * 设置什么属性可以使某条cookie不能被js获取到？`httpOnly`。
 
 # token
