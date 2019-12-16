@@ -123,8 +123,11 @@ git checkout -- xxx.txt
 ```
 
 # 批量删除branch中新加的文件
+> ######    `-n`：    --dry-run         dry run
+> ######    `-f`：    --force           force   
+> ######    `-d`：                      remove whole directories   
 * `-n`：查看会删掉哪些
-* `-f`：删文件
+* `-f`：强制删除
 * `-d`：删目录
 ```
 git clean -nfd
