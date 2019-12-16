@@ -26,8 +26,20 @@
 * js有哪些数据类型？
   - 7种原始数据类型：`Boolean、Null、Undefined、Number、String、Symbol、BigInt`。
   - 1中Object类型。
+* 字符串变数组？
+* 数组变字符串？
+* 对象移除引用？
+* 事件冒泡和事件捕获?
+* 怎么阻止事件冒泡和事件的默认行为？
+* 事件委托？
 * call和apply以及bind的区别？
 ### es6
+* var let const？
+* 解构赋值？
+* 字符串模板？
+* 模块？
+* 类？
+* 扩展运算符？
 ### Promise和async以及await
 * Promise是怎么使用的？
 * async和await怎么使用？
