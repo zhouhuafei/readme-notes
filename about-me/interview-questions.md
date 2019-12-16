@@ -32,3 +32,5 @@
 # vuex
 
 # mini program
+
+# git
