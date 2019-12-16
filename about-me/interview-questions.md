@@ -36,11 +36,13 @@
 * js有哪些数据类型？
   - 7种原始数据类型：`Boolean、Null、Undefined、Number、String、Symbol、BigInt`。
   - 1中Object类型。
-* 字符串变数组？
-* 数组变字符串？
-* 数组常用方法？
-* 数组去重？
-* 数组左移右移？
+* 字符串变数组？`split`。
+* 数组变字符串？`join`。
+* 数组常用方法？`unshift、shift、push、pop、slice、splice、find、findIndex、forEach、filter、map`。
+* 数组去重？`[...new Set([1, 2, 2, 3])]`。
+* 数组左移右移？`arr[num] = arr.splice(num - dir, 1, arr[num])[0]`。
+* 类数组转数组怎么转？`Array.from(arrayLike)`。
+* 数组扁平化？`[[1], [2]].flat(2)`。
 * 对象引用举例？
 * 对象移除引用？
 * 深拷贝和浅拷贝？
