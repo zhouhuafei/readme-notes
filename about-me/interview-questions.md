@@ -60,7 +60,7 @@
 # html5
 * 视频音频api？
 * canvas？
-* 导航？
+* 获取经纬度？
 
 # cookie
 * cookie的基础格式？`a=1; b=2`。
