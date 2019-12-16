@@ -36,7 +36,10 @@
 # html5
 
 # cookie
-* 请求跨域了，默认会携带cookie么？跨域怎么携带cookie？
+* cookie的基础格式？
+* 怎么新增cookie？
+* 请求跨域了，默认会携带cookie么？跨域怎么携带cookie？Chrome浏览器不支持？再测试一次。待续...
+* 跨域了怎么设置cookie？iframe。
 
 # token
 
