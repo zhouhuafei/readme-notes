@@ -63,10 +63,14 @@
 * 导航？
 
 # cookie
-* cookie的基础格式？
-* 怎么新增cookie？
-* 请求跨域了，默认会携带cookie么？跨域怎么携带cookie？Chrome浏览器不支持？再测试一次。待续...
-* 跨域了怎么设置cookie？iframe。
+* cookie的基础格式？`a=1; b=2`。
+* 怎么新增cookie？`document.cookie='a=1; domain=.baidu.com'`。
+* 设置cookie时怎么跨子域？`document.cookie='a=1; domain=.baidu.com'`。
+* 请求跨主域了，默认会携带cookie么？`不会`。
+* 跨域怎么携带cookie？`xhr.withCredentials = true`。
+* Chrome浏览器不支持怎么办？待续...
+* 跨域了怎么设置cookie？`iframe postMessage`。
+* 设置什么属性可以使某条cookie不能被js获取到？`httpOnly`。
 
 # token
 
