@@ -122,6 +122,15 @@ git reset HEAD xxx.txt
 git checkout -- xxx.txt
 ```
 
+# 批量删除branch中新加的文件
+* `-n`：查看会删掉哪些
+* `-f`：删文件
+* `-d`：删目录
+```
+git clean -nfd
+git clean -fd
+```
+
 # commit之后，修改/改写commit(用当前的commit信息替换掉上一个commit信息)。
 * --amend 之后，会有一个vim编辑器让你修改之前的commit信息。
 ```
