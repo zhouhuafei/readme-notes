@@ -42,12 +42,12 @@
 1、7种原始数据类型：`Boolean、Null、Undefined、Number、String、Symbol、BigInt`。
 2、1种Object类型。
 ```
+* typeof的8中返回值：`'object'、'string'、'number'、'boolean'、'function'、'undefined'、'symbol'、'bigint'`。
 * 字符串变数组？`split`。
 * 数组变字符串？`join`。
 * 数组常用方法？`unshift、shift、push、pop、slice、splice、find、findIndex、forEach、filter、map`。
 * 数组去重？`[...new Set([1, 2, 2, 3])]`。
 * 数组左移右移？`arr[num] = arr.splice(num - dir, 1, arr[num])[0]`。
-* 类数组转数组怎么转？`Array.from(arrayLike)`。
 * 数组扁平化？`[[1], [2]].flat(2)`。
 * 数组排序？`sort、reverse`。
 * 什么是稀疏数组？稀疏数组能使用forEach、map、filter等方法么？稀疏数组怎么转密集数组？
@@ -117,16 +117,17 @@
 * canvas和svg图形的区别是什么？`位图和矢量图`。
 * 上传的文件怎么转base64格式？`FileReader`。
 * 你工作中上传文件走的是怎样的流程？七牛云有用过么？使用七牛云上传文件时流程是怎样的？
+* 客户端根据什么识别一张图片应该被预览还是被下载？`Content-Type`。
 
 # cookie
 * 请描述一下 cookies，sessionStorage 和 localStorage 的区别？
 * cookie的基础格式？`a=1; b=2`。
 * 怎么新增cookie？`document.cookie='a=1; domain=.baidu.com'`。
-* 设置cookie时怎么跨子域？`document.cookie='a=1; domain=.baidu.com'`。
+* 设置cookie时怎么让cookie可以跨子域？`document.cookie='a=1; domain=.baidu.com'`。
 * 请求跨主域了，默认会携带cookie么？`不会`。
 * 请求跨主域了怎么携带cookie？`xhr.withCredentials = true`。
-* 跨主域怎么设置cookie？例如A网站怎么给B网站设置cookie？`iframe postMessage`。
-* 设置什么属性可以使某条cookie不能被js获取到？`httpOnly`。
+* 前端跨主域怎么设置cookie？例如A网站怎么给B网站设置cookie？`iframe postMessage`。
+* 服务端设置什么属性可以使某条cookie不能被js获取到？`httpOnly`。
 
 # token
 * CSRF是什么？怎么预防？
