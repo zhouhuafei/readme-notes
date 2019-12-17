@@ -44,7 +44,7 @@
 # 其他
 * cookie的存储只和域名domain以及路径path有关，和端口无关，并不会因为不同的端口而导致cookie不一致。
 
-# 后端允许ajax跨域请求，以及ajax请求携带cookie。
+# 后端允许ajax跨域请求，以及ajax请求携带cookie。再次测试。待续...
 * 注意：经测试，ajax跨域携带cookie，Firefox浏览器支持，Chrome浏览器不支持，所以用此法验证登录不可行。
 * nodejs使用cors模块或者如下：
 ```
