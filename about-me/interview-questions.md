@@ -1,4 +1,4 @@
-> 出面试题。待续...
+> 出面试题。
 
 # html
 * 简述一下你对HTML语义化的理解？`对seo友好，结构清晰，便于阅读`。
@@ -77,7 +77,7 @@
 * 事件冒泡和事件捕获?
 * 怎么阻止事件冒泡和事件的默认行为？
 * 事件委托？
-* call和apply以及bind的区别？取数组最大值？
+* call和apply以及bind的区别？取数组最大值ES5、ES6？`es5 Math.max.apply(null, [14, 3, 77, 30])`。`es6 Math.max(...[14, 3, 77, 30])`。
 * 什么是函数去抖？什么是函数节流？
 * 什么是变量预解析和函数预解析？函数声明式和函数表达式哪种会预解析？预解析的权重？`函数>形参>变量`。
 * 作用域链的工作流程？
@@ -150,17 +150,40 @@
 2、双向数据绑定v-model是语法糖，本质还是单项数据流。
 ```
 * v-model是什么的简写？自定义组件怎么使用v-model？
+* 计算属性和methods的区别？https://cn.vuejs.org/v2/guide/computed.html#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E7%BC%93%E5%AD%98-vs-%E6%96%B9%E6%B3%95 `计算属性是基于它们的响应式依赖进行缓存的。如果你不希望有缓存，请用方法来替代。`
+* 计算属性和watch的区别？https://cn.vuejs.org/v2/guide/computed.html#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7-vs-%E4%BE%A6%E5%90%AC%E5%B1%9E%E6%80%A7 `watch 允许我们执行异步操作 (访问一个 API)，限制我们执行该操作的频率，并在我们得到最终结果前，设置中间状态。这些都是计算属性无法做到的。`
 * vue是怎么实现数据响应式更新的？`Object.defineProperty set get`。
+* 对于vue是一套渐进式框架的理解？
+* 对于MVVM的理解？
 
 # vue-router
+* vue-router 跳转和 location.href 有什么区别？
+* vue-router 如何监听 路由参数 的变化？
+* vue-router 如何实现路由懒加载？
+* vue-router 如何定义嵌套路由？
+* vue-router 动态路由匹配以及使用？
+* vue-router 如何实现权限拦截？
 # vuex
+* vuex是什么？怎么使用？哪种功能场景使用它？
 # 字体图标
 * 使用的什么字体图标？阿里字体图标。
 
 # mini program
-* 跳转方式？
-* 循环和判断？
-* 图片太多太大，占用小程序大小，怎么处理？
+* 常用组件有哪些？`view、text、cover-view、scroll-view、navigator、swiper、swiper-item、picker、button、input、form、canvas`。
+* 常用api有哪些？`wx.getUserInfo、wx.showToast、wx.showModal、wx.showLoading、getStorageSync、wx.previewImage、wx.openLocation`。
+* 跳转方式？`wx.switchTab、wx.reLaunch、wx.redirectTo、wx.navigateTo、wx.navigateBack`。
+* 事件怎么传递数据？`e.currentTarget.dataset`。
+* 小程序页面间有哪些传递数据的方法？`query、setStorageSync`。
+* 如何实现下拉刷新? `"enablePullDownRefresh": true`。`onPullDownRefresh`。
+* 小程序的生命周期有哪些？`onLoad、 onShow、 onReady、onHide、onUnload`。
+* 分包怎么使用？`配置 app.json的subpackages`。
+* 小程序生成某个页面二维码的前提是？`小程序审核通过并已上线，且有对应页面`。
+* 小程序生成的页面二维码，扫码能跳开发版或者体验版的小程序么？`不能`。
+* 怎么在开发阶段保证二维码能正常生成？`中转页`。
+* 怎么本地模拟二维码扫码进入？`模拟器里进行数据模拟`。
+* scene超出32位怎么解决？`存数据库`。
+* 怎么兼容解析二维码参数和query参数？`页面数据接收时进行合并 或 路径参数生成时保证页面转发的数据和页面二维码的数据格式一致`。
+* 小程序如何瘦身？图片太多太大，占用小程序大小，怎么处理？`CDN`。
 
 # git
 * 常用命令？`add、commit、push、pull、checkout、reset --hard`。
@@ -172,5 +195,7 @@
 * 怎么防止缓存？`文件加版本号或加md5`。
 * 什么是CDN，有什么特性？`内容分发网络，会就近找服务器读取被缓存的资源，提高访问速度`。
 
-# 遇到问题怎么解决？
-* 百度一下，你就知道。
+# 综合
+* 接口的错误处理你是怎么做的？
+* 对接口响应的数据，你是怎么做二次处理的？
+* 平常遇到问题都是怎么解决的？`去社区找答案或者百度谷歌找答案`。
