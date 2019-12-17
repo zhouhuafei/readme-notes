@@ -77,7 +77,7 @@
 * 事件冒泡和事件捕获?
 * 怎么阻止事件冒泡和事件的默认行为？
 * 事件委托？
-* call和apply以及bind的区别？取数组最大值？
+* call和apply以及bind的区别？取数组最大值ES5、ES6？`es5 Math.max.apply(null, [14, 3, 77, 30])`。`es6 Math.max(...[14, 3, 77, 30])`。
 * 什么是函数去抖？什么是函数节流？
 * 什么是变量预解析和函数预解析？函数声明式和函数表达式哪种会预解析？预解析的权重？`函数>形参>变量`。
 * 作用域链的工作流程？
@@ -149,10 +149,21 @@
 2、双向数据绑定v-model是语法糖，本质还是单项数据流。
 ```
 * v-model是什么的简写？自定义组件怎么使用v-model？
+* 计算属性和methods的区别？https://cn.vuejs.org/v2/guide/computed.html#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E7%BC%93%E5%AD%98-vs-%E6%96%B9%E6%B3%95
+* 计算属性和watch的区别？https://cn.vuejs.org/v2/guide/computed.html#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7-vs-%E4%BE%A6%E5%90%AC%E5%B1%9E%E6%80%A7 `watch 允许我们执行异步操作 (访问一个 API)，限制我们执行该操作的频率，并在我们得到最终结果前，设置中间状态。这些都是计算属性无法做到的。`
 * vue是怎么实现数据响应式更新的？`Object.defineProperty set get`。
+* 对于vue是一套渐进式框架的理解？
+* 对于MVVM的理解？
 
 # vue-router
+* vue-router 跳转和 location.href 有什么区别？
+* vue-router 如何监听 路由参数 的变化？
+* vue-router 如何实现路由懒加载？
+* vue-router 如何定义嵌套路由？
+* vue-router 动态路由匹配以及使用？
+* vue-router 如何实现权限拦截？
 # vuex
+* vuex是什么？怎么使用？哪种功能场景使用它？
 # 字体图标
 * 使用的什么字体图标？阿里字体图标。
 
