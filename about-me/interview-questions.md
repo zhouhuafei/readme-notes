@@ -1,4 +1,4 @@
-> 出面试题。
+> 出一些简单的面试题，筛选一些熟练工。
 
 # html
 * 简述一下你对HTML语义化的理解？`对seo友好，结构清晰，便于阅读`。
@@ -116,8 +116,6 @@
 # html5
 * canvas和svg图形的区别是什么？`位图和矢量图`。
 * 上传的文件怎么转base64格式？`FileReader`。
-* 你工作中上传文件走的是怎样的流程？七牛云有用过么？使用七牛云上传文件时流程是怎样的？
-* 客户端根据什么识别一张图片应该被预览还是被下载？`Content-Type`。
 
 # cookie
 * 请描述一下 cookies，sessionStorage 和 localStorage 的区别？
@@ -137,9 +135,10 @@
 * v-for与v-if当它们处于同一节点的优先级？`v-for 具有比 v-if 更高的优先级`。
 * 如何将原生事件绑定到组件？`.native、$listeners`。
 * Vue 组件中 data 为什么必须是函数？`当 data 的值是一个对象时，它会在这个组件的所有实例之间共享`。
-* vue更新数组时触发视图更新的方法？`Vue.set或this.$set`。
+* vue怎么通过索引更新数组并触发视图更新？`Vue.set或this.$set`。
 * $nextTick 的作用？`在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM`。
 * 如何让 CSS 只在当前组件中起作用？`scoped`。
+* 在加了scoped的场景下，在父组件中怎么更新子组件的样式？`/deep/`。`或者style无scoped配合独立class进行修改`。
 * key的作用？`防止Vue对DOM的就地复用，让DOM具有唯一性`。
 * vue生命周期钩子函数有哪些？
 * .sync修饰符？
@@ -162,11 +161,10 @@
 * vue-router 如何实现路由懒加载？
 * vue-router 如何定义嵌套路由？
 * vue-router 动态路由匹配以及使用？
+* vue-router 表单页面点了回退怎么给予用户表单还未保存是否确定退出的提示并阻止用户离开？`使用组件内守卫：beforeRouteLeave`。
 * vue-router 如何实现权限拦截？
 # vuex
 * vuex是什么？怎么使用？哪种功能场景使用它？
-# 字体图标
-* 使用的什么字体图标？阿里字体图标。
 
 # mini program
 * 常用组件有哪些？`view、text、cover-view、scroll-view、navigator、swiper、swiper-item、picker、button、input、form、canvas`。
@@ -184,6 +182,10 @@
 * scene超出32位怎么解决？`存数据库`。
 * 怎么兼容解析二维码参数和query参数？`页面数据接收时进行合并 或 路径参数生成时保证页面转发的数据和页面二维码的数据格式一致`。
 * 小程序如何瘦身？图片太多太大，占用小程序大小，怎么处理？`CDN`。
+* 有没有以第三方平台的身份开发过小程序？`SaaS`。
+* extAppid和appid的区别？`前者是租户的appid，后者是第三方平台授权用以开发的小程序`。
+* canvas绘图时，模拟器上正常，真机上不行，问题可能出在哪？`下载域名没配置`。`request合法域名、socket合法域名、uploadFile合法域名、downloadFile合法域名`。
+* 小程序遇到问题第一时间应该去哪里寻求帮助？`小程序社区`。
 
 # git
 * 常用命令？`add、commit、push、pull、checkout、reset --hard`。
@@ -194,8 +196,18 @@
 * Cache-Control是干啥的？`强缓存`。
 * 怎么防止缓存？`文件加版本号或加md5`。
 * 什么是CDN，有什么特性？`内容分发网络，会就近找服务器读取被缓存的资源，提高访问速度`。
+* 客户端根据什么识别一张图片应该被预览还是被下载？`Content-Type`。
 
-# 综合
+# 工作流
+* 阿里字体图标有用过么？
+* 你们是怎么解决接口跨域问题的？`主域：代理、jsonp(仅支持GET)、postMessage`。`子域：document.domain`。
+* 你们前后端接口通信使用的什么数据格式？图片上传一般是以什么格式上传？get的请求头中有Content-Type么？
+```
+application/x-www-form-urlencoded
+application/json
+multipart/form-data
+```
+* 你工作中上传文件走的是怎样的流程？七牛云有用过么？使用七牛云上传文件时流程是怎样的？
 * 接口的错误处理你是怎么做的？
 * 对接口响应的数据，你是怎么做二次处理的？
 * 平常遇到问题都是怎么解决的？`去社区找答案或者百度谷歌找答案`。
