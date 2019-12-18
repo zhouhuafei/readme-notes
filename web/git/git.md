@@ -124,8 +124,8 @@ git checkout -- xxx.txt
 
 # 批量删除branch中新加的文件
 > ######    `-n`：    --dry-run         dry run
-> ######    `-f`：    --force           force   
-> ######    `-d`：                      remove whole directories   
+> ######    `-f`：    --force           force
+> ######    `-d`：                      remove whole directories
 * `-n`：查看会删掉哪些
 * `-f`：强制删除
 * `-d`：删目录
@@ -212,3 +212,10 @@ upload/*
 # 把某分支的文件拷贝到当前分支
 * 案例：`git checkout feat-after-sale src/views/fullreduce/components/list.vue`。
 * 解释：把`feat-after-sale`分支的`src/views/fullreduce/components/list.vue`文件拷贝到当前分支。
+
+# github仓库归档
+> 本仓库已迁移至https://github.com/zhouhuafei/hello-world_cookie 是怎么设置的？
+* 1、进入指定仓库。
+* 2、修改仓库的描述文案，使之变为：本仓库已迁移至 https://github.com/zhouhuafei/hello-world_cookie
+* 3、点击`Settings`进行设置。
+* 4、选择`Archive this repository`进行仓库归档，使之变为只读仓库。
