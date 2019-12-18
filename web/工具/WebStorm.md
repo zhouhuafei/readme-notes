@@ -14,8 +14,10 @@
 * 如果没开启es6，使用const定义变量时，eslint检测工具会报错：```Const definitions are not supported by current JavaScript version```
 
 # 快捷键
-* ```Alt + J```可以选中多个相同的字符串，和sublime的Ctrl+D的作用一样。
-* ```Ctrl + Shift + U```光标所在位置大小写转换。
+* `Alt + J`可以选中多个相同的字符串，和sublime的Ctrl+D的作用一样。
+  - Mac：`Ctrl + G`。
+  - 自定义：`Keymap - Main menu - Edit - Find - Add Selection for Next Occurrence`。
+* `Ctrl + Shift + U`光标所在位置大小写转换。
 
 # WebStorm做Vue项目时卡顿，加了内存条变成16G内存还是卡。
 * 找到WebStorm.exe.vmoptions这个文件。
@@ -78,3 +80,6 @@
   - 导出：`Editor > Code Style > 设置图标 > Export > Intellij IDEA code style XML`
   - 导入：`Editor > Code Style > 设置图标 > Import Scheme > Intellij IDEA code style XML`
   - 我的个人配置：`./WebStorm-CodeStyle.xml`
+
+# windows WebStorm里使用`git log`中文乱码
+* 在命令行输入`set LESSCHARSET=utf-8`即可。
