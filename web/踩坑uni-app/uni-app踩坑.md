@@ -24,7 +24,14 @@ wx.onAppRoute((route) => {
   - MP-WEIXIN
   - MP-ALIPAY
   - MP-BAIDU
+  - MP-TOUTIAO
+  - MP-QQ
   - MP
+  
+# 跨平台差异化编程
+* uni-app：有一套独立的条件编译语法。https://uniapp.dcloud.io/platform?id=%e6%9d%a1%e4%bb%b6%e7%bc%96%e8%af%91
+* chameleon：有一套自研多态协议。https://cml.js.org/doc/framework/polymorphism/intro.html
+* taro：可以在业务逻辑中根据环境变量使用条件编译，也可以直接使用条件编译文件。https://taro-docs.jd.com/taro/docs/envs.html
 
 # 路由监听
 https://github.com/SilurianYang/uni-simple-router
