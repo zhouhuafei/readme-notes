@@ -22,6 +22,21 @@
 # secure属性
 * 当设置为true时，表示创建的cookie会被以安全的形式向服务器传输，也就是只能在HTTPS连接中被浏览器传递到服务器端进行会话验证，如果是HTTP连接则不会传递该信息，所以不会被窃取到cookie的具体内容
 
+# SameSite属性
+> http://www.ruanyifeng.com/blog/2019/09/cookie-samesite.html
+* Cookie 的SameSite属性用来限制第三方 Cookie，从而减少安全风险。它可以设置三个值：`Strict、Lax、None`。
+* Strict最为严格，完全禁止第三方 Cookie，跨站点时，任何情况下都不会发送 Cookie。
+* Lax规则稍稍放宽，大多数情况也是不发送第三方 Cookie，但是导航到目标网址的 Get 请求除外。
+* Chrome 计划将Lax变为默认设置。这时，网站可以选择显式关闭SameSite属性，将其设为None。不过，前提是必须同时设置Secure属性（Cookie 只能通过 HTTPS 协议发送），否则无效。
+  - 下面的设置无效。
+  ```
+  Set-Cookie: key=value; SameSite=None
+  ```
+  - 下面的设置有效。
+  ```
+  Set-Cookie: key=value; SameSite=None; Secure
+  ```
+
 # HttpOnly
 * 后端用这个属性设置cookie，前端用js无法```读写```被后端设置的cookie。
 
@@ -44,12 +59,10 @@
 # 其他
 * cookie的存储只和域名domain以及路径path有关，和端口无关，并不会因为不同的端口而导致cookie不一致。
 
-# 后端允许ajax跨域请求，以及ajax请求携带cookie。再次测试。待续...
-* 注意：经测试，ajax跨域携带cookie，Firefox浏览器支持，Chrome浏览器不支持，所以用此法验证登录不可行。
-* nodejs使用cors模块或者如下：
+# 服务端nodejs设置跨域
 ```
-# express
 /*
+express
 设置跨域访问：此处配置的是全部请求('*')都允许跨域，其实应该指定某些接口允许跨域。
 可以去api-super里，响应之前设置某一类接口都允许跨域。
 也可以去某一个控制器里，单独对某一个接口设置跨域。
@@ -72,42 +85,62 @@ app.all('*', function (req, res, next) {
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     res.header('Access-Control-Allow-Methods', 'PUT,POST,GET,DELETE,OPTIONS');
     res.header('X-Powered-By', '3.2.1');
-    res.header('Access-Control-Allow-Credentials', true); // 允许带cookie(则Access-Control-Allow-Origin不允许是*号)(亲测Firefox浏览器支持，Chrome浏览器不支持)
+    res.header('Access-Control-Allow-Credentials', true); // 允许带cookie(则Access-Control-Allow-Origin不允许是*号)(不加这行浏览器会拦截掉请求并抛错导致跨主域携带cookie的请求无效化)
     // res.header('Content-Type', 'application/json;charset=utf-8');
     next();
 });
 ```
-* jq的ajax
-```
-$.ajax({
-    url: 'http://127.0.0.1:5551/admin/api/verify-code-canvas/',
-    xhrFields: {
-        withCredentials: true, // 允许带cookie
-    },
-    crossDomain: true, // 允许跨域
-});
-```
-* 总结：在后端允许，以及ajax请求设置上允许携带cookie以后。
-    - 请求头里会有cookie信息。
-    - 响应头里也可以进行set-cookie。
-    - 此时跨主域设置cookie就没有任何问题了。那跨主域验证登录也就不成问题了。
-    - 问题：Firefox浏览器支持，Chrome浏览器不支持。
-    - 解决方案：`res.cookie('key', 'value', { sameSite: 'none' })`。
 
-# SameSite属性
-> http://www.ruanyifeng.com/blog/2019/09/cookie-samesite.html
-* Cookie 的SameSite属性用来限制第三方 Cookie，从而减少安全风险。它可以设置三个值：`Strict、Lax、None`。
-* Strict最为严格，完全禁止第三方 Cookie，跨站点时，任何情况下都不会发送 Cookie。
-* Lax规则稍稍放宽，大多数情况也是不发送第三方 Cookie，但是导航到目标网址的 Get 请求除外。
-* Chrome 计划将Lax变为默认设置。这时，网站可以选择显式关闭SameSite属性，将其设为None。不过，前提是必须同时设置Secure属性（Cookie 只能通过 HTTPS 协议发送），否则无效。
-  - 下面的设置无效。
-  ```
-  Set-Cookie: key=value; SameSite=None
-  ```
-  - 下面的设置有效。
-  ```
-  Set-Cookie: key=value; SameSite=None; Secure
-  ```
+# xhr跨域携带cookie
+> 案例：https://github.com/zhouhuafei/hello-world_cookie
+* 服务端nodejs代码
+```
+const Koa = require('koa')
+const koaBody = require('koa-body')
+const router = require('koa-router')()
+const cors = require('@koa/cors')
+
+
+const app = new Koa()
+
+app.use(cors())
+app.use(koaBody())
+
+router.get('/', async (ctx, next) => {
+  // 服务端设置cookie(此处不涉及到跨域) ------ 开始
+  const myDate = new Date()
+  const myTime = myDate.getTime()
+  const expires = 1
+  myDate.setTime(myTime + expires * 24 * 60 * 60 * 1000) // 单位是天 1天 1/24天(1小时)
+  myDate.setDate(myDate.getDate() + 1)
+  ctx.cookies.set('key', 'value', {
+    // secure: true, // 需要为https，否则sameSite的设置无效。
+    // sameSite: 'none', // 不设置这个跨域请求携带cookie会报警告。
+    path: '/',
+    expires: myDate,
+    httpOnly: false
+  })
+  // 跨主域设置cookie(此处不涉及到跨域) ------ 结束
+  ctx.response.body = ctx.request
+})
+
+router.get('/cookie', async (ctx, next) => {
+  ctx.set('Access-Control-Allow-Credentials', true) // 不加这行，浏览器会拦截掉请求并抛错，导致跨主域携带cookie的请求无效化。
+  ctx.response.body = ctx.request
+})
+
+app.use(router.routes()).use(router.allowedMethods())
+
+app.listen(3000)
+```
+* web端js代码
+```
+// ajax
+$.ajax({ url: 'http://127.0.0.1:3000/cookie?type=jquery', xhrFields: { withCredentials: true } })
+// axios
+axios.defaults.withCredentials = true // withCredentials为true表示允许携带cookie
+axios({ url: 'http://127.0.0.1:3000/cookie?type=axios' })
+```
 
 # set-cookie的大小写问题
 * axios应用在服务端和服务端通信的时候，可以使用```response.headers['set-cookie']```获取到要设置的cookie。
