@@ -10,7 +10,7 @@
 * 文档：https://youzan.github.io/vant/#/zh-CN/
 > 以下全靠推测。
 * 1、github上的源码，每个组件目录中写的有英文版`README.en-US.md`和中文版`README.zh-CN.md`的文档。
-* 2、文档的站点，我查看源码发现使用了`docsearch`。
+* 2、文档的站点，我查看源码发现使用了`docsearch`。https://github.com/algolia/docsearch
 * 3、文档的站点，是单页面站点，组件预览是使用的iframe。切换导航必然和iframe进行了通信，故肯定使用了postMessage。
 * 4、文档的站点，没有打接口，数据全部是存储到js里的，固应是自己开发了一套工具生成了对应的文档站点。
-* 5、文档风格不是`docsify`的风格，所以应该不是使用`docsify`生成的。
+* 5、文档风格不是`docsify`的风格，所以应该不是使用`docsify`生成的。https://github.com/docsifyjs/docsify
