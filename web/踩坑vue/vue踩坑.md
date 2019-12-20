@@ -788,7 +788,7 @@ export default {
 }
 </script>
 ```
-* 卡片化 - 卡片化的标签页。
+* el-tabs卡片化 - 卡片化的标签页。
 ```
 <el-tabs type="border-card">
   <el-tab-pane label="用户管理">用户管理</el-tab-pane>
