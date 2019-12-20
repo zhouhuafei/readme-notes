@@ -788,6 +788,16 @@ export default {
 }
 </script>
 ```
+* 卡片化 - 卡片化的标签页。
+```
+<el-tabs type="border-card">
+  <el-tab-pane label="用户管理">用户管理</el-tab-pane>
+  <el-tab-pane label="配置管理">配置管理</el-tab-pane>
+  <el-tab-pane label="角色管理">角色管理</el-tab-pane>
+  <el-tab-pane label="定时任务补偿">定时任务补偿</el-tab-pane>
+  我个人比较喜欢这个样式。
+</el-tabs>
+```
 
 # $set
 > https://cn.vuejs.org/v2/guide/reactivity.html#%E6%A3%80%E6%B5%8B%E5%8F%98%E5%8C%96%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9
