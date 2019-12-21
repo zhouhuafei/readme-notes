@@ -7,7 +7,7 @@
     "commit": "git-cz",
     "changelog:init": "npx conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "changelog": "npx conventional-changelog -p angular -i CHANGELOG.md -s",
-    "release:note": "node scripts/gen-release-note.js"
+    "release:note": "node gen-release-note.js"
   },
   "husky": {
     "hooks": {
