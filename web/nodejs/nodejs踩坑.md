@@ -10,3 +10,7 @@ function fn() {
 
 fn();
 ```
+
+# 怎么调试？
+* http://www.ruanyifeng.com/blog/2018/03/node-debugger.html
+* https://github.com/node-inspector/node-inspector
