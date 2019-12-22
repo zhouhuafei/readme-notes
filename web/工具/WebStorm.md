@@ -83,3 +83,13 @@
 
 # windows WebStorm里使用`git log`中文乱码
 * 在命令行输入`set LESSCHARSET=utf-8`即可。
+
+# `CR` 和 `LF` 和 `CRLF` 的区别
+* `CR`：`Carriage Return`，对应`ASCII`中转义字符`\r`，表示回车。
+* `LF`：`Linefeed`，对应`ASCII`中转义字符`\n`，表示换行。
+* `CRLF`：`Carriage Return & Linefeed`，`\r\n`，表示回车并换行。
+```
+Windows 操作系统采用两个字符来进行换行，即 CRLF。
+Unix/Linux/Mac OS X 操作系统采用单个字符 LF 来进行换行。
+MacIntosh 操作系统(早期的 Mac 操作系统)采用单个字符 CR 来进行换行。
+```
