@@ -62,6 +62,7 @@
 ```
 * 有以下3个判断数组的方法，请分别介绍它们之间的区别和优劣`Object.prototype.toString.call()`、`instanceof`以及`Array.isArray()`。
 ```
+0、Array.isArray是使用Object.prototype.toString.call实现的。
 1、Object.prototype.toString.call无法判断自定义的构造函数。 自定义的会返回`[object Object]`。
 2、Array.isArray优于instanceof，因为Array.isArray和Object.prototype.toString.call可以检测出iframe中的arr，而instanceof不能。
 3、instanceof只能用来判断对象类型，原始类型不可以。并且所有对象类型instanceof Object都是 true，且不同于其他两种方法的是它不能检测出iframe。
