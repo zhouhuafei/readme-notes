@@ -47,7 +47,7 @@
         - `Array.apply(Array, Array(10))`
         - `Array.apply(Array, new Array(10))`
         - `[...new Array(10)]`
-        - `new Array(10).fill(undefined)`
+        - `new Array(10).fill({key: 'val'})`
         - 以上`new Array`换成`Array`也是对的。
 
 * 类数组转数组
