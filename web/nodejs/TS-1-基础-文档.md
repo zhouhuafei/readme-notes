@@ -12,6 +12,7 @@ document.body.innerHTML = greeter(user);
 ```
 
 ###### 类型注解
+* 类型注解是一种轻量级的为函数或变量添加约束的方式。
 ```
 function greeter(person: string) {
     return "Hello, " + person;
@@ -26,6 +27,9 @@ greeter.ts(7,26): error TS2345: Argument of type 'number[]' is not assignable to
 ```
 
 ###### 接口
+* 使用接口来描述一个拥有 firstName 和 lastName 字段的对象。
+* 在TypeScript里，只在两个类型内部的结构兼容那么这两个类型就是兼容的。
+* 这就允许我们在实现接口时候只要保证包含了接口要求的结构就可以，而不必明确地使用 implements 语句。
 ```
 interface Person {
     firstName: string;
@@ -42,6 +46,7 @@ document.body.innerHTML = greeter(user);
 ```
 
 ###### 类
+* 在构造函数的参数上使用 public 等同于创建了同名的成员变量。
 ```
 class Student {
     fullName: string;
