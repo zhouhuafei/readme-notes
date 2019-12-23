@@ -9,4 +9,7 @@ npm install --save-dev @types/node
 ```
 import * fs path from 'fs'
 import * as path from 'path'
+// 或
+const fs = require('fs')
+const path = require('path')
 ```
