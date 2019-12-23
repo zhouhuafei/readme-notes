@@ -1,4 +1,4 @@
-https://www.tslang.cn/docs/handbook/typescript-in-5-minutes.html
+> 摘自：https://www.tslang.cn/docs/handbook/typescript-in-5-minutes.html
 
 ###### 可以当js使用
 ```
