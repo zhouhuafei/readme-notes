@@ -12,3 +12,15 @@ fatal: index-pack failed
 ```
 * 原因：移动宽带网络问题
 * 解决方案：使用手机热点(我使用的是联通手机热点)
+
+# 报错
+* 报错信息：
+```
+remote: HTTP Basic: Access denied
+fatal: Authentication failed for
+```
+* 解决方案：
+```
+git config --system --unset credential.helper
+git config --global credential.helper store
+```
