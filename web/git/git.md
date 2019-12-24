@@ -231,4 +231,3 @@ fatal: Authentication failed for
 git config --system --unset credential.helper
 git config --global credential.helper store
 ```
-
