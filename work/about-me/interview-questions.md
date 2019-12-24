@@ -15,15 +15,15 @@
 * 如果加过渡效果？`transition`。
 * 如果定义动画？`@keyframes`。
 ### 单位
-* px，%, em，rem, vw, vh的区别。`px是基础单位，%是百分比，em大小相对于父节点，rem大小和html的font-size有关，vw和vh相对于视口宽高`。
+* px，%, em，rem, vw, vh的区别。`px是相对单位和屏幕分辨率保持一致，%是百分比，em大小相对于父节点，rem大小和html的font-size有关，vw和vh相对于视口宽高`。
 * 1rem等于多少px？rem和px的转换关系受什么影响？`默认16，受html的font-size影响`。
 * 移动端适配方案？`rem` + `<meta name="viewport" content="width=device-width,initial-scale=1.0">`。
 ### 应用
 * 单行省略号怎么写？多行省略号有无使用过？
 * css怎么画实心右箭头？
 * css怎么画空心右箭头？
-* 如何给一个div加0.5px的边框？
-* 不定宽高如何让盒子垂直水平居中？用定位如何实现？用flex如果实现？
+* 如何给一个div加0.5px的边框？`transform:scale(0.5);pointer-events:none;`
+* 不定宽高如何让盒子垂直水平居中？用定位如何实现？用flex如果实现？`主要考内联元素和块元素的水平居中和垂直居中`
 * 如果让兄弟盒子上下margin不重叠？`给子级设置display:inline-block或者display:inline-flex或者float为left都可以解决。或者给父级加display:flex;flex-wrap:wrap;子级的上下margin就不会折叠了`。
 * `display:inline-block`移除间隙？`移除html标签间空格、使用font-size:0、letter-spacing、word-spacing、使用margin负值`。
 * 消除图片底部间隙的方法？`vertical-align:bottom、line-height:0、font-size:0、display:block`。
