@@ -219,3 +219,16 @@ upload/*
 * 2、修改仓库的描述文案，使之变为：本仓库已迁移至 https://github.com/zhouhuafei/hello-world_cookie
 * 3、点击`Settings`进行设置。
 * 4、选择`Archive this repository`进行仓库归档，使之变为只读仓库。
+
+# 报错
+* 报错信息：
+```
+remote: HTTP Basic: Access denied
+fatal: Authentication failed for
+```
+* 解决方案：
+```
+git config --system --unset credential.helper
+git config --global credential.helper store
+```
+
