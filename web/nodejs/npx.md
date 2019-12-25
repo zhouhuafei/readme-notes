@@ -49,3 +49,10 @@ $ npx create-react-app my-react-app
 ```
 $ npx http-server
 ```
+
+# 注意
+> 踩坑：https://github.com/zhouhuafei/wx-key-replace
+* 项目根目录下不要有和`npx`指令要运行的包同名的js文件，否则会直接运行对应文件，导致不会运行`node_modules`下对应的包。
+* 例如我要运行`npx wx-key-replace`。
+* 则项目根目录下就不要有`wx-key-replace.js`，否则会直接运行`wx-key-replace.js`，而不是运行`node_modules`下的`wx-key-replace`包。
+* 建议把`wx-key-replace.js`文件改为`wx-key-replace.config.js`。
