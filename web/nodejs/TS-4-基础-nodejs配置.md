@@ -9,7 +9,7 @@ npm install --save-dev @types/node
 ```
 import * fs path from 'fs'
 import * as path from 'path'
-// 或
+// 或(写nodejs我推荐以require的形式写)
 const fs = require('fs')
 const path = require('path')
 ```
