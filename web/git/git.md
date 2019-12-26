@@ -100,6 +100,7 @@ git config --global credential.helper store
 git ls-remote // 列出所有的远程分支和远程tag
 git tag // 查看本地tag
 git tag v1.0.0 // 创建本地tag
+git tag v1.0.0 -m "标签的注释" // 创建本地tag并增加注释
 git tag -d test_tag // 删除本地tag
 git push origin v1.0.0 // 推送本地新增的tag
 git push origin --tags // 推送本地新增的所有tag
