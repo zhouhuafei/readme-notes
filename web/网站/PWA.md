@@ -13,6 +13,7 @@
 
 ### Fetch API
 > fetch(url)
+* fetch响应的是个流(ReadableStream)。需要res.json()转成json对象。或者res.text()转成字符串。
 * 可在Service Worker中使用的请求API。
 
 ### Service Worker
