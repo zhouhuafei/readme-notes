@@ -44,7 +44,8 @@ self.addEventListener('install', async (event) => { // 主要用以缓存内容
     '/',
     '/index.css',
     '/manifest.json',
-    '/images/logo.png'
+    '/images/logo.png',
+    '/api/goods/list'
   ])
 
   // event.waitUntil(self.skipWaiting()) // 固定写法。用以跳过等待，使之能进入到activate钩子。
@@ -66,26 +67,35 @@ self.addEventListener('activate', async (event) => { // 主要用以清除旧的
 })
 self.addEventListener('fetch', async (event) => {
   const req = event.request
-  event.respondWith(networkFirst(req)) // 给浏览器响应
+  const url = new URL(req.url)
+  if (url.origin !== self.origin) { // 只缓存同源的
+    return
+  }
+  if (req.url.includes('/api')) {
+    event.respondWith(networkFirst(req)) // 给浏览器响应 - 网络优先
+  } else {
+    event.respondWith(cacheFirst(req)) // 给浏览器响应 - 缓存优先
+  }
 
   console.log('fetch event', event)
   console.log('fetch event.request.url', event.request.url)
 })
 
-// 网络优先 - 资源如果请求失败，则读取缓存。
+// 网络优先(经常变化的，例如api) - 资源如果请求失败，则读取缓存。
 async function networkFirst (req) {
+  const cache = await caches.open(cacheName)
   try {
     const fresh = await fetch(req)
+    cache.put(req, fresh.clone()) // 缓存更新
     return fresh
   } catch (e) {
-    const cache = await caches.open(cacheName)
     const cached = await cache.match(req)
     return cached
   }
 }
 
 
-// 缓存优先
+// 缓存优先(不经常变化的，例如静态资源) - 缓存里有，则读取缓存里的。
 async function cacheFirst (req) {
     const cache = await caches.open(cacheName)
     const cached = await cache.match(req)
@@ -93,6 +103,7 @@ async function cacheFirst (req) {
       return cached
     } else {
       const fresh = await fetch(req)
+      cache.put(req, fresh.clone()) // 缓存更新
       return fresh
     }
 }
