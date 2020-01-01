@@ -20,3 +20,9 @@ const { BrowserWindow } = require('electron').remote
 let win = new BrowserWindow({ width: 800, height: 600 })
 win.loadURL('https://github.com')
 ```
+
+## 配合Vue使用
+* vue-cli2
+https://github.com/SimulatedGREG/electron-vue
+* vue-cli3
+https://github.com/nklayman/vue-cli-plugin-electron-builder
