@@ -151,6 +151,8 @@
     - 在WebDav Advanced Collections 草案中定义，但是未出现在《WebDAV 顺序集协议》（RFC 3658）中。
 * 426 Upgrade Required
     - 客户端应当切换到TLS/1.0。（RFC 2817）
+* 429 Too Many Requests
+    - 当你需要限制客户端请求某个服务的数量，也就是限制请求速度时，该状态码就会非常有用。
 * 449 Retry With
     - 由微软扩展，代表请求应当在执行完适当的操作后进行重试。
 * 451Unavailable For Legal Reasons
