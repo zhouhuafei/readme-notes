@@ -47,6 +47,25 @@ choco install nodejs.install
 ```
 choco install redis-64
 ```
+* 装个redis-desktop-manager
+> redis的可视化数据库管理工具
+```
+choco install redis-desktop-manager
+```
+* 装个mongodb
+```
+choco install mongodb.core
+```
+* 装个Studio 3T
+> mongodb的可视化数据库管理工具
+```
+choco install studio3t --version=2019.2.1
+```
+* 装个mysql
+> navicat：可视化数据库管理工具
+```
+choco install mysql
+```
 
 # 其他
 * 安装包：https://chocolatey.org/packages
