@@ -45,7 +45,7 @@ choco install nodejs.install
 ```
 * 装个redis
 ```
-choco install redis-64 
+choco install redis-64
 ```
 
 # 其他
