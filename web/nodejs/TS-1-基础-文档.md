@@ -32,6 +32,12 @@ const arr2: (string | number)[] = []
 const arr3: Array<string> = []
 const arr3: Array<string | number> = []
 ```
+* 其他案例 - 函数
+```
+function fn (name: string): string {
+  return 'string'
+}
+```
 
 ###### 接口
 * 使用接口来描述一个拥有 firstName 和 lastName 字段的对象。
