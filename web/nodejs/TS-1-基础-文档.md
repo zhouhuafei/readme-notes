@@ -28,9 +28,12 @@ greeter.ts(7,26): error TS2345: Argument of type 'number[]' is not assignable to
 * 其他案例 - 数组
 ```
 const arr1: string[] = []
-const arr2: (string | number)[] = []
-const arr3: Array<string> = []
-const arr3: Array<string | number> = []
+const arr2: Array<string> = []
+const arr3: (string | number)[] = []
+const arr4: Array<string | number> = []
+class Super {}
+const arr5: Super[] = []
+const arr6: Array<Super> = []
 ```
 * 其他案例 - 函数 - 返回值是字符串
 ```

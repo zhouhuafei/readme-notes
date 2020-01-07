@@ -1,6 +1,6 @@
 # 泛型(generic)
 > 参数化的类型，一般用来限制集合的类型。
-* 数组中只允许放入Person的实例。
+* 数组中只允许放入和Person实例格式一致的数据。
 ```typescript
 class Person {}
 const myArray: Array<Person> = [];
