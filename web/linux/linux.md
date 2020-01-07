@@ -60,3 +60,10 @@ ps aux | grep nginx
 * 使用指令"cp"将当前目录"test/"下的所有文件复制到新目录"newtest"下，输入如下命令：```cp –r test/ newtest```。
 
 * 查看目录下有多少个文件及文件夹```ls | wc -w```。
+
+* 怎么区分一命令是不是系统命令：使用`type`命令进行区分。
+  - `type ls`：`ls is an alias for ls -G`
+  - `type cd`：`cd is a shell builtin`
+  - `type node`：`node is /usr/local/bin/node`
+  - `type npm`：`npm is /usr/local/bin/npm`
+  - `type type`: `type is a shell builtin`

@@ -164,3 +164,14 @@ sudo service docker stop
 # 重启docker
 sudo service docker restart
 ```
+
+# 调试node镜像
+```
+docker run -it -v /e/www/github-zhouhuafei/suibianxiexie-api/:/root/suibianxiexie-api/ node:latest bash
+```
+
+# `docker`的`ubuntu`镜像安装的容器没有`ifconfig`命令和`ping`和`vim`命令
+> 如果提示：`Unable to locate package 包名`则需要敲：`apt-get update -y`等更新完毕以后再敲命令`apt-get install 包名`。
+* 安装`ifconfig`命令：`apt-get install -y net-tools`。
+* 安装`ping`命令：`apt-get install -y iputils-ping`。
+* 安装`vim`命令：`apt-get install -y vim`。
