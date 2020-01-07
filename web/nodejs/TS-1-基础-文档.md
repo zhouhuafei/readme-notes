@@ -38,6 +38,18 @@ function fn (name: string): string {
   return 'string'
 }
 ```
+* 其他案例 - 函数 - 返回值是任意类型
+```
+function fn (name: string): any {
+  return 'string'
+}
+```
+* 其他案例 - 函数 - 返回值字符串或者是数字
+```
+function fn (name: string): string ｜ number {
+  return 'string'
+}
+```
 * 其他案例 - 函数 - 无返回值
 ```
 function fn (name: string): void {
