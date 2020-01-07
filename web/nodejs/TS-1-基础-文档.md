@@ -32,10 +32,15 @@ const arr2: (string | number)[] = []
 const arr3: Array<string> = []
 const arr3: Array<string | number> = []
 ```
-* 其他案例 - 函数
+* 其他案例 - 函数 - 返回值是字符串
 ```
 function fn (name: string): string {
   return 'string'
+}
+```
+* 其他案例 - 函数 - 无返回值
+```
+function fn (name: string): void {
 }
 ```
 
