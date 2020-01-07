@@ -101,3 +101,39 @@ let user = new Student("Jane", "M.", "User");
 
 document.body.innerHTML = greeter(user);
 ```
+
+###### TS存取器和defineProperty的区别
+* TS存取器 模拟 vue的计算属性
+> 转成es5后，内部实现依然是使用defineProperty实现的。
+```
+class Super {
+  private firstname: string = 'zhou';
+  private lastname: string = 'huafei';
+  get fullname () : string {
+    return this.firstname + '-' + this.lastname
+  }
+  set fullname(newVal: string) {
+    this.firstname = newVal.split('-')[0]
+    this.lastname = newVal.split('-')[1]
+  }
+}
+const obj1 = new Super()
+obj1.fullname = 'zhou-huafei2'
+const obj2 = new Super()
+console.log(obj1.fullname)
+console.log(obj2.fullname)
+```
+* defineProperty
+```
+var obj = {};
+Object.defineProperty(obj, 'txt', {
+    get: function () {
+        console.log('获取');
+        return obj;
+    },
+    set: function (newValue) {
+        console.log('设置');
+        return newValue;
+    },
+});
+```
