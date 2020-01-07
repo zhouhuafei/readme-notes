@@ -124,16 +124,30 @@ console.log(obj1.fullname)
 console.log(obj2.fullname)
 ```
 * defineProperty
+> 上述转成es5如下所示。
 ```
-var obj = {};
-Object.defineProperty(obj, 'txt', {
-    get: function () {
-        console.log('获取');
-        return obj;
-    },
-    set: function (newValue) {
-        console.log('设置');
-        return newValue;
-    },
-});
+var Super = /** @class */ (function () {
+    function Super() {
+        this.firstname = 'zhou';
+        this.lastname = 'huafei';
+    }
+    Object.defineProperty(Super.prototype, "fullname", {
+        get: function () {
+            return this.firstname + '-' + this.lastname;
+        },
+        set: function (newVal) {
+            this.firstname = newVal.split('-')[0];
+            this.lastname = newVal.split('-')[1];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return Super;
+}());
+var obj1 = new Super();
+obj1.fullname = 'zhou-huafei2';
+var obj2 = new Super();
+console.log(obj1.fullname);
+console.log(obj2.fullname);
 ```
+* 转换网址：https://www.tslang.cn/play/index.html
