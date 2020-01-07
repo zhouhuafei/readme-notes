@@ -25,6 +25,13 @@ document.body.innerHTML = greeter(user);
 ```
 greeter.ts(7,26): error TS2345: Argument of type 'number[]' is not assignable to parameter of type 'string'.
 ```
+* 其他案例 - 数组
+```
+const arr1: string[] = []
+const arr2: (string | number)[] = []
+const arr3: Array<string> = []
+const arr3: Array<string | number> = []
+```
 
 ###### 接口
 * 使用接口来描述一个拥有 firstName 和 lastName 字段的对象。
