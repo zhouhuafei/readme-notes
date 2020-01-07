@@ -46,6 +46,8 @@ volumes:
 
 # docker-compose官方文档
 https://docs.docker.com/compose/
+# docker-compose.yml配置文件编写详解
+https://blog.csdn.net/qq_36148847/article/details/79427878
 
 # docker-compose常用配置参数
 * images 表示使用的镜像
