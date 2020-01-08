@@ -1,9 +1,9 @@
 > 出一些简单的面试题，筛选一些熟练工。
 
-# html
+## html
 * 简述一下你对HTML语义化的理解？`对seo友好，结构清晰，便于阅读`。
 
-# css
+## css
 ### 选择器
 * css选择器优先级？`id选择器 > class选择器 > 标签选择器`。
 * 选择器`+`和`~`以及`>`的区别？`相邻兄弟选择器，兄弟选择器，直属子元素选择器`。
@@ -35,7 +35,7 @@
 * 如果定义函数？`@function fn() { @return 123;}`
 * 如果定义mixin？`@mixin ellipsis1() {overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}`
 
-# js
+## js
 ### es5
 * js有哪些数据类型？
 ```
@@ -105,9 +105,9 @@ function fn (n) {
   return n < 1 ? 1 : n * fn(n - 1)
 }
 
-fn(6) // 120
+fn(5) // 120
 ```
-* 5的阶乘？用尾递归怎么实现？`fn(5)`
+* 5的阶乘？用尾递归怎么实现？`fn(5, 1)`
 ```
 function fn(n, total) {
   if (n === 1) return total
@@ -118,23 +118,21 @@ fn(5, 1) // 120
 ```
 * 1+2+...+100？用递归怎么实现？`fn(1, 100)`
 ```
-function fn (n1, n2) {
-  return n1 === n2 ? n2 : n1 + fn(n1 + 1, n2)
+function fn1 (n1, n2) {
+  return n1 === n2 ? n2 : n1 + fn1(n1 + 1, n2)
 }
 
-fn(1, 100)
+fn1(1, 100)
 ```
-* 1+2+...+100？用尾递归怎么实现？`fn(1, 100)`
+* 1+2+...+100？用尾递归怎么实现？`fn2(1, 100, 0)`
 ```
-// 待续...
+function fn2 (n1, n2, total) {
+  if(n1 === n2) return total + n2
+  return fn2(n1 + 1, n2, n1 + total)
+}
+
+fn2(1, 100, 0)
 ```
-* 1+2+...+100？用函数柯里化的方式怎么实现？`fn(1)(2)(3)(4)(5)(6)`
-```
-// 待续...
-```
-### 高级
-* 什么是函数柯里化？实现sum(1)(2)(3)返回结果是1,2,3之和？待续...
-* 什么是函数式编程？待续...
 ### es6
 * var let const？
 * 什么是暂时性死区？`使用let命令声明变量之前，该变量都是不可用的。这在语法上，称为暂时性死区`。
@@ -149,11 +147,11 @@ fn(1, 100)
 * 使用async定义的函数的返回值？await的返回值？
 * async内多个await如何并行请求？
 
-# html5
+## html5
 * canvas和svg图形的区别是什么？`位图和矢量图`。
 * 上传的文件怎么转base64格式？`FileReader`。
 
-# cookie
+## cookie
 * 请描述一下 cookies，sessionStorage 和 localStorage 的区别？
 * cookie的基础格式？`a=1; b=2`。
 * 怎么新增cookie？`document.cookie='a=1; domain=.baidu.com'`。
@@ -163,10 +161,10 @@ fn(1, 100)
 * 前端跨主域怎么设置cookie？例如A网站怎么给B网站设置cookie？`iframe postMessage`。
 * 服务端设置什么属性可以使某条cookie不能被js获取到？`httpOnly`。
 
-# token
+## token
 * CSRF是什么？怎么预防？
 
-# vue
+## vue
 * v-if 和 v-show 有什么区别?
 * v-for与v-if当它们处于同一节点的优先级？`v-for 具有比 v-if 更高的优先级`。
 * 如何将原生事件绑定到组件？`.native、$listeners`。
@@ -191,7 +189,7 @@ fn(1, 100)
 * 对于vue是一套渐进式框架的理解？
 * 对于MVVM的理解？
 
-# vue-router
+## vue-router
 * vue-router 跳转和 location.href 有什么区别？
 * vue-router 如何监听 路由参数 的变化？
 * vue-router 如何实现路由懒加载？
@@ -199,10 +197,11 @@ fn(1, 100)
 * vue-router 动态路由匹配以及使用？
 * vue-router 表单页面点了回退怎么给予用户表单还未保存是否确定退出的提示并阻止用户离开？`使用组件内守卫：beforeRouteLeave`。
 * vue-router 如何实现权限拦截？
-# vuex
+
+## vuex
 * vuex是什么？怎么使用？哪种功能场景使用它？
 
-# mini program
+## mini program
 * 常用组件有哪些？`view、text、cover-view、scroll-view、navigator、swiper、swiper-item、picker、button、input、form、canvas`。
 * 常用api有哪些？`wx.getUserInfo、wx.showToast、wx.showModal、wx.showLoading、getStorageSync、wx.previewImage、wx.openLocation`。
 * 跳转方式？`wx.switchTab、wx.reLaunch、wx.redirectTo、wx.navigateTo、wx.navigateBack`。
@@ -223,10 +222,10 @@ fn(1, 100)
 * canvas绘图时，模拟器上正常，真机上不行，问题可能出在哪？`下载域名没配置`。`request合法域名、socket合法域名、uploadFile合法域名、downloadFile合法域名`。
 * 小程序遇到问题第一时间应该去哪里寻求帮助？`小程序社区`。
 
-# git
+## git
 * 常用命令？`add、commit、push、pull、checkout、reset --hard`。
 
-# http
+## http
 * 常见状态码？`200 301 302 304 307 308 401 403 404 500 502 504`。
 * 常用请求方式？`POST DELETE UPDATE PATCH GET OPTIONS`。
 * Cache-Control是干啥的？`强缓存`。
@@ -234,7 +233,7 @@ fn(1, 100)
 * 什么是CDN，有什么特性？`内容分发网络，会就近找服务器读取被缓存的资源，提高访问速度`。
 * 客户端根据什么识别一张图片应该被预览还是被下载？`Content-Type`。
 
-# 工作流
+## 工作流
 * 阿里字体图标有用过么？
 * 你们是怎么解决接口跨域问题的？`主域：代理、jsonp(仅支持GET)、postMessage`。`子域：document.domain`。
 * 你们前后端接口通信使用的什么数据格式？图片上传一般是以什么格式上传？get的请求头中有Content-Type么？
