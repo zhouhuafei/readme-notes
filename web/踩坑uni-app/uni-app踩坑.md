@@ -1,3 +1,8 @@
+# 生态
+* uni-ui：https://github.com/dcloudio/uni-ui
+* uCharts：http://doc.ucharts.cn/1073940
+* 插件市场：https://ext.dcloud.net.cn/
+
 # 准备工作
 * 看文档 https://github.com/dcloudio/uni-app
 * 下载HBuilderX编辑器。
