@@ -1,10 +1,12 @@
 > https://segmentfault.com/a/1190000004292140
 
+## UTC
 * 什么是`UTC`时间？
   - `UTC`时间是世界标准时间。
 * `UTC`时间与北京时间的差多久？
   - 差`8`个小时。
-  
+
+## ISO 8601
 * `UTC`是时间标准。
 * `ISO 8601`是表示时间的一种标准格式，多数编程语言都支持。
 * `ISO 8601`的标准格式是：`YYYY-MM-DDTHH:mm:ss.sssZ`。
@@ -18,7 +20,7 @@
   - `.sss`：毫秒。
   - `Z`：时区偏移量 可以是`Z(UTC零时区)` 或 `+HH:mm` 或 `-HH:mm`。
   
-* 案例
+## ISO 8601 案例
 ```
 console.log(new Date().toISOString()) // '2020-01-15T05:34:49.453Z'
 console.log(new Date('2020-01-15T05:34:49.453Z')) // 'Wed Jan 15 2020 13:34:49 GMT+0800 (中国标准时间)'
