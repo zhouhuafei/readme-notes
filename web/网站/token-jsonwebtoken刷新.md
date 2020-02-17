@@ -85,7 +85,7 @@ module.exports=ajax;
         return response;
     }, function (error) {
         // 对响应错误做点什么
-        return Promise.reject(error);
+        return Promise.reject(error.response); // error.response能读取到非200状态码中的响应数据。此行代码更换为`return error.response;`亦可。
     });
     ```
     - 问：响应拦截器中怎么获取配置数据？
