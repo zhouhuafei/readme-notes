@@ -175,3 +175,14 @@ docker run -it -v /e/www/github-zhouhuafei/suibianxiexie-api/:/root/suibianxiexi
 * 安装`ifconfig`命令：`apt-get install -y net-tools`。
 * 安装`ping`命令：`apt-get install -y iputils-ping`。
 * 安装`vim`命令：`apt-get install -y vim`。
+
+# docker四种网络模型
+> 显示网络列表：`docker network ls`
+* none模式
+  - 此模式中，docker容器拥有自己的network namespace，但是不创建任何网络设备，仅有lo网络，即为封闭式容器。
+* bridge模式(默认)
+  - docker安装后会默认启用172.17.0.1/16的网络，并创建docker0网桥作为网关，使用此网络创建的容器会生成一对以veth开头的虚拟网卡，一半在容器中，一半在docker0桥上，此方式实现了容器与宿主机间的通信。docker0桥是NAT桥，因此容器获得的是私有网络地址，可将容器想象为主机NAT服务背后的主机，如果开发容器或其上的服务为外部网络访问，需要在宿主机上为其定义DNAT规则。
+* container模式
+  - 又称联盟式容器，此模式下，新创建的容器会使用指定容器的net、ipc、uts名称空间，基于lo进行互相通信，而mount、user、pid名称空间依旧是隔离的。
+* host模式
+  - 共享宿主机的网络名称空间，容器不会虚拟自己的网卡设备及ip地址,而直接使用宿主机的ip地址与外部进行通信，且不需要任何NAT转换。
