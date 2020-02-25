@@ -709,7 +709,7 @@ class="w500">
     - 解决方案：```:key="String(Math.random()).substring(2)"```。
 * el-dialog封装成组件A时，要使用`:before-close`修改组件A的props上控制组件A是否显示的那个属性，否则会抛错。
     - 因为组件A的props不可被更改，el-dialog的`@close`被触发，就会修改组件A的props上控制组件A是否显示的那个属性。
-* el-date-picker只允许选取上下浮动30天的日期。
+* el-date-picker只允许选取上下浮动31天的日期。
 ```
 <template>
   <div>
@@ -744,7 +744,7 @@ export default {
         },
         disabledDate: (time) => {
           if (this.pickerMinDate !== '') {
-            let one = (30 - 1) * 24 * 3600 * 1000
+            let one = (31 - 1) * 24 * 3600 * 1000 // 31天比较合适 因为一个月最多31天
             let minTime = this.pickerMinDate - one
             let maxTime = this.pickerMinDate + one
             // 不能选取大于当前日期的日期
@@ -759,7 +759,7 @@ export default {
         },
         shortcuts: [
           {
-            text: '最近一周',
+            text: '最近7天',
             onClick (picker) {
               const end = new Date()
               const start = new Date()
@@ -768,7 +768,7 @@ export default {
             }
           },
           {
-            text: '最近一个月',
+            text: '最近30天',
             onClick (picker) {
               const end = new Date()
               const start = new Date()
