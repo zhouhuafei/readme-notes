@@ -893,3 +893,19 @@ export default {
   }
 }
 ```
+
+# 别名
+> 注：在`scss`中使用时，必须要带`~`线，否则打包时会报错。在`js`中使用时，可以不带`~`线。
+* 常常会在vue项目中看到这样的情形：
+```
+@import "../../../../assets/css/varibles.scss";
+```
+* 可以简写为以下：
+```
+@import "~@/assets/css/varibles.scss";
+```
+* 这里的`~`符号。表示后面的值为`alias`，然后就会去`webpack`的`alias`配置中找相应的值，然后拼接成最后的地址。
+* 下述`element-ui`就是别名。
+```
+@import "~element-ui/packages/theme-chalk/src/index";
+```
