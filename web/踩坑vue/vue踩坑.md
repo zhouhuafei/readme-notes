@@ -894,18 +894,27 @@ export default {
 }
 ```
 
-# 别名
-> 注：在`scss`中使用时，必须要带`~`线，否则打包时会报错。在`js`中使用时，可以不带`~`线。
+# `~` 和 `@`
+> https://webpack.docschina.org/loaders/sass-loader/#%E5%AF%BC%E5%85%A5-import-
+* webpack 提供一种解析文件的高级的机制。
+  - sass-loader 使用 Sass 的 custom importer 特性，将所有的 query 传递给 webpack 的解析引擎(resolving engine)。
+  - 只要它们前面加上 ~，告诉 webpack 它不是一个相对路径，这样就可以 import 导入 node_modules 目录里面的 sass 模块。
+  - `~`线表示`bootstrap`不是一个相对路径：
+  ```
+  @import "~bootstrap/dist/css/bootstrap";
+  ```
+  - `~`线表示`element-ui`不是一个相对路径：
+  ```
+  @import "~element-ui/packages/theme-chalk/src/index";
+  ```
 * 常常会在vue项目中看到这样的情形：
-```
-@import "../../../../assets/css/varibles.scss";
-```
-* 可以简写为以下：
-```
-@import "~@/assets/css/varibles.scss";
-```
-* 这里的`~`符号。表示后面的值为`alias`，然后就会去`webpack`的`alias`配置中找相应的值，然后拼接成最后的地址。
-* 下述`element-ui`就是别名。
-```
-@import "~element-ui/packages/theme-chalk/src/index";
-```
+  ```
+  @import "../../../../assets/css/varibles.scss";
+  ```
+  - 可以简写为以下：
+  ```
+  @import "~@/assets/css/varibles.scss";
+  ```
+  - `@`是别名，一般表示根目录下的`src`目录。
+  - `@`是别名，在`scss`中使用时，必须要带`~`线前缀(`~`线表示`@`不是一个相对路径)，否则打包时会报错。
+  - `@`是别名，在`js`中使用时，不允许带`~`线前缀，否则打包时也会报错，因为`~`是`sass-loader`的特性。
