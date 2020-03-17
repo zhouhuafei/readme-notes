@@ -240,3 +240,11 @@ $ git stash apply --> 恢复上次stash保存的状态。
 $ git stash pop --> 恢复上次stash保存的状态并删除该次stash状态。
 $ git stash drop --> 删除上次保存的状态。
 ```
+
+### 重命名本地分支
+* 重命名本地分支：`git branch -m old-name new-name`。
+* 如果要重命名当前所在的分支，可以简单用：`git branch -m new-name`。
+
+### 重命名远程分支
+* 先把远程分支删了：`git push origin :old-name`。
+* 再把本地分支推上去：`git push --set-upstream origin new-name`。
