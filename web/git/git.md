@@ -228,3 +228,11 @@ upload/*
 * 2、修改仓库的描述文案，使之变为：本仓库已迁移至 https://github.com/zhouhuafei/hello-world_cookie
 * 3、点击`Settings`进行设置。
 * 4、选择`Archive this repository`进行仓库归档，使之变为只读仓库。
+
+## git stash
+> 在B分支修改东西，突然要切到A分支改东西，但是又不想`git commit`，此时可以使用`git stash`。
+* 把当前B分支修改的东西存储到`stash`。
+  - `git add .`。
+  - `git stash save "save message"`。
+* 切到A分支把东西改完再切回B分支。
+  - 再使用`git stash pop`命令恢复之前缓存的工作目录。
