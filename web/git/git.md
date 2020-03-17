@@ -231,8 +231,12 @@ upload/*
 
 ## git stash
 > 在B分支修改东西，突然要切到A分支改东西，但是又不想`git commit`，此时可以使用`git stash`。
-* 把当前B分支修改的东西存储到`stash`。
-  - `git add .`。
-  - `git stash save "save message"`。
-* 切到A分支把东西改完再切回B分支。
-  - 再使用`git stash pop`命令恢复之前缓存的工作目录。
+* 使用`git stash`命令，把当前B分支的工作状态存储到`stash`。
+* 切到A分支把东西改完再切回B分支，再使用`git stash pop`命令恢复之前的工作状态。
+```
+$ git stash --> 保存当前还未提交的工作状态，恢复到最近一次提交的状态。
+$ git stash list --> 查看当前stash保存的状态列表。
+$ git stash apply --> 恢复上次stash保存的状态。
+$ git stash pop --> 恢复上次stash保存的状态并删除该次stash状态。
+$ git stash drop --> 删除上次保存的状态。
+```
