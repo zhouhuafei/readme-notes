@@ -18,6 +18,7 @@
   - Mac：`Ctrl + G`。
   - 自定义：`Keymap - Main menu - Edit - Find - Add Selection for Next Occurrence`。
 * `Ctrl + Shift + U`光标所在位置大小写转换。
+* `Ctrl + W`选中单词。
 
 # WebStorm做Vue项目时卡顿，加了内存条变成16G内存还是卡。
 * 找到WebStorm.exe.vmoptions这个文件。
