@@ -6,7 +6,7 @@
 ## 语法
 > https://www.cnblogs.com/yanghj010/p/10875151.html
 * 六个星号`* * * * * *`每个星号从左往右分别代表着
-* 秒(Seconds) 分(Minutes) 小时(Hours) 日期(DayOfMonth) 月份(Month) 星期(DayOfWeek)
+* `秒(Seconds)` `分(Minutes)` `小时(Hours)` `日期(DayOfMonth)` `月份(Month)` `星期(DayOfWeek)`
 
 ## 建议
 > 使用cron表达式在线生成工具进行生成
