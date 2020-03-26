@@ -44,8 +44,8 @@ document.querySelector('.my-copy-img-btn').addEventListener('click', () => {
 })
 </script>
 ```
-* 我本地http测试时，发现不能复制https的图片。
-* 而有些http的图片也复制不成功。
-  - 我以为是跨域的问题，发现一些允许跨域的图片也存在复制不成功的场景。测试。待续...
-  - 七牛的http图片可以被复制成功。
-  - 本地nginx服务里的http图片也可以被复制成功。
+* 我本地http测试时，发现不能复制https的图片。例如这张：`https://cdqn.zhimeiplus.com/100_1553073239871_19857911.png`。
+* 而有些http的图片也复制不成功。例如这张：`http://sbxx.top/static-no-cache/test/zero/img.jpg`。
+  - 七牛的http图片可以被复制成功。例如这张：`http://cdqn.zhimeiplus.com/100_1553073239871_19857911.png`。
+  - 我以为是跨域的问题，发现一些响应头里没有`Access-Control-Allow-Origin: *`的http图片也可以被复制成功。例如这张：`http://img09.viwik.com/images/20170406/tooopen_sl_134512302044.jpg`。
+  - 本地nginx服务里的http图片也可以被复制成功。例如这张：`http://127.0.0.1/github-zhouhuafei/suibianxiexie/static-no-cache-wrap/static-no-cache/test/zero/img.jpg`。
