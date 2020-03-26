@@ -44,3 +44,8 @@ document.querySelector('.my-copy-img-btn').addEventListener('click', () => {
 })
 </script>
 ```
+* 我本地http测试时，发现不能复制https的图片。
+* 而有些http的图片也复制不成功。
+  - 我以为是跨域的问题，发现一些允许跨域的图片也存在复制不成功的场景。测试。待续...
+  - 七牛的http图片可以被复制成功。
+  - 本地nginx服务里的http图片也可以被复制成功。
