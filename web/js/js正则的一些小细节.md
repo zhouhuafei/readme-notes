@@ -34,3 +34,8 @@ const re = /[\0-\x1F\x7F-\x9F\xAD\u0378\u0379\u037F-\u0383\u038B\u038D\u03A2\u05
 ```javascript
 const re = /[\r\n\s]/g
 ```
+
+## 识别 - 首尾空格
+```javascript
+const re = /(^\s*)|(\s*$)/g
+```
