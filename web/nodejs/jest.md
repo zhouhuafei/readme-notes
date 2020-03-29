@@ -50,6 +50,12 @@ PASS  ./sum.test.js
 ✓ adds 1 + 2 to equal 3 (5ms)
 ```
 
+# describe
+> 测试代码的书写，Jest有很多种方式，可以直接在测试文件中写一个test或it用来测试，也可以使用describe函数创建一个测试集。
+* 在describe中使用it和test。
+* it和test是一模一样的功能。
+* 在it和test中使用expect。
+
 # 更多使用说明
 * 请参阅官网 http://facebook.github.io/jest/
 
@@ -119,8 +125,3 @@ SecurityError: localStorage is not available for opaque origins at Window.get lo
 * `%Branch`分支覆盖率(branch coverage)：是不是每个if代码块都执行了？
 * `%Funcs`函数覆盖率(function coverage)：是不是每个函数都调用了？
 * `%Lines`行覆盖率(line coverage)：是不是每一行都执行了？
-
-# describe
-* 在describe中使用it和test
-* it和test是一模一样的功能
-* 在it和test中使用expect
