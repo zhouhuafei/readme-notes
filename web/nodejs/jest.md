@@ -1,19 +1,19 @@
 Jest是一个JavaScript测试框架，由Facebook推出，用来测试所有JavaScript代码，包括React应用程序。
 
-# 安装
+## 安装
 ```
 npm install --save-dev jest
 ```
 
-# 测试文件命名规范
+## 测试文件命名规范
 * *.test.js
 * *.spec.js
 
-# 测试命令
+## 测试命令
 * 如果你是全局安装，则当前目录运行jest命令，他会自己寻找测试文件，并执行。
 * 如果你是局部安装，请看使用案例。
 
-# 使用案例
+## 使用案例
 * 待测试文件 sum.js
 ```
 function sum(a, b) {
@@ -50,16 +50,20 @@ PASS  ./sum.test.js
 ✓ adds 1 + 2 to equal 3 (5ms)
 ```
 
-# describe
+## describe
 > 测试代码的书写，Jest有很多种方式，可以直接在测试文件中写一个test或it用来测试，也可以使用describe函数创建一个测试集。
 * 在describe中使用it和test。
 * it和test是一模一样的功能。
 * 在it和test中使用expect。
 
-# 更多使用说明
+## Jest中异步代码的测试
+* Jest中异步代码的测试：https://www.jianshu.com/p/ed212e1be81e
+* Jest中断言assertions的理解：https://www.jianshu.com/p/f650eadeb4f8
+
+## 更多使用说明
 * 请参阅官网 http://facebook.github.io/jest/
 
-# jest报错
+## jest报错
 > 报错内容如下
 ```
 FAIL
@@ -70,7 +74,7 @@ SecurityError: localStorage is not available for opaque origins at Window.get lo
 ```
 * 解决方案：https://github.com/zhouhuafei/zhf.time-count-down/blob/master/jest.config.js
 
-# git commit 之前进行代码风格的检测和修复(检测改动部分)
+## git commit 之前进行代码风格的检测和修复(检测改动部分)
 > 在`package.json`中增加如下内容
 ```json
 {
@@ -107,7 +111,7 @@ SecurityError: localStorage is not available for opaque origins at Window.get lo
 }
 ```
 
-# git commit 之前进行代码风格的检测和修复(检测全部内容)
+## git commit 之前进行代码风格的检测和修复(检测全部内容)
 > 在`package.json`中增加如下内容
 ```json
 {
@@ -120,7 +124,7 @@ SecurityError: localStorage is not available for opaque origins at Window.get lo
 }
 ```
 
-# 覆盖率
+## 覆盖率
 * `%Stmts`是语句覆盖率(statement coverage)：是不是每个语句都执行了？
 * `%Branch`分支覆盖率(branch coverage)：是不是每个if代码块都执行了？
 * `%Funcs`函数覆盖率(function coverage)：是不是每个函数都调用了？
