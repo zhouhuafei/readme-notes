@@ -129,3 +129,7 @@ SecurityError: localStorage is not available for opaque origins at Window.get lo
 * `%Branch`分支覆盖率(branch coverage)：是不是每个if代码块都执行了？
 * `%Funcs`函数覆盖率(function coverage)：是不是每个函数都调用了？
 * `%Lines`行覆盖率(line coverage)：是不是每一行都执行了？
+
+## vue单元测试 - mount和shallowMount的区别是什么？
+> https://github.com/vuejs/vue-test-utils
+* mount仅仅挂载当前组件实例；而shallowMount挂载当前组件实例以外，还会挂载子组件。

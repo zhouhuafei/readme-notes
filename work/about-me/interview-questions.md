@@ -109,29 +109,20 @@ fn(5) // 120
 ```
 * 5的阶乘？用尾递归怎么实现？`fn(5, 1)`
 ```
-function fn(n, total) {
+function fn(n, total = 1) {
   if (n === 1) return total
   return fn(n - 1, n * total)
 }
 
-fn(5, 1) // 120
+fn(5) // 120
 ```
-* 1+2+...+100？用递归怎么实现？`fn(1, 100)`
+* 1+2+...+100？用递归怎么实现？`fn1(1, 100)`
 ```
 function fn1 (n1, n2) {
   return n1 === n2 ? n2 : n1 + fn1(n1 + 1, n2)
 }
 
 fn1(1, 100)
-```
-* 1+2+...+100？用尾递归怎么实现？`fn2(1, 100, 0)`
-```
-function fn2 (n1, n2, total) {
-  if(n1 === n2) return total + n2
-  return fn2(n1 + 1, n2, n1 + total)
-}
-
-fn2(1, 100, 0)
 ```
 ### es6
 * var let const？
