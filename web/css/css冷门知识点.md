@@ -69,7 +69,7 @@ div {
     * {margin: 0;padding: 0;}
     .flex-wrap {width: 500px;margin: 200px auto;overflow-x: auto;display: flex;}
     .flex {padding-left: 10px;display: flex;background: #cccccc;height: 200px;}
-    .item {min-width: 250px;max-width: 250px;background: #999;margin-right: 10px;}
+    .item {width: 250px;background: #999;margin-right: 10px;}
   </style>
   <div class="flex-wrap">
     <div class="flex">
