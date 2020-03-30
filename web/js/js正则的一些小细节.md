@@ -22,7 +22,7 @@
 
 ## 识别 - 表情符号
 ```javascript
-const RE_Emoji = /\ud83c[\udf00-\udfff]|\ud83d[\udc00-\ude4f]|\ud83d[\ude80-\udeff]/g
+const RE_EMOJI = /\ud83c[\udf00-\udfff]|\ud83d[\udc00-\ude4f]|\ud83d[\ude80-\udeff]/g
 ```
 
 ## 识别 - 不可见字符集合
