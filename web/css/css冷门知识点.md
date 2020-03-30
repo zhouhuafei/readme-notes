@@ -63,6 +63,27 @@ div {
 * `display: flex;`会让自身的单行省略号失效。
   - 解决方案：再套一层。
 * 左右滚动的父容器使用flex布局时：父元素padding-right与子元素最后一个元素margin-right会失效。
+  - 解决方案：再套一层。给第一层加`overflow-x: auto;display: flex;`。给第二层加`display: flex;`。
+  ```html
+  <style>
+    * {margin: 0;padding: 0;}
+    .flex-wrap {width: 500px;margin: 200px auto;overflow-x: auto;display: flex;}
+    .flex {padding-left: 10px;display: flex;background: #cccccc;height: 200px;}
+    .item {min-width: 250px;max-width: 250px;background: #999;margin-right: 10px;}
+  </style>
+  <div class="flex-wrap">
+    <div class="flex">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+  </div>
+  ```
 * `flex: 1;`会导致自身或者子级的单行省略号失效。
   - 解决方案1：指定`max-width`。
   - 解决方案2：使用多行省略号模拟单行省略号。
