@@ -22,7 +22,13 @@
 
 ## 识别 - 表情符号
 ```javascript
-const RE_EMOJI = /\ud83c[\udf00-\udfff]|\ud83d[\udc00-\ude4f]|\ud83d[\ude80-\udeff]/g
+const RE_EMOJI = /[\uD83C|\uD83D|\uD83E][\uDC00-\uDFFF][\u200D|\uFE0F]|[\uD83C|\uD83D|\uD83E][\uDC00-\uDFFF]|[0-9|*|#]\uFE0F\u20E3|[0-9|#]\u20E3|[\u203C-\u3299]\uFE0F\u200D|[\u203C-\u3299]\uFE0F|[\u2122-\u2B55]|\u303D|[\A9|\AE]\u3030|\uA9|\uAE|\u3030/ig
+RE_EMOJI.test('😄test😄')
+```
+
+## 只允许输入英文数字下划线和汉字
+```javascript
+/^[\u4e00-\u9fa5\w]+$/.test('abc汉字_123')
 ```
 
 ## 识别 - 不可见字符集合
