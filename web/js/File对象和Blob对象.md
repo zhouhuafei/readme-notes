@@ -1,13 +1,13 @@
-# ArrayBuffer
+## ArrayBuffer
 * https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer
 * ArrayBuffer 对象用来表示通用的、固定长度的原始二进制数据缓冲区。
 * ArrayBuffer 不能直接操作，而是要通过类型数组对象或 DataView 对象来操作，它们会将缓冲区中的数据表示为特定的格式，并通过这些格式来读写缓冲区的内容。
 
-# DataView
+## DataView
 * https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/DataView
 * DataView 视图是一个可以从 ArrayBuffer 对象中读写多种数值类型的底层接口，使用它时，不用考虑不同平台的字节序问题。
 
-# Blob对象
+## Blob对象
 * https://developer.mozilla.org/zh-CN/docs/Web/API/Blob
 * Blob 对象表示一个不可变、原始数据的类文件对象。Blob 表示的不一定是JavaScript原生格式的数据。File 接口基于Blob，继承了 blob 的功能并将其扩展使其支持用户系统上的文件。
     - 从Blob中读取内容的唯一方法是使用 FileReader。
@@ -19,7 +19,7 @@
     reader.readAsArrayBuffer(blob);
     ```
 
-# File对象
+## File对象
 * https://developer.mozilla.org/zh-CN/docs/Web/API/File
 * https://developer.mozilla.org/zh-CN/docs/Web/API/File/File
 * File 对象是特殊类型的 Blob，且可以用在任意的 Blob 类型的 context 中。比如说， FileReader, URL.createObjectURL(), createImageBitmap(), 及 XMLHttpRequest.send() 都能处理 Blob 和 File。
@@ -32,7 +32,7 @@ const file = new File(['foo'], 'foo.txt', {
 // 经测试，上述file实例，可被FileReader读取。
 ```
 
-# File对象转成Blob对象
+## File对象转成Blob对象
 ```
 // 步骤1：先转成base64
 var reader = new FileReader();
@@ -66,12 +66,12 @@ reader.rederAsDataURL(file);
     - https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array
     - Uint8Array 数组类型表示一个8位无符号整型数组，创建时内容被初始化为0。创建完后，可以以对象的方式或使用数组下标索引的方式引用数组中的元素。
 
-# Blob对象转成File对象
+## Blob对象转成File对象
 ```
 let file = new window.File([blob], file.name, {type: file.type})
 ```
 
-# 案例
+## 案例
 ```javascript
 import axios from 'axios';
 
@@ -107,5 +107,74 @@ function downloadImg(data, filename) {
     a.setAttribute('download', filename);
     a.click();
     URL.revokeObjectURL(objectUrl);
+}
+```
+
+## ArrayBuffer转字符串
+```
+function utf8ByteToUnicodeStr(utf8Bytes) {
+  var unicodeStr = ''
+  for (let pos = 0; pos < utf8Bytes.length;) {
+    const flag = utf8Bytes[pos]
+    let unicode = 0
+    if ((flag >>> 7) === 0) {
+      unicodeStr += String.fromCharCode(utf8Bytes[pos])
+      pos += 1
+    } else if ((flag & 0xFC) === 0xFC) {
+      unicode = (utf8Bytes[pos] & 0x3) << 30
+      unicode |= (utf8Bytes[pos + 1] & 0x3F) << 24
+      unicode |= (utf8Bytes[pos + 2] & 0x3F) << 18
+      unicode |= (utf8Bytes[pos + 3] & 0x3F) << 12
+      unicode |= (utf8Bytes[pos + 4] & 0x3F) << 6
+      unicode |= (utf8Bytes[pos + 5] & 0x3F)
+      unicodeStr += String.fromCharCode(unicode)
+      pos += 6
+    } else if ((flag & 0xF8) === 0xF8) {
+      unicode = (utf8Bytes[pos] & 0x7) << 24
+      unicode |= (utf8Bytes[pos + 1] & 0x3F) << 18
+      unicode |= (utf8Bytes[pos + 2] & 0x3F) << 12
+      unicode |= (utf8Bytes[pos + 3] & 0x3F) << 6
+      unicode |= (utf8Bytes[pos + 4] & 0x3F)
+      unicodeStr += String.fromCharCode(unicode)
+      pos += 5
+    } else if ((flag & 0xF0) === 0xF0) {
+      unicode = (utf8Bytes[pos] & 0xF) << 18
+      unicode |= (utf8Bytes[pos + 1] & 0x3F) << 12
+      unicode |= (utf8Bytes[pos + 2] & 0x3F) << 6
+      unicode |= (utf8Bytes[pos + 3] & 0x3F)
+      unicodeStr += String.fromCharCode(unicode)
+      pos += 4
+    } else if ((flag & 0xE0) === 0xE0) {
+      unicode = (utf8Bytes[pos] & 0x1F) << 12
+
+      unicode |= (utf8Bytes[pos + 1] & 0x3F) << 6
+      unicode |= (utf8Bytes[pos + 2] & 0x3F)
+      unicodeStr += String.fromCharCode(unicode)
+      pos += 3
+    } else if ((flag & 0xC0) === 0xC0) { // 110
+      unicode = (utf8Bytes[pos] & 0x3F) << 6
+      unicode |= (utf8Bytes[pos + 1] & 0x3F)
+      unicodeStr += String.fromCharCode(unicode)
+      pos += 2
+    } else {
+      unicodeStr += String.fromCharCode(utf8Bytes[pos])
+      pos += 1
+    }
+  }
+  return unicodeStr
+}
+// 后端响应的数据是ArrayBuffer类型
+if (Object.prototype.toString.call(response.data) === '[object ArrayBuffer]') {
+  try {
+    const parsedRes = JSON.parse(utf8ByteToUnicodeStr(new Uint8Array(response.data)))
+    Message({
+      message: decodeURIComponent(parsedRes.message),
+      type: 'error',
+      duration: 5 * 1000
+    })
+    return Promise.reject(parsedRes)
+  } catch (e) {
+    return response.data
+  }
 }
 ```
