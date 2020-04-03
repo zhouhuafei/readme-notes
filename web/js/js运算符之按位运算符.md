@@ -8,8 +8,8 @@
     - 案例：~-1 === 0 // true
     ```javascript
     const str = 'str'
-    if(~str.indexOf('s')) console.log('如果不等于-1就能走进来')
-    if(!~str.indexOf('a')) console.log('如果等于-1就能走进来')
+    if(~str.indexOf('s')) console.log('indexOf不等于-1才能走进来')
+    if(!~str.indexOf('a')) console.log('indexOf等于-1才能走进来')
     ```
 * << 2按位左移1个 2 << 1 00000100 转成十进制是 4
 * >> 3按位右移1个 3 >> 1 00000001 转成十进制是 1
