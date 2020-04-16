@@ -140,6 +140,6 @@ https://github.com/petkaantonov/bluebird/
     - 1、以Promise的方式使用时，遇到ajax请求完之后需要改变开关的场景时，需要在then和catch中都处理开关状态。如果使用async/await的方式，则此弊端可忽略。
 
 # 后续开智补充
-* 接口请求失败直接输入Error(错误)`Promise.reject(new Error(message))`。
+* 接口请求失败直接输入Error(错误)`Promise.reject(new Error(res))`。
 * 如此操作，接口若是出错，await会返回一个抛错，相关代码就不会继续往下走。
 * 相关代码能继续往下走就说明请求是成功的。如此就没必要做多余的条件判断了。
