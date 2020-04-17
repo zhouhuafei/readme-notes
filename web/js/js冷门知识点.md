@@ -211,3 +211,14 @@ function move (arr, num, dir) {
   return arr
 }
 ```
+
+* 使用reduce进行数组转对象
+```javascript
+const arr = [{ key: 'a' }, { key: 'b' }]
+arr.reduce((result, current) => {
+  return {
+    ...result,
+    [current.key]: current
+  }
+}, {})
+```
