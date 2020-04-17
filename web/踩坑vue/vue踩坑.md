@@ -922,5 +922,5 @@ export default {
 
 # sleep
 ```
-Vue.prototype.$sleep = (timeMS) => new Promise((resolve) => setTimeout(resolve, timeMS))
+Vue.prototype.$sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 ```
