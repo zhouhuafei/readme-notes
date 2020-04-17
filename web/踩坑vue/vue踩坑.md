@@ -919,3 +919,8 @@ export default {
   - `@`是别名，一般表示根目录下的`src`目录。
   - `@`是别名，在`scss`中使用时，必须要带`~`线前缀(`~`线表示`@`不是一个相对路径)，否则打包时会报错。
   - `@`是别名，在`js`中使用时，不允许带`~`线前缀，否则打包时也会报错，因为`~`是`sass-loader`的特性。
+
+# sleep
+```
+Vue.prototype.$sleep = (timeMS) => new Promise((resolve) => setTimeout(resolve, timeMS))
+```
