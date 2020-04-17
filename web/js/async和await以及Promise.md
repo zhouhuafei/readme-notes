@@ -141,5 +141,14 @@ https://github.com/petkaantonov/bluebird/
 
 # 后续开智补充
 * 接口请求失败直接输入Error(错误)`Promise.reject(new Error(res))`。
-* 如此操作，接口若是出错，await会返回一个抛错，相关代码就不会继续往下走。
-* 相关代码能继续往下走就说明请求是成功的。如此就没必要做多余的条件判断了。
+  - 如此操作，接口若是出错，await会返回一个抛错，相关代码就不会继续往下走。
+  - 相关代码能继续往下走就说明请求是成功的。如此就没必要做多余的条件判断了。
+* finally
+  - await返回 Promise 对象的处理结果。如果等待的不是 Promise 对象，则返回该值本身。
+  - await期望从Promise的then和catch中接收返回值，finally的返回值不会被await接收。
+  - 如果有loading，则应该在finally中处理，因为catch抛出的错误会导致程序相关代码不会继续往下走。
+  ```
+  const arr = [axios({ url: 'url1' }), axios({ url: 'url2' })]
+  this.loading = true
+  await Promise.all(arr).finally(() => (this.loading = false))
+  ```
