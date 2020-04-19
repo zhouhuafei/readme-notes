@@ -18,3 +18,4 @@
     - application/octet-stream 二进制流数据（如常见的文件下载）
     - application/x-www-form-urlencoded 表单提交中默认的encType
     - multipart/form-data 在表单中文件上传时，就需要使用该格式
+    - multipart/byteranges 多段下载 配合 Content-Range 使用
