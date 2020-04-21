@@ -1,5 +1,11 @@
 ## ajax控制并发数量 - 方式1
 ```javascript
+function request (opts, cb) {
+  setTimeout(() => {
+    cb && cb(opts)
+  }, [200, 500, 1000][random(1, 2)])
+}
+
 function random (min, reqMax) {
   return Math.round(Math.random() * (reqMax - min) + min)
 }
@@ -50,19 +56,19 @@ fn.fn = (reqArr, reqMax, reqMethod) => {
 fn([...Array(21)].map((value, index) => {
   return function (cb) {
     console.log(`第${index}个请求已发出`)
-    setTimeout(() => {
-      fn.resArr.push(`第${index}个请求已完成`)
+    request({ url: index }, (opts) => {
+      fn.resArr.push(`第${index}个请求已完成，入参为：${JSON.stringify(opts)}`)
       cb && cb()
-    }, [200, 500, 1000][random(1, 2)])
+    })
   }
-}), 5, 2)
+}), 5, 1)
 ```
 
 ## ajax控制并发数量 - 方式2
 ```javascript
 function request (opts, cb) {
   setTimeout(() => {
-    cb && cb()
+    cb && cb(opts)
   }, [200, 500, 1000][random(1, 2)])
 }
 
@@ -70,61 +76,61 @@ function random (min, reqMax) {
   return Math.round(Math.random() * (reqMax - min) + min)
 }
 
-function myRequest (opts, reqMax = 5, reqMethod = 1) {
-  myRequest.reqArr.push(opts)
-  myRequest.fn(reqMax, reqMethod)
+function fn (opts, reqMax = 5, reqMethod = 1) {
+  fn.reqArr.push(opts)
+  fn.fn(reqMax, reqMethod)
 }
 
-myRequest.resNum = 0
-myRequest.maxNum = 0
-myRequest.emitNum = 0
-myRequest.resArr = []
-myRequest.reqArr = []
-myRequest.fn = (reqMax, reqMethod) => {
-  const reqArr = myRequest.reqArr
-  if (myRequest.maxNum < reqMax && myRequest.emitNum < reqArr.length) {
-    myRequest.maxNum++
+fn.resNum = 0
+fn.maxNum = 0
+fn.emitNum = 0
+fn.resArr = []
+fn.reqArr = []
+fn.fn = (reqMax, reqMethod) => {
+  const reqArr = fn.reqArr
+  if (fn.maxNum < reqMax && fn.emitNum < reqArr.length) {
+    fn.maxNum++
     ((emitNum) => {
       console.log(`第${emitNum}个请求已发出`)
-      request(reqArr[myRequest.emitNum], () => {
-        myRequest.resArr.push(`第${emitNum}个请求已响应`)
-        myRequest.resNum++
-        myRequest.maxNum--
+      request(reqArr[fn.emitNum], (opts) => {
+        fn.resArr.push(`第${emitNum}个请求已完成，入参为：${JSON.stringify(opts)}`)
+        fn.resNum++
+        fn.maxNum--
         if (reqMethod === 1) {
           // 前reqMax个请求中其中一个响应则立即触发下一个请求
-          myRequest.fn(reqMax, reqMethod)
+          fn.fn(reqMax, reqMethod)
         } else if (reqMethod === 2) {
           // 前reqMax个请求全部响应就进行后续reqMax个请求的触发
-          if (myRequest.maxNum === 0) {
-            myRequest.fn(reqMax, reqMethod)
+          if (fn.maxNum === 0) {
+            fn.fn(reqMax, reqMethod)
           }
         }
-        if (myRequest.resNum === reqArr.length) { // 全部响应完毕
-          console.log('myRequest.resNum：', myRequest.resNum)
-          console.log('myRequest.maxNum：', myRequest.maxNum)
-          console.log('myRequest.emitNum：', myRequest.emitNum)
-          console.log('myRequest.resArr：', myRequest.resArr)
-          console.log('myRequest.reqArr：', myRequest.reqArr)
-          myRequest.resNum = 0
-          myRequest.maxNum = 0
-          myRequest.emitNum = 0
-          myRequest.resArr = []
-          myRequest.reqArr = []
-          console.log('myRequest.resNum：', myRequest.resNum)
-          console.log('myRequest.maxNum：', myRequest.maxNum)
-          console.log('myRequest.emitNum：', myRequest.emitNum)
-          console.log('myRequest.resArr：', myRequest.resArr)
-          console.log('myRequest.reqArr：', myRequest.reqArr)
+        if (fn.resNum === reqArr.length) { // 全部响应完毕
+          console.log('fn.resNum：', fn.resNum)
+          console.log('fn.maxNum：', fn.maxNum)
+          console.log('fn.emitNum：', fn.emitNum)
+          console.log('fn.resArr：', fn.resArr)
+          console.log('fn.reqArr：', fn.reqArr)
+          fn.resNum = 0
+          fn.maxNum = 0
+          fn.emitNum = 0
+          fn.resArr = []
+          fn.reqArr = []
+          console.log('fn.resNum：', fn.resNum)
+          console.log('fn.maxNum：', fn.maxNum)
+          console.log('fn.emitNum：', fn.emitNum)
+          console.log('fn.resArr：', fn.resArr)
+          console.log('fn.reqArr：', fn.reqArr)
         }
       })
-    })(myRequest.emitNum)
-    myRequest.emitNum++
-    myRequest.fn(reqMax, reqMethod)
+    })(fn.emitNum)
+    fn.emitNum++
+    fn.fn(reqMax, reqMethod)
   }
 }
 
 // 发起请求
 [...Array(21)].forEach((v, i) => {
-  myRequest({ url: i })
+  fn({ url: i }, 5, 1)
 })
 ```
