@@ -130,7 +130,7 @@ fn.fn = (reqMax, reqMethod) => {
 }
 
 // 发起请求
-[...Array(21)].forEach((v, i) => {
-  fn({ url: i }, 5, 1)
+[...Array(21)].forEach((value, index) => {
+  fn({ url: index }, 5, 1)
 })
 ```
