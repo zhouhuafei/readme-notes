@@ -196,6 +196,10 @@ npx conventional-changelog -p angular -i CHANGELOG.md -s
 * 在项目中直接使用`git cz`进行`commit`即可。
 * 亲测，全局安装`git-cz`，即可直接使用`git cz`。
 
+# git-cz 自定义配置
+* 在项目根目录使用`changelog.config.js`进行自定义配置。
+* 文档：https://www.npmjs.com/package/git-cz#custom-config
+
 # 报错
 * 同事的电脑使用`git-cz`报错：`/c/Users/admin/AppData/Roaming/npm/node: line 1: /node_modules/node/bin/node: No such file or directory`。
 * 解决方案：删除当前项目`node_modules`目录里的`husky`包。
