@@ -30,10 +30,11 @@ git push origin :branchName
 git push origin --delete branchName
 ```
 
-## 更新远程分支， -p表示如果远程被删除了，本地的也会被删除
+## 拉取远程分支的改动到本地分支
 ```
 git pull -p
 ```
+* `-p的作用`：如果你的同事在远程版本库上删除了某一分支或新增了某一个分支。本地的远程追踪分支并不会改变，使用-p可以解决这一问题。
 
 ## 新建本地分支并关联远程分支
 ```
@@ -248,3 +249,15 @@ $ git stash drop --> 删除上次保存的状态。
 ### 重命名远程分支
 * 先把远程分支删了：`git push origin :old-name`。
 * 再把本地分支推上去：`git push --set-upstream origin new-name`。
+
+## 删除不包含master关键字之外的所有本地分支
+```
+git checkout master
+git branch | grep -v 'master' | xargs git branch -D
+```
+
+## 如果远程已有develop分支，本地没有develop分支
+* 使用`git checkout develop`可以直接创建并关联远程分支。
+
+## 查看远程仓库以及本地仓库的信息
+* `git remote show origin`。
