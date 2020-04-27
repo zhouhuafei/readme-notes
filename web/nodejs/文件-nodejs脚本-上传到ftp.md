@@ -18,7 +18,7 @@ client.scp('./dist/', {
 
 ## 案例2
 ```javascript
-const fs = require('fs')
+const fs = require('fs-extra')
 const scp2 = require('scp2')
 const Ftp = require('ssh2-sftp-client')
 const compressing = require('compressing')
@@ -50,10 +50,20 @@ function upload () {
 }
 
 async function zip () {
-  try {
-    fs.mkdirSync('./dist-zip')
-  } catch (e) {
-  }
+  console.log('dist-zip目录删除中...')
+  fs.removeSync('./dist-zip') // 重复删除不会报错。比原生的fs好用，原生的需要是空目录才能删除。
+  console.log('dist-zip目录已删除!!!')
+  console.log('dist-zip目录创建中...')
+  fs.mkdirSync('./dist-zip')
+  console.log('dist-zip目录已创建!!!')
+  // 重复创建会报错，可用try解决。此处没必要，因为会先删除，固不会出问题。
+  // try {
+  //   console.log('dist-zip目录创建中...')
+  //   fs.mkdirSync('./dist-zip')
+  //   console.log('dist-zip目录已创建!!!')
+  // } catch (e) {
+  //   console.log('dist-zip目录已存在!!!')
+  // }
   console.log('zip打包中...')
   const res = compressing.zip.compressDir('./dist', './dist-zip/dist.zip')
   console.log('zip已打包...')
