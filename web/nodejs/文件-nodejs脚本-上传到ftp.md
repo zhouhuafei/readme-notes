@@ -51,7 +51,7 @@ function upload () {
 
 async function zip () {
   console.log('dist-zip目录删除中...')
-  fs.removeSync('./dist-zip') // 重复删除不会报错。比原生的fs好用，原生的需要是空目录才能删除。
+  fs.removeSync('./dist-zip') // 重复删除不会报错。比原生的fs好用，原生的方法fs.rmdirSync需要目录存在且是空目录才能删除，否则会抛错。
   console.log('dist-zip目录已删除!!!')
   console.log('dist-zip目录创建中...')
   fs.mkdirSync('./dist-zip')
