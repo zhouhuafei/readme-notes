@@ -66,7 +66,7 @@ async function zip () {
   // }
   console.log('zip打包中...')
   const res = compressing.zip.compressDir('./dist', './dist-zip/dist.zip')
-  console.log('zip已打包...')
+  console.log('zip已打包!!!')
   return res
 }
 
