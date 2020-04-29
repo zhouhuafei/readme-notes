@@ -26,7 +26,7 @@ location.reload(true); // 刷新页面，无缓存
         return v1 + v2;
     });
     ```
-    - 使用reduce进行数组转对象
+    - 使用reduce进行数组转对象。
     ```javascript
     const arr = [{ key: 'a' }, { key: 'b' }]
     arr.reduce((result, current) => {
