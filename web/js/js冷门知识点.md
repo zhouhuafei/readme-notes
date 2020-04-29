@@ -26,6 +26,16 @@ location.reload(true); // 刷新页面，无缓存
         return v1 + v2;
     });
     ```
+    - 使用reduce进行数组转对象
+    ```javascript
+    const arr = [{ key: 'a' }, { key: 'b' }]
+    arr.reduce((result, current) => {
+      return {
+        ...result,
+        [current.key]: current
+      }
+    }, {})
+    ```
 
 * checkbox,radio,select没有readonly属性。
     - 具有disabled属性的表单元素，表单提交(submit)时，name和value不会被带过去(这个不算冷门知识)。
@@ -210,15 +220,4 @@ function move (arr, num, dir) {
   arr[num] = arr.splice(num - dir, 1, arr[num])[0]
   return arr
 }
-```
-
-* 使用reduce进行数组转对象
-```javascript
-const arr = [{ key: 'a' }, { key: 'b' }]
-arr.reduce((result, current) => {
-  return {
-    ...result,
-    [current.key]: current
-  }
-}, {})
 ```
