@@ -550,7 +550,7 @@ Event.$on('msg', function (json) { // 接收数据，第一个参数是数据的
     }
     ```
 * computed VS methods对比 https://cn.vuejs.org/v2/guide/computed.html#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E7%BC%93%E5%AD%98-vs-%E6%96%B9%E6%B3%95
-* computed传参。
+* computed传参 - 计算属性传参。
 ```
 <div id="app">
   <p>{{newItem('world')}}</p>
