@@ -218,7 +218,7 @@ fn1(1, 100)
 
 ## http
 * 常见状态码？`200 301 302 304 307 308 401 403 404 500 502 504`。
-* 常用请求方式？`POST DELETE UPDATE PATCH GET OPTIONS`。
+* 常用请求方式？`POST DELETE PUT PATCH GET OPTIONS`。
 * Cache-Control是干啥的？`强缓存`。
 * 怎么防止缓存？`文件加版本号或加md5`。
 * 什么是CDN，有什么特性？`内容分发网络，会就近找服务器读取被缓存的资源，提高访问速度`。

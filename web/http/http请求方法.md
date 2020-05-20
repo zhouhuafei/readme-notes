@@ -1,4 +1,6 @@
-# 摘自《图解HTTP》
+> 搜索关键字：http请求方法、http请求方式、常用请求方式
+
+## 摘自《图解HTTP》
 * GET
     - 获取资源
 * POST
@@ -16,7 +18,7 @@
 * CONNECT
     - 要求用隧道协议连接代理
 
-# PATCH
+## PATCH
 > https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods/PATCH
 * 在HTTP协议中，请求方法 PATCH  用于对资源进行部分修改。
 * 在HTTP协议中， PUT 方法已经被用来表示对资源进行整体覆盖， 而 POST 方法则没有对标准的补丁格式的提供支持。不同于  PUT 方法，而与 POST 方法类似，PATCH  方法是非幂等的，这就意味着连续多个的相同请求会产生不同的效果。
