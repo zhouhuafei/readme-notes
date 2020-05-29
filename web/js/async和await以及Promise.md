@@ -184,11 +184,11 @@ fn().then((res) => {
 Promise.prototype.finally = function (onFinally) {
   return this.then(
     res => {
-      console.log('onFulfilled')
+      console.log('finally - onFulfilled', ' ------ res：', res)
       return Promise.resolve(onFinally()).then(() => res)
     },
     err => {
-      console.log('onRejected')
+      console.log('finally - onRejected', ' ------ res：', res)
       return Promise.resolve(onFinally()).then(() => {
         throw err
       })
@@ -224,12 +224,12 @@ fn().then((res) => {
 Promise.prototype.finally = function (onFinally) {
   return this.then(
     res => {
-      console.log('onFulfilled')
+      console.log('finally - onFulfilled', ' ------ res：', res)
       onFinally()
       return res
     },
     err => {
-      console.log('onRejected')
+      console.log('finally - onRejected', ' ------ res：', res)
       onFinally()
       throw err
     }
@@ -263,11 +263,11 @@ fn().then((res) => {
 // 向 Promise.prototype 增加 finally()
 Promise.prototype.finally = function (onFinally) {
   return this.then(res => {
-    console.log('onFulfilled')
+    console.log('finally - onFulfilled', ' ------ res：', res)
     onFinally()
     return res
   }).catch(err => {
-    console.log('onRejected')
+    console.log('finally - onRejected', ' ------ res：', res)
     onFinally()
     throw err
   })
