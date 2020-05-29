@@ -153,15 +153,60 @@ https://github.com/petkaantonov/bluebird/
   await Promise.all(arr).finally(() => (this.loading = false))
   ```
 
+# Promise 默认的 finally()
+```
+function fn () {
+  return new Promise((resolve, reject) => {
+    Math.random() > 0.5 ? reject() : resolve()
+  })
+}
+
+fn().then(() => {
+  console.log('先 - then')
+}).catch(() => {
+  console.log('先 - catch')
+}).finally(() => {
+  console.log('后 - finally')
+}).then(() => {
+  console.log('后 - then')
+}).catch(() => {
+  console.log('后 - catch') // 不会打印
+})
+```
+
 # 向 Promise.prototype 增加 finally()
 ```
 // 向 Promise.prototype 增加 finally()
-Promise.prototype.finally = function(onFinally) {
+Promise.prototype.finally = function (onFinally) {
   return this.then(
-    /* onFulfilled */
-    res => Promise.resolve(onFinally()).then(() => res),
-    /* onRejected */
-    err => Promise.resolve(onFinally()).then(() => { throw err; })
-  );
-};
+    res => {
+      console.log('onFulfilled')
+      return Promise.resolve(onFinally()).then(() => res)
+    },
+    err => {
+      console.log('onRejected')
+      return Promise.resolve(onFinally()).then(() => {
+        throw err
+      })
+    }
+  )
+}
+
+function fn () {
+  return new Promise((resolve, reject) => {
+    Math.random() > 0.5 ? reject() : resolve()
+  })
+}
+
+fn().then(() => {
+  console.log('先 - then')
+}).catch(() => {
+  console.log('先 - catch')
+}).finally(() => {
+  console.log('后 - finally')
+}).then(() => {
+  console.log('后 - then')
+}).catch(() => {
+  console.log('后 - catch') // 不会打印
+})
 ```
