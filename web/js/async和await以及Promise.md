@@ -258,3 +258,40 @@ fn().then((res) => {
   return 'catch'
 })
 ```
+经测试 - 改成下面的写法也没问题
+```
+// 向 Promise.prototype 增加 finally()
+Promise.prototype.finally = function (onFinally) {
+  return this.then(res => {
+    console.log('onFulfilled')
+    onFinally()
+    return res
+  }).catch(err => {
+    console.log('onRejected')
+    onFinally()
+    throw err
+  })
+}
+
+function fn () {
+  return new Promise((resolve, reject) => {
+    Math.random() > 0.5 ? reject('reject') : resolve('resolve')
+  })
+}
+
+fn().then((res) => {
+  console.log('先 - then', ' ------ res：', res)
+  return res
+}).catch((res) => {
+  console.log('先 - catch', ' ------ res：', res)
+  throw res
+}).finally((res) => {
+  console.log('后 - finally', ' ------ res：', res)
+}).then((res) => {
+  console.log('后 - then', ' ------ res：', res)
+  return 'then'
+}).catch((res) => {
+  console.log('后 - catch', ' ------ res：', res)
+  return 'catch'
+})
+```
