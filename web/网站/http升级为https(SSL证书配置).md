@@ -6,6 +6,8 @@
 # 默认端口
 * http: 80(云服务器上要开启这个端口)
 * https: 443(云服务器上要开启这个端口)
+* ws: 80
+* wss: 443
 
 # nodejs(express)为网站配置SSL证书
 ```javascript

@@ -153,15 +153,145 @@ https://github.com/petkaantonov/bluebird/
   await Promise.all(arr).finally(() => (this.loading = false))
   ```
 
+# Promise 默认的 finally()
+```
+function fn () {
+  return new Promise((resolve, reject) => {
+    Math.random() > 0.5 ? reject('reject') : resolve('resolve')
+  })
+}
+
+fn().then((res) => {
+  console.log('先 - then', ' ------ res：', res)
+  return res
+}).catch((err) => {
+  console.log('先 - catch', ' ------ err：', err)
+  throw err
+}).finally((res) => {
+  console.log('后 - finally', ' ------ res：', res)
+}).then((res) => {
+  console.log('后 - then', ' ------ res：', res)
+  return 'then'
+}).catch((err) => {
+  console.log('后 - catch', ' ------ err：', err)
+  return 'catch'
+})
+```
+
 # 向 Promise.prototype 增加 finally()
 ```
 // 向 Promise.prototype 增加 finally()
-Promise.prototype.finally = function(onFinally) {
+Promise.prototype.finally = function (onFinally) {
   return this.then(
-    /* onFulfilled */
-    res => Promise.resolve(onFinally()).then(() => res),
-    /* onRejected */
-    err => Promise.resolve(onFinally()).then(() => { throw err; })
-  );
-};
+    res => {
+      console.log('finally - onFulfilled', ' ------ res：', res)
+      return Promise.resolve(onFinally()).then(() => res)
+    },
+    err => {
+      console.log('finally - onRejected', ' ------ err：', err)
+      return Promise.resolve(onFinally()).then(() => {
+        throw err
+      })
+    }
+  )
+}
+
+function fn () {
+  return new Promise((resolve, reject) => {
+    Math.random() > 0.5 ? reject('reject') : resolve('resolve')
+  })
+}
+
+fn().then((res) => {
+  console.log('先 - then', ' ------ res：', res)
+  return res
+}).catch((err) => {
+  console.log('先 - catch', ' ------ err：', err)
+  throw err
+}).finally((res) => {
+  console.log('后 - finally', ' ------ res：', res)
+}).then((res) => {
+  console.log('后 - then', ' ------ res：', res)
+  return 'then'
+}).catch((err) => {
+  console.log('后 - catch', ' ------ err：', err)
+  return 'catch'
+})
+```
+经测试 - 改成下面的写法也没问题
+```
+// 向 Promise.prototype 增加 finally()
+Promise.prototype.finally = function (onFinally) {
+  return this.then(
+    res => {
+      console.log('finally - onFulfilled', ' ------ res：', res)
+      onFinally()
+      return res
+    },
+    err => {
+      console.log('finally - onRejected', ' ------ err：', err)
+      onFinally()
+      throw err
+    }
+  )
+}
+
+function fn () {
+  return new Promise((resolve, reject) => {
+    Math.random() > 0.5 ? reject('reject') : resolve('resolve')
+  })
+}
+
+fn().then((res) => {
+  console.log('先 - then', ' ------ res：', res)
+  return res
+}).catch((err) => {
+  console.log('先 - catch', ' ------ err：', err)
+  throw err
+}).finally((res) => {
+  console.log('后 - finally', ' ------ res：', res)
+}).then((res) => {
+  console.log('后 - then', ' ------ res：', res)
+  return 'then'
+}).catch((err) => {
+  console.log('后 - catch', ' ------ err：', err)
+  return 'catch'
+})
+```
+经测试 - 改成下面的写法也没问题
+```
+// 向 Promise.prototype 增加 finally()
+Promise.prototype.finally = function (onFinally) {
+  return this.then(res => {
+    console.log('finally - onFulfilled', ' ------ res：', res)
+    onFinally()
+    return res
+  }).catch(err => {
+    console.log('finally - onRejected', ' ------ err：', err)
+    onFinally()
+    throw err
+  })
+}
+
+function fn () {
+  return new Promise((resolve, reject) => {
+    Math.random() > 0.5 ? reject('reject') : resolve('resolve')
+  })
+}
+
+fn().then((res) => {
+  console.log('先 - then', ' ------ res：', res)
+  return res
+}).catch((err) => {
+  console.log('先 - catch', ' ------ err：', err)
+  throw err
+}).finally((res) => {
+  console.log('后 - finally', ' ------ res：', res)
+}).then((res) => {
+  console.log('后 - then', ' ------ res：', res)
+  return 'then'
+}).catch((err) => {
+  console.log('后 - catch', ' ------ err：', err)
+  return 'catch'
+})
 ```
