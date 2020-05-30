@@ -9,7 +9,9 @@
 * 小程序项目全局引入 regenerator 库。
 * 在app.js中引入```runtime.js```。
 * 疑问 - 小程序中提供的那些api都是回调形式的该怎么破？
-    - 建议使用taro框架或者别的小程序框架。
+  - `util.promisify`。
+  - 对小程序的api统一进行promise化。
+  - 建议使用taro框架或者uni-app框架。
 
 # async
 * 返回值：返回 Promise 对象。
@@ -168,7 +170,7 @@ fn().then((res) => {
   console.log('先 - catch', ' ------ err：', err)
   throw err
 }).finally((res) => {
-  console.log('后 - finally', ' ------ res：', res)
+  console.log('中 - finally', ' ------ res：', res)
 }).then((res) => {
   console.log('后 - then', ' ------ res：', res)
   return 'then'
@@ -178,7 +180,7 @@ fn().then((res) => {
 })
 ```
 
-# 向 Promise.prototype 增加 finally()
+# 向 Promise.prototype 增加 finally() - 正确的版本
 ```
 // 向 Promise.prototype 增加 finally()
 Promise.prototype.finally = function (onFinally) {
@@ -209,7 +211,7 @@ fn().then((res) => {
   console.log('先 - catch', ' ------ err：', err)
   throw err
 }).finally((res) => {
-  console.log('后 - finally', ' ------ res：', res)
+  console.log('中 - finally', ' ------ res：', res)
 }).then((res) => {
   console.log('后 - then', ' ------ res：', res)
   return 'then'
@@ -218,7 +220,9 @@ fn().then((res) => {
   return 'catch'
 })
 ```
-经测试 - 改成下面的写法也没问题
+
+## 向 Promise.prototype 增加 finally() - 错误的版本
+* 有问题的写法1
 ```
 // 向 Promise.prototype 增加 finally()
 Promise.prototype.finally = function (onFinally) {
@@ -235,30 +239,8 @@ Promise.prototype.finally = function (onFinally) {
     }
   )
 }
-
-function fn () {
-  return new Promise((resolve, reject) => {
-    Math.random() > 0.5 ? reject('reject') : resolve('resolve')
-  })
-}
-
-fn().then((res) => {
-  console.log('先 - then', ' ------ res：', res)
-  return res
-}).catch((err) => {
-  console.log('先 - catch', ' ------ err：', err)
-  throw err
-}).finally((res) => {
-  console.log('后 - finally', ' ------ res：', res)
-}).then((res) => {
-  console.log('后 - then', ' ------ res：', res)
-  return 'then'
-}).catch((err) => {
-  console.log('后 - catch', ' ------ err：', err)
-  return 'catch'
-})
 ```
-经测试 - 改成下面的写法也没问题
+* 有问题的写法2
 ```
 // 向 Promise.prototype 增加 finally()
 Promise.prototype.finally = function (onFinally) {
@@ -272,7 +254,11 @@ Promise.prototype.finally = function (onFinally) {
     throw err
   })
 }
-
+```
+* 我以为 - 改成上面的写法是没问题的
+* 但是广举给了我一个案例 - 测试后发现我忽略了finally返回一个Promise的场景
+* 下述非原案例，我修改成自己想要的格式了
+```
 function fn () {
   return new Promise((resolve, reject) => {
     Math.random() > 0.5 ? reject('reject') : resolve('resolve')
@@ -286,7 +272,13 @@ fn().then((res) => {
   console.log('先 - catch', ' ------ err：', err)
   throw err
 }).finally((res) => {
-  console.log('后 - finally', ' ------ res：', res)
+  console.log('中 - finally', ' ------ res：', res)
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log('中 - finally complete')
+      Math.random() > 0.5 ? reject('reject') : resolve('resolve')
+    }, 100)
+  })
 }).then((res) => {
   console.log('后 - then', ' ------ res：', res)
   return 'then'
@@ -295,3 +287,5 @@ fn().then((res) => {
   return 'catch'
 })
 ```
+* 注：Promise.resolve的入参如果是一个Promise，则会等待Promise处理完结果之后才会继续往下执行。
+  - Promise.reject不会等待。
