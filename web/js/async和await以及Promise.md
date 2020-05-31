@@ -289,3 +289,7 @@ fn().then((res) => {
 ```
 * 注：Promise.resolve的入参如果是一个Promise，则会等待Promise处理完结果之后才会继续往下执行。
   - Promise.reject不会等待。
+* 这是完整的实现
+  - https://github.com/tc39/proposal-promise-finally/blob/master/polyfill.js
+* 这是规范
+  - https://tc39.es/ecma262/#sec-promise.prototype.finally
