@@ -584,7 +584,7 @@ new Vue({
     - inheritAttrs: false
     - $attrs
     - ```v-bind="$attrs"```
-    - https://cn.vuejs.org/v2/guide/components-props.html#%E7%A6%81%E7%94%A8%E7%89%B9%E6%80%A7%E7%BB%A7%E6%89%BF
+    - https://cn.vuejs.org/v2/guide/components-props.html#%E7%A6%81%E7%94%A8-Attribute-%E7%BB%A7%E6%89%BF
     - https://github.com/ElemeFE/element/blob/dev/packages/input/src/input.vue
 * 将原生事件绑定到组件
     - .native修饰符有局限性
