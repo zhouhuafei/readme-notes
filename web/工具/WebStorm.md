@@ -101,3 +101,6 @@ MacIntosh 操作系统(早期的 Mac 操作系统)采用单个字符 CR 来进�
 
 # 免费申请WebStorm使用许可
 https://blog.csdn.net/Jonathan_1994/article/details/89293878
+
+# WebStorm全局搜索搜不到内容或搜到的内容不全
+> File - Invalidate Caches / Restart...
