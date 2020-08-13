@@ -261,3 +261,8 @@ git branch | grep -v 'master' | xargs git branch -D
 
 ## 查看远程仓库以及本地仓库的信息
 * `git remote show origin`。
+
+## ssh
+* `ls -al ~/.ssh`
+* `ssh-keygen -t rsa -C "zhouhuafei@wowkai.cn"`
+* `cat ~/.ssh/id_rsa.pub`
