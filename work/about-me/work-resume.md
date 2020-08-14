@@ -144,10 +144,12 @@
     - 《HTML5与CSS3权威指南上册》，《HTML5与CSS3权威指南下册》，《HTML5权威指南》
     - 《锋利的jQuery》，《Bootstrap实战》
     - 《MySQL必知必会》
+    - 《Node与Express开发》
 * 没看完偶尔继续看的书
     - 《图解HTTP》
-    - 《Node与Express开发》，《深入浅出Node.js》
     - 《HTML5 Canvas核心技术》
+* 看了一半不想继续看的书
+    - 《深入浅出Node.js》
 * 还没看的书
     - 《图解TCP/IP》
     - 《高性能MySQL》，《Redis实战》，《MongoDB权威指南》
