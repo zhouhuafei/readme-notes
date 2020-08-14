@@ -266,3 +266,12 @@ git branch | grep -v 'master' | xargs git branch -D
 * `ls -al ~/.ssh`
 * `ssh-keygen -t rsa -C "zhouhuafei@wowkai.cn"`
 * `cat ~/.ssh/id_rsa.pub`
+
+## merge时把develop上的多个commit合成一个commit
+* 主要命令：`git merge --squash develop`。
+```
+git merge --squash develop
+git commit -m "feat: merge develop"
+git push
+```
+* 应用场景：deploy发布。
