@@ -1,3 +1,6 @@
+## MongoDB索引介绍
+> https://developer.aliyun.com/article/33726
+
 ## _id的类型
 * mongodb自动生成的```_id```是```ObjectId```类型的数据。
 ```
