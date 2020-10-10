@@ -44,8 +44,8 @@
 * 所以Fiddler中可以看到所有的用户请求，至于拦截和篡改请求，就是Fiddler的开发人员开发的功能了。这些功能可以方便开发人员的调试。
 
 # Fiddler抓HTTPS请求
-https://blog.csdn.net/qq_15283475/article/details/62224149
-* 电脑安装Fiddler证书：
-    - `Fiddler` -> `Tools` -> `Options` -> `HTTPS` -> `Actions` -> `Trust Root Certificate` -> `Yes`
-* 手机安装Fiddler证书：
-    - 打开手机浏览器，在浏览器地址输入代理服务器IP和端口，会看到一个Fiddler提供的证书页面。
+* 教程：https://www.cnblogs.com/joshua317/p/8670923.html
+* 证书安装：
+  - 电脑安装Fiddler证书：`Fiddler` -> `Tools` -> `Options` -> `HTTPS` -> `Actions` -> `Trust Root Certificate` -> `Yes`
+  - 手机安装Fiddler证书：打开手机浏览器，在浏览器地址输入代理服务器IP和端口，会看到一个Fiddler提供的证书页面。
+* 问题：手机上抓包一直失败，有机会的话试试使用`Charles`软件进行抓包吧。
