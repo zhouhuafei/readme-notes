@@ -1,3 +1,4 @@
+```javascript
 const list = [
   {
     name: '图书',
@@ -117,3 +118,4 @@ const getFather = (children, list) => {
   return result
 }
 getFather(children, list)
+```
