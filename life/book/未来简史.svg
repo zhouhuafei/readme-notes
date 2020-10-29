@@ -1,0 +1,1385 @@
+<svg viewBox="0 0 1832 3351" xmlns:xlink="http://www.w3.org/1999/xlink" width="1832" ed:hspacing="30"
+     xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:ed="https://www.edrawsoft.cn/xml/2017/SVGExtensions/"
+     height="3351" ed:vspacing="30" xmlns="http://www.w3.org/2000/svg" ed:name="Page-1" id="page100">
+    <style type="text/css">
+        g[ed\:togtopicid],g[ed\:hyperlink],g[ed\:comment],g[ed\:note] {cursor:pointer;}
+        g[id] {-moz-user-select: none;-ms-user-select: none;user-select: none;}
+        svg text::selection,svg tspan::selection{background-color: #4285f4;color: #ffffff;fill: #ffffff;}
+        .st3 {fill:#000000;font-family:微软雅黑;font-size:11pt}
+        .st2 {fill:#303030;font-family:微软雅黑;font-size:13pt}
+        .st1 {fill:#ffffff;font-family:微软雅黑;font-size:18pt;font-weight:bold}
+    </style>
+    <defs>
+        <linearGradient x1="0%" y1="0%" y2="100%" x2="0%" id="lg1">
+            <stop stop-color="#ffffff" offset="0"></stop>
+            <stop stop-color="#f0f5f0" offset="0.25"></stop>
+            <stop stop-color="#e1ebe1" offset="0.75"></stop>
+            <stop stop-color="#c8d7c8" offset="1"></stop>
+        </linearGradient>
+    </defs>
+    <rect fill="#fffbf9" width="1832" x="0" height="3351" y="0"></rect>
+    <path fill="none" stroke-linejoin="round" ed:parentid="101" stroke-linecap="round" ed:tosuperid="102"
+          d="M-66.2,682.9C-64.9,-156.8,-12.3,-714.4,66.3,-714.4" transform="matrix(1,0,0,1,157,961)" stroke="#7e7e7e"
+          id="103"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="102" stroke-linecap="round" ed:tosuperid="104"
+          d="M-13.5,95.1L3.7,95.1L3.7,-89.1C3.7,-92.4,6.4,-95.1,9.7,-95.1L13.5,-95.1"
+          transform="matrix(1,0,0,1,412,152)" stroke="#7e7e7e" id="105"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="104" stroke-linecap="round" ed:tosuperid="106"
+          d="M-13.5,0L3.7,0C3.7,0,6.4,0,9.7,0L13.5,0" transform="matrix(1,0,0,1,517,57)" stroke="#7e7e7e"
+          id="107"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="102" stroke-linecap="round" ed:tosuperid="108"
+          d="M3.7,74.1L3.7,-68.1C3.7,-71.4,6.4,-74.1,9.7,-74.1L13.5,-74.1" transform="matrix(1,0,0,1,412,173)"
+          stroke="#7e7e7e" id="109"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="108" stroke-linecap="round" ed:tosuperid="110"
+          d="M-13.5,0L3.7,0C3.7,0,6.4,0,9.7,0L13.5,0" transform="matrix(1,0,0,1,517,99)" stroke="#7e7e7e"
+          id="111"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="102" stroke-linecap="round" ed:tosuperid="112"
+          d="M3.7,-29.9L3.7,23.9C3.7,27.2,6.4,29.9,9.7,29.9L13.5,29.9" transform="matrix(1,0,0,1,412,277)"
+          stroke="#7e7e7e" id="113"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="112" stroke-linecap="round" ed:tosuperid="114"
+          d="M-13.5,72.5L3.7,72.5L3.7,-66.5C3.7,-69.8,6.4,-72.5,9.7,-72.5L13.5,-72.5"
+          transform="matrix(1,0,0,1,517,234)" stroke="#7e7e7e" id="115"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="114" stroke-linecap="round" ed:tosuperid="116"
+          d="M-13.5,10.5L3.7,10.5L3.7,-4.5C3.7,-7.8,6.4,-10.5,9.7,-10.5L13.5,-10.5" transform="matrix(1,0,0,1,592,151)"
+          stroke="#7e7e7e" id="117"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="116" stroke-linecap="round" ed:tosuperid="118"
+          d="M-13.5,0L3.7,0C3.7,0,6.4,0,9.7,0L13.5,0" transform="matrix(1,0,0,1,997,141)" stroke="#7e7e7e"
+          id="119"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="114" stroke-linecap="round" ed:tosuperid="120"
+          d="M3.7,-10.5L3.7,4.5C3.7,7.8,6.4,10.5,9.7,10.5L13.5,10.5" transform="matrix(1,0,0,1,592,172)"
+          stroke="#7e7e7e" id="121"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="120" stroke-linecap="round" ed:tosuperid="122"
+          d="M-13.5,0L3.7,0C3.7,0,6.4,0,9.7,0L13.5,0" transform="matrix(1,0,0,1,1072,183)" stroke="#7e7e7e"
+          id="123"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="112" stroke-linecap="round" ed:tosuperid="124"
+          d="M3.7,-5.5L3.7,-0.5C3.7,2.8,6.4,5.5,9.7,5.5L13.5,5.5" transform="matrix(1,0,0,1,517,312)" stroke="#7e7e7e"
+          id="125"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="124" stroke-linecap="round" ed:tosuperid="126"
+          d="M-13.5,36.5L3.7,36.5L3.7,-30.5C3.7,-33.8,6.4,-36.5,9.7,-36.5L13.5,-36.5"
+          transform="matrix(1,0,0,1,592,281)" stroke="#7e7e7e" id="127"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="124" stroke-linecap="round" ed:tosuperid="128"
+          d="M3.7,-15.5L3.7,9.5C3.7,12.8,6.4,15.5,9.7,15.5L13.5,15.5" transform="matrix(1,0,0,1,592,333)"
+          stroke="#7e7e7e" id="129"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="128" stroke-linecap="round" ed:tosuperid="130"
+          d="M-13.5,31L3.7,31L3.7,-25C3.7,-28.3,6.4,-31,9.7,-31L13.5,-31" transform="matrix(1,0,0,1,950,318)"
+          stroke="#7e7e7e" id="131"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="128" stroke-linecap="round" ed:tosuperid="132"
+          d="M3.7,0C3.7,0,6.4,0,9.7,0L13.5,0" transform="matrix(1,0,0,1,950,349)" stroke="#7e7e7e" id="133"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="128" stroke-linecap="round" ed:tosuperid="134"
+          d="M3.7,-31L3.7,25C3.7,28.3,6.4,31,9.7,31L13.5,31" transform="matrix(1,0,0,1,950,380)" stroke="#7e7e7e"
+          id="135"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="112" stroke-linecap="round" ed:tosuperid="136"
+          d="M3.7,-78L3.7,72C3.7,75.3,6.4,78,9.7,78L13.5,78" transform="matrix(1,0,0,1,517,385)" stroke="#7e7e7e"
+          id="137"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="136" stroke-linecap="round" ed:tosuperid="138"
+          d="M-13.5,-5L3.7,-5L3.7,-1C3.7,2.3,6.4,5,9.7,5L13.5,5" transform="matrix(1,0,0,1,697,468)" stroke="#7e7e7e"
+          id="139"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="101" stroke-linecap="round" ed:tosuperid="140"
+          d="M-66.2,400.6C-64.1,-100.4,-11.6,-432.1,66.3,-432.1" transform="matrix(1,0,0,1,157,1243)" stroke="#7e7e7e"
+          id="141"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="140" stroke-linecap="round" ed:tosuperid="142"
+          d="M-13.5,58.1L3.7,58.1L3.7,-52.1C3.7,-55.4,6.4,-58.1,9.7,-58.1L13.5,-58.1"
+          transform="matrix(1,0,0,1,412,753)" stroke="#7e7e7e" id="143"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="142" stroke-linecap="round" ed:tosuperid="144"
+          d="M-13.5,72L3.7,72L3.7,-66C3.7,-69.3,6.4,-72,9.7,-72L13.5,-72" transform="matrix(1,0,0,1,667,623)"
+          stroke="#7e7e7e" id="145"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="144" stroke-linecap="round" ed:tosuperid="146"
+          d="M-13.5,-5L3.7,-5L3.7,-1C3.7,2.3,6.4,5,9.7,5L13.5,5" transform="matrix(1,0,0,1,742,556)" stroke="#7e7e7e"
+          id="147"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="142" stroke-linecap="round" ed:tosuperid="148"
+          d="M3.7,-15.5L3.7,9.5C3.7,12.8,6.4,15.5,9.7,15.5L13.5,15.5" transform="matrix(1,0,0,1,667,711)"
+          stroke="#7e7e7e" id="149"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="148" stroke-linecap="round" ed:tosuperid="150"
+          d="M-13.5,56.5L3.7,56.5L3.7,-50.5C3.7,-53.8,6.4,-56.5,9.7,-56.5L13.5,-56.5"
+          transform="matrix(1,0,0,1,742,670)" stroke="#7e7e7e" id="151"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="150" stroke-linecap="round" ed:tosuperid="152"
+          d="M-13.5,-5L3.7,-5L3.7,-1C3.7,2.3,6.4,5,9.7,5L13.5,5" transform="matrix(1,0,0,1,862,618)" stroke="#7e7e7e"
+          id="153"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="148" stroke-linecap="round" ed:tosuperid="154"
+          d="M3.7,5L3.7,1C3.7,-2.3,6.4,-5,9.7,-5L13.5,-5" transform="matrix(1,0,0,1,742,721)" stroke="#7e7e7e"
+          id="155"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="154" stroke-linecap="round" ed:tosuperid="156"
+          d="M-13.5,15.5L3.7,15.5L3.7,-9.5C3.7,-12.8,6.4,-15.5,9.7,-15.5L13.5,-15.5" transform="matrix(1,0,0,1,817,701)"
+          stroke="#7e7e7e" id="157"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="154" stroke-linecap="round" ed:tosuperid="158"
+          d="M3.7,-25.5L3.7,19.5C3.7,22.8,6.4,25.5,9.7,25.5L13.5,25.5" transform="matrix(1,0,0,1,817,742)"
+          stroke="#7e7e7e" id="159"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="148" stroke-linecap="round" ed:tosuperid="160"
+          d="M3.7,-51.5L3.7,45.5C3.7,48.8,6.4,51.5,9.7,51.5L13.5,51.5" transform="matrix(1,0,0,1,742,778)"
+          stroke="#7e7e7e" id="161"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="160" stroke-linecap="round" ed:tosuperid="162"
+          d="M-13.5,-10L3.7,-10L3.7,4C3.7,7.3,6.4,10,9.7,10L13.5,10" transform="matrix(1,0,0,1,832,839)"
+          stroke="#7e7e7e" id="163"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="140" stroke-linecap="round" ed:tosuperid="164"
+          d="M3.7,-96.4L3.7,90.4C3.7,93.7,6.4,96.4,9.7,96.4L13.5,96.4" transform="matrix(1,0,0,1,412,908)"
+          stroke="#7e7e7e" id="165"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="164" stroke-linecap="round" ed:tosuperid="166"
+          d="M-13.5,46.5L3.7,46.5L3.7,-40.5C3.7,-43.8,6.4,-46.5,9.7,-46.5L13.5,-46.5"
+          transform="matrix(1,0,0,1,532,958)" stroke="#7e7e7e" id="167"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="166" stroke-linecap="round" ed:tosuperid="168"
+          d="M-13.5,-10L3.7,-10L3.7,4C3.7,7.3,6.4,10,9.7,10L13.5,10" transform="matrix(1,0,0,1,637,921)"
+          stroke="#7e7e7e" id="169"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="164" stroke-linecap="round" ed:tosuperid="170"
+          d="M3.7,10.5L3.7,-4.5C3.7,-7.8,6.4,-10.5,9.7,-10.5L13.5,-10.5" transform="matrix(1,0,0,1,532,994)"
+          stroke="#7e7e7e" id="171"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="170" stroke-linecap="round" ed:tosuperid="172"
+          d="M-13.5,-5L3.7,-5L3.7,-1C3.7,2.3,6.4,5,9.7,5L13.5,5" transform="matrix(1,0,0,1,637,988)" stroke="#7e7e7e"
+          id="173"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="164" stroke-linecap="round" ed:tosuperid="174"
+          d="M3.7,-36L3.7,30C3.7,33.3,6.4,36,9.7,36L13.5,36" transform="matrix(1,0,0,1,532,1040)" stroke="#7e7e7e"
+          id="175"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="174" stroke-linecap="round" ed:tosuperid="176"
+          d="M-13.5,10.5L3.7,10.5L3.7,-4.5C3.7,-7.8,6.4,-10.5,9.7,-10.5L13.5,-10.5" transform="matrix(1,0,0,1,667,1066)"
+          stroke="#7e7e7e" id="177"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="174" stroke-linecap="round" ed:tosuperid="178"
+          d="M3.7,-20.5L3.7,14.5C3.7,17.8,6.4,20.5,9.7,20.5L13.5,20.5" transform="matrix(1,0,0,1,667,1097)"
+          stroke="#7e7e7e" id="179"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="101" stroke-linecap="round" ed:tosuperid="180"
+          d="M3.3,-11.9C21.5,-13.8,42.7,-14.9,66.3,-14.9" transform="matrix(1,0,0,1,157,1661)" stroke="#7e7e7e"
+          id="181"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="180" stroke-linecap="round" ed:tosuperid="182"
+          d="M-13.5,184.1L3.7,184.1L3.7,-178.1C3.7,-181.4,6.4,-184.1,9.7,-184.1L13.5,-184.1"
+          transform="matrix(1,0,0,1,463,1462)" stroke="#7e7e7e" id="183"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="182" stroke-linecap="round" ed:tosuperid="184"
+          d="M-13.5,36L3.7,36L3.7,-30C3.7,-33.3,6.4,-36,9.7,-36L13.5,-36" transform="matrix(1,0,0,1,583,1242)"
+          stroke="#7e7e7e" id="185"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="184" stroke-linecap="round" ed:tosuperid="186"
+          d="M-13.5,0L3.7,0C3.7,0,6.4,0,9.7,0L13.5,0" transform="matrix(1,0,0,1,1124,1206)" stroke="#7e7e7e"
+          id="187"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="182" stroke-linecap="round" ed:tosuperid="188"
+          d="M3.7,5L3.7,1C3.7,-2.3,6.4,-5,9.7,-5L13.5,-5" transform="matrix(1,0,0,1,583,1273)" stroke="#7e7e7e"
+          id="189"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="188" stroke-linecap="round" ed:tosuperid="190"
+          d="M-13.5,-10L3.7,-10L3.7,4C3.7,7.3,6.4,10,9.7,10L13.5,10" transform="matrix(1,0,0,1,844,1278)"
+          stroke="#7e7e7e" id="191"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="182" stroke-linecap="round" ed:tosuperid="192"
+          d="M3.7,-36L3.7,30C3.7,33.3,6.4,36,9.7,36L13.5,36" transform="matrix(1,0,0,1,583,1314)" stroke="#7e7e7e"
+          id="193"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="192" stroke-linecap="round" ed:tosuperid="194"
+          d="M-13.5,-10L3.7,-10L3.7,4C3.7,7.3,6.4,10,9.7,10L13.5,10" transform="matrix(1,0,0,1,838,1360)"
+          stroke="#7e7e7e" id="195"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="180" stroke-linecap="round" ed:tosuperid="196"
+          d="M3.7,23.1L3.7,-17.1C3.7,-20.4,6.4,-23.1,9.7,-23.1L13.5,-23.1" transform="matrix(1,0,0,1,463,1623)"
+          stroke="#7e7e7e" id="197"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="196" stroke-linecap="round" ed:tosuperid="198"
+          d="M-13.5,52.5L3.7,52.5L3.7,-46.5C3.7,-49.8,6.4,-52.5,9.7,-52.5L13.5,-52.5"
+          transform="matrix(1,0,0,1,613,1547)" stroke="#7e7e7e" id="199"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="198" stroke-linecap="round" ed:tosuperid="200"
+          d="M-13.5,31.5L3.7,31.5L3.7,-25.5C3.7,-28.8,6.4,-31.5,9.7,-31.5L13.5,-31.5"
+          transform="matrix(1,0,0,1,688,1463)" stroke="#7e7e7e" id="201"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="198" stroke-linecap="round" ed:tosuperid="202"
+          d="M3.7,10.5L3.7,-4.5C3.7,-7.8,6.4,-10.5,9.7,-10.5L13.5,-10.5" transform="matrix(1,0,0,1,688,1484)"
+          stroke="#7e7e7e" id="203"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="202" stroke-linecap="round" ed:tosuperid="204"
+          d="M-13.5,0L3.7,0C3.7,0,6.4,0,9.7,0L13.5,0" transform="matrix(1,0,0,1,838,1474)" stroke="#7e7e7e"
+          id="205"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="204" stroke-linecap="round" ed:tosuperid="206"
+          d="M-13.5,0L3.7,0C3.7,0,6.4,0,9.7,0L13.5,0" transform="matrix(1,0,0,1,1138,1474)" stroke="#7e7e7e"
+          id="207"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="198" stroke-linecap="round" ed:tosuperid="208"
+          d="M3.7,-10.5L3.7,4.5C3.7,7.8,6.4,10.5,9.7,10.5L13.5,10.5" transform="matrix(1,0,0,1,688,1505)"
+          stroke="#7e7e7e" id="209"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="198" stroke-linecap="round" ed:tosuperid="210"
+          d="M3.7,-41.5L3.7,35.5C3.7,38.8,6.4,41.5,9.7,41.5L13.5,41.5" transform="matrix(1,0,0,1,688,1536)"
+          stroke="#7e7e7e" id="211"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="196" stroke-linecap="round" ed:tosuperid="212"
+          d="M3.7,-52L3.7,46C3.7,49.3,6.4,52,9.7,52L13.5,52" transform="matrix(1,0,0,1,613,1652)" stroke="#7e7e7e"
+          id="213"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="212" stroke-linecap="round" ed:tosuperid="214"
+          d="M-13.5,42L3.7,42L3.7,-36C3.7,-39.3,6.4,-42,9.7,-42L13.5,-42" transform="matrix(1,0,0,1,733,1662)"
+          stroke="#7e7e7e" id="215"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="212" stroke-linecap="round" ed:tosuperid="216"
+          d="M3.7,10.5L3.7,-4.5C3.7,-7.8,6.4,-10.5,9.7,-10.5L13.5,-10.5" transform="matrix(1,0,0,1,733,1693)"
+          stroke="#7e7e7e" id="217"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="216" stroke-linecap="round" ed:tosuperid="218"
+          d="M-13.5,10.5L3.7,10.5L3.7,-4.5C3.7,-7.8,6.4,-10.5,9.7,-10.5L13.5,-10.5"
+          transform="matrix(1,0,0,1,1048,1672)" stroke="#7e7e7e" id="219"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="218" stroke-linecap="round" ed:tosuperid="220"
+          d="M-13.5,0L3.7,0C3.7,0,6.4,0,9.7,0L13.5,0" transform="matrix(1,0,0,1,1228,1662)" stroke="#7e7e7e"
+          id="221"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="216" stroke-linecap="round" ed:tosuperid="222"
+          d="M3.7,-10.5L3.7,4.5C3.7,7.8,6.4,10.5,9.7,10.5L13.5,10.5" transform="matrix(1,0,0,1,1048,1693)"
+          stroke="#7e7e7e" id="223"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="212" stroke-linecap="round" ed:tosuperid="224"
+          d="M3.7,-21L3.7,15C3.7,18.3,6.4,21,9.7,21L13.5,21" transform="matrix(1,0,0,1,733,1725)" stroke="#7e7e7e"
+          id="225"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="212" stroke-linecap="round" ed:tosuperid="226"
+          d="M3.7,-42L3.7,36C3.7,39.3,6.4,42,9.7,42L13.5,42" transform="matrix(1,0,0,1,733,1746)" stroke="#7e7e7e"
+          id="227"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="180" stroke-linecap="round" ed:tosuperid="228"
+          d="M3.7,-102.4L3.7,96.4C3.7,99.7,6.4,102.4,9.7,102.4L13.5,102.4" transform="matrix(1,0,0,1,463,1748)"
+          stroke="#7e7e7e" id="229"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="228" stroke-linecap="round" ed:tosuperid="230"
+          d="M-13.5,10.5L3.7,10.5L3.7,-4.5C3.7,-7.8,6.4,-10.5,9.7,-10.5L13.5,-10.5" transform="matrix(1,0,0,1,628,1840)"
+          stroke="#7e7e7e" id="231"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="228" stroke-linecap="round" ed:tosuperid="234"
+          d="M3.7,-10.5L3.7,4.5C3.7,7.8,6.4,10.5,9.7,10.5L13.5,10.5" transform="matrix(1,0,0,1,628,1861)"
+          stroke="#7e7e7e" id="235"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="180" stroke-linecap="round" ed:tosuperid="236"
+          d="M3.7,-190.9L3.7,184.9C3.7,188.2,6.4,190.9,9.7,190.9L13.5,190.9" transform="matrix(1,0,0,1,463,1837)"
+          stroke="#7e7e7e" id="237"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="236" stroke-linecap="round" ed:tosuperid="238"
+          d="M-13.5,47L3.7,47L3.7,-41C3.7,-44.3,6.4,-47,9.7,-47L13.5,-47" transform="matrix(1,0,0,1,598,1981)"
+          stroke="#7e7e7e" id="239"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="236" stroke-linecap="round" ed:tosuperid="240"
+          d="M3.7,21L3.7,-15C3.7,-18.3,6.4,-21,9.7,-21L13.5,-21" transform="matrix(1,0,0,1,598,2007)" stroke="#7e7e7e"
+          id="241"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="240" stroke-linecap="round" ed:tosuperid="242"
+          d="M-13.5,-5L3.7,-5L3.7,-1C3.7,2.3,6.4,5,9.7,5L13.5,5" transform="matrix(1,0,0,1,748,1991)" stroke="#7e7e7e"
+          id="243"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="236" stroke-linecap="round" ed:tosuperid="244"
+          d="M3.7,-31L3.7,25C3.7,28.3,6.4,31,9.7,31L13.5,31" transform="matrix(1,0,0,1,598,2059)" stroke="#7e7e7e"
+          id="245"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="244" stroke-linecap="round" ed:tosuperid="246"
+          d="M-13.5,26L3.7,26L3.7,-20C3.7,-23.3,6.4,-26,9.7,-26L13.5,-26" transform="matrix(1,0,0,1,748,2064)"
+          stroke="#7e7e7e" id="247"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="244" stroke-linecap="round" ed:tosuperid="248"
+          d="M3.7,-5L3.7,-1C3.7,2.3,6.4,5,9.7,5L13.5,5" transform="matrix(1,0,0,1,748,2095)" stroke="#7e7e7e"
+          id="249"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="244" stroke-linecap="round" ed:tosuperid="250"
+          d="M3.7,-26L3.7,20C3.7,23.3,6.4,26,9.7,26L13.5,26" transform="matrix(1,0,0,1,748,2116)" stroke="#7e7e7e"
+          id="251"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="101" stroke-linecap="round" ed:tosuperid="252"
+          d="M-66.2,-506.9C-64.5,121.6,-12,538.4,66.3,538.4" transform="matrix(1,0,0,1,157,2214)" stroke="#7e7e7e"
+          id="253"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="252" stroke-linecap="round" ed:tosuperid="254"
+          d="M-13.5,239.6L3.7,239.6L3.7,-233.6C3.7,-236.9,6.4,-239.6,9.7,-239.6L13.5,-239.6"
+          transform="matrix(1,0,0,1,429,2513)" stroke="#7e7e7e" id="255"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="254" stroke-linecap="round" ed:tosuperid="256"
+          d="M-13.5,10.5L3.7,10.5L3.7,-4.5C3.7,-7.8,6.4,-10.5,9.7,-10.5L13.5,-10.5" transform="matrix(1,0,0,1,609,2263)"
+          stroke="#7e7e7e" id="257"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="256" stroke-linecap="round" ed:tosuperid="258"
+          d="M-13.5,21L3.7,21L3.7,-15C3.7,-18.3,6.4,-21,9.7,-21L13.5,-21" transform="matrix(1,0,0,1,714,2231)"
+          stroke="#7e7e7e" id="259"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="256" stroke-linecap="round" ed:tosuperid="260"
+          d="M3.7,0C3.7,0,6.4,0,9.7,0L13.5,0" transform="matrix(1,0,0,1,714,2252)" stroke="#7e7e7e" id="261"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="256" stroke-linecap="round" ed:tosuperid="266"
+          d="M3.7,-21L3.7,15C3.7,18.3,6.4,21,9.7,21L13.5,21" transform="matrix(1,0,0,1,714,2273)" stroke="#7e7e7e"
+          id="267"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="254" stroke-linecap="round" ed:tosuperid="268"
+          d="M3.7,-31.5L3.7,25.5C3.7,28.8,6.4,31.5,9.7,31.5L13.5,31.5" transform="matrix(1,0,0,1,609,2305)"
+          stroke="#7e7e7e" id="269"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="268" stroke-linecap="round" ed:tosuperid="270"
+          d="M-13.5,0L3.7,0C3.7,0,6.4,0,9.7,0L13.5,0" transform="matrix(1,0,0,1,714,2336)" stroke="#7e7e7e"
+          id="271"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="252" stroke-linecap="round" ed:tosuperid="276"
+          d="M3.7,140.6L3.7,-134.6C3.7,-137.9,6.4,-140.6,9.7,-140.6L13.5,-140.6" transform="matrix(1,0,0,1,429,2612)"
+          stroke="#7e7e7e" id="277"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="276" stroke-linecap="round" ed:tosuperid="278"
+          d="M-13.5,41.5L3.7,41.5L3.7,-35.5C3.7,-38.8,6.4,-41.5,9.7,-41.5L13.5,-41.5"
+          transform="matrix(1,0,0,1,519,2430)" stroke="#7e7e7e" id="279"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="278" stroke-linecap="round" ed:tosuperid="280"
+          d="M-13.5,-5L3.7,-5L3.7,-1C3.7,2.3,6.4,5,9.7,5L13.5,5" transform="matrix(1,0,0,1,834,2393)" stroke="#7e7e7e"
+          id="281"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="276" stroke-linecap="round" ed:tosuperid="282"
+          d="M3.7,15.5L3.7,-9.5C3.7,-12.8,6.4,-15.5,9.7,-15.5L13.5,-15.5" transform="matrix(1,0,0,1,519,2456)"
+          stroke="#7e7e7e" id="283"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="282" stroke-linecap="round" ed:tosuperid="284"
+          d="M-13.5,0L3.7,0C3.7,0,6.4,0,9.7,0L13.5,0" transform="matrix(1,0,0,1,774,2440)" stroke="#7e7e7e"
+          id="285"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="276" stroke-linecap="round" ed:tosuperid="286"
+          d="M3.7,-26L3.7,20C3.7,23.3,6.4,26,9.7,26L13.5,26" transform="matrix(1,0,0,1,519,2497)" stroke="#7e7e7e"
+          id="287"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="286" stroke-linecap="round" ed:tosuperid="288"
+          d="M-13.5,20.5L3.7,20.5L3.7,-14.5C3.7,-17.8,6.4,-20.5,9.7,-20.5L13.5,-20.5"
+          transform="matrix(1,0,0,1,774,2503)" stroke="#7e7e7e" id="289"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="286" stroke-linecap="round" ed:tosuperid="290"
+          d="M3.7,-20.5L3.7,14.5C3.7,17.8,6.4,20.5,9.7,20.5L13.5,20.5" transform="matrix(1,0,0,1,774,2544)"
+          stroke="#7e7e7e" id="291"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="252" stroke-linecap="round" ed:tosuperid="292"
+          d="M3.7,37.1L3.7,-31.1C3.7,-34.4,6.4,-37.1,9.7,-37.1L13.5,-37.1" transform="matrix(1,0,0,1,429,2715)"
+          stroke="#7e7e7e" id="293"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="292" stroke-linecap="round" ed:tosuperid="294"
+          d="M-13.5,26L3.7,26L3.7,-20C3.7,-23.3,6.4,-26,9.7,-26L13.5,-26" transform="matrix(1,0,0,1,624,2652)"
+          stroke="#7e7e7e" id="295"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="292" stroke-linecap="round" ed:tosuperid="296"
+          d="M3.7,-5L3.7,-1C3.7,2.3,6.4,5,9.7,5L13.5,5" transform="matrix(1,0,0,1,624,2683)" stroke="#7e7e7e"
+          id="297"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="292" stroke-linecap="round" ed:tosuperid="298"
+          d="M3.7,-36L3.7,30C3.7,33.3,6.4,36,9.7,36L13.5,36" transform="matrix(1,0,0,1,624,2714)" stroke="#7e7e7e"
+          id="299"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="252" stroke-linecap="round" ed:tosuperid="300"
+          d="M3.7,-154.4L3.7,148.4C3.7,151.7,6.4,154.4,9.7,154.4L13.5,154.4" transform="matrix(1,0,0,1,429,2907)"
+          stroke="#7e7e7e" id="301"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="300" stroke-linecap="round" ed:tosuperid="302"
+          d="M-13.5,124.5L3.7,124.5L3.7,-118.5C3.7,-121.8,6.4,-124.5,9.7,-124.5L13.5,-124.5"
+          transform="matrix(1,0,0,1,594,2937)" stroke="#7e7e7e" id="303"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="300" stroke-linecap="round" ed:tosuperid="304"
+          d="M3.7,98.5L3.7,-92.5C3.7,-95.8,6.4,-98.5,9.7,-98.5L13.5,-98.5" transform="matrix(1,0,0,1,594,2963)"
+          stroke="#7e7e7e" id="305"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="304" stroke-linecap="round" ed:tosuperid="306"
+          d="M-13.5,-5L3.7,-5L3.7,-1C3.7,2.3,6.4,5,9.7,5L13.5,5" transform="matrix(1,0,0,1,699,2869)" stroke="#7e7e7e"
+          id="307"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="300" stroke-linecap="round" ed:tosuperid="308"
+          d="M3.7,67.5L3.7,-61.5C3.7,-64.8,6.4,-67.5,9.7,-67.5L13.5,-67.5" transform="matrix(1,0,0,1,594,2994)"
+          stroke="#7e7e7e" id="309"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="308" stroke-linecap="round" ed:tosuperid="310"
+          d="M-13.5,-5L3.7,-5L3.7,-1C3.7,2.3,6.4,5,9.7,5L13.5,5" transform="matrix(1,0,0,1,699,2931)" stroke="#7e7e7e"
+          id="311"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="300" stroke-linecap="round" ed:tosuperid="312"
+          d="M3.7,31L3.7,-25C3.7,-28.3,6.4,-31,9.7,-31L13.5,-31" transform="matrix(1,0,0,1,594,3030)" stroke="#7e7e7e"
+          id="313"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="312" stroke-linecap="round" ed:tosuperid="314"
+          d="M-13.5,10.5L3.7,10.5L3.7,-4.5C3.7,-7.8,6.4,-10.5,9.7,-10.5L13.5,-10.5" transform="matrix(1,0,0,1,879,2989)"
+          stroke="#7e7e7e" id="315"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="312" stroke-linecap="round" ed:tosuperid="318"
+          d="M3.7,-10.5L3.7,4.5C3.7,7.8,6.4,10.5,9.7,10.5L13.5,10.5" transform="matrix(1,0,0,1,879,3010)"
+          stroke="#7e7e7e" id="319"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="300" stroke-linecap="round" ed:tosuperid="328"
+          d="M3.7,-5.5L3.7,-0.5C3.7,2.8,6.4,5.5,9.7,5.5L13.5,5.5" transform="matrix(1,0,0,1,594,3067)" stroke="#7e7e7e"
+          id="329"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="328" stroke-linecap="round" ed:tosuperid="330"
+          d="M-13.5,-5L3.7,-5L3.7,-1C3.7,2.3,6.4,5,9.7,5L13.5,5" transform="matrix(1,0,0,1,894,3077)" stroke="#7e7e7e"
+          id="331"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="300" stroke-linecap="round" ed:tosuperid="332"
+          d="M3.7,-46.5L3.7,40.5C3.7,43.8,6.4,46.5,9.7,46.5L13.5,46.5" transform="matrix(1,0,0,1,594,3108)"
+          stroke="#7e7e7e" id="333"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="332" stroke-linecap="round" ed:tosuperid="334"
+          d="M-13.5,-15L3.7,-15L3.7,9C3.7,12.3,6.4,15,9.7,15L13.5,15" transform="matrix(1,0,0,1,1089,3169)"
+          stroke="#7e7e7e" id="335"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="300" stroke-linecap="round" ed:tosuperid="336"
+          d="M3.7,-108.5L3.7,102.5C3.7,105.8,6.4,108.5,9.7,108.5L13.5,108.5" transform="matrix(1,0,0,1,594,3170)"
+          stroke="#7e7e7e" id="337"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="336" stroke-linecap="round" ed:tosuperid="338"
+          d="M-13.5,26L3.7,26L3.7,-20C3.7,-23.3,6.4,-26,9.7,-26L13.5,-26" transform="matrix(1,0,0,1,843,3252)"
+          stroke="#7e7e7e" id="339"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="336" stroke-linecap="round" ed:tosuperid="342"
+          d="M3.7,5L3.7,1C3.7,-2.3,6.4,-5,9.7,-5L13.5,-5" transform="matrix(1,0,0,1,843,3273)" stroke="#7e7e7e"
+          id="343"></path>
+    <path fill="none" stroke-linejoin="round" ed:parentid="336" stroke-linecap="round" ed:tosuperid="346"
+          d="M3.7,-26L3.7,20C3.7,23.3,6.4,26,9.7,26L13.5,26" transform="matrix(1,0,0,1,843,3304)" stroke="#7e7e7e"
+          id="347"></path>
+    <g ed:topictype="mainidea" ed:width="139" ed:layout="rightmap" ed:height="63" transform="matrix(1,0,0,1,21,1644)"
+       id="101">
+        <path fill="#f2968e"
+              d="M4,0L135,0C137.2,0,139,1.8,139,4L139,59C139,61.2,137.2,63,135,63L4,63C1.8,63,0,61.2,0,59L0,4C0,1.8,1.8,0,4,0z"></path>
+        <text class="st1">
+            <tspan style="white-space:pre" x="20" y="39.5">未来简史</tspan>
+        </text>
+    </g>
+    <g ed:parentid="101" ed:width="175" ed:height="39" transform="matrix(1,0,0,1,223,227)" id="102">
+        <path fill="#ffffff" stroke-linejoin="round"
+              d="M4,0L171,0C173.2,0,175,1.8,175,4L175,35C175,37.2,173.2,39,171,39L4,39C1.8,39,0,37.2,0,35L0,4C0,1.8,1.8,0,4,0z"
+              stroke="#7e7e7e"></path>
+        <text class="st2">
+            <tspan style="white-space:pre" x="18" y="24.5">序：人类的新议题</tspan>
+        </text>
+    </g>
+    <g ed:parentid="102" ed:width="78" ed:height="35.5" transform="matrix(1,0,0,1,425,21)" id="104">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L78,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">战胜死亡</tspan>
+        </text>
+    </g>
+    <g ed:parentid="104" ed:width="288" ed:height="35.5" transform="matrix(1,0,0,1,530,21)" id="106">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L288,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">永生的出现将导致人和人从根本上不平等</tspan>
+        </text>
+    </g>
+    <g ed:parentid="102" ed:width="78" ed:height="35.5" transform="matrix(1,0,0,1,425,63)" id="108">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L78,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">永久幸福</tspan>
+        </text>
+    </g>
+    <g ed:parentid="108" ed:width="303" ed:height="35.5" transform="matrix(1,0,0,1,530,63)" id="110">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L303,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">生物化学重新打造智人，提供无止境的快感</tspan>
+        </text>
+    </g>
+    <g ed:parentid="102" ed:width="78" ed:height="35.5" transform="matrix(1,0,0,1,425,271)" id="112">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L78,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">人成为神</tspan>
+        </text>
+    </g>
+    <g ed:parentid="112" ed:width="48" ed:height="35.5" transform="matrix(1,0,0,1,530,126)" id="114">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L48,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">路径</tspan>
+        </text>
+    </g>
+    <g ed:parentid="114" ed:width="378" ed:height="35.5" transform="matrix(1,0,0,1,605,105)" id="116">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L378,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">生物工程：人了在现有的有机身体结构下充分挖掘潜能</tspan>
+        </text>
+    </g>
+    <g ed:parentid="116" ed:width="408" ed:height="35.5" transform="matrix(1,0,0,1,1010,105)" id="118">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L408,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">半机械工程：综合各种非有机设备，保留有机大脑作为核心</tspan>
+        </text>
+    </g>
+    <g ed:parentid="114" ed:width="453" ed:height="35.5" transform="matrix(1,0,0,1,605,147)" id="120">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L453,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">非有机生物工程：智能软件代替神经网络，无机生命代替有机生命</tspan>
+        </text>
+    </g>
+    <g ed:parentid="120" ed:width="498" ed:height="35.5" transform="matrix(1,0,0,1,1085,147)" id="122">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L498,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">如果心灵从碳基变成硅基，心灵结构改变，智人消失，人类历史告一段落</tspan>
+        </text>
+    </g>
+    <g ed:parentid="112" ed:width="48" ed:height="35.5" transform="matrix(1,0,0,1,530,282)" id="124">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L48,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">澄清</tspan>
+        </text>
+    </g>
+    <g ed:parentid="124" ed:width="514" ed:height="55.5" transform="matrix(1,0,0,1,605,189)" id="126">
+        <path fill="none" stroke-linejoin="round" d="M0,55.5L514,55.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">1.以上说的是“人类整体”，而非大多数个体的人；2.这是历史预测而非政</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">治目标；追求不一定能达到</tspan>
+        </text>
+    </g>
+    <g ed:parentid="124" ed:width="331" ed:height="35.5" transform="matrix(1,0,0,1,605,313)" id="128">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L331,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">3.预测不是为了预言，预测经过讨论能改变未来</tspan>
+        </text>
+    </g>
+    <g ed:parentid="128" ed:width="423" ed:height="35.5" transform="matrix(1,0,0,1,963,251)" id="130">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L423,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">马克思主义没有推翻统治，仅仅这个预测就能让他们作出改变</tspan>
+        </text>
+    </g>
+    <g ed:parentid="128" ed:width="514" ed:height="55.5" transform="matrix(1,0,0,1,963,293)" id="132">
+        <path fill="none" stroke-linejoin="round" d="M0,55.5L514,55.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">历史的意义：历史知识会改变我们未来的行为，研究历史是为了从旧的意义</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">中解放</tspan>
+        </text>
+    </g>
+    <g ed:parentid="128" ed:width="514" ed:height="55.5" transform="matrix(1,0,0,1,963,355)" id="134">
+        <path fill="none" stroke-linejoin="round" d="M0,55.5L514,55.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">知识的悖论：知识（预测）如果不能改变行为就无用，行为一旦改变，原本</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">的知识（预测）立即失去意义</tspan>
+        </text>
+    </g>
+    <g ed:parentid="112" ed:width="153" ed:height="35.5" transform="matrix(1,0,0,1,530,427)" id="136">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L153,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">成神路上，没有刹车</tspan>
+        </text>
+    </g>
+    <g ed:parentid="136" ed:width="514" ed:height="55.5" transform="matrix(1,0,0,1,710,417)" id="138">
+        <path fill="none" stroke-linejoin="round" d="M0,55.5L514,55.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">专家各有所长，无人了解整个系统；现代经济只能无止境增长，刹车会导致</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">崩溃，只能追求永续目标：不死、快乐和神性</tspan>
+        </text>
+    </g>
+    <g ed:parentid="101" ed:width="175" ed:height="39" transform="matrix(1,0,0,1,223,792)" id="140">
+        <path fill="#ffffff" stroke-linejoin="round"
+              d="M4,0L171,0C173.2,0,175,1.8,175,4L175,35C175,37.2,173.2,39,171,39L4,39C1.8,39,0,37.2,0,35L0,4C0,1.8,1.8,0,4,0z"
+              stroke="#7e7e7e"></path>
+        <text class="st2">
+            <tspan style="white-space:pre" x="18" y="24.5">一、智人征服世界</tspan>
+        </text>
+    </g>
+    <g ed:parentid="140" ed:width="228" ed:height="35.5" transform="matrix(1,0,0,1,425,660)" id="142">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L228,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">人类如何对待其他动物（世界）</tspan>
+        </text>
+    </g>
+    <g ed:parentid="142" ed:width="48" ed:height="35.5" transform="matrix(1,0,0,1,680,516)" id="144">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L48,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">事实</tspan>
+        </text>
+    </g>
+    <g ed:parentid="144" ed:width="514" ed:height="55.5" transform="matrix(1,0,0,1,755,506)" id="146">
+        <path fill="none" stroke-linejoin="round" d="M0,55.5L514,55.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">人类灭绝和征服了其他大型动物，主宰了世界；人和其他动物一样，都是一</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">套以繁衍为目的的生物算法，情感和欲望都是帮我们快速找到路径</tspan>
+        </text>
+    </g>
+    <g ed:parentid="142" ed:width="48" ed:height="35.5" transform="matrix(1,0,0,1,680,691)" id="148">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L48,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">理念</tspan>
+        </text>
+    </g>
+    <g ed:parentid="148" ed:width="93" ed:height="35.5" transform="matrix(1,0,0,1,755,578)" id="150">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L93,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">狩猎采集者</tspan>
+        </text>
+    </g>
+    <g ed:parentid="150" ed:width="514" ed:height="55.5" transform="matrix(1,0,0,1,875,568)" id="152">
+        <path fill="none" stroke-linejoin="round" d="M0,55.5L514,55.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">并不认为自己比其他生物高级，人能否存活有赖于理解和尊重周围动物的欲</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">望；倾向于泛灵论，人与万物沟通</tspan>
+        </text>
+    </g>
+    <g ed:parentid="148" ed:width="48" ed:height="35.5" transform="matrix(1,0,0,1,755,681)" id="154">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L48,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">农民</tspan>
+        </text>
+    </g>
+    <g ed:parentid="154" ed:width="514" ed:height="55.5" transform="matrix(1,0,0,1,830,630)" id="156">
+        <path fill="none" stroke-linejoin="round" d="M0,55.5L514,55.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">农民生活质量有赖于他们能控制的动物；把动物从有感情、值得尊重的生命</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">降格为规训动物，无视其情感需求；甚至把不同等级的人也视为资产</tspan>
+        </text>
+    </g>
+    <g ed:parentid="154" ed:width="514" ed:height="75.5" transform="matrix(1,0,0,1,830,692)" id="158">
+        <path fill="none" stroke-linejoin="round" d="M0,75.5L514,75.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">有神论（如基督教）承诺智人占主导地位，可以剥削其他一切生物；有神</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">论，神负责在人类和生态系统之间的调节，诸神负责保护农业，换来人类的</tspan>
+            <tspan style="white-space:pre" x="8" y="62.1">贡献，牺牲生态环境。</tspan>
+        </text>
+    </g>
+    <g ed:parentid="148" ed:width="63" ed:height="35.5" transform="matrix(1,0,0,1,755,794)" id="160">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L63,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">现代人</tspan>
+        </text>
+    </g>
+    <g ed:parentid="160" ed:width="514" ed:height="75.5" transform="matrix(1,0,0,1,845,774)" id="162">
+        <path fill="none" stroke-linejoin="round" d="M0,75.5L514,75.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">有神论以神之名作为传统农业的理由，人文主义则是以人之名作为现代工业</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">化农业的借口；人文主义奠基于智人拥有某些独特而神圣的人性，动物并没</tspan>
+            <tspan style="white-space:pre" x="8" y="62.1">有，自然不重要</tspan>
+        </text>
+    </g>
+    <g ed:parentid="140" ed:width="93" ed:height="35.5" transform="matrix(1,0,0,1,425,969)" id="164">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L93,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">人类的特质</tspan>
+        </text>
+    </g>
+    <g ed:parentid="164" ed:width="78" ed:height="35.5" transform="matrix(1,0,0,1,545,876)" id="166">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L78,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">人有灵魂</tspan>
+        </text>
+    </g>
+    <g ed:parentid="166" ed:width="514" ed:height="75.5" transform="matrix(1,0,0,1,650,856)" id="168">
+        <path fill="none" stroke-linejoin="round" d="M0,75.5L514,75.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">如果灵魂是进化出来的，则它是不可分割、永恒的实体就和进化的本质相违</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">背；如果灵魂是突然在人类身上出现的，无法想象他之前或他的父母没有一</tspan>
+            <tspan style="white-space:pre" x="8" y="62.1">丝一毫灵魂</tspan>
+        </text>
+    </g>
+    <g ed:parentid="164" ed:width="78" ed:height="35.5" transform="matrix(1,0,0,1,545,948)" id="170">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L78,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">人有心灵</tspan>
+        </text>
+    </g>
+    <g ed:parentid="170" ed:width="514" ed:height="55.5" transform="matrix(1,0,0,1,650,938)" id="172">
+        <path fill="none" stroke-linejoin="round" d="M0,55.5L514,55.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">如果一切都在我们的神经元网络中，何必把心灵独立出来？如果心灵高于神</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">经网络，那它究竟在哪里？</tspan>
+        </text>
+    </g>
+    <g ed:parentid="164" ed:width="108" ed:height="35.5" transform="matrix(1,0,0,1,545,1041)" id="174">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L108,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">人有意义之网</tspan>
+        </text>
+    </g>
+    <g ed:parentid="174" ed:width="514" ed:height="55.5" transform="matrix(1,0,0,1,680,1000)" id="176">
+        <path fill="none" stroke-linejoin="round" d="M0,55.5L514,55.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">动物只能想象实际存在的东西；人可以想象主体间的东西，它们具有真实而</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">强大的力量，如国家、公司、法律等</tspan>
+        </text>
+    </g>
+    <g ed:parentid="174" ed:width="514" ed:height="55.5" transform="matrix(1,0,0,1,680,1062)" id="178">
+        <path fill="none" stroke-linejoin="round" d="M0,55.5L514,55.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">人通过虚构的故事组织大规模协作，这是人类的力量被放大，主宰世界的根</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">本原因；想要破解人类的未来，必须破解出种种负于世界意义的虚构想象</tspan>
+        </text>
+    </g>
+    <g ed:parentid="101" ed:width="226" ed:height="39" transform="matrix(1,0,0,1,223,1626)" id="180">
+        <path fill="#ffffff" stroke-linejoin="round"
+              d="M4,0L222,0C224.2,0,226,1.8,226,4L226,35C226,37.2,224.2,39,222,39L4,39C1.8,39,0,37.2,0,35L0,4C0,1.8,1.8,0,4,0z"
+              stroke="#7e7e7e"></path>
+        <text class="st2">
+            <tspan style="white-space:pre" x="18" y="24.5">二、智人为世界赋予意义</tspan>
+        </text>
+    </g>
+    <g ed:parentid="180" ed:width="93" ed:height="35.5" transform="matrix(1,0,0,1,476,1242)" id="182">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L93,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">虚构的力量</tspan>
+        </text>
+    </g>
+    <g ed:parentid="182" ed:width="514" ed:height="55.5" transform="matrix(1,0,0,1,596,1150)" id="184">
+        <path fill="none" stroke-linejoin="round" d="M0,55.5L514,55.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">动物都活在客观试题和主观体验两重现实中，智人的世界有第三重现实：金</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">钱、神、国家和公司等故事</tspan>
+        </text>
+    </g>
+    <g ed:parentid="184" ed:width="548" ed:height="55.5" transform="matrix(1,0,0,1,1137,1150)" id="186">
+        <path fill="none" stroke-linejoin="round" d="M0,55.5L548,55.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">7万年前，认知革命让人类开始谈只存在于人类想象之中的事情，这能促成几百</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">几千人的合作</tspan>
+        </text>
+    </g>
+    <g ed:parentid="182" ed:width="234" ed:height="35.5" transform="matrix(1,0,0,1,596,1232)" id="188">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L234,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">5000年前，人发明了文字和金钱</tspan>
+        </text>
+    </g>
+    <g ed:parentid="188" ed:width="581" ed:height="75.5" transform="matrix(1,0,0,1,857,1212)" id="190">
+        <path fill="none" stroke-linejoin="round" d="M0,75.5L581,75.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">文字能让人以算法的方式组织社会，每个人完成一个小步骤，最终重要决定由整个算</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">法来判断，这正是官僚体系的本质；国家发行一张纸，强迫公民用这张纸纳税，公民</tspan>
+            <tspan style="white-space:pre" x="8" y="62.1">别无选择，但市场得以发展</tspan>
+        </text>
+    </g>
+    <g ed:parentid="182" ed:width="228" ed:height="35.5" transform="matrix(1,0,0,1,596,1314)" id="192">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L228,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">故事本应只是工具，不该是目标</tspan>
+        </text>
+    </g>
+    <g ed:parentid="192" ed:width="685" ed:height="75.5" transform="matrix(1,0,0,1,851,1294)" id="194">
+        <path fill="none" stroke-linejoin="round" d="M0,75.5L685,75.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">我们应该区分真实和虚构，真实的地位当然更高，欧元可以贬值但它没有痛苦；未来还会有更强大的</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">虚构概念，更极权的组织，区分真实和虚构就尤为重要；虚构的故事让人类更容易合作，但代价是故</tspan>
+            <tspan style="white-space:pre" x="8" y="62.1">事也会决定我们合作的目标</tspan>
+        </text>
+    </g>
+    <g ed:parentid="180" ed:width="123" ed:height="35.5" transform="matrix(1,0,0,1,476,1564)" id="196">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L123,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">科学与宗教之争</tspan>
+        </text>
+    </g>
+    <g ed:parentid="196" ed:width="48" ed:height="35.5" transform="matrix(1,0,0,1,626,1459)" id="198">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L48,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">宗教</tspan>
+        </text>
+    </g>
+    <g ed:parentid="198" ed:width="685.046875" ed:height="55.5" transform="matrix(1,0,0,1,701,1376)" id="200">
+        <path fill="none" stroke-linejoin="round" d="M0,55.5L685,55.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">1.宗教不等于迷信，自己相信的一定是“真理”，别人相信的才会是迷信；2.宗教不是超自然，对于</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">相信恶魔、神灵、精灵的人来说，这就是自然；3.宗教也不是是否信“神”的问题</tspan>
+        </text>
+    </g>
+    <g ed:parentid="198" ed:width="123" ed:height="35.5" transform="matrix(1,0,0,1,701,1438)" id="202">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L123,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">宗教不等于灵性</tspan>
+        </text>
+    </g>
+    <g ed:parentid="202" ed:width="273" ed:height="35.5" transform="matrix(1,0,0,1,851,1438)" id="204">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L273,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">宗教是要巩固世界秩序，灵性是要逃离</tspan>
+        </text>
+    </g>
+    <g ed:parentid="204" ed:width="513" ed:height="35.5" transform="matrix(1,0,0,1,1151,1438)" id="206">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L513,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">灵性之旅只适合个人，不适合社会，人类要协作，不能只有问题，没有规范</tspan>
+        </text>
+    </g>
+    <g ed:parentid="198" ed:width="588" ed:height="35.5" transform="matrix(1,0,0,1,701,1480)" id="208">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L588,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">宗教是一套无所不包的故事，能够为人类的法律、规范和价值观赋予高于人类的合法性</tspan>
+        </text>
+    </g>
+    <g ed:parentid="198" ed:width="514" ed:height="55.5" transform="matrix(1,0,0,1,701,1522)" id="210">
+        <path fill="none" stroke-linejoin="round" d="M0,55.5L514,55.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">宗教的定义在于社会功能而非是否有神；基督教、共产主义、自由主义都可</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">视为一种宗教；共产主义的历史规律，其实就像基督教上帝的诫命</tspan>
+        </text>
+    </g>
+    <g ed:parentid="196" ed:width="93" ed:height="35.5" transform="matrix(1,0,0,1,626,1668)" id="212">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L93,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">科学与宗教</tspan>
+        </text>
+    </g>
+    <g ed:parentid="212" ed:width="573" ed:height="35.5" transform="matrix(1,0,0,1,746,1584)" id="214">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L573,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">科学想要打造可行的人类制度，必须宗教协助；科学研究事实，但并不给出伦理判断</tspan>
+        </text>
+    </g>
+    <g ed:parentid="212" ed:width="288" ed:height="35.5" transform="matrix(1,0,0,1,746,1647)" id="216">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L288,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">宗教并非只管伦理判断，也包含事实声明</tspan>
+        </text>
+    </g>
+    <g ed:parentid="216" ed:width="153" ed:height="35.5" transform="matrix(1,0,0,1,1061,1626)" id="218">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L153,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">典型宗教故事三部分</tspan>
+        </text>
+    </g>
+    <g ed:parentid="218" ed:width="267" ed:height="35.5" transform="matrix(1,0,0,1,1241,1626)" id="220">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L267,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">1.伦理判断；2.事实声明；3.两者结合</tspan>
+        </text>
+    </g>
+    <g ed:parentid="216" ed:width="363" ed:height="35.5" transform="matrix(1,0,0,1,1061,1668)" id="222">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L363,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">科学无法反驳宗教的伦理判断，但可以反驳事实声明</tspan>
+        </text>
+    </g>
+    <g ed:parentid="212" ed:width="513" ed:height="35.5" transform="matrix(1,0,0,1,746,1710)" id="224">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L513,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">科学和宗教比想象的更容易妥协、合作：宗教最在乎秩序，科学最在乎力量</tspan>
+        </text>
+    </g>
+    <g ed:parentid="212" ed:width="888" ed:height="35.5" transform="matrix(1,0,0,1,746,1752)" id="226">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L888,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">现代历史其实是科学与特定宗教（人文主义）达成协议的过程，现代社会相信人文主义，而科学不是为了质疑，是为了实现它的教条
+            </tspan>
+        </text>
+    </g>
+    <g ed:parentid="180" ed:width="138" ed:height="35.5" transform="matrix(1,0,0,1,476,1815)" id="228">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L138,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">与“现代”的契约</tspan>
+        </text>
+    </g>
+    <g ed:parentid="228" ed:width="618" ed:height="35.5" transform="matrix(1,0,0,1,641,1794)" id="230">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L618,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">前现代人相信自己活在某种伟大的宇宙计划里，这限制了人类的力量，但也让一切有了意义</tspan>
+        </text>
+    </g>
+    <g style="display:none" ed:parentid="230" ed:width="408" ed:height="35.5" transform="matrix(1,0,0,1,1182,1814)"
+       id="232">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L408,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">“现代”就是一份契约，本质就是：人放弃意义、换取力量</tspan>
+        </text>
+    </g>
+    <g ed:parentid="228" ed:width="588" ed:height="35.5" transform="matrix(1,0,0,1,641,1836)" id="234">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L588,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">离开了意义，现代社会之所以还在发展，是因为兴起了一种革命性的新宗教：人文主义</tspan>
+        </text>
+    </g>
+    <g ed:parentid="180" ed:width="108" ed:height="35.5" transform="matrix(1,0,0,1,476,1992)" id="236">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L108,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">人文主义革命</tspan>
+        </text>
+    </g>
+    <g ed:parentid="236" ed:width="514" ed:height="55.5" transform="matrix(1,0,0,1,611,1878)" id="238">
+        <path fill="none" stroke-linejoin="round" d="M0,55.5L514,55.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">与现代的契约是得到力量，放弃意义。但有一个漏洞条款，如果人类从整体</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">宇宙计划之外找到意义，就可意义和力量兼得。人找到人文主义</tspan>
+        </text>
+    </g>
+    <g ed:parentid="236" ed:width="123" ed:height="35.5" transform="matrix(1,0,0,1,611,1950)" id="240">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L123,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">人文主义的教条</tspan>
+        </text>
+    </g>
+    <g ed:parentid="240" ed:width="514" ed:height="55.5" transform="matrix(1,0,0,1,761,1940)" id="242">
+        <path fill="none" stroke-linejoin="round" d="M0,55.5L514,55.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">人文主义政治：选民能做出最好的选择；经济：顾客永远是对的；美学：看</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">的人觉得美，就是美；伦理：感觉对就做；教育：为自己想。</tspan>
+        </text>
+    </g>
+    <g ed:parentid="236" ed:width="123" ed:height="35.5" transform="matrix(1,0,0,1,611,2054)" id="244">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L123,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">人文主义的分裂</tspan>
+        </text>
+    </g>
+    <g ed:parentid="244" ed:width="483" ed:height="35.5" transform="matrix(1,0,0,1,761,2002)" id="246">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L483,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">古典正统教派：自由主义。每个人都是独特的人，拥有永不重复的体验</tspan>
+        </text>
+    </g>
+    <g ed:parentid="244" ed:width="514" ed:height="55.5" transform="matrix(1,0,0,1,761,2044)" id="248">
+        <path fill="none" stroke-linejoin="round" d="M0,55.5L514,55.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">分支一：社会人文主义。社会主义责怪自由主义太过注重自己的感受而忽视</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">他人的体验</tspan>
+        </text>
+    </g>
+    <g ed:parentid="244" ed:width="483" ed:height="35.5" transform="matrix(1,0,0,1,761,2106)" id="250">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L483,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">分支二：进化人文主义。各种体验和感受的冲突不可避免，最适合胜出</tspan>
+        </text>
+    </g>
+    <g ed:parentid="101" ed:width="192" ed:height="39" transform="matrix(1,0,0,1,223,2733)" id="252">
+        <path fill="#ffffff" stroke-linejoin="round"
+              d="M4,0L188,0C190.2,0,192,1.8,192,4L192,35C192,37.2,190.2,39,188,39L4,39C1.8,39,0,37.2,0,35L0,4C0,1.8,1.8,0,4,0z"
+              stroke="#7e7e7e"></path>
+        <text class="st2">
+            <tspan style="white-space:pre" x="18" y="24.5">三、智人失去控制权</tspan>
+        </text>
+    </g>
+    <g ed:parentid="252" ed:width="153" ed:height="35.5" transform="matrix(1,0,0,1,442,2238)" id="254">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L153,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">实验室里的定时炸弹</tspan>
+        </text>
+    </g>
+    <g ed:parentid="254" ed:width="78" ed:height="35.5" transform="matrix(1,0,0,1,622,2217)" id="256">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L78,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">自由意志</tspan>
+        </text>
+    </g>
+    <g ed:parentid="256" ed:width="348" ed:height="35.5" transform="matrix(1,0,0,1,727,2175)" id="258">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L348,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">自由主义的基础是人有自由意志，这是事实声明。</tspan>
+        </text>
+    </g>
+    <g ed:parentid="256" ed:width="183" ed:height="35.5" transform="matrix(1,0,0,1,727,2217)" id="260">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L183,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">事实声明科学就可以介入</tspan>
+        </text>
+    </g>
+    <g style="display:none" ed:parentid="260" ed:width="514" ed:layout="leftmap" ed:height="55.5"
+       transform="matrix(1,0,0,1,-581,-20)" id="262">
+        <path fill="none" stroke-linejoin="round" d="M0,55.5L514,55.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">每个电化学反应都是前一项事件决定的，那最后达成的决定肯定也不是自由</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">意志</tspan>
+        </text>
+    </g>
+    <g style="display:none" ed:parentid="260" ed:width="468" ed:layout="leftmap" ed:height="35.5"
+       transform="matrix(1,0,0,1,-516,21)" id="264">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L468,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">如果是原子随机运动造成的决定，当然这就是随机，也不是自由意志</tspan>
+        </text>
+    </g>
+    <g ed:parentid="256" ed:width="423" ed:height="35.5" transform="matrix(1,0,0,1,727,2259)" id="266">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L423,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">根据进化论，动物的所有所谓“选择”，都是基因密码的反应</tspan>
+        </text>
+    </g>
+    <g ed:parentid="254" ed:width="78" ed:height="35.5" transform="matrix(1,0,0,1,622,2301)" id="268">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L78,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">个人主义</tspan>
+        </text>
+    </g>
+    <g ed:parentid="268" ed:width="333" ed:height="35.5" transform="matrix(1,0,0,1,727,2301)" id="270">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L333,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">自由主义认为每个人都有单一、不可分割的自我</tspan>
+        </text>
+    </g>
+    <g style="display:none" ed:parentid="270" ed:width="228" ed:layout="leftmap" ed:height="35.5"
+       transform="matrix(1,0,0,1,-438,103)" id="272">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L228,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">裂脑人实验，自我是物理可分的</tspan>
+        </text>
+    </g>
+    <g style="display:none" ed:parentid="272" ed:width="333" ed:layout="leftmap" ed:height="35.5"
+       transform="matrix(1,0,0,1,-756,103)" id="274">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L333,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">冰火实验，人有两种自我：体验自我和叙事自我</tspan>
+        </text>
+    </g>
+    <g ed:parentid="252" ed:width="63" ed:height="35.5" transform="matrix(1,0,0,1,442,2436)" id="276">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L63,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">大分离</tspan>
+        </text>
+    </g>
+    <g ed:parentid="276" ed:width="288" ed:height="35.5" transform="matrix(1,0,0,1,532,2353)" id="278">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L288,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">对于坚持人不可替代的想法，科学的回应</tspan>
+        </text>
+    </g>
+    <g ed:parentid="278" ed:width="514" ed:height="55.5" transform="matrix(1,0,0,1,847,2343)" id="280">
+        <path fill="none" stroke-linejoin="round" d="M0,55.5L514,55.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">1.生物是算法。每种动物都是进化而成的算法集合；2.算法的作用不受组成</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">物质的影响；3.只要运算事实，硅基和碳基没有差别</tspan>
+        </text>
+    </g>
+    <g ed:parentid="276" ed:width="228" ed:height="35.5" transform="matrix(1,0,0,1,532,2405)" id="282">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L228,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">超人类掌控世界，人类失去平等</tspan>
+        </text>
+    </g>
+    <g ed:parentid="282" ed:width="363" ed:height="35.5" transform="matrix(1,0,0,1,787,2405)" id="284">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L363,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">无论是算法还是超人类掌控世界，自由主义都将崩溃</tspan>
+        </text>
+    </g>
+    <g ed:parentid="276" ed:width="228" ed:height="35.5" transform="matrix(1,0,0,1,532,2488)" id="286">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L228,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">算法掌控世界，人类失去神圣性</tspan>
+        </text>
+    </g>
+    <g ed:parentid="286" ed:width="513" ed:height="35.5" transform="matrix(1,0,0,1,787,2447)" id="288">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L513,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">人类整体仍有价值，但个人不再具有权威，大部分选择由外部算法来管理；</tspan>
+        </text>
+    </g>
+    <g ed:parentid="286" ed:width="514" ed:height="75.5" transform="matrix(1,0,0,1,787,2489)" id="290">
+        <path fill="none" stroke-linejoin="round" d="M0,75.5L514,75.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">人类完全不具备价值：算法成为像公司、国家那样的实体，掌握人类；无用</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">的人做什么呢，只能靠药物和打游戏过活；人类很有可能被圈养或消灭，因</tspan>
+            <tspan style="white-space:pre" x="8" y="62.1">为系统比人聪明。</tspan>
+        </text>
+    </g>
+    <g ed:parentid="252" ed:width="168" ed:height="35.5" transform="matrix(1,0,0,1,442,2643)" id="292">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L168,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">新宗教：科技人文主义</tspan>
+        </text>
+    </g>
+    <g ed:parentid="292" ed:width="514" ed:height="55.5" transform="matrix(1,0,0,1,637,2571)" id="294">
+        <path fill="none" stroke-linejoin="round" d="M0,55.5L514,55.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">仍然认为人类时造物的巅峰之作，智人升级成为智神，对抗最复杂的无意识</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">算法</tspan>
+        </text>
+    </g>
+    <g ed:parentid="292" ed:width="670" ed:height="55.5" transform="matrix(1,0,0,1,637,2633)" id="296">
+        <path fill="none" stroke-linejoin="round" d="M0,55.5L670,55.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">就像人类智能看到光谱中的一小段一样，心里的频道比我们体验到的要宽的多，成为智神可以去探</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">索心智的新大陆</tspan>
+        </text>
+    </g>
+    <g ed:parentid="292" ed:width="956" ed:height="55.5" transform="matrix(1,0,0,1,637,2695)" id="298">
+        <path fill="none" stroke-linejoin="round" d="M0,55.5L956,55.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">
+                科技认为主义面临无解的两难，它认为人的意志是宇宙中最重要的东西，因此推动人类开发控制，但一旦就能控制意志，人类便失去神圣性，
+            </tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">无法在科技面前立足。</tspan>
+        </text>
+    </g>
+    <g ed:parentid="252" ed:width="138" ed:height="35.5" transform="matrix(1,0,0,1,442,3026)" id="300">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L138,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">新宗教：数据主义</tspan>
+        </text>
+    </g>
+    <g ed:parentid="300" ed:width="514" ed:height="55.5" transform="matrix(1,0,0,1,607,2757)" id="302">
+        <path fill="none" stroke-linejoin="round" d="M0,55.5L514,55.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">数据主义认为，宇宙是由数据组成的，任何现象或尸体的价值就在于对数据</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">处理的贡献</tspan>
+        </text>
+    </g>
+    <g ed:parentid="300" ed:width="78" ed:height="35.5" transform="matrix(1,0,0,1,607,2829)" id="304">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L78,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">经济系统</tspan>
+        </text>
+    </g>
+    <g ed:parentid="304" ed:width="1099" ed:height="55.5" transform="matrix(1,0,0,1,712,2819)" id="306">
+        <path fill="none" stroke-linejoin="round" d="M0,55.5L1099,55.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">
+                经济的机制就是收集关于欲望和能力的数据，再转化为决策。资本主义赢得冷战，并不是因为它更适合伦理或是上帝对苏联降下怒火，而是因为这个阶段分散式的数
+            </tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">据处理方式比集中式更优</tspan>
+        </text>
+    </g>
+    <g ed:parentid="300" ed:width="78" ed:height="35.5" transform="matrix(1,0,0,1,607,2891)" id="308">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L78,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">政治系统</tspan>
+        </text>
+    </g>
+    <g ed:parentid="308" ed:width="1073" ed:height="55.5" transform="matrix(1,0,0,1,712,2881)" id="310">
+        <path fill="none" stroke-linejoin="round" d="M0,55.5L1073,55.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">
+                民主和专制本质上也就是两套关于收集和分析信息的对立机制；如果无法有效处理数据，选举、政党、国会这些过去崇高的制度就可能被淘汰；专制政权也无力
+            </tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">应付数据流的速度和数量</tspan>
+        </text>
+    </g>
+    <g ed:parentid="300" ed:width="258" ed:height="35.5" transform="matrix(1,0,0,1,607,2964)" id="312">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L258,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">全人类是一个数据系统，个人是芯片</tspan>
+        </text>
+    </g>
+    <g ed:parentid="312" ed:width="117" ed:height="35.5" transform="matrix(1,0,0,1,892,2943)" id="314">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L117,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">提高效率4方式</tspan>
+        </text>
+    </g>
+    <g style="display:none" ed:parentid="314" ed:width="514" ed:layout="leftmap" ed:height="55.5"
+       transform="matrix(1,0,0,1,-708,706)" id="316">
+        <path fill="none" stroke-linejoin="round" d="M0,55.5L514,55.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">1.增加处理器数量（人口）；2.增加处理器种类（高新职业）；3.增加处理</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">器之间的连接（贸易）；4.增加现有连接的流通自由度。</tspan>
+        </text>
+    </g>
+    <g ed:parentid="312" ed:width="117" ed:height="35.5" transform="matrix(1,0,0,1,892,2985)" id="318">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L117,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">人类发展4阶段</tspan>
+        </text>
+    </g>
+    <g style="display:none" ed:parentid="318" ed:width="346" ed:layout="leftmap" ed:height="35.5"
+       transform="matrix(1,0,0,1,-496,766)" id="320">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L346,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">1.认知革命，大量智人能连接为单一数据处理网络</tspan>
+        </text>
+    </g>
+    <g style="display:none" ed:parentid="320" ed:width="211" ed:layout="leftmap" ed:height="35.5"
+       transform="matrix(1,0,0,1,-708,766)" id="322">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L211,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">2.农业革命，人口大规模增加</tspan>
+        </text>
+    </g>
+    <g style="display:none" ed:parentid="322" ed:width="406" ed:layout="leftmap" ed:height="35.5"
+       transform="matrix(1,0,0,1,-1089,766)" id="324">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L406,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">3.从发明文字和金钱到科学革命肇始，各类连接越发密切；</tspan>
+        </text>
+    </g>
+    <g style="display:none" ed:parentid="318" ed:width="514" ed:layout="leftmap" ed:height="75.5"
+       transform="matrix(1,0,0,1,-708,807)" id="326">
+        <path fill="none" stroke-linejoin="round" d="M0,75.5L514,75.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">4.最后一阶段，从地理大发现到现在，信息在全球网络里自由流动，且数量</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">和速度越来越快，现在的民主和市场之所以胜出，不是因为它们“好”，而</tspan>
+            <tspan style="white-space:pre" x="8" y="62.1">是改善了全球数据处理系统。</tspan>
+        </text>
+    </g>
+    <g ed:parentid="300" ed:width="273" ed:height="35.5" transform="matrix(1,0,0,1,607,3037)" id="328">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L273,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">对于数据主义，信息自由就是最高的善</tspan>
+        </text>
+    </g>
+    <g ed:parentid="328" ed:width="514" ed:height="55.5" transform="matrix(1,0,0,1,907,3027)" id="330">
+        <path fill="none" stroke-linejoin="round" d="M0,55.5L514,55.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">数据主义的两条诫命：连接越来越多的媒介，产生越来越多的信息；把一切</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">连接到系统，包括不想加入的异端</tspan>
+        </text>
+    </g>
+    <g ed:parentid="300" ed:width="468" ed:height="35.5" transform="matrix(1,0,0,1,607,3119)" id="332">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L468,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">数据主义将人类体验视同数据模式，也就破坏了人的权威和意义来源</tspan>
+        </text>
+    </g>
+    <g ed:parentid="332" ed:width="514" ed:height="95.5" transform="matrix(1,0,0,1,1102,3089)" id="334">
+        <path fill="none" stroke-linejoin="round" d="M0,95.5L514,95.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">体验不分享就没有价值，人不需要也不可能从心里找到意义，只能等待算法</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">找出意义；当更好的算法和数据出现，人类就会被自然淘汰；万物互联网自</tspan>
+            <tspan style="white-space:pre" x="8" y="62.1">己就有了神圣的意义；数据主义对人类的威胁正如人类对其他动物的威胁。</tspan>
+            <tspan style="white-space:pre" x="8" y="82.1">数据不在乎我们的主观需求。</tspan>
+        </text>
+    </g>
+    <g ed:parentid="300" ed:width="222" ed:height="35.5" transform="matrix(1,0,0,1,607,3243)" id="336">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L222,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">最重要的3个事项和对应的问题</tspan>
+        </text>
+    </g>
+    <g ed:parentid="336" ed:width="361" ed:height="35.5" transform="matrix(1,0,0,1,856,3191)" id="338">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L361,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">1.生物真的只是算法，而生命真的只是数据处理吗？</tspan>
+        </text>
+    </g>
+    <g style="display:none" ed:parentid="338" ed:width="514" ed:layout="leftmap" ed:height="55.5"
+       transform="matrix(1,0,0,1,-888,1025)" id="340">
+        <path fill="none" stroke-linejoin="round" d="M0,55.5L514,55.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">科学正聚合于一个无所不包的教条，也就是认为所有生物都是算法，而生命</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">则是进行数据处理</tspan>
+        </text>
+    </g>
+    <g ed:parentid="336" ed:width="256" ed:height="35.5" transform="matrix(1,0,0,1,856,3233)" id="342">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L256,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">2.智能和意识究竟哪一项更有价值？</tspan>
+        </text>
+    </g>
+    <g style="display:none" ed:parentid="342" ed:width="138" ed:layout="leftmap" ed:height="35.5"
+       transform="matrix(1,0,0,1,-405,1085)" id="344">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L138,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">智能正与意识脱钩</tspan>
+        </text>
+    </g>
+    <g ed:parentid="336" ed:width="564" ed:height="55.5" transform="matrix(1,0,0,1,856,3275)" id="346">
+        <path fill="none" stroke-linejoin="round" d="M0,55.5L564,55.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">3.等到无意识但具备高智能的算法比我们更了解我们，社会、政治和日常生活将会</tspan>
+            <tspan style="white-space:pre" x="8" y="42.1">有什么变化？</tspan>
+        </text>
+    </g>
+    <g style="display:none" ed:parentid="346" ed:width="393" ed:layout="leftmap" ed:height="35.5"
+       transform="matrix(1,0,0,1,-916,1135)" id="348">
+        <path fill="none" stroke-linejoin="round" d="M0,35.5L393,35.5" stroke="#7e7e7e"></path>
+        <text class="st3">
+            <tspan style="white-space:pre" x="8" y="22.1">无意识但据白高智能的算法，可能很快比我们更了解我们</tspan>
+        </text>
+    </g>
+    <symbol id="plus">
+        <path fill="url(#lg1)" d="M11,6C11,8.8,8.8,11,6,11C3.2,11,1,8.8,1,6C1,3.2,3.2,1,6,1C8.8,1,11,3.2,11,6z"></path>
+        <path fill="none" stroke-width="0.7"
+              d="M11,6C11,8.8,8.8,11,6,11C3.2,11,1,8.8,1,6C1,3.2,3.2,1,6,1C8.8,1,11,3.2,11,6zM3,6L9,6M6,3L6,9"
+              stroke="#46a000"></path>
+    </symbol>
+    <symbol id="minus">
+        <path fill="url(#lg1)" d="M11,6C11,8.8,8.8,11,6,11C3.2,11,1,8.8,1,6C1,3.2,3.2,1,6,1C8.8,1,11,3.2,11,6z"></path>
+        <path fill="none" stroke-width="0.7"
+              d="M11,6C11,8.8,8.8,11,6,11C3.2,11,1,8.8,1,6C1,3.2,3.2,1,6,1C8.8,1,11,3.2,11,6zM3,6L9,6"
+              stroke="#46a000"></path>
+    </symbol>
+    <g ed:togtopicid="101" transform="translate(161,1670)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="102" transform="translate(399,241)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="104" transform="translate(504,33)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="108" transform="translate(504,75)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="112" transform="translate(504,283)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="114" transform="translate(579,138)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="116" transform="translate(984,117)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="120" transform="translate(1059,159)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="124" transform="translate(579,294)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="128" transform="translate(937,325)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="136" transform="translate(684,439)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="140" transform="translate(399,805)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="142" transform="translate(654,671)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="144" transform="translate(729,527)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="148" transform="translate(729,702)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="150" transform="translate(849,589)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="154" transform="translate(804,692)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="160" transform="translate(819,805)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="164" transform="translate(519,980)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="166" transform="translate(624,887)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="170" transform="translate(624,959)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="174" transform="translate(654,1052)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="180" transform="translate(450,1640)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="182" transform="translate(570,1254)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="184" transform="translate(1111,1172)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="188" transform="translate(831,1244)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="192" transform="translate(825,1326)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="196" transform="translate(600,1576)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="198" transform="translate(675,1471)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="202" transform="translate(825,1450)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="204" transform="translate(1125,1450)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="212" transform="translate(720,1680)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="216" transform="translate(1035,1659)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="218" transform="translate(1215,1638)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="228" transform="translate(615,1827)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="230" transform="translate(1260,1806)">
+        <use xlink:href="#plus"></use>
+    </g>
+    <g ed:togtopicid="236" transform="translate(585,2004)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="240" transform="translate(735,1962)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="244" transform="translate(735,2066)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="252" transform="translate(416,2746)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="254" transform="translate(596,2249)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="256" transform="translate(701,2228)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="260" transform="translate(911,2228)">
+        <use xlink:href="#plus"></use>
+    </g>
+    <g ed:togtopicid="268" transform="translate(701,2312)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="270" transform="translate(1061,2312)">
+        <use xlink:href="#plus"></use>
+    </g>
+    <g ed:togtopicid="276" transform="translate(506,2447)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="278" transform="translate(821,2364)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="282" transform="translate(761,2416)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="286" transform="translate(761,2499)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="292" transform="translate(611,2654)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="300" transform="translate(581,3037)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="304" transform="translate(686,2840)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="308" transform="translate(686,2902)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="312" transform="translate(866,2975)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="314" transform="translate(1010,2954)">
+        <use xlink:href="#plus"></use>
+    </g>
+    <g ed:togtopicid="318" transform="translate(1010,2996)">
+        <use xlink:href="#plus"></use>
+    </g>
+    <g ed:togtopicid="328" transform="translate(881,3048)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="332" transform="translate(1076,3130)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="336" transform="translate(830,3254)">
+        <use xlink:href="#minus"></use>
+    </g>
+    <g ed:togtopicid="338" transform="translate(1218,3202)">
+        <use xlink:href="#plus"></use>
+    </g>
+    <g ed:togtopicid="342" transform="translate(1113,3244)">
+        <use xlink:href="#plus"></use>
+    </g>
+    <g ed:togtopicid="346" transform="translate(1421,3296)">
+        <use xlink:href="#plus"></use>
+    </g>
+    <g style="display:none" ed:togtopicid="272" transform="translate(-441,114)">
+        <use xlink:href="#plus"></use>
+    </g>
+    <g style="display:none" ed:togtopicid="320" transform="translate(-499,777)">
+        <use xlink:href="#plus"></use>
+    </g>
+    <g style="display:none" ed:togtopicid="322" transform="translate(-711,777)">
+        <use xlink:href="#minus"></use>
+    </g>
+</svg>
