@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>如果是生产环境则无限debugger</title>
+  </head>
+  <body>
+    <script>
+    ;(() => {
+      let isProduct = true
+      if (!isProduct) return
+      let date1 = new Date()
+      debugger
+      let date2 = new Date()
+      while (date2 - date1 !== 0) {
+        date1 = date2
+        debugger
+        date2 = new Date()
+      }
+    })()
+    document.body.innerHTML = 'body'
+    </script>
+  </body>
+</html>
