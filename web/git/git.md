@@ -275,3 +275,6 @@ git commit -m "feat: merge develop"
 git push
 ```
 * 应用场景：deploy发布。
+
+## 提交一个空的commit
+`git commit -m "1.1.11" --allow-empty --no-verify`
