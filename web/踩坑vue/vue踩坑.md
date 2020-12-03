@@ -595,6 +595,9 @@ new Vue({
 * 一个对象，持有注册过 ref 特性 的```所有 DOM 元素```和```组件实例```。
     - 如果 ref 注册到html标签上，那获取到的就是 DOM 元素。
     - 如果 ref 注册到组件上，那获取到的就是组件实例。
+    - `this.$refs.xxx`获取到的结果有时是对象，有时是数组。
+        - 静态的手动设置`ref="ref1"`，则`this.$refs.ref1`获取到的是一个对象。
+        - 通过循环动态设置`ref="ref1"`和`ref="ref2"`，则`this.$refs.ref1`和`this.$refs.ref2`获取到的是数组。
 
 # element-ui踩坑
 > element-ui没有清零样式。这点很赞，没有全局的清零样式，就不会覆盖markdown的默认样式。
