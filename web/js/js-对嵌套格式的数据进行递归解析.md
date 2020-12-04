@@ -1,4 +1,8 @@
 ```javascript
+// 演习开始
+console.log('演习开始')
+
+// 基础数据
 const list = [
   {
     name: '图书',
@@ -118,4 +122,26 @@ const getFather = (children, list) => {
   return result
 }
 getFather(children, list)
+
+// 结拜为兄弟
+const youAreMyBrother = (list) => {
+  const arr = []
+  const fn = (list) => {
+    list.forEach(v => {
+      const children = v.children
+      delete v.children
+      arr.push(v)
+      if (children && children.length) {
+        fn(children)
+      }
+    })
+  }
+  fn(JSON.parse(JSON.stringify(list)))
+  console.log('结拜为兄弟之后的数据：', arr)
+  return arr
+}
+youAreMyBrother(list)
+
+// 演习结束
+console.log('演习结束')
 ```
