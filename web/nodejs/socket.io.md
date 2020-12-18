@@ -14,3 +14,7 @@
 
  # 遇到过的问题
 * 浏览器第几次滚动到底部,数据就重复加载几次,原因是每次滚动到浏览器底部我都on了一下,问题虽小,依然需要注意
+
+# 原生WebSocket
+* `开源库`：https://github.com/lukeed/sockette
+* `CloseEvent.code`：https://developer.mozilla.org/zh-CN/docs/Web/API/CloseEvent
