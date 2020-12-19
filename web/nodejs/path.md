@@ -10,7 +10,7 @@
 // 命令路径 /Users/zhouhuafei/Desktop/www/github-zhouhuafei/wx-get-pages-json/test
 // 执行命令 node ../index.js
 
-console.log(path.join(__dirname, 'a')) // Users/zhouhuafei/Desktop/www/github-zhouhuafei/wx-get-pages-json/a
+console.log(path.join(__dirname, 'a')) // /Users/zhouhuafei/Desktop/www/github-zhouhuafei/wx-get-pages-json/a
 console.log(path.join('./', 'a')) // a
 console.log(path.join('./', '/a')) // a
 console.log(path.join('../', 'a')) // ../a
