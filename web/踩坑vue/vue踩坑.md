@@ -924,6 +924,29 @@ export default {
   - `@`是别名，在`js`中使用时，不允许带`~`线前缀，否则打包时也会报错，因为`~`是`sass-loader`的特性。
 
 # sleep
+* 错误使用方式：弊端-无法清理定时器
 ```
 Vue.prototype.$sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+```
+* 正确定义方式:
+```
+Vue.prototype.$sleep = (ms) => {
+  return new Promise((resolve) => {
+    Vue.prototype.$sleep.timer = setTimeout(resolve, ms)
+  })
+}
+```
+* 正确使用方式:
+```
+{
+  methods: {
+    async click () {
+      clearTimeout(this.timer1)
+      const p1 = this.$sleep(5000)
+      this.timer1 = this.$sleep.timer
+      await p1
+      console.log('click')
+    }
+  }
+}
 ```
