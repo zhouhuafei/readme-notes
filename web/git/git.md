@@ -278,3 +278,45 @@ git push
 
 ## 提交一个空的commit
 `git commit -m "1.1.11" --allow-empty --no-verify`
+
+## 广举的文档 - 独立发版项目创建流程及规则
+* 创建新的仓库
+```
+// 标准版指定分支为独立项目（如果作用 master 分支作为独立部署版的起始版本，则不用指定-b）
+git clone -b <branchName> ssh://git@git.wowkai.cn:10080/web/xcx-caodong-user.git xcx-caodong-xxx
+cd xcx-caodong-xxx
+```
+* 关联上游仓库
+```
+// 将标准版remote从orgin更名为upstream，用于后续同步代码
+git remote rename origin upstream
+// 设置origin为独立部署版仓库git路径
+git remote add origin ssh://git@git.wowkai.cn:10080/xxx/xcx-caodong-xxx.git
+
+// 清理分支
+// 如果需合并的分支不是master，需将需合并的分支变为master
+git branch -d master
+git branch -m <currentBranch> master
+
+// 删除本地除master以外所有分支/标签（保持独立仓库分支干净。若要保留其他分支，不可执行）
+git branch | grep -v "master" | xargs git branch -D
+// 查看分支详情信息（包括远程分支与本地分支建立的联系）
+git branch -vv
+
+// 撤销本地分支与远程分支的映射关系
+git branch --unset-upstream
+
+// 将本地分支推到远程
+git push -u origin --all
+// 将本地标签推到远程（可选项）
+git push -u origin --tags
+```
+* 访问上游仓库
+```
+// 访问远程仓库，从中拉取还没有的数据
+// 注意 此命令只会将数据下载到你的本地仓库——它并不会自动合并或修改你当前的工作
+git fetch upstream
+
+// 将来自 upstream/xxx 的更改合并到本地 xxx 分支中，这会使复刻的 xxx 分支与上游仓库同步，且不会丢失本地更改
+git merge upstream/xxx
+```
