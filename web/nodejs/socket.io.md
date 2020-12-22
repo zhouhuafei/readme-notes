@@ -18,3 +18,8 @@
 # 原生WebSocket
 * `开源库`：https://github.com/lukeed/sockette
 * `CloseEvent.code`：https://developer.mozilla.org/zh-CN/docs/Web/API/CloseEvent
+
+# 前端的WebSocket心跳检测需要后端配合才能实现-约定一个消息类型为心跳类型即可
+* 方案1：直接`setInterval`配合`ws.readState === WebSokcet.OPEN`配合`ws.send`配合`ws.onmessage`。
+  - `WebSokcet.OPEN`的值是1，相当于`ws.onopen`之后。
+* 方案2：`ws.onopen`之后配合`ws.send`配合`setTimeout`配合`递归`配合`ws.onmessage`。
