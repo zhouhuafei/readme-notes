@@ -6,8 +6,8 @@
 <script>
 document.querySelector('.my-copy-txt-btn').addEventListener('click', () => {
   const input = document.createElement('input')
-  document.body.appendChild(input) // 需要先在页面上渲染出来
   input.value = Math.random()
+  document.body.appendChild(input) // 需要先在页面上渲染出来
   // input.focus() // 不加这个也可以复制，加了这个，点击复制时页面会跳动。
   input.select()
   input.blur()
