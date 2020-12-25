@@ -581,7 +581,7 @@ new Vue({
 
 # 禁用特性继承
 * element的input框是怎么封装的？怎么获取一些未赋值到props上的原生属性给input。
-    - 使用`inheritAttrs: false`配合`v-bind="$attrs"`可以将属性绑定到对应的节点上。如果`inheritAttrs`不设置为`false`，则组件根节点上，也会绑定对应的属性。
+    - 使用`inheritAttrs: false`配合`v-bind="$attrs"`可以将属性绑定到特定的节点上。如果`inheritAttrs`不设置为`false`，则组件根节点上，也会绑定对应的属性。
     - `$attrs`：包含了父作用域中不作为 prop 被识别 (且获取) 的 attribute 绑定 (class 和 style 除外)。
     - https://cn.vuejs.org/v2/guide/components-props.html#%E7%A6%81%E7%94%A8-Attribute-%E7%BB%A7%E6%89%BF
     - https://github.com/ElemeFE/element/blob/dev/packages/input/src/input.vue
