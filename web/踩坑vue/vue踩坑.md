@@ -581,15 +581,17 @@ new Vue({
 
 # 禁用特性继承
 * element的input框是怎么封装的？怎么获取一些未赋值到props上的原生属性给input。
-    - inheritAttrs: false
-    - $attrs
-    - ```v-bind="$attrs"```
+    - 使用`inheritAttrs: false`配合`v-bind="$attrs"`可以将属性绑定到对应的节点上。如果`inheritAttrs`不设置为`false`，则组件根节点上，也会绑定对应的属性。
+    - `$attrs`：包含了父作用域中不作为 prop 被识别 (且获取) 的 attribute 绑定 (class 和 style 除外)。
     - https://cn.vuejs.org/v2/guide/components-props.html#%E7%A6%81%E7%94%A8-Attribute-%E7%BB%A7%E6%89%BF
     - https://github.com/ElemeFE/element/blob/dev/packages/input/src/input.vue
 * 将原生事件绑定到组件
-    - .native修饰符有局限性
+    - `.native`修饰符有局限性，例如给组件绑定`focus`事件，但是组件根节点是`div`，不具备此事件，可使用`v-on="$listeners"`使事件绑定到对应的节点上。
     - Vue 提供了一个 $listeners 属性，它是一个对象，里面包含了作用在这个组件上的所有监听器。
     - https://cn.vuejs.org/v2/guide/components-custom-events.html#%E5%B0%86%E5%8E%9F%E7%94%9F%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A%E5%88%B0%E7%BB%84%E4%BB%B6
+* `:a="1"`属性会绑定到html节点上么？
+  - 未在props上声明的属性，则作为html属性，会直接在html上显现。
+  - 在props上声明了的属性，则作为组件属性，不会直接在html上显现，除非你手动渲染到html上使之显现。
 
 # $refs
 * 一个对象，持有注册过 ref 特性 的```所有 DOM 元素```和```组件实例```。
