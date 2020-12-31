@@ -714,6 +714,26 @@ class="w500">
     - 解决方案：```:key="String(Math.random()).substring(2)"```。
 * el-dialog封装成组件A时，要使用`:before-close`修改组件A的props上控制组件A是否显示的那个属性，否则会抛错。
     - 因为组件A的props不可被更改，el-dialog的`@close`被触发，就会修改组件A的props上控制组件A是否显示的那个属性。
+* el-date-picker只能选择当前及以后的日期。
+    - https://www.cnblogs.com/huanhuan55/p/11970407.html
+    ```
+    <el-date-picker
+      v-model="form._time"
+      :picker-options="{
+        disabledDate(time) {
+          return time.getTime() < Date.now() - 8.64e7;
+        }
+      }"
+      style="width: 600px;"
+      :disabled="see"
+      :default-time="['00:00:00', '23:59:59']"
+      value-format="yyyy-MM-dd HH:mm:ss"
+      type="datetimerange"
+      range-separator="至"
+      start-placeholder="开始日期"
+      end-placeholder="结束日期"
+    />
+    ```
 * el-date-picker只允许选取上下浮动31天的日期。
 ```
 <template>
