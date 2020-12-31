@@ -32,7 +32,7 @@ redis-server --service-start
 redis-cli
 ping
 ```
-* 出现pong表示启动成功
+* 出现PONG表示启动成功
 
 ## 数据保存到了哪里
 * redis.windows.conf 文件里有句话 dbfilename dump.rdb(这个文件就是数据保存的地方)
