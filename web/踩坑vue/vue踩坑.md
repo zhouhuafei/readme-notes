@@ -980,6 +980,7 @@ Vue.prototype.$sleep = (ms) => {
   - 弊端：弊端是需要canvas要画一次，html也要画一次，增加重复劳动。
   - 参考：突然想到`wx.canvasToTempFilePath`可以在本地创建临时文件并返回一个临时文件路径，于是我找了一下canvas的Api发现了`HTMLCanvasElement.toBlob`。
 * 解决方案二：不使用`HTMLCanvasElement.toDataURL()`去创建`base64`而是使用`HTMLCanvasElement.toBlob`去创建`Blob`并配合`URL.createObjectURL`得到本地临时文件路径。
+  - 注：来伊份APP提供的SDK在保存图片时，依然要用到base64，所以base64部分依然要保留，我测了一下，只要base64不在html中渲染出来，input的v-model是不会卡的。
 * `HTMLCanvasElement.toBlob`定义：https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLCanvasElement/toBlob
   - `HTMLCanvasElement.toBlob()`方法创造`Blob`对象，用以展示canvas上的图片；
   - 这个图片文件可以被缓存或保存到本地，由用户代理端自行决定。
