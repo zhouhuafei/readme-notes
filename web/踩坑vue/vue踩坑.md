@@ -972,3 +972,25 @@ Vue.prototype.$sleep = (ms) => {
   }
 }
 ```
+
+# canvas绘制海报并以base64的方式当做图片进行渲染导致v-model卡的一批
+> 场景：来伊份商品转发任务中绘制了10张（还可能更多）海报并渲染。
+* 发现问题是：因base64占用大量内存以及会导致html页面大小变的超级大，不管base64的数据是在vue的data内存里还是在自己创建的变量的内存里，只要base64在html中渲染了出来就会导致v-model卡的一批。
+* 解决方案一：修改交互，展示时用html渲染节点，保存海报时再进行海报绘制以及海报保存。
+  - 弊端：弊端是需要canvas要画一次，html也要画一次，增加重复劳动。
+  - 参考：突然想到`wx.canvasToTempFilePath`可以在本地创建临时文件并返回一个临时文件路径，于是我找了一下canvas的Api发现了`HTMLCanvasElement.toBlob`。
+* 解决方案二：不使用`HTMLCanvasElement.toDataURL()`去创建`base64`而是使用`HTMLCanvasElement.toBlob`去创建`Blob`并配合`URL.createObjectURL`得到本地临时文件路径。
+* `HTMLCanvasElement.toBlob`定义：https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLCanvasElement/toBlob
+  - `HTMLCanvasElement.toBlob()`方法创造`Blob`对象，用以展示canvas上的图片；
+  - 这个图片文件可以被缓存或保存到本地，由用户代理端自行决定。
+  - 如不特别指明，图片的类型默认为`image/png`，分辨率为`96dpi`。
+* `HTMLCanvasElement.toBlob`案例：
+```
+HTMLCanvasElement.toBlob((blob) => {
+  console.log(URL.createObjectURL(blob)) // blob:http://127.0.0.1:8081/a5b2ef3e-ef15-4e81-b1d0-f4291dd7babe
+})
+```
+* URL.createObjectURL定义：https://developer.mozilla.org/zh-CN/docs/Web/API/URL/createObjectURL
+  - `URL.createObjectURL()`静态方法会创建一个`DOMString`，其中包含一个表示参数中给出的对象的URL。
+  - 这个`URL`的生命周期和创建它的窗口中的`document`绑定。
+  - 这个新的URL 对象表示指定的`File`对象或`Blob`对象。
