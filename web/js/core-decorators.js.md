@@ -46,6 +46,6 @@ autobind(Person.prototype, 'getPerson')
 
 let person = new Person()
 let getPerson = person.getPerson
-getPerson() === person // 想办法让此处等式成立
-// true
+// 让下面的等式成立
+console.log(getPerson() === person) // true
 ```
