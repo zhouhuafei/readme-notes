@@ -32,7 +32,7 @@ class Person {
   }
 }
 
-// 在此处实现一个方法 让等式成立
+// 在此处进行一些处理 让末尾等式成立
 function autobind (target, name) {
   const fn = target[name]
   Object.defineProperty(target, name, {
@@ -46,6 +46,6 @@ autobind(Person.prototype, 'getPerson')
 
 let person = new Person()
 let getPerson = person.getPerson
-getPerson() === person
+getPerson() === person // 想办法让此处等式成立
 // true
 ```
