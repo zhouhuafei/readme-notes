@@ -146,12 +146,9 @@
     - 《锋利的jQuery》，《Bootstrap实战》
     - 《MySQL必知必会》
     - 《Node与Express开发》
-* 没看完偶尔继续看的书
-    - 《图解HTTP》
+    - 《图解HTTP》，《图解TCP/IP》
+* 还没看完的书
     - 《HTML5 Canvas核心技术》
-* 看了一半不想继续看的书
-    - 《深入浅出Node.js》
-* 还没看的书
-    - 《图解TCP/IP》
     - 《高性能MySQL》，《Redis实战》，《MongoDB权威指南》
+    - 《深入浅出Node.js》
 * 看过的文档：gulp，webpack，es6，vue，微信小程序，wepy，mpvue，nginx，nodejs，express，mongoose，redis等等等。
