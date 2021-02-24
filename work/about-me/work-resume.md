@@ -149,6 +149,6 @@
     - 《图解HTTP》，《图解TCP/IP》
 * 还没看完的书
     - 《HTML5 Canvas核心技术》
-    - 《高性能MySQL》，《Redis实战》，《MongoDB权威指南》
+    - 《Redis实战》，《MongoDB权威指南》
     - 《深入浅出Node.js》
 * 看过的文档：gulp，webpack，es6，vue，微信小程序，wepy，mpvue，nginx，nodejs，express，mongoose，redis等等等。
