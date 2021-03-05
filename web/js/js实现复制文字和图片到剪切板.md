@@ -9,8 +9,9 @@ document.querySelector('.my-copy-txt-btn').addEventListener('click', () => {
   input.value = Math.random()
   document.body.appendChild(input) // 需要先在页面上渲染出来
   // input.focus() // 不加这个也可以复制，加了这个，点击复制时页面会跳动。
-  input.select()
-  input.blur()
+  input.select() // Android
+  input.setSelectionRange && input.setSelectionRange(0, input.value.length) // IOS
+  // input.blur() // 不加这个也可以复制。
   document.execCommand('Copy')
   document.body.removeChild(input)
 })
