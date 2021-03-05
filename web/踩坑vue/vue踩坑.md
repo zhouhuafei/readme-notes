@@ -36,6 +36,10 @@
     ```
     .parent /deep/ .child {}
     ```
+    - `/deep/`如果报错就使用`::v-deep`
+    ```
+    .parent ::v-deep .child {}
+    ```
 
 * 如果是通过script标签直接使用vue，建议放到head标签里，这样可以防止出现{{}}导致页面抖动的问题。
     - 如果引入的vuejs文件放在底部，你可以在Vue实例参数的template属性中写模版，也不会出现抖动问题。
