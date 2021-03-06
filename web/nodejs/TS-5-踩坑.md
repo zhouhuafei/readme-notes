@@ -27,3 +27,6 @@ hello = 'a'
 var world: { a: string } & { b: number }
 world = { a: 'a', b: 2 }
 ```
+
+## TS 类型中的 any、void 和 never
+https://juejin.cn/post/6844904126019534861
