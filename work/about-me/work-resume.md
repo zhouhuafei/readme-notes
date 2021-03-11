@@ -82,7 +82,7 @@
     - 技术栈：jq+js
 
 # 期望薪资
-* 26k-30k
+* 30k-35k
 
 # 使用过或了解过的技术
 * 布局：html+css，html5+css3，less，sass(推荐)，iconfont。
@@ -151,4 +151,5 @@
     - 《HTML5 Canvas核心技术》
     - 《Redis实战》，《MongoDB权威指南》
     - 《深入浅出Node.js》
+    - 《鸟哥的Linux私房菜》，《精通Git》
 * 看过的文档：gulp，webpack，es6，vue，微信小程序，wepy，mpvue，nginx，nodejs，express，mongoose，redis等等等。
