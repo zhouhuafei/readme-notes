@@ -103,6 +103,7 @@
 * 其他：Smarty套模板，nginx配置端口转发，CDN开通与使用，linux基础命令。
 
 # 个人项目案例
+> 服务器到期了，更换服务器后没继续部署这些了，准备抽空弄点别的玩。
 * github：https://github.com/zhouhuafei
 * nodejs项目demo(MVC)
     - 网址：http://sbxx.top/
@@ -142,14 +143,14 @@
     - 妙味课堂 - 2017年以前出的视频教程我几乎都看完了，当时有至少1200多集视频，记得当时还需要特定的视频播放器，后来才出的网页版。是的，我开了他家的会员。
 * 看且看完全本的书
     - 《JavaScript高级程序设计》，《JavaScript权威指南》，《高性能JavaScript》，《JavaScript语言精粹》，《ES6标准入门》
-    - 《HTML5与CSS3权威指南上册》，《HTML5与CSS3权威指南下册》，《HTML5权威指南》
+    - 《HTML5与CSS3权威指南上册》，《HTML5与CSS3权威指南下册》，《HTML5权威指南》，《HTML5 Canvas核心技术》
     - 《锋利的jQuery》，《Bootstrap实战》
-    - 《MySQL必知必会》
-    - 《Node与Express开发》
+    - 《MySQL必知必会》，《Redis实战》，《MongoDB权威指南》
+    - 《Node与Express开发》，《深入浅出Node.js》
     - 《图解HTTP》，《图解TCP/IP》
-* 还没看完的书
-    - 《HTML5 Canvas核心技术》
-    - 《Redis实战》，《MongoDB权威指南》
-    - 《深入浅出Node.js》
     - 《鸟哥的Linux私房菜》，《精通Git》
-* 看过的文档：gulp，webpack，es6，vue，微信小程序，wepy，mpvue，nginx，nodejs，express，mongoose，redis等等等。
+* 看过的文档
+    - gulp，webpack
+    - es6，ts，vue，react
+    - 微信小程序，wepy，mpvue，taro，uniapp
+    - nginx，nodejs，express，koa2，mongoose，redis
