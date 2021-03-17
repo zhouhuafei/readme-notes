@@ -320,3 +320,7 @@ git fetch upstream
 // 将来自 upstream/xxx 的更改合并到本地 xxx 分支中，这会使复刻的 xxx 分支与上游仓库同步，且不会丢失本地更改
 git merge upstream/xxx
 ```
+
+## git rm
+* `git rm --cached package-lock.json`：从暂存区删除，但是不从本地删除。
+* `git rm -f package-lock.json`：从暂存区删除并从本地删除。
