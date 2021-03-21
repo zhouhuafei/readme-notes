@@ -24,7 +24,7 @@
 
 ### GitHub Actions
 * 介绍：http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html
-* 案例：https://github.com/zhouhuafei2/UnicomTask/
+* 案例：https://github.com/ruanyf/github-actions-demo
 
 ### GitHub Pages
 * 官网：https://pages.github.com/
