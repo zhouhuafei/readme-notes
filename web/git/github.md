@@ -4,6 +4,7 @@
 * [github自动执行脚本时，本地没有服务，也可以发送请求么？](#github自动执行脚本时本地没有服务也可以发送请求么)
 * [GitHub Actions](#github-actions)
 * [GitHub Pages](#github-pages)
+* [默认分支更改](#默认分支更改)
 
 ### 目录原理
 * 语法：`[任意文案](#锚点文案)`。
@@ -28,3 +29,11 @@
 
 ### GitHub Pages
 * 官网：https://pages.github.com/
+
+### 默认分支更改
+> 如何从`master`更改`git default`分支
+1. 进入 指定仓库
+2. 选择 Settings
+3. 选择 Branches
+4. 找到 Default branch
+5. 更换 Default branch
