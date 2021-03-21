@@ -194,3 +194,8 @@ prerestart，postrestart
 * `npm test`是`npm run test`的简写。
 * `npm restart`是`npm run stop && npm run restart && npm run start`的简写。
 * `npm restart`是一个复合命令，实际上会执行三个脚本命令：`stop、restart、start`。
+
+# `package-lock.json`需要写进`.gitignore`吗？
+* `package-lock.json`不应写进`.gitignore`：https://www.zhihu.com/question/264560841
+* 但是我们团队因为有人使用`mac`有人使用`win`，每次`npm i`，`package-lock.json`文件总是会有变动。
+* 所以就把`package-lock.json`写进了`.gitignore`。
