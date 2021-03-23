@@ -45,6 +45,6 @@ beforeRouteLeave (to, from , next) {
   - 因静态资源是二级路由，publicPath是`/`，配置`nginx`的时候会比较麻烦。直接配`/`+`root`会导致主域名下的资源都指向了静态资源。
   - 如果域名只为当前这一个项目服务，那自然是没问题的。如果域名还为别的项目服务，那就会导致其他项目服务异常。
   - 解决方案1：静态资源打包到cdn服务器上。publicPath更改为 https://cdn.sbxx.top/ 即可。
-  - 解决方案2：publicPath换成项目名加其他关键字并配合`nginx`反代。案例：publicPath更改为`/req-res-log-sys/ui-static/`。
+  - 解决方案2：publicPath换成项目名加其他关键字并配合`nginx`反代。案例：publicPath更改为`/req-res-log-sys/ui/static/`。
 * 参考：
   - https://github.com/zhouhuafei/req-res-log-sys
