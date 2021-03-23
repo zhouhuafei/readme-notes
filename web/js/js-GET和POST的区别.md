@@ -39,6 +39,8 @@
 
 # 请求带数据时在chrome浏览器中的表现
 > get请求的headers中没有Content-Type这个字段。
+>> 新版chrome浏览器，get请求的headers中有Content-Type这个字段了。不过会先提前发一个OPTIONS请求鉴定是否支持Content-Type值为application/json的类型。
+>>> 我个人觉的没啥卵用。因为get请求的数据主体依然是query类型（a=1&b=2）。
 * GET
     - 在General中```Request Method: GET```
     - 数据在Query String Parameters中可以看到
