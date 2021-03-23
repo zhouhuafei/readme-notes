@@ -488,3 +488,4 @@ location ^~ /static {
 # docker配置反代一直502
 * 问题：`proxy_pass http://172.18.0.1:7001/req-res-log-sys/api;`
 * 修复：`proxy_pass http://host.docker.internal:7001/req-res-log-sys/api;`
+* 参考：https://github.com/zhouhuafei/req-res-log-sys/blob/master/nginx/conf.d/req-res-log-sys.production.conf
