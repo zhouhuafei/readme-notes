@@ -38,6 +38,7 @@ beforeRouteLeave (to, from , next) {
 ```
 
 # vue-router的二级路由-从页面的url中读取-未经测试-理论上行的通
+* 思路：publicPath设置为固定值并配合nginx进行反代，vue-router的base配成动态值。
 * webpack不改配置，publicPath还是`/`即可。
 * vue-router的基路径`base`配置从网址里读取即可。
 * 不同的base，打不同的接口，在`index.html`里进行设置api路径即可。
