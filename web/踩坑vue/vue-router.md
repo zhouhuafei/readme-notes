@@ -38,6 +38,14 @@ beforeRouteLeave (to, from , next) {
 ```
 
 # vue-router的二级路由-从页面的url中读取-未经测试-理论上行的通
+* 思路：publicPath设置为固定值并配合nginx进行反代，vue-router的base配成动态值。
 * webpack不改配置，publicPath还是`/`即可。
 * vue-router的基路径`base`配置从网址里读取即可。
 * 不同的base，打不同的接口，在`index.html`里进行设置api路径即可。
+* 弊端：
+  - 因静态资源是二级路由，publicPath是`/`，配置`nginx`的时候会比较麻烦。直接配`/`+`root`会导致主域名下的资源都指向了静态资源。
+  - 如果域名只为当前这一个项目服务，那自然是没问题的。如果域名还为别的项目服务，那就会导致其他项目服务异常。
+  - 解决方案1：静态资源打包到cdn服务器上。publicPath更改为 https://cdn.sbxx.top/ 即可。
+  - 解决方案2：publicPath换成项目名加其他关键字并配合`nginx`反代。案例：publicPath更改为`/req-res-log-sys/ui/static/`。
+* 参考：
+  - https://github.com/zhouhuafei/req-res-log-sys
