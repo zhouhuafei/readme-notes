@@ -9,6 +9,12 @@ http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html
 # Windows7 安装
 * 下载Docker Toolbox。
 * 一路next即可完成安装。
+* `Docker Toolbox`自带`docker-compose`
+
+# Windows10 安装
+* 下载：https://www.docker.com/products/docker-desktop
+* 一路next即可完成安装。
+* `Docker Desktop`自带`docker-compose`
 
 # docker镜像
 docker镜像是一个构建容器的只读模板，它包含了容器启动所需的所有信息，包括运行程序和配置数据。
