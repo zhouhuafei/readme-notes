@@ -104,27 +104,16 @@ npm deprecate my-thing@"< 0.2.3" "critical bug fixed in v0.2.3"`
 * 跨平台：https://github.com/kentcdodds/cross-env
 
 # package.json指定路径为github上的路径
-* 方式1：package.json中配置`"sass-export": "git://github.com/zhouhuafei-team/sass-export.git#master"`。
-* 方式2：`npm i git://github.com/zhouhuafei-team/sass-export.git#master`。`npm i`默认是`--save`。
-* 潜在问题：若工具包的文件入口在dist目录里，而github的仓库又忽略了dist目录。这种场景怎么破？
-* 解决方案：在仓库的`package.json`中使用`prepare`钩子。
-    - `prepare`钩子会在两种情况前运行，一是`npm publish`命令前，二是`npm install(不带任何参数)`命令前；它会在`prepublish`之后、`prepublishOnly`之前执行。注：`cnpm i`不行。
-    - `prepublishOnly`钩子，是`npm 4`到`npm 5`时，过渡`prepublish`和`prepare`时才有的。
-    - 使用案例如下：
-    ```
-    "scripts": {
-      "build": "gulp build",
-      "prepare": "npm run build"
-    }
-    ```
-* 测试`prepare`钩子是否是解决问题的关键。
-    - 我把`sass-export`项目里的`prepare`钩子删掉之后。
-    - 再通过`npm i`去安装`github`上的`sass-export`包时，发现包里无`dist\`目录了。
-    - 证实`prepare`钩子是解决问题的关键。
+* 方式1：`package.json`中配置`"sass-export": "git://github.com/zhouhuafei-team/sass-export.git#master"`。
+* 方式2：`npm i git://github.com/zhouhuafei-team/sass-export.git#master`。
+  - `npm i`默认是`--save`。
+* `package.json`中的`prepare`钩子。
+  - `prepare`钩子会在两种情况前运行，一是`npm publish`命令前，二是`npm install(不带任何参数)`命令后；它会在`prepublish`之后、`prepublishOnly`之前执行。注：`cnpm i`不会触发钩子。
+  - `prepublishOnly`钩子，是`npm 4`到`npm 5`时，过渡`prepublish`和`prepare`时才有的。
 * 测试`package.json`的`files`属性是否是控制指定的目录才会被发到npm上的关键。
-    - 我把`sass-export`项目里的`files`属性删掉之后。
-    - 再通过`npm i`去安装`github`上的`sass-export`包时，发现包里多了很多开发时的目录，例如：`src`目录、`exported-examples`目录、`test`目录。
-    - 证实`package.json`的`files`属性是控制npm上传和下载哪些目录的关键。
+  - 我把`sass-export`项目里的`files`属性删掉之后。
+  - 再通过`npm i`去安装`github`上的`sass-export`包时，发现包里多了很多开发时的目录，例如：`src`目录、`exported-examples`目录、`test`目录。
+  - 证实`package.json`的`files`属性是控制npm上传和下载哪些目录的关键。
 * 其他钩子具体请参考下述：`npm 钩子`。
 
 # npm 钩子
