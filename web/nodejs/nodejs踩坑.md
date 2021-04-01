@@ -16,26 +16,39 @@ fn();
 * https://github.com/node-inspector/node-inspector
 
 # child_process
-* Native模块`child_process`
+* Native模块`child_process`和NPM模块`shelljs`。
 ```javascript
 const util = require('util')
 const exec = util.promisify(require('child_process').exec)
-
-exec('node ./build/genConfig')
-```
-* NPM模块`shelljs`
-```javascript
 const shelljs = require('shelljs')
 
-shelljs.exec('node ./build/genConfig')
+async function fn () {
+  let o = await exec('node ./build/index')
+
+  // `./build/index`里的`console.log`不会在控制台里打印出来，需要手动打印↓。
+  console.log('---child_process开始---')
+  console.log(o.stdout)
+  console.log('---child_process结束---')
+
+  // `./build/index`里的`console.log`会在控制台里打印出来，也可以增加手动打印↓。会打印两份。
+  console.log('---shelljs开始---')
+  console.log(shelljs.exec('node ./build/index').stdout)
+  console.log('---shelljs结束---')
+}
+
+fn()
 ```
-* 推荐使用`shelljs`，因为可以通过`console.log(shelljs.exec('node ./build/genConfig'))`打印出输入日志。
-* 或者使用`linux`的`>`命令导出文件。
+* 使用`linux`的`>`命令导出文件。
+```javascript
+const util = require('util')
+const exec = util.promisify(require('child_process').exec)
+const shelljs = require('shelljs')
+
+// 如此做法，两者↓导出的内容是一致的。推荐这种做法。
+exec('node ./build/index > log1.log')
+shelljs.exec('node ./build/index > log2.log')
 ```
-exec('node ./build/genConfig > log1.log')
-shelljs.exec('node ./build/genConfig > log2.log')
-```
-* `linux`的`>`命令讲解
+* `linux`的`>`命令讲解。
 ```
 // 重点1：只能是`-i` 不能是`-it` 因为包含`-t`会报错`the input device is not a TTY`。
 // 重点2：linux的`>`和`>>`可以把`jd_get_share_code.js`运行时打印出的日志写入到一个文件里。前者覆盖文件内容，后者追加文件内容。
