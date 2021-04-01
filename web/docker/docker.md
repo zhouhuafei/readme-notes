@@ -192,3 +192,7 @@ docker run -it -v /e/www/github-zhouhuafei/suibianxiexie-api/:/root/suibianxiexi
   - 又称联盟式容器，此模式下，新创建的容器会使用指定容器的net、ipc、uts名称空间，基于lo进行互相通信，而mount、user、pid名称空间依旧是隔离的。
 * host模式
   - 共享宿主机的网络名称空间，容器不会虚拟自己的网卡设备及ip地址,而直接使用宿主机的ip地址与外部进行通信，且不需要任何NAT转换。
+
+# docker容器重启，数据会丢失么？不会！
+* docker容器重启不会丢失数据。
+* docker容器被`rm`掉，容器里的数据将会丢失。
