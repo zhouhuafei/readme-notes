@@ -324,3 +324,6 @@ git merge upstream/xxx
 ## git rm
 * `git rm --cached package-lock.json`：从暂存区删除，但是不从本地删除。适用于提交到了git但是又想忽略的场景，此命令配合.gitignore文件即可实现忽略。
 * `git rm -f package-lock.json`：从暂存区删除并从本地删除。
+
+## git查看当前分支合并过哪些分支
+`git branch --merged`
