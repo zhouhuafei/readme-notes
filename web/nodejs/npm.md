@@ -114,6 +114,18 @@ npm deprecate my-thing@"< 0.2.3" "critical bug fixed in v0.2.3"`
   - 我把`sass-export`项目里的`files`属性删掉之后。
   - 再通过`npm i`去安装`github`上的`sass-export`包时，发现包里多了很多开发时的目录，例如：`src`目录、`exported-examples`目录、`test`目录。
   - 证实`package.json`的`files`属性是控制npm上传和下载哪些目录的关键。
+* Q：上述指定github路径的安装方式是否可以运行在命令行？
+  - A：只要`package.json`文件中配置了`bin`并有对应逻辑就可以在命令行运行。
+  - 如果是全局安装，可以直接运行`sass-export -v`。
+  - 如果是在项目里安装，可以直接运行`npx sass-export -v`。
+* Q：`-v`这种指令是默认自带的么？
+  - A：不是默认自带的。可以使用`commander`包生成使用说明指令。`sass-export`使用的是`minimist`包配合代码逻辑自己生成的使用说明指令。
+* Q：`require('./package.json').version`为什么可以直接读取到值？
+  - A：经测试我发现，`require`引入的如果是`json`文件，会自动把读取到的内容转成js对象，可以直接读取其值。
+* Q：为什么不忽略`dist`目录？
+  - 如果忽略了，则需要配置`prepare`或`postinstall`钩子执行打包命令生成`dist`目录，还需要在`files`属性里增加`src`目录。但是依然有问题。
+  - 问题是钩子里的内容如果是`npm run build`则依赖缺失，钩子里的内容如果是`npm i && npm run build`则无限递归。
+  - 很显然，不忽略`dist`目录的做法，更适合`package.json指定路径为github上的路径`这个主题。
 * 其他钩子具体请参考下述：`npm 钩子`。
 
 # npm 钩子
