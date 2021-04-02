@@ -22,7 +22,7 @@ div {-webkit-user-select: none;}
     img {-webkit-touch-callout: none;}
     ```
 
-* 关闭iOS键盘首字母自动大写
+* 关闭IOS键盘首字母自动大写
 ```
 <input type="text" autocapitalize="off" />
 ```
@@ -32,7 +32,7 @@ div {-webkit-user-select: none;}
 ::-webkit-input-placeholder{color:#ccc;}
 ```
 
-* 移动端如何清除输入框内阴影，在iOS上，输入框默认有内部阴影，但无法使用 box-shadow 来清除，如果不需要阴影，可以这样关闭：
+* 移动端如何清除输入框内阴影，在IOS上，输入框默认有内部阴影，但无法使用 box-shadow 来清除，如果不需要阴影，可以这样关闭：
 ```
 input,textarea {-webkit-appearance: none;}
 ```
