@@ -95,4 +95,6 @@ store.dispatch('login');
 * mapMutations和mapActions应该绑定到methods上。
 
 # 时光旅行
-* 只能在开发者工具devtools中进行旅行么？待续...
+* Q：只能在开发者工具devtools中进行旅行么？
+  - A：肯定不是只能在开发者工具devtools中进行旅行！
+  - https://github.com/anthonygore/vuex-undo-redo
