@@ -24,14 +24,13 @@ db.User.update({},{$unset:{'address':''}},false, true)
 ```
 * 注：```{'address':''}```值写成空是对的。即使```address```值不为空也可以删掉，如果需要过滤，在第一个```{}```中添加条件过滤即可。
 
-## 自增id - 从1开始
-待续...
+## 联表查询
+* mysql有联表查询，mongodb也有联表查询。
+* aggregate
+  - $lookup
 
-## 联合表操作
-待续...
-
-## 使用mongodb的分片代替mysql数据库的分表
-待续...
+## 分片
+* mysql有分表，mongodb有分片。
 
 ## 事物
-待续...
+* mysql有事物，mongodb也有事物。
