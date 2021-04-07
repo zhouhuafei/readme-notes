@@ -73,7 +73,7 @@ ps aux | grep nginx
   - 案例2：`sudo sh -c 'echo "又一行信息" >> test.asc'`。
 
 * `grep 文案 -A/-B/-C 后面都跟阿拉伯数字`。
-  - `-A`是显示匹配后和它后面的n行。
+  - `-A`是显示匹配行和它后面的n行。
   - `-B`是显示匹配行和它前面的n行。
   - `-C`是匹配行和它前后各n行。
   - 案例：`cat jd_fruit.log | grep 之后 -B 4`。
