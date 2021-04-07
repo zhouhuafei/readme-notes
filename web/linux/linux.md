@@ -67,3 +67,13 @@ ps aux | grep nginx
   - `type node`：`node is /usr/local/bin/node`
   - `type npm`：`npm is /usr/local/bin/npm`
   - `type type`: `type is a shell builtin`
+
+* `sh -c`：它可以让`bash`将一个字串作为完整的命令来执行。
+  - 案例1：`docker exec -i jd_scripts /bin/sh -c "node /scripts/jd_bean_change.js"`。
+  - 案例2：`sudo sh -c 'echo "又一行信息" >> test.asc'`。
+
+* `grep 文案 -A/-B/-C 后面都跟阿拉伯数字`。
+  - `-A`是显示匹配后和它后面的n行。
+  - `-B`是显示匹配行和它前面的n行。
+  - `-C`是匹配行和它前后各n行。
+  - 案例：`cat jd_fruit.log | grep 之后 -B 4`。
