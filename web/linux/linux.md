@@ -82,3 +82,8 @@ ps aux | grep nginx
   > `yum install lrzsz -y`
   - rz命令（Receive ZMODEM），使用ZMODEM协议，将本地文件批量上传到远程Linux/Unix服务器，注意不能上传文件夹。
   - sz命令（Send ZMODEM）通过ZMODEM协议，可将多个文件从远程服务器下载到本地。注意不能下载文件夹，如果下载文件夹，请先打包再下载。
+
+* linux的zip命令 - 文件的压缩和解压
+  > `yum install -y unzip zip`
+  - 压缩成zip格式：`zip -q -r renwolesshel.zip renwolesshel/`
+  - 解压zip格式的压缩包：`unzip renwolesshel.zip`
