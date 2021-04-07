@@ -78,10 +78,12 @@ ps aux | grep nginx
   - `-C`是匹配行和它前后各n行。
   - 案例：`cat jd_fruit.log | grep 之后 -B 4`。
 
-* linux的rz命令和sz命令 - 文件的上传和下载
+* linux的rz命令和sz命令 - 在服务器上对客户端进行文件的接收和发送
   > `yum install lrzsz -y`
-  - rz命令（Receive ZMODEM），使用ZMODEM协议，将本地文件批量上传到远程Linux/Unix服务器，注意不能上传文件夹。
-  - sz命令（Send ZMODEM）通过ZMODEM协议，可将多个文件从远程服务器下载到本地。注意不能下载文件夹，如果下载文件夹，请先打包再下载。
+  - rz命令（Receive ZMODEM），使用ZMODEM协议，将本地文件批量上传到远程服务器。注意不能上传文件夹。
+    - 案例：`rz`
+  - sz命令（Send ZMODEM），使用ZMODEM协议，将多个文件从远程服务器下载到本地。注意不能下载文件夹，如果下载文件夹，请先打包再下载。
+    - 案例：`sz filename1 filename2`
 
 * linux的zip命令 - 文件的压缩和解压
   > `yum install -y unzip zip`
