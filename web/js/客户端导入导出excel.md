@@ -77,7 +77,7 @@ export default {
         ...this.search,
         limit: 0 // 直接一页查出全部
       })
-      const filename = 'cookie.xls'
+      const filename = 'cookie.xlsx'
       const workbook = XLSX.utils.book_new()
       const arrJson = result.list.map(v => {
         return {
