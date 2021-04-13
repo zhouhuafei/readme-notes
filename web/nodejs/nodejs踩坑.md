@@ -73,3 +73,16 @@ shell.exec(`docker exec -i jd_scripts /bin/sh -c "node /scripts/jd_get_share_cod
 * Q：如果某个接口中包含大量的运算，会造成后续接口的阻塞么？如果造成了阻塞应该怎么解决？
   - A：因单线程的特性，固会造成后续接口的阻塞。我本人亲测后发现，确实是会造成阻塞。
   - A：但是Node.js也是支持多线程的，如果接口包含大量的运算，可以再开一个线程进行运算，如此便不会阻塞当前线程。
+* 本项目在`centos`上部署时`service-api`的`npm i`报错了。
+  - 报错信息为：`g++: command not found`。
+  - 解决方案参考：https://blog.csdn.net/h378588270/article/details/7729268
+  - 解决方案具体如下：
+  ```
+  centos：
+  yum -y update gcc
+  yum -y install gcc+ gcc-c++
+
+  ubuntu：
+  apt-get update gcc
+  apt-get install g++
+  ```
