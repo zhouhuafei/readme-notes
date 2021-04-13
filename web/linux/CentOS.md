@@ -36,3 +36,9 @@
     - yum install -y docker-compose
 * 查看docker-compose版本
     - docker-compose --version
+* 检查服务是否开机启动
+    - systemctl is-enabled docker.service
+* 将服务配置成开机启动
+    - systemctl enable docker.service
+* 启动服务
+    - systemctl start docker.service
