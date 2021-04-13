@@ -47,7 +47,7 @@ export default {
     importAccount () {
       // 參考：https://www.cnblogs.com/liuxianan/p/js-excel.html
       const reader = new FileReader()
-      reader.onload = async function (e) {
+      reader.onload = async (e) => {
         const data = e.target.result
         const workbook = XLSX.read(data, { type: 'binary' })
         const sheetNames = workbook.SheetNames // 工作表名称集合
