@@ -992,6 +992,7 @@ Vue.prototype.$sleep = (ms) => {
 * `HTMLCanvasElement.toBlob`案例：
 ```
 HTMLCanvasElement.toBlob((blob) => {
+  // 增加搜索关键字：blob:url
   console.log(URL.createObjectURL(blob)) // blob:http://127.0.0.1:8081/a5b2ef3e-ef15-4e81-b1d0-f4291dd7babe
 })
 ```
