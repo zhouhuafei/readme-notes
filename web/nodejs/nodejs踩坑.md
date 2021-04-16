@@ -88,17 +88,17 @@ shell.exec(`docker exec -i jd_scripts /bin/sh -c "node /scripts/jd_get_share_cod
   ```
 
 # Linux设置环境变量
-* 丁元明的Linux服务器中，npm的下载路径被更改了，导致全局下载的东西用不了，一直报`command not found`。
-* 安装位置被更改为了：`/opt/node/node_global/lib/node_modules`。缓存位置被更改为了`/root/node_cache`。
+* 丁元明的Linux服务器中，npm的下载位置被更改了，导致全局下载的东西用不了，一直报`command not found`。
+* 下载位置被更改为了：`/opt/node/node_global/lib/node_modules`。缓存位置被更改为了`/root/node_cache`。
   - 前者默认路径为`/usr/local`后者默认路径为`/root/.npm`。
-  - 包位置在安装位置的`/lib/node_modules`目录下，指令位置在安装位置的`/bin`目录下。
-  - 更改`npm`下载位置：`npm config set prefix "全局模块安装目录"`。
-  - 更改`npm`缓存位置：`npm config set cache "全局模块缓存目录"`。
+  - 包位置在下载位置的`/lib/node_modules`目录下，指令位置在下载位置的`/bin`目录下。
+  - 更改`npm`下载位置：`npm config set prefix "全局模块下载位置"`。
+  - 更改`npm`缓存位置：`npm config set cache "全局模块缓存位置"`。
   - 查看`npm`下载位置：`npm config get prefix`。
-  - 列出当前项目安装的所有包：`npm ls`。
-  - 列出全局安装的所有包：`npm ls -g --depth=0`。
-  - 查看当前项目包的安装路径：`npm root`。
-  - 查看全局包的安装路径：`npm root -g`。
+  - 列出当前项目的所有包：`npm ls`。
+  - 列出全局环境的所有包：`npm ls -g --depth=0`。
+  - 查看当前项目的包位置：`npm root`。
+  - 查看全局环境的包位置：`npm root -g`。
 * 方案1：`export PATH=$PATH:/opt/node/node_global/lib/node_modules/bin`。
   - 查看是否已经设好，可用命令`export`查看。
   - 弊端：重启服务器后会失效，需要再次运行此指令。
