@@ -108,3 +108,4 @@ shell.exec(`docker exec -i jd_scripts /bin/sh -c "node /scripts/jd_get_share_cod
 * 方案3：修改`.bashrc`文件：`vi /root/.bashrc`。
   - 在里面加入：`export PATH=$PATH:/opt/node/node_global/lib/node_modules/bin`。
 * 特别说明：方案2、3一般需要重新注销系统才能生效，最后可以通过`echo`命令测试一下：`echo $PATH`。
+  - 设置多个环境变量只需要写入多行`export PATH=$PATH:/some/path/bin`即可。
