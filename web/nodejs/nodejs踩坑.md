@@ -102,7 +102,7 @@ shell.exec(`docker exec -i jd_scripts /bin/sh -c "node /scripts/jd_get_share_cod
       - XHR的GET请求会如此。
       - form表单的GET会如此。
       - 静态资源的GET会如此。但是如果静态资源在同一个页面。会自动整合成一条请求。例如四张图片的路径如果一样，则只会发送一条请求。
-      - 但是如果在Chrome浏览器的控制台勾上`Disable cache`。上述行为则会全部变为不阻塞行为。
+      - 但是如果在Chrome浏览器的`Network`勾上`Disable cache`。上述行为则会全部变为不阻塞行为。
   - Firefox浏览器，同一个请求路径，同样的入参，并发请求。
     - 请求不会被阻塞掉。
     - 第一个请求收到响应耗时10秒，第二个请求收到响应耗时也是10秒。
