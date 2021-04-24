@@ -86,6 +86,20 @@ shell.exec(`docker exec -i jd_scripts /bin/sh -c "node /scripts/jd_get_share_cod
   apt-get install g++
   ```
 
+# 在`koa2`的路由中使用`await`会造成阻塞吗？
+* 不会阻塞！但是Chrome浏览器的表现有点特殊。
+* 我在服务端的控制器层`await sleep(10000)`延迟10秒才进行接口的响应。
+* 经测试得出如下结论：
+  - Chrome浏览器，同一个请求路径，同样的入参，并发请求。
+    - 请求会被阻塞掉。但不是阻塞在了服务端，而是阻塞在了客户端。
+    - Chrome等第一个请求响应完毕了，才把第二个请求发送到服务端。
+    - 不同的路径不会阻塞。
+    - 同样的路径不同的入参也不会阻塞。
+    - 同样的路径同样的入参就会阻塞。
+  - Firefox浏览器，同一个请求路径，同样的入参，并发请求。
+    - 请求不会被阻塞掉。
+    - 请求同时被发送给服务端。
+
 # Linux设置环境变量
 * 丁元明的Linux服务器中，npm的下载位置被更改了，导致全局下载的东西用不了，一直报`command not found`。
 * 下载位置被更改为了：`/opt/node/node_global/lib/node_modules`。缓存位置被更改为了`/root/node_cache`。
