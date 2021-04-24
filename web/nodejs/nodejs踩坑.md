@@ -88,6 +88,9 @@ shell.exec(`docker exec -i jd_scripts /bin/sh -c "node /scripts/jd_get_share_cod
 
 # 在`koa2`的路由中使用`await`会造成阻塞吗？
 * 不会阻塞！但是Chrome浏览器的表现有点特殊。
+  - 这里的不会阻塞是指不会在客户端被阻塞。
+  - 服务端Node.js是单线程，即使是异步也还是会阻塞的。除非开线程。
+  - Node.js只要是主线程被占用期间，其他处理流程都会被阻塞掉。
 * 我在服务端的控制器层`await sleep(10000)`延迟10秒才进行接口的响应。
 * 经测试得出如下结论：
   - Chrome浏览器，同一个请求路径，同样的入参，并发请求。
