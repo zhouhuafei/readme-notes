@@ -89,19 +89,39 @@ shell.exec(`docker exec -i jd_scripts /bin/sh -c "node /scripts/jd_get_share_cod
 # 在`koa2`的路由中使用`await`会造成阻塞吗？
 * 不会阻塞！但是Chrome浏览器的表现有点特殊。
   - 这里的不会阻塞是指不会在客户端被阻塞。
-  - 在Node.js中`await`之后的逻辑会进入微任务队列。
-    - 如果`await`后面的Promise对象内部使用了`setTimeout`。`await`之后的逻辑会先进入宏任务队列，等resolve触发了再进入微任务队列。
-    - `await sleep(1000)`可以看成是`sleep(1000).then()`，但是因为`then`内部是使用`setTimeout`实现，所以先进入宏任务队列，等resolve触发了再进入微任务队列。
-    ```javascript
-    const myFn = async () => {
-      const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
-      await sleep(1000)
-    }
-    myFn()
-    ```
   - 服务端Node.js是单线程，即使是异步也还是会阻塞的。除非开线程。
   - Node.js只要是主线程被占用期间，其他处理流程都会被阻塞掉。
 * 我在服务端的控制器层`await sleep(10000)`延迟10秒才进行接口的响应。
+  - 在Node.js中`await`之后的逻辑会进入微任务队列。
+  - 如果`await`后面的Promise对象内部使用了`setTimeout`。`await`之后的逻辑会先进入宏任务队列，等resolve触发了再进入微任务队列。
+  - `await sleep(1000)`可以看成是`sleep(1000).then()`，但是因为`then`内部是使用`setTimeout`实现，所以先进入宏任务队列，等resolve触发了再进入微任务队列。
+  - 案例：
+  ```javascript
+  var myFn = async () => {
+    const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+    await sleep(1000)
+  }
+  myFn()
+  ```
+  - 测试：
+  ```javascript
+  var myFn = () => {
+    const sleep = (ms) => {
+      return new Promise((resolve) => {
+        setTimeout(() => { // setTimeout会把回调函数放入宏任务队列。
+          resolve() // resolve会把then里的逻辑放入微任务队列，等当前宏任务逻辑执行完毕，则清空微任务队列里的逻辑。
+          console.log(1)
+          console.log(2)
+        }, ms)
+      })
+    }
+    sleep(1000).then(() => {
+      console.log(3)
+    })
+  }
+  myFn()
+  // 打印结果：1 2 3
+  ```
 * 经测试得出如下结论：
   - Chrome浏览器，同一个请求路径，同样的入参，并发请求。
     - 请求会被阻塞掉。但不是阻塞在了服务端，而是阻塞在了客户端。
