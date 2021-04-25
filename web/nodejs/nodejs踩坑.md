@@ -91,6 +91,7 @@ shell.exec(`docker exec -i jd_scripts /bin/sh -c "node /scripts/jd_get_share_cod
   - 这里的不会阻塞是指不会在客户端被阻塞。
   - 在Node.js中`await`之后的逻辑会进入微任务队列。
     - 如果`await`后面的Promise对象内部使用了`setTimeout`。`await`之后的逻辑会先进入宏任务队列，等resolve触发了再进入微任务队列。
+    - `await sleep(1000)`可以看成是`sleep(1000).then()`，但是因为`then`内部是使用`setTimeout`实现，所以先进入宏任务队列，等resolve触发了再进入微任务队列。
     ```javascript
     const myFn = async () => {
       const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
