@@ -492,3 +492,6 @@ location ^~ /static {
 
 # 502 Bad Gateway
 * 使用`nginx`反代本地服务时，如果本地服务没启动，访问url时，会报`502 Bad Gateway`。
+
+# 504 Gateway Timeout
+* 使用`nginx`反代本地服务时，如果本地服务启动了，访问url时，如果url长时间没响应（默认60秒），会报`504 Gateway Timeout`。
