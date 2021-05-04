@@ -85,8 +85,9 @@ ps aux | grep nginx
   - sz命令（Send ZMODEM），使用ZMODEM协议，将多个文件从远程服务器下载到本地。注意不能下载文件夹，如果下载文件夹，请先打包再下载。
     - 案例：`sz filename1 filename2`
   - `linux`系统中打`rz`命令后出现`waiting to receive.**B0100000023be50`而没有出现选择文件弹出框？
-    - 我本来用的是`git-bash`不行，后来用`Xshell`就可以了。
-    - `rz`与`sz`需要端支持。终端就是连接远程服务器的客户端，例如`XShell`、`SecureCRT`等，`linux`默认终端是不支持的。
+    - 客户端系统：`Windows10`。
+    - 我本来用的是`Git Bash`不行，后来用`XShell`就可以了。
+    - `rz`与`sz`需要端支持。终端就是连接远程服务器的客户端，例如`XShell`、`SecureCRT`等。
 
 * linux的zip命令 - 文件的压缩和解压
   > `yum install -y unzip zip`
