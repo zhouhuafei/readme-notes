@@ -206,6 +206,9 @@ Object.getPrototypeOf(new B()).constructor.name // 'B'
         - 如果参数是个数字，它代表有多少的空格；上限为10。该值若小于1，则意味着没有空格；
         - 如果该参数为字符串(字符串的前十个字母)，该字符串将被作为空格；
         - 如果该参数没有提供（或者为null）将没有空格。
+    - 案例：
+        - `console.log(JSON.stringify({a:undefined})) // {}`
+        - `console.log(JSON.stringify({a:null})) // {"a":null}`
 
 * 数组上移(左移)和下移(右移)
 ```

@@ -42,3 +42,15 @@
     - systemctl enable docker.service
 * 启动服务
     - systemctl start docker.service
+
+### yum报错
+```
+error: rpmdb: BDB0113 Thread/process 27928/140313020049472 failed: BDB1507 Thread died in Berkeley DB library
+error: db5 error(-30973) from dbenv->failchk: BDB0087 DB_RUNRECOVERY: Fatal error, run database recovery
+error: cannot open Packages index using db5 -  (-30973)
+error: cannot open Packages database in /var/lib/rpm
+CRITICAL:yum.main:
+
+Error: rpmdb open failed
+```
+解决方案：`rm -rf /var/lib/rpm/__db*`
