@@ -155,7 +155,7 @@
     - 当你需要限制客户端请求某个服务的数量，也就是限制请求速度时，该状态码就会非常有用。
 * 449 Retry With
     - 由微软扩展，代表请求应当在执行完适当的操作后进行重试。
-* 451Unavailable For Legal Reasons
+* 451 Unavailable For Legal Reasons
     - 该请求因法律原因不可用。（RFC 7725）
 
 # 服务器错误（5、6字头）
