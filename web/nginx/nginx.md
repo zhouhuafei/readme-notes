@@ -499,3 +499,4 @@ location ^~ /static {
 # An error occurred.
 * 可能性：数据库由于访问量过大锁表导致系统崩掉。
 * 看日志：具体错误，还需要看`nginx`的`error log`。
+* 其实这个就是`nginx`报`502 Bad Gateway`，只是不同版本不同平台的`nginx`对`http`状态码`502`的描述不一样罢了。
