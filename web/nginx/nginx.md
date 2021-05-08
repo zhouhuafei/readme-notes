@@ -495,3 +495,7 @@ location ^~ /static {
 
 # 504 Gateway Timeout
 * 使用`nginx`反代服务，如果服务启动了，访问url时，如果url长时间没响应（默认60秒），会报`504 Gateway Timeout`。
+
+# An error occurred.
+* 可能性：数据库由于访问量过大锁表导致系统崩掉。
+* 看日志：具体错误，还需要看`nginx`的`error log`。
