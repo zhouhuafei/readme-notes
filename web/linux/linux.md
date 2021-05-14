@@ -40,7 +40,7 @@ ps aux | grep nginx
     - 第2个5表示group的权限 r-x 4+0+1 5
     - 第3个5表示other的权限 r-x 4+0+1 5
 * `sudo chmod +x /usr/local/bin/gitlab-runner`的意思就是给`gitlab-runner`增加可执行权限
-  - `u`表示该档案的拥有者，`g`表示与该档案的拥有者属于同一个群体(group)者，`o`表示其他以外的人，`a`表示这三者皆是。
+  - `u`表示该文件的拥有者，`g`表示与该文件的拥有者属于同一个群体(group)者，`o`表示其他以外的人，`a`表示这三者皆是。
   - `+`表示增加权限、`-`表示取消权限，`=`表示唯一设定权限。
   - `chmod a=rwx file`和`chmod 777 file`效果相同。
 * drwxr-xr-x 和 -rwxr-xr-x
