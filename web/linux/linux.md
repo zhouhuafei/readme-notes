@@ -34,11 +34,13 @@ ps aux | grep nginx
     - exec的权重是1
 * sudo chmod -R 755 node_modules
     - -f表示强制删除文件或目录
-    - -r或-R表示递归处理,将指定目录下的所有文件与子目录一并处理
-    - chmod 这是Linux系统管理员最常用到的命令之一,它用于改变文件或目录的访问权限
+    - -r或-R表示递归处理，将指定目录下的所有文件与子目录一并处理
+    - chmod 这是Linux系统管理员最常用到的命令之一，它用于改变文件或目录的访问权限
     - 第1个7表示owner的权限 rwx 4+2+1 7
     - 第2个5表示group的权限 r-x 4+0+1 5
     - 第3个5表示other的权限 r-x 4+0+1 5
+* `sudo chmod +x /usr/local/bin/gitlab-runner`的意思就是给执行权限
+  - `+`表示增加权限、`-`表示取消权限，`=`表示唯一设定权限。
 * drwxr-xr-x 和 -rwxr-xr-x
     - d表示目录
     - -表示普通文件
