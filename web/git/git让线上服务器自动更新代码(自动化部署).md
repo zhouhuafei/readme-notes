@@ -77,13 +77,14 @@ done
     }
     ------ deploy callback res end ------
     ```
-    - 解决方案：没找到解决方案。
     - 场景细节：
       - Win10系统，caodong-admin-songxia项目，我gitlab配合gh-pages触发deploy时，会报上述错误。
       - deploy配成ssh时gitlab的ci会成功，但是成功的Job步骤里会抛错误日志。
       - deploy配成http时Job步骤会一直处于pending状态，最后导致对应的Job步骤因超时而失败。
         - 超时默认值为`60`分钟。
         - 可以通过`Settings > CI/CD > General pipelines settings`进行修改。
+    - 解决方案Win10：没找到解决方案。
+    - 解决方案Linux：待续....
 
 # 建议
 * 如果只是一台服务器的部署。建议手动更新。因为可能还涉及到npm包的更新。以上写法无法满足。```git pull -p```之后可能还需要追加：
