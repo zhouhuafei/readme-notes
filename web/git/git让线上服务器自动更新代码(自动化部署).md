@@ -34,6 +34,27 @@ done
 * 在develop分支上开发，然后通过打包。把代码打到其他分支上的工具如下：
     - https://github.com/tschaub/gh-pages
     - https://github.com/shinnn/gulp-gh-pages
+* gh-pages报错如下：
+```
+------ deploy callback res begin ------
+ProcessError: To ssh://git.wowkai.cn:10080/panasonic/sxweb.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'ssh://git@git.wowkai.cn:10080/panasonic/sxweb.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+    at ChildProcess.<anonymous> (E:\www\gitlab-juzhi\caodong-admin-songxia\node_modules\gh-pages\lib\git.js:42:16)
+    at ChildProcess.emit (events.js:315:20)
+    at maybeClose (internal/child_process.js:1021:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:286:5) {
+  code: 1
+}
+------ deploy callback res end ------
+```
+* gh-pages报错解决方案：`rm -rf node_modules/.cache/gh-pages/`
 
 # 建议
 * 如果只是一台服务器的部署。建议手动更新。因为可能还涉及到npm包的更新。以上写法无法满足。```git pull -p```之后可能还需要追加：
