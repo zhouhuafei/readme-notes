@@ -117,6 +117,10 @@ done
     ps aux|grep gitlab-runner # 再次执行会发现--user的用户名已经更换成root了
     sudo systemctl enable gitlab-runner # 设置开机自启动
     ```
+    - 如何用js脚本使GitLab的runner流程failed，以达到中断流程的目的？
+      - 只有同步代码中的`throw new Error('抛错')`可以做到。
+      - 因为`Promise.reject(new Error('抛错'))`做不到，所以`async/await`做不到。
+      - 所以`async/await`配合`try/catch`配合`throw new Error('抛错')`也做不到。
 
 # 建议
 * 如果只是一台服务器的部署。建议手动更新。因为可能还涉及到npm包的更新。以上写法无法满足。```git pull -p```之后可能还需要追加：
