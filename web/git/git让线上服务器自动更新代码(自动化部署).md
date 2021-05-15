@@ -101,6 +101,7 @@ done
     ------ deploy callback res end ------
     ```
     - 问题的本质：使用rpm包安装`gitlab-runner`时，`gitlab-runner`的`--user`权限太低，`--user`的默认值为`gitlab-runner`。
+      - `ci`脚本执行`git pull -p`时遇到`error: cannot open .git/FETCH_HEAD: Permission denied`也是这个原因所致。
       - 如果使用二进制安装可能会更快的发现问题吧，因为二进制安装时涉及到`gitlab-runner`用户的创建。
       - 如果不创建`gitlab-runner`用户，直接使用`root`用户，这个问题可能我就不会遇到了。
       - `gitlab-runner`在`Linux`系统的官方安装文档：https://docs.gitlab.com/runner/install/linux-manually.html
