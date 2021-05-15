@@ -78,13 +78,13 @@ done
     ------ deploy callback res end ------
     ```
     - 场景细节：
-      - `Win10`系统，`caodong-admin-songxia`项目，我`.gitlab-ci.yml`脚本配合`gh-pages`触发`deploy`时，会报上述错误。
-      - gh-pages配成ssh时gitlab的ci/cd虽然会成功，但是成功的Job步骤里会抛错误日志。
-      - gh-pages配成http时Job步骤会一直处于pending状态，最后导致对应的Job步骤因超时而失败。
+      - `caodong-admin-songxia`项目，我`.gitlab-ci.yml`脚本配合`gh-pages`触发`deploy`时，会报上述错误。
+      - `gitlab-runner`运行在，`CentOS`系统，`7.7`版本。
+      - gh-pages配成`ssh`仓库地址时gitlab的ci/cd虽然会成功，但是成功的Job步骤里会抛错误日志。
+      - gh-pages配成`http`仓库地址时Job步骤会一直处于pending状态，最后导致对应的Job步骤因超时而失败。
         - 超时默认值为`60`分钟。
         - 可以通过`Settings > CI/CD > General pipelines settings`进行修改。
-    - 问题原因：`gitlab-runner`是基于`https`进行`git clone`的，目前不支持基于`ssh`进行`git clone`。
-      - 所以我把gh-pages配成了https，然后就出现了gh-pages报错案例3。
+      - gh-pages配成`https`仓库地址时出现了gh-pages报错案例3。
 * gh-pages报错案例3
     - 报错如下：
     ```
@@ -100,8 +100,11 @@ done
     }
     ------ deploy callback res end ------
     ```
-    - 问题的本质：gitlab-runner的--user权限太低，--user的默认值为gitlab-runner。
-    - 解决方案：直接设置gitlab-runner为root权限就可以解决。--user的值设置为root。
+    - 问题的本质：使用rpm包安装`gitlab-runner`时，`gitlab-runner`的`--user`权限太低，`--user`的默认值为`gitlab-runner`。
+      - 如果使用二进制安装可能会更快的发现问题吧，因为二进制安装时涉及到`gitlab-runner`用户的创建。
+      - 如果不创建`gitlab-runner`用户，直接使用`root`用户，这个问题可能我就不会遇到了。
+      - `gitlab-runner`在`Linux`系统的官方安装文档：https://docs.gitlab.com/runner/install/linux-manually.html
+    - 解决方案：直接设置`gitlab-runner`为`root`权限就可以解决。`--user`的值设置为`root`。
     ```
     ps aux|grep gitlab-runner  # 查看当前runner用户
     sudo gitlab-runner stop  # 停止gitlab-runner
