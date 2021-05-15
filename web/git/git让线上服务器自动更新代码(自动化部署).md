@@ -85,6 +85,8 @@ done
         - 超时默认值为`60`分钟。
         - 可以通过`Settings > CI/CD > General pipelines settings`进行修改。
       - gh-pages配成`https`仓库地址时出现了gh-pages报错案例3。
+    - 问题本质：是`gitlab-runner`的`--user`权限问题，和`ssh`以及`https`无关。
+    - 解决方案：请参考`gh-pages报错案例3`。
 * gh-pages报错案例3
     - 报错如下：
     ```
