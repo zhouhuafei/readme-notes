@@ -8,6 +8,10 @@
 }
 ```
 * 2、bin的入口文件的顶部加一句话`#!/usr/bin/env node`。
+  - 经测试，在系统自带的`命令行工具`中或者`Git Bash`中，只有`全局安装`npm包后才可以直接在命令行运行对应命令。
+  - 非全局安装可以在`package.json的scripts字段`中运行。因会在`node-modules/.bin/`目录中查找。
+  - 非全局安装也可以用`npx`进行运行。因会在`node-modules/.bin/`目录中查找。
+  - 非全局安装也可以在`WebStorm的命令行`中可以直接运行。因会在`node-modules/.bin/`目录中查找。
 * 3、发布、安装、使用。
 * 说明：
     - `npm install`在`./node_modules/.bin/`目录中会生成`wx-get-pages-json`文件和`wx-get-pages-json.cmd`文件。

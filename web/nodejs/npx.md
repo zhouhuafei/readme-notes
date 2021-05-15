@@ -5,15 +5,14 @@
 ```
 npm install -D mocha
 ```
-* 一般来说，调用 Mocha ，只能在项目脚本和 package.json 的scripts字段里面， 如果想在命令行下调用，必须像下面这样。
+* 一般来说，调用Mocha，只能在项目脚本和`package.json的scripts字段`里面，如果想在命令行下调用，必须像下面这样。
 ```
 # 项目的根目录下执行
 $ node-modules/.bin/mocha --version
 ```
-* npx 就是想解决这个问题，让项目内部安装的模块用起来更方便，只要像下面这样调用就行了。
-```
-npx mocha --version
-```
+* npx 就是想解决这个问题，让项目内部安装的模块用起来更方便，只要像`npx mocha --version`这样调用就行了。
+  - 经测试，直接`mocha --version`也可以调用，但是前提是需要用`WebStorm的命令行`。
+  - 在系统内置的命令行中或者`Git Bash`中不可以直接调用，但是可以使用`npx mocha --version`进行调用。
 * 由于 npx 会检查环境变量$PATH，所以系统命令也可以调用。
     - 案例：
     ```
