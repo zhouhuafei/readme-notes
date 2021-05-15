@@ -100,7 +100,17 @@ done
     }
     ------ deploy callback res end ------
     ```
-    - 解决方案：待续....
+    - 问题的本质：gitlab-runner的--user权限太低，--user的默认值为gitlab-runner。
+    - 解决方案：直接设置gitlab-runner为root权限就可以解决。--user的值设置为root。
+    ```
+    ps aux|grep gitlab-runner  # 查看当前runner用户
+    sudo gitlab-runner stop  # 停止gitlab-runner
+    sudo gitlab-runner uninstall  # 卸载gitlab-runner
+    gitlab-runner install --working-directory /home/gitlab-runner --user root   # 安装并设置--user(例如我想设置为root)
+    sudo systemctl start gitlab-runner  # 启动gitlab-runner
+    ps aux|grep gitlab-runner # 再次执行会发现--user的用户名已经更换成root了
+    sudo systemctl enable gitlab-runner # 设置开机自启动
+    ```
 
 # 建议
 * 如果只是一台服务器的部署。建议手动更新。因为可能还涉及到npm包的更新。以上写法无法满足。```git pull -p```之后可能还需要追加：
