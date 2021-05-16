@@ -121,6 +121,9 @@ done
       - 只有同步代码中的`throw new Error('抛错')`可以做到。
       - 因为`Promise.reject(new Error('抛错'))`做不到，所以`async/await`做不到。
       - 所以`async/await`配合`try/catch`配合`throw new Error('抛错')`也做不到。
+      - 不管是在`new Promise`中直接写`throw new Error('抛错')`。
+      - 还是在`被async关键字修饰的函数`中直接写`throw new Error('抛错')`。
+      - 只要涉及到`Promise`，就中断不了流程，只是会打印`UnhandledPromiseRejectionWarning`日志罢了。
 
 # 建议
 * 如果只是一台服务器的部署。建议手动更新。因为可能还涉及到npm包的更新。以上写法无法满足。```git pull -p```之后可能还需要追加：
