@@ -1,0 +1,196 @@
+stages:
+  - install
+  - build
+  - deploy
+  - pull
+  - notice
+# 全局配置cache - 之前是加在每一步骤中的，如果每个步骤中不加cache，则不会有对应的目录，运行脚本时会报错。
+cache:
+  key: songxia-cache-key
+  paths:
+    - node_modules
+    - dist
+install:
+  stage: install
+  only:
+    - songxia-chore-gitlab-ci
+    - songxia-uat
+    - songxia-uatcs
+    - songxia-master
+  tags:
+    - songxia-uat-tag
+  script:
+    - npm i
+build:
+  stage: build
+  only:
+    - songxia-chore-gitlab-ci
+    - songxia-uat
+    - songxia-uatcs
+    - songxia-master
+  tags:
+    - songxia-uat-tag
+  script:
+    - npm run builddist
+deploy:
+  stage: deploy
+  only:
+    - songxia-chore-gitlab-ci # 当前开发分支，可全局批量替换。
+    - songxia-uat
+    - songxia-uatcs
+    - songxia-master
+  tags:
+    - songxia-uat-tag
+  script:
+    # 多行可以使用`|`
+    - |
+      if [ "$CI_COMMIT_REF_NAME" == "songxia-master" ]; then
+        npm run deploy
+      elif [ "$CI_COMMIT_REF_NAME" == "songxia-uatcs" ]; then
+        npm run deploy:uatcs
+      elif [ "$CI_COMMIT_REF_NAME" == "songxia-uat" ]; then
+        npm run deploy:uat
+      else
+        npm run deploy:uat # 当前开发用的哪个环境，可被替换，可选值为deploy:uat和deploy:uatcs以及deploy。
+      fi
+pull-uat:
+  stage: pull
+  only:
+    - songxia-chore-gitlab-ci
+    - songxia-uat
+  tags:
+    # tags关键词用不了if，if其实是Linux的Shell脚本语法，所以一般配合script关键词使用。
+    # - if [ "$CI_COMMIT_REF_NAME" == "mmm" ]; then xxxShell; elif [ "$CI_COMMIT_REF_NAME" == "nnn" ]; then yyyShell; else zzzShell; fi
+    # 如果想实现不同的分支走不通的tags。
+    # 需要对应步骤建立多个Job，然后指定相同的stage，不同的only，不同的tags。
+    # 本文件中的pull-uat和pull-uatcs就是此种实现方式。
+    - songxia-uat-tag
+  script:
+    - ifconfig eth0
+    - pwd
+    - cd /opt/web/caodong
+    - pwd
+    - git status
+    - git pull -p
+pull-uatcs:
+  stage: pull
+  only:
+    - songxia-chore-gitlab-ci
+    - songxia-uatcs
+  tags:
+    - songxia-uatcs-tag
+  script:
+    - ifconfig eth0
+    - pwd
+    - cd /opt/web/caodong
+    - pwd
+    - git status
+    - git pull -p
+when-success:
+  stage: notice
+  only:
+    - songxia-chore-gitlab-ci
+    - songxia-uat
+    - songxia-uatcs
+    - songxia-master
+  tags:
+    - songxia-uat-tag
+  script:
+    # 多行可以使用`>`
+    - >
+      if [ "$CI_COMMIT_REF_NAME" == "songxia-master" ]; then
+        curl $WECOM_WEBHOOK_URL \
+          -H 'Content-Type: application/json' \
+          -d '
+          {
+            "msgtype": "text",
+            "text": {
+              "content": "松下-正式环境-pc管理系统\n页面已提交到远程仓库\nCI/CD流程已走完"
+            }
+          }'
+      elif [ "$CI_COMMIT_REF_NAME" == "songxia-uatcs" ]; then
+        curl $WECOM_WEBHOOK_URL \
+          -H 'Content-Type: application/json' \
+          -d '
+          {
+            "msgtype": "text",
+            "text": {
+              "content": "松下-uatcs环境-pc管理系统\n页面已更新到服务器\nCI/CD流程已走完"
+            }
+          }'
+      elif [ "$CI_COMMIT_REF_NAME" == "songxia-uat" ]; then
+        curl $WECOM_WEBHOOK_URL \
+          -H 'Content-Type: application/json' \
+          -d '
+          {
+            "msgtype": "text",
+            "text": {
+              "content": "松下-uat环境-pc管理系统\n页面已更新到服务器\nCI/CD流程已走完"
+            }
+          }'
+      else
+        curl $WECOM_WEBHOOK_URL \
+          -H 'Content-Type: application/json' \
+          -d '
+          {
+            "msgtype": "text",
+            "text": {
+              "content": "松下-当前开发环境-pc管理系统\n页面已更新到服务器\nCI/CD流程已走完"
+            }
+          }'
+      fi
+  when: on_success
+when-failure:
+  stage: notice
+  only:
+    - songxia-chore-gitlab-ci
+    - songxia-uat
+    - songxia-uatcs
+    - songxia-master
+  tags:
+    - songxia-uat-tag
+  script:
+    # 多行也可以使用`|`
+    - |
+      if [ "$CI_COMMIT_REF_NAME" == "songxia-master" ]; then
+        curl $WECOM_WEBHOOK_URL \
+          -H 'Content-Type: application/json' \
+          -d '
+          {
+            "msgtype": "text",
+            "text": {
+              "content": "松下-正式环境-pc管理系统\n页面未提交到远程仓库\nCI/CD流程已中断"
+            }
+          }'
+      elif [ "$CI_COMMIT_REF_NAME" == "songxia-uatcs" ]; then
+        curl $WECOM_WEBHOOK_URL \
+          -H 'Content-Type: application/json' \
+          -d '
+          {
+            "msgtype": "text",
+            "text": {
+              "content": "松下-uatcs环境-pc管理系统\n页面未更新到服务器\nCI/CD流程已中断"
+            }
+          }'
+      elif [ "$CI_COMMIT_REF_NAME" == "songxia-uat" ]; then
+        curl $WECOM_WEBHOOK_URL \
+          -H 'Content-Type: application/json' \
+          -d '
+          {
+            "msgtype": "text",
+            "text": {
+              "content": "松下-uat环境-pc管理系统\n页面未更新到服务器\nCI/CD流程已中断"
+            }
+          }'
+      else
+        curl $WECOM_WEBHOOK_URL \
+          -H 'Content-Type: application/json' \
+          -d '
+          {
+            "msgtype": "text",
+            "text": {
+              "content": "松下-当前开发环境-pc管理系统\n页面未更新到服务器\nCI/CD流程已中断"
+            }
+          }'
+      fi
+  when: on_failure
