@@ -96,49 +96,56 @@ when-success:
   tags:
     - songxia-uat-tag
   script:
+    # echo的-e参数可以解析\n，如果不加-e参数，\n会原封不动的被打印出来。
+    - echo "项目是在${CI_COMMIT_REF_NAME}分支被打包"
     # 多行可以使用`>`
     - >
       if [ "$CI_COMMIT_REF_NAME" == "songxia-master" ]; then
         curl $WECOM_WEBHOOK_URL \
           -H 'Content-Type: application/json' \
-          -d '
+          -d "
           {
-            "msgtype": "text",
-            "text": {
-              "content": "松下-正式环境-pc管理系统\n页面已提交到远程仓库\nCI/CD流程已走完"
+            \"msgtype\": \"text\",
+            \"text\": {
+              \"content\": \"松下-正式环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n页面已提交到远程仓库\nCI/CD流程已走完\"
             }
-          }'
+          }"
       elif [ "$CI_COMMIT_REF_NAME" == "songxia-uatcs" ]; then
         curl $WECOM_WEBHOOK_URL \
           -H 'Content-Type: application/json' \
-          -d '
+          -d "
           {
-            "msgtype": "text",
-            "text": {
-              "content": "松下-uatcs环境-pc管理系统\n页面已更新到服务器\nCI/CD流程已走完"
+            \"msgtype\": \"text\",
+            \"text\": {
+              \"content\": \"松下-uatcs环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n页面已更新到服务器\nCI/CD流程已走完\"
             }
-          }'
+          }"
       elif [ "$CI_COMMIT_REF_NAME" == "songxia-uat" ]; then
         curl $WECOM_WEBHOOK_URL \
           -H 'Content-Type: application/json' \
-          -d '
+          -d "
           {
-            "msgtype": "text",
-            "text": {
-              "content": "松下-uat环境-pc管理系统\n页面已更新到服务器\nCI/CD流程已走完"
+            \"msgtype\": \"text\",
+            \"text\": {
+              \"content\": \"松下-uat环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n页面已更新到服务器\nCI/CD流程已走完\"
             }
-          }'
+          }"
       else
         curl $WECOM_WEBHOOK_URL \
           -H 'Content-Type: application/json' \
-          -d '
+          -d "
           {
-            "msgtype": "text",
-            "text": {
-              "content": "松下-当前开发环境-pc管理系统\n页面已更新到服务器\nCI/CD流程已走完"
+            \"msgtype\": \"text\",
+            \"text\": {
+              \"content\": \"松下-uat环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n页面已更新到服务器\nCI/CD流程已走完\"
             }
-          }'
+          }"
       fi
+    # 上述else中content里对应的环境文案可被替换，当前开发环境是啥，就可以修改为啥。
+    # 上述curl的-d参数不能使用单引号包裹，否则content字段中的${CI_COMMIT_REF_NAME}不会被解析。
+    # Linux命令行里输入\后，可以进入多行模式。这就是curl末尾和-H末尾加\的用意。
+    # ${CI_COMMIT_REF_NAME}可以更换为$CI_COMMIT_REF_NAME，两者是一样的。
+    # 这几段注释不能放到上述content关键字上方，也就是curl关键字内，否则会导致消息发送失败。
   when: on_success
 when-failure:
   stage: notice
@@ -150,47 +157,54 @@ when-failure:
   tags:
     - songxia-uat-tag
   script:
+    # echo的-e参数可以解析\n，如果不加-e参数，\n会原封不动的被打印出来。
+    - echo "项目是在${CI_COMMIT_REF_NAME}分支被打包"
     # 多行也可以使用`|`
     - |
       if [ "$CI_COMMIT_REF_NAME" == "songxia-master" ]; then
         curl $WECOM_WEBHOOK_URL \
           -H 'Content-Type: application/json' \
-          -d '
+          -d "
           {
-            "msgtype": "text",
-            "text": {
-              "content": "松下-正式环境-pc管理系统\n页面未提交到远程仓库\nCI/CD流程已中断"
+            \"msgtype\": \"text\",
+            \"text\": {
+              \"content\": \"松下-正式环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n页面未提交到远程仓库\nCI/CD流程已中断\"
             }
-          }'
+          }"
       elif [ "$CI_COMMIT_REF_NAME" == "songxia-uatcs" ]; then
         curl $WECOM_WEBHOOK_URL \
           -H 'Content-Type: application/json' \
-          -d '
+          -d "
           {
-            "msgtype": "text",
-            "text": {
-              "content": "松下-uatcs环境-pc管理系统\n页面未更新到服务器\nCI/CD流程已中断"
+            \"msgtype\": \"text\",
+            \"text\": {
+              \"content\": \"松下-uatcs环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n页面未更新到服务器\nCI/CD流程已中断\"
             }
-          }'
+          }"
       elif [ "$CI_COMMIT_REF_NAME" == "songxia-uat" ]; then
         curl $WECOM_WEBHOOK_URL \
           -H 'Content-Type: application/json' \
-          -d '
+          -d "
           {
-            "msgtype": "text",
-            "text": {
-              "content": "松下-uat环境-pc管理系统\n页面未更新到服务器\nCI/CD流程已中断"
+            \"msgtype\": \"text\",
+            \"text\": {
+              \"content\": \"松下-uat环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n页面未更新到服务器\nCI/CD流程已中断\"
             }
-          }'
+          }"
       else
         curl $WECOM_WEBHOOK_URL \
           -H 'Content-Type: application/json' \
-          -d '
+          -d "
           {
-            "msgtype": "text",
-            "text": {
-              "content": "松下-当前开发环境-pc管理系统\n页面未更新到服务器\nCI/CD流程已中断"
+            \"msgtype\": \"text\",
+            \"text\": {
+              \"content\": \"松下-uat环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n页面未更新到服务器\nCI/CD流程已中断\"
             }
-          }'
+          }"
       fi
+    # 上述else中content里对应的环境文案可被替换，当前开发环境是啥，就可以修改为啥。
+    # 上述curl的-d参数不能使用单引号包裹，否则content字段中的${CI_COMMIT_REF_NAME}不会被解析。
+    # Linux命令行里输入\后，可以进入多行模式。这就是curl末尾和-H末尾加\的用意。
+    # ${CI_COMMIT_REF_NAME}可以更换为$CI_COMMIT_REF_NAME，两者是一样的。
+    # 这几段注释不能放到上述content关键字上方，也就是curl关键字内，否则会导致消息发送失败。
   when: on_failure
