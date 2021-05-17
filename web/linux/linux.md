@@ -106,3 +106,5 @@ ps aux | grep nginx
 
 * linux查看占用端口进程的PID：`lsof -i:7001`。
 * 然后根据PID可以kill掉相关进程：`kill -9 5291`。
+
+* Linux命令行里输入\后，可以进入多行模式。
