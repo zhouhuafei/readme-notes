@@ -107,4 +107,36 @@ ps aux | grep nginx
 * linux查看占用端口进程的PID：`lsof -i:7001`。
 * 然后根据PID可以kill掉相关进程：`kill -9 5291`。
 
-* Linux命令行里输入\后，可以进入多行模式。
+### Linux命令行里输入\后，可以进入多行模式。
+* 多行模式中可以直接换行输入，不需要再次使用转义符\拼接。
+* 案例 - 输入
+```
+$ \
+> echo "<div>
+> div
+> </div>"
+```
+* 案例 - 输出
+```
+<div>
+div
+</div>
+```
+* echo的-e参数可以解析\n，如果不加-e参数，\n会原封不动的被打印出来。
+* 例如在js中，字符串多行拼接就需要使用转义符\进行拼接。
+```javascript
+var str1 = '<div> \
+div \
+</div>'
+console.log(str1) // '<div> div </div>'
+var str2 = `<div>
+div
+</div>`
+console.log(str2)
+```
+* str2的输出为
+```
+<div>
+div
+</div>
+```
