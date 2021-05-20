@@ -13,7 +13,7 @@ cache:
 install:
   stage: install
   only:
-    - songxia-chore-gitlab-ci
+    - songxia-feat-531
     - songxia-uat
     - songxia-uatcs
     - songxia-master
@@ -24,7 +24,7 @@ install:
 build:
   stage: build
   only:
-    - songxia-chore-gitlab-ci
+    - songxia-feat-531
     - songxia-uat
     - songxia-uatcs
     - songxia-master
@@ -35,7 +35,7 @@ build:
 deploy:
   stage: deploy
   only:
-    - songxia-chore-gitlab-ci # 当前开发分支，可全局批量替换。
+    - songxia-feat-531 # 当前开发分支，可全局批量替换。
     - songxia-uat
     - songxia-uatcs
     - songxia-master
@@ -56,7 +56,7 @@ deploy:
 pull-uat:
   stage: pull
   only:
-    - songxia-chore-gitlab-ci
+    - songxia-feat-531
     - songxia-uat
   tags:
     # tags关键词用不了if，if其实是Linux的Shell脚本语法，所以一般配合script关键词使用。
@@ -75,7 +75,7 @@ pull-uat:
 pull-uatcs:
   stage: pull
   only:
-    - songxia-chore-gitlab-ci
+    - songxia-feat-531
     - songxia-uatcs
   tags:
     - songxia-uatcs-tag
@@ -89,7 +89,7 @@ pull-uatcs:
 when-success:
   stage: notice
   only:
-    - songxia-chore-gitlab-ci
+    - songxia-feat-531
     - songxia-uat
     - songxia-uatcs
     - songxia-master
@@ -107,7 +107,7 @@ when-success:
           {
             \"msgtype\": \"text\",
             \"text\": {
-              \"content\": \"松下-正式环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n页面已提交到远程仓库\nCI/CD流程已走完\"
+              \"content\": \"松下-正式环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n$CI_COMMIT_MESSAGE\n页面已提交到远程仓库\nCI/CD流程已走完\"
             }
           }"
       elif [ "$CI_COMMIT_REF_NAME" == "songxia-uatcs" ]; then
@@ -117,7 +117,7 @@ when-success:
           {
             \"msgtype\": \"text\",
             \"text\": {
-              \"content\": \"松下-uatcs环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n页面已更新到服务器\nCI/CD流程已走完\"
+              \"content\": \"松下-uatcs环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n$CI_COMMIT_MESSAGE\n页面已更新到服务器\nCI/CD流程已走完\"
             }
           }"
       elif [ "$CI_COMMIT_REF_NAME" == "songxia-uat" ]; then
@@ -127,7 +127,7 @@ when-success:
           {
             \"msgtype\": \"text\",
             \"text\": {
-              \"content\": \"松下-uat环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n页面已更新到服务器\nCI/CD流程已走完\"
+              \"content\": \"松下-uat环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n$CI_COMMIT_MESSAGE\n页面已更新到服务器\nCI/CD流程已走完\"
             }
           }"
       else
@@ -137,7 +137,7 @@ when-success:
           {
             \"msgtype\": \"text\",
             \"text\": {
-              \"content\": \"松下-uat环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n页面已更新到服务器\nCI/CD流程已走完\"
+              \"content\": \"松下-uat环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n$CI_COMMIT_MESSAGE\n页面已更新到服务器\nCI/CD流程已走完\"
             }
           }"
       fi
@@ -150,7 +150,7 @@ when-success:
 when-failure:
   stage: notice
   only:
-    - songxia-chore-gitlab-ci
+    - songxia-feat-531
     - songxia-uat
     - songxia-uatcs
     - songxia-master
@@ -168,7 +168,7 @@ when-failure:
           {
             \"msgtype\": \"text\",
             \"text\": {
-              \"content\": \"松下-正式环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n页面未提交到远程仓库\nCI/CD流程已中断\"
+              \"content\": \"松下-正式环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n$CI_COMMIT_MESSAGE\n页面未提交到远程仓库\nCI/CD流程已中断\"
             }
           }"
       elif [ "$CI_COMMIT_REF_NAME" == "songxia-uatcs" ]; then
@@ -178,7 +178,7 @@ when-failure:
           {
             \"msgtype\": \"text\",
             \"text\": {
-              \"content\": \"松下-uatcs环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n页面未更新到服务器\nCI/CD流程已中断\"
+              \"content\": \"松下-uatcs环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n$CI_COMMIT_MESSAGE\n页面未更新到服务器\nCI/CD流程已中断\"
             }
           }"
       elif [ "$CI_COMMIT_REF_NAME" == "songxia-uat" ]; then
@@ -188,7 +188,7 @@ when-failure:
           {
             \"msgtype\": \"text\",
             \"text\": {
-              \"content\": \"松下-uat环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n页面未更新到服务器\nCI/CD流程已中断\"
+              \"content\": \"松下-uat环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n$CI_COMMIT_MESSAGE\n页面未更新到服务器\nCI/CD流程已中断\"
             }
           }"
       else
@@ -198,7 +198,7 @@ when-failure:
           {
             \"msgtype\": \"text\",
             \"text\": {
-              \"content\": \"松下-uat环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n页面未更新到服务器\nCI/CD流程已中断\"
+              \"content\": \"松下-uat环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n$CI_COMMIT_MESSAGE\n页面未更新到服务器\nCI/CD流程已中断\"
             }
           }"
       fi
