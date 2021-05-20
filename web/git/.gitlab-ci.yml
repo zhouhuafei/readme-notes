@@ -107,7 +107,7 @@ when-success:
           {
             \"msgtype\": \"text\",
             \"text\": {
-              \"content\": \"松下-正式环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n$CI_COMMIT_MESSAGE\n页面已提交到远程仓库\nCI/CD流程已走完\"
+              \"content\": \"松下-正式环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n$CI_COMMIT_MESSAGE页面已提交到远程仓库\nCI/CD流程已走完\"
             }
           }"
       elif [ "$CI_COMMIT_REF_NAME" == "songxia-uatcs" ]; then
@@ -117,7 +117,7 @@ when-success:
           {
             \"msgtype\": \"text\",
             \"text\": {
-              \"content\": \"松下-uatcs环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n$CI_COMMIT_MESSAGE\n页面已更新到服务器\nCI/CD流程已走完\"
+              \"content\": \"松下-uatcs环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n$CI_COMMIT_MESSAGE页面已更新到服务器\nCI/CD流程已走完\"
             }
           }"
       elif [ "$CI_COMMIT_REF_NAME" == "songxia-uat" ]; then
@@ -127,7 +127,7 @@ when-success:
           {
             \"msgtype\": \"text\",
             \"text\": {
-              \"content\": \"松下-uat环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n$CI_COMMIT_MESSAGE\n页面已更新到服务器\nCI/CD流程已走完\"
+              \"content\": \"松下-uat环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n$CI_COMMIT_MESSAGE页面已更新到服务器\nCI/CD流程已走完\"
             }
           }"
       else
@@ -137,14 +137,14 @@ when-success:
           {
             \"msgtype\": \"text\",
             \"text\": {
-              \"content\": \"松下-uat环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n$CI_COMMIT_MESSAGE\n页面已更新到服务器\nCI/CD流程已走完\"
+              \"content\": \"松下-uat环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n$CI_COMMIT_MESSAGE页面已更新到服务器\nCI/CD流程已走完\"
             }
           }"
       fi
     # 上述else中content里对应的环境文案可被替换，当前开发环境是啥，就可以修改为啥。
     # 上述curl的-d参数不能使用单引号包裹，否则content字段中的${CI_COMMIT_REF_NAME}不会被解析。
     # Linux命令行里输入\后，可以进入多行模式。这就是curl末尾和-H末尾加\的用意。
-    # ${CI_COMMIT_REF_NAME}可以更换为$CI_COMMIT_REF_NAME，两者是一样的。
+    # ${CI_COMMIT_REF_NAME}可以更换为$CI_COMMIT_REF_NAME，两者是一样的。$CI_COMMIT_MESSAGE末尾自带换行。
     # 这几段注释不能放到上述content关键字上方，也就是curl关键字内，否则会导致消息发送失败。
   when: on_success
 when-failure:
@@ -168,7 +168,7 @@ when-failure:
           {
             \"msgtype\": \"text\",
             \"text\": {
-              \"content\": \"松下-正式环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n$CI_COMMIT_MESSAGE\n页面未提交到远程仓库\nCI/CD流程已中断\"
+              \"content\": \"松下-正式环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n$CI_COMMIT_MESSAGE页面未提交到远程仓库\nCI/CD流程已中断\"
             }
           }"
       elif [ "$CI_COMMIT_REF_NAME" == "songxia-uatcs" ]; then
@@ -178,7 +178,7 @@ when-failure:
           {
             \"msgtype\": \"text\",
             \"text\": {
-              \"content\": \"松下-uatcs环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n$CI_COMMIT_MESSAGE\n页面未更新到服务器\nCI/CD流程已中断\"
+              \"content\": \"松下-uatcs环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n$CI_COMMIT_MESSAGE页面未更新到服务器\nCI/CD流程已中断\"
             }
           }"
       elif [ "$CI_COMMIT_REF_NAME" == "songxia-uat" ]; then
@@ -188,7 +188,7 @@ when-failure:
           {
             \"msgtype\": \"text\",
             \"text\": {
-              \"content\": \"松下-uat环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n$CI_COMMIT_MESSAGE\n页面未更新到服务器\nCI/CD流程已中断\"
+              \"content\": \"松下-uat环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n$CI_COMMIT_MESSAGE页面未更新到服务器\nCI/CD流程已中断\"
             }
           }"
       else
@@ -198,13 +198,13 @@ when-failure:
           {
             \"msgtype\": \"text\",
             \"text\": {
-              \"content\": \"松下-uat环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n$CI_COMMIT_MESSAGE\n页面未更新到服务器\nCI/CD流程已中断\"
+              \"content\": \"松下-uat环境-pc管理系统\n项目是在${CI_COMMIT_REF_NAME}分支被打包\n$CI_COMMIT_MESSAGE页面未更新到服务器\nCI/CD流程已中断\"
             }
           }"
       fi
     # 上述else中content里对应的环境文案可被替换，当前开发环境是啥，就可以修改为啥。
     # 上述curl的-d参数不能使用单引号包裹，否则content字段中的${CI_COMMIT_REF_NAME}不会被解析。
     # Linux命令行里输入\后，可以进入多行模式。这就是curl末尾和-H末尾加\的用意。
-    # ${CI_COMMIT_REF_NAME}可以更换为$CI_COMMIT_REF_NAME，两者是一样的。
+    # ${CI_COMMIT_REF_NAME}可以更换为$CI_COMMIT_REF_NAME，两者是一样的。$CI_COMMIT_MESSAGE末尾自带换行。
     # 这几段注释不能放到上述content关键字上方，也就是curl关键字内，否则会导致消息发送失败。
   when: on_failure
