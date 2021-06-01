@@ -233,3 +233,72 @@ arr.sort() // [1, 10, 2, 3, 4, 5, 6, 7, 7, 7, 88, 9]
 arr.sort((v1,v2)=>v1-v2) // [1, 2, 3, 4, 5, 6, 7, 7, 7, 9, 10, 88]
 arr.sort((v1,v2)=>v2-v1) // [88, 10, 9, 7, 7, 7, 6, 5, 4, 3, 2, 1]
 ```
+
+### forEach中的async/await不会阻塞forEach外的流程
+```javascript
+function test () {
+  const arr = [1, 2, 3]
+  arr.forEach(async value => {
+    await fnPromise(value)
+    console.log('这里想要的是先打印，但是会后打印', value)
+  })
+  console.log('这里想要的是后打印，但是会先打印')
+}
+
+function fnPromise (value) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(value)
+    }, 1000)
+  })
+}
+
+test()
+```
+* 使用`for i`或者`for in`或者`for of`。
+```javascript
+async function test () {
+  const arr = [1, 2, 3]
+  for (let item = 0; item < arr.length; item++) {
+    const value = arr[item]
+    await fnPromise(value)
+    console.log('这里想要的是先打印，所以会先打印', value)
+  }
+  console.log('这里想要的是后打印，所以会后打印')
+}
+
+function fnPromise (value) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(value)
+    }, 1000)
+  })
+}
+
+test()
+```
+* 使用`Promise.all`。
+```javascript
+async function test () {
+  const arr = [1, 2, 3]
+  const promiseA = []
+  arr.forEach(value => {
+    promiseA.push(fnPromise(value))
+  })
+  const r = await Promise.all(promiseA)
+  r.forEach(value => {
+    console.log('这里想要的是先打印，所以会先打印', value)
+  })
+  console.log('这里想要的是后打印，所以会后打印')
+}
+
+function fnPromise (value) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(value)
+    }, 1000)
+  })
+}
+
+test()
+```
