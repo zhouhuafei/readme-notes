@@ -48,5 +48,6 @@
 * 为人随和，这么多年和同事相处的都还挺融洽。
 
 # 个人杂集
+* npm：https://www.npmjs.com/~zhouhuafei
 * github：https://github.com/zhouhuafei
 * 笔记：https://github.com/zhouhuafei/readme-notes/tree/master/web

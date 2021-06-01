@@ -104,6 +104,7 @@
 
 # 个人项目案例
 > 服务器到期了，更换服务器后没继续部署这些了，准备抽空弄点别的玩。
+* npm：https://www.npmjs.com/~zhouhuafei
 * github：https://github.com/zhouhuafei
 * nodejs项目demo(MVC)
     - 网址：http://sbxx.top/
