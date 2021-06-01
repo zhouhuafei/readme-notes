@@ -235,6 +235,7 @@ arr.sort((v1,v2)=>v2-v1) // [88, 10, 9, 7, 7, 7, 6, 5, 4, 3, 2, 1]
 ```
 
 ### forEach中的async/await不会阻塞forEach外的流程
+> 其他方法也存在类似问题 例如 map filter 问题的本质是回调函数导致
 ```javascript
 function test () {
   const arr = [1, 2, 3]
