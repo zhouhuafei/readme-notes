@@ -303,3 +303,51 @@ function fnPromise (value) {
 
 test()
 ```
+
+### 使用`let`和`const`取代`var`解决`for i`配合`dom事件`或配合`定时器`进行输出时值异常的问题
+> 以前的解决方案是使用闭包，现在使用`let`和`const`即可解决。
+* 使用var
+```javascript
+for (var i = 0; i < 5; i++) {
+  setTimeout(() => {
+    console.log(i) // 5、5、5、5、5
+  }, 0)
+}
+for (var i = 0; i < 5; i++) {
+  setTimeout((i) => {
+    console.log(i) // 0、1、2、3、4
+  }, 0, i)
+}
+for (var i = 0; i < 5; i++) {
+  (function(i){
+    setTimeout(() => {
+      console.log(i) // 0、1、2、3、4
+    }, 0)
+  })(i)
+}
+```
+* 使用let
+```javascript
+for (let i = 0; i < 5; i++) {
+  setTimeout(() => {
+    console.log(i) // 0、1、2、3、4
+  }, 0)
+}
+```
+* 错误的使用const会报错：Uncaught TypeError: Assignment to constant variable.
+```javascript
+for (const i = 0; i < 5; i++) {
+  setTimeout(() => {
+    console.log(i) // 0、1、2、3、4
+  }, 0)
+}
+```
+* 正确的使用const
+```javascript
+for (var i = 0; i < 5; i++) {
+  const j = i
+  setTimeout(() => {
+    console.log(j) // 0、1、2、3、4
+  }, 0)
+}
+```
