@@ -350,17 +350,17 @@ for (var i = 0; i < 5; i++) {
 * Object.keys()方法会返回一个由一个给定对象的自身可枚举属性组成的数组，数组中属性名的排列顺序和正常循环遍历该对象时返回的顺序一致。
 * Object.getOwnPropertyNames()方法返回一个由指定对象的所有自身属性的属性名（包括不可枚举属性但不包括Symbol值作为名称的属性）组成的数组。
 ```javascript
-Person = function(name){
+Person = function (name) {
   this.name = name || ''
 }
-Person.prototype.sayHello = function(){
+Person.prototype.sayHello = function () {
   console.log('hello')
 }
 p = new Person('yangyang')
 p.age = 18
 Object.defineProperties(p, {
-  age:{
-    enumerable:false
+  age: {
+    enumerable: false
   }
 })
 console.log(Object.keys(p)) // ["name"]
