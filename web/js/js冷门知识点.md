@@ -335,13 +335,7 @@ for (let i = 0; i < 5; i++) {
 }
 ```
 * 错误的使用const会报错：Uncaught TypeError: Assignment to constant variable.
-```javascript
-for (const i = 0; i < 5; i++) {
-  setTimeout(() => {
-    console.log(i) // 0、1、2、3、4
-  }, 0)
-}
-```
+  - 在`for i`循环语句中使用`const`会报上述错误，因为const表示常量，常量不可变，不允许被重新赋值。
 * 正确的使用const
 ```javascript
 for (var i = 0; i < 5; i++) {
