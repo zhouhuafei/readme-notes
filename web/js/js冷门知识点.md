@@ -303,3 +303,66 @@ function fnPromise (value) {
 
 test()
 ```
+
+### 使用`let`和`const`取代`var`解决`for i`配合`dom事件`或配合`定时器`进行输出时值异常的问题
+> 以前的解决方案是使用闭包，现在使用`let`和`const`即可解决。
+* 使用var
+```javascript
+for (var i = 0; i < 5; i++) {
+  setTimeout(() => {
+    console.log(i) // 5、5、5、5、5
+  }, 0)
+}
+for (var i = 0; i < 5; i++) {
+  setTimeout((i) => {
+    console.log(i) // 0、1、2、3、4
+  }, 0, i)
+}
+for (var i = 0; i < 5; i++) {
+  (function(i){
+    setTimeout(() => {
+      console.log(i) // 0、1、2、3、4
+    }, 0)
+  })(i)
+}
+```
+* 使用let
+```javascript
+for (let i = 0; i < 5; i++) {
+  setTimeout(() => {
+    console.log(i) // 0、1、2、3、4
+  }, 0)
+}
+```
+* 错误的使用const会报错：Uncaught TypeError: Assignment to constant variable.
+  - 在`for i`循环语句中使用`const`会报上述错误，因为const表示常量，常量不可变，不允许被重新赋值。
+* 正确的使用const
+```javascript
+for (var i = 0; i < 5; i++) {
+  const j = i
+  setTimeout(() => {
+    console.log(j) // 0、1、2、3、4
+  }, 0)
+}
+```
+
+### Object.keys和Object.getOwnPropertyNames的区别
+* Object.keys()方法会返回一个由一个给定对象的自身可枚举属性组成的数组，数组中属性名的排列顺序和正常循环遍历该对象时返回的顺序一致。
+* Object.getOwnPropertyNames()方法返回一个由指定对象的所有自身属性的属性名（包括不可枚举属性但不包括Symbol值作为名称的属性）组成的数组。
+```javascript
+Person = function (name) {
+  this.name = name || ''
+}
+Person.prototype.sayHello = function () {
+  console.log('hello')
+}
+p = new Person('yangyang')
+p.age = 18
+Object.defineProperties(p, {
+  age: {
+    enumerable: false
+  }
+})
+console.log(Object.keys(p)) // ["name"]
+console.log(Object.getOwnPropertyNames(p)) // ["name", "age"]
+```
