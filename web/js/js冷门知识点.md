@@ -368,3 +368,10 @@ Object.defineProperties(p, {
 console.log(Object.keys(p)) // ["name"]
 console.log(Object.getOwnPropertyNames(p)) // ["name", "age"]
 ```
+
+### JavaScript中数字占几个字节
+* JavaScript的number基本类型占8个字节
+* 1B = 8bit
+* 8B = 64bit
+* Number.MAX_SAFE_INTEGER === Math.pow(2, 53) - 1 // true
+* Number.MIN_SAFE_INTEGER === Math.pow(-2, 53) + 1 // true
