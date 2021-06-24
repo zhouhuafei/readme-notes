@@ -336,6 +336,8 @@ for (let i = 0; i < 5; i++) {
 ```
 * 错误的使用const会报错：Uncaught TypeError: Assignment to constant variable.
   - 在`for i`循环语句中使用`const`会报上述错误，因为const表示常量，常量不可变，不允许被重新赋值。
+  - 而`for i`的自增语句相当于重新赋值。
+  - 可以在`for of`和`for in`的循环语句中使用`const`。
 * 正确的使用const
 ```javascript
 for (var i = 0; i < 5; i++) {
@@ -366,3 +368,10 @@ Object.defineProperties(p, {
 console.log(Object.keys(p)) // ["name"]
 console.log(Object.getOwnPropertyNames(p)) // ["name", "age"]
 ```
+
+### JavaScript中数字占几个字节
+* JavaScript的number基本类型占8个字节
+* 1B = 8bit
+* 8B = 64bit
+* Number.MAX_SAFE_INTEGER === Math.pow(2, 53) - 1 // true
+* Number.MIN_SAFE_INTEGER === Math.pow(-2, 53) + 1 // true
