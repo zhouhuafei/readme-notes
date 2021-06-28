@@ -169,11 +169,10 @@ github 开发程中， 我们常需要fork出一个仓库进行开发， 但是�
 4. `git checkout XXX` // 切换到需要合并的本地仓库的本地分支。
 5. `git merge upstream/dev` // 将原仓库的Dev 分支与本地仓库的当前分支合并。
 6. `git push origin XXX_branch` // 将当前仓库的本地分支推送到远程分支。
-> 简写
+> 关键命令
 ```
 git remote add upstream XXXXXXXXXXXXXXX.git
-git pull upstream master
-git push
+git fetch upstream
 ```
 
 ## Pull Request
