@@ -31,9 +31,11 @@ git push origin --delete branchName
 ```
 
 ## 拉取远程分支的改动到本地分支
-```
-git pull -p
-```
+* `git fetch -p`是`git fetch origin -p`的简写，origin是默认的remote名称，origin也可以是upstream等其他你自己命名的单词。
+* `git pull -p`是`git pull origin -p`的简写，origin是默认的remote名称，origin也可以是upstream等其他你自己命名的单词。
+* `fetch`命令只会将数据下载到你的本地仓库——它并不会自动合并或修改你当前的工作
+* `pull`命令会将数据下载到你的本地仓库——并会自动合并以及修改你当前的工作
+* `-p`是`--prune`的简写。`prune`单词是`修剪`的意思。
 * `-p的作用`：如果你的同事在远程版本库上删除了某一分支或新增了某一个分支。本地的远程追踪分支并不会改变，使用-p可以解决这一问题。
 
 ## 新建本地分支并关联远程分支
