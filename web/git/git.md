@@ -94,6 +94,7 @@ git remote set-url origin https://git.ishopex.cn/thomas/baihui-baidu-fenxiao.git
 
 ## 每次提交输入密码太麻烦，以下是解决方案
 ```
+git config --system --unset credential.helper
 git config --global credential.helper store
 ```
 * 账号会被存储在`.gitconfig`文件中
