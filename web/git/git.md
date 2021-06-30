@@ -96,6 +96,8 @@ git remote set-url origin https://git.ishopex.cn/thomas/baihui-baidu-fenxiao.git
 ```
 git config --global credential.helper store
 ```
+* 账号会被存储在`.gitconfig`文件中
+* 密码会被存储在`.git-credentials`文件中
 
 ## git打tag(标签)(方便追溯指定版本存在的问题以及回溯到某个指定版本)
 * https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E6%89%93%E6%A0%87%E7%AD%BE
