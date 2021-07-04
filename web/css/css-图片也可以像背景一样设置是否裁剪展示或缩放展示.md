@@ -1,6 +1,6 @@
 # 图片也可以像背景一样设置是否裁剪展示或缩放展示
 
-### 图片
+### 适用于 图片img标签 视频video标签
 > https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit
 * `object-fit`属性值：
   - fill
@@ -9,7 +9,7 @@
   - none
   - scale-down
 
-### 背景
+### 适用于 背景
 > https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-size
 * `background-size`属性值：
   - contain
