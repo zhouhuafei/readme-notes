@@ -49,3 +49,8 @@ beforeRouteLeave (to, from , next) {
   - 解决方案2：publicPath换成项目名加其他关键字并配合`nginx`反代。案例：publicPath更改为`/req-res-log-sys/ui/static/`。
 * 参考：
   - https://github.com/zhouhuafei/req-res-log-sys
+
+# `this.$router.go(-1)`无效
+* 问题描述：token无效会重定向，重定向之后再使用`this.$router.go(-1)`浏览器的url会变但是渲染的内容不会发生变化，需要浏览器刷新一次页面后才可以正常使用。
+* 有问题的`vue-router`版本号是：`^3.2.0`。
+* 修复方式就是降低版本号至：`^2.7.0`。
