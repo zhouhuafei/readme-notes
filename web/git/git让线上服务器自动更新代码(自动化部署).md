@@ -31,7 +31,6 @@ done
 
 # git hooks钩子的风险
 * 不懂事的前端闲的蛋疼。把未开发完全的代码打到master线上了。进行了自动更新岂不让人无奈。
-    - 如果是master分支，可以做额外处理，例如发布流程可以由自动发布改成手动发布。
 * 在develop分支上开发，然后通过打包。把代码打到其他分支上的工具如下：
     - https://github.com/tschaub/gh-pages
     - https://github.com/shinnn/gulp-gh-pages
