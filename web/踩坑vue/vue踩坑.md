@@ -1005,6 +1005,6 @@ HTMLCanvasElement.toBlob((blob) => {
 * `this.$set`不能直接用在this上`this.$set(this, 'hello', 'world')`，会报错`[Vue warn]: Avoid adding reactive properties to a Vue instance or its root $data at runtime - declare it upfront in the data option.`。
 
 # element-ui动态换肤
-* 方案：https://github.com/ElemeFE/element/issues/3054
+* 思路：https://github.com/ElemeFE/element/issues/3054
 * 案例：https://elementui.github.io/theme-preview/#/zh-CN
 * 源码：https://github.com/ElementUI/theme-preview
