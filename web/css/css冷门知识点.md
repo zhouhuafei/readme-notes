@@ -60,8 +60,6 @@ div {
       background: #ff0000;
     }
     ```
-* `display: flex;`会让自身的单行省略号失效。
-  - 解决方案：再套一层。
 * 左右滚动的父容器使用flex布局时：父元素padding-right与子元素最后一个元素margin-right会失效。
   - 解决方案：再套一层。给第一层加`overflow-x: auto;display: flex;`。给第二层加`display: flex;`。
   ```html
@@ -84,11 +82,13 @@ div {
     </div>
   </div>
   ```
-* `flex: 1;`会导致自身或者子级的单行省略号失效。
-  - 解决方案1：自身指定`max-width: 220px;`。
-  - 解决方案2：自身使用多行省略号模拟单行省略号。
-  - 解决方案3：给父级加`overflow: hidden;`。
-  - 解决方案4：给父级加`min-width: 0;`。
+* `display: flex;`会让自身的单行省略号失效。
+  - 解决方案：再套一层子级，给子级加单行省略号。
+* 父级设置`flex: 1;`会导致子级的单行省略号失效。父级自身的单行省略号不会失效。
+  - 解决方案1：子级指定`width: 220px;`或者`max-width: 220px;`。
+  - 解决方案2：子级使用多行省略号模拟单行省略号。
+  - 解决方案3：父级加`overflow: hidden;`。
+  - 解决方案4：父级加`min-width: 0;`。
 * flex主侧轴简介
     - 主轴：默认水平线(x轴)
         - justify-content: center; 控制主轴对齐方式
