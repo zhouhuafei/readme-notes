@@ -9,6 +9,17 @@
 * ws: 80
 * wss: 443
 
+# 其他默认端口1
+* ssh: 22
+* sftp: 22
+* ftp: 21
+
+# 其他默认端口2
+* nginx: 80
+* redis: 6379
+* mongodb: 27017
+* mysql: 3306
+
 # nodejs(express)为网站配置SSL证书
 ```javascript
 const fs = require('fs');
