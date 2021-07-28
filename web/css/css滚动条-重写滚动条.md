@@ -12,19 +12,27 @@
 
     /*滚动条整体样式*/
     .box::-webkit-scrollbar {
-        width: 10px;
+      width: 5px;
     }
 
     /*滚动条滑块*/
     .box::-webkit-scrollbar-thumb {
-        border-radius: 10px;
-        background: #535353;
+      border-radius: 10px;
+      background-color: rgba(50, 50, 50, 0.3);
+    }
+
+    .box::-webkit-scrollbar-thumb:hover {
+      background-color: rgba(50, 50, 50, 0.4);
     }
 
     /*滚动条轨道*/
     .box::-webkit-scrollbar-track {
-        border-radius: 10px;
-        background: #ccc;
+      border-radius: 10px;
+      background-color: rgba(50, 50, 50, 0.1);
+    }
+
+    .box::-webkit-scrollbar-track:hover {
+      background-color: rgba(50, 50, 50, 0.2);
     }
 </style>
 <div class="box">
