@@ -952,12 +952,12 @@ export default {
 # sleep
 * 错误使用方式：弊端-无法清理定时器
 ```
-Vue.prototype.$sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+Vue.prototype.$sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms))
 ```
 * 正确定义方式:
 ```
 Vue.prototype.$sleep = (ms) => {
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     Vue.prototype.$sleep.timer = setTimeout(resolve, ms)
   })
 }
