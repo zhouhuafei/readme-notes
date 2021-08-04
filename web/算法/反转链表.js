@@ -31,7 +31,7 @@
   const listNode3 = genListNode([])
   console.log('listNode3', listNode3)
 
-  // 反转链表 - 方式1 - 链表转成数组，进行数组的反转，数组转成链表
+  // 反转链表 - 方案1 - 链表转成数组，进行数组的反转，数组转成链表。
   function reverseListNode1 (listNode) {
     if (!listNode) return {}
     if (!listNode.next) return listNode
@@ -45,11 +45,31 @@
     return genListNode(arr)
   }
 
-  // 反转链表 - 方式2 - 链表反向拼接，把第1个变成尾巴，第2个变成第1个尾巴的头，第3个变成第2个尾巴的头，依次类推。
+  // 反转链表 - 方案2 - 链表转成数组，进行数组的反转，数组转成链表。
+  // 方案2是方案1的变种，最佳方案是方案3。
+  function reverseListNode2 (listNode) {
+    if (!listNode) return {}
+    if (!listNode.next) return listNode
+    const arr = [listNode]
+    let next = listNode.next
+    while (next) {
+      arr.push(next)
+      next = next.next
+    }
+    let r
+    arr.forEach(v => {
+      const next = r
+      r = { val: v.val }
+      if (next) r.next = next
+    })
+    return r
+  }
+
+  // 反转链表 - 方案3 - 链表反向拼接，把第1个变成尾巴，第2个变成第1个尾巴的头，第3个变成第2个尾巴的头，依次类推。
   // 想象一下有1个空数组，每次遍历都是使用unshift方法进行填充。
   // 即每次遍历都是从头部进行数据的填充，每次填充瞬间，当前被填充的数据都处在头部位置。
   // 当所有数据填充完毕，一个被反转的数据结构就形成了。
-  function reverseListNode2 (listNode) {
+  function reverseListNode3 (listNode) {
     if (!listNode) return {}
     if (!listNode.next) return listNode
     let r = {
@@ -72,9 +92,12 @@
   const listNode1BeReversed2 = reverseListNode2(listNode1)
   console.log('listNode1BeReversed2', listNode1BeReversed2)
 
-  const noParamTriggerReverseListNode = reverseListNode2()
+  const listNode1BeReversed3 = reverseListNode3(listNode1)
+  console.log('listNode1BeReversed3', listNode1BeReversed3)
+
+  const noParamTriggerReverseListNode = reverseListNode3()
   console.log('noParamTriggerReverseListNode', noParamTriggerReverseListNode)
 
-  const noNextTriggerListNode = reverseListNode2({ val: 'no next' })
+  const noNextTriggerListNode = reverseListNode3({ val: 'no next' })
   console.log('noNextTriggerListNode', noNextTriggerListNode)
 }
