@@ -9,7 +9,8 @@
 
 const arr = [1, 2, 3, 4, 5, 6, 7, 7, 7, 7, 7, 9, 10, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98]
 
-function sort (newVal) {
+// 虚假的二分法 - 虽然能用，但是未免写的也太长了吧
+function sortFalse (newVal) {
   let index = 0
   let len = arr.length
   let first = arr[0]
@@ -43,6 +44,25 @@ function sort (newVal) {
     }
   }
   arr.splice(index, 0, newVal)
+  return arr
+}
+
+// 真正的二分法
+function sort (newVal) {
+  let l = 0
+  let r = arr.length - 1
+  while (l <= r) {
+    let m = l + Math.floor((r - l) / 2)
+    if (newVal < arr[m]) {
+      r = r - 1
+    } else if (newVal > arr[m]) {
+      l = l + 1
+    } else {
+      arr.splice(m, 0, newVal)
+      return arr
+    }
+  }
+  arr.splice(r + 1, 0, newVal)
   return arr
 }
 
