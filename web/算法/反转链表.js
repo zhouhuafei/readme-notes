@@ -1,4 +1,4 @@
-// 所有的递归都可以改写成使用while循环实现
+// 所有的递归都可以改写成使用while循环或for循环实现
 {
   // 生成链表
   function genListNode (arr) {
