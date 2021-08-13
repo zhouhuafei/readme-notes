@@ -140,3 +140,8 @@ console.log(str2)
 div
 </div>
 ```
+
+### ssh远程执行命令
+```
+ssh root@ip "pwd; ls;"
+```
