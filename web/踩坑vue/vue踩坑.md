@@ -355,7 +355,7 @@ Vue.prototype.$fnDelKeepAliveInclude = () => {
 const User = {
   template: '...',
   watch: {
-    '$route' (to, from) {
+    $route (to, from) {
       // 对路由变化作出响应...
     }
   }
