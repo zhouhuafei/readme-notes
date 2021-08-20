@@ -16,7 +16,7 @@
   "lint-staged": {
     "*": [
       "npm run precommit",
-      "git add"
+      "git add ."
     ]
   },
   "config": {

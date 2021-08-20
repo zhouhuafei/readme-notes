@@ -590,6 +590,7 @@
 * 🎸 str.search(regexp) ([d7dd35a](https://github.com/zhouhuafei/readme-notes/commit/d7dd35a))
 * 🎸 sync chrome-bookmarks.html ([39f3f01](https://github.com/zhouhuafei/readme-notes/commit/39f3f01))
 * 🎸 test ([8b6855c](https://github.com/zhouhuafei/readme-notes/commit/8b6855c))
+* 🎸 test-log ([4129ee5](https://github.com/zhouhuafei/readme-notes/commit/4129ee5))
 * 🎸 There are only web and work here ([2b75fe3](https://github.com/zhouhuafei/readme-notes/commit/2b75fe3))
 * 🎸 this ([451dae7](https://github.com/zhouhuafei/readme-notes/commit/451dae7))
 * 🎸 this.$set ([56f05d1](https://github.com/zhouhuafei/readme-notes/commit/56f05d1))
