@@ -4,14 +4,20 @@
   "description": "记录工作中遇到的问题 记录学习中遇到的问题 记录成长中遇到的问题",
   "main": "index.js",
   "scripts": {
-    "commit": "git-cz",
     "changelog:init": "npx conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "changelog": "npx conventional-changelog -p angular -i CHANGELOG.md -s"
+    "changelog": "npx conventional-changelog -p angular -i CHANGELOG.md -s",
+    "precommit": "npm run changelog"
   },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "lint-staged": {
+    "*": [
+      "npm run precommit",
+      "git add"
+    ]
   },
   "config": {
     "commitizen": {
