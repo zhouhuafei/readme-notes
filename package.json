@@ -6,8 +6,7 @@
   "scripts": {
     "commit": "git-cz",
     "changelog:init": "npx conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "changelog": "npx conventional-changelog -p angular -i CHANGELOG.md -s",
-    "release:note": "node gen-release-note.js"
+    "changelog": "npx conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "husky": {
     "hooks": {
@@ -35,7 +34,6 @@
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
     "commitizen": "^4.0.3",
-    "conventional-changelog": "^3.1.12",
     "conventional-changelog-cli": "^2.0.25",
     "git-cz": "^3.3.0",
     "husky": "^3.0.9"
