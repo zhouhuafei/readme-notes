@@ -16,7 +16,7 @@
   "lint-staged": {
     "*": [
       "npm run precommit",
-      "git add ."
+      "git add"
     ]
   },
   "config": {
@@ -42,6 +42,7 @@
     "commitizen": "^4.0.3",
     "conventional-changelog-cli": "^2.0.25",
     "git-cz": "^3.3.0",
-    "husky": "^3.0.9"
+    "husky": "^3.0.9",
+    "lint-staged": "^9.5.0"
   }
 }
