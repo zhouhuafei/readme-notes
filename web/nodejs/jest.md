@@ -115,12 +115,29 @@ SecurityError: localStorage is not available for opaque origins at Window.get lo
 > 在`package.json`中增加如下内容
 ```json
 {
-    "scripts": {
-        "codeLint": "eslint --ext .js,.vue,.html ./",
-        "codeFix": "eslint --fix --ext .js,.vue,.html ./",
-        "test": "jest",
-        "precommit": "npm run codeFix && npm run test && git add ."
-    }
+  "scripts": {
+    "codeLint": "eslint --ext .js,.vue,.html ./",
+    "codeFix": "eslint --fix --ext .js,.vue,.html ./",
+    "test": "jest",
+    "precommit": "npm run codeFix && npm run test && git add ."
+  }
+}
+```
+* 注：`git add .`太暴力了，如果配合`lint-staged`会友好很多。
+```json
+{
+  "scripts": {
+    "codeLint": "eslint --ext .js,.vue,.html ./",
+    "codeFix": "eslint --fix --ext .js,.vue,.html ./",
+    "test": "jest",
+    "precommit": "npm run codeFix && npm run test"
+  },
+  "lint-staged": {
+    "*": [
+      "npm run precommit",
+      "git add"
+    ]
+  }
 }
 ```
 
