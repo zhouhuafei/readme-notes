@@ -594,6 +594,7 @@
 * 🎸 test-log2 ([94d5a4d](https://github.com/zhouhuafei/readme-notes/commit/94d5a4d))
 * 🎸 test-log3 ([8bbe32a](https://github.com/zhouhuafei/readme-notes/commit/8bbe32a))
 * 🎸 test-log66 ([6b0f149](https://github.com/zhouhuafei/readme-notes/commit/6b0f149))
+* 🎸 test-log77 ([1e47bf6](https://github.com/zhouhuafei/readme-notes/commit/1e47bf6))
 * 🎸 There are only web and work here ([2b75fe3](https://github.com/zhouhuafei/readme-notes/commit/2b75fe3))
 * 🎸 this ([451dae7](https://github.com/zhouhuafei/readme-notes/commit/451dae7))
 * 🎸 this.$set ([56f05d1](https://github.com/zhouhuafei/readme-notes/commit/56f05d1))

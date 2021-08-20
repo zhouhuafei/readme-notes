@@ -4,9 +4,8 @@
   "description": "记录工作中遇到的问题 记录学习中遇到的问题 记录成长中遇到的问题",
   "main": "index.js",
   "scripts": {
-    "changelog:init": "npx conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "changelog": "npx conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "precommit": "npm run changelog"
+    "changelog": "npx conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
+    "precommit": "echo 'hello world'"
   },
   "husky": {
     "hooks": {
@@ -16,6 +15,7 @@
   },
   "lint-staged": {
     "*": [
+      "npm run changelog",
       "npm run precommit",
       "git add"
     ]
