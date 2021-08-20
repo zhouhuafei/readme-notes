@@ -91,7 +91,7 @@ SecurityError: localStorage is not available for opaque origins at Window.get lo
   }
 }
 ```
-* 需：配置`eslint`以及安装`husky`和`lint-staged`包。`lint-staged`只检测和修复改动的代码。
+* 需：配置`eslint`以及安装`husky`和`lint-staged`包。`lint-staged`只处理被`git add`的文件。
 * 注：修复完毕，`git add`会将修复后的代码重新`add`到`git`中。然后再触发`commit`。
 * `vue-cli3`创建的项目包含`lint-staged`的配置，案例如下。
 ```
