@@ -361,7 +361,8 @@ const User = {
   }
 }
 ```
-或使用组件内守卫```beforeRouteUpdate```
+* 或使用组件内守卫`beforeRouteUpdate`
+* 官方文档：https://router.vuejs.org/zh/guide/advanced/navigation-guards.html#%E7%BB%84%E4%BB%B6%E5%86%85%E7%9A%84%E5%AE%88%E5%8D%AB
 ```
 const Foo = {
   template: `...`,
@@ -369,6 +370,7 @@ const Foo = {
     // 在渲染该组件的对应路由被 confirm 前调用
     // 不！能！获取组件实例 `this`
     // 因为当守卫执行前，组件实例还没被创建
+    // 通过 `vm` 访问组件实例：`next(vm => {})`
   },
   beforeRouteUpdate (to, from, next) {
     // 在当前路由改变，但是该组件被复用时调用
@@ -379,6 +381,7 @@ const Foo = {
   beforeRouteLeave (to, from, next) {
     // 导航离开该组件的对应路由时调用
     // 可以访问组件实例 `this`
+    // 通过next(false)可以禁止离开页面，常用于是否确认要离开页面的询问场景。
   }
 }
 ```
