@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>paste-img</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .textarea {
+        height: 300px;
+        background: #ededed;
+        outline: none;
+        padding: 20px;
+        box-sizing: border-box;
+        overflow: auto;
+      }
+
+      .textarea::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!--粘贴图片-->
+    <div class="textarea" contenteditable></div>
+    <script>
+    const textarea = document.querySelector('.textarea')
+    textarea.addEventListener('paste', function (e) {
+      setTimeout(() => {
+        // 注：只有在setTimeout中才能获取到最新的textarea.innerHTML
+        console.log('textarea.innerHTML', textarea.innerHTML)
+      }, 0)
+      console.log('e', e)
+      console.log('e.clipboardData', e.clipboardData)
+      // 注：如果是在setTimeout中获取长度，则长度是0。
+      // 注：如果不在setTimeout中获取长度，则能正常获取长度。
+      console.log('e.clipboardData.items.length', e.clipboardData.items.length)
+      if (e.clipboardData) {
+        for (let i = 0; i < e.clipboardData.items.length; i++) {
+          const c = e.clipboardData.items[i]
+          console.log('c', c)
+          const f = c.getAsFile()
+          // 注：粘贴的如果是文件，f才有值。
+          console.log('f', f)
+          // TODO...如何判断是网络图片还是本地图片？
+        }
+      }
+    })
+    </script>
+  </body>
+</html>
