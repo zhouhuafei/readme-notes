@@ -29,6 +29,7 @@
     <script>
     const textarea = document.querySelector('.textarea')
     textarea.addEventListener('paste', function (e) {
+      e.preventDefault()
       setTimeout(() => {
         // 注：只有在setTimeout中才能获取到最新的textarea.innerHTML
         console.log('textarea.innerHTML', textarea.innerHTML)
@@ -45,7 +46,8 @@
           const f = c.getAsFile()
           // 注：粘贴的如果是文件，f才有值。
           console.log('f', f)
-          // TODO...如何判断是网络图片还是本地图片？
+          // TODO...如何判断f是网络图片还是本地图片？阻止默认行为后，这个就不需要关注了。
+          // TODO...如何判断光标位置？因为要粘贴到光标对应的位置。
         }
       }
     })
