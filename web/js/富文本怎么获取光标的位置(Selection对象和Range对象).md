@@ -4,7 +4,9 @@
 var Selection = document.getSelection();
 var hasRange = Selection.rangeCount;
 var Range = Selection.getRangeAt(0);
-Range.insertNode(node);
+Range.deleteContents() // 从文档中移除 Range 包含的内容。
+Range.insertNode(node) // 在 Range 的起点处插入一个节点。
+Range.setStartAfter(node) // 以其它节点为基准，设置 Range 的起点。
 ```
 * 主要细节：
     - 富文本容器失去焦点时要保存Range。

@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <title>paste-img</title>
     <style>
+      body {
+        background: #ededed;
+      }
+
       * {
         margin: 0;
         padding: 0;
@@ -11,11 +15,11 @@
 
       .textarea {
         height: 300px;
-        background: #ededed;
         outline: none;
-        padding: 20px;
+        padding: 10px;
         box-sizing: border-box;
         overflow: auto;
+        background: #ffffff;
       }
 
       .textarea::-webkit-scrollbar {
@@ -24,6 +28,19 @@
     </style>
   </head>
   <body>
+    <!--
+    方案1：阻止默认行为，自行处理渲染，不会渲染被复制的格式。下面的案例使用的是方案1。需要处理一些细节。
+    方案2：使用默认行为，走默认的渲染，会自行渲染被复制的格式。我个人推荐使用这个方案。因为这个方案简单。
+    消息：发送消息前，获取所有img，检测如果src是base64格式数据，则进行文件上传，上传完毕后进行src替换，然后进行消息发送。
+    难点：base64转file对象。先把base64转Blob，再把Blob转成File。全局搜索关键字`File对象转成Blob对象`即可找到我的笔记。
+    -->
+    <!--
+    参考文档：
+    https://developer.mozilla.org/zh-CN/docs/Web/API/Element/paste_event
+    https://developer.mozilla.org/zh-CN/docs/Web/API/DataTransfer/getData
+    https://developer.mozilla.org/zh-CN/docs/Web/API/Selection
+    https://developer.mozilla.org/zh-CN/docs/Web/API/Range
+    -->
     <!--粘贴图片-->
     <div class="textarea" contenteditable></div>
     <script>
@@ -33,23 +50,61 @@
       setTimeout(() => {
         // 注：只有在setTimeout中才能获取到最新的textarea.innerHTML
         console.log('textarea.innerHTML', textarea.innerHTML)
-      }, 0)
+      }, 60)
       console.log('e', e)
       console.log('e.clipboardData', e.clipboardData)
       // 注：如果是在setTimeout中获取长度，则长度是0。
       // 注：如果不在setTimeout中获取长度，则能正常获取长度。
       console.log('e.clipboardData.items.length', e.clipboardData.items.length)
       if (e.clipboardData) {
-        for (let i = 0; i < e.clipboardData.items.length; i++) {
-          const c = e.clipboardData.items[i]
-          console.log('c', c)
-          const f = c.getAsFile()
-          // 注：粘贴的如果是文件，f才有值。
-          console.log('f', f)
-          // TODO...如何判断f是网络图片还是本地图片？阻止默认行为后，这个就不需要关注了。
-          // TODO...如何判断光标位置？因为要粘贴到光标对应的位置。
+        // 如何判断光标位置？因为要粘贴到光标对应的位置。使用Range对象。
+        const Selection = document.getSelection()
+        const Range = Selection.getRangeAt(0)
+        if (Range) {
+          console.log('Range', Range)
+          for (let i = 0; i < e.clipboardData.items.length; i++) {
+            const c = e.clipboardData.items[i]
+            const f = c.getAsFile()
+            // 注：粘贴的如果是文件，f才有值。
+            // 文件：文件类型有很多。如果主要是处理图片，则需要加条件过滤掉其他类型的文件。
+            // 如何判断f是网络文件还是本地文件？阻止默认行为后，这个就不需要关注了。但是有一些细节需要记录！
+            // 1. 浏览器的粘贴事件不支持直接从本地文件夹复制文件进行粘贴。腾讯在线文档也是不支持的。因为其本质是浏览器不支持。
+            // 2. 但是如果是用浏览器打开的本地文件是可以粘贴的。
+            // 3. 桌面版微信的快捷键Alt+A截取下来的图也是可以粘贴的。
+            // 4. 复制的网络图片也是支持粘贴的。
+            if (f) {
+              console.log('f', f)
+              ;(function (f) {
+                if (f.type.split('/')[0] === 'image') {
+                  const fileReader = new FileReader()
+                  fileReader.addEventListener('load', (e) => {
+                    const node = document.createElement('img')
+                    node.src = e.target.result
+                    Range.deleteContents() // 从文档中移除 Range 包含的内容。
+                    Range.insertNode(node) // 在 Range 的起点处插入一个节点。
+                    Range.setStartAfter(node) // 以其它节点为基准，设置 Range 的起点。
+                  })
+                  fileReader.readAsDataURL(f)
+                }
+              })(f)
+            } else {
+              console.log('c', c)
+              // 如果复制上述编辑框.textarea里的文案并粘贴，此处会触发2次，因为length有2个，一个是text/plain，另一个text/html。
+              if (c.type === 'text/plain') {
+                const text = e.clipboardData.getData('text/plain')
+                const node = document.createTextNode(text)
+                Range.deleteContents() // 从文档中移除 Range 包含的内容。
+                Range.insertNode(node) // 在 Range 的起点处插入一个节点。
+                Range.setStartAfter(node) // 以其它节点为基准，设置 Range 的起点。
+              }
+            }
+          }
         }
       }
+      // 测试场景：
+      // 1. 复制粘贴文字。成功。
+      // 2. 复制粘贴图片。成功。只能复制单张图片，多张的不行，浏览器特性如此。
+      // 3. 复制粘贴文字+图片。失败。只有文字可以被粘贴，腾讯在线文档也是如此，本质是浏览器特性如此。
     })
     </script>
   </body>
