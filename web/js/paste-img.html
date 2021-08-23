@@ -42,9 +42,11 @@
     https://developer.mozilla.org/zh-CN/docs/Web/API/Range
     -->
     <!--粘贴图片-->
-    <div class="textarea" contenteditable></div>
+    <div class="textarea textarea-handle" contenteditable>阻止默认行为，自行处理渲染。不能粘贴带格式的文案。</div>
+    <hr>
+    <div class="textarea" contenteditable>使用默认行为，走默认的渲染。可以粘贴带格式的文案。</div>
     <script>
-    const textarea = document.querySelector('.textarea')
+    const textarea = document.querySelector('.textarea-handle')
     textarea.addEventListener('paste', function (e) {
       e.preventDefault()
       setTimeout(() => {
