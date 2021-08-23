@@ -13,7 +13,7 @@
         padding: 0;
       }
 
-      .textarea {
+      .textarea-css {
         height: 300px;
         outline: none;
         padding: 10px;
@@ -22,7 +22,7 @@
         background: #ffffff;
       }
 
-      .textarea::-webkit-scrollbar {
+      .textarea-css::-webkit-scrollbar {
         display: none;
       }
     </style>
@@ -46,19 +46,26 @@
     https://developer.mozilla.org/zh-CN/docs/Web/API/Range
     -->
     <!--粘贴图片-->
-    <div class="textarea textarea-handle" contenteditable>阻止默认行为，自行处理渲染。不能粘贴带格式的文案。</div>
+    <div class="textarea-css textarea" contenteditable>阻止默认行为，自行处理渲染。不能粘贴带格式的文案。</div>
     <hr>
-    <div class="textarea" contenteditable>使用默认行为，走默认的渲染。可以粘贴带格式的文案。</div>
+    <div class="textarea-css" contenteditable>使用默认行为，走默认的渲染。可以粘贴带格式的文案。</div>
     <script>
-    const textarea = document.querySelector('.textarea-handle')
+    const textarea = document.querySelector('.textarea')
     textarea.addEventListener('paste', function (e) {
       e.preventDefault()
+      // 粘贴文案时，text/plain一定有值。text/html不一定有值，text/rtf不一定有值。
+      // 从浏览器的控制台中复制文案并粘贴，text/plain有值，text/html无值，text/rtf无值。
+      // 从WebStorm编辑器中复制文案并粘贴，text/plain有值，text/html有值，text/rtf有值。
+      // 从上述.textarea输入框中复制文案并粘贴，text/plain有值，text/html有值，text/rtf无值。
+      console.log(`text/plain------↓\n`, e.clipboardData.getData('text/plain'))
       console.log(`text/html------↓\n`, e.clipboardData.getData('text/html'))
-      console.log(`text/html------↓\n`, e.clipboardData.getData('text/plain'))
+      // 关于text/rtf：富文本格式(Rich Text Format, 一般简称为RTF)的数据。数据是下面这种格式的↓，肉眼无法直观识别。
+      // {\rtf1\ansi\deff0{\colortbl;\red169\green183\blue198;\red43\green43\blue43;\red128\green128\blue128;}
+      console.log(`text/rtf------↓\n`, e.clipboardData.getData('text/rtf'))
       setTimeout(() => {
         // 注：只有在setTimeout中才能获取到最新的textarea.innerHTML
         console.log('textarea.innerHTML------↓\n', textarea.innerHTML)
-      }, 60)
+      }, 200) // 粘贴的图越大，这个时间就需要的越长。否则读取到的textarea.innerHTML值可能是上次的值。
       console.log('e------↓\n', e)
       console.log('e.clipboardData------↓\n', e.clipboardData)
       // 注：如果是在setTimeout中获取长度，则长度是0。
@@ -97,7 +104,11 @@
               })(f)
             } else {
               console.log('c------↓\n', c)
-              // 如果复制上述编辑框.textarea里的文案并粘贴，此处会触发2次，因为length有2个，一个是text/plain，另一个text/html。
+              // 从浏览器的控制台中复制文案并粘贴，length是1，type是text/plain。
+              // 从WebStorm编辑器中复制文案并粘贴，length是3，type分别是text/plain和text/html以及text/rtf。
+              // 从上述.textarea输入框中复制文案并粘贴，length是2，type分别是text/plain和text/html。
+              // 方案1：直接使用text/plain进行判断。弊端：此方案无法粘贴文案的格式。下述使用的此方案。
+              // 方案2：优先识别text/html与其值，如果text/html与其值不存在则识别text/plain与其值，需要使用一个变量控制，使之只识别一次。
               if (c.type === 'text/plain') {
                 const text = e.clipboardData.getData('text/plain')
                 const node = document.createTextNode(text)
