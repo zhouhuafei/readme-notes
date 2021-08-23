@@ -51,21 +51,23 @@
     const textarea = document.querySelector('.textarea-handle')
     textarea.addEventListener('paste', function (e) {
       e.preventDefault()
+      console.log(`text/html------↓\n`, e.clipboardData.getData('text/html'))
+      console.log(`text/html------↓\n`, e.clipboardData.getData('text/plain'))
       setTimeout(() => {
         // 注：只有在setTimeout中才能获取到最新的textarea.innerHTML
-        console.log('textarea.innerHTML', textarea.innerHTML)
+        console.log('textarea.innerHTML------↓\n', textarea.innerHTML)
       }, 60)
-      console.log('e', e)
-      console.log('e.clipboardData', e.clipboardData)
+      console.log('e------↓\n', e)
+      console.log('e.clipboardData------↓\n', e.clipboardData)
       // 注：如果是在setTimeout中获取长度，则长度是0。
       // 注：如果不在setTimeout中获取长度，则能正常获取长度。
-      console.log('e.clipboardData.items.length', e.clipboardData.items.length)
+      console.log('e.clipboardData.items.length------↓\n', e.clipboardData.items.length)
       if (e.clipboardData) {
         // 如何判断光标位置？因为要粘贴到光标对应的位置。使用Range对象。
         const Selection = document.getSelection()
         const Range = Selection.getRangeAt(0)
         if (Range) {
-          console.log('Range', Range)
+          console.log('Range------↓\n', Range)
           for (let i = 0; i < e.clipboardData.items.length; i++) {
             const c = e.clipboardData.items[i]
             const f = c.getAsFile()
@@ -77,7 +79,7 @@
             // 3. 桌面版微信的快捷键Alt+A截取下来的图也是可以粘贴的。
             // 4. 复制的网络图片也是支持粘贴的。
             if (f) {
-              console.log('f', f)
+              console.log('f------↓\n', f)
               ;(function (f) {
                 if (f.type.split('/')[0] === 'image') {
                   const fileReader = new FileReader()
@@ -92,7 +94,7 @@
                 }
               })(f)
             } else {
-              console.log('c', c)
+              console.log('c------↓\n', c)
               // 如果复制上述编辑框.textarea里的文案并粘贴，此处会触发2次，因为length有2个，一个是text/plain，另一个text/html。
               if (c.type === 'text/plain') {
                 const text = e.clipboardData.getData('text/plain')
