@@ -500,3 +500,19 @@ location ^~ /static {
 * 可能性：数据库由于访问量过大锁表导致系统崩掉。
 * 看日志：具体错误，还需要看`nginx`的`error log`。
 * 其实这个就是`nginx`报`502 Bad Gateway`，只是不同版本不同平台的`nginx`对`http`状态码`502`的描述不一样罢了。
+
+# client_max_body_size
+* 官方文档：http://nginx.org/en/docs/http/ngx_http_core_module.html#client_max_body_size
+* client_max_body_size默认1M，表示客户端请求服务器最大允许大小，在“Content-Length”请求头中指定。
+* 如果请求的正文数据大于client_max_body_size，HTTP协议会报错413 Request Entity Too Large。
+* 就是说如果请求的正文大于client_max_body_size，一定是失败的。
+* 如果需要上传大文件，一定要修改该值。
+
+# client_body_buffer_size
+* 官方文档：http://nginx.org/en/docs/http/ngx_http_core_module.html#client_body_buffer_size
+* Nginx分配给请求数据的Buffer大小。默认8K|16K。32位的平台是8K，64位的平台是16K。
+* 如果请求的数据小于client_body_buffer_size直接将数据先在内存中存储。
+* 如果请求的值大于client_body_buffer_size小于client_max_body_size，就会将数据先存储到临时文件中，在哪个临时文件中呢？
+* client_body_temp指定的路径中，默认该路径值是/tmp/。
+* 所以配置的client_body_temp地址，一定让执行的Nginx的用户组有读写权限。
+* 否则，当传输的数据大于client_body_buffer_size，写进临时文件失败会报错。
