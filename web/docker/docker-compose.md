@@ -86,3 +86,6 @@ https://blog.csdn.net/qq_36148847/article/details/79427878
 
 # docker使用原则
 * 使用docker请尽量遵从一个容器一个进程的原则。容器里如果一个进程都没有，则会自动停止。
+
+# 查看日志
+`docker-compose logs -t --tail=100 nginx`
