@@ -32,7 +32,7 @@ wx.onAppRoute((route) => {
   - MP-TOUTIAO
   - MP-QQ
   - MP
-  
+
 # 跨平台差异化编程
 * uni-app：有一套独立的条件编译语法。https://uniapp.dcloud.io/platform?id=%e6%9d%a1%e4%bb%b6%e7%bc%96%e8%af%91
 * chameleon：有一套自研多态协议。https://cml.js.org/doc/framework/polymorphism/intro.html
@@ -67,3 +67,16 @@ https://github.com/SilurianYang/uni-simple-router
 
 # 富文本怎么渲染？
 * 使用`rich-text`组件即可。
+
+# h5 - 页面颜色可以通过css换颜色怎么做到的？
+* 给body加class，class是页面名称。
+* 页面级的page样式会被编译并填充到`body.pages-mine-index uni-page-body`中。
+* uni-page-body高度不是100%，所以背景部分还会被填充到`body.pages-mine-index`中。
+* 如果只是h5，完全可以使用beforeCreate和beforeDestroy处理body的style进行改变颜色，还相对简单。
+
+# h5 - switchTab记住页面滚动的位置怎么做到的？
+> 我猜测是通过下面的方式实现的
+* 1. 首先要使用keep-alive：keep-alive是Vue的内置组件，能在组件切换过程中将状态保留在内存中，防止重复渲染DOM。
+* 2. 其次是设置默认滚动条位置0。
+* 3. beforeRouteLeave记录滚动条位置。
+* 4. beforeRouteEnter恢复滚动条位置。

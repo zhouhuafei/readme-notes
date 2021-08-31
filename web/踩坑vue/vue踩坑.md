@@ -917,7 +917,6 @@ export default Vue.extend({
 # Vue 改变单页面的背景色
 ```
 export default {
-  name: 'your name',
   beforeCreate () {
     document.querySelector('body').setAttribute('style', 'background:#fff')
   },
