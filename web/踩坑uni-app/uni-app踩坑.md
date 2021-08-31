@@ -80,3 +80,16 @@ https://github.com/SilurianYang/uni-simple-router
 * 2. 其次是设置默认滚动条位置0。
 * 3. beforeRouteLeave记录滚动条位置。
 * 4. beforeRouteEnter恢复滚动条位置。
+
+# :style和:class的值如果是个计算属性？
+* :style不能直接接收一个计算属性，可以接收一个数组。数组里有一个计算属性。
+  - 这样是可行的：`:style="[objComputedHeight]"`。
+* :class可以直接接收一个计算属性。
+  - 这样是可行的：`:style="arrComputedClass"`。
+
+# :style和:class的值如果是个方法？
+* 在uniapp中，style和class属性提取成方法，方法不会被触发。其他属性提取成方法，方法可以被触发。
+* 但是如果属性值是一个数组，在数组里调用方法，二者皆可行。
+  - 这样是可行的：`:style="[getStyle(item)]"`
+  - 这样是可行的：`:class="[getClass(item)]"`
+* 在vue中，style和class属性提取成方法，方法可以被触发。
