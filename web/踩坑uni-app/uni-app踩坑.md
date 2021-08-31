@@ -85,7 +85,7 @@ https://github.com/SilurianYang/uni-simple-router
 * :style不能直接接收一个计算属性，可以接收一个数组。数组里有一个计算属性。
   - 这样是可行的：`:style="[objComputedHeight]"`。
 * :class可以直接接收一个计算属性。
-  - 这样是可行的：`:style="arrComputedClass"`。
+  - 这样是可行的：`:class="arrComputedClass"`。
 
 # :style和:class的值如果是个方法？
 * 在uniapp中，style和class属性提取成方法，方法不会被触发。其他属性提取成方法，方法可以被触发。
