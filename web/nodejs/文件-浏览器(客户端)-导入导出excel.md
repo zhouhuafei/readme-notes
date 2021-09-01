@@ -56,8 +56,8 @@ async function exportdata () {
 * 导出图片
 ```
 res.set({
-  'Content-Type': 'application/octet-stream',  // 告诉浏览器这是一个二进制文件
-  'Content-Disposition': 'attachment; filename=upload.png'  // 告诉浏览器这是一个附件要下载是png图片
+  'Content-Type': 'application/octet-stream',  // 告诉浏览器这是一个二进制文件，会触发浏览器的下载行为。
+  'Content-Disposition': 'attachment; filename=upload.png'  // 告诉浏览器这是一个附件，要下载是png图片。
 })
 res.end(data)
 ```
