@@ -62,7 +62,10 @@ res.set({
 res.end(data)
 ```
 
-# 图片渲染
+# 图片渲染-服务端图片路径返回的如果是下述场景
+* 'Content-Type': 'application/json'
+  - 放到浏览器的url中会渲染出一堆二进制数据流的乱码
+  - 放到img标签中会正常渲染
 * 'Content-Type': 'application/octet-stream'
   - 放到浏览器的url中会触发下载行为
   - 放到img标签中会正常渲染
