@@ -61,3 +61,11 @@ res.set({
 })
 res.end(data)
 ```
+
+# 图片渲染
+* 'Content-Type': 'application/octet-stream'
+  - 放到浏览器的url中会触发下载行为
+  - 放到img标签中会正常渲染
+* 'Content-Type': 'image/png'
+  - 放到浏览器的url中会正常渲染
+  - 放到img标签中会正常渲染
