@@ -516,3 +516,7 @@ location ^~ /static {
 * client_body_temp指定的路径中，默认该路径值是/tmp/。
 * 所以配置的client_body_temp地址，一定让执行的Nginx的用户组有读写权限。
 * 否则，当传输的数据大于client_body_buffer_size，写进临时文件失败会报错。
+
+# nginx如果是用docker启动，别忘了进行端口映射。
+* 映射80端口：`80:80`。
+* 我使用非80端口时，经常忘记把非80端口映射出去，导致服务无法访问。
