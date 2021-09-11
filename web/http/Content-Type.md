@@ -8,7 +8,7 @@
     - image/jpeg jpg图片格式
     - image/png png图片格式
     - video/mp4 mp4视频格式
-    - audio/mp4 mp4音频格式
+    - audio/mpeg mp3音频格式
     - application/xhtml+xml XHTML格式
     - application/xml XML数据格式
     - application/atom+xml Atom XML聚合格式

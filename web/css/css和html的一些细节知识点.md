@@ -49,10 +49,10 @@ input,textarea {-webkit-appearance: none;}
 <!-- 下面这两个都可以只选ico类型的图片 -->
 <input type=file accept="image/vnd.microsoft.icon">
 <input type=file accept="image/x-icon">
-<!-- 选择视频 -->
+<!-- 选择视频 mp4 -->
 <input type=file accept="video/mp4">
-<!-- 选择音频 -->
-<input type=file accept="audio/mp4">
+<!-- 选择音频 mp3 -->
+<input type=file accept="audio/mpeg">
 ```
 
 * 消除transition闪屏
