@@ -108,7 +108,7 @@ div {
 
 * 兄弟节点，如果div1使用fixed进行定位，默认不加z-index的情况下，会覆盖掉div2，但是只要给div2加上relative或absolute或fixed，则div2就不会被覆盖了。
   - 前提是布局时，div2需要在div1的后面。
-  - 此特性应用于中间弹窗时，会格外的友好。
+  - 此特性应用于中间弹窗时，会格外友好。
     - 给最外层的父级，加个99的fixed。
     - 然后内部遮罩的fixed就没必要加z-index了。
   - 知识点：子元素设置fixed层级z-index对比。
