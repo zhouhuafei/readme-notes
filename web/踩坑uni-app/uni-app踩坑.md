@@ -93,3 +93,6 @@ https://github.com/SilurianYang/uni-simple-router
   - 这样是可行的：`:style="[getStyle(item)]"`
   - 这样是可行的：`:class="[getClass(item)]"`
 * 在vue中，style和class属性提取成方法，方法可以被触发。
+
+# `uni-app`解决动态绑定`upx`不起作用的问题
+* 使用`uni.upx2px(750)`把`upx`转成`px`进行解决。
