@@ -44,3 +44,7 @@ sudo systemctl reboot // 重启，发现之前的服务都已经启动
 
 sudo pm2 unstartup // 禁用启动系统
 ```
+
+# 日志
+* 查看日志：`pm2 logs`
+* 清空日志：`pm2 flush`
