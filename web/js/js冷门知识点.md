@@ -195,6 +195,7 @@ Object.getPrototypeOf(new B()).constructor.name // 'B'
 * 对象```{1: 'a'}```的```key```会自动转成字符串类型。用```Object.keys({1: 'a'})```即可看出来。
 
 * JSON.stringify格式化：`JSON.stringify({ a: 1, b: 2 }, null, '\t')`。
+    - `\t` 可以更换为两个空格 `  `
     - 语法：`JSON.stringify(value[, replacer [, space]])`
     - value：将要序列化成 一个JSON 字符串的值。
     - replacer：可选
