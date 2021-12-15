@@ -417,8 +417,8 @@ new Vue({
     - 理应设置为32或者37.5。然后做网页的时候设计师也应该给320或者375的设计图。如果是静态图片再单独给高倍图。
     - 尚未亲自实践。以上言论纯属理论。
 
-# Vue实现双向数据绑定时使用的基础方法
-> 细节就不进行深入了解了。
+# Vue响应式原理？如何追踪变化？
+> vue2官方答案：https://cn.vuejs.org/v2/guide/reactivity.html#%E5%A6%82%E4%BD%95%E8%BF%BD%E8%B8%AA%E5%8F%98%E5%8C%96
 * vue2：```Object.defineProperty方法```
 * 文档 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
 ```
