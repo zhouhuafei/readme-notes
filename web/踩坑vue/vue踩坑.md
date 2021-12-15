@@ -419,7 +419,7 @@ new Vue({
 
 # Vue响应式原理？如何追踪变化？
 > vue2官方答案：https://cn.vuejs.org/v2/guide/reactivity.html#%E5%A6%82%E4%BD%95%E8%BF%BD%E8%B8%AA%E5%8F%98%E5%8C%96
-* vue2：```Object.defineProperty方法```
+* vue2：`Object.defineProperty方法`
 * 文档 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
 ```
 var obj = {};
@@ -436,7 +436,7 @@ Object.defineProperty(obj, 'txt', {
 obj.txt = '123'; // 此时会打印：'设置'。
 obj.txt; // 此时会打印：'获取'。然后打印出：{}。
 ```
-* vue3：```Proxy```
+* vue3：`Proxy`
 * 文档：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy
 ```
 var obj = {};
