@@ -68,11 +68,15 @@ const concat = require('gulp-concat'); // 文件合并
 
 # 报错
 * ```gulp.hasTask is not a function```
-* 原因：版本不匹配。```全局```安装的是```3.9.1```。```局部```安装的是```4.0.0```。导致出了这个问题
-* del报错
-    - ```Cannot delete files/folders outside the current working directory. Can be overriden with the `force` option.```
-    - 原因：del默认不能删除配置目录外部的文件。
-    - 解决方案：```del([`${__dirname}/../dist/${name}/static/decoration`], {force: true})```
+  - 原因：版本不匹配。```全局```安装的是```3.9.1```。```局部```安装的是```4.0.0```。导致出了这个问题
+* ```Cannot delete files/folders outside the current working directory. Can be overriden with the `force` option.```
+  - 原因：del默认不能删除配置目录外部的文件。
+  - 解决方案：```del([`${__dirname}/../dist/${name}/static/decoration`], {force: true})```
+* ```ReferenceError: primordials is not defined```
+  - 原因：node版本过高，需要使用gulp4。
+  - 解决方案：参考 https://github.com/zhouhuafei/zhf.canvas-api 项目。
+    - 1. 更换gulp版本到4
+    - 2. 修改gulpfile.js的写法
 
 # gulp.series 和 gulp.parallel
 > gulp 4
