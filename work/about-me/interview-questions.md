@@ -56,11 +56,13 @@
 ```
 1、Array.apply(null, Array(5))
 2、[...Array(5)]
+3、Array(5).fill()
 ```
 * 类数组转数组
 ```
-1、Array.from({length: 5}) // 转出来的是密集数组
-2、Array.prototype.slice.call({length:10}) // 转出来的是稀疏数组
+1、Array.apply(Array, {length:10}) // 转出来的不是稀疏数组
+2、Array.from({length: 10}) // 转出来的不是稀疏数组
+3、Array.prototype.slice.call({length:10}) // 转出来的是稀疏数组
 ```
 * 有以下3个判断数组的方法，请分别介绍它们之间的区别和优劣`Object.prototype.toString.call()`、`instanceof`以及`Array.isArray()`。
 ```
