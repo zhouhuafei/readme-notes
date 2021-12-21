@@ -96,3 +96,7 @@ https://github.com/SilurianYang/uni-simple-router
 
 # `uni-app`解决动态绑定`upx`不起作用的问题
 * 使用`uni.upx2px(750)`把`upx`转成`px`进行解决。
+
+# 在页面上使用`::v-deep`有效，在组件中使用`::v-deep`无效。
+* 在组件中使用`::v-deep`时，需要配合`options: { styleIsolation: 'shared' }`一起使用，否则`::v-deep`无效。
+* 在`methods`同级加入一下代码即可：`options: { styleIsolation: 'shared' }`。
