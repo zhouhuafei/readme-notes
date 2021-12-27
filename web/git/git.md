@@ -339,3 +339,6 @@ git merge upstream/xxx
 
 ## git查看当前分支合并过哪些分支
 `git branch --merged`
+
+## 从所有的提交历史记录中删除某个文件
+`git filter-branch --tree-filter 'rm -f passwords.txt' HEAD`
