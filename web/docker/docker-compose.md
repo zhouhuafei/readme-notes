@@ -9,6 +9,7 @@ services:
     restart: always
     ports:
       - 80:80
+      - 443:443
     volumes:
       - ./config/nginx/conf.d:/etc/nginx/conf.d
       - ../../:/usr/share/nginx/html # bind mount 会清空容器内的文件，挂载宿主机的文件。
