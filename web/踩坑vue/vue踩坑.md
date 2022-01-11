@@ -632,7 +632,7 @@ class="w500">
         - 问：多选编辑时怎么处理数据回传？
         - 答：只需要从接口给的那一页数据中，找到哪些数据没被选中，然后从已选集合中移除。那么剩下的，就全都是被选中的。
         - 注：单选多选一定要先加条件判断```this.isMultiple```再执行对应逻辑，避免多余的影响。
-* el-table错位
+* el-table最后一列错位：我给最后一列加了`fixed="right"`属性。
     - 解决方案：给```el-table-column```组件加```:show-overflow-tooltip="true"```。
     - 如果还是错位？
     - 解决方案：看下内容中是否有img标签。如果有，则把img标签转成块元素。或者加```vertical-align: middle;```。```bottom || top```也行。
