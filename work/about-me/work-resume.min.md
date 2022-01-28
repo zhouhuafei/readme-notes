@@ -93,4 +93,4 @@
 * [ ] 1、看书：《mongodb权威指南》
 * [ ] 2、看书：《鸟哥的Linux私房菜》
 * [ ] 3、进阶：vue2进阶到vue3并引入ts
-* [ ] 4、温故：重新拾起react生态和ant-design以及ts
+* [ ] 4、温故：重新拾起react生态和ant-design
