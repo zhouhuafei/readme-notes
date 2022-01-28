@@ -14,8 +14,8 @@
 * 标准盒模型包含哪些属性？标准盒模型和怪异盒模型的区别？`margin、padding、border、width、height。标准盒模型的border和padding会撑大width和height`。
 * box-sizing:border-box的特性？`border和padding不会撑大width和height`。
 ### 过渡和动画
-* 如果加过渡效果？`transition`。
-* 如果定义动画？`@keyframes`。
+* 如何加过渡效果？`transition`。
+* 如何定义动画？`@keyframes`。
 ### 单位
 * px，%, em，rem, vw, vh的区别。`px是相对单位和屏幕分辨率保持一致，%是百分比，em大小相对于父节点，rem大小和html的font-size有关，vw和vh相对于视口宽高`。
 * 1rem等于多少px？rem和px的转换关系受什么影响？`默认16，受html的font-size影响`。
@@ -25,17 +25,17 @@
 * css怎么画实心右箭头？
 * css怎么画空心右箭头？
 * 如何给一个div加0.5px的边框？`transform:scale(0.5);pointer-events:none;`
-* 不定宽高如何让盒子垂直水平居中？用定位如何实现？用flex如果实现？`主要考内联元素和块元素的水平居中和垂直居中`
-* 如果让兄弟盒子上下margin不重叠？`给子级设置display:inline-block或者display:inline-flex或者float为left都可以解决。或者给父级加display:flex;flex-wrap:wrap;子级的上下margin就不会折叠了`。
+* 不定宽高如何让盒子垂直水平居中？用定位如何实现？用flex如何实现？`主要考内联元素和块元素的水平居中和垂直居中`
+* 如何让兄弟盒子上下margin不重叠？`给子级设置display:inline-block或者display:inline-flex或者float为left都可以解决。或者给父级加display:flex;flex-wrap:wrap;子级的上下margin就不会折叠了`。
 * `display:inline-block`移除间隙？`移除html标签间空格、使用font-size:0、letter-spacing、word-spacing、使用margin负值`。
 * 消除图片底部间隙的方法？`vertical-align:bottom、line-height:0、font-size:0、display:block`。
-* 如果让margin-top和margin-bottom不穿透父级？`触发BFC即可`。
+* 如何让margin-top和margin-bottom不穿透父级？`触发BFC即可`。
 * 如何触发BFC？`html根元素或包含html根元素的元素、float属性不为none、position为absolute或fixed、display为inline-block, table-cell, table-caption, flex, inline-flex、overflow不为visible`。
 * CSS隐藏元素的几种方式及区别？`display:none,visibility:none,opacity:0,position,transform`。
 ### scss
 * 如何定义变量？`$color: #f00;`
-* 如果定义函数？`@function fn() { @return 123;}`
-* 如果定义mixin？`@mixin ellipsis1() {overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}`
+* 如何定义函数？`@function fn() { @return 123;}`
+* 如何定义mixin？`@mixin ellipsis1() {overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}`
 
 ## js
 ### es5
