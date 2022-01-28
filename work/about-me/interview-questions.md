@@ -221,7 +221,7 @@ fn1(1, 100)
 * 常用命令？`add、commit、push、pull、checkout、reset --hard`。
 
 ## http
-* 常见状态码？`200 301 302 304 307 308 401 403 404 500 502 504`。
+* 常见状态码？`101 200 301 302 304 307 308 400 401 403 404 413 429 500 502 504`。
 * 常用请求方式？`POST DELETE PUT PATCH GET OPTIONS`。
 * Cache-Control是干啥的？`强缓存`。
 * 怎么防止缓存？`文件加版本号或加md5`。
@@ -230,7 +230,7 @@ fn1(1, 100)
 
 ## 工作流
 * 阿里字体图标有用过么？
-* 你们是怎么解决接口跨域问题的？`主域：代理、jsonp(仅支持GET)、postMessage`。`子域：document.domain`。
+* 你们是怎么解决接口跨域问题的？`主域：代理、jsonp(仅支持GET)、postMessage`。`子域：document.domain`。`还是服务端解决最为稳妥`。
 * 你们前后端接口通信使用的什么数据格式？图片上传一般是以什么格式上传？get的请求头中有Content-Type么？
 ```
 application/x-www-form-urlencoded
