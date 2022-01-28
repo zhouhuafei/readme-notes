@@ -88,3 +88,9 @@
 * npm：https://www.npmjs.com/~zhouhuafei
 * github：https://github.com/zhouhuafei
 * 笔记：https://github.com/zhouhuafei/readme-notes/tree/master/web
+
+# 未完之事
+* 1、看书：《mongodb权威指南》
+* 2、看书：《鸟哥的Linux私房菜》
+* 3、进阶：vue2进阶到vue3并引入ts
+* 4、温故：重新拾起react
