@@ -167,7 +167,7 @@ fn1(1, 100)
 * vue怎么通过索引更新数组并触发视图更新？`Vue.set或this.$set`。
 * $nextTick 的作用？`在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM`。
 * 如何让 CSS 只在当前组件中起作用？`scoped`。
-* 在加了scoped的场景下，在父组件中怎么更新子组件的样式？`/deep/`。`或者style无scoped配合独立class进行修改`。
+* 在加了scoped的场景下，在父组件中怎么更新子组件的样式？`::v-deep`。`或者style无scoped配合独立class进行修改`。
 * key的作用？`防止Vue对DOM的就地复用，让DOM具有唯一性`。
 * vue生命周期钩子函数有哪些？
 * .sync修饰符？
