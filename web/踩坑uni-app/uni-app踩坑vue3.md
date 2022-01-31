@@ -75,5 +75,4 @@ export default createStore({
 * 6、...TODO 鄙人尚未解决的问题
   - mp-html组件需要额外引入，且引入了依然不能用。
   - uni-popup弹窗的关闭关不掉了。应是vue2有些特性vue3不支持，先从自己代码中找问题。
-  - onLoad、onShow、onReady会触发两次。应是我的代理有问题。
 
