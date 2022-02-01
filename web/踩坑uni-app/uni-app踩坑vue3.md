@@ -5,7 +5,9 @@
 ### uni-app支持vue3吗？
 * 答：支持（2022/01/29）。
 
-### 微信小程序开发，在uni-app中，把vue2迁移到vue3有些东西要改。
+### 使用uni-app开发微信小程序，若从vue2迁移到vue3，有几个地方需要修改。
+* 以下仅代表我个人观点，所有问题均来自本人亲身经历，不存在复制粘贴行为。
+> 开发工具：HBuilder X 3.3.10.20220124
 * 1、创建应用的方式要改。main.js内容如下所示：
 ```
 import store from '@/store'
@@ -71,7 +73,8 @@ export default createStore({
   - 选择vue版本为2时，在uni-app中，可以直接使用`Vue.prototype.$sleep`进行方法的绑定。
     - vue3需要使用`app.config.globalProperties.$sleep`进行方法的绑定。
   - 类似`:visible.sync`的用法，需要统一更换为，类似`v-model:visible`的用法。
-* 6、mp-html无法正常使用，需要做如下改动：
+* 6、第三方组件mp-html无法正常使用，需要做如下改动：
+  > PR：https://github.com/jin-yufeng/mp-html/pull/398
   - 1、`parse.js`中`module.exports = Parser`更改为`export default Parser`。
   - 2、`mp-html.vue`中`const Parser = require('./parser')`更改为`import Parser from './parser'`。
   - 3、`node.vue`中`wxs`相关的代码转移到`js`中。
