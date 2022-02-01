@@ -3,7 +3,9 @@
 * 选择vue版本为3时，用的vite。
 
 ### uni-app支持vue3吗？
-* 答：支持。在uni-app中，把vue2迁移到vue3有些东西要改。如下所示：
+* 答：支持（2022/01/29）。
+
+### 微信小程序开发，在uni-app中，把vue2迁移到vue3有些东西要改。
 * 1、创建应用的方式要改。main.js内容如下所示：
 ```
 import store from '@/store'
@@ -48,7 +50,7 @@ export default createStore({
 ```
 * 注：选择vue版本为2时，在uni-app中，不能在模板里直接使用store，需要使用computed中转一下。此时开发者工具appData中展示的数据是给人看的（展示完整的键名）。
 * 注：选择vue版本为3时，在uni-app中，能在模板里直接使用store。此时开发者工具appData中展示的数据不是给人看的（展示a、b、c、d、e等被简化后的键）。
-* 4、scss问题 - 和`dart-sass`版本多少有点关系。
+* 4、scss问题 - 和`dart-sass`版本以及`vite`打包工具多少有点关系。
   - 路径需要拼全，index不能省，后缀也不能缺，否则会报错。
     - 选择vue版本为2时，可以这么用：`~@/scss/config`。
     - 选择vue版本为3时，必须这么用：`~@/scss/config/index.scss`。
@@ -61,17 +63,25 @@ export default createStore({
     @return $px * math.div(750, $psdW) + upx // 375的设计图
   }
   ```
-* 5、js问题 - 和打包工具换成`vite`多少有点关系。
+* 5、js问题 - 和打包工具换成`vite`以及`选择vue版本为3`多少有点关系。
   - 不能使用`module.exports = {}`进行导出。需要使用`export default {}`进行导出。
     - 第三方组件中亦如此，`mp-html`组件中的`module.exports`需要更换为`export default`。
-    - 放在`uni_modules`目录中的官方`uni-xxx`组件，使用时不需要额外引入。但是第三方组件却需要额外引入，例如`mp-html`组件。
-      - 否则会报没有发现模块的错误。...TODO
-      - 然后手动引入模块后，页面上又报构造函数没发现的问题。...TODO
   - api响应的数据发生了变更，以前第一形参是出错信息，第二形参是结果。现在第一形参是结果，而错误信息被移到了catch里。
     - 这个有点坑，需要改的地方有点多。
-  - 选择vue版本为2时，在uni-app中，可以直接使用`Vue.prototype.$sleep`进行方法绑定。
+  - 选择vue版本为2时，在uni-app中，可以直接使用`Vue.prototype.$sleep`进行方法的绑定。
     - 我尝试使用`app.__proto__.$sleep`进行方法的绑定，发现会报错。vue3不允许使用这种方式进行方法的绑定。
     - vue3需要使用`app.config.globalProperties.$sleep`进行方法的绑定。
-* 6、...TODO 鄙人尚未解决的问题
-  - mp-html组件需要额外引入，且引入了依然不能用。
+  - 类似`:visible.sync`的用法，需要统一更换为，类似`v-model:visible`的用法。
+* 6、mp-html无法正常使用，需要做如下改动：
+  - 1、`parse.js`中`module.exports = Parser`更改为`export default Parser`。
+  - 2、`mp-html.vue`中`const Parser = require('./parser')`更改为`import Parser from './parser'`。
+  - 3、`node.vue`中`wxs`相关的代码转移到`js`中。
+    - `node.vue`中`handler.use`别忘了更换为转移后的方法。
 
+### 选择vue版本为2时和选择vue版本为3时的区别
+* 关于我自己封装的全局代理方法uni.$proxyPage和uni.$proxyComponent的使用？
+  - 选择vue版本为2时，在代理方法中使用components会报错。
+  - 选择vue版本为3时，在代理方法中使用components不会报错。
+* 关于全局组件的注册？
+  - 选择vue版本为2时，只能在main.js中进行全局组件的注册，如果把全局组件放到单独的js文件中进行注册则无效。
+  - 选择vue版本为3时，依然存在上述问题。
