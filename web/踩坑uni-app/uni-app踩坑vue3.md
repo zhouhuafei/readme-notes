@@ -69,7 +69,6 @@ export default createStore({
   - api响应的数据发生了变更，以前第一形参是出错信息，第二形参是结果。现在第一形参是结果，而错误信息被移到了catch里。
     - 这个有点坑，需要改的地方有点多。
   - 选择vue版本为2时，在uni-app中，可以直接使用`Vue.prototype.$sleep`进行方法的绑定。
-    - 我尝试使用`app.__proto__.$sleep`进行方法的绑定，发现会报错。vue3不允许使用这种方式进行方法的绑定。
     - vue3需要使用`app.config.globalProperties.$sleep`进行方法的绑定。
   - 类似`:visible.sync`的用法，需要统一更换为，类似`v-model:visible`的用法。
 * 6、mp-html无法正常使用，需要做如下改动：
