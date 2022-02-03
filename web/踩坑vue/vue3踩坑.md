@@ -13,3 +13,16 @@
 
 ## element-ui现在支持vue3吗？
 * 答：不支持（2022/01/29）。但是可以使用`element-plus`。
+
+## vue-router的404配置？
+```
+{
+  // 匹配所有路径
+  // vue2使用*
+  // vue3使用/:pathMatch(.*)*或/:pathMatch(.*)或/:catchAll(.*)
+  path: '/:pathMatch(.*)*',
+  name: '404',
+  meta: { title: '404', hidden: true },
+  component: () => import(/* webpackChunkName: "404" */ '@/views/404/index.vue')
+}
+```
