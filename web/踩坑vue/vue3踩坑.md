@@ -1,4 +1,6 @@
-> 官方文档：https://v3.cn.vuejs.org/guide/introduction.html
+## 文档
+* Vue3的官方文档：https://v3.cn.vuejs.org/guide/introduction.html
+* Vue2迁移到Vue3的迁移指南：https://v3.cn.vuejs.org/guide/migration/introduction.html
 
 ## v-if和v-for的优先级
 * vue3中v-if优先级更高。vue2中v-for优先级更高。
