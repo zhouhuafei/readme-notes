@@ -5,6 +5,9 @@
 ## v-if和v-for的优先级
 * vue3中v-if优先级更高。vue2中v-for优先级更高。
 
+## vue3封装的组件vue2可以用么？
+* 如果组件是使用两者都支持的api写的，则两者都可以用。
+
 ## .sync不能用了
 * `:visible.sync`需要更换为`v-model:visible`。
   - v-model在input上使用时和vue2一致。是`:value`和`@input`的语法糖。
