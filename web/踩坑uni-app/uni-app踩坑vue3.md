@@ -35,6 +35,8 @@ app.component('BaseCopyright', BaseCopyright)
 ```
 * 上面的BaseCopyright组件会生效。
 * 注：亲测发现，在uni-app中，组件需要写成单文件组件，如果写成template的形式则组件不生效。
+  - 因打包工具使用的是Vue的Runtime版本（默认不对template模板内容进行编译）。
+  - 而不是Compiler版本（可以对template模板内容进行编译）。
 * 下面的GlobalComponentName组件不会生效。
 ```
 app.component('GlobalComponentName', { template: `<view>GlobalComponentName</view>` })
