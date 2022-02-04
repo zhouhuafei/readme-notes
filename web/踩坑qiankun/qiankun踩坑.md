@@ -22,8 +22,8 @@ TODO
 ## 主应用和子应用怎么通讯？
 TODO
 
-## js沙箱机制的原理？
-TODO
+## js沙箱机制的原理？css沙箱机制的原理？
+https://zhuanlan.zhihu.com/p/414468874
 
 ## 全局css会互串么？
 * 经测试发现，主应用中定义的全局css，可以影响到子应用。
@@ -32,6 +32,14 @@ TODO
   - 本质：本质是style标签也被移除了。style标签被移除则对应的样式会消失。
   - 引申：link标签被移除样式会消失么？link标签被移除则对应的样式也会消失。
   - 但是：qiankun为了做css沙箱，通过fetch把link中的内容转成了style进行渲染。
+
+## css沙箱机制的种类？
+> css沙箱机制需要在主应用中手动开启！
+* 使用`css域`进行隔离：为每个css规则添加特定的前缀来起到隔离的作用，例如微应用中的样式是`p{color:#000;}`，处理后为`.app1 p{color:#000;}`。
+  - 子不影响主和其他子，主能影响子，子能使用主的全局css。
+* 使用`shadow DOM`进行隔离（完全隔离）：简单讲就是在当前微应用的根节点开启`shadow`，然后子节点的操作都是在`shadowRoot`上来进行隔离。
+  - css完全隔离。
+  - `shadow DOM`文档：https://developer.mozilla.org/zh-CN/docs/Web/Web_Components/Using_shadow_DOM
 
 ## 主应用设置404会影响子应用么？
 * 主应用设置404会影响子应用。
