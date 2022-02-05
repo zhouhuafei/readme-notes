@@ -2,6 +2,12 @@
 * Vue3的官方文档：https://v3.cn.vuejs.org/guide/introduction.html
 * Vue2迁移到Vue3的迁移指南：https://v3.cn.vuejs.org/guide/migration/introduction.html
 
+## 用vue-cli4.5.15创建的vue3+ts项目可以使用TSX么？
+* 可以！
+
+## 使用TSX引入scss时怎么使用scoped？
+* ...TODO
+
 ## 使用TSX写组件是不是就不能用模板的语法糖了？
 * 是的！不能用！
 
