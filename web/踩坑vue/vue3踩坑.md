@@ -2,6 +2,9 @@
 * Vue3的官方文档：https://v3.cn.vuejs.org/guide/introduction.html
 * Vue2迁移到Vue3的迁移指南：https://v3.cn.vuejs.org/guide/migration/introduction.html
 
+## 使用TSX写组件是不是就不能用模板的语法糖了？
+* 是的！不能用！
+
 ## v-if和v-for的优先级
 * vue3中v-if优先级更高。vue2中v-for优先级更高。
 
