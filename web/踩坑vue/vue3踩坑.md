@@ -6,7 +6,27 @@
 * 可以！
 
 ## 使用TSX引入scss时怎么使用scoped？
-* ...TODO
+* 参考文章：https://www.jianshu.com/p/be1778a76763
+* 文章纠错：`vue-cli`的`css module`默认是开启的，不需要额外配置。
+  - `requireModuleExtension`说明：https://cli.vuejs.org/zh/config/#css-requiremoduleextension
+* 我的实战：https://github.com/zhouhuafei/hello-world_qiankun-app-child2-vue3/tree/master/src/components/HelloWorldTsx
+#### 步骤1：`.scss`结尾的文件改为`.module.scss`结尾的文件。
+* 注1：引入非`.module.scss`结尾的文件会生成全局的css。
+* 注2：`:global`的写法可以跳出`css module`，不会被编译成哈希字符串。
+#### 步骤2：在`shims-vue.d.ts`增加下述代码，防止引入`.module.scss`结尾的文件时，TS报错。
+```
+// scss
+declare module '*.scss' {
+  const classes: { readonly [key: string]: string }
+  export default classes
+}
+```
+#### 步骤3：在TSX中使用
+* 1、通过`import css from './index.module.scss'`引入scss。
+* 2、父级通过`class={css.HelloWorldTsx}`的形式绑定class。
+* 3、子级也是通过`class={css.HelloWorldTsxCssModuleText}`的形式绑定class（即使scss嵌套了，也是这么用）。
+* 注意：scss里的中划线，不会被转成驼峰。如果是中划线写法，绑定class时，需要这么用：`class={css['hello-world-tsx']}`。
+* 建议：建议写css也写驼峰吧。
 
 ## 使用TSX写组件是不是就不能用模板的语法糖了？
 * 是的！不能用！
