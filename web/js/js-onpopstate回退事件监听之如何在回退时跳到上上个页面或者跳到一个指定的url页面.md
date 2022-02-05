@@ -45,3 +45,7 @@ history.pushState({state3: 'state data 3'}, 'title3', '#url3');
 * `url`如果是`'?a=1'`，会在页面路径上进行追加，变成：`https://baidu.com/?a=1`。
 * `url`如果是`'abc'`，会在页面路径上进行覆盖，变成：`https://baidu.com/abc`。
 * `url`如果是`'/abc'`，会在页面路径上进行覆盖，变成：`https://baidu.com/abc`。
+
+#### onpopstate事件什么时候会触发？
+* `popstate`事件会在点击后退、前进按钮（或调用`history.back()`、`history.forward()`、`history.go()`方法）时触发。
+* 注意：用`history.pushState()`或者`history.replaceState()`不会触发`popstate`事件。
