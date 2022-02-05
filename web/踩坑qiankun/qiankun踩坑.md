@@ -106,8 +106,8 @@ registerMicroApps([
   }
 ])
 ```
-* 若采用独立域名的形式部署，生产环境时，entry应该是：https://child1.icaodong.com
-* 若采用二级路由的形式部署，生产环境时，entry应该是：https://www.icaodong.com/child1nginx
+* 若采用独立域名的形式部署，生产环境时，entry应该是：`https://child1.icaodong.com`。
+* 若采用二级路由的形式部署，生产环境时，entry应该是：`https://www.icaodong.com/child1nginx`或`/child1nginx`。
 * 若采用二级路由的形式部署，activeRule需要和entry的二级路由不同。
   - 场景1：如果二者相同，若在浏览器输入子应用路径（不是想独立访问子应用），nginx会拦截activeRule，主应用会消失（大BUG），页面只剩下子应用的内容（变成了独立访问子应用）。
   - 场景2：如果二者不同，nginx只拦截entry的二级路由，如此做法也将导致子应用在生产环境时无法独立访问（那就不独立访问），因子应用入口entry对应的二级路由和子应用的前端路由base不一致（前端路由会报404）。
