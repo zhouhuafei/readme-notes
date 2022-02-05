@@ -376,3 +376,8 @@ console.log(Object.getOwnPropertyNames(p)) // ["name", "age"]
 * 8B = 64bit
 * Number.MAX_SAFE_INTEGER === Math.pow(2, 53) - 1 // true
 * Number.MIN_SAFE_INTEGER === Math.pow(-2, 53) + 1 // true
+
+### location.hash
+* hash虽然会出现在url中，但不会被包含在HTTP请求中。
+* 亲测，确实如此，服务端对应请求的url上不会出现#号以及#号之后相关的数据。
+* 主要是浏览器发送的请求上没有对应的数据，就算在url上强行拼接，在network中也不会出现。
