@@ -25,7 +25,7 @@
 * 子应用不应该和主应用强耦合！
 
 ## 主应用和子应用怎么通讯？
-* 方案1：使用官方提供的通信机制。...TODO体验一下
+* 方案1：使用官方提供的通信机制。本质也是订阅发布。
   - 官方文档：https://qiankun.umijs.org/zh/api#initglobalstatestate
 * 方案2：在主应用中，使用订阅发布模式，建立一套全局的通信规则。
 
@@ -71,6 +71,12 @@ start({ sandbox: { experimentalStyleIsolation: true } })
   - 官网上有下述这么一句话，可以用来解释这种现象存在的原因。
   > 注意: `@keyframes`、`@font-face`、`@import`、`@page`将不被支持(i.e. 不会被改写)
 
+## 路由跳转
+* 主应用跳子应用，使用`router.push`进行跳转时，只能用`path`，不能用`name`。
+* 因为在主应用中，不存在子应用对应的路由配置。
+  - 想想草动商城管理系统的左侧菜单栏。
+  - 如果在主应用路由中，把子应用路由，配置成空模板组件，可以使用`name`进行跳转。
+
 ## 主应用设置404会影响子应用么？
 * 会影响！
 #### 子应用404了怎么处理？
@@ -81,12 +87,6 @@ start({ sandbox: { experimentalStyleIsolation: true } })
 * 首先在主应用中配置子应用的路由，然后component用空模板进行占位。
 #### 我的实战
 * 地址：https://github.com/zhouhuafei/hello-world_qiankun-app-main-vue2/blob/master/src/router/index.js
-
-## 路由跳转
-* 主应用跳子应用，使用`router.push`进行跳转时，只能用`path`，不能用`name`。
-* 因为在主应用中，不存在子应用对应的路由配置。
-  - 想想草动商城管理系统的左侧菜单栏。
-  - 如果在主应用路由中，把子应用路由，配置成空模板组件，理应可以使用`name`进行跳转。
 
 ## 子应用部署方案？
 * 主应用中注册子应用的部分，`entry`需要根据环境的不同，配置成动态的。
