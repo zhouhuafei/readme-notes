@@ -72,11 +72,15 @@ start({ sandbox: { experimentalStyleIsolation: true } })
   > 注意: `@keyframes`、`@font-face`、`@import`、`@page`将不被支持(i.e. 不会被改写)
 
 ## 主应用设置404会影响子应用么？
-* 主应用设置404会影响子应用。
-#### 主应用404了怎么处理？
-...TODO
+* 会影响！
 #### 子应用404了怎么处理？
-* 不处理！
+* 不处理！子应用的404本身就应该交给子应用自己处理。
+#### 访问子应用时，主应用报404怎么处理？
+* 首先在主应用中进行子应用的全部路由拦截，然后component用空模板进行占位。
+#### 怎么在主应用中通过name的形式跳转到子应用？
+* 首先在主应用中配置子应用的路由，然后component用空模板进行占位。
+#### 我的实战
+* 地址：https://github.com/zhouhuafei/hello-world_qiankun-app-main-vue2/blob/master/src/router/index.js
 
 ## 路由跳转
 * 主应用跳子应用，使用`router.push`进行跳转时，只能用`path`，不能用`name`。
