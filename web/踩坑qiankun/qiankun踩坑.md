@@ -123,6 +123,11 @@ registerMicroApps([
     - 补充1：生产时，子应用的publicPath需要和entry的二级路由相同。否则子应用的静态资源会404。
     - 补充2：生产时，如果子应用的静态资源是OSS存储（推荐），publicPath配成OSS对应的域名即可。
 * 不管使用哪种形式进行部署，主应用中的activeRule和子应用中路由的base是始终保持一致的。
+#### 二级路由部署案例
+* 主应用：https://github.com/zhouhuafei/hello-world_qiankun-app-main-vue2
+* 子应用1：https://github.com/zhouhuafei/hello-world_qiankun-app-child1-vue2
+* 子应用2：https://github.com/zhouhuafei/hello-world_qiankun-app-child2-vue3
+* nginx：https://github.com/zhouhuafei/docker-compose-config/blob/master/config/nginx/conf.d/z.top.qiankun.http.conf
 
 ## h5的微前端？
 * h5的微前端直接用nginx进行二级路由的反向代理即可。
