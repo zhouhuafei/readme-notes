@@ -27,6 +27,7 @@
 ## 主应用和子应用怎么通讯？
 * 方案1：使用官方提供的通信机制。本质也是订阅发布。
   - 官方文档：https://qiankun.umijs.org/zh/api#initglobalstatestate
+  - `[qiankun] globalState tools will be removed in 3.0, pls don't use it!`
 * 方案2：在主应用中，使用订阅发布模式，建立一套全局的通信规则。
 
 ## 主应用中的全局组件子应用可以用么？
