@@ -58,3 +58,6 @@ declare module '*.scss' {
   component: () => import(/* webpackChunkName: "404" */ '@/views/404/index.vue')
 }
 ```
+
+## 从`Element UI`升级到`Element Plus`？
+* 官方文档：https://github.com/element-plus/element-plus/discussions/5657
