@@ -61,3 +61,5 @@ declare module '*.scss' {
 
 ## 从`Element UI`升级到`Element Plus`？
 * 官方文档：https://github.com/element-plus/element-plus/discussions/5657
+#### svg怎么做到颜色跟着css的color走的？
+* 给svg的path标签加上`fill="currentColor"`即可。
