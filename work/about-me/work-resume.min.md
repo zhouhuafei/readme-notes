@@ -51,7 +51,7 @@
   - 云起微商城后台管理系统：Gulp + SeaJS + jQuery + Vue + Sass/Scss
     - 我的角色：主要开发人员之一，50%的功能是我开发的。
     - 主流线上商城，该有的功能都有。自定义首页、自定义页面、商品、下单、售后、营销、分销等。
-    - 值得一说的事：引入了Webpack/Gulp，引入了模块化，引入了懒加载，引入了ES6，引入了Sass/Scss，引入了CDN概念以及非覆盖式发布。获得了2016年二季度的优秀员工。
+    - 值得一说的事：引入了Webpack/Gulp，引入了模块化，引入了懒加载，引入了ES6，引入了Sass/Scss，引入了iconfont，引入了CDN概念以及非覆盖式发布。获得了2016年二季度的优秀员工。
   - 云起微商城h5网站：Webpack + SeaJS + Zepto + Vue + Sass/Scss
   - 云起微商城pc网站：Webpack + Vue + Sass/Scss
   - 云起微商城微信小程序：Gulp + 微信小程序原生语法 + Sass/Scss
