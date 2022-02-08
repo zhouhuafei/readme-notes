@@ -25,6 +25,8 @@
   - 如果使用主子应用通信的方式，则可以避免这种问题。
   - 注：官方自带的通信方式，把store放入时会报错：`Cannot convert a Symbol value to a string`。所以不建议使用官方自带的通信方式。
     - `String(Symbol('a'))`：它支持显式强制类型转换。
+      - `String`、`Boolean`都可以，但是`Number`会报错。
+      - `Number(Symbol('a'))`会报错：`Cannot convert a Symbol value to a number`。
     - `Symbol('a') + ''`：但是不支持隐式强制类型转换。
 #### 在子应用中使用主应用的store，数据发生变更时，模板渲染的内容不会发生变化？
 * 是的，不会发生变化，解决方案我暂时没有。但是我有借口。如下所示：
