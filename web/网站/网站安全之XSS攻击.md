@@ -67,4 +67,4 @@
   - `>`：`&gt;`、`&#62;`。
 * 富文本是怎么处理的？
   - 例如：https://www.wangeditor.com/
-  - 我猜测，渲染文本的时候用的`innerText`，渲染图片的时候用的`innerHTML`。
+  - 我猜测，渲染用户手动输入的内容时用的`innerText`，渲染图片等其他非用户手动输入的内容时用的`innerHTML`。
