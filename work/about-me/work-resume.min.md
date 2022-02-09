@@ -58,7 +58,7 @@
     - 值得一说的事：基础组件和业务组件封装，进行前端工程化，引入了Gulp/Webpack，引入了模块化，引入了懒加载，引入了ES6，引入了Scss，引入了iconfont，引入了代码压缩以及gzip概念，引入了非覆盖式发布以及CDN概念。获得了2016年二季度的优秀员工。
     - 技术相关补充：地图使用的百度地图、图表使用的Highcharts、代码规范使用的ESLint/airbnb + Stylelint、代码管理使用的GitLab、抓包使用的Fiddler。
     - 工作中用到的过登录方式有：内嵌iframe进行手机号登录（OAuth2.0），普通手机号登录，微信公众号网页授权登录（OAuth2.0），微信扫码登录（OAuth2.0），小程序登录。
-    - 遇到并解决过的网站安全问题有：XSS，CSRF，iframe防钓鱼。
+    - 遇到并解决过的网站安全问题有：XSS（转义字符），CSRF（Referer/csrftoken/jwt），iframe防钓鱼（iframe防嵌套）。
   - 云起微商城h5网站：Gulp + SeaJS + Zepto + Vue
   - 云起微商城pc网站：Webpack + Vue全家桶
   - 云起微商城微信小程序：Gulp + 微信小程序原生语法
