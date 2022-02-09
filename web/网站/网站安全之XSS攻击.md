@@ -62,3 +62,9 @@
     - 建议2：富文本内容使用 https://github.com/leizongmin/js-xss 过滤之后。再使用v-html进行渲染。
 * 不要使用```document.write```去渲染。因为```document.write```无法防御XSS攻击。
 * 不要使用eval方法。
+* 对用户输入的标签进行转义（若使用innerHTML渲染）。
+  - `<`：`&lt;`、`&#60;`。
+  - `>`：`&gt;`、`&#62;`。
+* 富文本是怎么处理的？
+  - 例如：https://www.wangeditor.com/
+  - 我猜测，渲染文本的时候用的`innerText`，渲染图片的时候用的`innerHTML`。
