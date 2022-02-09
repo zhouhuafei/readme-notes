@@ -76,7 +76,6 @@
   - 华美pc/h5部分网页开发：html + css + JavaScript
 
 # 个人项目
-> 注：因个人小程序资质问题，流程只做到了商品的展示，目前仅当做工具小程序进行使用，尚未进行运营。因个人服务器3年200块且上面跑了很多的脚本和其他应用，如果遇到访问不通的情况，纯属是内存被吃满了。
 * 简易工具集（SaaS电商）（线上门店，选品之后，商品是门店商品，库存是门店库存）
   - 服务端：koa2 + redis + mongodb（mongoose） + nginx + docker-compose
     - JWT鉴权、RestfulAPI风格（对HTTP协议中请求方式和状态码的应用）、企微机器人接口报警
@@ -90,19 +89,17 @@
     - 管理端操作日志、客户端操作日志、客户端行为轨迹
   - 小程序：HBuilderX + uni-app + uni-ui
     - 动态换肤、Vue2迁移到Vue3
-  - 值得一说的事：...TODO
+  - 值得一说的事：我最初是使用express + session + EJS做的前后端不分离的项目，后来改为了如今的前后端分离的项目。
   - 技术相关补充：地图使用的腾讯地图、单元测试使用的Jest、代码规范使用的ESLint/standard、代码管理使用的GitHub。
 
-# 其他补充 ...TODO
-* nodejs：Express，EJS，ShellJS等。
-* 用express + session + EJS做过前后端不分离的项目。
-* web安全：XSS，CSRF，iframe防钓鱼。
-* 身份验证：session，jsonwebtoken，OAuth2.0。
+# 其他补充
+* 工作中用到过的登录方式有：普通手机号登录，内嵌iframe实现手机号+OAuth2.0登录，微信公众号网页授权登录，微信扫码登录，小程序登录。
+* 具备web安全知识：XSS，CSRF，iframe防钓鱼。
 
 # 自我认知
-* 前端知识还算扎实。后端知识也算还行。
-* 头脑还算灵活。
-* 为人随和，这么多年和同事相处的都还挺融洽。
+* 前端知识还算扎实，后端知识也算还行。
+* 头脑还算的上灵活，学习还算的上勤奋。
+* 为人随和，多年来和同事相处都挺融洽。
 
 # 个人杂集
 * npm：https://www.npmjs.com/~zhouhuafei
