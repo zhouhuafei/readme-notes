@@ -41,7 +41,7 @@ ReactDOM.render(
     - vue有template
     - 微信小程序有block
     - jsx有？有！`<React.Fragment></React.Fragment>`，`key`是唯一可以传递给`Fragment`的属性。
-    - 短语发：`<></>`，它不支持`key`或`属性`。
+    - 短语法：`<></>`，它不支持`key`或`属性`。
     - 相关文档：https://react-1251415695.cos-website.ap-chengdu.myqcloud.com/docs/fragments.html
     - 案例：
     ```

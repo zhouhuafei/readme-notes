@@ -337,12 +337,15 @@ location / {
 }
 ```
 * public
-    - 因为默认值是private，表示其他代理都不要缓存，只有服务器缓存。
-    - 设置public的意思就是允许其他各级代理缓存资源。
+  - 因为默认值是private，表示其他代理都不要缓存，只有服务器缓存。
+  - 设置public的意思就是允许其他各级代理缓存资源。
 * 关于Cache-Control的体现(nodejs express下的体现)
-    - 应和响应头有关，此处就不深究了，直接看结果吧。
-    - 静态html页面。返回：```304 Not Modified```。
-    - 静态css，js，img，视频，音频等。返回：```200 OK (from memory cache)```。
+  - 应和响应头有关，此处就不深究了，直接看结果吧。
+  - 静态html页面。返回：`304 Not Modified`。
+  - 静态css，js，img，视频，音频等。返回：`200 OK (from memory cache)`。
+  - 注：Cache-Control是否对静态资源生效，还要看静态资源的访问方式。
+    - 如果是在浏览器的url中直接访问某个静态资源，只要触发了浏览器的刷新行为，则Cache-Control失效。
+    - html也不例外。具体请参考我的另外一篇笔记：`../网站/缓存.md`。
 
 # vue-router
 > History 模式
