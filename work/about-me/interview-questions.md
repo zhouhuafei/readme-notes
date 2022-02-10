@@ -4,19 +4,19 @@
 * 简述一下你对HTML语义化的理解？`对seo友好，结构清晰，便于阅读`。
 
 ## css
-### 选择器
+#### 选择器
 * css选择器优先级？`id选择器 > class选择器 > 标签选择器`。
 * 选择器`+`和`~`以及`>`的区别？`后面相邻兄弟选择器。后面兄弟选择器。直属子元素选择器`。
 * `div p:nth-of-type(2)`和`div p:nth-child(2)`的区别？`前者选div下第2个p元素。后者选div下第2个元素且第2个元素需要是p元素`。
-### 盒模型
+#### 盒模型
 * 标准盒模型包含哪些属性？`margin、padding、border、width、height`。
   - 标准盒模型和怪异盒模型的区别？`标准盒模型的border和padding会撑大width和height`。
 * `box-sizing: border-box;`的特性？`border和padding不会撑大width和height`。
-### 过渡和动画
+#### 过渡和动画
 * 如何加过渡效果？`transition`。
 * 如何定义动画？`@keyframes`。
 * 如何使用动画？`animation`。
-### 单位
+#### 单位
 * px，%，em，rem，vw，vh的区别。`px是相对单位和屏幕分辨率保持一致。%是百分比。em的大小和父节点的font-size有关。rem的大小和html的font-size有关。vw和vh的大小和可视区的宽高有关`。
 * 百分比布局的时候width和padding以及margin都是相对什么进行计算的？`相对父级容器的宽度进行计算`。
   - 左右内外间距也是如此么？`也是如此`。
