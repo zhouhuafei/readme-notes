@@ -7,7 +7,7 @@
 ### 选择器
 * css选择器优先级？`id选择器 > class选择器 > 标签选择器`。
 * 选择器`+`和`~`以及`>`的区别？`后面相邻兄弟选择器。后面兄弟选择器。直属子元素选择器`。
-* `nth-of-type`和`nth-child`的区别？`前者选指定类型的第几个元素，相同类型标签进行排序。后者选第几个元素，不同类型标签进行排序`。
+* `div p:nth-of-type(2)`和`div p:nth-child(2)`的区别？`前者选div下第2个p元素。后者选div下第2个元素且第2个元素必须是p元素`。
 ### 盒模型
 * 标准盒模型包含哪些属性？标准盒模型和怪异盒模型的区别？`margin、padding、border、width、height。标准盒模型的border和padding会撑大width和height`。
 * `box-sizing: border-box;`的特性？`border和padding不会撑大width和height`。
