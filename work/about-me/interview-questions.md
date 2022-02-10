@@ -8,7 +8,6 @@
 * css选择器优先级？`id选择器 > class选择器 > 标签选择器`。
 * 选择器`+`和`~`以及`>`的区别？`后面相邻兄弟选择器、后面兄弟选择器、直属子元素选择器`。
 * nth-of-type和nth-child的区别？`前者选指定类型的第几个元素、后者选第几个元素`。
-* 怎么使用css让js的点击事件失效？`pointer-events: none;`。
 ### 盒模型
 * 标准盒模型包含哪些属性？标准盒模型和怪异盒模型的区别？`margin、padding、border、width、height。标准盒模型的border和padding会撑大width和height`。
 * box-sizing:border-box的特性？`border和padding不会撑大width和height`。
@@ -31,6 +30,7 @@
 * 如何让margin-top和margin-bottom不穿透父级？`触发BFC即可`。
 * 如何触发BFC？`html根元素或包含html根元素的元素、float属性不为none、position为absolute或fixed、display为inline-block, table-cell, table-caption, flex, inline-flex、overflow不为visible`。
 * CSS隐藏元素的几种方式及区别？`display:none,visibility:none,opacity:0,position,transform`。
+* 怎么使用css让js的点击事件失效？`pointer-events: none;`。
 ### scss
 * 如何定义变量？`$color: #f00;`
 * 如何定义函数？`@function fn() { @return 123;}`
