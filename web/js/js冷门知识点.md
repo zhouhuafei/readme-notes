@@ -91,8 +91,6 @@ console.log(1 + + '1'); // 2
 * 默认true：```flag !== false```，传入的不是false，就默认为true。
 * 默认false: ```flag === true```，传入的不是true，就默认为false。
 
-* es6中，通过class定义的构造函数Super，无法使用Super.call(this)调用，当然Super.apply(this)也不行，也无法直接Super()调用，会报错。
-
 * Object.values在低版本ios的微信上不支持。
 
 * ```fn.call()```不传参数时```this```指向```window```对象。严格模式下```"use strict"```指向```undefined```。
@@ -112,48 +110,6 @@ console.log(1 + + '1'); // 2
 
     fn.call2({}, 1, 2);
     ```
-
-* 怎么才能得知被new出来的对象所属的构造函数是谁？
-```
-function A(){
-    this.mm = 'mm';
-}
-var a = new A();
-// 方法1
-console.log(a.constructor.name); // 打印 'A'
-// 方法2
-console.log(Object.getPrototypeOf(a).constructor.name); // 打印 'A'
-// 方法3
-console.log(a.__proto__.constructor.name); // 打印 'A'
-```
-  - 三种不常用的方法
-    - isPrototypeOf：方法用于测试一个对象是否存在于另一个对象的原型链上。
-    ```
-    A.prototype.isPrototypeOf(a); // true
-    ```
-    - getPrototypeOf：方法返回指定对象的原型
-    ```
-    Object.getPrototypeOf(a); // 返回原型。
-    ```
-    - hasOwnProperty：方法会返回一个布尔值，指示对象自身属性中是否具有指定的属性。
-    ```
-    a.hasOwnProperty('mm'); // 'a'
-    ```
-
-* 检测子类继承于哪个类？
-```
-class A {}
-class B extends A {}
-// 等同于
-function A() {}
-function B() {}
-B.prototype.__proto__ = A.prototype
-B.__proto__ = A
-// 以上可被使用以下方法进行检测
-Object.getPrototypeOf(B).name // 'A'
-// 其他(和以上无关) - 检测实例源自哪个构造函数
-Object.getPrototypeOf(new B()).constructor.name // 'B'
-```
 
 * 多为数组扁平化 - 方案1：
     - 1、使用toString成字符串。
