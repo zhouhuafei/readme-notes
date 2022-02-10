@@ -16,8 +16,12 @@
 * 如何定义动画？`@keyframes`。
 * 如何使用动画？`animation`。
 ### 单位
-* px，%, em，rem, vw, vh的区别。`px是相对单位和屏幕分辨率保持一致，%是百分比，em大小相对于父节点，rem大小和html的font-size有关，vw和vh相对于视口宽高`。
-* 1rem等于多少px？rem和px的转换关系受什么影响？`默认16，受html的font-size影响`。
+* px，%，em，rem，vw，vh的区别。`px是相对单位和屏幕分辨率保持一致。%是百分比。em的大小和父节点的font-size有关。rem的大小和html的font-size有关。vw和vh的大小和可视区的宽高有关`。
+* 百分比布局的时候width和padding以及margin都是相对什么进行计算的？`相对父级容器的宽度进行计算`。
+  - 左右内外间距也是如此么？`也是如此`。
+  - absolute的left和top也是如此么？`并非如此，left相对父级容器的宽度进行计算，top相对父级容器的高度进行计算`。
+* 1rem默认等于多少px？`1rem默认等于16px`。
+* rem和px的转换关系受什么影响？`受html的font-size影响`。
 * 移动端适配方案？`rem` + `<meta name="viewport" content="width=device-width,initial-scale=1.0">`。
 ### 应用
 * 单行省略号怎么写？多行省略号有无使用过？
