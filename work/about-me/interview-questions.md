@@ -31,7 +31,7 @@
 * css怎么画空心右箭头？`width: 10px;height: 10px;border-top: 2px solid #000;border-right: 2px solid #000;transform: rotate(45deg);`。
 * 如何给一个div加0.5px的边框？`主要知识点是absolute各方位-50%;transform: scale(0.5);pointer-events: none;`。
 * 不定宽高如何让盒子垂直水平居中？用定位如何实现？用flex如何实现？`主要考内联元素和块元素的水平居中和垂直居中`。
-* 如何让兄弟盒子上下margin不重叠？`给子级设置display:inline-block或者display:inline-flex或者float为left都可以解决。或者给父级加display:flex;flex-wrap:wrap;子级的上下margin就不会折叠了`。
+* 如何让兄弟盒子上下margin不重叠？`给子级设置display: inline-block;或者display: inline-flex;或者float: left;都可以解决。或者给父级加display: flex;flex-wrap: wrap;子级的上下margin就不会折叠了`。
 * `display:inline-block`移除间隙？`移除html标签间空格、使用font-size:0、letter-spacing、word-spacing、使用margin负值`。
 * 消除图片底部间隙的方法？`vertical-align:bottom、line-height:0、font-size:0、display:block`。
 * 如何让margin-top和margin-bottom不穿透父级？`触发BFC即可`。
