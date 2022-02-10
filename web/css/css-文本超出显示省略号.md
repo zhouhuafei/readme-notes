@@ -16,7 +16,7 @@
       word-break: break-all;
       display: -webkit-box;
       -webkit-box-orient: vertical;
-      -webkit-line-clamp:2;
+      -webkit-line-clamp: 2;
       line-height: 18px;
       max-height: 36px;
     }
