@@ -1,8 +1,15 @@
-# 文件-nodejs脚本-上传文件到服务器
-* ssh
+> 文件-nodejs脚本-上传文件到服务器
 
 ## 文档
 * https://github.com/spmjs/node-scp2
+* https://www.npmjs.com/package/scp2
+
+## scp2使用的是SSH协议
+> SSH提供两种级别的安全验证。
+* 第一种级别（基于口令的安全验证）
+  - 只要你知道自己帐号和口令，就可以登录到远程主机。
+* 第二种级别（基于密匙的安全验证）
+  - 需要依靠密匙，也就是你必须为自己创建一对密匙。
 
 ## 案例1
 ```javascript
