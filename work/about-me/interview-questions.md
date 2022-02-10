@@ -14,6 +14,7 @@
 ### 过渡和动画
 * 如何加过渡效果？`transition`。
 * 如何定义动画？`@keyframes`。
+* 如何使用动画？`animation`。
 ### 单位
 * px，%, em，rem, vw, vh的区别。`px是相对单位和屏幕分辨率保持一致，%是百分比，em大小相对于父节点，rem大小和html的font-size有关，vw和vh相对于视口宽高`。
 * 1rem等于多少px？rem和px的转换关系受什么影响？`默认16，受html的font-size影响`。
