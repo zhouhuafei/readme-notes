@@ -1,3 +1,6 @@
+# 文件-nodejs脚本-上传文件到服务器
+* ssh
+
 ## 文档
 * https://github.com/spmjs/node-scp2
 
