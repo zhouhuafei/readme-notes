@@ -24,7 +24,7 @@
 * 1rem默认等于多少px？`1rem默认等于16px`。
 * rem和px的转换关系受什么影响？`受html的font-size影响`。
 * 移动端适配方案？`rem` + `<meta name="viewport" content="width=device-width,initial-scale=1.0">`。
-### 应用
+#### 应用
 * 单行省略号怎么写？`overflow: hidden;white-space: nowrap;text-overflow: ellipsis;`。
   - 多行省略号怎么写？`单行省略号` + `word-break: break-all;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;line-height: 18px;max-height: 36px;`。
 * css怎么画实心右箭头？`width: 0;height: 0;border: 10px solid transparent;border-left-color: #000;`。
@@ -38,7 +38,7 @@
   - 如何触发BFC？`html根元素或包含html根元素的元素、float属性不为none、position为absolute或fixed、display为inline-block, table-cell, table-caption, flex, inline-flex、overflow不为visible`。
 * CSS隐藏元素的几种方式及区别？`display:none,visibility:none,opacity:0,position,transform`。
 * 怎么使用css让js的点击事件失效？`pointer-events: none;`。
-### scss
+#### scss
 * 如何定义变量？`$color: #f00;`
 * 如何定义函数？`@function fn() { @return 123;}`
 * 如何定义mixin？`@mixin ellipsis1() {overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}`
