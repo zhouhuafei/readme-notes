@@ -25,7 +25,7 @@
 * rem和px的转换关系受什么影响？`受html的font-size影响`。
 * 移动端适配方案？`rem` + `<meta name="viewport" content="width=device-width,initial-scale=1.0">`。
 #### 应用
-* CSS隐藏元素的几种方式及区别？`display:none,visibility:none,opacity:0,position,transform`。
+* CSS隐藏元素的几种方式及区别？`display: none; | visibility: none; | opacity: 0; | position | transform`。
 * 单行省略号怎么写？`overflow: hidden;white-space: nowrap;text-overflow: ellipsis;`。
   - 多行省略号怎么写？`单行省略号` + `word-break: break-all;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;line-height: 18px;max-height: 36px;`。
   - 怎么解决`display: flex;`会让自身容器中文字单行省略号失效的问题？`给文字外再套一层父级`。
