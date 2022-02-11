@@ -45,6 +45,9 @@ animation-fill-mode: forwards;
 * `perspective: 1000px;`
     - (加给父级)设置元素被查看位置的视图。
 
+# css3 基点
+* `transform-origin: left top;`
+
 # 轴位
 * x轴：水平于电脑屏幕的方向。
 * y轴：竖直于电脑屏幕的方向。
