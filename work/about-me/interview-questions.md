@@ -40,8 +40,8 @@
 * 怎么使用css让js的点击事件失效？`pointer-events: none;`。
 #### scss
 * 如何定义变量？`$color: #f00;`
-* 如何定义函数？`@function fn() { @return 123;}`
-* 如何定义mixin？`@mixin ellipsis1() {overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}`
+* 如何定义函数？`@function fn() { @return 123; }`
+* 如何定义mixin？`@mixin ellipsis1() { overflow: hidden;white-space: nowrap;text-overflow: ellipsis; }`
 
 ## js
 ### es5
