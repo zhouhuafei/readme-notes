@@ -47,7 +47,7 @@
 * 如何定义mixin？`@mixin ellipsis1() { overflow: hidden;white-space: nowrap;text-overflow: ellipsis; }`。
 
 ## js
-### es5
+#### es5
 * js有哪些数据类型？
 ```
 1、7种原始数据类型：`Boolean、Null、Undefined、Number、String、Symbol、BigInt`。
@@ -108,7 +108,7 @@
 * 什么是闭包？为什么要使用闭包？`闭包就是能够读取其他函数内部变量的函数。为了访问其他函数内部的变量，防止全局变量污染，可以用私有变量模拟私有属性，可以用私有函数模拟私有方法`。
 * this指向受什么影响？`受调用者影响谁调用则指向谁`。
 * 箭头函数和普通函数的区别？`箭头函数不会更改this的指向、箭头函数中的this不受call、apply和bind影响、箭头函数不能使用new、箭头函数不能使用arguments、箭头函数没有原型属性`。
-### 应用
+#### 应用
 * 写一个简单校验手机号的正则？`/^1\d{10}$/`。
 * 写一个1-3的随机数？`Math.round(Math.random() * (3 - 1)) + 1`。
 * `['1', '2', '3'].map(parseInt)` 答案是多少？`[1, NaN, NaN]`。
@@ -137,7 +137,7 @@ function fn1 (n1, n2) {
 
 fn1(1, 100)
 ```
-### es6
+#### es6
 * var let const？
 * 什么是暂时性死区？`使用let命令声明变量之前，该变量都是不可用的。这在语法上，称为暂时性死区`。
 * 解构赋值？实现变量交换。
@@ -145,7 +145,7 @@ fn1(1, 100)
 * 扩展运算符？用在函数的入参里？用在对象上？
 * 模块？导出和导入？
 * 类？原型如何实现继承？Class 如何实现继承？Class 本质是什么？
-### Promise和async以及await
+#### Promise和async以及await
 * Promise是怎么使用的？使用Promise实现串行和并行？
 * async和await怎么使用？
 * 使用async定义的函数的返回值？await的返回值？
