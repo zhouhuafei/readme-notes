@@ -25,19 +25,22 @@
 * rem和px的转换关系受什么影响？`受html的font-size影响`。
 * 移动端适配方案？`rem` + `<meta name="viewport" content="width=device-width,initial-scale=1.0">`。
 #### 应用
+* CSS隐藏元素的几种方式及区别？`display:none,visibility:none,opacity:0,position,transform`。
 * 单行省略号怎么写？`overflow: hidden;white-space: nowrap;text-overflow: ellipsis;`。
   - 多行省略号怎么写？`单行省略号` + `word-break: break-all;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;line-height: 18px;max-height: 36px;`。
+  - 怎么解决`display: flex;`会让自身单行省略号失效的问题？`再套一层`。...TODO
+  - 怎么解决父级设置`flex: 1;`导致子级的单行省略号失效的问题？`给子级设置width或max-width | 子级使用多行省略号模拟单行省略号 | 父级加overflow: hidden; | 父级加min-width: 0;`。...TODO
 * css怎么画实心右箭头？`width: 0;height: 0;border: 10px solid transparent;border-left-color: #000;`。
 * css怎么画空心右箭头？`width: 10px;height: 10px;border-top: 2px solid #000;border-right: 2px solid #000;transform: rotate(45deg);`。
 * 如何给一个div加0.5px的边框？`主要知识点是absolute各方位-50%;transform: scale(0.5);pointer-events: none;`。
+  - 怎么使用css让js的点击事件失效？`pointer-events: none;`。
 * 不定宽高如何让盒子垂直水平居中？用定位如何实现？用flex如何实现？`主要考内联元素和块元素的水平居中和垂直居中`。
 * 如何让兄弟盒子上下margin不重叠？`给子级设置display: inline-block;或者display: inline-flex;或者float: left;都可以解决。或者给父级加display: flex;flex-wrap: wrap;子级的上下margin就不会折叠了`。
 * 如何移除内联块之间的间隙？`布局时标签之间不加换行 | 用html注释连接换行 | 给父级加font-size: 0;`。
 * 消除图片底部间隙的方法？`vertical-align: top/bottom/text-top/text-bottom/middle; | 给父级加line-height: 0; | 给父级加font-size: 0; | display: block;`。
 * 如何让margin-top和margin-bottom不穿透父级？`触发BFC即可`。
+  - BFC的特性？``。...TODO
   - 如何触发BFC？`html根元素或包含html根元素的元素、float属性不为none、position为absolute或fixed、display为inline-block, table-cell, table-caption, flex, inline-flex、overflow不为visible`。
-* CSS隐藏元素的几种方式及区别？`display:none,visibility:none,opacity:0,position,transform`。
-* 怎么使用css让js的点击事件失效？`pointer-events: none;`。
 #### scss
 * 如何定义变量？`$color: #f00;`
 * 如何定义函数？`@function fn() { @return 123; }`
