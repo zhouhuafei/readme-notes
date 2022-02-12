@@ -39,8 +39,8 @@
 * 如何移除内联块之间的间隙？`布局时标签之间不加换行 | 用html注释连接换行 | 给父级加font-size: 0;`。
 * 消除图片底部间隙的方法？`vertical-align: top/bottom/text-top/text-bottom/middle; | 给父级加line-height: 0; | 给父级加font-size: 0; | display: block;`。
 * 如何让margin-top和margin-bottom不穿透父级？`触发BFC即可`。
-  - BFC的特性？`同一个BFC内子元素上下margin不会穿透父级、同一个BFC内子元素上下margin会发生折叠、BFC可以包含浮动的元素（可用来清除浮动）、BFC可以阻止元素被浮动元素覆盖（可用来清除文字环绕现象）`。
   - 如何触发BFC？`html根元素或包含html根元素的元素 | float属性不为none | position为absolute或fixed | display为inline-block、table-cell、table-caption、flex、inline-flex | overflow不为visible`。
+  - BFC的特性？`同一个BFC内子元素上下margin不会穿透父级、同一个BFC内子元素上下margin会发生折叠、BFC可以包含浮动的元素（可用来清除浮动）、BFC可以阻止元素被浮动元素覆盖（可用来清除文字环绕现象）`。
 #### scss
 * 如何定义变量？`$color: #f00;`。
 * 如何定义函数？`@function px2upx($px, $psdW:375) { @return $px * math.div(750, $psdW) + upx; }`。
@@ -50,10 +50,13 @@
 #### es5
 * js有哪些数据类型？
 ```
-1、7种原始数据类型：`Boolean、Null、Undefined、Number、String、Symbol、BigInt`。
-2、1种Object类型。
+7种原始数据类型：Boolean、Null、Undefined、Number、String、Symbol、BigInt。
+1种复合数据类型：Object。
 ```
-* typeof的8中返回值：`'object'、'string'、'number'、'boolean'、'function'、'undefined'、'symbol'、'bigint'`。
+* typeof的8种返回值？
+```
+'object'、'string'、'number'、'boolean'、'function'、'undefined'、'symbol'、'bigint'
+```
 * 字符串变数组？`split`。
 * 数组变字符串？`join`。
 * 数组常用方法？`unshift、shift、push、pop、slice、splice、find、findIndex、forEach、filter、map`。
