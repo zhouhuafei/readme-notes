@@ -11,19 +11,19 @@
 * 移动端自适应布局适配。`控制视口宽度`。
 
 ## css
-#### 选择器
+#### 选择器？
 * css选择器优先级？`id选择器 > class选择器 > 标签选择器`。
 * 选择器`+`和`~`以及`>`的区别？`后面相邻兄弟选择器。后面兄弟选择器。直属子元素选择器`。
 * `div p:nth-of-type(2)`和`div p:nth-child(2)`的区别？`前者选div下第2个p元素。后者选div下第2个元素且第2个元素需要是p元素`。
-#### 盒模型
+#### 盒模型？
 * 标准盒模型包含哪些属性？`margin、padding、border、width、height`。
   - 标准盒模型和怪异盒模型的区别？`标准盒模型的border和padding会撑大width和height`。
 * `box-sizing: border-box;`的特性？`border和padding不会撑大width和height`。
-#### 过渡和动画
+#### 过渡和动画？
 * 如何加过渡效果？`transition`。
 * 如何定义动画？`@keyframes`。
 * 如何使用动画？`animation`。
-#### 单位
+#### 单位？
 * px，%，em，rem，vw，vh的区别。`px是相对单位和屏幕分辨率保持一致。%是百分比。em的大小和父节点的font-size有关。rem的大小和html的font-size有关。vw和vh的大小和可视区的宽高有关`。
 * 百分比布局的时候width和padding以及margin都是相对什么进行计算的？`相对父级容器的宽度进行计算`。
   - 左右内外间距也是如此么？`也是如此`。
@@ -34,7 +34,7 @@
   - 方案1：`百分比`。
   - 方案2：`rem` + `<meta name="viewport" content="width=device-width,initial-scale=1.0">`。
   - 方案3：`vw`。
-#### 应用
+#### 应用？
 * CSS隐藏元素的几种方式及区别？`display: none; | visibility: none; | opacity: 0; | position | transform`。
 * 单行省略号怎么写？`overflow: hidden;white-space: nowrap;text-overflow: ellipsis;`。
   - 多行省略号怎么写？`单行省略号` + `word-break: break-all;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;line-height: 18px;max-height: 36px;`。
@@ -51,13 +51,13 @@
 * 如何让margin-top和margin-bottom不穿透父级？`触发BFC即可`。
   - 如何触发BFC？`html根元素或包含html根元素的元素 | float属性不为none | position为absolute或fixed | display为inline-block、table-cell、table-caption、flex、inline-flex | overflow不为visible`。
   - BFC的特性？`同一个BFC内子元素上下margin不会穿透父级、同一个BFC内子元素上下margin会发生折叠、BFC可以包含浮动的元素（可用来清除浮动）、BFC可以阻止元素被浮动元素覆盖（可用来清除文字环绕现象）`。
-#### scss
+#### scss？
 * 如何定义变量？`$color: #f00;`。
 * 如何定义函数？`@function px2upx($px, $psdW:375) { @return $px * math.div(750, $psdW) + upx; }`。
 * 如何定义mixin？`@mixin ellipsis1() { overflow: hidden;white-space: nowrap;text-overflow: ellipsis; }`。
 
 ## js
-#### 数据类型
+#### 数据类型？
 * js有哪些数据类型？`7种原始类型数据Number、String、Boolean、null、undefined、Symbol、BigInt和1种复合类型数据Object`。
 * typeof有哪些返回值？`'number'、'string'、'boolean'、'object'、'undefined'、'symbol'、'bigint'、'function'`。
   - `typeof []`和`typeof /a/`和`typeof new Date()`会返回什么？`'object'`。
@@ -153,7 +153,7 @@ console.log(JSON.stringify({ a: null })) // '{"a":null}'
   - 什么是浅拷贝？`只拷贝1层`。
   - 什么是深拷贝？`有多少层就拷贝多少层`。
   - `Object.assign`是浅拷贝还是深拷贝？`浅拷贝`。
-#### 正则
+#### 正则？
 * 匹配英文？`/[a-z][A-Z]/`。
 * 匹配数字？`/\d/`。
 * 匹配英文数字下划线？`/\w/`。
@@ -190,17 +190,10 @@ console.log(JSON.stringify({ a: null })) // '{"a":null}'
 
   moneyFormat()
   ```
-#### dom
-#### bom
-* setTimeout倒计时为什么会出现误差？`单线程，异步，线程空闲`。
-* 事件冒泡和事件捕获?
-* 怎么阻止事件冒泡和事件的默认行为？
-* 事件委托？
-* call和apply以及bind的区别？取数组最大值ES5、ES6？`es5 Math.max.apply(null, [14, 3, 77, 30])`。`es6 Math.max(...[14, 3, 77, 30])`。
-* 什么是函数去抖？什么是函数节流？
+#### 变量预解析与函数预解析？...TODO
 * 什么是变量预解析和函数预解析？函数声明式和函数表达式哪种会预解析？预解析的权重？`函数>形参>变量`。
-* 作用域链的工作流程？
-* 原型链的工作流程？
+#### 作用域链的工作流程？
+#### 构造函数？es6类？继承？原型链的工作流程？
 * Object.create 有什么作用？`Object.create()方法创建一个新对象，使用现有的对象来提供新创建的对象的__proto__`。
 * new 的原理是什么？通过 new 的方式创建对象和通过字面量创建有什么区别？`字面量创建对象，不会调用 Object构造函数, 简洁且性能更好`。
 * new操作符具体干了什么呢？
@@ -210,9 +203,21 @@ console.log(JSON.stringify({ a: null })) // '{"a":null}'
 3、执行构造函数，将this绑定到新对象上，通常是给新对象赋值
 4、如果函数没有返回其他对象，那么this指向这个新对象，否则this指向构造函数中返回的对象
 ```
-* 什么是闭包？为什么要使用闭包？`闭包就是能够读取其他函数内部变量的函数。为了访问其他函数内部的变量，防止全局变量污染，可以用私有变量模拟私有属性，可以用私有函数模拟私有方法`。
+#### this？
 * this指向受什么影响？`受调用者影响谁调用则指向谁`。
-* 箭头函数和普通函数的区别？`箭头函数不会更改this的指向、箭头函数中的this不受call、apply和bind影响、箭头函数不能使用new、箭头函数不能使用arguments、箭头函数没有原型属性`。
+* call和apply以及bind的区别？取数组最大值ES5、ES6？`es5 Math.max.apply(null, [14, 3, 77, 30])`。`es6 Math.max(...[14, 3, 77, 30])`。
+#### 闭包？
+* 什么是闭包？为什么要使用闭包？`闭包就是能够读取其他函数内部变量的函数。为了访问其他函数内部的变量，防止全局变量污染，可以用私有变量模拟私有属性，可以用私有函数模拟私有方法`。
+#### 怎么理解js的单线程？异步？线程空闲？
+* setTimeout倒计时为什么会出现误差？`单线程，异步，线程空闲`。
+#### 怎么理解js异步中的宏任务与微任务？
+#### 应用？
+* 什么是函数去抖？什么是函数节流？
+#### dom？
+* 事件冒泡和事件捕获?
+* 怎么阻止事件冒泡和事件的默认行为？
+* 事件委托？
+#### bom？
 #### es6
 * var let const？
 * 什么是暂时性死区？`使用let命令声明变量之前，该变量都是不可用的。这在语法上，称为暂时性死区`。
@@ -221,6 +226,7 @@ console.log(JSON.stringify({ a: null })) // '{"a":null}'
 * 扩展运算符？用在函数的入参里？用在对象上？
 * 模块？导出和导入？
 * 类？原型如何实现继承？Class 如何实现继承？Class 本质是什么？
+* 箭头函数和普通函数的区别？`箭头函数不会更改this的指向、箭头函数中的this不受call、apply和bind影响、箭头函数不能使用new、箭头函数不能使用arguments、箭头函数没有原型属性`。
 #### Promise和async以及await
 * Promise是怎么使用的？使用Promise实现串行和并行？
 * async和await怎么使用？
