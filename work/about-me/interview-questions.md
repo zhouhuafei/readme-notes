@@ -1,7 +1,14 @@
 > 出一些简单的面试题，筛选一些熟练工。
 
 ## html
-* 简述一下你对HTML语义化的理解？`对seo友好，结构清晰，便于阅读`。
+#### 简述一下你对标签语义化的理解？
+* 对seo友好，结构清晰，便于阅读。
+#### 你用meta标签做过什么？
+* 定义字符集。`<meta charset="UTF-8">`。
+* 定义页面关键字`keywords`和描述`description`。
+* 让手机上的浏览器强制竖屏。`uc浏览器`。`qq浏览器`。
+* 对手机上的safari浏览器进行额外配置。`控制状态栏的样式`。`禁止把数字转化为电话号码`。`是否需要默认的工具栏和菜单栏`。
+* 移动端自适应布局适配。`控制视口宽度`。
 
 ## css
 #### 选择器
@@ -23,7 +30,10 @@
   - absolute的left和top也是如此么？`并非如此，left相对父级容器的宽度进行计算，top相对父级容器的高度进行计算`。
 * 1rem默认等于多少px？`1rem默认等于16px`。
 * rem和px的转换关系受什么影响？`受html的font-size影响`。
-* 移动端适配方案？`rem` + `<meta name="viewport" content="width=device-width,initial-scale=1.0">`。
+* 移动端自适应布局适配？
+  - 方案1：`百分比`。
+  - 方案2：`rem` + `<meta name="viewport" content="width=device-width,initial-scale=1.0">`。
+  - 方案3：`vw`。
 #### 应用
 * CSS隐藏元素的几种方式及区别？`display: none; | visibility: none; | opacity: 0; | position | transform`。
 * 单行省略号怎么写？`overflow: hidden;white-space: nowrap;text-overflow: ellipsis;`。
@@ -54,96 +64,95 @@
   - 使用什么方法可以区分它们？`Object.prototype.toString.call`。
   - 自定义的类或者构造函数，其实例如果使用`Object.prototype.toString.call`进行检测，会返回什么结果？`'[object Object]'`。
   - 自定义的类或者构造函数，需要怎么处理才能被`Object.prototype.toString.call`区分？`this[Symbol.toStringTag] = 'CustomClassName'`。
-#### 数字
+#### 数字常用方法？
 * 数字转成字符串并保留两位小数？`(Math.floor(parseFloat(10.2) * 1000/10) / 100).toFixed(2)`。`1变成'1.00'`。`10.2变成'10.20'`。`19.9变成'19.90'`。
 * 字符串`'1.00'变成'1'`。`'10.20'变成'10.2'`。`'19.90'变成'19.9'`？`String(Number('10.20'))`。
 * 生成4到6的随机数？`Math.round(Math.random() * (6 - 4) + 4)`。
-#### 字符串
-* 字符串常用方法？
-  - 字符串转大小写？`toUpperCase、toLowerCase`。
-  - 字符串查找？`[index]、charAt、charCodeAt、search(可以是正则)、indexOf、lastIndexOf、includes`。
-    - 如何检测`某个字符`在`一串字符串`中是否重复出现了？`indexOf和lastIndexOf的结果如果一致则未出现重复`。
-  - 字符串截取？`slice、substr、substring`。
-  - 字符串替换？`replace(可以是正则)`。
-  - 字符串匹配？`match(可以是正则)`。
-    - 字符串的match方法和正则的exec方法在什么情况下返回的数据是一致的？`非全局匹配的情况下字符串的match方法和正则的exec方法返回的数据是一致的`。
-  - 字符串去除首尾空格？`trim`。
-  - 把字符串切割成数组？`split`。
-* 数组常用方法？
-  - 把数组拼接成字符串？`join`。
-  - 数组查找？`[index]、find、findIndex、indexOf、lastIndexOf、includes`。
-  - 数组增删？`push、pop、unshift、shift、splice`。
-  - 数组截取？`slice（不会改变原数组）、splice（会改变原数组）`。
-  - 数组排序？`sort`。
-    - 根据id属性对数组中的对象进行从大到小排序（id属性的值是数字且唯一）？`[{ id: 1 }, { id: 3 }, { id: 2 }].sort((a, b) => (b.id - a.id))`。
-  - 数组逆序？`reverse`。
-  - 数组扁平化？`[[1], [2, [3]]].flat(2)`。
-  - 数组拼接？`concat`。
-  - 数组去重？`[...new Set([1, 2, 2, 3])]`。
-  - filter和map的区别？`前者返回满足条件的项。后者返回被处理后的项。二者全是返回新数组`。
-  - some和every的区别？`前者只需某项满足条件就会返回true。后者需要全部项满足条件才会返回true`。
-  - 数组转对象用reduce怎么实现？`['a', 'b'].reduce((r, v, i, a) => ({ ...r, [i]: v }), {})`。
-  - 类数组转数组？
-  ```javascript
-  console.log(Array.from({length: 10})) // 转出来的不是稀疏数组
-  console.log(Array.apply(Array, {length: 10})) // 转出来的不是稀疏数组
-  console.log(Array.prototype.slice.call({length: 10})) // 转出来的是稀疏数组
-  ```
-  - 创建稀疏数组？
-  ```javascript
-  console.log([1, , , , , , , , , 10])
-  console.log(Array.prototype.slice.call({length: 10}))
-  ```
-  - 稀疏数组使用`forEach、filter、map`方法处理时会怎么处理稀疏项？`forEach和filter会无视稀疏项。map循环时会无视稀疏项但是会原封不动的返回稀疏项`。
-  - 稀疏数组怎么转密集数组？
-  ```javascript
-  console.log(Array.from(Array(10)))
-  console.log(Array.apply(null, Array(10)))
-  console.log(Array.call(null, ...Array(10)))
-  console.log([...Array(10)])
-  console.log(Array(10).fill())
-  ```
-  - 稀疏数组压缩？`filter`。
-  - 有哪些方法可以判断一个值是否是数组？
-  ```javascript
-  console.log([].__proto__.constructor.name)
-  console.log(Object.getPrototypeOf([]).constructor.name)
-  console.log(Object.prototype.toString.call([]))
-  console.log(Array.isArray([])) // 内部是使用Object.prototype.toString.call实现的
-  console.log([] instanceof Array) // 无法检测出使用iframe内部环境创建出的数组
-  ```
-* `===` 与 `==` 的区别？`前者不会进行隐式类型转换。后者会进行隐式类型转换`。
-  - `undefined == null`？`true`。
-  - `undefined === null`？`false`。
-  - `undefined`和`null`的区别？
-  ```javascript
-  // 定义一个变量不赋值则这个变量就是undefined。
-  // 而null是一个具体存在的值，值的本身就是null。
-  // undefined值是派生自null值
-  // JSON序列化时会忽略undefined
-  console.log(JSON.stringify({ a: undefined })) // '{}'
-  console.log(JSON.stringify({ a: null })) // '{"a":null}'
-  ```
-  - `NaN == NaN`？`false`。为什么？`NaN不和任何值相等（包括它本身）`。
-  - `[] == ![]`？`true`。为什么？`前者先转成字符串后转成数字0。后者先转成false后转成数字0`。
-  - 隐式类型转换会把数据转成原始类型数据，其流程是怎样的？
-    - 隐式类型转换时，会优先调用valueOf方法，把数据转换成原始类型数据。
-    - 如果转换后依然不是原始类型数据，会再调用toString方法进行转换。
-    - 除了日期类，日期类只使用toString转换。
-* 常用运算符优先级？
-  - `console.log(typeof 0 == '')`？`false`。
-  - `console.log(typeof 0 == false)`？`false`。
-  - `console.log(typeof 0 ? 'a' : 'b')`？`'a'`。
-  - `console.log(0 == '' ? 'a' : 'b')`？`'a'`。
-  - `typeof`和`==`和`?:`的优先级排序？`typeof`优先于`==`优先于`?:`。
-  - 当无法确定优先级时怎么做可以把优先级提到最高？`加圆括号`。`以上述为例，也可以选择换行写，因为代码的执行顺序是从上到下，从左到右`。
-* 如果两个对象存在引用关系？
-  - 修改其中一个对象的属性，另外一个对象的属性会怎样？`另外一个对象的属性会跟着改变`。
-  - 属性改变后，使用双等号进行比较时，会返回什么结果？`true`。
-  - 怎么断开两个对象的引用关系？`浅拷贝 | 深拷贝 | JSON.stringify配合JSON.parse`。
-    - 什么是浅拷贝？`只拷贝1层`。
-    - 什么是深拷贝？`有多少层就拷贝多少层`。
-    - `Object.assign`是浅拷贝还是深拷贝？`浅拷贝`。
+#### 字符串常用方法？
+* 字符串转大小写？`toUpperCase、toLowerCase`。
+* 字符串查找？`[index]、charAt、charCodeAt、search(可以是正则)、indexOf、lastIndexOf、includes`。
+  - 如何检测`某个字符`在`一串字符串`中是否重复出现了？`indexOf和lastIndexOf的结果如果一致则未出现重复`。
+* 字符串截取？`slice、substr、substring`。
+* 字符串替换？`replace(可以是正则)`。
+* 字符串匹配？`match(可以是正则)`。
+  - 字符串的match方法和正则的exec方法在什么情况下返回的数据是一致的？`非全局匹配的情况下字符串的match方法和正则的exec方法返回的数据是一致的`。
+* 字符串去除首尾空格？`trim`。
+* 把字符串切割成数组？`split`。
+#### 数组常用方法？
+* 把数组拼接成字符串？`join`。
+* 数组查找？`[index]、find、findIndex、indexOf、lastIndexOf、includes`。
+* 数组增删？`push、pop、unshift、shift、splice`。
+* 数组截取？`slice（不会改变原数组）、splice（会改变原数组）`。
+* 数组排序？`sort`。
+  - 根据id属性对数组中的对象进行从大到小排序（id属性的值是数字且唯一）？`[{ id: 1 }, { id: 3 }, { id: 2 }].sort((a, b) => (b.id - a.id))`。
+* 数组逆序？`reverse`。
+* 数组扁平化？`[[1], [2, [3]]].flat(2)`。
+* 数组拼接？`concat`。
+* 数组去重？`[...new Set([1, 2, 2, 3])]`。
+* filter和map的区别？`前者返回满足条件的项。后者返回被处理后的项。二者全是返回新数组`。
+* some和every的区别？`前者只需某项满足条件就会返回true。后者需要全部项满足条件才会返回true`。
+* 数组转对象用reduce怎么实现？`['a', 'b'].reduce((r, v, i, a) => ({ ...r, [i]: v }), {})`。
+* 类数组转数组？
+```javascript
+console.log(Array.from({length: 10})) // 转出来的不是稀疏数组
+console.log(Array.apply(Array, {length: 10})) // 转出来的不是稀疏数组
+console.log(Array.prototype.slice.call({length: 10})) // 转出来的是稀疏数组
+```
+* 创建稀疏数组？
+```javascript
+console.log([1, , , , , , , , , 10])
+console.log(Array.prototype.slice.call({length: 10}))
+```
+* 稀疏数组使用`forEach、filter、map`方法处理时会怎么处理稀疏项？`forEach和filter会无视稀疏项。map循环时会无视稀疏项但是会原封不动的返回稀疏项`。
+* 稀疏数组怎么转密集数组？
+```javascript
+console.log(Array.from(Array(10)))
+console.log(Array.apply(null, Array(10)))
+console.log(Array.call(null, ...Array(10)))
+console.log([...Array(10)])
+console.log(Array(10).fill())
+```
+* 稀疏数组压缩？`filter`。
+* 有哪些方法可以判断一个值是否是数组？
+```javascript
+console.log([].__proto__.constructor.name)
+console.log(Object.getPrototypeOf([]).constructor.name)
+console.log(Object.prototype.toString.call([]))
+console.log(Array.isArray([])) // 内部是使用Object.prototype.toString.call实现的
+console.log([] instanceof Array) // 无法检测出使用iframe内部环境创建出的数组
+```
+#### `===` 与 `==` 的区别？`前者不会进行隐式类型转换。后者会进行隐式类型转换`。
+* `undefined == null`？`true`。
+* `undefined === null`？`false`。
+* `undefined`和`null`的区别？
+```javascript
+// 定义一个变量不赋值则这个变量就是undefined。
+// 而null是一个具体存在的值，值的本身就是null。
+// undefined值是派生自null值
+// JSON序列化时会忽略undefined
+console.log(JSON.stringify({ a: undefined })) // '{}'
+console.log(JSON.stringify({ a: null })) // '{"a":null}'
+```
+* `NaN == NaN`？`false`。为什么？`NaN不和任何值相等（包括它本身）`。
+* `[] == ![]`？`true`。为什么？`前者先转成字符串后转成数字0。后者先转成false后转成数字0`。
+* 隐式类型转换会把数据转成原始类型数据，其流程是怎样的？
+  - 隐式类型转换时，会优先调用valueOf方法，把数据转换成原始类型数据。
+  - 如果转换后依然不是原始类型数据，会再调用toString方法进行转换。
+  - 除了日期类，日期类只使用toString转换。
+#### 常用运算符优先级？
+* `console.log(typeof 0 == '')`？`false`。
+* `console.log(typeof 0 == false)`？`false`。
+* `console.log(typeof 0 ? 'a' : 'b')`？`'a'`。
+* `console.log(0 == '' ? 'a' : 'b')`？`'a'`。
+* `typeof`和`==`和`?:`的优先级排序？`typeof`优先于`==`优先于`?:`。
+* 当无法确定优先级时怎么做可以把优先级提到最高？`加圆括号`。`以上述为例，也可以选择换行写，因为代码的执行顺序是从上到下，从左到右`。
+#### 如果两个对象存在引用关系？
+* 修改其中一个对象的属性，另外一个对象的属性会怎样？`另外一个对象的属性会跟着改变`。
+* 属性改变后，使用双等号进行比较时，会返回什么结果？`true`。
+* 怎么断开两个对象的引用关系？`浅拷贝 | 深拷贝 | JSON.stringify配合JSON.parse`。
+  - 什么是浅拷贝？`只拷贝1层`。
+  - 什么是深拷贝？`有多少层就拷贝多少层`。
+  - `Object.assign`是浅拷贝还是深拷贝？`浅拷贝`。
 #### 正则
 * 匹配英文？`/[a-z][A-Z]/`。
 * 匹配数字？`/\d/`。
