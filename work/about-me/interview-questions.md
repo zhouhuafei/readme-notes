@@ -48,49 +48,109 @@
 
 ## js
 #### es5
-* js有哪些数据类型？
-```
-7种原始数据类型：Boolean、Null、Undefined、Number、String、Symbol、BigInt。
-1种复合数据类型：Object。
-```
-* typeof的8种返回值？
-```
-'object'、'string'、'number'、'boolean'、'function'、'undefined'、'symbol'、'bigint'
-```
-* 字符串变数组？`split`。
-* 数组变字符串？`join`。
-* 数组常用方法？`unshift、shift、push、pop、slice、splice、find、findIndex、forEach、filter、map`。
-* 数组去重？`[...new Set([1, 2, 2, 3])]`。
-* 数组左移右移？`arr[num] = arr.splice(num - dir, 1, arr[num])[0]`。
-* 数组扁平化？`[[1], [2]].flat(2)`。
-* 数组排序？`sort、reverse`。
-* 什么是稀疏数组？稀疏数组能使用forEach、map、filter等方法么？稀疏数组怎么转密集数组？
-```
-1、Array.apply(null, Array(5))
-2、[...Array(5)]
-3、Array(5).fill()
-```
-* 类数组转数组
-```
-1、Array.apply(Array, {length:10}) // 转出来的不是稀疏数组
-2、Array.from({length: 10}) // 转出来的不是稀疏数组
-3、Array.prototype.slice.call({length:10}) // 转出来的是稀疏数组
-```
-* 有以下3个判断数组的方法，请分别介绍它们之间的区别和优劣`Object.prototype.toString.call()`、`instanceof`以及`Array.isArray()`。
-```
-0、Array.isArray是使用Object.prototype.toString.call实现的。
-1、Object.prototype.toString.call无法判断自定义的构造函数。 自定义的会返回`[object Object]`。
-2、Array.isArray优于instanceof，因为Array.isArray和Object.prototype.toString.call可以检测出iframe中的arr，而instanceof不能。
-3、instanceof只能用来判断对象类型，原始类型不可以。并且所有对象类型instanceof Object都是 true，且不同于其他两种方法的是它不能检测出iframe。
-```
-* `===` 与 `==` 的区别？`前者不会隐式类型转换，后者会`。
-* null和undefined的区别？`undefined派生于null`。
-* [] == ![]？`true`。
-* NaN == NaN？`false`。
+* js有哪些数据类型？`7种原始类型数据String、Number、Boolean、null、undefined、Symbol、BigInt和1种复合类型数据Object`。
+* typeof有哪些返回值？`'string'、'number'、'boolean'、'object'、'undefined'、'symbol'、'bigint'、'function'`。
+  - `typeof []`和`typeof /a/`和`typeof new Date()`会返回什么？`'object'`。
+  - 使用什么方法可以区分它们？`Object.prototype.toString.call`。
+  - 自定义的类或者构造函数，其实例如果使用`Object.prototype.toString.call`进行检测，会返回什么结果？`'[object Object]'`。
+  - 自定义的类或者构造函数，需要怎么处理才能被`Object.prototype.toString.call`区分？`this[Symbol.toStringTag] = 'CustomClassName'`。
+* 字符串常用方法？
+  - 字符串转大小写？`toUpperCase、toLowerCase`。
+  - 字符串查找？`[index]、charAt、charCodeAt、search(可以是正则)、indexOf、lastIndexOf、includes`。
+    - 如何检测`某个字符`在`一串字符串`中是否重复出现了？`indexOf和lastIndexOf的结果如果一致则未出现重复`。
+  - 字符串截取？`slice、substr、substring`。
+  - 字符串替换？`replace(可以是正则)`。
+  - 字符串匹配？`match(可以是正则)`。
+    - 字符串的match方法和正则的exec方法在什么情况下返回的数据是一致的？`非全局匹配的情况下字符串的match方法和正则的exec方法返回的数据是一致的`。
+  - 字符串去除首尾空格？`trim`。
+  - 把字符串切割成数组？`split`。
+* 数组常用方法？
+  - 把数组拼接成字符串？`join`。
+  - 数组查找？`[index]、find、findIndex、indexOf、lastIndexOf、includes`。
+  - 数组增删？`push、pop、unshift、shift、splice`。
+  - 数组截取？`slice（不会改变原数组）、splice（会改变原数组）`。
+  - 数组排序？`sort`。
+    - 根据id属性对数组中的对象进行从大到小排序（id属性的值是数字且唯一）？`[{ id: 1 }, { id: 3 }, { id: 2 }].sort((a, b) => (b.id - a.id))`。
+  - 数组逆序？`reverse`。
+  - 数组扁平化？`[[1], [2, [3]]].flat(2)`。
+  - 数组拼接？`concat`。
+  - 数组去重？`[...new Set([1, 2, 2, 3])]`。
+  - filter和map的区别？`前者返回满足条件的项。后者返回被处理后的项。二者全是返回新数组`。
+  - some和every的区别？`前者只需某项满足条件就会返回true。后者需要全部项满足条件才会返回true`。
+  - 数组转对象用reduce怎么实现？`['a', 'b'].reduce((r, v, i, a) => ({ ...r, [i]: v }), {})`。
+  - 类数组转数组？
+  ```javascript
+  console.log(Array.from({length: 10})) // 转出来的不是稀疏数组
+  console.log(Array.apply(Array, {length: 10})) // 转出来的不是稀疏数组
+  console.log(Array.prototype.slice.call({length: 10})) // 转出来的是稀疏数组
+  ```
+  - 创建稀疏数组？
+  ```javascript
+  console.log([1, , , , , , , , , 10])
+  console.log(Array.prototype.slice.call({length: 10}))
+  ```
+  - 稀疏数组使用`forEach、filter、map`方法处理时会怎么处理稀疏项？`forEach和filter会无视稀疏项。map循环时会无视稀疏项但是会原封不动的返回稀疏项`。
+  - 稀疏数组怎么转密集数组？
+  ```javascript
+  console.log(Array.from(Array(10)))
+  console.log(Array.apply(null, Array(10)))
+  console.log(Array.call(null, ...Array(10)))
+  console.log([...Array(10)])
+  console.log(Array(10).fill())
+  ```
+  - 稀疏数组压缩？`filter`。
+  - 有哪些方法可以判断一个值是否是数组？
+  ```javascript
+  console.log([].__proto__.constructor.name)
+  console.log(Object.getPrototypeOf([]).constructor.name)
+  console.log(Object.prototype.toString.call([]))
+  console.log(Array.isArray([])) // 内部是使用Object.prototype.toString.call实现的
+  console.log([] instanceof Array) // 无法检测出使用iframe内部环境创建出的数组
+  ```
+* `===` 与 `==` 的区别？`前者不会进行隐式类型转换。后者会进行隐式类型转换`。
+  - `undefined == null`？`true`。
+  - `undefined === null`？`false`。
+  - `undefined`和`null`的区别？
+  ```javascript
+  // 定义一个变量不赋值则这个变量就是undefined。
+  // 而null是一个具体存在的值，值的本身就是null。
+  // undefined值是派生自null值
+  // JSON序列化时会忽略undefined
+  console.log(JSON.stringify({ a: undefined })) // '{}'
+  console.log(JSON.stringify({ a: null })) // '{"a":null}'
+  ```
+  - `NaN == NaN`？`false`。为什么？`NaN不和任何值相等（包括它本身）`。
+  - `[] == ![]`？`true`。为什么？`前者先转成字符串后转成数字0。后者先转成false后转成数字0`。
+  - 隐式类型转换会把数据转成原始类型数据，其流程是怎样的？
+    - 隐式类型转换时，会优先调用valueOf方法，把数据转换成原始类型数据。
+    - 如果转换后依然不是原始类型数据，会再调用toString方法进行转换。
+    - 除了日期类，日期类只使用toString转换。
+* 常用运算符优先级？
+  - `console.log(typeof 0 == '')`？`false`。
+  - `console.log(typeof 0 == false)`？`false`。
+  - `console.log(typeof 0 ? 'a' : 'b')`？`'a'`。
+  - `console.log(0 == '' ? 'a' : 'b')`？`'a'`。
+  - `typeof`和`==`和`?:`的优先级排序？`typeof`优先于`==`优先于`?:`。
+  - 当无法确定优先级时怎么做可以把优先级提到最高？`加圆括号`。`以上述为例，也可以选择换行写，因为代码的执行顺序是从上到下，从左到右`。
+* 如果两个对象存在引用关系？
+  - 修改其中一个对象的属性，另外一个对象的属性会怎样？`另外一个对象的属性会跟着改变`。
+  - 属性改变后，使用双等号进行比较时，会返回什么结果？`true`。
+  - 怎么断开两个对象的引用关系？`浅拷贝 | 深拷贝 | JSON.stringify配合JSON.parse`。
+    - 什么是浅拷贝？`只拷贝1层`。
+    - 什么是深拷贝？`有多少层就拷贝多少层`。
+    - `Object.assign`是浅拷贝还是深拷贝？`浅拷贝`。
+* 常用正则？
+  - 匹配英文？`/[a-z][A-Z]/`。
+  - 匹配数字？`/\d/`。
+  - 匹配英文数字下划线？`/\w/`。
+  - 匹配1开头的11位数字？`/^1\d{10}$/`。
+  - 匹配style标签及其内容？`/<style[^>]*>[\d\D]*?<\/style>/g`。
+    - 什么是正则的贪婪模式？`整个表达式匹配成功的前提下，会尽可能多的匹配`。
+    - 什么是正则的非贪婪模式？`整个表达式匹配成功的前提下，会尽可能少的匹配`。
+    - 默认是什么模式？`贪婪模式`。
+#### dom
+#### bom
 * setTimeout倒计时为什么会出现误差？`单线程，异步，线程空闲`。
-* 对象引用举例？
-* 对象移除引用？
-* 深拷贝和浅拷贝？
 * 事件冒泡和事件捕获?
 * 怎么阻止事件冒泡和事件的默认行为？
 * 事件委托？
@@ -111,6 +171,19 @@
 * 什么是闭包？为什么要使用闭包？`闭包就是能够读取其他函数内部变量的函数。为了访问其他函数内部的变量，防止全局变量污染，可以用私有变量模拟私有属性，可以用私有函数模拟私有方法`。
 * this指向受什么影响？`受调用者影响谁调用则指向谁`。
 * 箭头函数和普通函数的区别？`箭头函数不会更改this的指向、箭头函数中的this不受call、apply和bind影响、箭头函数不能使用new、箭头函数不能使用arguments、箭头函数没有原型属性`。
+#### es6
+* var let const？
+* 什么是暂时性死区？`使用let命令声明变量之前，该变量都是不可用的。这在语法上，称为暂时性死区`。
+* 解构赋值？实现变量交换。
+* 字符串模板？
+* 扩展运算符？用在函数的入参里？用在对象上？
+* 模块？导出和导入？
+* 类？原型如何实现继承？Class 如何实现继承？Class 本质是什么？
+#### Promise和async以及await
+* Promise是怎么使用的？使用Promise实现串行和并行？
+* async和await怎么使用？
+* 使用async定义的函数的返回值？await的返回值？
+* async内多个await如何并行请求？
 #### 应用
 * 写一个简单校验手机号的正则？`/^1\d{10}$/`。
 * 写一个1-3的随机数？`Math.round(Math.random() * (3 - 1)) + 1`。
@@ -140,19 +213,6 @@ function fn1 (n1, n2) {
 
 fn1(1, 100)
 ```
-#### es6
-* var let const？
-* 什么是暂时性死区？`使用let命令声明变量之前，该变量都是不可用的。这在语法上，称为暂时性死区`。
-* 解构赋值？实现变量交换。
-* 字符串模板？
-* 扩展运算符？用在函数的入参里？用在对象上？
-* 模块？导出和导入？
-* 类？原型如何实现继承？Class 如何实现继承？Class 本质是什么？
-#### Promise和async以及await
-* Promise是怎么使用的？使用Promise实现串行和并行？
-* async和await怎么使用？
-* 使用async定义的函数的返回值？await的返回值？
-* async内多个await如何并行请求？
 
 ## html5
 * canvas和svg图形的区别是什么？`位图和矢量图`。
