@@ -58,8 +58,8 @@
 
 ## js
 #### 数据类型？
-* js有哪些数据类型？`7种原始类型数据Number、String、Boolean、null、undefined、Symbol、BigInt和1种复合类型数据Object`。
-* typeof有哪些返回值？`'number'、'string'、'boolean'、'object'、'undefined'、'symbol'、'bigint'、'function'`。
+* js有哪些数据类型？`7种原始类型数据Boolean、Number、String、null、undefined、Symbol、BigInt和1种复合类型数据Object`。
+* typeof有哪些返回值？`'boolean'、'number'、'string'、'object'、'undefined'、'symbol'、'bigint'、'function'`。
   - `typeof []`和`typeof /a/`和`typeof new Date()`会返回什么？`'object'`。
   - 使用什么方法可以区分它们？`Object.prototype.toString.call`。
   - 自定义的类或者构造函数，其实例如果使用`Object.prototype.toString.call`进行检测，会返回什么结果？`'[object Object]'`。
