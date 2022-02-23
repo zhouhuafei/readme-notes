@@ -363,7 +363,7 @@ fn1(1, 2, 3)
   - 图片上传时请求头中的Content-Type是什么？`multipart/form-data`。
   - 使用xhr发送json数据时Content-Type应该设置为什么？`application/json`。
 
-## 工作流？...TODO
+## 工作流？
 * git常用命令？`clone、pull、add、commit、tag、push、branch、checkout、reset --hard、log、reflog、stash、stash pop`。
 * 字体图标用过么？用的哪家的字体图标？`用过。用的阿里字体图标`。
 * 你工作中是怎么解决接口跨域问题的？`jsonp(仅支持GET)、服务端代理、服务端允许跨域`。
