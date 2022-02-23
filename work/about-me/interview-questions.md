@@ -326,11 +326,11 @@ fn1(1, 2, 3)
 * 模块导出？`a.js`。`export default {}`。
 * 模块导入？`b.js`。`import a from 'a.js'`。
 #### Promise和async以及await？
-> 假设request方法返回一个Promise
-* 怎么同时处理多条请求？`Promise.all/Promise.race`。
-* Promise.all和Promise.race的区别？
-  - Promise.all所有的请求都响应成功了才走then，只要有一个请求响应失败了就走catch。
-  - Promise.race只要有一个请求响应成功了就走then，所有的请求都响应失败了才走catch。
+* Promise的三种状态？`pending、fulfiled、rejected`。
+* `new Promise`怎么触发`then`？使用`resolve()`触发。
+* `new Promise`怎么触发`catch`？使用`reject()`触发。
+* `new Promise`怎么触发`finally`？使用`resolve()`或`reject()`都会触发。
+* Promise.all的特性？`所有Promise都触发了resolve则走then，只要有一个Promise触发了reject则走catch`。
 * 使用async定义的函数，其返回值是什么？`Promise对象`。
 * await的返回值是什么？`await返回Promise对象的处理结果。如果等待的不是Promise对象，则返回该值本身`。
 
