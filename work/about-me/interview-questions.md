@@ -358,17 +358,16 @@ fn1(1, 2, 3)
 * 浏览器怎么识别一张图片是被预览还是被下载？
   - 响应头中`Content-Type`的值为`application/octet-stream`会触发下载行为。
   - 响应头中`Content-Type`的值为`image/gif`、`image/jpeg`、`image/png`等图片类型时会触发预览行为。
+* 请求头中的Content-Type？
+  - 使用form表单的submit提交POST请求时请求头中的Content-Type是什么？`application/x-www-form-urlencoded`。
+  - 图片上传时请求头中的Content-Type是什么？`multipart/form-data`。
+  - 使用xhr发送json数据时Content-Type应该设置为什么？`application/json`。
 
 ## 工作流？...TODO
 * git常用命令？`clone、pull、add、commit、tag、push、branch、checkout、reset --hard、log、reflog、stash、stash pop`。
 * 字体图标用过么？用的哪家的字体图标？`用过，用的阿里字体图标`。
 * 你们是怎么解决接口跨域问题的？`主域：代理、jsonp(仅支持GET)、postMessage`。`子域：document.domain`。`还是服务端解决最为稳妥`。
-* 你们前后端接口通信使用的什么数据格式？图片上传一般是以什么格式上传？
-```
-application/x-www-form-urlencoded
-application/json
-multipart/form-data
-```
+  - 什么原因导致的接口跨域？`域名不同 | 端口不同 | 协议不同`。
 * 你工作中上传文件走的是怎样的流程？七牛云有用过么？使用七牛云上传文件时流程是怎样的？
 * 接口的错误处理你是怎么做的？
 * 对接口响应的数据，你是怎么做二次处理的？
