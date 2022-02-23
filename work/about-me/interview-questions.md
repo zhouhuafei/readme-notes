@@ -229,6 +229,19 @@ console.log(JSON.stringify({ a: null })) // '{"a":null}'
 #### 闭包？
 * 什么是闭包？`闭包就是能够读取其他函数内部变量的函数`。
 * 为什么要使用闭包？`因为闭包可以防止全局变量污染、可以访问其他函数内部的变量、可以用私有变量模拟私有属性、可以用私有函数模拟私有方法`。
+* 下述循环会打印什么？`5个5`。
+  - 示例如下：
+  ```javascript
+  for (var i = 0; i < 5; i++) {
+    setTimeout(() => {
+      console.log(i)
+    }, 0)
+  }
+  ```
+  - 如何才能打印0到4？
+    - 方案1：闭包
+    - 方案2：setTimeout第三入参
+    - 方案3：var换成let
 #### this？
 * this指向受什么影响？`受调用者影响谁调用则指向谁`。
 * call和apply以及bind的区别？`call和apply入参形式不同、bind返回一个新函数`。
@@ -253,77 +266,116 @@ console.log(JSON.stringify({ a: null })) // '{"a":null}'
 #### 应用？
 * 什么是函数去抖？`让一个函数在一定间隔内没有被调用时，才开始执行被调用的方法`。
 * 什么是函数节流？`让一个函数无法在很短的时间间隔内连续被调用，当上一次函数执行后过了规定的时间间隔，才能进行下一次该函数的调用`。
-#### dom？
-* 什么是事件冒泡？`事件由子元素传递到父元素的过程`。
-* 什么是事件捕获？`事件由父元素传递到子元素的过程`。
-* 什么是事件委托？`事件委托是对事件冒泡的一种应用，只需要把原本绑定在子元素上的事件绑定到父元素上，然后在父元素的事件监听中进行行为的处理即可`。
-* 怎么阻止事件冒泡？`ev.stopPropagation()`。
-* 怎么阻止事件的默认行为？`ev.preventDefault()`。
-#### bom？...TODO
-* cookies和sessionStorage以及localStorage的区别？`时效性、作用范围、js能否读取`。
-* 设置cookie时怎么让cookie可以跨子域？`document.cookie='a=1; domain=.baidu.com'`。
-#### es6
-* 解构赋值？实现变量交换。
-* 字符串模板？
-* 扩展运算符？用在函数的入参里？用在对象上？
-* 模块？导出和导入？
-* 类？原型如何实现继承？Class 如何实现继承？Class 本质是什么？
-#### Promise和async以及await
-* Promise是怎么使用的？使用Promise实现串行和并行？
-* async和await怎么使用？
-* 使用async定义的函数的返回值？await的返回值？
-* async内多个await如何并行请求？
-#### 应用
-* 写一个简单校验手机号的正则？`/^1\d{10}$/`。
-* 写一个1-3的随机数？`Math.round(Math.random() * (3 - 1)) + 1`。
-* `['1', '2', '3'].map(parseInt)` 答案是多少？`[1, NaN, NaN]`。
-* 5的阶乘？用递归怎么实现？`fn(5)`
-```
+* 5的阶乘用递归怎么实现？`fn(5)`。
+```javascript
 function fn (n) {
   return n < 1 ? 1 : n * fn(n - 1)
 }
 
 fn(5) // 120
 ```
-* 5的阶乘？用尾递归怎么实现？`fn(5, 1)`
-```
+* 5的阶乘用尾递归怎么实现？`fn(5, 1)`。
+```javascript
 function fn(n, total = 1) {
   if (n === 1) return total
   return fn(n - 1, n * total)
 }
 
-fn(5) // 120
+fn(5, 1) // 120
 ```
-* 1+2+...+100？用递归怎么实现？`fn1(1, 100)`
+#### dom？
+* 什么是事件冒泡？`事件由子元素传递到父元素的过程`。
+* 什么是事件捕获？`事件由父元素传递到子元素的过程`。
+* 什么是事件委托？`事件委托是对事件冒泡的一种应用，只需要把原本绑定在子元素上的事件绑定到父元素上，然后在父元素的事件监听中进行行为的处理即可`。
+* 怎么阻止事件冒泡？`ev.stopPropagation()`。
+* 怎么阻止事件的默认行为？`ev.preventDefault()`。
+#### bom？
+* cookie和sessionStorage以及localStorage的区别？
+  - 存储大小：cookie数据大小不能超过4k。后两者均至少可以存储4M。
+  - 存储时间：cookie可以设置有效期。sessionStorage关闭窗口就没了。localStorage永久存储。
+  - 跨域行为：设置cookie时可以使用domain跨子域（`document.cookie='a=1; domain=.baidu.com'`）。后两者不可以跨子域。
+  - 请求携带：不跨域的情况下，发送请求的时候默认会携带cookie（跨子域默认只会携带domain满足规则的cookie）。后两者不会被携带。
+    - 请求跨主域了怎么携带cookie？前端设置`xhr`的`withCredentials`属性为`true`。后端设置响应头`Access-Control-Allow-Credentials`为`true`。
+    - 前端跨主域怎么设置cookie？例如A网站怎么给B网站设置cookie？`iframe配合postMessage`。
+  - 获取行为：通过响应头设置cookie时，如果设置了HttpOnly，则js无法获取到此条cookie。后两者无此特性。
+    - 通过响应头设置cookie时附加什么属性可以使某条cookie不能被js获取到？`HttpOnly`。
+* canvas创建的图形和svg创建的图形有什么区别？`位图和矢量图`。
+* 上传的文件怎么转base64格式？`FileReader`。
+#### es6？
+* 解构赋值实现变量交换？
+```javascript
+let a = 1
+let b = 2
+;[b, a] = [a, b]
+console.log(a, b)
 ```
-function fn1 (n1, n2) {
-  return n1 === n2 ? n2 : n1 + fn1(n1 + 1, n2)
+* 字符串模板怎么使用？
+```javascript
+const content = 'hello world'
+const html = `<div>${content}</div>`
+console.log(html)
+```
+* 箭头函数的实参个数不确定时，怎么使用形参接收到全部实参？`使用扩展运算符（...）`。`箭头函数不能使用arguments`。
+```javascript
+function fn1 (...args) {
+  console.log(...args)
 }
 
-fn1(1, 100)
+fn1(1, 2, 3)
 ```
+* 模块导出？`a.js`。`export default {}`。
+* 模块导入？`b.js`。`import a from 'a.js'`。
+#### Promise和async以及await？
+> 假设request方法返回一个Promise
+* 怎么同时处理多条请求？`Promise.all/Promise.race`。
+* Promise.all和Promise.race的区别？
+  - Promise.all所有的请求都响应成功了才走then，只要有一个请求响应失败了就走catch。
+  - Promise.race只要有一个请求响应成功了就走then，所有的请求都响应失败了才走catch。
+* 使用async定义的函数，其返回值是什么？`Promise对象`。
+* await的返回值是什么？`await返回Promise对象的处理结果。如果等待的不是Promise对象，则返回该值本身`。
 
-## html5
-* canvas和svg图形的区别是什么？`位图和矢量图`。
-* 上传的文件怎么转base64格式？`FileReader`。
+## 网站安全？
+* 什么是XSS攻击？`跨站脚本攻击`。
+  - 怎么预防XSS攻击？`转义字符`。
+* 什么是CSRF攻击？`跨站请求伪造`。
+  - 怎么预防CSRF攻击？`referer/csrftoken/jwt`。
+* iframe钓鱼网站原理？`当你点击iframe中内容的时候，会先触发iframe的click事件`。
+  - 怎么预防iframe钓鱼？`iframe防嵌套`。
 
-## cookie
-* 请描述一下 cookies，sessionStorage 和 localStorage 的区别？
-* cookie的基础格式？`a=1; b=2`。
-* 怎么新增cookie？`document.cookie='a=1; domain=.baidu.com'`。
-* 设置cookie时怎么让cookie可以跨子域？`document.cookie='a=1; domain=.baidu.com'`。
-* 请求跨主域了，默认会携带cookie么？`不会`。
-* 请求跨主域了怎么携带cookie？`xhr.withCredentials = true`。
-* 前端跨主域怎么设置cookie？例如A网站怎么给B网站设置cookie？`iframe postMessage`。
-* 服务端设置什么属性可以使某条cookie不能被js获取到？`httpOnly`。
+## http？
+* 常见状态码？`101 200 301 302 304 307 308 400 401 403 404 405 413 429 500 502 504`。
+* 常用请求方式？`POST DELETE PUT PATCH GET OPTIONS`。
+  - GET和POST区别？
+    - GET是从服务器上获取数据，POST是向服务器传送数据。
+    - GET数据在`Request URL`中，POST数据在`请求体`中。
+  - GET的请求头中有Content-Type么？`无`。
+* 什么是CDN？有什么特性？`CDN是内容分发网络。会就近找服务器读取被缓存的资源，提高访问速度`。
+  - 使用CDN时，如果某个静态资源已被就近的服务器缓存，此时怎么对这个静态资源进行更新？
+    - 访问静态资源时手动加个版本号，使之进行溯源。
+    - 给静态资源换个名字，然后访问新的静态资源，就近服务器没这个新的静态资源的缓存，则会自动进行溯源。
+    - 使用CDN官方提供的清理工具，进行缓存清理，下次访问时会自动进行溯源。
+  - 响应头中的`Cache-Control`可以用来干啥？`可以用来做强缓存`。
+* 浏览器怎么识别一张图片是被预览还是被下载？
+  - 响应头中`Content-Type`的值为`application/octet-stream`会触发下载行为。
+  - 响应头中`Content-Type`的值为`image/gif`、`image/jpeg`、`image/png`等图片类型时会触发预览行为。
 
-## 网站安全
-* XSS是什么？怎么预防？
-* CSRF是什么？怎么预防？
-* iframe钓鱼网站原理？怎么预防？
+## 工作流？...TODO
+* git常用命令？`clone、pull、add、commit、tag、push、branch、checkout、reset --hard、log、reflog、stash、stash pop`。
+* 字体图标用过么？用的哪家的字体图标？`用过，用的阿里字体图标`。
+* 你们是怎么解决接口跨域问题的？`主域：代理、jsonp(仅支持GET)、postMessage`。`子域：document.domain`。`还是服务端解决最为稳妥`。
+* 你们前后端接口通信使用的什么数据格式？图片上传一般是以什么格式上传？
+```
+application/x-www-form-urlencoded
+application/json
+multipart/form-data
+```
+* 你工作中上传文件走的是怎样的流程？七牛云有用过么？使用七牛云上传文件时流程是怎样的？
+* 接口的错误处理你是怎么做的？
+* 对接口响应的数据，你是怎么做二次处理的？
+* 平常遇到问题都是怎么解决的？`去社区找答案或者百度谷歌找答案`。
 
-## vue
-* v-if 和 v-show 有什么区别?
+## vue？
+* v-if 和 v-show 有什么区别？
 * v-for与v-if当它们处于同一节点的优先级？`v-for 具有比 v-if 更高的优先级`。
 * 如何将原生事件绑定到组件？`.native、$listeners`。
 * Vue 组件中 data 为什么必须是函数？`当 data 的值是一个对象时，它会在这个组件的所有实例之间共享`。
@@ -347,7 +399,7 @@ fn1(1, 100)
 * 对于vue是一套渐进式框架的理解？
 * 对于MVVM的理解？
 
-## vue-router
+## vue-router？
 * vue-router 跳转和 location.href 有什么区别？
 * vue-router 如何监听 路由参数 的变化？
 * vue-router 如何实现路由懒加载？
@@ -356,16 +408,16 @@ fn1(1, 100)
 * vue-router 表单页面点了回退怎么给予用户表单还未保存是否确定退出的提示并阻止用户离开？`使用组件内守卫：beforeRouteLeave`。
 * vue-router 如何实现权限拦截？
 
-## vuex
+## vuex？
 * vuex是什么？怎么使用？哪种功能场景使用它？
 
-## mini program
+## mini program？
 * 常用组件有哪些？`view、text、cover-view、scroll-view、navigator、swiper、swiper-item、picker、button、input、form、canvas`。
 * 常用api有哪些？`wx.getUserInfo、wx.showToast、wx.showModal、wx.showLoading、getStorageSync、wx.previewImage、wx.openLocation`。
 * 跳转方式？`wx.switchTab、wx.reLaunch、wx.redirectTo、wx.navigateTo、wx.navigateBack`。
 * 事件怎么传递数据？`e.currentTarget.dataset`。
 * 小程序页面间有哪些传递数据的方法？`query、setStorageSync`。
-* 如何实现下拉刷新? `"enablePullDownRefresh": true`。`onPullDownRefresh`。
+* 如何实现下拉刷新？`"enablePullDownRefresh": true`。`onPullDownRefresh`。
 * 小程序的生命周期有哪些？`onLoad、 onShow、 onReady、onHide、onUnload`。
 * 分包怎么使用？`配置 app.json的subpackages`。
 * 小程序生成某个页面二维码的前提是？`不需要前提，官方支持对尚未发布的小程序以及不存在的页面进行二维码的生成`。
@@ -379,28 +431,3 @@ fn1(1, 100)
 * extAppid和appid的区别？`前者是租户的appid，后者是第三方平台授权用以开发的小程序`。
 * canvas绘图时，模拟器上正常，真机上不行，问题可能出在哪？`下载域名没配置`。`request合法域名、socket合法域名、uploadFile合法域名、downloadFile合法域名`。
 * 小程序遇到问题第一时间应该去哪里寻求帮助？`小程序社区`。
-
-## git
-* 常用命令？`add、commit、push、pull、checkout、reset --hard`。
-
-## http
-* 常见状态码？`101 200 301 302 304 307 308 400 401 403 404 405 413 429 500 502 504`。
-* 常用请求方式？`POST DELETE PUT PATCH GET OPTIONS`。
-* Cache-Control是干啥的？`强缓存`。
-* 怎么防止缓存？`文件加版本号或加md5`。
-* 什么是CDN，有什么特性？`内容分发网络，会就近找服务器读取被缓存的资源，提高访问速度`。
-* 客户端根据什么识别一张图片应该被预览还是被下载？`Content-Type`。
-
-## 工作流
-* 阿里字体图标有用过么？
-* 你们是怎么解决接口跨域问题的？`主域：代理、jsonp(仅支持GET)、postMessage`。`子域：document.domain`。`还是服务端解决最为稳妥`。
-* 你们前后端接口通信使用的什么数据格式？图片上传一般是以什么格式上传？get的请求头中有Content-Type么？
-```
-application/x-www-form-urlencoded
-application/json
-multipart/form-data
-```
-* 你工作中上传文件走的是怎样的流程？七牛云有用过么？使用七牛云上传文件时流程是怎样的？
-* 接口的错误处理你是怎么做的？
-* 对接口响应的数据，你是怎么做二次处理的？
-* 平常遇到问题都是怎么解决的？`去社区找答案或者百度谷歌找答案`。
