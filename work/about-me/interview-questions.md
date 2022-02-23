@@ -246,7 +246,7 @@ console.log(JSON.stringify({ a: null })) // '{"a":null}'
   - 箭头函数没有原型属性。
 #### 单线程？
 * setTimeout倒计时为什么会出现误差？`因为js是单线程，优先执行同步逻辑，等线程空闲才会执行异步逻辑`。
-#### 宏任务与微任务？...TODO
+#### 宏任务与微任务？
 * 常用的宏任务？`script、setTimeout、setInterval、requestAnimationFrame`。
 * 常用的微任务？`Promise.then、Promise.catch、Promise.finally`。
 * 宏任务与微任务的执行顺序？`先执行第一个宏任务script，执行期间遇到微任务则放入微任务队列，遇到宏任务则放入宏任务队列。当前宏任务执行完毕，则清理微任务，微任务清理完毕则继续执行下一个宏任务，依次类推`。
