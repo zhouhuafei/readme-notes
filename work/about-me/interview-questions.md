@@ -238,6 +238,12 @@ console.log(JSON.stringify({ a: null })) // '{"a":null}'
   console.log(Math.max(...[14, 3, 77, 30]))
   console.log([14, 3, 77, 30].sort((a, b) => (b - a))[0])
   ```
+* 箭头函数和普通函数的区别？
+  - 箭头函数不会更改this的指向
+  - 箭头函数中的this不受call、apply和bind影响
+  - 箭头函数不能使用new
+  - 箭头函数不能使用arguments
+  - 箭头函数没有原型属性
 #### 单线程？
 * setTimeout倒计时为什么会出现误差？`因为js是单线程，优先执行同步逻辑，等线程空闲才会执行异步逻辑`。
 #### 宏任务与微任务？...TODO
@@ -258,7 +264,6 @@ console.log(JSON.stringify({ a: null })) // '{"a":null}'
 * 扩展运算符？用在函数的入参里？用在对象上？
 * 模块？导出和导入？
 * 类？原型如何实现继承？Class 如何实现继承？Class 本质是什么？
-* 箭头函数和普通函数的区别？`箭头函数不会更改this的指向、箭头函数中的this不受call、apply和bind影响、箭头函数不能使用new、箭头函数不能使用arguments、箭头函数没有原型属性`。
 #### Promise和async以及await
 * Promise是怎么使用的？使用Promise实现串行和并行？
 * async和await怎么使用？
