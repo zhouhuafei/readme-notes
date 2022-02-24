@@ -379,39 +379,51 @@ fn1(1, 2, 3)
 * 对接口响应的数据你是怎么做二次处理的？`二次封装`。
 * 平常遇到问题都是怎么解决的？`去社区找答案或者百度谷歌找答案`。
 
-## vue3？...TODO
-* v-if 和 v-show 有什么区别？
-* $nextTick 的作用？`在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM`。
-* 如何让 CSS 只在当前组件中起作用？`scoped`。
-* 在加了scoped的场景下，在父组件中怎么更新子组件的样式？`::v-deep`。`或者style无scoped配合独立class进行修改`。
+## vue3？
+* vue的生命周期有哪些？`beforeCreate、created、beforeMount、mounted、beforeUpdate、updated、activated、deactivated、beforeUnmount、unmounted`。
+* vue的父子组件通信是怎么通信的？`父传子使用props、子传父使用$emit`。
+* v-if和v-show有什么区别？`v-if是添加和删除dom、v-show是显示和隐藏dom`。
 * key的作用？`防止Vue对DOM的就地复用，让DOM具有唯一性`。
-* vue生命周期钩子函数有哪些？
-* 父子组件通信？
-* vue的单向数据流和双向数据绑定？
-```
-1、单项数据流是指所有的 prop 都使得其父子 prop 之间形成了一个单向下行绑定。父级 prop 的更新会向下流动到子组件中，但是反过来则不行。这样会防止从子组件意外改变父级组件的状态，从而导致你的应用的数据流向难以理解。
-2、双向数据绑定v-model是语法糖，本质还是单项数据流。
-```
-* v-model是什么的简写？自定义组件怎么使用v-model？
-* 计算属性和methods的区别？https://cn.vuejs.org/v2/guide/computed.html#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E7%BC%93%E5%AD%98-vs-%E6%96%B9%E6%B3%95 `计算属性是基于它们的响应式依赖进行缓存的。如果你不希望有缓存，请用方法来替代。`
-* 计算属性和watch的区别？https://cn.vuejs.org/v2/guide/computed.html#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7-vs-%E4%BE%A6%E5%90%AC%E5%B1%9E%E6%80%A7 `watch 允许我们执行异步操作 (访问一个 API)，限制我们执行该操作的频率，并在我们得到最终结果前，设置中间状态。这些都是计算属性无法做到的。`
-* vue是怎么实现数据响应式更新的？`Object.defineProperty set get`。
-* 对于vue是一套渐进式框架的理解？
-* 对于MVVM的理解？
+* $nextTick的作用？`将回调延迟到下次DOM更新循环之后执行。在修改数据之后立即使用它，然后等待DOM更新`。
+* 如何让CSS只在当前组件中起作用？`给style标签加scoped属性`。
+  - 在style标签加scoped属性的场景下，在父组件中怎么修改子组件的样式？`.parentClassName :deep(.childClassName) {}`。
+* 计算属性和methods的区别？`计算属性有缓存，只会在相关响应式依赖发生改变时重新求值。如果你不希望有缓存，请用方法来替代`。
+* 计算属性和watch的区别？`watch选项允许我们执行异步操作（例如访问某个api），并设置一个执行该操作的条件。这些都是计算属性无法做到的`。
+
+...TODO
+* vue的单向数据流是指什么？`单项数据流是指所有的 prop 都使得其父子 prop 之间形成了一个单向下行绑定。父级 prop 的更新会向下流动到子组件中，但是反过来则不行。这样会防止从子组件意外改变父级组件的状态，从而导致你的应用的数据流向难以理解`。
+* vue的双向数据绑定是指什么？`双向数据绑定v-model是语法糖，本质还是单项数据流`。
+* vue是怎么实现数据响应式更新的？`vue2使用Object.defineProperty对数据进行拦截，vue3使用Proxy对数据拦截。前者只能拦截对象的属性，后者可以拦截整个对象`。
+
+* 对于vue是一套渐进式框架的理解？`你可以单独使用vue、或者配合生态使用vue`。
+* 对于MVVM的理解？``。
 
 ## vue-router？
+* hash模式用的什么api监听的路由变化？`window.onhashchange`。
+* history模式用的什么api监听的路由变化？`window.onpopstate`。
+
+* 如何实现权限拦截？`router.beforeEach、router.afterEach`。
+
 * vue-router 跳转和 location.href 有什么区别？
-* vue-router 如何监听 路由参数 的变化？
+* vue-router 如何监听 路由参数 的变化？`watch: { $route (to, from) {} }`。`beforeRouteUpdate`。
 * vue-router 如何实现路由懒加载？
 * vue-router 如何定义嵌套路由？
 * vue-router 动态路由匹配以及使用？
 * vue-router 表单页面点了回退怎么给予用户表单还未保存是否确定退出的提示并阻止用户离开？`使用组件内守卫：beforeRouteLeave`。
-* vue-router 如何实现权限拦截？
 
 ## vuex？
 * vuex是什么？怎么使用？哪种功能场景使用它？
 
 ## mini program？
+* 生命周期？
+* app的生命周期？
+* 页面的生命周期？
+* 组件的生命周期？
+* mp的父子组件通信？
+* mp的跨页面传递数据？
+* mp的跨页面通信？
+* mp的跳转方式有哪些？
+
 * 常用组件有哪些？`view、text、cover-view、scroll-view、navigator、swiper、swiper-item、picker、button、input、form、canvas`。
 * 常用api有哪些？`wx.getUserInfo、wx.showToast、wx.showModal、wx.showLoading、getStorageSync、wx.previewImage、wx.openLocation`。
 * 跳转方式？`wx.switchTab、wx.reLaunch、wx.redirectTo、wx.navigateTo、wx.navigateBack`。
