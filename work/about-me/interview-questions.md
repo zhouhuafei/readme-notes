@@ -407,8 +407,7 @@ fn1(1, 2, 3)
 * 怎么提交Mutation？`store.commit`。
 * 怎么分发Action？`store.dispatch`。
 
-## mini program？
-* 生命周期？
+## mini program？...TODO
 * app的生命周期？
 * 页面的生命周期？
 * 组件的生命周期？
