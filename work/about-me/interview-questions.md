@@ -402,8 +402,10 @@ fn1(1, 2, 3)
 * 两个路由共用同一个页面视图组件的时候怎么监听路由的变化？`使用watch监听$route`。
 * 用户离开表单页面时怎么让用户做完二次确认后才允许离开？`使用组件内守卫beforeRouteLeave`。
 
-## vuex？...TODO
-* vuex是什么？怎么使用？哪种功能场景使用它？
+## vuex？
+* Mutation和Action的区别？`Mutation只能进行同步操作`。`Action可以进行异步操作`。
+* 怎么提交Mutation？`store.commit`。
+* 怎么分发Action？`store.dispatch`。
 
 ## mini program？
 * 生命周期？
