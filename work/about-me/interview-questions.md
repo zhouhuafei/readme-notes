@@ -400,7 +400,7 @@ fn1(1, 2, 3)
 * history模式用的什么api监听的路由变化？`window.onpopstate`。
 * 如何鉴权？例如不允许某些用户访问某些页面？`在router.beforeEach中进行处理即可`。
 * 两个路由共用同一个页面视图组件的时候怎么监听路由的变化？`使用watch监听$route`。
-* 用户离开表单页面时怎么让用户做完二次确认后才允许离开？`使用组件内守卫beforeRouteLeave`。
+* 用户离开表单页面时怎么让用户二次确认后才允许离开？`使用组件内守卫beforeRouteLeave`。
 
 ## vuex？
 * Mutation和Action的区别？`Mutation只能进行同步操作`。`Action可以进行异步操作`。
