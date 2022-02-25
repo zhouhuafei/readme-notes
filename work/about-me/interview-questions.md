@@ -407,31 +407,24 @@ fn1(1, 2, 3)
 * 怎么提交Mutation？`store.commit`。
 * 怎么分发Action？`store.dispatch`。
 
-## mini program？...TODO
-* app的生命周期？
-* 页面的生命周期？
-* 组件的生命周期？
-* mp的父子组件通信？
-* mp的跨页面传递数据？
-* mp的跨页面通信？
-* mp的跳转方式有哪些？
-
-* 常用组件有哪些？`view、text、cover-view、scroll-view、navigator、swiper、swiper-item、picker、button、input、form、canvas`。
-* 常用api有哪些？`wx.getUserInfo、wx.showToast、wx.showModal、wx.showLoading、getStorageSync、wx.previewImage、wx.openLocation`。
-* 跳转方式？`wx.switchTab、wx.reLaunch、wx.redirectTo、wx.navigateTo、wx.navigateBack`。
-* 事件怎么传递数据？`e.currentTarget.dataset`。
-* 小程序页面间有哪些传递数据的方法？`query、setStorageSync`。
-* 如何实现下拉刷新？`"enablePullDownRefresh": true`。`onPullDownRefresh`。
-* 小程序的生命周期有哪些？`onLoad、 onShow、 onReady、onHide、onUnload`。
-* 分包怎么使用？`配置 app.json的subpackages`。
-* 小程序生成某个页面二维码的前提是？`不需要前提，官方支持对尚未发布的小程序以及不存在的页面进行二维码的生成`。
-* 小程序生成的页面二维码，扫码能跳开发版或者体验版的小程序么？`能`。
-* 怎么在开发阶段保证二维码能正常生成？`官方支持直接生成，如果后端接口不支持，就做个scene中转页`。
-* 怎么本地模拟二维码扫码进入？`模拟器里进行数据模拟或使用模拟器进行二维码识别`。
-* scene超出32位怎么解决？`存数据库`。
-* 怎么兼容解析二维码参数和query参数？`页面数据接收时进行合并 或 路径参数生成时保证页面转发的数据和页面二维码的数据格式一致`。
-* 小程序如何瘦身？图片太多太大，占用小程序大小，怎么处理？`CDN`。
-* 有没有以第三方平台的身份开发过小程序？`SaaS`。
-* extAppid和appid的区别？`前者是租户的appid，后者是第三方平台授权用以开发的小程序`。
-* canvas绘图时，模拟器上正常，真机上不行，问题可能出在哪？`下载域名没配置`。`request合法域名、socket合法域名、uploadFile合法域名、downloadFile合法域名`。
-* 小程序遇到问题第一时间应该去哪里寻求帮助？`小程序社区`。
+## 微信小程序？
+* App的生命周期？`onLaunch、onShow、onHide`。
+  - 小程序脚本错误或API调用报错用什么进行监听？`onError`或`wx.onError`。
+  - 小程序要打开的页面如果不存在用什么进行监听？`onPageNotFound`。
+  - 怎么监听路由变化？`wx.onAppRoute`。
+* 页面的生命周期？`onLoad、onShow、onReady、onHide、onUnload`。
+  - 如何开启下拉刷新功能？`"enablePullDownRefresh": true`。`onPullDownRefresh`。
+  - 如何监听上拉触底？`onReachBottom`。
+  - 如何开启右上角三个点转发卡片给好友的功能？`onShareAppMessage`。
+* 组件的生命周期？`created、attached、ready、detached`。
+  - 怎么监听数据的变化？`observers`。
+* 微信小程序的父子组件通信是怎么通信的？`父传子使用properties，子传父使用triggerEvent`。
+* 微信小程序跳转方式有哪些？`wx.switchTab、wx.reLaunch、wx.redirectTo、wx.navigateTo、wx.navigateBack`。
+* 服务器域名配置中的`request合法域名`是用来干什么的？`配置request合法域名后，才可以正常的使用wx.request接口`。
+* 服务器域名配置中的`socket合法域名`是用来干什么的？`配置socket合法域名后，才可以正常的使用wx.connectSocket接口`。
+* 服务器域名配置中的`uploadFile合法域名`是用来干什么的？`配置uploadFile合法域名后，才可以正常的使用wx.uploadFile接口`。
+* 服务器域名配置中的`downloadFile合法域名`是用来干什么的？`配置downloadFile合法域名，才可以正常的使用wx.downloadFile和wx.getImageInfo接口`。
+* `业务域名`的配置是用来干什么的？`配置业务域名后，才可以正常的使用web-view组件`。
+* scene长度超出了32位怎么解决？`存数据库`。
+* 怎么防止微信小程序的包大小超过2M？`使用分包、使用OSS存储图片和视频`。
+* 小程序遇到问题应该去哪里寻求帮助？`小程序社区`。
