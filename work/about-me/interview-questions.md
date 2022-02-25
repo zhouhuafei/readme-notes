@@ -395,24 +395,14 @@ fn1(1, 2, 3)
   - vue2使用Object.defineProperty对数据进行拦截，Object.defineProperty只能拦截对象的属性。
   - vue3使用Proxy对数据进行拦截，Proxy可以拦截整个对象。使用Reflect把this绑定到Proxy的实例。
 
-...TODO
-* 对于vue是一套渐进式框架的理解？`你可以单独使用vue、或者配合生态使用vue`。
-* 对于MVVM的理解？``。
-
 ## vue-router？
 * hash模式用的什么api监听的路由变化？`window.onhashchange`。
 * history模式用的什么api监听的路由变化？`window.onpopstate`。
+* 如何鉴权？例如不允许某些用户访问某些页面？`在router.beforeEach中进行处理即可`。
+* 两个路由共用同一个页面视图组件的时候怎么监听路由的变化？`使用watch监听$route`。
+* 用户离开表单页面时怎么让用户做完二次确认后才允许离开？`使用组件内守卫beforeRouteLeave`。
 
-* 如何实现权限拦截？`router.beforeEach、router.afterEach`。
-
-* vue-router 跳转和 location.href 有什么区别？
-* vue-router 如何监听 路由参数 的变化？`watch: { $route (to, from) {} }`。`beforeRouteUpdate`。
-* vue-router 如何实现路由懒加载？
-* vue-router 如何定义嵌套路由？
-* vue-router 动态路由匹配以及使用？
-* vue-router 表单页面点了回退怎么给予用户表单还未保存是否确定退出的提示并阻止用户离开？`使用组件内守卫：beforeRouteLeave`。
-
-## vuex？
+## vuex？...TODO
 * vuex是什么？怎么使用？哪种功能场景使用它？
 
 ## mini program？
