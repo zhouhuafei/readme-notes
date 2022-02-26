@@ -66,7 +66,7 @@
   - `typeof []`和`typeof /a/`和`typeof new Date()`会返回什么？`'object'`。
   - 使用什么方法可以区分它们？`Object.prototype.toString.call`。
   - 自定义的类或者构造函数，其实例如果使用`Object.prototype.toString.call`进行检测，会返回什么结果？`'[object Object]'`。
-  - 自定义的类或者构造函数，需要怎么处理才能被`Object.prototype.toString.call`区分？`this[Symbol.toStringTag] = 'CustomClassName'`。
+  - 自定义的类或者构造函数，需要怎么处理才能被`Object.prototype.toString.call`区分？`this[Symbol.toStringTag] = 'CustomClassName'`。或使用`obj.__proto__.constructor.name`进行区分。
 #### 数字常用方法？
 * 数字转成字符串并保留两位小数？`(Math.floor(parseFloat(10.2) * 1000/10) / 100).toFixed(2)`。`1变成'1.00'`。`10.2变成'10.20'`。`19.9变成'19.90'`。
 * 字符串`'1.00'变成'1'`。`'10.20'变成'10.2'`。`'19.90'变成'19.9'`？`String(Number('10.20'))`。
