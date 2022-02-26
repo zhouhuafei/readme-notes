@@ -53,8 +53,11 @@
   - BFC的特性？`同一个BFC内子元素上下margin不会穿透父级、同一个BFC内子元素上下margin会发生折叠、BFC可以包含浮动的元素（可用来清除浮动）、BFC可以阻止元素被浮动元素覆盖（可用来清除文字环绕现象）`。
 #### scss？
 * 如何定义变量？`$color: #f00;`。
+  - 如何使用变量？`color: $color;`。
 * 如何定义函数？`@function px2upx($px, $psdW:375) { @return $px * math.div(750, $psdW) + upx; }`。
+  - 如何使用函数？`width: px2upx(100);`。
 * 如何定义mixin？`@mixin ellipsis1() { overflow: hidden;white-space: nowrap;text-overflow: ellipsis; }`。
+  - 如何使用mixin？`@include ellipsis1();`。
 
 ## js
 #### 数据类型？
