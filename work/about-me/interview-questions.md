@@ -37,7 +37,7 @@
 #### 应用？
 * CSS隐藏元素的几种方式及区别？`display: none; | visibility: none; | opacity: 0; | position | transform`。
 * 单行省略号怎么写？`overflow: hidden;white-space: nowrap;text-overflow: ellipsis;`。
-  - 多行省略号怎么写？`单行省略号` + `word-break: break-all;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;line-height: 18px;max-height: 36px;`。
+  - 多行省略号怎么写？`overflow: hidden;white-space: normal;text-overflow: ellipsis;word-break: break-all;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;line-height: 18px;max-height: 36px;`。
   - 怎么解决`display: flex;`会让自身容器中文字单行省略号失效的问题？`给文字外再套一层父级`。
   - 怎么解决父级设置`flex: 1;`导致子级的单行省略号失效的问题？`给子级设置width或max-width | 子级使用多行省略号模拟单行省略号 | 父级加overflow: hidden; | 父级加min-width: 0;`。注：`给子级再套一层父级行不通`。
 * css怎么画实心右箭头？`width: 0;height: 0;border: 10px solid transparent;border-left-color: #000;`。
