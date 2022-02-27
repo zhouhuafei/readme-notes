@@ -272,19 +272,19 @@ console.log(JSON.stringify({ a: null })) // '{"a":null}'
 * 5的阶乘用递归怎么实现？`fn(5)`。
 ```javascript
 function fn (n) {
-  return n < 1 ? 1 : n * fn(n - 1)
+  return n <= 1 ? 1 : n * fn(n - 1)
 }
 
 fn(5) // 120
 ```
-* 5的阶乘用尾递归怎么实现？`fn(5, 1)`。
+* 5的阶乘用尾递归怎么实现？`fn(5)`。
 ```javascript
 function fn(n, total = 1) {
-  if (n === 1) return total
+  if (n <= 1) return total
   return fn(n - 1, n * total)
 }
 
-fn(5, 1) // 120
+fn(5) // 120
 ```
 #### dom？
 * 什么是事件冒泡？`事件由子元素传递到父元素的过程`。
