@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <!-- 窗口宽度等于设备宽度以及禁止缩放(手机，此meta标签，如果有两条，下面的会覆盖掉上面的) -->
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<!-- 是否需要默认的工具栏和菜单栏(手机，safari浏览器，默认值yes，需要) -->
+<!-- 是否显示默认的工具栏和菜单栏(手机，safari浏览器，默认值yes，需要) -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <!-- 控制状态栏的样式(手机，safari浏览器，黑色) -->
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
