@@ -401,6 +401,7 @@ fn1(1, 2, 3)
 ## vue-router？
 * hash模式用的什么api监听的路由变化？`window.onhashchange`。
 * history模式用的什么api监听的路由变化？`window.onpopstate`。
+* vue-router的路由跳转方式有哪些？`router.push、router.replace、router.back、router.go`。
 * 如何鉴权？例如不允许某些用户访问某些页面？`在router.beforeEach中进行处理即可`。
 * 两个路由共用同一个页面视图组件的时候怎么监听路由的变化？`使用watch监听$route`。
 * 用户离开表单页面时怎么让用户二次确认后才允许离开？`使用组件内守卫beforeRouteLeave`。
@@ -422,7 +423,7 @@ fn1(1, 2, 3)
 * 组件的生命周期？`created、attached、ready、detached`。
   - 怎么监听数据的变化？`observers`。
 * 微信小程序的父子组件通信是怎么通信的？`父传子使用properties，子传父使用triggerEvent`。
-* 微信小程序跳转方式有哪些？`wx.switchTab、wx.reLaunch、wx.redirectTo、wx.navigateTo、wx.navigateBack`。
+* 微信小程序的路由跳转方式有哪些？`wx.switchTab、wx.reLaunch、wx.redirectTo、wx.navigateTo、wx.navigateBack`。
 * 服务器域名配置中的`request合法域名`是用来干什么的？`配置request合法域名后，才可以正常的使用wx.request接口`。
 * 服务器域名配置中的`socket合法域名`是用来干什么的？`配置socket合法域名后，才可以正常的使用wx.connectSocket接口`。
 * 服务器域名配置中的`uploadFile合法域名`是用来干什么的？`配置uploadFile合法域名后，才可以正常的使用wx.uploadFile接口`。
