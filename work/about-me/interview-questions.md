@@ -7,7 +7,7 @@
 * 定义字符集。`<meta charset="UTF-8">`。
 * 定义页面关键字`keywords`和描述`description`。
 * 让手机上的浏览器强制竖屏。`uc浏览器`。`qq浏览器`。
-* 对手机上的safari浏览器进行额外配置。`控制状态栏的样式`。`禁止把数字转化为电话号码`。`是否需要默认的工具栏和菜单栏`。
+* 对手机上的safari浏览器进行额外配置。`控制状态栏的样式`。`禁止把数字转化为电话号码`。`是否显示默认的工具栏和菜单栏`。
 * 移动端自适应布局适配。`控制视口宽度`。
 
 ## css
@@ -37,7 +37,7 @@
 #### 应用？
 * CSS隐藏元素的几种方式及区别？`display: none; | visibility: none; | opacity: 0; | position | transform`。
 * 单行省略号怎么写？`overflow: hidden;white-space: nowrap;text-overflow: ellipsis;`。
-  - 多行省略号怎么写？`单行省略号` + `word-break: break-all;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;line-height: 18px;max-height: 36px;`。
+  - 多行省略号怎么写？`overflow: hidden;white-space: normal;text-overflow: ellipsis;word-break: break-all;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;line-height: 18px;max-height: 36px;`。
   - 怎么解决`display: flex;`会让自身容器中文字单行省略号失效的问题？`给文字外再套一层父级`。
   - 怎么解决父级设置`flex: 1;`导致子级的单行省略号失效的问题？`给子级设置width或max-width | 子级使用多行省略号模拟单行省略号 | 父级加overflow: hidden; | 父级加min-width: 0;`。注：`给子级再套一层父级行不通`。
 * css怎么画实心右箭头？`width: 0;height: 0;border: 10px solid transparent;border-left-color: #000;`。
@@ -47,14 +47,17 @@
 * 不定宽高如何让盒子垂直水平居中？用定位如何实现？用flex如何实现？`主要考内联元素和块元素的水平居中和垂直居中`。
 * 如何让兄弟盒子上下margin不重叠？`给子级设置display: inline-block;或者display: inline-flex;或者float: left;都可以解决。或者给父级加display: flex;flex-wrap: wrap;子级的上下margin就不会折叠了`。
 * 如何移除内联块之间的间隙？`布局时标签之间不加换行 | 用html注释连接换行 | 给父级加font-size: 0;`。
-* 消除图片底部间隙的方法？`vertical-align: top/bottom/text-top/text-bottom/middle; | 给父级加line-height: 0; | 给父级加font-size: 0; | display: block;`。
+* 消除图片底部间隙的方法？`display: block; | vertical-align: top/bottom/text-top/text-bottom/middle; | 给父级加line-height: 0; | 给父级加font-size: 0;`。
 * 如何让margin-top和margin-bottom不穿透父级？`触发BFC即可`。
   - 如何触发BFC？`html根元素或包含html根元素的元素 | float属性不为none | position为absolute或fixed | display为inline-block、table-cell、table-caption、flex、inline-flex | overflow不为visible`。
   - BFC的特性？`同一个BFC内子元素上下margin不会穿透父级、同一个BFC内子元素上下margin会发生折叠、BFC可以包含浮动的元素（可用来清除浮动）、BFC可以阻止元素被浮动元素覆盖（可用来清除文字环绕现象）`。
 #### scss？
 * 如何定义变量？`$color: #f00;`。
+  - 如何使用变量？`color: $color;`。
 * 如何定义函数？`@function px2upx($px, $psdW:375) { @return $px * math.div(750, $psdW) + upx; }`。
+  - 如何使用函数？`width: px2upx(100);`。
 * 如何定义mixin？`@mixin ellipsis1() { overflow: hidden;white-space: nowrap;text-overflow: ellipsis; }`。
+  - 如何使用mixin？`@include ellipsis1();`。
 
 ## js
 #### 数据类型？
@@ -63,7 +66,7 @@
   - `typeof []`和`typeof /a/`和`typeof new Date()`会返回什么？`'object'`。
   - 使用什么方法可以区分它们？`Object.prototype.toString.call`。
   - 自定义的类或者构造函数，其实例如果使用`Object.prototype.toString.call`进行检测，会返回什么结果？`'[object Object]'`。
-  - 自定义的类或者构造函数，需要怎么处理才能被`Object.prototype.toString.call`区分？`this[Symbol.toStringTag] = 'CustomClassName'`。
+  - 自定义的类或者构造函数，需要怎么处理才能被`Object.prototype.toString.call`区分？`this[Symbol.toStringTag] = 'CustomClassName'`。或使用`obj.__proto__.constructor.name`进行区分。
 #### 数字常用方法？
 * 数字转成字符串并保留两位小数？`(Math.floor(parseFloat(10.2) * 1000/10) / 100).toFixed(2)`。`1变成'1.00'`。`10.2变成'10.20'`。`19.9变成'19.90'`。
 * 字符串`'1.00'变成'1'`。`'10.20'变成'10.2'`。`'19.90'变成'19.9'`？`String(Number('10.20'))`。
@@ -161,7 +164,7 @@ console.log(JSON.stringify({ a: null })) // '{"a":null}'
 * 什么是正则的贪婪匹配和非贪婪匹配？默认是什么匹配？
   - 贪婪匹配是指`整个表达式匹配成功的前提下，会尽可能多的匹配`。
   - 非贪婪匹配是指`整个表达式匹配成功的前提下，会尽可能少的匹配`。
-  - 默认是`贪婪匹配`。
+  - 默认是`贪婪匹配`。加`?`号可变为非贪婪匹配。
   - 匹配style标签及其内容？`/<style[^>]*>[\d\D]*?<\/style>/g`。
 * 什么是正则的捕获分组和非捕获分组？
   - 捕获分组是`(exp)`。
@@ -269,19 +272,19 @@ console.log(JSON.stringify({ a: null })) // '{"a":null}'
 * 5的阶乘用递归怎么实现？`fn(5)`。
 ```javascript
 function fn (n) {
-  return n < 1 ? 1 : n * fn(n - 1)
+  return n <= 1 ? 1 : n * fn(n - 1)
 }
 
 fn(5) // 120
 ```
-* 5的阶乘用尾递归怎么实现？`fn(5, 1)`。
+* 5的阶乘用尾递归怎么实现？`fn(5)`。
 ```javascript
 function fn(n, total = 1) {
-  if (n === 1) return total
+  if (n <= 1) return total
   return fn(n - 1, n * total)
 }
 
-fn(5, 1) // 120
+fn(5) // 120
 ```
 #### dom？
 * 什么是事件冒泡？`事件由子元素传递到父元素的过程`。
@@ -398,6 +401,7 @@ fn1(1, 2, 3)
 ## vue-router？
 * hash模式用的什么api监听的路由变化？`window.onhashchange`。
 * history模式用的什么api监听的路由变化？`window.onpopstate`。
+* vue-router的路由跳转方式有哪些？`router.push、router.replace、router.back、router.go`。
 * 如何鉴权？例如不允许某些用户访问某些页面？`在router.beforeEach中进行处理即可`。
 * 两个路由共用同一个页面视图组件的时候怎么监听路由的变化？`使用watch监听$route`。
 * 用户离开表单页面时怎么让用户二次确认后才允许离开？`使用组件内守卫beforeRouteLeave`。
@@ -419,7 +423,7 @@ fn1(1, 2, 3)
 * 组件的生命周期？`created、attached、ready、detached`。
   - 怎么监听数据的变化？`observers`。
 * 微信小程序的父子组件通信是怎么通信的？`父传子使用properties，子传父使用triggerEvent`。
-* 微信小程序跳转方式有哪些？`wx.switchTab、wx.reLaunch、wx.redirectTo、wx.navigateTo、wx.navigateBack`。
+* 微信小程序的路由跳转方式有哪些？`wx.switchTab、wx.reLaunch、wx.redirectTo、wx.navigateTo、wx.navigateBack`。
 * 服务器域名配置中的`request合法域名`是用来干什么的？`配置request合法域名后，才可以正常的使用wx.request接口`。
 * 服务器域名配置中的`socket合法域名`是用来干什么的？`配置socket合法域名后，才可以正常的使用wx.connectSocket接口`。
 * 服务器域名配置中的`uploadFile合法域名`是用来干什么的？`配置uploadFile合法域名后，才可以正常的使用wx.uploadFile接口`。
