@@ -205,5 +205,7 @@ npx conventional-changelog -p angular -i CHANGELOG.md -s
 * 解决方案：删除当前项目`node_modules`目录里的`husky`包。
 
 ## 为什么能触发git钩子？
-* 使用vue-cli创建的项目，为什么能在npm中配置gitHooks，使之触发git钩子？
-  - 因为vue-cli会在`.git/hooks`目录中增加`pre-commit`和`commit-msg`等诸多钩子脚本。
+* 使用vue-cli创建的项目，为什么能在package.json中配置gitHooks，使之触发git钩子？
+  - 因为vue-cli会在`.git/hooks`目录中增加`pre-commit`和`commit-msg`等诸多的钩子脚本。
+* 使用husky包的v7版本时，为什么可以把`pre-commit`和`commit-msg`等诸多的钩子脚本不放在`.git/hooks`目录中？
+  - 因为`husky install`命令修改了`.git`目录中`config`文件的`hooksPath`值，使之指向了`.git/hooks`目录的外部。
