@@ -203,3 +203,7 @@ npx conventional-changelog -p angular -i CHANGELOG.md -s
 # 报错
 * 同事的电脑使用`git-cz`报错：`/c/Users/admin/AppData/Roaming/npm/node: line 1: /node_modules/node/bin/node: No such file or directory`。
 * 解决方案：删除当前项目`node_modules`目录里的`husky`包。
+
+## 为什么能触发git钩子？
+* 使用vue-cli创建的项目，为什么能在npm中配置gitHooks，使之触发git钩子？
+  - 因为vue-cli会在`.git/hooks`目录中增加`pre-commit`和`commit-msg`等诸多钩子脚本。
