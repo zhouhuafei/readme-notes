@@ -3,7 +3,7 @@
   // 生成链表
   function genListNode (arr) {
     if (!arr || !arr.length) return {}
-    let maxIndex = arr.length - 1
+    const maxIndex = arr.length - 1
     const r = {}
     let next
     arr.forEach((v, i) => {

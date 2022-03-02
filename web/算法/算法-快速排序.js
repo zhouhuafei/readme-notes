@@ -10,10 +10,10 @@ function sort (arr) {
   if (arr.length <= 1) {
     return arr
   }
-  let arrL = []
-  let arrR = []
-  let middleVal = arr[0]
-  let middleArr = []
+  const arrL = []
+  const arrR = []
+  const middleVal = arr[0]
+  const middleArr = []
   arr.forEach(v => {
     if (v < middleVal) {
       arrL.push(v)

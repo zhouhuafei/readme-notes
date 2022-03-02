@@ -7,17 +7,17 @@ const arr = [1, 2, 3, 4, 5, 6, 7, 7, 7, 7, 7, 9, 10, 88, 89, 90, 91, 92, 93, 94,
 
 function sort (newVal) {
   let index = 0
-  let len = arr.length
-  let first = arr[0]
-  let last = arr[len - 1]
+  const len = arr.length
+  const first = arr[0]
+  const last = arr[len - 1]
   if (newVal <= first) {
     index = 0
   } else if (newVal >= last) {
     index = arr.length
   } else {
     arr.forEach((v, i, a) => {
-      let nextI = i + 1
-      let next = a[nextI]
+      const nextI = i + 1
+      const next = a[nextI]
       if (newVal >= v && newVal <= next) {
         index = nextI
       }

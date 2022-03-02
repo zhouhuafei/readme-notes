@@ -9,50 +9,11 @@
 
 const arr = [1, 2, 3, 4, 5, 6, 7, 7, 7, 7, 7, 9, 10, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98]
 
-// 虚假的二分法 - 虽然能用，但是未免写的也太长了吧
-function sortFalse (newVal) {
-  let index = 0
-  let len = arr.length
-  let first = arr[0]
-  let last = arr[len - 1]
-  if (newVal <= first) {
-    index = 0
-  } else if (newVal >= last) {
-    index = arr.length
-  } else {
-    let middleIdx = Math.floor(len / 2)
-    let middleVal = arr[middleIdx]
-    let nextI = middleIdx + 1
-    let next = arr[nextI]
-    let prevMinIdx = 0
-    while (index === 0) {
-      if (newVal >= middleVal && newVal <= next) {
-        index = nextI
-      } else {
-        if (newVal > middleVal) {
-          middleIdx = middleIdx + Math.floor(((len - 1 - middleIdx)) / 2)
-        } else if (newVal < middleVal) {
-          middleIdx = prevMinIdx + Math.floor((middleIdx - prevMinIdx - 1) / 2)
-          prevMinIdx = middleIdx
-        } else {
-          middleIdx = nextI
-        }
-        middleVal = arr[middleIdx]
-        nextI = middleIdx + 1
-        next = arr[nextI]
-      }
-    }
-  }
-  arr.splice(index, 0, newVal)
-  return arr
-}
-
-// 真正的二分法
 function sort (newVal) {
   let l = 0
   let r = arr.length - 1
   while (l <= r) {
-    let m = l + Math.floor((r - l) / 2)
+    const m = l + Math.floor((r - l) / 2)
     if (newVal < arr[m]) {
       r = r - 1
     } else if (newVal > arr[m]) {
