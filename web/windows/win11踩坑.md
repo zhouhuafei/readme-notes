@@ -6,3 +6,6 @@
 `reg.exe delete "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /va /f`
 #### 重启explorer.exe
 * 在任务管理器中找到`Windows 资源管理器`，右键重启即可。
+
+## `Windows.old`目录删除不掉？
+* 对`Windows.old`目录进行右键，磁盘清理。
