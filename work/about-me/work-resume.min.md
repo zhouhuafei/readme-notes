@@ -98,7 +98,7 @@
     - 已使用Vue-CLI + Vue3全家桶 + TS/TSX + Element-Plus进行重构
   - 小程序：HBuilderX + uni-app + uni-ui
     - 动态换肤
-    - Vue2迁移到Vue3
+    - 已从Vue2迁移到Vue3
 
 ## 自我认知
 * 前端知识还算扎实，后端知识也算还行。
