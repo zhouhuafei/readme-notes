@@ -210,8 +210,8 @@ npx conventional-changelog -p angular -i CHANGELOG.md -s
 * 使用husky包的v7版本时，为什么可以把`pre-commit`和`commit-msg`等诸多的钩子脚本不放在`.git/hooks`目录中？
   - 因为`husky install`命令修改了`.git`目录中`config`文件的`hooksPath`值，使之指向了`.git/hooks`目录的外部。
 
-## 使用`conventional-changelog-cli`生成CHANGELOG.md文件
-* 使用`conventional-changelog-cli`生成CHANGELOG.md文件需要先全局安装`conventional-changelog-cli`包。
+## 使用`conventional-changelog`命令生成CHANGELOG.md文件
+* 使用`conventional-changelog`命令生成CHANGELOG.md文件需要先全局安装`conventional-changelog-cli`包。
 #### 初始化内容：`conventional-changelog -p angular -i CHANGELOG.md -s -r 0`。
 * 不仅可在git打tag之后使用（会生成全部tag的feat和fix）。
   - 操作时需要先对package.json的version字段进行自增，然后打tag，最后运行上述命令。
