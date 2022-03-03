@@ -201,3 +201,6 @@ prerestart，postrestart
 * `package-lock.json`不应写进`.gitignore`：https://www.zhihu.com/question/264560841
 * 但是我们团队因为有人使用`mac`有人使用`win`，每次`npm i`，`package-lock.json`文件总是会有变动。
 * 所以就把`package-lock.json`写进了`.gitignore`。
+
+# npm的organization
+https://gitee.com/taichiyi/blog/blob/master/npm-organization.md
