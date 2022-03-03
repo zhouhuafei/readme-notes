@@ -1,25 +1,13 @@
 {
   "name": "readme-notes",
   "version": "2.0.0",
-  "description": "",
-  "main": "",
+  "private": true,
   "scripts": {
     "prepare": "husky install",
     "lint": "cross-env NODE_ENV=production eslint --ext .js,.ts ./",
     "fix": "cross-env NODE_ENV=production eslint --fix --ext .js,.ts ./",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zhouhuafei/readme-notes.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/zhouhuafei/readme-notes/issues"
-  },
-  "homepage": "https://github.com/zhouhuafei/readme-notes#readme",
   "devDependencies": {
     "@commitlint/cli": "^16.2.1",
     "@commitlint/config-conventional": "^16.2.1",
