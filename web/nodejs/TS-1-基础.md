@@ -1,0 +1,31 @@
+## 文档
+* https://www.tslang.cn
+* https://ts.xcatliu.com
+
+## TS类型中的any和void以及never的区别？
+https://juejin.cn/post/6844904126019534861
+
+## public和protected以及private的区别？
+|       位置      |      private      |     protected   |        public     |
+|      :---:      |      :---:        |       :---:     |         :---:     |
+|      本类内      |       	Y         |       	Y       |           Y       |
+|      子类内      |       	N         |	        Y       |   	    Y       |
+|       外部       |       	N         |     	N       |	        Y       |
+|    能否重新定义   |        N         |	        Y       |       	Y       |
+* 对属性或方法的访问控制是通过在前面添加关键字`public`、`protected`、`private`来实现的。
+* 被定义为`public`可以在任何地方被访问。默认`public`。
+* 被定义为`protected`可以被其自身以及其子类和父类访问。
+* 被定义为`private`只能被其定义所在的类访问。
+
+## 类型断言和强制类型转换
+* 类型断言：`(window as any).a = 1`。
+* 强制类型转换：`(<any>window).a = 1`。
+
+## 联合类型（|）和交叉类型（&）
+```typescript
+let hello: string | number
+hello = 1
+hello = 'a'
+let world: { a: string } & { b: number }
+world = { a: 'a', b: 2 }
+```
