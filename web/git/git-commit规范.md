@@ -213,12 +213,12 @@ npx conventional-changelog -p angular -i CHANGELOG.md -s
 ## 使用`conventional-changelog`命令生成`CHANGELOG.md`文件
 * 使用`conventional-changelog`命令生成`CHANGELOG.md`文件需要`conventional-changelog-cli`包。
 #### 初始化内容：`npx conventional-changelog -p angular -i CHANGELOG.md -s -r 0`。
-* 不仅可在git打tag之后使用（会生成全部tag的feat和fix提交）。
+* 不仅可在git打tag之后使用（会生成全部tag的feat和fix）。
   - 操作时需要先对package.json的version字段进行自增，然后打tag，最后运行上述命令。
-* 也可以在git打tag之前使用（会生成自上次tag后的feat和fix提交）。
+* 也可以在git打tag之前使用（会生成自上次tag后的feat和fix）。
   - 操作时需要先对package.json的version字段进行自增，然后运行上述命令，最后打tag。
 #### 追加新内容：`npx conventional-changelog -p angular -i CHANGELOG.md -s`。
-* 只可以在git打tag之前使用（会生成自上次tag后的feat和fix提交）。
+* 只可以在git打tag之前使用（会生成自上次tag后的feat和fix）。
   - 操作时需要先对package.json的version字段进行自增，然后运行上述命令，最后打tag。
 #### 注意事项：git的tag需要是v开头的格式。
 * 例：`git tag v2.0.0 -m "标签的注释"`。
