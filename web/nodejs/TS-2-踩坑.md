@@ -13,4 +13,5 @@ declare var window: Window & { isWeChat: boolean }
 ```
 
 ## ts引入js的第三方模块时报缺少声明文件的错误？
-* 在声明文件中增加声明即可。以vue3的ts项目和`zhf.sku`包为例，只需要在`shims-vue.d.ts`文件中增加一句`declare module 'zhf.sku'`即可。
+* 在声明文件中增加声明即可。
+* 以vue3的ts项目和`zhf.sku`包为例，只需要在`shims-vue.d.ts`文件中增加一句`declare module 'zhf.sku'`即可。
