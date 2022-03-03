@@ -81,12 +81,12 @@
 * 简易工具集（SaaS电商）（线上门店，选品之后，商品是门店商品，库存是门店库存）
   - 服务端：koa2（nodejs） + redis + mongoose（mongodb） + nginx + docker-compose
     - JWT鉴权、RestfulAPI风格（对HTTP协议中请求方式和状态码的应用）、企微机器人接口报警
-    - 打算使用TS进行重构
+    - 已使用TS进行重构
   - 运营端：Vue-CLI + Vue全家桶 + Element-UI
     - 品牌管理
     - 超管、管理员
     - 运营端操作日志、管理端操作日志、客户端操作日志、客户端行为轨迹
-    - 打算使用Vue-CLI + Vue3全家桶 + TS/TSX + Element-Plus进行重构
+    - 已使用Vue-CLI + Vue3全家桶 + TS/TSX + Element-Plus进行重构
   - 管理端：Vue-CLI + Vue全家桶 + Element-UI
     - 动态换肤
     - 图片素材库、视频素材库
@@ -95,7 +95,7 @@
     - 超管、管理员、菜单权限、功能权限
     - 用户管理、员工管理、文章管理
     - 管理端操作日志、客户端操作日志、客户端行为轨迹
-    - 打算使用Vue-CLI + Vue3全家桶 + TS/TSX + Element-Plus进行重构
+    - 已使用Vue-CLI + Vue3全家桶 + TS/TSX + Element-Plus进行重构
   - 小程序：HBuilderX + uni-app + uni-ui
     - 动态换肤
     - Vue2迁移到Vue3
