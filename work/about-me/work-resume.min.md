@@ -96,10 +96,10 @@
     - 用户管理、员工管理、文章管理
     - 管理端操作日志、客户端操作日志、客户端行为轨迹
     - 已使用Vue-CLI + Vue3全家桶 + TS/TSX + Element-Plus进行重构
-  - 小程序：HBuilderX + uni-app + uni-ui
+  - 小程序：HBuilderX（Webpack） + uni-app + Vue + Vuex + uni-ui
     - 动态换肤
     - 已从Vue2迁移到Vue3
-    - 已使用TS进行重构
+    - 已使用uni-cli（Vite） + uni-app + Vue3 + Vuex + TS/TSX + uni-ui进行重构
 
 ## 自我认知
 * 前端知识还算扎实，后端知识也算还行。
