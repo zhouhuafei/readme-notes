@@ -401,6 +401,9 @@ fn1(1, 2, 3)
 ## vue-router？
 * hash模式用的什么api监听的路由变化？`window.onhashchange`。
 * history模式用的什么api监听的路由变化？`window.onpopstate`。
+* `popstate`和`hashchange`事件什么时候会触发？
+  - 用`history.pushState()`或`history.replaceState()`均不会触发`popstate`和`hashchange`事件。
+  - 用`history.back()`或`history.go(-n)`或`history.forward()`或`location.hash = 'val'`均会触发`popstate`事件和`hashchange`事件。
 * vue-router的路由跳转方式有哪些？`router.push、router.replace、router.back、router.go`。
 * 如何鉴权？例如不允许某些用户访问某些页面？`在router.beforeEach中进行处理即可`。
 * 两个路由共用同一个页面视图组件的时候怎么监听路由的变化？`使用watch监听$route`。
