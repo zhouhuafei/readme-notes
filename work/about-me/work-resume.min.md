@@ -86,7 +86,7 @@
     - 品牌管理
     - 超管、管理员
     - 运营端操作日志、管理端操作日志、客户端操作日志、客户端行为轨迹
-    - 已使用Vue-CLI + Vue3全家桶 + TS/TSX + Element-Plus进行重构
+    - 已使用Vite + Vue3全家桶 + TS/TSX + Element-Plus进行重构
   - 管理端：Vue-CLI + Vue全家桶 + Element-UI
     - 动态换肤
     - 图片素材库、视频素材库
@@ -95,7 +95,7 @@
     - 超管、管理员、菜单权限、功能权限
     - 用户管理、员工管理、文章管理
     - 管理端操作日志、客户端操作日志、客户端行为轨迹
-    - 已使用Vue-CLI + Vue3全家桶 + TS/TSX + Element-Plus进行重构
+    - 已使用Vite + Vue3全家桶 + TS/TSX + Element-Plus进行重构
   - 小程序：HBuilderX（Webpack） + uni-app + Vue + Vuex + uni-ui
     - 动态换肤
     - 已使用uni-cli（Vite） + uni-app + Vue3 + Vuex + TS/TSX + uni-ui进行重构
