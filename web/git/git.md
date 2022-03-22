@@ -121,13 +121,33 @@ git tag v1.0.0-beta.0 -m "标签的注释 - 公测版1"
 git tag v1.0.0-beta.1 -m "标签的注释 - 公测版2"
 git tag v1.0.0 -m "标签的注释 - 发行版"
 ```
-* 批量删除tag：https://www.itranslater.com/qa/details/2123585510542148608
-  - 先删远程后删本地：
-    - 删远程：`git tag -l | xargs -n 1 git push --delete origin`。
-    - 删本地：`git tag | xargs git tag -d`。
-  - 先删本地后删远程：
-    - 删本地：`git tag | xargs git tag -d`。
-    - 删远程：`git ls-remote --tags --refs origin | cut -f2 | xargs git push origin --delete`。
+
+## 批量删除tag
+> 参考文章：https://www.itranslater.com/qa/details/2123585510542148608
+* 先删远程后删本地：
+  - 删远程：`git tag -l | xargs -n 1 git push --delete origin`。
+  - 删本地：`git tag | xargs git tag -d`。
+* 先删本地后删远程：
+  - 删本地：`git tag | xargs git tag -d`。
+  - 删远程：`git ls-remote --tags --refs origin | cut -f2 | xargs git push origin --delete`。
+
+## 批量删除分支
+* 批量删除本地分支：`git branch -a | grep -v "master" | xargs git branch -D`。
+* 批量删除远程分支：`git branch -r | grep -v "master" | sed "s/origin\///g" | xargs -I {} git push origin :{}`。
+
+## 批量删除branch中新加的文件
+```
+-n：    --dry-run         dry run
+-f：    --force           force
+-d：                      remove whole directories
+```
+* `-n`：查看会删掉哪些
+* `-f`：强制删除
+* `-d`：删目录
+```
+git clean -nfd
+git clean -fd
+```
 
 ## git commit 添加表情
 * ![图片加载中...](./images/1.png)
@@ -143,18 +163,6 @@ git reset HEAD xxx.txt
 ## 取消对文件的修改
 ```
 git checkout -- xxx.txt
-```
-
-## 批量删除branch中新加的文件
-> ######    `-n`：    --dry-run         dry run
-> ######    `-f`：    --force           force
-> ######    `-d`：                      remove whole directories
-* `-n`：查看会删掉哪些
-* `-f`：强制删除
-* `-d`：删目录
-```
-git clean -nfd
-git clean -fd
 ```
 
 ## commit之后，修改/改写commit(用当前的commit信息替换掉上一个commit信息)。
