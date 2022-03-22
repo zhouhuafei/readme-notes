@@ -122,6 +122,12 @@ git tag v1.0.0-beta.1 -m "标签的注释 - 公测版2"
 git tag v1.0.0 -m "标签的注释 - 发行版"
 ```
 * 批量删除tag：https://www.itranslater.com/qa/details/2123585510542148608
+  - 先删远程后删本地：
+    - 删远程：`git tag -l | xargs -n 1 git push --delete origin`。
+    - 删本地：`git tag | xargs git tag -d`。
+  - 先删本地后删远程：
+    - 删本地：`git tag | xargs git tag -d`。
+    - 删远程：`git ls-remote --tags --refs origin | cut -f2 | xargs git push origin --delete`。
 
 ## git commit 添加表情
 * ![图片加载中...](./images/1.png)
