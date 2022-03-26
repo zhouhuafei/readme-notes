@@ -63,3 +63,8 @@ declare module '*.scss' {
 * 官方文档：https://github.com/element-plus/element-plus/discussions/5657
 #### svg怎么做到颜色跟着css的color走的？
 * 给svg的path标签加上`fill="currentColor"`即可。
+
+## vite和create-vue和vue-cli5
+* vite创建的模板太过单调，很多东西都需要自己配置。
+* create-vue可选项很多，很多东西都不需要自己配置，是基于vite进行打包。
+* vue-cli5可选项很多，很多东西都不需要自己配置，是基于webpack进行打包。
