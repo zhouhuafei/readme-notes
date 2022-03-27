@@ -2,10 +2,14 @@
   "name": "readme-notes",
   "version": "2.0.0",
   "private": true,
+  "engines": {
+    "node": "14.19.1",
+    "npm": "6.14.16"
+  },
   "scripts": {
     "prepare": "husky install",
-    "lint": "cross-env NODE_ENV=production eslint --ext .js,.ts ./",
-    "fix": "cross-env NODE_ENV=production eslint --fix --ext .js,.ts ./",
+    "lint": "cross-env NODE_ENV=production eslint ./ --ext .js,.ts",
+    "fix": "npm run lint -- --fix",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "devDependencies": {
