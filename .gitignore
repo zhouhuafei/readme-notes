@@ -1,27 +1,41 @@
+# editor files
+.idea
+.vscode
 .DS_Store
-node_modules
-/dist
-package-lock.json
+.hbuilderx
+*.suo
+*.sln
+*.sw?
+*.ntvs*
+*.njsproj
 
-/tests/e2e/videos/
-/tests/e2e/screenshots/
-
-# local env files
-.env.local
-.env.*.local
-
-# Log files
+# log files
+*.log
+logs/*
+!logs/.gitkeep
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+lerna-debug.log*
 
-# Editor directories and files
-.idea
-.vscode
-.hbuilderx
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+# test files
+coverage
+/cypress/videos/
+/cypress/screenshots/
+/tests/e2e/videos/
+/tests/e2e/screenshots/
+
+# local files
+*.local
+
+# build files
+yarn.lock
+pnpm-lock.yaml
+package-lock.json
+node_modules
+dist-ssr
+dist
+
+# project files
+config.ts
