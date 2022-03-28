@@ -2,6 +2,6 @@
 https://www.pnpm.cn
 
 ## 使用pnpm的install取代npm的install
-* 当使用一个git仓库管理多个npm软件包的时候，用pnpm进行install体验会好很多。
+* 一个git仓库管理多个npm软件包的项目称之为monorepo项目。
+* monorepo项目使用pnpm进行管理时体验会非常友好。
 * 开源案例：https://github.com/youzan/vant
-* 参考文章：https://zhuanlan.zhihu.com/p/373935751
