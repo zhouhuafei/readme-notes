@@ -98,7 +98,7 @@
     - 已使用create-vue（Vite） + Vue3全家桶 + TS/TSX + Element-Plus进行重构
   - 小程序：HBuilderX（Webpack） + uni-app + Vue + Vuex + uni-ui
     - 动态换肤
-    - 已使用uni-cli（Vite） + uni-app + Vue3 + Vuex + TS/TSX + uni-ui进行重构
+    - 已使用uni-cli（Vite） + uni-app + Vue3 + Pinia + TS/TSX + uni-ui进行重构
 
 ## 自我认知
 * 前端知识还算扎实，后端知识也算还行。
