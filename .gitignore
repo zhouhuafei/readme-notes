@@ -1,6 +1,7 @@
 # editor files
 .idea
-.vscode
+.vscode/*
+!.vscode/extensions.json
 .DS_Store
 .hbuilderx
 *.suo
