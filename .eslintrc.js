@@ -3,8 +3,11 @@ module.exports = {
   env: {
     node: true
   },
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint'],
   extends: [
-    'standard'
+    'standard',
+    'plugin:@typescript-eslint/recommended'
   ],
   rules: {}
 }
