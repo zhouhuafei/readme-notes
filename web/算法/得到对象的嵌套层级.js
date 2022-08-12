@@ -20,18 +20,19 @@ const json = {
 function getKey () {
   const a = {}
 
-  // ...TODO 怎么改写成递归？
+  function deep (json, k, kayBak) {
+    Object.keys(json[k]).forEach(k2 => {
+      a[`${kayBak}_${k2}`] = json[k][k2]
+      if (typeof json[k][k2] === 'object') {
+        deep(json[k], k2, `${k}_${k2}`)
+      }
+    })
+  }
+
   Object.keys(json).forEach(k => {
     if (typeof json[k] === 'object') {
       a[k] = json[k]
-      Object.keys(json[k]).forEach(k2 => {
-        a[`${k}_${k2}`] = json[k][k2]
-        if (typeof json[k][k2] === 'object') {
-          Object.keys(json[k][k2]).forEach(k3 => {
-            a[`${k}_${k2}_${k3}`] = json[k][k2][k3]
-          })
-        }
-      })
+      deep(json, k, k)
     } else {
       a[k] = json[k]
     }
