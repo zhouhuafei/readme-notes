@@ -89,6 +89,7 @@ div {
   - 解决方案2：子级使用多行省略号模拟单行省略号。
   - 解决方案3：父级加`overflow: hidden;`。
   - 解决方案4：父级加`min-width: 0;`。
+  - 解决方案5：父级加`width: 0;`。
 * flex主侧轴简介
     - 主轴：默认水平线(x轴)
         - justify-content: center; 控制主轴对齐方式
