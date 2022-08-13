@@ -20,7 +20,6 @@ const json = {
 function getKey () {
   const a = {}
 
-  // ...TODO 蒙出来的！
   function deep (json, k, kayBak) {
     Object.keys(json[k]).forEach(k2 => {
       a[`${kayBak}_${k2}`] = json[k][k2]
