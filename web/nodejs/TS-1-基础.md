@@ -1,6 +1,7 @@
 ## 文档
-* https://www.tslang.cn
-* https://ts.xcatliu.com
+* 官方文档：https://www.tslang.cn
+* 入门文档：https://ts.xcatliu.com
+* 类型体操：https://www.jianshu.com/p/276a7d596744
 
 ## TS类型中的any和void以及never的区别？
 https://juejin.cn/post/6844904126019534861
