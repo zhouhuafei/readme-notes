@@ -152,3 +152,5 @@ ssh root@ip "pwd; ls;"
 > `-`后跟简写，`--`后跟全拼。
 * `-`：`node -v`
 * `--`：`node --version`
+> `--`还可以用来拼接参数。
+* `npm run lint -- --fix`
