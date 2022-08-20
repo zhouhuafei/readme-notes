@@ -5,7 +5,10 @@
 
 ## TS类型中的any和void以及never的区别？
 https://juejin.cn/post/6844904126019534861
-* 严格模式下不能将null赋值给void和基础类型，非严格模式下可以。
+* 非严格模式下，null和undefined可以赋值给除never外的所有类型。
+* 严格模式下null和undefined不能赋值给其他类型（void有特例↓）。
+  - 能将undefined赋值给void。
+  - 但null依然如上所述，不能赋值给void。
 
 ## public和protected以及private的区别？
 |       位置      |      private      |     protected   |        public     |
