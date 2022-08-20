@@ -1,3 +1,4 @@
+# css3 动画
 ```
 @keyframes scaleDraw {
   0% {
@@ -14,7 +15,7 @@
 ```
 * infinite 规定动画应该无限次播放。
 * alternate 动画应该轮流反向播放。
-* 让动画停在最后一帧：当动画完成后，保持最后一个属性值（在最后一个关键帧中定义）。
+* 让动画停在最后一帧：当动画完成后，保持动画最后一帧对应的属性值。
 ```
 animation-fill-mode: forwards;
 ```
@@ -46,7 +47,13 @@ animation-fill-mode: forwards;
     - (加给父级)设置元素被查看位置的视图。
 
 # css3 基点
-* `transform-origin: left top;`
+* `transform-origin: left top 0px;`
+
+# css3 变换
+* transform是从右到左执行，translate不会改变变换中心点（建议写在最左边，因符合人类直觉）。
+  - 多属性变换时，建议translate放在最左边。
+  - 先让所谓的缩放，旋转先触发，然后再触发位移。
+  - 如此变换才符合人类的直觉。
 
 # 轴位
 * x轴：水平于电脑屏幕的方向。
