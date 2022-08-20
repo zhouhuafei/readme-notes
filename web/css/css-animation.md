@@ -41,10 +41,10 @@ animation-fill-mode: forwards;
 * 实则不然，其实是运动的最后一个轨迹，刚好和容器的本来位置一致罢了。
 
 # css3 景深
-* `transform-style: preserve-3d;`
-    - (加给父级)让转换的子元素保留3D转换。
 * `perspective: 1000px;`
-    - (加给父级)设置元素被查看位置的视图。
+    - 加给父级，设置元素的被观看位置，也就是站在1000px之外观看元素的变换（近大远小）。
+* `transform-style: preserve-3d;`
+    - 加给父级，当父级做3d变换时，保留子元素的3d变换（默认不保留）。
 
 # css3 基点
 * `transform-origin: left top 0px;`
