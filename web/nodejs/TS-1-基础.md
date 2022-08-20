@@ -5,7 +5,7 @@
 
 ## TS类型中的any和void以及never的区别？
 https://juejin.cn/post/6844904126019534861
-* 严格模式下不能将null赋值给void
+* 严格模式下不能将null赋值给void和基础类型，非严格模式下可以。
 
 ## public和protected以及private的区别？
 |       位置      |      private      |     protected   |        public     |
