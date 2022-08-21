@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>backface-visibility</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .wrap {
+        width: 400px;
+        height: 400px;
+        background: #eeeeee;
+        overflow: hidden;
+        perspective: 500px;
+      }
+
+      .box {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin: 100px auto;
+        background: #dddddd;
+        transition: 4s;
+        transform-style: preserve-3d;
+      }
+
+      .box.rotate {
+        transform: rotateY(360deg);
+      }
+
+      .item {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -50px;
+        margin-top: -50px;
+        width: 50%;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backface-visibility: hidden;
+        background: rgba(255, 165, 0, 0.2);
+      }
+
+      .item:nth-of-type(1) {
+        transform: rotateY(0deg);
+      }
+
+      .item:nth-of-type(2) {
+        transform: rotateY(180deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="box">
+        <div class="item">正</div>
+        <div class="item">反</div>
+      </div>
+    </div>
+    <script>
+    let flag = false
+    document.querySelector('.box').addEventListener('click', function () {
+      if (flag) return
+      flag = true
+      this.classList.add('rotate')
+      setTimeout(() => {
+        this.classList.remove('rotate')
+        setTimeout(() => {
+          flag = false
+        }, 4000)
+      }, 4000)
+    })
+    </script>
+  </body>
+</html>

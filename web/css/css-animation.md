@@ -59,7 +59,7 @@ animation-fill-mode: forwards;
 
 # css3 隐藏背面
 * `backface-visibility: hidden;`（加给子级，因为要隐藏子级）
-  - 父级旋转0度。某个子级如果旋转了180度，则这个子级就是背面，会被隐藏。
+  - 父级旋转0度。某个子级如果旋转了180度（绕着X轴或Y轴），则这个子级就是背面，会被隐藏。
   - 一般配合`transform-style: preserve-3d;`一起使用（加给父级，因为在父级的3d空间中进行变换）。
 
 # 轴位
