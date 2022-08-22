@@ -114,6 +114,6 @@ https://blog.csdn.net/Jonathan_1994/article/details/89293878
   - Use custom font：Microsoft YaHei
   - Size：16
 * File -> Settings -> Editor -> Font
-  - Font：Consolas
+  - Font：JetBrains Mongo
   - Size：18
   - Line Spacing：1.2
