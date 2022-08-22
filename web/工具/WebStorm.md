@@ -105,8 +105,14 @@ https://blog.csdn.net/Jonathan_1994/article/details/89293878
 # WebStorm全局搜索搜不到内容或搜到的内容不全
 > File - Invalidate Caches / Restart...
 
-# 使用Git查看文件的改变时，突然看不到Local Changes了。
+# 使用Git查看本地文件的改变时，突然看不到Local Changes了。
 * File -> Settings -> Version Control -> Commit -> Use non-modal commit interface（取消这个选项的勾选即可）
+
+# 使用Git查看对应commit中文件的改变时，双击文件比对差异变成在选项卡中比对了。
+* 如何在单独的窗口中显示差异？
+  - 选项卡中的比对差异里，有个设置按钮，点击一下，选中`在单独的窗口中显示差异`即可。
+* 如何点击文件显示差异？
+  - 在文件的上方，有一个四个小方块组成的图标，点击一下，然后把`显示差异预览`勾选即可。
 
 # font/Font 我之前用的字体相关的配置
 * File -> Settings -> Appearance & Behavior -> Appearance
