@@ -104,3 +104,6 @@ https://blog.csdn.net/Jonathan_1994/article/details/89293878
 
 # WebStorm全局搜索搜不到内容或搜到的内容不全
 > File - Invalidate Caches / Restart...
+
+# 使用Git查看文件的改变时，突然看不到Local Changes了。
+* File -> Settings -> Version Control -> Commit -> Use non-modal commit interface（取消这个选项的勾选即可）
