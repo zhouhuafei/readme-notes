@@ -107,3 +107,13 @@ https://blog.csdn.net/Jonathan_1994/article/details/89293878
 
 # 使用Git查看文件的改变时，突然看不到Local Changes了。
 * File -> Settings -> Version Control -> Commit -> Use non-modal commit interface（取消这个选项的勾选即可）
+
+# font/Font 我之前用的字体相关的配置
+* File -> Settings -> Appearance & Behavior -> Appearance
+  - Theme：Darcula
+  - Use custom font：Microsoft YaHei
+  - Size：16
+* File -> Settings -> Editor -> Font
+  - Font：Consolas
+  - Size：18
+  - Line Spacing：1.2
