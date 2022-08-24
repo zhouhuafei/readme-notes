@@ -50,8 +50,8 @@
       - 主应用：Vue-CLI + Vue全家桶 + Element-UI
       - 子应用：Vue-CLI + Vue3全家桶 + TS/TSX + Element-Plus
     - 增加分享二维码功能（访问统计、下单统计）、对接微客分销、对接企微客服。
-  - 超级导购后台管理系统：Angular4
-  - 超级导购app内嵌h5：React17
+  - 超级导购后台管理系统：Angular4/React16
+  - 超级导购app内嵌h5：React16/React17
 > 2016/04 - 2019/02
 * 商派 - 上海商派网络科技有限公司（SaaS电商）（线上商城，无需选品，商品是商城商品，库存是商城库存）
   - 云起微商城后台管理系统：Gulp + SeaJS + jQuery + Vue
