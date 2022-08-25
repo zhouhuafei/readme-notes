@@ -287,12 +287,28 @@ git branch | grep -v 'master' | xargs git branch -D
 * `ssh-keygen -t rsa -C "zhouhuafei@wowkai.cn"`
 * `cat ~/.ssh/id_rsa.pub`
 
-## 合并多个commit
+## rebase处理commit
 * https://www.jianshu.com/p/964de879904a
 * https://www.cnblogs.com/wt645631686/p/13550192.html
 * `git rebase -i commitId`
   - `-i`的参数是不需要合并的`commit`的`hash`值。
 * 过程中有操作错误，可以使用`git rebase --abort`来撤销修改。
+
+## rebase处理brand
+* 先看下merge的使用，直接使用merge会生成一条和merge有关的commit记录。分支树是多条直线交叉。
+```
+git checkout develop
+git merge master
+git checkout master
+git merge develop
+```
+* 再看下rebase的使用，先使用rebase再使用merge，不会生成一条和merge有关的commit记录。分支树是一条直线。
+```
+git checkout develop
+git rebase master
+git checkout master
+git merge develop
+```
 
 ## merge时把develop上的多个commit合成一个commit
 * 主要命令：`git merge --squash develop`。
