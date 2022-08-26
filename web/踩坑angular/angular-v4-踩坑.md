@@ -17,7 +17,9 @@
 
 ## 双向数据绑定是语法糖么?能应用于自定义组件么？
 * 是语法糖。能应用于自定义组件。
-* 注意：`[(ngModel)]`默认只能应用于表单相关的组件。
+* 注意：`[(ngModel)]`默认只能应用于表单相关的元素。
+  - 要将`[(ngModel)]`应用于非表单型内置元素或第三方自定义组件，必须编写一个值访问器。
+  - https://angular.cn/guide/built-in-directives#ngmodel-and-value-accessors
 * 双向数据绑定应用于自定义组件时，只要按照固定的命名模式进行开发即可。
   - 在父组件中使用`[(myAttr)]="myAttrVarValue"`给子组件传递属性。
   - 在子组件中使用`myAttrChange.emit(myAttrVarNewValue)`方法通知父组件。
