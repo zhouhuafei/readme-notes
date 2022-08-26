@@ -1,6 +1,6 @@
 ## angular版本
-* `"@angular/cli": "1.0.6"`
-* `"@angular/core": "4.1.3"`
+* 项目被创建时，脚手架的版本是`"@angular/cli": "1.0.4"`。
+* 项目的核心文件，其版本是`"@angular/core": "4.1.3"`。
 
 ## 项目理解
 * so-cool：基础组件
