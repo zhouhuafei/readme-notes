@@ -12,6 +12,12 @@
 ## 如何监听数据的变化？
 ...TODO
 
+## 跨组件通信？
+...TODO
+
+## services
+...TODO
+
 ## 有`<slot></slot>`么?
 * 有`<ng-content></ng-content>`。
 
