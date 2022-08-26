@@ -337,3 +337,19 @@ console.log(Object.getOwnPropertyNames(p)) // ["name", "age"]
 * hash虽然会出现在url中，但不会被包含在HTTP请求中。
 * 亲测，确实如此，服务端对应请求的url上不会出现#号以及#号之后相关的数据。
 * 主要是浏览器发送的请求上没有对应的数据，就算在url上强行拼接，在network中也不会出现。
+
+### `?`和`??`
+> https://blog.csdn.net/lzfengquan/article/details/120302244
+* `?`可以防止报错。
+```javascript
+var obj = { a: 'a' }
+obj?.a?.length // 1
+obj?.b?.length // undefined
+```
+* `??`可以赋值默认值。
+```javascript
+null ?? 'a' // 'a'
+undefined ?? 'b' // 'b'
+'' ?? 'c' // ''
+false ?? 'd' // false
+```
