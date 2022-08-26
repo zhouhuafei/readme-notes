@@ -1,3 +1,7 @@
+## angular版本
+* `"@angular/cli": "1.0.6"`
+* `"@angular/core": "4.1.3"`
+
 ## 项目理解
 * so-cool：基础组件
 * om-bms-framework：AppHomepage组件（Layout） + 业务组件
