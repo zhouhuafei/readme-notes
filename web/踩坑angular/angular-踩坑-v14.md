@@ -1,6 +1,5 @@
 ## 文档
 * https://www.angular.cn/
-* https://segmentfault.com/a/1190000008754631/
 
 ## ng new报错
 * ng new hello-world_angular 会报错。
