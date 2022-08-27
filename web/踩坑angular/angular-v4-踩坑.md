@@ -39,5 +39,13 @@
 ## 路由等接口响应后再渲染页面?
 ...TODO
 
+## constructor注入原理？为什么能自动实例化？
+...TODO
+
 ## css模块化？
 * 组件的css模块化默认是开启的，类似vue中style标签的scoped属性。
+
+## angular的热更新默认行为是刷新页面，如何改为局部刷新？
+* 启动服务的命令改为`ng serve --live-reload=false --hmr=true`。
+* `--live-reload`默认为`true`：是否要利用实时重载在更改时刷新页面。
+* `--hmr`默认为`false`：启用模块热替换。
