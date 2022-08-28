@@ -51,9 +51,16 @@
   - 在`om-bms-framework`项目的`app.homepage.ts`文件中搜索关键字`['/welcome']`。
   - 把第1、3、5个跳转的逻辑注释即可。（...TODO建议开发环境下不执行对应的跳转逻辑）。
 * 模块热替换无效？
-  - 超导的angular4项目关闭实时重载开启模块热替换无效（`ng serve --live-reload=false --hmr=true`）。
-  - 是的！经测试确实无效！老老实实使用默认开启的实时重载（自动刷新页面）吧！
-  - ...TODO有空新建一个项目angular4的全新项目再试试
+  - 我用脚手架（`"@angular/cli": "1.0.6"`）创建了一个全新的应用（`"@angular/core": "^4.0.0"`）去开启模块热替换，发现给出了如下警告：
+  ```
+  NOTICE Hot Module Replacement (HMR) is enabled for the dev server.
+    The project will still live reload when HMR is enabled,
+    but to take advantage of HMR additional application code is required
+    (not included in an Angular CLI project by default).
+    See https://webpack.github.io/docs/hot-module-replacement.html
+    for information on working with HMR for Webpack.
+  ```
+  - 意思就是虽然开启了模块热替换，但是脚手架依然使用实时重载。如果想要使用模块热替换，需要在应用程序中进行额外配置。...TODO
 
 ## 问题
 * less - 虽然在`om-bms-framework`项目的less文件中定义了通用变量，但是在开发过程中却没被使用，可能是历史遗留问题，后续开发时使用即可。
