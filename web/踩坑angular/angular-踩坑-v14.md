@@ -11,6 +11,10 @@
 ## 如何监听数据的变化？
 ...TODO
 
+## 如何配置路由？
+* 案例：https://github.com/zhouhuafei/hello-world_angular/blob/master/src/app/app.routes.ts
+* 总结：路由还是要使用layout配合children进行渲染，否则404页面不干净。
+
 ## 如何监听路由的变化？
 * 案例：https://github.com/zhouhuafei/hello-world_angular/blob/master/src/app/pages/about/about.component.ts
 * 监听搜关键字：`this.routerSubscription = this.router.events.subscribe(`。
