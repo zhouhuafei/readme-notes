@@ -53,7 +53,7 @@
 * 模块热替换无效？`亲测默认无效`。
   - `--hmr`开启后会报警告！意思是虽然开启了模块热替换，但是依然使用实时重载。如果想要使用模块热替换，需要在应用程序中进行额外的配置。
   - 额外的配置怎么配？`亲测案例有效`。
-    - 案例：https://github.com/zhouhuafei/hello-world_angular4/commit/189a703389a7eb2a0dcdf43919cc50087bfb270e
+    - 案例：https://github.com/zhouhuafei/hello-world_angular4/commit/af73292199b22d6513442f51f67f76ef0b6e9fbf
     - 注意：上述案例是我创建的全新项目，使用模块热替换时，用时1秒就可以完成一次自动替换。但是在超导的子模块中使用模块热替换时，将近8秒才能完成一次自动替换。
 
 ## 问题
