@@ -59,3 +59,7 @@
 * 启动服务的命令改为`ng serve --live-reload=false --hmr=true`。
 * `--live-reload`默认为`true`：是否要利用实时重载在更改时刷新页面。
 * `--hmr`默认为`false`：启用模块热替换。
+
+## 常用命令
+* 新建Module：`npx ng g m modules/order --routing`。
+* 新建Component：`npx ng g c components/hello`。新建页面也是用这个：`npx ng g c pages/home`。
