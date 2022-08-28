@@ -50,54 +50,11 @@
 * 开发环境时，刷新页面能否不跳回首页？
   - 在`om-bms-framework`项目的`app.homepage.ts`文件中搜索关键字`['/welcome']`。
   - 把第1、3、5个跳转的逻辑注释即可。（...TODO建议开发环境下不执行对应的跳转逻辑）。
-* 模块热替换无效？`angular4的脚手架默认不具备模块热替换功能`。
-  - 我用脚手架（`"@angular/cli": "1.0.6"`）创建了一个全新的应用myNewNg4App（`"@angular/core": "^4.0.0"`）去开启模块热替换，发现给出了如下警告：
-  ```
-  NOTICE Hot Module Replacement (HMR) is enabled for the dev server.
-    The project will still live reload when HMR is enabled,
-    but to take advantage of HMR additional application code is required
-    (not included in an Angular CLI project by default).
-    See https://webpack.docschina.org/guides/hot-module-replacement 此处的链接我进行了更新，因为之前给的链接已经失效了。
-    for information on working with HMR for Webpack.
-  ```
-  - 意思就是虽然开启了模块热替换，但是脚手架依然使用实时重载。如果想要使用模块热替换，需要在应用程序中进行额外的配置。
-* 如何让模块热替换生效？`我把上述我创建的myNewNg4App改造成支持模块热替换了`。
-  - 1、安装`"@angularclass/hmr": "^3.0.0"`。
-  - 2、在`main.ts`中增加`else`部分代码。
-  ```typescript
-  import { enableProdMode } from '@angular/core';
-  import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-
-  import { AppModule } from './app/app.module';
-  import { environment } from './environments/environment';
-
-  if (environment.production) {
-    enableProdMode();
-  } else {
-    if (module.hot) {
-      module.hot.accept();
-      module.hot.dispose(() => {
-        const _styles: any = document.head.querySelectorAll('style');
-        const styles: any = Array.prototype.slice.call(_styles);
-        styles
-          .filter((style: any) => style.innerText.indexOf('_ng') !== -1)
-          .map((el: any) => document.head.removeChild(el));
-      });
-    }
-  }
-
-  platformBrowserDynamic().bootstrapModule(AppModule);
-  ```
-  - 3、在`typings.d.ts`的`NodeModule`接口中增加一行`hot: any;`。
-  ```typescript
-  /* SystemJS module definition */
-  declare var module: NodeModule;
-  interface NodeModule {
-    id: string;
-    hot: any;
-  }
-  ```
-  - 4、在`ng serve`命令后增加`--hmr`使之变成`ng serve --hmr`。
+* 模块热替换无效？`亲测默认无效`。
+  - `--hmr`开启后会报警告！意思是虽然开启了模块热替换，但是依然使用实时重载。如果想要使用模块热替换，需要在应用程序中进行额外的配置。
+  - 额外的配置怎么配？`亲测案例有效`。
+    - 案例：https://github.com/zhouhuafei/hello-world_angular4/commit/189a703389a7eb2a0dcdf43919cc50087bfb270e
+    - 注意：上述案例是我创建的全新项目，使用模块热替换时，用时1秒就可以完成一次自动替换。但是在超导的子模块中使用模块热替换时，将近8秒才能完成一次自动替换。
 
 ## 问题
 * less - 虽然在`om-bms-framework`项目的less文件中定义了通用变量，但是在开发过程中却没被使用，可能是历史遗留问题，后续开发时使用即可。
