@@ -11,6 +11,13 @@
 ## 如何监听数据的变化？
 ...TODO
 
+## 如何监听路由的变化？
+* 案例：https://github.com/zhouhuafei/hello-world_angular/blob/master/src/app/pages/about/about.component.ts
+* 监听搜关键字：`this.routerSubscription = this.router.events.subscribe(`。
+  - 在`ngOnInit`中绑定：使用相同页面组件的路由之间进行互相切换时才会触发。效果和在vue2中用watch监听$route一样。
+  - 在`constructor`中绑定：进入页面会立马触发一次。效果和在vue2中用watch监听$route并加上`immediate: true`一样。
+* 取消搜关键字：`this.routerSubscription.unsubscribe()`。
+
 ## 跨组件通信？
 ...TODO
 
