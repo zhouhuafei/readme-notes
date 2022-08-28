@@ -57,7 +57,7 @@
     The project will still live reload when HMR is enabled,
     but to take advantage of HMR additional application code is required
     (not included in an Angular CLI project by default).
-    See https://webpack.github.io/docs/hot-module-replacement.html
+    See https://webpack.docschina.org/guides/hot-module-replacement 此处的链接我进行了更新，因为之前给的链接已经失效了。
     for information on working with HMR for Webpack.
   ```
   - 意思就是虽然开启了模块热替换，但是脚手架依然使用实时重载。如果想要使用模块热替换，需要在应用程序中进行额外配置。...TODO
