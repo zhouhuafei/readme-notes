@@ -9,6 +9,9 @@
 * 上述的模块指的是NgModule。NgModule是由NgModule装饰器函数装饰的类。
 * NgModule可以从其他NgModule中导入功能，前提是目标NgModule导出了该功能。
 
+## 服务（Service）的用途？
+* 服务用于放置和特定组件无关并希望跨组件共享的数据或逻辑。
+
 ## 如何监听数据的变化？
 ...TODO
 
@@ -24,9 +27,6 @@
 * 取消搜关键字：`this.routerSubscription.unsubscribe()`。
 
 ## 跨组件通信？
-...TODO
-
-## services
 ...TODO
 
 ## 有`<slot></slot>`么?
