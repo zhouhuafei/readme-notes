@@ -5,8 +5,9 @@
 * ng new hello-world_angular 会报错。
     - 解决方案：```ng new appName --directory hello-world_angular```
 
-## `@NgModule`有个`imports`选项，可以导入模块，例如`HttpModule`，此处的模块指的是什么？
-* 指的是被`@NgModule`装饰的模块。
+## `@NgModule`有个`imports`选项，可以导入模块，例如导入`HttpModule`，此处的模块指的是什么？
+* 上述的模块指的是NgModule。NgModule是由NgModule装饰器函数装饰的类。
+* NgModule可以从其他NgModule中导入功能，前提是目标NgModule导出了该功能。
 
 ## 如何监听数据的变化？
 ...TODO
