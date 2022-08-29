@@ -206,7 +206,8 @@ prerestart，postrestart
 https://gitee.com/taichiyi/blog/blob/master/npm-organization.md
 
 # 使用`npm run`运行命令时，如何附加参数？使用`--`拼接即可。
-* json
+## 案例
+#### json
 ```json
 {
   "scripts": {
@@ -214,14 +215,37 @@ https://gitee.com/taichiyi/blog/blob/master/npm-organization.md
   }
 }
 ```
-* javascript
+#### javascript
 ```javascript
 // hello.js
 console.log(process.argv)
 ```
-* shell
+#### shell
 ```shell
-npm run hello -- --version=1.0.0 -v=1.0.0
+npm run hello -- -v="1.0.0" --version=1.0.0
 # `--`后面的参数不解析，直接传递进去。相当于：↓
-node ./hello.js --hello=world --version=1.0.0 -v=1.0.0
+node ./hello.js --hello=world -v="1.0.0" --version=1.0.0
+```
+## 注意
+#### 简写的时候，如果值中存在`.`，记得要用双引号`"1.0.0"`引起来，或者用单引号`'1.0.0'`引起来也可以，否则会识别异常
+* 不引起来：`npm run hello -- -v=1.0.0 --version=1.0.0`
+```javascript
+[
+  'C:\\Program Files\\nodejs\\node.exe',
+  'E:\\www\\github-zhouhuafei\\readme-notes\\hello.js',
+  '--hello=world',
+  '-v=1',
+  '.0.0',
+  '--version=1.0.0'
+]
+```
+* 引起来：`npm run hello -- -v="1.0.0" --version=1.0.0`
+```javascript
+[
+  'C:\\Program Files\\nodejs\\node.exe',
+  'E:\\www\\github-zhouhuafei\\readme-notes\\hello.js',
+  '--hello=world',
+  '-v=1.0.0',
+  '--version=1.0.0'
+]
 ```
