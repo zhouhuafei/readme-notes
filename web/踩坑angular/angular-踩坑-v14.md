@@ -9,19 +9,18 @@
 * 官方文档：https://angular.cn/guide/ngmodule-api
 
 ## `@NgModule`有个`declarations`选项，其作用是？
-* 用以声明组件、指令和管道。
+* 用以声明组件类、指令类和管道类。
 
 ## `@NgModule`有个`providers`选项，其作用是？
-* 用以注入服务。
+* 用以注入服务类。
 
 ## `@NgModule`有个`bootstrap`选项，其作用是？
-* 自动引导的组件列表。
-* 通常此列表中只有一个组件，即应用程序的根组件。
-* Angular 可以用多个引导组件启动，每个组件在主机网页中都有自己的位置。
+* 用以自动引导的组件列表。通常此列表中只有一个组件，即应用程序的根组件。
+* Angular可以用多个引导组件启动，每个组件在主机网页中都有自己的位置。
 
 ## `@NgModule`有个`imports`选项，可以导入模块，例如导入`HttpModule`，此处的模块指的是什么？
 * 上述的模块指的是NgModule。NgModule是由NgModule装饰器函数装饰的类。
-* NgModule可以从其他NgModule中导入功能，前提是目标NgModule导出了该功能。
+* NgModule可以从其他NgModule中导入功能，前提是目标NgModule导出了该功能。...TODO 何解？
 
 ## `@NgModule`有个`exports`选项，其作用是？
 * ...TODO 导出某些功能。
@@ -73,7 +72,7 @@
 ## css模块化？
 * 组件的css模块化默认是开启的，类似vue中style标签的scoped属性。
 
-## angular的热更新默认行为是刷新页面，如何改为局部刷新？
+## Angular的热更新默认行为是刷新页面，如何改为局部刷新？
 * 启动服务的命令改为`ng serve --live-reload=false --hmr=true`。
 * `--live-reload`默认为`true`：是否要利用实时重载在更改时刷新页面。
 * `--hmr`默认为`false`：启用模块热替换。
