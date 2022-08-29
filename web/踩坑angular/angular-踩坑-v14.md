@@ -1,9 +1,12 @@
 ## 文档
 * https://www.angular.cn/
 
-## ng new报错
-* ng new hello-world_angular 会报错。
-    - 解决方案：```ng new appName --directory hello-world_angular```
+## 创建hello-world_angular项目
+* hello-world_angular项目是使用`@angular/cli`的`14.2.1`版本，运行`ng new hello-world_angular`命令创建而来。
+* 运行命令后会出现交互框。
+  - ts是否使用严格模式我选的yes（如果不出现此选项则默认就是严格模式）。
+  - css预编译我选的scss。
+  - 是否创建路由我选的yes。
 
 ## `@NgModule`元数据
 * 官方文档：https://angular.cn/guide/ngmodule-api
