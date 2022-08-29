@@ -23,9 +23,8 @@
 ## `@NgModule`有个`imports`选项，可以导入模块，例如导入`HttpModule`，此处的模块指的是什么？
 * 上述的模块指的是NgModule。NgModule是由NgModule装饰器函数装饰的类。
 * NgModule可以从其他NgModule中导入功能，前提是目标NgModule导出了该功能。
-  - 案例：https://github.com/zhouhuafei/hello-world_angular/blob/master/src/app/app.module.ts
-  - 案例：https://github.com/zhouhuafei/hello-world_angular/blob/master/src/app/app-routing.module.ts
-  - 上述案例中，`app.module.ts`导入了`app-routing.module.ts`，后者导出了RouterModule，固路由可以正常运行。
+  - 假设主模块导入了一个子模块，子模块中存在一个HelloChild组件，主模块如果想使用这个组件，只需要在子模块中对组件进行导出即可。
+  - 其他功能同理，只要子模块进行了对外导出，主模块导入子模块时，相当于同时导入了这些被导出的功能。
 
 ## `@NgModule`有个`exports`选项，其作用是？
 * 案例：https://github.com/zhouhuafei/hello-world_angular/blob/master/src/app/app-routing.module.ts
