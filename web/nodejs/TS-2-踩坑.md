@@ -20,3 +20,11 @@ declare var window: Window & { isWeChat: boolean }
   - `env.d.ts`：vite创建的vue3的ts项目。
 #### 方案2
 * 在`tsconfig.json`文件中，设置`noImplicitAny`为`false`。
+
+## TS2556: A spread argument must either have a tuple type or be passed to a rest parameter.
+#### 使用`as const`可以防止报上述错误
+```typescript
+const test = (a: string, b: string, c: string): void => undefined
+const arr = ['a', 'b', 'c'] as const
+test(...arr)
+```
