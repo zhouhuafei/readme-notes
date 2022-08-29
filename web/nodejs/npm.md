@@ -204,3 +204,24 @@ prerestart，postrestart
 
 # npm的organization
 https://gitee.com/taichiyi/blog/blob/master/npm-organization.md
+
+# 使用`npm run`运行命令时，如何附加参数？使用`--`拼接即可。
+* json
+```json
+{
+  "scripts": {
+    "hello": "node ./hello.js --hello=world"
+  }
+}
+```
+* javascript
+```javascript
+// hello.js
+console.log(process.argv)
+```
+* shell
+```shell
+npm run hello -- --version=1.0.0 -v=1.0.0
+# `--`后面的参数不解析，直接传递进去。相当于：↓
+node ./hello.js --hello=world --version=1.0.0 -v=1.0.0
+```
