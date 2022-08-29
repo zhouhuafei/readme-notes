@@ -83,3 +83,4 @@
 ## 常用命令
 * 新建Module：`npx ng g m modules/order --routing`。
 * 新建Component：`npx ng g c components/hello`。新建页面也是用这个：`npx ng g c pages/home`。
+* 新建路由守卫：`npx ng g g guards/auth`。
