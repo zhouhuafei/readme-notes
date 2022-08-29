@@ -22,10 +22,14 @@
 
 ## `@NgModule`有个`imports`选项，可以导入模块，例如导入`HttpModule`，此处的模块指的是什么？
 * 上述的模块指的是NgModule。NgModule是由NgModule装饰器函数装饰的类。
-* NgModule可以从其他NgModule中导入功能，前提是目标NgModule导出了该功能。...TODO 何解？
+* NgModule可以从其他NgModule中导入功能，前提是目标NgModule导出了该功能。
+  - 案例：https://github.com/zhouhuafei/hello-world_angular/blob/master/src/app/app.module.ts
+  - 案例：https://github.com/zhouhuafei/hello-world_angular/blob/master/src/app/app-routing.module.ts
+  - 上述案例中，`app.module.ts`导入了`app-routing.module.ts`，后者导出了RouterModule，固路由可以正常运行。
 
 ## `@NgModule`有个`exports`选项，其作用是？
-* ...TODO 导出某些功能。
+* 案例：https://github.com/zhouhuafei/hello-world_angular/blob/master/src/app/app-routing.module.ts
+* 上述案例中，`app-routing.module.ts`是一个路由模块（NgModule），如果RouterModule不进行对外导出，则不能正常运行。
 
 ## 服务的用途？
 * 服务用于放置和特定组件无关并希望跨组件共享的数据或逻辑。
@@ -40,7 +44,7 @@
 ...TODO
 
 ## 如何配置路由？
-* 案例：https://github.com/zhouhuafei/hello-world_angular/blob/master/src/app/app.routes.ts
+* 案例：https://github.com/zhouhuafei/hello-world_angular/blob/master/src/app/app-routing.module.ts
 * 总结：路由还是要使用layout配合children进行渲染，否则404页面不干净。
 
 ## 如何监听路由的变化？
