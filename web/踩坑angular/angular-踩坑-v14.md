@@ -88,3 +88,4 @@
 * 新建路由守卫：`npx ng g g guards/auth`。
 * 新建指令：`npx ng g d directives/setBg`。
 * 新建管道：`npx ng g p pipes/arrJoin`。
+* 新建服务：`npx ng g s services/userInfo`。
