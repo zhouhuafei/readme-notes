@@ -40,7 +40,7 @@
 ...TODO
 
 ## constructor注入原理？为什么能自动实例化？为什么constructor中形参的顺序可以随意摆放？
-* 关于我个人的思考与实现：`./hello-constructor.js`。
+* 关于我个人的思考与实现：`./constructor-inject.js`。
 
 ## 如何配置路由？
 * 案例：https://github.com/zhouhuafei/hello-world_angular/blob/master/src/app/app-routing.module.ts
