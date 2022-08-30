@@ -86,3 +86,5 @@
 * 新建Module：`npx ng g m modules/order --routing`。
 * 新建Component：`npx ng g c components/hello`。新建页面也是用这个：`npx ng g c pages/home`。
 * 新建路由守卫：`npx ng g g guards/auth`。
+* 新建指令：`npx ng g d directives/setBg`。
+* 新建管道：`npx ng g p pipes/arrJoin`。
