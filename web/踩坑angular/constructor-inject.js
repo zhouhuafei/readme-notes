@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* eslint-disable no-new */
 {
   class A {
     a = 'a'
@@ -52,7 +52,9 @@
   function instanceClass (className) {
     const currentClass = dependenciesClass[className]
     // 重点2：得到构造函数中形参的字符串（也就是a,b,c,d）。同时得到了顺序。
-    const match = currentClass.Class.toString().match(/^[^(]*\(\s*([^)]*)\)/m)
+    // 别人写的正则：/^[^(]*\(\s*([^)]*)\)/
+    // 我自己写的正则：/constructor\s*\(([^)]*)\)/
+    const match = currentClass.Class.toString().match(/constructor\s*\(([^)]*)\)/)
     if (match) {
       const getConstructorParametersSort = match[1].split(',').map(v => v.replace(/\s*/g, '')).filter(v => v)
       // 重点3：根据形参字符串以及形参字符串的顺序，去依赖收集器中找出对应的类，然后按照顺序自动实例化类。
