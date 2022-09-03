@@ -9,13 +9,6 @@
 * 如果使用了html5的离线存储功能（PWA）（Manifest）（Service Worker）。
 * 被缓存住的资源会返回：`200 OK (from service worker)`。
 
-# max-age单位是秒数
-```
-Cache-Control: public, max-age=31536000
-```
-* 使用nodejs的框架express设置这个缓存的时候是通过毫秒数设置的。
-* 浏览器的响应头里显示出来是秒数。
-
 ## 缓存特性 - 下述均为个人亲测
 > 服务端工具：nginx/1.21.6
 >
@@ -25,10 +18,14 @@ Cache-Control: public, max-age=31536000
 * 场景2：只让`Last-Modified`生效或只让`ETag`生效或让两者同时生效时。
   - `Status Code`首次是`200 OK`，后续是`200 OK (from memory cache)`。
   - 发现问题：明明只配置了弱缓存，为什么强缓存生效了？
-  - 自我答疑：Chrome浏览器特性如此，有弱缓存时会默认一个强缓存。若不想要这个特性，可以参考`场景3`。
+  - 自我答疑：Chrome浏览器特性如此，有弱缓存时会默认生效强缓存。若不想要这个特性，可以参考`场景3`。
 * 场景3：只让`Last-Modified`生效或只让`ETag`生效或让两者同时生效时。若额外配置`Cache-Control no-cache;`或额外配置`Cache-Control max-age=0;`。
   - `Status Code`首次是`200 OK`，后续是`304 Not Modified`。
 #### 知识点补充：Cache-Control强缓存？
+* 单位：`Cache-Control: public, max-age=31536000`（秒）。
+  - 使用nodejs的框架express设置这个缓存的时候是通过毫秒数设置的。
+  - 使用nginx设置这个缓存的时候是通过秒数设置的。
+  - 浏览器的响应头里显示出来是秒数。
 * 注意：Cache-Control并不是对所有的请求都有效。
 * 亲测：当Cache-Control应用在XHR上时，对GET和HEAD请求有效，对POST请求无效。
 * 流程图：![图片加载中...](./images/cache.jpg)
@@ -58,13 +55,15 @@ Cache-Control: public, max-age=31536000
 * 场景描述：父页面中通过iframe内嵌了一个子页面。
   - 子页面`index.html`的响应头里不存在`Cache-Control`强缓存，只存在`Last-Modified`和`ETag`这两个弱缓存。
   - 但是子页面`index.html`的状态码居然返回了`200 OK (from memory cache)`。
-* 问：为什么会被强缓存？
-  - 答：Chrome浏览器特性如此，有弱缓存时会默认一个强缓存。
+* 问：子页面为什么会被强缓存？
+  - 答：Chrome浏览器特性如此，有弱缓存时会默认生效强缓存。
 * 问：强刷父页面有效么？
-  - 答：亲测无效！即使有效，也不能逐个通知用户去强刷页面吧！
-* 问：能去给nginx配置`Cache-Control no-cache;`么？
+  - 答：若iframe是通过js进行渲染的，不管是同步渲染还是异步渲染，强刷均无效。
+  - 答：若iframe是通过html直接渲染的，强刷有效。
+  - 补：即使有效，也不能逐个通知用户去强刷页面吧。
+* 问：能去给nginx配置`Cache-Control no-cache;`，让子页面的强缓存无效么？
   - 答：可以配，但是为时晚矣，因客户那边已经被缓存住了！
-* 问：能去给index.html页面加meta标签让`Cache-Control`失效么？
+* 问：能去给子页面的index.html文件加meta标签，使之`Cache-Control`失效么？
   - 答：可以加，但是为时晚矣。因客户那边已经被缓存住了！
 * 问：如何清理缓存？
   - 答：在页面的入口处加上时间戳！后续尽量也在index.html中使用meta标签让`Cache-Control`失效。
