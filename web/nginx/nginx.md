@@ -345,7 +345,7 @@ location / {
   - 静态css，js，img，视频，音频等。返回：`200 OK (from memory cache)`。
   - 注：Cache-Control是否对静态资源生效，还要看静态资源的访问方式。
     - 如果是在浏览器的url中直接访问某个静态资源，只要触发了浏览器的刷新行为，则Cache-Control失效。
-    - html也不例外。具体请参考我的另外一篇笔记：`../网站/缓存.md`。
+    - html也不例外。具体请参考我的另外一篇笔记：`../http/http缓存细节.md`。
 
 # vue-router
 > History 模式
