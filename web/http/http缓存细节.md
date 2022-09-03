@@ -26,8 +26,8 @@
   - 使用nodejs的框架express设置这个缓存的时候是通过毫秒数设置的。
   - 使用nginx设置这个缓存的时候是通过秒数设置的。
   - 浏览器的响应头里显示出来是秒数。
-* 注意：Cache-Control并不是对所有的请求都有效。
-* 亲测：当Cache-Control应用在XHR上时，对GET和HEAD请求有效，对POST请求无效。
+* 注意1：Cache-Control并不是对所有的请求都有效。
+* 注意2：当Cache-Control应用在XHR上时，对GET和HEAD请求有效，对POST请求无效。
 * 流程图：![图片加载中...](./images/cache.jpg)
 #### 知识点补充：若给静态资源配上强缓存，那么首条请求的强缓存特性是怎样的呢？
 * 什么是首条请求？
