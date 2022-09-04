@@ -53,8 +53,8 @@
 * 清理缓存方式2：给html加meta标签让Cache-Control不生效。若项目启动初期没加，客户那边已被缓存，则加之无效。只能用于清除本地缓存。
 #### 案例分析
 * 场景描述：父页面中通过iframe内嵌了一个子页面。
-  - 子页面`index.html`的响应头里不存在`Cache-Control`强缓存，只存在`Last-Modified`和`ETag`这两个弱缓存。
-  - 但是子页面`index.html`的状态码居然返回了`200 OK (from memory cache)`。
+  - 子页面index.html的响应头里不存在`Cache-Control`强缓存，只存在`Last-Modified`和`ETag`这两个弱缓存。
+  - 但是子页面index.html的状态码居然返回了`200 OK (from memory cache)`。
 * 问：子页面为什么会被强缓存？
   - 答：Chrome浏览器特性如此，有弱缓存时会默认生效强缓存。
 * 问：强刷父页面能去除子页面的缓存么？
