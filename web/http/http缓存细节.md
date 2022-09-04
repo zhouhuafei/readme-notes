@@ -69,7 +69,9 @@
   - 若其他非html的静态资源都放在第三方的cdn服务器上，nginx中只有index.html页面，那直接对根路径进行无强缓存配置即可。
 * 问：能去给子页面的index.html文件加meta标签，使之`Cache-Control`失效么？
   - 答：可以加，但是为时晚矣。因客户那边已经被缓存住了。
-  - meta去除强缓存，建议项目启动初期就加上，防止index.html被强缓存（`<meta http-equiv="Cache-Control" content="no-cache" />`）。
+  - meta去除强缓存：`<meta http-equiv="Cache-Control" content="no-cache" />`。
+  - 建议项目启动初期就加上，可以用来防止index.html页面被强缓存。
+  - 不仅可以防止在tab中首次贴入的强缓存，还可以防止在iframe中的强缓存。
 * 问：如何清理缓存？
   - 答：在页面的入口处加上时间戳。
   - 单页hash模式清理缓存：http://localhost:3080/?t=1662118978358/#/about?a=1&b=2
