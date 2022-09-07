@@ -70,4 +70,3 @@
 * 1、`om-bms-framework模块`在生产依赖中安装`@types/promise.prototype.finally`。
 * 2、`om-bms-root模块`重新安装`om-bms-framework`模块。并在`tsconfig.app.json`中配置`"include": ["@types/promise.prototype.finally"]`。
 * 3、`子模块`在`tsconfig.app.json`中配置`"include": ["@types/promise.prototype.finally"]`即可。
-
