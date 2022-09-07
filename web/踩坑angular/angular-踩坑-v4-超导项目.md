@@ -67,6 +67,6 @@
 #### less - 虽然在`om-bms-framework`项目的less文件中定义了通用变量，但是在开发过程中却没被使用？
 * 可能是历史遗留问题，后续开发时使用即可。
 #### 因ts版本过低，主模块和子模块默认均不支持Promise的finally方法！如果做可以使之支持？下述均为亲测！
-* 1、`om-bms-framework模块`在生产依赖中安装`@types/promise.prototype.finally`。
-* 2、`om-bms-root模块`重新安装`om-bms-framework`模块。并在`tsconfig.app.json`中配置`"include": ["@types/promise.prototype.finally"]`。
-* 3、`子模块`在`tsconfig.app.json`中配置`"include": ["@types/promise.prototype.finally"]`即可。
+* [x] 1、`om-bms-framework模块`在生产依赖中安装`@types/promise.prototype.finally`。已配置。
+* [x] 2、`om-bms-root模块`重新安装`om-bms-framework`模块。并在`tsconfig.app.json`中配置`"include": ["@types/promise.prototype.finally"]`。已配置。
+* [x] 3、`子模块`在`tsconfig.app.json`中配置`"include": ["@types/promise.prototype.finally"]`即可。`om-bms-goodsmanagement`模块已配置。
