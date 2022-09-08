@@ -352,4 +352,5 @@ null ?? 'a' // 'a'
 undefined ?? 'b' // 'b'
 '' ?? 'c' // ''
 false ?? 'd' // false
+0 ?? 'e' // 0
 ```
