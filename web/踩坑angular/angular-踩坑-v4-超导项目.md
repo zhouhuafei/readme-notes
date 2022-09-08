@@ -73,9 +73,9 @@
 * 如何做可以使之支持？方案1：使用类型断言！
   - `await (this.apiCollectionService.categoryAddOrEdit({ collocationId: this.id }) as any).finally(() => (this.loading = false))`
 * 如何做可以使之支持？方案2：使用类型声明！
-  - 在`tsconfig.app.json`中配置`"include": ["@types/promise.prototype.finally"]`即可。不能不配。否则打包会报错。不需要安装`@types/promise.prototype.finally`依赖。
-  - `om-bms-goodsmanagement`模块不安装`@types/promise.prototype.finally`依赖。编辑器不会报错。打包正常。`ts版本是v2.2.2`。
-  - `om-bms-root`模块不安装`@types/promise.prototype.finally`依赖。编辑器会报错。打包正常。`ts版本是v2.3.4`。
+  - 在`tsconfig.app.json`中配置`"include": ["@types/promise.prototype.finally"]`即可。不能不配。否则打包会报错。不需要安装`@types/promise.prototype.finally`依赖包。
+  - `om-bms-goodsmanagement`模块如果不安装`@types/promise.prototype.finally`依赖包。编辑器不会报错。打包正常。`ts版本是v2.2.2`。
+  - `om-bms-root`模块如果不安装`@types/promise.prototype.finally`依赖包。编辑器会报错。打包正常。`ts版本是v2.3.4`。
 * 其他案例：https://github.com/zhouhuafei/hello-world_angular4
   - 如果不安装`@types/promise.prototype.finally`依赖包，编辑器会报错，打包正常。`ts版本是v2.2.2`。
   - 在`tsconfig.app.json`中配置`"include": ["@types/promise.prototype.finally"]`即可。不能不配。否则打包会报错。
