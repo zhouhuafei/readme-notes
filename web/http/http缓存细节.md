@@ -85,6 +85,6 @@
     - 注意事项2：如果是hash模式切换成history模式，以前用js处理url的地方可能要进行改动。
 
 # `location.hash` 和 `location.search`
-* 案例网址：http://localhost:3080/?a=1/#/about?c=2/#/c=3
-* location.hash的值：`#/about?c=2/#/c=3`。
-* location.search的值：`?a=1/`。
+* 案例网址：http://localhost:3080/?a=1?b=2/#/about?c=3/#/d=4
+* location.hash的值：`#/about?c=3/#/d=4`。
+* location.search的值：`?a=1?b=2/`。
