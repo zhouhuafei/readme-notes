@@ -119,3 +119,7 @@ div {
 * font-weight
   - 400 等同于 normal
   - 700 等同于 bold
+
+* aspect-ratio: 16 / 9;
+  - 宽高比是16比9
+  - 如果div的宽度是1600则高度为900
