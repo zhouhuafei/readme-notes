@@ -58,7 +58,7 @@
 
 # 其他
 * cookie的存储只和域名domain以及路径path有关。
-* cookie的存储和端口port以及协议protocol无关，并不会因为不同的端口而导致cookie不一致。
+* cookie的存储和端口port以及协议protocol无关，并不会因为不同的端口或不同的协议而导致cookie不一致。
 
 # 服务端nodejs设置跨域
 ```
