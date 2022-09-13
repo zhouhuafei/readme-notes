@@ -68,6 +68,7 @@
   - 经测试发现：组件中的input，当内容发生改变时，会默认向父组件传递一个change事件，即使在组件中不绑定`@Output() change = new EventEmitter()`，亦会如此。
   - 我把`@Output() change = new EventEmitter()`改为`@Output() confirm = new EventEmitter()`后解决了这个问题。
   - 建议：当组件中存在input等表单元素，向父组件传递事件时，事件命名不要使用`change`关键字。
+  - 我又测试了textarea和select。都存在上述问题。其他表单元素未进行测试。理应都存在类似问题。
 
 ## 问题
 #### less - 虽然在`om-bms-framework`项目的less文件中定义了通用变量，但是在开发过程中却没被使用？
