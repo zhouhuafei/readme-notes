@@ -64,9 +64,10 @@
   - 前端放入cookie中使之590分钟失效。
 * 我在`om-bms-framework`的生产依赖中，增加了一个npm包`async-validator`。按照npm的特性，我安装`om-bms-framework`包时，理应帮我安装`async-validator`包。但并未按照我的预期进行安装，请问怎么解决？
   - 我把本地的`package-lock.json`删除后，重新安装，依赖就有了。
-* 我写了个弹窗组件，并向父组件传递一个事件`@Output() change = new EventEmitter()`。弹窗组件中有个未绑定change事件的input框，当我修改input中的文案并失去焦点后，竟然会向父组件传递change事件？
+* 我写了个弹窗组件，并向父组件传递一个事件`@Output() change = new EventEmitter()`。弹窗组件中有个未绑定任何事件的input框，当我修改input中的文案并失去焦点后，竟然会向父组件传递change事件？我并未执行`this.change.emit()`。为何会如此？
+  - 经测试发现：组件中的input，当内容发生改变时，会默认向父组件传递一个change事件，即使在组件中不绑定`@Output() change = new EventEmitter()`，亦会如此。
   - 我把`@Output() change = new EventEmitter()`改为`@Output() confirm = new EventEmitter()`后解决了这个问题。
-  - 当组件中存在input等表单元素，向父组件传递事件时，事件命名不要使用`change`关键字。
+  - 建议：当组件中存在input等表单元素，向父组件传递事件时，事件命名不要使用`change`关键字。
 
 ## 问题
 #### less - 虽然在`om-bms-framework`项目的less文件中定义了通用变量，但是在开发过程中却没被使用？
