@@ -62,6 +62,8 @@
 * accessToken的有效期是多久？
   - 后端给的有效期是10天。
   - 前端放入cookie中使之590分钟失效。
+* 我在`om-bms-framework`的生产依赖中，增加了一个npm包`async-validator`。按照npm的特性，我安装`om-bms-framework`包时，理应帮我安装`async-validator`包。但并未按照我的预期进行安装，请问怎么解决？
+  - 我把本地的`package-lock.json`删除后，重新安装，依赖就有了。
 
 ## 问题
 #### less - 虽然在`om-bms-framework`项目的less文件中定义了通用变量，但是在开发过程中却没被使用？
