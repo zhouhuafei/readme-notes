@@ -93,5 +93,9 @@
 * 新建管道：`npx ng g p pipes/arrJoin`。
 * 新建服务：`npx ng g s services/userInfo`。
 
-## 一文了解 ng-template, ng-content, ng-container, 和 *ngTemplateOutlet的区别
-https://developer.aliyun.com/article/817427
+## 一文了解`ng-template`，`ng-content`、`ng-container`和`*ngTemplateOutlet`的区别。
+* https://developer.aliyun.com/article/817427
+
+## 把组件内`ng-container`的变量传递给组件外的`ng-template`。
+* https://blog.csdn.net/SeriousLose/article/details/121473988
+* 在上下文对象中使用`$implicit`这个`key`会把对应的值设置为默认值。
