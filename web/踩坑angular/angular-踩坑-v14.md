@@ -92,3 +92,6 @@
 * 新建指令：`npx ng g d directives/setBg`。
 * 新建管道：`npx ng g p pipes/arrJoin`。
 * 新建服务：`npx ng g s services/userInfo`。
+
+## 一文了解 ng-template, ng-content, ng-container, 和 *ngTemplateOutlet的区别
+https://developer.aliyun.com/article/817427
