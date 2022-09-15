@@ -77,14 +77,15 @@
 * 使用app-image-upload组件上传文件后，数据的变更无法驱动视图。
   - 现象1：使用鼠标点一下页面上的任何地方，就可以进行视图的驱动。
   - 现象2：鼠标移入到上传图片的上传区域后，就可以进行视图的驱动。
-  - 解决方案1：在使用组件的地方，强制更新视图。
+  - 解决方案1：在使用组件的地方，当数据变更后，调用下述方法，强制更新视图。
     - `import { ChangeDetectorRef } from '@angular/core'`
     - `constructor (private changeDetectorRef: ChangeDetectorRef) {}`
     - `this.changeDetectorRef.detectChanges()`
   - 问题排查：怀疑是系统级上传，对angular4的VM层有影响。但我使用type为file的input上传文件后，数据的变更可以驱动视图。那就是组件写的有问题。
   - 解决方案2：修复组件bug。...TODO
 * 给c-input组件（重写了ngModel）附加trim功能时，数据的改变无法驱动视图的改变。
-  - 自定义input组件并重写ngModel后。如果想要附加trim功能，需要使用dom自行改变input的value值。
+  - 自定义input组件并重写ngModel后。如果想要附加trim功能，需要手动更新视图（使用dom改变input的value值）。
+  - 我使用`this.changeDetectorRef.detectChanges()`去强制更新视图，发现并没有什么卵用。
 
 ## 问题
 #### less - 虽然在`om-bms-framework`项目的less文件中定义了通用变量，但是在开发过程中却没被使用？
