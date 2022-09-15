@@ -1013,3 +1013,6 @@ HTMLCanvasElement.toBlob((blob) => {
 * 思路：https://github.com/ElemeFE/element/issues/3054
 * 案例：https://elementui.github.io/theme-preview/#/zh-CN
 * 源码：https://github.com/ElementUI/theme-preview
+
+## 强制更新视图
+https://blog.csdn.net/weixin_61928334/article/details/125931622

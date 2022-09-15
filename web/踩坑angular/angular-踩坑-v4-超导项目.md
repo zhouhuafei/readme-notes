@@ -70,9 +70,21 @@
   - 建议：当组件中存在input等表单元素，向父组件传递事件时，事件命名不要使用`change`关键字。
   - 我又测试了textarea和select。都存在上述问题。其他表单元素未进行测试。理应都存在类似问题。
   - 我又发现，在未配置事件通信的场景下，不仅change事件，表单元素的其他事件，亦会向父组件进行传递，例如keyup事件，input事件。表单元素的其他事件理应都存在类似问题。
+  - 我又发现，在未配置事件通信的场景下，组件嵌套组件时，被嵌套的组件中如果包含表单元素，则表单元素的事件会一层层往父组件传递。
 * 输入中文拼音的时候不会触发input事件（可以理解），选定汉字瞬间亦不会触发input事件（这不就离了谱了）。
   - angular4内部的input事件存在bug。使用keyup事件取代input事件。
   - angular14移除了输入中文拼音的时候不会触发input事件的特性。
+* 使用app-image-upload组件上传文件后，数据的变更无法驱动视图。
+  - 现象1：使用鼠标点一下页面上的任何地方，就可以进行视图的驱动。
+  - 现象2：鼠标移入到上传图片的上传区域后，就可以进行视图的驱动。
+  - 解决方案1：在使用组件的地方，强制更新视图。
+    - `import { ChangeDetectorRef } from '@angular/core'`
+    - `constructor (private changeDetectorRef: ChangeDetectorRef) {}`
+    - `this.changeDetectorRef.detectChanges()`
+  - 问题排查：怀疑是系统级上传，对angular4的VM层有影响。但我使用type为file的input上传文件后，数据的变更可以驱动视图。那就是组件写的有问题。
+  - 解决方案2：修复组件bug。...TODO
+* 给c-input组件（重写了ngModel）附加trim功能时，数据的改变无法驱动视图的改变。
+  - 自定义input组件并重写ngModel后。如果想要附加trim功能，需要使用dom自行改变input的value值。
 
 ## 问题
 #### less - 虽然在`om-bms-framework`项目的less文件中定义了通用变量，但是在开发过程中却没被使用？
