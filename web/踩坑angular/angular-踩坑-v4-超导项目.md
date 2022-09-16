@@ -63,7 +63,7 @@
   - 后端给的有效期是10天。
   - 前端放入cookie中使之590分钟失效。
 * 我在`om-bms-framework`的生产依赖中，增加了一个npm包`async-validator`。按照npm的特性，我安装`om-bms-framework`包时，理应帮我安装`async-validator`包。但并未按照我的预期进行安装，请问怎么解决？
-  - 先删除`package-lock.json`再运行`npm i`。
+  - 先删除`om-bms-framework`包和`package-lock.json`文件再运行`npm i`。
 * 我写了个组件，并向父组件传递一个事件`@Output() change = new EventEmitter()`。组件中有个未绑定任何事件的input框，当我修改input中的文案并失去焦点后，竟然会向父组件传递change事件？我并未执行`this.change.emit()`。为何会如此？
   - 经测试发现：组件中的input，当内容发生改变时，会默认向父组件传递一个change事件，即使在组件中不绑定`@Output() change = new EventEmitter()`，亦会如此。
   - 我把`@Output() change = new EventEmitter()`改为`@Output() confirm = new EventEmitter()`后解决了这个问题。
