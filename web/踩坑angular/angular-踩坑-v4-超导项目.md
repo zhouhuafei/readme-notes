@@ -87,6 +87,8 @@
   - 自定义input组件并重写ngModel后。如果想要附加trim功能，需要手动更新视图（使用dom改变input的value值）。
   - 我使用`this.changeDetectorRef.detectChanges()`去强制更新视图，发现并没有什么卵用（内部input的value值没变化，当然没用啦）。
   - 本质原因是组件内部的input其ngModel绑定的变量value，在`set value()`时未进行重新赋值。若在其中使用`this.value=newValue`赋值会无限递归。所以需要使用dom改变input的value值。
+* 路由权限怎么校验的？`根据路径进行的校验`。
+* 接口非200时是否进行了捕获？`未进行捕获`。
 
 ## 问题
 #### less - 虽然在`om-bms-framework`项目的less文件中定义了通用变量，但是在开发过程中却没被使用？

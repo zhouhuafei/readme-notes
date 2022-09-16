@@ -293,3 +293,5 @@ fn().then((res) => {
   - https://github.com/tc39/proposal-promise-finally/blob/master/polyfill.js
 * 这是规范
   - https://tc39.es/ecma262/#sec-promise.prototype.finally
+
+## `.then()`或`.catch()`的入参为`undefined`时无任何效果，等同于没写，可以直接无视。
