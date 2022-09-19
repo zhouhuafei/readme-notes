@@ -130,3 +130,15 @@ module.exports = {
 * 可以参考element-ui的命名方式。
 * https://github.com/ElemeFE/element/blob/dev/packages/theme-chalk/src/common/var.scss
 * https://github.com/ElemeFE/element/blob/dev/packages/theme-chalk/src/index.scss
+
+# @each
+```scss
+@each $prop, $abbrev in (margin: m, padding: p) {
+  // 消除间距
+  // .p0
+  // .m0
+  .#{$abbrev}0 {
+    #{$prop}: 0 !important;
+  }
+}
+```
