@@ -24,7 +24,7 @@
     关于优先识别方式和title标签类似，写在上面的优先识别，不会被后面同样的标签覆盖掉。
     chrome=1：当用户使用IE访问该页面时，如果用户安装了GCF插件，则使用chrome的内核解析该页面，如果没有，则使用最新的IE内核解析当前页面。
 -->
-<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
 <!-- 启用360浏览器的极速模式(360浏览器，360的工程师说，如果用户手动调节成兼容模式，那么加了这个也是无法切换的，因为用户的优先级最高) -->
 <meta name="renderer" content="webkit">
 <!-- 搜索引擎抓取 -->
