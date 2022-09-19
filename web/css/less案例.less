@@ -1,0 +1,82 @@
+// less - 自定义函数
+@functions: ~`(function() {
+  // px2upx
+  function px2upx(px) {
+    return px + 'px'
+  }
+  this.px2upx = px2upx
+  // color
+  function color(colorValue) {
+    return colorValue
+  }
+  this.color = color
+})()`;
+
+// less - 混合 - 清除浮动
+.g-clearfix() {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+  }
+}
+
+// less - 混合 - 单行省略号
+.g-ellipsis() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+// less - 混合 - 多行省略号
+.g-ellipsis2(@lineClamp: 1, @lineHeight: 14) {
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  display: -webkit-box;
+  /*! autoprefixer: off */
+  -webkit-box-orient: vertical; // 若不加上述注释则此行会丢失
+  -webkit-line-clamp: @lineClamp;
+  line-height: ~`px2upx('@{lineHeight}')`;
+  @maxHeight: @lineClamp * @lineHeight;
+  max-height: ~`px2upx('@{maxHeight}')`;
+}
+
+// less - 案例
+.div-nnn-wrap {
+  width: 200px;
+  overflow: hidden;
+
+  // less - 案例 - 使用calc
+  .div-111 {
+    width: calc(~'100% - 100px');
+    // scss和css只需要width: calc(100% - 100px);这么写即可。
+    .g-ellipsis2();
+  }
+
+  // less - 案例 - 使用calc - 配合变量
+  .div-222 {
+    @width: 100%;
+    @diff: 100px;
+    width: calc(~'@{width} - @{diff}');
+    // scss只需要width: calc($width - $diff);这么写即可。scss使用$定义变量。
+    .g-ellipsis2();
+  }
+
+  // less - 案例 - 使用函数
+  .div-333 {
+    color: ~`color('red')`;
+    .g-ellipsis2();
+  }
+
+  // less - 案例 - 使用函数 - 配合变量
+  .div-444 {
+    @colorValue: red;
+    color: ~`color('@{colorValue}')`;
+    .g-ellipsis2();
+  }
+}
