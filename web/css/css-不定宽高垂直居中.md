@@ -164,3 +164,8 @@ section {
   vertical-align: middle;
 }
 ```
+
+# 总结：如果内联块元素在垂直居中时存在上下间距的误差？
+* 1、先尝试给内联块元素加`vertical-align: middle;`。
+* 2、再尝试给其父级加`line-height: 1;`。
+* 3、最后再尝试给其父级加`font-size: 0;`。
