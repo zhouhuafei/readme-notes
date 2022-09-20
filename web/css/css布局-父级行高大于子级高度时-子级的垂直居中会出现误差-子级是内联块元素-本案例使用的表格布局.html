@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>css布局-父级行高大于子级高度时-子级的垂直居中会出现误差-子级是内联块元素-本案例使用的表格布局</title>
+    <style>
+      table, tr, th, td {
+        margin: 0;
+        padding: 0;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border-top: 1px solid #f00;
+        line-height: 1;
+        font-size: 0;
+      }
+
+      tr {
+        border-bottom: 1px solid #f00;
+      }
+
+      th, td {
+        border-right: 1px solid #f00;
+        text-align: justify;
+      }
+
+      th:last-of-type, td:last-of-type {
+        border-right: none;
+      }
+
+      .cell {
+        font-size: 14px;
+        line-height: 18px;
+        padding: 10px;
+      }
+
+      .button {
+        display: inline-block;
+        vertical-align: middle;
+        height: 60px;
+        background: #000;
+        width: 50%;
+      }
+
+      .button.small {
+        height: 10px; /* 若.button的高度如果小于.cell的行高，则.button的垂直居中会出现误差 */
+      }
+
+      .private {
+        font-size: 0; /* 给.button套一层.private即可解决上述误差问题 */
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            <div class="cell">
+              姓名
+            </div>
+          </th>
+          <th>
+            <div class="cell">
+              性别
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="cell">周华飞</div>
+          </td>
+          <td>
+            <div class="cell">男</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="cell">
+              <div class="private">
+                <div class="button"></div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="cell">
+              <div class="private">
+                <div class="button small"></div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
