@@ -46,7 +46,7 @@
         font-size: 14px;
         line-height: 22px;
         text-align: center;
-        /* 下面四条属性是方案二：使用这个方案，在具体场景中使用时，不需要额外套一层.private */
+        /* 下面四条属性是方案2（推荐）：使用这个方案，在table组件中就解决掉了误差问题，不需要在具体的应用场景中额外套一层.private */
         /*display: flex;*/
         /*align-items: center;*/
         /*justify-content: center;*/
@@ -65,6 +65,7 @@
         height: 18px; /* 若.button的高度小于.cell的行高，则.button的垂直居中会出现误差 */
       }
 
+      /* 方案1（不推荐）在应用场景中额外套一层.private解决误差问题 */
       .private {
         font-size: 0; /* 给.button套一层.private即可解决上述误差问题 - 前提是.cell的行高和.button的高度都为奇数或都为偶数 - 否则误差依然会存在 */
         line-height: 1;
