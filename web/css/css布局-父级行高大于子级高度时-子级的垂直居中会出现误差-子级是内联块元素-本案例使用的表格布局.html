@@ -46,7 +46,7 @@
         font-size: 14px;
         line-height: 22px;
         text-align: center;
-        /* 下面四条属性是方案2（推荐）：使用这个方案，在table组件中就解决掉了误差问题，不需要在具体的应用场景中额外套一层.private */
+        /* 下面四条属性是方案2：使用这个方案，直接在table组件中就可以解决误差问题 - 弊端：`display: flex;`会让自身的单行省略号失效，需要在具体的应用场景中额外套一层标签去加单行省略号。 */
         /*display: flex;*/
         /*align-items: center;*/
         /*justify-content: center;*/
@@ -62,12 +62,12 @@
       }
 
       .button.small {
-        height: 18px; /* 若.button的高度小于.cell的行高，则.button的垂直居中会出现误差 */
+        height: 18px; /* 若.button的高度小于.cell的行高，则.button的垂直居中会出现误差。 */
       }
 
-      /* 方案1（不推荐）在应用场景中额外套一层.private解决误差问题 */
+      /* 下面的.private是方案1：使用这个方案，需要在应用场景中额外套一层.private解决误差问题 - 益处：单行省略号写起来方便。 */
       .private {
-        font-size: 0; /* 给.button套一层.private即可解决上述误差问题 - 前提是.cell的行高和.button的高度都为奇数或都为偶数 - 否则误差依然会存在 */
+        font-size: 0; /* 给.button套一层.private即可解决上述误差问题 - 前提是.cell的行高和.button的高度都为奇数或都为偶数 - 否则误差依然会存在。 */
         line-height: 1;
       }
     </style>
