@@ -10,6 +10,7 @@
       }
 
       table {
+        table-layout: fixed; /* 平分剩余宽度。若某个单元格中的文字过长，则自动换行。不会把其他单元格挤小。 */
         width: 100%;
         border-collapse: collapse;
         border-top: 1px solid #f00;
@@ -55,6 +56,11 @@
   </head>
   <body>
     <table>
+      <colgroup>
+        <col width="200">
+        <col>
+        <col>
+      </colgroup>
       <thead>
         <tr>
           <th>
@@ -67,6 +73,11 @@
               性别
             </div>
           </th>
+          <th>
+            <div class="cell">
+              自我介绍
+            </div>
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -76,6 +87,11 @@
           </td>
           <td>
             <div class="cell">男</div>
+          </td>
+          <td>
+            <div class="cell">
+              自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍
+            </div>
           </td>
         </tr>
         <tr>
@@ -89,6 +105,14 @@
           <td>
             <div class="cell">
               <div class="private">
+                <div class="button small"></div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="cell">
+              <div class="private">
+                <div class="button small"></div>
                 <div class="button small"></div>
               </div>
             </div>
