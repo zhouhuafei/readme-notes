@@ -67,8 +67,8 @@
 
       /* 下面的.private是方案1：使用这个方案，需要在应用场景中额外套一层.private解决误差问题 - 益处：单行省略号写起来方便。 */
       .private {
-        font-size: 0; /* 给.button套一层.private即可解决上述误差问题 - 前提是.cell的行高和.button的高度都为奇数或都为偶数 - 否则误差依然会存在。 */
-        line-height: 1;
+        line-height: 1; /* 给.button套一层.private即可解决上述误差问题 - 前提是.cell的行高和.button的高度都为奇数或都为偶数 - 否则误差依然会存在。 */
+        font-size: 0; /* 行高导致的问题就用行高来修复，此处是为了防止有些内联块没使用vertical-align: middle;导致出现多余的底部间距。使用font-size: 0;可以消除多余的底部间距。 */
       }
     </style>
   </head>
