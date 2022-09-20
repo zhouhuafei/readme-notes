@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <title>css布局-父级行高大于子级高度时-子级的垂直居中会出现误差-子级是内联块元素-本案例使用的表格布局</title>
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: #f2f2f2;
+        padding: 50px;
+      }
+
       table, tr, th, td {
         margin: 0;
         padding: 0;
@@ -12,24 +22,20 @@
       table {
         table-layout: fixed; /* 平分剩余宽度。若某个单元格中的文字过长，则自动换行。不会把其他单元格挤小。 */
         width: 100%;
-        border-collapse: collapse;
-        border-top: 1px solid #f00;
+        border-collapse: collapse; /* 加上这个属性后，即使table、tr、th、td的四周全部加上边框，整体表单的边框亦不会叠加变粗。 */
         line-height: 1;
         font-size: 0;
-      }
-
-      tr {
-        border-bottom: 1px solid #f00;
+        background: #fff;
       }
 
       th, td {
-        border-right: 1px solid #f00;
-        text-align: justify;
+        text-align: center;
         padding: 10px;
+        border-bottom: 1px solid #f00;
       }
 
-      th:last-of-type, td:last-of-type {
-        border-right: none;
+      tbody tr:last-of-type th, tbody tr:last-of-type td {
+        border-bottom: none;
       }
 
       .cell {
@@ -90,7 +96,7 @@
           </td>
           <td>
             <div class="cell">
-              自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍
+              自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍
             </div>
           </td>
         </tr>
