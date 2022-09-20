@@ -29,7 +29,6 @@
       }
 
       th, td {
-        text-align: center;
         padding: 10px;
         border-bottom: 1px solid #d9d9d9;
       }
@@ -46,6 +45,10 @@
       .cell {
         font-size: 14px;
         line-height: 22px;
+        text-align: center;
+        /*display: flex;*/
+        /*align-items: center;*/
+        /*flex-wrap: wrap;*/
       }
 
       .button {
@@ -53,7 +56,7 @@
         vertical-align: middle;
         height: 60px;
         background: #000;
-        width: 50%;
+        width: 30px;
       }
 
       .button.small {
@@ -62,6 +65,7 @@
 
       .private {
         font-size: 0; /* 给.button套一层.private即可解决上述误差问题 - 前提是.cell的行高和.button的高度都为奇数或都为偶数 - 否则误差依然会存在 */
+        line-height: 1;
       }
     </style>
   </head>
