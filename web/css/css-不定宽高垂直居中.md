@@ -4,7 +4,7 @@
 div {
   width: 100px;
   height: 24px;
-  line-height: 1;
+  line-height: 18px;
   color: #fff;
   font-size: 12px;
   background: #000;
@@ -109,11 +109,58 @@ section {
 }
 ```
 
-# 方式6
+# 方式6-1 - session为块元素 - session中有字
 ```
 div {
   display: table-cell;
   text-align: center;
+  vertical-align: middle;
+}
+```
+
+# 方式6-2 - session为块元素 - session中无字
+```
+div {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+section {
+  width: 100%;
+  height: 12px;
+}
+```
+
+# 方式6-3 - session为内联块元素 - session中有字
+```
+div {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+section {
+  width: 100%;
+  height: 12px;
+  line-height: 1;
+  display: inline-block;
+}
+```
+
+# 方式6-4 - session为内联块元素 - session中无字
+```
+div {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 0;
+}
+
+section {
+  width: 100%;
+  height: 12px;
+  display: inline-block;
   vertical-align: middle;
 }
 ```
