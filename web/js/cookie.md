@@ -17,7 +17,16 @@
     - 当前域设置cookie的时候主域前加个点即可，例如把cookie的domian设置成.sbxx.top那么凡是这个域名下的子域，都可以使用这个cookie。
 
 # path
-* 路径建议设置为/，这样就可以在别的路径下也可以读写
+* 当访问网页的`/`路径时。
+  - 只可以获取path为`/`的cookie。
+  - 只可以删除path为`/`的cookie。
+  - 设置cookie时可以随意指定path。不指定时则path默认为`/`。
+* 当访问网页的`/goods`路径时。
+  - 可以获取path为`/`和path为`/goods`的所有cookie。
+  - 可以删除path为`/`和path为`/goods`的所有cookie。不指定path时则path默认为`/goods`。
+  - 设置cookie时可以随意指定path。不指定时则path默认为`/goods`。
+* 二级path下的cookie可以获取和删除一级path下的cookie，依次类推，反之则不行。
+* 建议path设置为`/`，这样在别的路径下也可以进行读写。
 
 # secure属性
 * 当设置为true时，表示创建的cookie会被以安全的形式向服务器传输，也就是只能在HTTPS连接中被浏览器传递到服务器端进行会话验证，如果是HTTP连接则不会传递该信息，所以不会被窃取到cookie的具体内容
