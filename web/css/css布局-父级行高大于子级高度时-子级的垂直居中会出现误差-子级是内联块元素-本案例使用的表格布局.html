@@ -24,6 +24,7 @@
       th, td {
         border-right: 1px solid #f00;
         text-align: justify;
+        padding: 10px;
       }
 
       th:last-of-type, td:last-of-type {
@@ -33,7 +34,6 @@
       .cell {
         font-size: 14px;
         line-height: 18px;
-        padding: 10px;
       }
 
       .button {
@@ -49,7 +49,7 @@
       }
 
       .private {
-        font-size: 0; /* 给.button套一层.private即可解决上述误差问题 */
+        font-size: 0; /* 给.button套一层.private即可解决上述误差问题 - 前提是.cell的行高和.button的高度都为奇数或都为偶数 - 否则误差依然会存在 */
       }
     </style>
   </head>
