@@ -70,7 +70,7 @@
 #### 数字常用方法？
 * 数字转成字符串并保留两位小数？`(Math.floor(parseFloat(10.2) * 1000/10) / 100).toFixed(2)`。`1变成'1.00'`。`10.2变成'10.20'`。`19.9变成'19.90'`。
 * 字符串`'1.00'变成'1'`。`'10.20'变成'10.2'`。`'19.90'变成'19.9'`？`String(Number('10.20'))`。
-* 生成4到6的随机数？`Math.round(Math.random() * (6 - 4) + 4)`。
+* 生成4到6的随机数？`Math.round(Math.random() * (6 - 4) + 4)`。`Math.floor(Math.random() * (6 - 4 + 1) + 4)`。
 #### 字符串常用方法？
 * 字符串转大小写？`toUpperCase、toLowerCase`。
 * 字符串查找？`[index]、charAt、charCodeAt、search(可以是正则)、indexOf、lastIndexOf、includes`。
