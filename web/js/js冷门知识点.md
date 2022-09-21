@@ -354,3 +354,7 @@ undefined ?? 'b' // 'b'
 false ?? 'd' // false
 0 ?? 'e' // 0
 ```
+
+## 随机数公式
+* `Math.round(Math.random() * (max - min) + min)`。
+* `Math.floor(Math.random() * (max - min + 1) + min)`。
