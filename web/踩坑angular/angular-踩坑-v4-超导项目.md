@@ -64,6 +64,17 @@
   - 前端放入cookie中使之590分钟失效。
 * 我在`om-bms-framework`的生产依赖中，增加了一个npm包`async-validator`。按照npm的特性，我安装`om-bms-framework`包时，理应帮我安装`async-validator`包。但并未按照我的预期进行安装，请问怎么解决？
   - 先删除`om-bms-framework`包和`package-lock.json`文件再运行`npm i`。
+  - 根据上述案例引申出`npm i`的机制，下述均为亲测：
+    - 普通场景：运行`npm i`时，若依赖中有A包，则安装到node_modules目录中，若没有，则从node_modules目录中删除。安装和删除后，会更新`package-lock.json`。
+    - 复杂场景：om-bms-root依赖的om-bms-framework包中新增了async-validator包。
+      - 场景1：`package-lock.json`存在时，在om-bms-root中删除node_modules目录后运行`npm i`，安装不到async-validator包。
+      - 场景2：`package-lock.json`存在时，在om-bms-root中删除node_modules目录和`package-lock.json`后运行`npm i`，可以安装到async-validator包。
+      - 场景3：`package-lock.json`存在时，在om-bms-root中删除node_modules目录后运行`npm i`，安装不到async-validator包。
+        - 但若紧接着再运行一次`npm i`，则可以安装到async-validator包。
+        - 可以推理出，在不删除node_modules的前提下，进行二次`npm i`时，会进行依赖检查。查漏补缺。并更新`package-lock.json`。
+      - 场景4：`package-lock.json`存在时，在om-bms-root中删除node_modules目录并在package.json中增加async-validator依赖后运行`npm i`，可以安装到async-validator包。
+        - 但若紧接着在om-bms-root中删除node_modules目录并在package.json中移除async-validator依赖后运行`npm i`，async-validator包居然没被删除。
+        - 那么可以推理出，`npm i`时一个包是否会被删除，还需要检查其他依赖包中是否对此包存在依赖。
 * 如何更新子模块？先删除`@xxy`目录再运行`npm i`。
 * 我写了个组件，并向父组件传递一个事件`@Output() change = new EventEmitter()`。组件中有个未绑定任何事件的input框，当我修改input中的文案并失去焦点后，竟然会向父组件传递change事件？我并未执行`this.change.emit()`。为何会如此？
   - 经测试发现：组件中的input，当内容发生改变时，会默认向父组件传递一个change事件，即使在组件中不绑定`@Output() change = new EventEmitter()`，亦会如此。
