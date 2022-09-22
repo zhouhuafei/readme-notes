@@ -17,7 +17,8 @@
 * 可在Service Worker中使用的请求API。
 
 ### Service Worker文章
-https://www.jianshu.com/p/8c0fc2866b82
+* 文章：https://www.jianshu.com/p/8c0fc2866b82
+* 摘录：如果是sw缓存，一刷新页面，会返回当前缓存中的资源（不是最新），然后请求sw.js文件发现更新后重新进入sw生命周期，重新去更新缓存，当你再次刷新时才能拿到最新资源。所以在缓存资源更新时，sw会延迟一次刷新才能获取最新资源。
 
 ### Service Worker案例
 > 可用于拦截请求和响应以及操作Cache Storage，配合Cache Storage使应用可以离线访问。
