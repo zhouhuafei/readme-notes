@@ -110,11 +110,8 @@ async function cacheFirst (req) {
 ```
 
 ### 工作中踩到了一个关于Service Worker的坑
-* index.html被Service Worker缓存住了，以为删除sw.js就能移除缓存。发现移除不了。
-* 删除sw.js后，我尝试过强刷页面，也尝试过给index.html加时间戳，发现都移除不了Service Worker的缓存。总是`200 OK (from service worker)`。
-* 后来我还原了被删除的sw.js。然后增加删除缓存逻辑和卸载sw.js的逻辑才把缓存清理掉。
-  - 删除缓存使用caches.delete方法
-  - 卸载sw.js使用unregister方法
+* index.html被Service Worker缓存住了，以为删除sw.js就能移除缓存。发现移除不了。给index.html加时间戳，也移除不掉Service Worker的缓存。总是`200 OK (from service worker)`。
+* 后来还原了被删除的sw.js。然后增加删除缓存逻辑和卸载sw.js的逻辑才把缓存清理掉。删除缓存使用caches.delete方法。卸载sw.js使用unregister方法。
 
 ### Cache Storage
 > caches.open(cacheName)
