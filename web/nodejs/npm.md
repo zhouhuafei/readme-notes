@@ -93,6 +93,8 @@ npm deprecate my-thing@"< 0.2.3" "critical bug fixed in v0.2.3"`
     - 我的解决方案：先```npm i -g cnpm```然后```cnpm i```。
 * sass报错：```Node Sass does not yet support your current environment: Windows 64-bit with Unsupported runtime (57) For more information on which environments are supported please see:```。
     - 解决方案：gulp-sass升级到3版本以上。
+* 错误：`(node:94133) Warning: Accessing non-existent property 'cat' of module exports inside circular dependency`。
+  - 解决方案：我把shelljs从0.8.2升级到0.8.5后，上述错误就消失了。node版本是`14.19.1`。
 
 # 版本
 * `~`会匹配最近的小版本依赖包，比如`~1.2.3`会匹配所有`1.2.x`版本，但是不包括`1.3.0`
