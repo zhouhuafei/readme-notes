@@ -67,13 +67,13 @@
   - 根据上述案例引申出`npm i`的机制，下述均为亲测：
     - 普通场景：运行`npm i`时，若依赖中有A包，则安装到node_modules目录中，若没有，则从node_modules目录中删除。安装和删除后，会更新`package-lock.json`。
     - 复杂场景：om-bms-root依赖的om-bms-framework包中新增了async-validator包。
-      - 场景1：`package-lock.json`存在时，在om-bms-root中删除node_modules目录后运行`npm i`，安装不到async-validator包。
+      - 场景1：老的`package-lock.json`存在时，在om-bms-root中删除node_modules目录后运行`npm i`，安装不到async-validator包。
         - 根据场景2可以推理出场景1受限于老的`package-lock.json`。
-      - 场景2：`package-lock.json`存在时，在om-bms-root中删除node_modules目录和`package-lock.json`后运行`npm i`，可以安装到async-validator包。
-      - 场景3：`package-lock.json`存在时，在om-bms-root中删除node_modules目录后运行`npm i`，安装不到async-validator包。
+      - 场景2：老的`package-lock.json`存在时，在om-bms-root中删除node_modules目录和老的`package-lock.json`后运行`npm i`，可以安装到async-validator包。
+      - 场景3：老的`package-lock.json`存在时，在om-bms-root中删除node_modules目录后运行`npm i`，安装不到async-validator包。
         - 但若紧接着再运行一次`npm i`，则可以安装到async-validator包。
         - 可以推理出，在不删除node_modules的前提下，进行二次`npm i`时，会进行依赖检查。查漏补缺。并更新`package-lock.json`。
-      - 场景4：`package-lock.json`存在时，在om-bms-root中删除node_modules目录并在package.json中增加async-validator依赖后运行`npm i`，可以安装到async-validator包。
+      - 场景4：老的`package-lock.json`存在时，在om-bms-root中删除node_modules目录并在package.json中增加async-validator依赖后运行`npm i`，可以安装到async-validator包。
         - 但若紧接着在om-bms-root中删除node_modules目录并在package.json中移除async-validator依赖后运行`npm i`，async-validator包居然没被删除。
         - 那么可以推理出，`npm i`时一个包是否会被删除，还需要检查其他依赖包中是否对此包存在依赖。
 * 如何更新子模块？先删除`@xxy`目录再运行`npm i`。
