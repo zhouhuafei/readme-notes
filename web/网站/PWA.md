@@ -16,7 +16,10 @@
 * fetch响应的是个流(ReadableStream)。需要res.json()转成json对象。或者res.text()转成字符串。
 * 可在Service Worker中使用的请求API。
 
-### Service Worker
+### Service Worker文章
+https://www.jianshu.com/p/8c0fc2866b82
+
+### Service Worker案例
 > 可用于拦截请求和响应以及操作Cache Storage，配合Cache Storage使应用可以离线访问。
 * index.js
 ```
@@ -109,7 +112,7 @@ async function cacheFirst (req) {
 }
 ```
 
-### 工作中踩到了一个关于Service Worker的坑
+### Service Worker踩坑 - 工作中踩到了一个关于Service Worker的坑
 * index.html被Service Worker缓存住了，以为删除sw.js就能移除缓存。发现移除不了。给index.html加时间戳，也移除不掉Service Worker的缓存。总是`200 OK (from service worker)`。
 * 后来还原了被删除的sw.js。然后增加删除缓存逻辑和卸载sw.js的逻辑才把缓存清理掉。删除缓存使用caches.delete方法。卸载sw.js使用unregister方法。
 
