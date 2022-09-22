@@ -26,7 +26,7 @@
   - 可以删除path为`/`和path为`/goods`的所有cookie。不指定path时则path默认为`/goods`。
   - 设置cookie时可以随意指定path。不指定时则path默认为`/goods`。
 * 当访问网页的`/`路径时，在开发者工具中看不到`/goods`路径下的cookie。
-  - 单页应用，从`/`路径跳转到`/goods`路径，也看不到`/goods`路径下的cookie。
+  - 单页应用，从`/`路径跳转到`/goods`路径，也看不到`/goods`路径下的cookie。在控制台刷新cookie也看不到。
   - 只有在`/goods`路径下进行一次页面刷新才能看到`/goods`路径下的cookie。
 * 二级path下的cookie可以获取和删除一级path下的cookie，依次类推，反之则不行。
 * 建议path设置为`/`，这样在别的路径下也可以进行读写。
