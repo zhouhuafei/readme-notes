@@ -30,6 +30,19 @@
   - 只有在`/goods`路径下进行一次页面刷新才能看到`/goods`路径下的cookie。
 * 二级path下的cookie可以获取和删除一级path下的cookie，依次类推，反之则不行。
 * 建议path设置为`/`，这样在别的路径下也可以进行读写。
+#### 做超导管理系统时 - 我踩了个关于path坑 - 下述为摘取的部分代码
+```javascript
+this.jumpToken();
+if (!this.apiUserInfo.appId) {
+  // 下述仅以商品清单编辑页举例，其他编辑页按照下述流程同样可以复现。
+  // 开发环境，直接在浏览器地址栏贴入商品清单编辑页时，本地存储的homePage.apiUserInfo会先被this.jumpToken()设置为空，导致代码走入到此处。
+  await this.getUserInformation();
+  // 然后this.getUserInformation()会从cookie中读取accessToken并重新设置accessToken（问题出在此处，因重新设置accessToken时其path变成了/goods）。
+  // 问题复现：回首页 - 刷新页面 - 后点击右上角退出登录 - 重新登录 - 在浏览器地址栏贴入/goods下的任意页面路径 - 进入页面失败 - 回到登录页。
+  // 问题本质：在/路径下无法删除/goods下的cookie。在/goods下获取cookie时会优先获取/goods下的cookie。而/goods下的accessToken因重新登录已经失效了。
+  // 解决方案：设置cookie时，path统一设置为/。出现上述问题的开发人员，在此文件的顶部打个断点后，去对应的路径下手动删除一下path为非/的cookie即可（手动删或等cookie过期）。
+}
+```
 
 # secure属性
 * 当设置为true时，表示创建的cookie会被以安全的形式向服务器传输，也就是只能在HTTPS连接中被浏览器传递到服务器端进行会话验证，如果是HTTP连接则不会传递该信息，所以不会被窃取到cookie的具体内容
