@@ -18,11 +18,11 @@
 
 ### Service Worker文章
 * 文章：https://www.jianshu.com/p/8c0fc2866b82
-* sw的缓存是如何更新的？
+* Service Worker的缓存是如何更新的？
   - 前置知识：sw.js不会被浏览器缓存。
   - 前提条件：sw.js发生了变更。
-  - 第1次刷新页面，加载老页面老资源，新sw.js，触发缓存清理。
-  - 第2次刷新页面，加载新页面新资源，老sw.js，触发缓存存储。
+  - 第1次刷新页面，加载老页面老资源，新sw.js，并对旧的缓存进行清理。
+  - 第2次刷新页面，加载新页面新资源，老sw.js，并对新的缓存进行存储。
 
 ### Service Worker案例
 > 可用于拦截请求和响应以及操作Cache Storage，配合Cache Storage使应用可以离线访问。
