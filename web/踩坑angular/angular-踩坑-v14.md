@@ -102,3 +102,11 @@
 
 ## 强制更新视图
 https://blog.csdn.net/qq_41373731/article/details/122323461
+
+## primeng
+* 以`属性pButton`的方式配合button标签使用。
+  - `click时`是怎么区别开原生事件和组件回调事件的？`绑定事件时，直接使用的原生click事件，组件内没进行click事件回调`。
+  - `disabled时`是怎么实现无法点击的？`利用了html原生button标签被disabled后无法点击的特性`。
+* 以`标签p-button`的方式使用。
+  - `click时`是怎么区别开原生事件和组件回调事件的？`原生事件是click，组件内用onClick进行的事件回调`。
+  - `disabled时`是怎么实现无法点击的？`原生事件依然有效，无效的是onClick回调事件`。
