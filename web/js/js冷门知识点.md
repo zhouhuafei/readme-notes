@@ -358,3 +358,6 @@ false ?? 'd' // false
 ## 随机数公式
 * `Math.round(Math.random() * (max - min) + min)`。
 * `Math.floor(Math.random() * (max - min + 1) + min)`。
+
+## 前端错误监控
+* 使用`window.onerror`事件能监控到js错误。
