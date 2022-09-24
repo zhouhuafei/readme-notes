@@ -2,7 +2,13 @@
      - 解决方案 轮播条目里加上touch-action: none; 即可
 
 * 1倍屏，chrome浏览器，font-size最小字体是12px，但是给标签设置font-size:0，可以让文字消失。
-    - 给父级设置font-size:0，给子级设置font-size正常值，可以清理掉多个相邻内联标签之间的空格。
+  - 给父级设置font-size:0，给子级设置font-size正常值，可以清理掉多个相邻内联标签之间的空格。
+
+* html标签会忽略标签内的首尾空格。以及多个空格会展示成一个空格。请问如何保留空格？保留空格一般用在什么场景？
+  - 保留空格方案1：使用`pre标签`包裹一下就可以保留所有空格。
+  - 保留空格方案2：使用`white-space: pre;`也可以保留所有空格。
+  - 保留空格方案3：使用`&nbsp;`书写每个空格。
+  - 保留空格场景：一般应用于代码展示。
 
 * background:bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit;
     - position/bg-size 平常很少这样使用，所以此时记录一下还可以这样用
