@@ -50,14 +50,10 @@
       - 主应用：Vue-CLI + Vue全家桶 + Element-UI
       - 子应用：Vue-CLI + Vue3全家桶 + TS/TSX + Element-Plus
     - 增加分享二维码功能（访问统计、下单统计）、对接微客分销、对接企微客服。
-  - 超级导购后台管理系统：Angular4 + primeng
-    - 我的角色：非主要开发人员，少量功能是我开发的。
+  - 超级导购后台管理系统：Angular-CLI + Angular4全家桶 + Less + primeng
     - 值得一说的事：Less完善、基础组件补充、业务组件补充、引入对api进行二次封装的概念、引入企微机器人接口报警、引入企微机器人js报警。
-    - 技术相关补充：图表使用的ECharts。
-  - 超级导购app内嵌h5：React17 + react-router-dom + mobx-react + antd-mobile
-    - 我的角色：非主要开发人员，少量功能是我开发的。
+  - 超级导购app内嵌h5：Create-React-App + React18 + react-router-dom + mobx-react + TS/TSX + Less + antd-mobile
     - 值得一说的事：引入企微机器人接口报警、引入企微机器人js报警。
-    - 技术相关补充：css扩展语言用的Scss。
 > 2016/04 - 2019/02
 * 商派 - 上海商派网络科技有限公司（SaaS电商）（线上商城，无需选品，商品是商城商品，库存是商城库存）
   - 云起微商城后台管理系统：Gulp + SeaJS + jQuery + Vue
