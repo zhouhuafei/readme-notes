@@ -84,7 +84,7 @@
 ## 个人项目
 #### 简易工具集（SaaS电商）（线上门店，选品之后，商品是门店商品，库存是门店库存）
 * 服务端：koa2 + mongoose + docker-compose（nginx + mongodb + redis）
-  - JWT鉴权、RestfulAPI风格（对HTTP协议中请求方式和状态码的应用）、企微机器人接口报警
+  - JWT鉴权、RestfulAPI风格（对HTTP协议中请求方法和状态码的应用）、企微机器人接口报警
   - 重构：已使用TS进行重构
 * 运营端：Vue-CLI + Vue全家桶 + Scss + Element-UI
   - 品牌管理
