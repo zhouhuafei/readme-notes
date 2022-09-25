@@ -83,15 +83,15 @@
 
 ## 个人项目
 #### 简易工具集（SaaS电商）（线上门店，选品之后，商品是门店商品，库存是门店库存）
-* 服务端：koa2（nodejs） + redis + mongoose（mongodb） + nginx + docker-compose
+* 服务端：koa2 + mongoose + docker-compose（nginx + mongodb + redis）
   - JWT鉴权、RestfulAPI风格（对HTTP协议中请求方式和状态码的应用）、企微机器人接口报警
-  - 已使用TS进行重构
-* 运营端：Vue-CLI + Vue全家桶 + Element-UI
+  - 重构：已使用TS进行重构
+* 运营端：Vue-CLI + Vue全家桶 + Scss + Element-UI
   - 品牌管理
   - 超管、管理员
   - 运营端操作日志、管理端操作日志、客户端操作日志、客户端行为轨迹
-  - 已使用create-vue（Vite） + Vue3全家桶 + TS/TSX + Element-Plus进行重构
-* 管理端：Vue-CLI + Vue全家桶 + Element-UI
+  - 重构：已使用create-vue（Vite） + Vue3全家桶 + TS/TSX + Scss + Element-Plus进行重构
+* 管理端：Vue-CLI + Vue全家桶 + Scss + Element-UI
   - 动态换肤
   - 图片素材库、视频素材库
   - 门店、门店分类、自定义门店首页（门店装修）、自定义页面
@@ -99,10 +99,10 @@
   - 超管、管理员、菜单权限、功能权限
   - 用户管理、员工管理、文章管理
   - 管理端操作日志、客户端操作日志、客户端行为轨迹
-  - 已使用create-vue（Vite） + Vue3全家桶 + TS/TSX + Element-Plus进行重构
-* 客户端：HBuilderX（Webpack） + uni-app + Vue + Vuex + uni-ui
+  - 重构：已使用create-vue（Vite） + Vue3全家桶 + TS/TSX + Scss + Element-Plus进行重构
+* 客户端：HBuilderX（Webpack） + uni-app + Vue + Vuex + Scss + uni-ui
   - 动态换肤
-  - 已使用uni-cli（Vite） + uni-app + Vue3 + Pinia + TS/TSX + uni-ui进行重构
+  - 重构：已使用uni-cli（Vite） + uni-app + Vue3 + Pinia + TS/TSX + Scss + uni-ui进行重构
 
 ## 自我认知
 * 前端知识还算扎实，后端知识也算还行。
