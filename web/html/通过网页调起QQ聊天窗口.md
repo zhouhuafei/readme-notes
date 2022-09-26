@@ -23,5 +23,5 @@
 > URL Scheme是为方便app之间互相调用而设计的。我们可以通过系统的OpenURL来打开该app，并可以传递一些参数。
 
 ## JS怎么检测客户端有没有安装某款软件？
-* 浏览器未提供检测的能力。
+* 浏览器未提供检测的能力。https://blog.csdn.net/boundle_ss/article/details/125913277
 * 浏览器提供了跳转的能力。使用自定义`URL Scheme`进行跳转。
