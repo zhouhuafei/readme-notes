@@ -123,3 +123,8 @@ https://blog.csdn.net/Jonathan_1994/article/details/89293878
   - Font：JetBrains Mongo
   - Size：18
   - Line Spacing：1.2
+
+# 2022破解 - 目前可以公开的情报 - 可以破解最新的2022.2.1版本
+* 编辑器以及破解工具都存在了在我的百度网盘中，存在于`software -> 前端代码编辑器2022-VSCode-WeStorm.zip`压缩包中。
+* 破解后，官方又推出了2022.2.2版本。我直接检查更新，从2022.2.1升级到2022.2.2后，可以正常使用。
+* 上述破解工具，可以破解JetBrains旗下所有的开发者工具，不仅限于WebStorm。
