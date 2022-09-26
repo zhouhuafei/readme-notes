@@ -5,7 +5,7 @@
 * 原理：git通过钩子触发对应事件，执行对应脚本。
 * 编写脚本：```vim ./.git/hooks/post-receive```。
 ```
-#!/bin/bash
+#!/bin/sh
 
 # 如果不是远程仓库就退出
 IS_BARE=$(git rev-parse --is-bare-repository)
