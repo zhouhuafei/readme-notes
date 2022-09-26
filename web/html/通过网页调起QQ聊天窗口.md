@@ -23,5 +23,8 @@
 > URL Scheme是为方便app之间互相调用而设计的。我们可以通过系统的OpenURL来打开该app，并可以传递一些参数。
 
 ## JS怎么检测客户端有没有安装某款软件？
-* 浏览器未提供检测的能力。https://blog.csdn.net/boundle_ss/article/details/125913277
 * 浏览器提供了跳转的能力。使用自定义`URL Scheme`进行跳转。
+* 浏览器未提供检测的能力。
+  - 有文章说可以通过跳转的能力去检测：https://blog.csdn.net/boundle_ss/article/details/125913277
+  - 我觉的适用场景有限，不适用于只想检测不想跳转的场景。
+  - 如果是app的话，则其本身应该具备检测能力，如果能开放给网页使用，则检测问题自然迎刃而解。
