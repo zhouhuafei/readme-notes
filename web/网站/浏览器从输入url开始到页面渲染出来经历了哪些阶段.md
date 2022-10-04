@@ -25,7 +25,7 @@
     - 客户端：ACK - 确认应答(第二次挥手)。
     - 客户端：FIN - 请求断开tcp链接(第三次挥手)。
     - 服务端：ACK - 确认应答(第四次挥手)。
-  - 个人猜测：有`Connection: keep-alive`时，由客户端主动断开链接。无`Connection: keep-alive`时，由服务端端主动断开链接。
+  - 个人猜测：有`Connection: keep-alive`时，因超时由服务端主动断开链接。无`Connection: keep-alive`时，由客户端主动断开链接。
 
 # 静态资源的加载是在什么时候？
 * HTML解析的时候遇到了就加载。
