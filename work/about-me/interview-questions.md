@@ -103,10 +103,11 @@ console.log(Array.prototype.slice.call({length: 10})) // 转出来的是稀疏�
 ```
 * 创建稀疏数组？
 ```javascript
+console.log(Array(10))
 console.log([1, , , , , , , , , 10])
 console.log(Array.prototype.slice.call({length: 10}))
 ```
-* 稀疏数组使用`forEach、filter、map`方法处理时会怎么处理稀疏项？`forEach和filter会无视稀疏项。map循环时会无视稀疏项但是会原封不动的返回稀疏项`。
+* 稀疏数组使用`forEach、filter、map`方法处理时会怎么处理稀疏项？`forEach和filter会无视稀疏项。map循环时会无视稀疏项但是会原封不动的返回稀疏项`。`因for in会无视稀疏项，而map有额外处理`。
 * 稀疏数组怎么转密集数组？
 ```javascript
 console.log(Array.from(Array(10)))
