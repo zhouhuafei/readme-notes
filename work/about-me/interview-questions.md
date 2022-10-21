@@ -103,6 +103,7 @@ console.log(Array.prototype.slice.call({length: 10})) // 转出来的是稀疏�
 ```
 * 创建稀疏数组？
 ```javascript
+console.log(Array(10))
 console.log([1, , , , , , , , , 10])
 console.log(Array.prototype.slice.call({length: 10}))
 ```
