@@ -131,11 +131,5 @@ div {
   - 如果div的宽度是1600则高度为900
 
 ## grid
-* https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html
-* grid案例：
-```css
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 100px);
-}
-```
+* 教程：https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html
+* 案例：https://github.com/zhouhuafei/readme-notes/tree/master/web/css/grid.html
