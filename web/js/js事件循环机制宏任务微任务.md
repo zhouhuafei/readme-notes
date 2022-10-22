@@ -1,4 +1,4 @@
-> 摘自：https://juejin.im/post/5b498d245188251b193d4059?utm_source=gold_browser_extension
+> 摘自：https://juejin.cn/post/6844903638238756878
 
 # 摘要
 * JavaScript是单线程的语言。
