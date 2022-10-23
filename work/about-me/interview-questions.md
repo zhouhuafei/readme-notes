@@ -198,7 +198,7 @@ console.log(JSON.stringify({ a: null })) // '{"a":null}'
 
   moneyFormat()
   ```
-  - 使用toLocaleString：建议使用方式2，因会保留小数位。
+  - 使用toLocaleString：建议使用方式2，虽方式2会多个¥符号，但会保留小数位。截取字符串比补充小数位要简单。
     - 方式1：`(100000000.00).toLocaleString('zh-CN'); // '100,000,000'`
     - 方式2：`(100000000.00).toLocaleString('zh-CN', { style: 'currency', currency: 'CNY' }); // '¥100,000,000.00'`
 #### 类
