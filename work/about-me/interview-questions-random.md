@@ -1,6 +1,5 @@
 #### 白屏时间和什么有关？怎么优化？
-* https://www.qyyshop.com/info/1026212.html
-* https://blog.csdn.net/qq_41914185/article/details/123715706
+* https://developer.aliyun.com/article/933842
 
 #### 滚动事件是否会触发冒泡？是否会触发捕获？
 * 不会触发冒泡！会触发捕获！
