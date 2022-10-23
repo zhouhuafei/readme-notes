@@ -1,3 +1,7 @@
+#### 白屏时间和什么有关？怎么优化？
+* https://www.qyyshop.com/info/1026212.html
+* https://blog.csdn.net/qq_41914185/article/details/123715706
+
 #### 滚动事件是否会触发冒泡？是否会触发捕获？
 * 不会触发冒泡！会触发捕获！
 
@@ -16,6 +20,12 @@
 * 2、TCP是可靠传输，UDP是不可靠传输。UDP适用于实时应用，例如IP电话，视频会议，直播等。
 * 3、TCP是面向字节流传输，UDP是面向报文传输。
 
+#### http2与http1.1的区别？
+...TODO
+
+#### http3与http2的区别？
+...TODO
+
 #### https和http的区别？
 * 1、http的端口是80，https的端口是443，且两者的连接方式不同。
 * 2、http不需要申请ssl证书，https需要申请ssl证书。
@@ -24,11 +34,14 @@
 #### 天翼云前端面经
 https://www.nowcoder.com/discuss/1083153
 
-#### vue怎么将虚拟dom渲染成真实dom？
-...TODO
-
 #### vue在进行dom渲染时存在什么问题？
 * 因存在就地复用策略。所以使用v-if配合v-else渲染input时，其value存在清理不掉的问题。可以加key解决。
+
+#### 虚拟dom和真实dom的区别？
+...TODO
+
+#### vue怎么将虚拟dom渲染成真实dom？
+...TODO
 
 #### vue的diff算法？
 ...TODO
