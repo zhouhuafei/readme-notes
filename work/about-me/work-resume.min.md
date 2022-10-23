@@ -123,4 +123,6 @@
 ## 个人杂集
 * npm：https://www.npmjs.com/~zhouhuafei
 * github：https://github.com/zhouhuafei
+  - 给umijs/qiankun提过pr，修复了使用案例中的一个微小问题，已被merge。
+  - 给jin-yufeng/mp-html提过pr，使之兼容vue3，已被merge。
 * 笔记：https://github.com/zhouhuafei/readme-notes/tree/master/web
