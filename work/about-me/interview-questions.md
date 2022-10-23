@@ -183,14 +183,17 @@ console.log(JSON.stringify({ a: null })) // '{"a":null}'
   - 使用正则：`'100000000.00'.replace(/\B(?=(\d{3})+(?!\d))/g, ',') // '100,000,000.00'`。
   - 转成数组：切割成数组、逆序、循环、i用3取模结果为2且i非末位则插入到新数组、对新数组进行逆序并拼接成字符串。
   ```javascript
-  function moneyFormat (money = '100000000') {
+  function moneyFormat (moneyFull = '100000000.00') {
+    const moneyArr = moneyFull.split('.')
+    const money = moneyArr[0]
     const r = []
     const a = money.split('')
     a.reverse().forEach((v, i) => {
       r.push(v)
       if (i % 3 === 2 && i !== a.length - 1) r.push(',')
     })
-    return r.reverse().join('')
+    moneyArr[0] = r.reverse().join('')
+    return moneyArr.join('.')
   }
 
   moneyFormat()
