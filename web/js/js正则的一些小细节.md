@@ -1,24 +1,24 @@
 * js只支持前瞻匹配(零宽断言)
-    - (?=exp) 正向前瞻 匹配后面满足表达式exp的位置
-    - (?!exp) 负向前瞻 匹配后面不满足表达式exp的位置
-    ```
-    var isTure = /bc(?=d)/.test('bcd'); // true (?=d)只能放在最后面，放在最前面或中间都匹配不到 /(?=a)bc/.test('abc'); // false
-    ```
-    - (?<=exp) 正向后瞻 匹配前面满足表达式exp的位置
-    - (?<!exp) 负向后瞻 匹配前面不满足表达式exp的位置
+  - (?=exp) 正向前瞻 匹配后面满足表达式exp的位置
+  - (?!exp) 负向前瞻 匹配后面不满足表达式exp的位置
+  ```
+  var isTure = /bc(?=d)/.test('bcd'); // true (?=d)只能放在最后面，放在最前面或中间都匹配不到 /(?=a)bc/.test('abc'); // false
+  ```
+  - (?<=exp) 正向后瞻 匹配前面满足表达式exp的位置
+  - (?<!exp) 负向后瞻 匹配前面不满足表达式exp的位置
 * location.replace(newURL) 方法可用一个新文档取代当前文档。
-    - replace() 方法不会在 History 对象中生成一个新的记录。当使用该方法时，新的 URL 将覆盖 History 对象中的当前记录。
+  - replace() 方法不会在 History 对象中生成一个新的记录。当使用该方法时，新的 URL 将覆盖 History 对象中的当前记录。
 * 金钱格式化：https://www.jianshu.com/p/56d589ea48a9
-    - /(?<!\.\d*)(\d)(?=(\d{3})+($|\.))/g
+  - 使用正则：`'100000000.00'.replace(/(?<!\.\d*)(\d)(?=(\d{3})+($|\.))/g, ',') // '100,000,000.00'`。
 * 6至16位字符且包含数字和字母
-    ```
-    var str = '0000000000a';
-    var result = str.length >=6 && str.length <=16 && /\d/.test(str) && /[a-zA-Z]/.test(str);
-    console.log(result);
-    ```
+  ```
+  var str = '0000000000a';
+  var result = str.length >=6 && str.length <=16 && /\d/.test(str) && /[a-zA-Z]/.test(str);
+  console.log(result);
+  ```
 
-* ```(exp)```捕获分组
-* ```(?:exp)```非捕获分组
+* `(exp)`捕获分组
+* `(?:exp)`非捕获分组
 
 ## 推荐一个对正则进行解释的网址
 https://regex101.com/
