@@ -68,7 +68,7 @@ https://www.nowcoder.com/discuss/1083153
 * 使用虚拟列表进行滚动 - 只渲染可视区以及上一屏和下一屏的内容。
 
 #### Vue3为什么要新增setup？
-* https://www.zhihu.com/collection/778608551
+* https://zhuanlan.zhihu.com/p/68477600
 
 #### babel工作原理？
 * Babel的功能非常纯粹，以字符串的形式将源代码传给它，它会返回一段新的代码字符串（以及sourcemap）。他既不会运行你的代码，也不会将多个代码打包到一起，它是个编译器，输入的语言是ES6+，编译目标语言是ES5。
