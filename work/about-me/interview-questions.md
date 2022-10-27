@@ -210,11 +210,11 @@ console.log(JSON.stringify({ a: null })) // '{"a":null}'
   }
 
   function B () {
-    A.call(this)
+    A.call(this) // 对实例上的属性和方法进行继承
   }
 
-  B.prototype.__proto__ = A.prototype
-  B.__proto__ = A
+  B.prototype.__proto__ = A.prototype // 对原型上的属性和方法进行继承
+  B.__proto__ = A // 对类上的静态属性和静态方法进行继承
   ```
   - 怎么知道B继承的谁？`Object.getPrototypeOf(B).name`等同于`B.__proto__.name`。
   - 怎么知道B的实例对应的类是B？`Object.getPrototypeOf(new B()).constructor.name`等同于`new B().__proto__.constructor.name`。
