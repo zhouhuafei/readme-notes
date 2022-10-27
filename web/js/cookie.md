@@ -44,7 +44,11 @@ if (!this.apiUserInfo.appId) {
 }
 ```
 
-# secure属性
+# 限制访问 Cookie
+* https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Cookies#%E9%99%90%E5%88%B6%E8%AE%BF%E9%97%AE_cookie
+#### HttpOnly属性
+* 后端用这个属性设置cookie，前端用js无法```读写```被后端设置的cookie。
+#### Secure属性
 * 当设置为true时，表示创建的cookie会被以安全的形式向服务器传输，也就是只能在HTTPS连接中被浏览器传递到服务器端进行会话验证，如果是HTTP连接则不会传递该信息，所以不会被窃取到cookie的具体内容
 
 # SameSite属性
@@ -61,9 +65,6 @@ if (!this.apiUserInfo.appId) {
   ```
   Set-Cookie: key=value; SameSite=None; Secure
   ```
-
-# HttpOnly
-* 后端用这个属性设置cookie，前端用js无法```读写```被后端设置的cookie。
 
 # 跨域
 跨域访问，简单来说就是 A 网站的 javascript 代码试图访问 C网站，包括提交内容和获取内容。由于安全原因，跨域访问是被各大浏览器所默认禁止的。跨域是浏览器的限制。
