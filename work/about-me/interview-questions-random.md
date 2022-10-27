@@ -48,9 +48,6 @@ https://www.nowcoder.com/discuss/1083153
 #### gulp rollup webpack vite的区别？
 ...TODO
 
-#### interface和type的区别？
-...TODO
-
 #### 手写深拷贝？
 ...TODO
 
@@ -81,6 +78,10 @@ https://www.nowcoder.com/discuss/1083153
 * 函数式组件是无状态的，更易对组件进行逻辑组合与复用。
 * 基于函数的 API 天然对类型推导很友好。
 * 函数对 tree-shaking 非常友好。
+
+#### TS类型兼容？
+* 函数的参数。可以把参数少的函数赋值给参数多的声明。
+* 对象的字段。可以把字段多的对象赋值给字段少的声明。
 
 #### babel工作原理？
 * Babel的功能非常纯粹，以字符串的形式将源代码传给它，它会返回一段新的代码字符串（以及sourcemap）。他既不会运行你的代码，也不会将多个代码打包到一起，它是个编译器，输入的语言是ES6+，编译目标语言是ES5。
