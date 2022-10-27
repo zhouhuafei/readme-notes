@@ -79,6 +79,20 @@ https://www.nowcoder.com/discuss/1083153
 * 基于函数的 API 天然对类型推导很友好。
 * 函数对 tree-shaking 非常友好。
 
+#### interface和type的区别？
+* 相同点
+  - 都可以用来描述对象或函数。
+  - 都支持拓展。interface可以使用`extends关键字`或`声明合并`来进行扩展。type只能使用交叉类型`&`来进行扩展。
+* 不同点
+  - interface定义两个同名的会进行声明合并。type定义两个同名的会报错。
+  - type可以做到，但interface不能做到的事情。
+    - type可以定义 基本类型的别名，如：`type myString = string`。
+    - type可以通过 typeof操作符来定义，如：`type myType = typeof someObj`。注意，typeof后面是js的数据类型。
+    - type可以通过 keyof操作符来定义，如：`type myType = keyof someObjType`。注意，keyof后面是ts的类型。
+    - type可以定义 联合类型，如：`type unionType = myType1 | myType2`。
+    - type可以定义 交叉类型，如：`type unionType = myInterface1 & myInterface2`。
+    - type可以定义 元组类型，如：`type yuanzu = [myType1, myType2]`。
+
 #### TS类型兼容？
 * 函数的参数。可以把参数少的函数赋值给参数多的声明。
 * 对象的字段。可以把字段多的对象赋值给字段少的声明。
