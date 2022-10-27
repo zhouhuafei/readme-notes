@@ -71,6 +71,21 @@
 * 数字转成字符串并保留两位小数？`(Math.floor(parseFloat(10.2) * 1000/10) / 100).toFixed(2)`。`1变成'1.00'`。`10.2变成'10.20'`。`19.9变成'19.90'`。
 * 字符串`'1.00'变成'1'`。`'10.20'变成'10.2'`。`'19.90'变成'19.9'`？`String(Number('10.20'))`。
 * 生成4到6的随机数？`Math.round(Math.random() * (6 - 4) + 4)`。`Math.floor(Math.random() * (6 - 4 + 1) + 4)`。
+  - Math.floor和parseInt的区别？`Math.floor是向下取整。parseInt（取负随机数时需要额外处理）是向0取整，且可以处理100px这种格式的字符串`。
+  ```javascript
+  parseInt('100px') // 100
+  Math.floor('100px') // NaN
+  parseInt(-1.5) // -1
+  Math.floor(-1.5) // -2
+  ```
+  - 如果使用parseInt（取负随机数时需要额外处理）取代上述的Math.floor需要做什么处理？
+  ```
+  var max = -4
+  var min = -6
+  if(min < 0) min--
+  if(max < 0) max--
+  parseInt(Math.random() * (max - min + 1) + min)
+  ```
 #### 字符串常用方法？
 * 字符串转大小写？`toUpperCase、toLowerCase`。
 * 字符串查找？`[index]、charAt、charCodeAt、search(可以是正则)、indexOf、lastIndexOf、includes`。
