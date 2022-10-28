@@ -360,4 +360,10 @@ false ?? 'd' // false
 * `Math.floor(Math.random() * (max - min + 1) + min)`。
 
 ## 前端错误监控
-* 使用`window.onerror`事件能监控到js错误。
+* 使用`window.onerror`和`window.onunhandledrejection`事件能监控到js错误。
+* 普通异步错误用`window.onerror`捕获。
+* promise异步错误用`window.onunhandledrejection`捕获。
+
+## try/catch捕获错误
+* 能捕获同步错误
+* 还能在async函数内捕获await抛出的错误
