@@ -15,18 +15,13 @@
 * https://juejin.cn/post/6844903606466904078
 
 #### JS堆内存和栈内存？
-...TODO
+* https://www.jianshu.com/p/5b3e4e129877
 
 #### JS垃圾回收机制？
-...TODO
-
-#### JS洋葱模型？
-...TODO
-
-#### JS洋葱模型是如何实现请求拦截的？
-...TODO
+* https://www.jianshu.com/p/4db45984e4ee
 
 #### TCP和UDP有什么区别？
+* https://www.cnblogs.com/mlfz/p/13083788.html
 * 1、TCP是面向连接的，UDP是无连接的。
 * 2、TCP是可靠传输，UDP是不可靠传输。UDP适用于实时应用，例如IP电话，视频会议，直播等。
 * 3、TCP是面向字节流传输，UDP是面向报文传输。
@@ -52,6 +47,12 @@ https://www.nowcoder.com/discuss/1083153
 ...TODO
 
 #### 手写call？
+...TODO
+
+#### JS洋葱模型？
+...TODO
+
+#### JS洋葱模型是如何实现请求拦截的？
 ...TODO
 
 #### vue在进行dom渲染时存在什么问题？
