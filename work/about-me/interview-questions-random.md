@@ -41,7 +41,40 @@
 https://www.nowcoder.com/discuss/1083153
 
 #### gulp rollup webpack vite的区别？
-...TODO
+* gulp：gulp是一个工具包，可以帮助您在开发工作流中自动化痛苦或耗时的任务。
+  - https://cn.vitejs.dev/guide/
+* webpack：webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)。当 webpack 处理应用程序时，它会递归地构建一个依赖关系图(dependency graph)，其中包含应用程序需要的每个模块，然后将所有这些模块打包成一个或多个 bundle。
+  - https://www.webpackjs.com/concepts/
+* rollup：Rollup 是一个 JavaScript 模块打包工具，可以将多个小的代码片段编译为完整的库和应用。与传统的 CommonJS 和 AMD 这一类非标准化的解决方案不同，Rollup 使用的是 ES6 版本 Javascript 中的模块标准。新的 ES 模块可以让你自由、无缝地按需使用你最喜爱的库中那些有用的单个函数。这一特性在未来将随处可用，但 Rollup 让你现在就可以，想用就用。
+  - https://www.rollupjs.com/
+* vite：Vite是一种新型前端构建工具，能够显著提升前端开发体验。
+  - https://cn.vitejs.dev/guide/
+
+#### webpack中loader和plugin的区别？
+* loader：用于对模块的源代码进行转换。loader 可以使你在 import 或"加载"模块时预处理文件。因此，loader 类似于其他构建工具中“任务(task)”，并提供了处理前端构建步骤的强大方法。loader 可以将文件从不同的语言（如 TypeScript）转换为 JavaScript，或将内联图像转换为 data URL。loader 甚至允许你直接在 JavaScript 模块中 import CSS文件！ 因为 webpack 本身只能处理 JavaScript，如果要处理其他类型的文件，就需要使用 loader 进行转换，loader 本身就是一个函数，接受源文件为参数，返回转换的结果。
+* Plugin：是用来扩展 Webpack 功能的，通过在构建流程里注入钩子实现，它给 Webpack 带来了很大的灵活性。 通过plugin（插件）webpack可以实 loader 所不能完成的复杂功能，使用 plugin 丰富的自定义 API 以及生命周期事件，可以控制 webpack 打包流程的每个环节，实现对 webpack 的自定义功能扩展。
+
+#### 如何优化webpack的打包体积？
+* 对第三方模块进行提取。例如提取第三方的js和css。
+* 对业务中的公共模块进行提取。例如提取业务中自己写的公共js和css。
+* 对路由模块使用懒加载。
+* 使用Tree Shaking去除js中无用代码。
+* 对静态文件进行压缩。
+
+#### Tree Shaking原理？
+* Tree Shaking的本质是消除无用的js代码。
+* ES6 Module引入时，会进行静态分析，故而编译的时候能正确判断到底加载了哪些变量。当变量未被使用时，进而删除对应的代码。
+* 场景测试，下述均为亲测。
+  - import * as xxx时，只使用到了xxx.a，那么xxx.b会被删除么？`会被删除 - es module静态分析`。
+  - export default导出的变量，未被使用时会被删除么？`会被删除 - es module静态分析`。
+  - 如果导出的是一个obj对象，只用到了obj.a方法，那么obj.b方法会被删除么？`不会被删除 - 因为编译期间的静态分析只能对es module的相关语法做分析，是不会真正去执行代码的。`。
+
+#### babel工作原理？
+* Babel的功能非常纯粹，以字符串的形式将源代码传给它，它会返回一段新的代码字符串（以及sourcemap）。他既不会运行你的代码，也不会将多个代码打包到一起，它是个编译器，输入的语言是ES6+，编译目标语言是ES5。
+* Babel的编译过程跟大多数其他语言的编译器大致同理，分为三个阶段：
+  - 1.解析：将代码字符串解析成抽象语法树
+  - 2.变换：对抽象语法树进行变换操作
+  - 3.再建：根据变化后的抽象语法树再生成代码字符串
 
 #### 手写深拷贝？
 ...TODO
@@ -97,28 +130,6 @@ https://www.nowcoder.com/discuss/1083153
 #### TS类型兼容？
 * 函数的参数。可以把参数少的函数赋值给参数多的声明。
 * 对象的字段。可以把字段多的对象赋值给字段少的声明。
-
-#### babel工作原理？
-* Babel的功能非常纯粹，以字符串的形式将源代码传给它，它会返回一段新的代码字符串（以及sourcemap）。他既不会运行你的代码，也不会将多个代码打包到一起，它是个编译器，输入的语言是ES6+，编译目标语言是ES5。
-* Babel的编译过程跟大多数其他语言的编译器大致同理，分为三个阶段：
-  - 1.解析：将代码字符串解析成抽象语法树
-  - 2.变换：对抽象语法树进行变换操作
-  - 3.再建：根据变化后的抽象语法树再生成代码字符串
-
-#### 如何优化webpack的打包体积？
-* 对第三方模块进行提取。例如提取第三方的js和css。
-* 对业务中的公共模块进行提取。例如提取业务中自己写的公共js和css。
-* 对路由模块使用懒加载。
-* 使用Tree Shaking去除js中无用代码。
-* 对静态文件进行压缩。
-
-#### Tree Shaking原理？
-* Tree Shaking的本质是消除无用的js代码。
-* ES6 Module引入时，会进行静态分析，故而编译的时候能正确判断到底加载了哪些变量。当变量未被使用时，进而删除对应的代码。
-* 场景测试，下述均为亲测。
-  - import * as xxx时，只使用到了xxx.a，那么xxx.b会被删除么？`会被删除 - es module静态分析`。
-  - export default导出的变量，未被使用时会被删除么？`会被删除 - es module静态分析`。
-  - 如果导出的是一个obj对象，只用到了obj.a方法，那么obj.b方法会被删除么？`不会被删除 - 因为编译期间的静态分析只能对es module的相关语法做分析，是不会真正去执行代码的。`。
 
 #### 移动端上拉加载分页数据时，删除一条数据，导致后面加载数据少一条怎么办？
 * 最后和后端商量采用以下方式，不删除数据就传pageNo和PageSize，如果删了数据，就再加一个id，这个id为当前获取数据总量的最后一条数据的id，后端会根据这个id获取它后面的数据，这样就不会少获取数据了。
