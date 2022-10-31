@@ -20,22 +20,20 @@
 #### JS垃圾回收机制？
 * https://www.jianshu.com/p/4db45984e4ee
 
+#### https和http的区别？
+* https://www.jianshu.com/p/f0b64eaec7f0
+* 1、http的端口是80，https的端口是443，且两者的连接方式不同（https需要经历SSL协商过程）。
+* 2、http不需要申请ssl证书，https需要申请ssl证书。
+* 3、http传输是明文的，响应更快，而https是用ssl进行加密的，安全性更高。
+
+#### http1.0，http1.1，http2，http3的区别？
+* https://zhuanlan.zhihu.com/p/469988032
+
 #### TCP和UDP有什么区别？
 * https://www.cnblogs.com/mlfz/p/13083788.html
 * 1、TCP是面向连接的，UDP是无连接的。
 * 2、TCP是可靠传输，UDP是不可靠传输。UDP适用于实时应用，例如IP电话，视频会议，直播等。
 * 3、TCP是面向字节流传输，UDP是面向报文传输。
-
-#### http2与http1.1的区别？
-...TODO
-
-#### http3与http2的区别？
-...TODO
-
-#### https和http的区别？
-* 1、http的端口是80，https的端口是443，且两者的连接方式不同。
-* 2、http不需要申请ssl证书，https需要申请ssl证书。
-* 3、http传输是明文的，响应更快，而https是用ssl进行加密的，安全性更高。
 
 #### 天翼云前端面经
 https://www.nowcoder.com/discuss/1083153
