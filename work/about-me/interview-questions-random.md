@@ -90,7 +90,11 @@ https://www.nowcoder.com/discuss/1083153
 * 因存在就地复用策略。所以使用v-if配合v-else渲染input时，其value存在清理不掉的问题。可以加key解决。
 
 #### 虚拟dom和真实dom的区别？
-...TODO
+* https://juejin.cn/post/7126155840070877197
+* Real DOM，真实DOM， 意思为文档对象模型，是一个结构化文本的抽象，在页面渲染出的每一个结点都是一个真实DOM结构。
+* Virtual Dom，本质上是以 JavaScript 对象形式存在的对 DOM 的描述。
+  - 虚拟DOM不会进行排版与重绘操作，而真实DOM会频繁重排与重绘。
+  - 虚拟DOM的总损耗是“虚拟DOM增删改+真实DOM差异增删改+排版与重绘”，真实DOM的总损耗是“真实DOM完全增删改+排版与重绘”。
 
 #### vue怎么将虚拟dom渲染成真实dom？
 ...TODO
