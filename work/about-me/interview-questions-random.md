@@ -97,7 +97,8 @@ https://www.nowcoder.com/discuss/1083153
   - 虚拟DOM的总损耗是“虚拟DOM增删改+真实DOM差异增删改+排版与重绘”，真实DOM的总损耗是“真实DOM完全增删改+排版与重绘”。
 
 #### vue怎么将虚拟dom渲染成真实dom？
-...TODO
+* https://blog.csdn.net/wangyuiba1314/article/details/123900151
+* 虚拟DOM是通过render函数渲染成真实DOM的。
 
 #### vue的diff算法？
 ...TODO
