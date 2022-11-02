@@ -75,7 +75,7 @@ https://www.nowcoder.com/discuss/1083153
   - 3.再建：根据变化后的抽象语法树再生成代码字符串
 
 #### 手写深拷贝？
-* https://github.com/zhouhuafei/readme-notes/tree/master/web/js-handwriting-something/deepCopy.js
+* https://github.com/zhouhuafei/readme-notes/tree/master/web/js-handwriting-something/deepCloneEasyScene.js
 
 #### 手写call？
 * https://github.com/zhouhuafei/readme-notes/tree/master/web/js-handwriting-something/myCall.js
