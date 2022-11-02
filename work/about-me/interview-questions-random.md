@@ -101,7 +101,7 @@ https://www.nowcoder.com/discuss/1083153
 * 虚拟DOM是通过render函数渲染成真实DOM的。
 
 #### vue的diff算法？
-...TODO
+* https://www.bilibili.com/video/BV1JR4y1R7Ln
 
 #### vue长列表如何进行性能优化？
 * 对于纯展示数据，不需要做vue数据劫持，可以对数据进行冻结。`Object.freeze(dataList)`。
