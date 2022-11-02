@@ -1,3 +1,4 @@
+/* eslint-disable no-prototype-builtins */
 function deepCloneEasyScene (obj) {
   const isObject = Object.prototype.toString.call(obj).slice(8, -1) === 'Object'
   const isArray = Object.prototype.toString.call(obj).slice(8, -1) === 'Array'
@@ -7,13 +8,15 @@ function deepCloneEasyScene (obj) {
 
   if (isObject || isArray) {
     for (const key in obj) {
-      const val = obj[key]
-      const isObject = Object.prototype.toString.call(val).slice(8, -1) === 'Object'
-      const isArray = Object.prototype.toString.call(val).slice(8, -1) === 'Array'
-      if (isObject || isArray) {
-        newObj[key] = deepCloneEasyScene(val)
-      } else {
-        newObj[key] = val
+      if (obj.hasOwnProperty(key)) {
+        const val = obj[key]
+        const isObject = Object.prototype.toString.call(val).slice(8, -1) === 'Object'
+        const isArray = Object.prototype.toString.call(val).slice(8, -1) === 'Array'
+        if (isObject || isArray) {
+          newObj[key] = deepCloneEasyScene(val)
+        } else {
+          newObj[key] = val
+        }
       }
     }
   } else {
