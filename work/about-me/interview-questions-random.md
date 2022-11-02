@@ -75,16 +75,13 @@ https://www.nowcoder.com/discuss/1083153
   - 3.再建：根据变化后的抽象语法树再生成代码字符串
 
 #### 手写深拷贝？
-...TODO
+* https://github.com/zhouhuafei/readme-notes/tree/master/web/js-handwriting-something/deepCopy.js
 
 #### 手写call？
-...TODO
+* https://github.com/zhouhuafei/readme-notes/tree/master/web/js-handwriting-something/myCall.js
 
-#### JS洋葱模型？
-...TODO
-
-#### JS洋葱模型是如何实现请求拦截的？
-...TODO
+#### 手写JS洋葱模型？
+* https://github.com/zhouhuafei/readme-notes/tree/master/web/js-handwriting-something/onionModel.js
 
 #### vue在进行dom渲染时存在什么问题？
 * 因存在就地复用策略。所以使用v-if配合v-else渲染input时，其value存在清理不掉的问题。可以加key解决。
