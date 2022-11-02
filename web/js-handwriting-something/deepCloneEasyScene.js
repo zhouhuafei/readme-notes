@@ -23,6 +23,8 @@ function deepCloneEasyScene (obj) {
     newObj = obj
   }
 
+  // ...TODO 深拷贝 - 递归 - 循环引用时会无限递归 - 抽空解决一下 - 先忙别的去了
+
   return newObj
 }
 
