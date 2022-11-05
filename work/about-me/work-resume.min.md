@@ -70,8 +70,8 @@
   - 技术相关补充：地图使用的百度地图、图表使用的Highcharts、富文本用的wangEditor、代码规范使用的ESLint/airbnb + Stylelint、代码管理使用的GitLab、抓包使用的Fiddler。
   - 工作中用到的过登录方式有：内嵌iframe进行手机号登录（OAuth2.0）、普通手机号登录、微信公众号网页授权登录（OAuth2.0）、微信扫码登录（OAuth2.0）、小程序登录。
   - 遇到并解决过的网站安全问题有：跨站脚本攻击XSS（用转义字符预防）、跨站请求伪造CSRF（用referer/csrftoken/jwt预防）、iframe钓鱼（用iframe防嵌套预防）。
-* 云起微商城h5网站：Gulp + SeaJS + Zepto + Vue + Scss
-* 云起微商城pc网站：Webpack + Vue全家桶 + Scss
+* 云起微商城h5（微信公众号）：Gulp + SeaJS + Zepto + Vue + Scss
+* 云起微商城pc：Webpack + Vue全家桶 + Scss
 * 云起微商城微信小程序：Gulp + 微信小程序原生语法 + Scss
 * 日日煮项目（拿云起微商城做的二开）
 * 四川成都宜瑞康医疗器械有限公司的医药项目（拿ECStore做的二开）：jQuery
