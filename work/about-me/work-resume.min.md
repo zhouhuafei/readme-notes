@@ -32,6 +32,7 @@
   - 技术相关补充：地图使用的腾讯地图、图表使用的ECharts、富文本用的wangEditor、代码规范使用的ESLint/standard、代码管理使用的GitLab、抓包使用的Fiddler。
   - 其他相关补充：我工作时，出活效率贼高。做草动的前1年，我1v5个后端，也是我最忙的时候。目前做松下的二开我1v3个后端，感觉忙的刚刚好。
 * 草动商城微信小程序：Gulp + 微信小程序原生语法 + Scss + Vant-Weapp
+* 草动商城微信公众号：Vue-CLI + Vue全家桶 + Scss + Vant
 * 五五营销微信小程序：Gulp + 微信小程序原生语法 + Scss
 * 悦诗风吟项目（拿草动商城做的二开）（主员工端）
   - 换肤、UI变更。
@@ -54,6 +55,7 @@
     - 主应用：Vue-CLI + Vue全家桶 + Scss + Element-UI
     - 子应用：Vue-CLI + Vue3全家桶 + TS/TSX + Scss + Element-Plus
   - 增加分享二维码功能（访问统计、下单统计）、对接微客分销、对接企微客服。
+  - 对接口进行压力测试（jmeter）。
 #### 超级导购（SaaS -> 智慧导购 + 社交零售）
 * 超级导购后台管理系统：Angular-CLI + Angular4全家桶 + Less + primeng
   - 值得一说的事：Less补充、基础组件补充、业务组件补充、引入对api进行二次封装的概念、引入企微机器人接口报警、引入企微机器人js报警。
