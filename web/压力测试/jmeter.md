@@ -35,3 +35,9 @@
     - 持续时间（秒）：10
   - 使用 KeepAlive：勾选
 * 讲解：1秒启动100个线程，100个线程同时发起请求，每个线程每次发1条请求，当对应线程的对应请求响应后，对应线程则继续发下一条请求。直到压完10秒。
+
+#### jmeter - 并发不高 - 但是请求对应的响应依然出错了
+* org.apache.http.conn.ConnectTimeoutException
+  - ...TODO
+* java.net.SocketTimeoutException: Read timed out
+  - ...TODO
