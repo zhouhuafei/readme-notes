@@ -44,7 +44,8 @@
 * java.net.SocketTimeoutException: Read timed out
 
 ## 案例
-* 松下uat环境支付接口压测：https://modao.cc/flow/BMLwhp0rkyt8vFdFNrJLf
+#### 松下uat支付接口压测
+* 流程比对：https://modao.cc/flow/BMLwhp0rkyt8vFdFNrJLf
 * 配置：
   - 线程数：30
   - Ramp-up时间（秒）：1
