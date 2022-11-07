@@ -42,3 +42,10 @@
 #### jmeter - 并发不高 - 但是请求对应的响应依然出错了 - 是网络的问题 - 换成手机热点后 - 没再出错
 * org.apache.http.conn.ConnectTimeoutException
 * java.net.SocketTimeoutException: Read timed out
+
+## 案例
+* 松下uat环境支付接口压测：https://modao.cc/flow/BMLwhp0rkyt8vFdFNrJLf
+* 配置：
+  - 线程数：30
+  - Ramp-up时间（秒）：1
+  - 循环次数：1
