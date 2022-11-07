@@ -220,6 +220,7 @@ git reflog
 ```
 git reset --hard f82cfd2
 ```
+* 建议：merge其他分支之前把当前分支最新的commitId复制出来进行保存。如此，发版失败时，直接回退到被保存的commitId那里即可。
 
 ## 忽略目录`upload`但是不忽略目录`upload/.gitkeep`文件
 > 在`.gitignore`增加一下内容即可。注：如果排除了该文件的父级目录，则使用`!`也不会再次被包含。
