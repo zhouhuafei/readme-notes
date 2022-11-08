@@ -6,26 +6,24 @@ function deepCloneEasyScene (obj, wm = new WeakMap()) {
   let newObj = {}
   if (isArray) newObj = []
 
-  if (isObject || isArray) {
-    for (const key in obj) {
-      if (obj.hasOwnProperty(key)) {
-        const val = obj[key]
-        const isObject = Object.prototype.toString.call(val).slice(8, -1) === 'Object'
-        const isArray = Object.prototype.toString.call(val).slice(8, -1) === 'Array'
-        if (isObject || isArray) {
-          wm.set(val, val)
-          console.log(wm.get(val))
-          newObj[key] = deepCloneEasyScene(val, wm)
-        } else {
-          newObj[key] = val
-        }
+  if (!isObject && !isArray) return obj
+  if (wm.get(obj)) return wm.get(obj)
+
+  wm.set(obj, newObj)
+
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      const val = obj[key]
+      const isObject = Object.prototype.toString.call(val).slice(8, -1) === 'Object'
+      const isArray = Object.prototype.toString.call(val).slice(8, -1) === 'Array'
+      if (isObject || isArray) {
+        wm.set(val, val)
+        newObj[key] = deepCloneEasyScene(val, wm)
+      } else {
+        newObj[key] = val
       }
     }
-  } else {
-    newObj = obj
   }
-
-  // ...TODO 深拷贝 - 递归 - 循环引用时会无限递归 - 抽空解决一下 - 先忙别的去了
 
   return newObj
 }
@@ -38,7 +36,14 @@ console.log('深拷贝 - 普通对象------newObjFirst', newObjFirst)
 console.log('深拷贝 - 普通对象------obj === newObjFirst', obj === newObjFirst)
 
 // 深拷贝 - 循环引用对象
-// ...TODO
+const obj2 = { a: 1, b: 2, c: 3 }
+obj2.obj2 = obj2
+const newObj2 = deepCloneEasyScene(obj2)
+console.log('深拷贝 - 循环引用对象------obj2', obj2)
+console.log('深拷贝 - 循环引用对象------newObj2', newObj2)
+console.log('深拷贝 - 循环引用对象------obj2 === newObj2', obj2 === newObj2)
+console.log('深拷贝 - 循环引用对象------obj2 === newObj2.obj2', obj2 === newObj2.obj2)
+console.log('深拷贝 - 循环引用对象------obj2.obj2 === newObj2.obj2', obj2.obj2 === newObj2.obj2)
 
 // 深拷贝 - 暴力实现方式
 const newObjLast = JSON.parse(JSON.stringify(obj))
