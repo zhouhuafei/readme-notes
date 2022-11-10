@@ -55,7 +55,7 @@
     - 主应用：Vue-CLI + Vue全家桶 + Scss + Element-UI
     - 子应用：Vue-CLI + Vue3全家桶 + TS/TSX + Scss + Element-Plus
   - 增加分享二维码功能（访问统计、下单统计）、对接微客分销、对接企微客服。
-  - 对接口进行压力测试（jmeter）。排查支付接口慢的原因（难）。
+  - 对接口进行压力测试（jmeter）。
 #### 超级导购（SaaS -> 智慧导购 + 社交零售）
 * 超级导购后台管理系统：Angular-CLI + Angular4全家桶 + Less + primeng
   - 值得一说的事：Less补充、基础组件补充、业务组件补充、引入对api进行二次封装的概念、引入企微机器人接口报警、引入企微机器人js报警。
