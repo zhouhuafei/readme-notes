@@ -40,9 +40,12 @@
     - 持续时间（秒）：10
 * 讲解：1秒启动100个线程，100个线程同时发起请求，每个线程每次发1条请求，当对应线程的对应请求响应后，对应线程则继续发下一条请求。直到压完10秒。
 
-#### jmeter - 并发不高 - 但是请求对应的响应依然出错了 - 是网络的问题 - 换成手机热点后 - 没再出错
-* org.apache.http.conn.ConnectTimeoutException
-* java.net.SocketTimeoutException: Read timed out
+#### jmeter报错
+* 并发不高，但是请求对应的响应依然出错了，是网络的问题，换成手机热点后，没再出错。
+  - org.apache.http.conn.ConnectTimeoutException
+  - java.net.SocketTimeoutException: Read timed out
+* 这个问题的原因是windows端口被耗尽了（默认1024-5000），而且操作系统要2~4分钟才会重新释放这些端口，所以可以增加windows的可用端口来解决，windows端口最大数为65535。
+  - address already in use
 
 ## 案例
 #### 松下uat支付接口压测
@@ -55,3 +58,8 @@
   - 线程数：30
   - Ramp-up时间（秒）：1
   - 循环次数：1
+
+## 单台jmeter客户端
+* 单台jmeter客户端模拟200个用户从进入小程序到预览订单。持续10分钟。于此同时用这台客户端模拟200个用户从进入小程序到下单。
+* 如果模拟400个人时，单台jmeter客户端不报错，那么就直接模拟。如果报错，那就用两台jmeter客户端去分别模拟。
+* 压测期间，看云数据库的运行情况，看云服务器的运行情况。
