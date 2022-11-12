@@ -136,3 +136,6 @@ https://www.nowcoder.com/discuss/1083153
 
 #### 熔断、限流、降级的区别？
 * https://blog.csdn.net/qq_37469055/article/details/118517994
+
+#### cpu，内存，硬盘，分别满了会怎样？
+* https://www.zhihu.com/question/448589744
