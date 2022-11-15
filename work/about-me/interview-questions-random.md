@@ -1,3 +1,6 @@
+#### JS try-catch-finally 中的 return
+* https://zhuanlan.zhihu.com/p/427344201
+
 #### 白屏时间和什么有关？怎么优化？
 * https://developer.aliyun.com/article/933842
 
