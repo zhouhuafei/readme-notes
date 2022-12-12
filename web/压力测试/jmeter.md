@@ -48,9 +48,8 @@
 * 并发不高，但是请求对应的响应依然出错了，是网络的问题，换成手机热点后，没再出错。
   - org.apache.http.conn.ConnectTimeoutException
   - java.net.SocketTimeoutException: Read timed out
-* 这个问题的原因是windows端口被耗尽了（默认1024-5000），而且操作系统要2~4分钟才会重新释放这些端口，所以可以增加windows的可用端口来解决，windows端口最大数为65535。
+* 压测次数太频繁，之前线程对应的端口还没释放，又开启了下次压测，导致端口不够用。这个问题的原因是windows端口被耗尽了（默认1024-5000），而且操作系统要2~4分钟才会重新释放这些端口，所以可以增加windows的可用端口来解决，windows端口最大数为65535。
   - address already in use
-  - 压测次数太频繁，之前线程对应的端口还没释放，又开启了下次压测，导致端口不够用。
 
 ## 案例
 #### 松下uat支付接口压测
