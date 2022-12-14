@@ -104,8 +104,8 @@ ps aux | grep nginx
   - 压缩成zip格式：`zip -q -r renwolesshel.zip renwolesshel/`
   - 解压zip格式的压缩包：`unzip renwolesshel.zip`
 
-* linux查看占用端口进程的PID：`lsof -i:7001`。
-  - win：`netstat -ano | findstr 7001`。
+* linux查看占用端口进程的PID：`lsof -i:6661`。
+  - win：`netstat -ano | findstr 6661`。
 * 然后根据PID可以kill掉相关进程：`kill -9 PID`。
   - win：`使用任务管理器结束任务`。
 
