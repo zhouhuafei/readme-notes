@@ -50,6 +50,12 @@
   - java.net.SocketTimeoutException: Read timed out
 * 压测次数太频繁，之前线程对应的端口还没释放，又开启了下次压测，导致端口不够用。这个问题的原因是windows端口被耗尽了（默认1024-5000），而且操作系统要2~4分钟才会重新释放这些端口，所以可以增加windows的可用端口来解决，windows端口最大数为65535。
   - address already in use
+  - 扩大端口数 - 步骤1：使用 `win + R` 快捷键打开`cmd`，输入`regedit`命令打开注册表。
+  - 扩大端口数 - 步骤2：设置 `MAXUSERPORT` 数量。
+    - 2.1 找到`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters`目录。
+    - 2.2 右击`Parameters`，添加一个新的`DWORD`，命名为`MaxUserPort`。
+    - 2.3 然后双击`MaxUserPort`，输入 65534，基数选择 十进制（如果是分布式运行的话，控制机器和负载机器都需要这样操作）。
+    - 2.4 修改配置完毕后， 需要重启 windows 才会生效。
 
 ## 案例
 #### 松下uat支付接口压测
