@@ -54,7 +54,7 @@
   - 扩大端口数 - 步骤2：设置 `MAXUSERPORT` 数量。
     - 2.1 找到`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters`目录。
     - 2.2 右击`Parameters`，添加一个新的`DWORD`，命名为`MaxUserPort`。
-    - 2.3 然后双击`MaxUserPort`，输入 65534，基数选择 十进制（如果是分布式运行的话，控制机器和负载机器都需要这样操作）。
+    - 2.3 然后双击`MaxUserPort`，输入 65535，基数选择 十进制（如果是分布式运行的话，控制机器和负载机器都需要这样操作）。
     - 2.4 修改配置完毕后， 需要重启 windows 才会生效。
 
 ## 案例
