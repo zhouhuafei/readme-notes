@@ -45,12 +45,14 @@
 * 讲解：1秒启动100个线程，100个线程同时发起请求，每个线程每次发1条请求，当对应线程的对应请求响应后，对应线程则继续发下一条请求。直到压完10秒。
 
 #### jmeter报错
-* java.net.SocketException: Connection reset
-  - https://blog.csdn.net/m0_67695717/article/details/125565684
-* 并发不高，但是请求对应的响应依然出错了，是网络的问题，换成手机热点后，没再出错。
+* 问题1：并发不高，但是请求对应的响应依然出错了，是网络的问题，换成手机热点后，没再出错。
   - org.apache.http.conn.ConnectTimeoutException
   - java.net.SocketTimeoutException: Read timed out
-* 压测次数太频繁，之前线程对应的端口还没释放，又开启了下次压测，导致端口不够用。这个问题的原因是windows端口被耗尽了（默认1024-5000），而且操作系统要2~4分钟才会重新释放这些端口，所以可以增加windows的可用端口来解决，windows端口最大数为65535。
+* 问题2：针对问题1，有时换成手机热点后，还是出了上述错误。于是我在高级选项中把请求的超时链接和超时响应改为了60000毫秒结果出了下述错误。
+  - java.net.SocketException: Connection reset
+  - https://blog.csdn.net/m0_67695717/article/details/125565684
+    - 根据文章，执行脚本，发现脚本无效。于是我根据文章，手动在注册表中增加了所需项。路径和问题3中的注册表路径一致。
+* 问题3：压测次数太频繁，之前线程对应的端口还没释放，又开启了下次压测，导致端口不够用。这个问题的原因是windows端口被耗尽了（默认1024-5000），而且操作系统要2~4分钟才会重新释放这些端口，所以可以增加windows的可用端口来解决，windows端口最大数为65535。
   - address already in use
   - 扩大端口数 - 步骤1：使用 `win + R` 快捷键打开`cmd`，输入`regedit`命令打开注册表。
   - 扩大端口数 - 步骤2：设置 `MAXUSERPORT` 数量。
