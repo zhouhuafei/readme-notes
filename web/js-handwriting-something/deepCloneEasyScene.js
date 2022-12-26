@@ -9,7 +9,7 @@ function deepCloneEasyScene (obj, wm = new WeakMap()) {
   if (!isObject && !isArray) return obj
   if (wm.get(obj)) return wm.get(obj)
 
-  wm.set(obj, newObj)
+  wm.set(obj, newObj) // 因存在对象引用，固被提前设置的newObj对象，其键值对是完整的。
 
   for (const key in obj) {
     if (obj.hasOwnProperty(key)) {
