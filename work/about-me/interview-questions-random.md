@@ -94,7 +94,7 @@ https://www.nowcoder.com/discuss/1083153
 * https://www.jianshu.com/p/9a2fad724371
 * Real DOM，真实DOM， 意思为文档对象模型，是一个结构化文本的抽象，在页面渲染出的每一个结点都是一个真实DOM结构。
 * Virtual Dom，本质上是以 JavaScript 对象形式存在的对 DOM 的描述。（虚拟DOM是表示真实DOM的JS对象）。
-  - 虚拟DOM不一定比真实的DOM操作快，JavaScript引擎和DOM引擎使用的是同一个主线程，任何涉及到DOM的操作都需要先把JavaScript的数据结构转换为DOM的数据结构，再将JavaScript引擎挂起执行DOM引擎，执行完成后再切换执行JavaScript引擎，这种上下文的切换是很消耗性能的，所以解决DOM操作的性能问题的关键在于减少不必要的DOM操作。那么虚拟DOM没有带来任何的性能的优化吗？也不是这样！虚拟DOM能够实现最细粒度的更新你的DOM，对于DOM操作更新DOM的常见做法是使用innerHTML，但是innerHTML的JavaScript计算和DOM操作通常和你的界面数据大小挂钩，即innerHTML的时间复杂度O = JavaScript操作时间 + 重新创建所有DOM元素的时间；而虚拟DOM更新UI界面的时间复杂度O = 渲染虚拟DOM + diff + 必要的DOM更新，渲染虚拟DOM和diff操作都是JavaScript计算不会涉及到JavaScript引擎和DOM引擎的上下文切换。所以虚拟DOM不管每次的数据变化是怎样的，每次重绘的对于DOM的操作都是最小的。
+  - 操作虚拟DOM比直接操作真实DOM多了一层，因此操作虚拟DOM一定比操作真实DOM慢。vue和react等框架引入虚拟DOM是为了更好的更新DOM，增加了框架使用的便利性。
   - 虚拟DOM最大的好处在于抽象了渲染的过程，为应用带来了跨平台的能力，不再是仅仅局限于浏览器端。比如React-Native和WeeX可以运行在Android、IOS平台上。
 
 #### vue怎么将虚拟dom渲染成真实dom？
