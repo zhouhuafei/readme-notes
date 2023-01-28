@@ -281,9 +281,9 @@ console.log(JSON.stringify({ a: null })) // '{"a":null}'
 * 箭头函数和普通函数的区别？
   - 箭头函数不会更改this的指向。
   - 箭头函数中的this不受call、apply和bind影响。
-  - 箭头函数不能使用new。
   - 箭头函数不能使用arguments。
-  - 箭头函数没有原型属性。
+  - 箭头函数不能使用new。
+  - 箭头函数没有原型属性。即没有prototype属性。
 #### 单线程？
 * setTimeout倒计时为什么会出现误差？`因为js是单线程，优先执行同步逻辑，等线程空闲才会执行异步逻辑`。
 #### 宏任务与微任务？
