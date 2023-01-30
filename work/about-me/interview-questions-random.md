@@ -152,3 +152,15 @@ https://www.nowcoder.com/discuss/1083153
 
 #### cpu，内存，硬盘，分别满了会怎样？
 * https://www.zhihu.com/question/448589744
+
+#### nodejs的优缺点？
+* https://www.zhihu.com/question/19653241/answer/15993549
+
+#### 如何理解nodejs的单线程？
+* https://www.zhihu.com/question/46783742/answer/2411784698
+
+#### 什么是CPU密集型、IO密集型？
+* https://zhuanlan.zhihu.com/p/62766037
+
+#### PM2中的Cluster和Fork模式差异？
+* https://stackoverflow.com/questions/34682035/cluster-and-fork-mode-difference-in-pm2
