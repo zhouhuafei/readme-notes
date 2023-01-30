@@ -80,6 +80,9 @@ https://www.nowcoder.com/discuss/1083153
 #### 手写Promise？
 ...TODO
 
+#### 手写reduce？
+...TODO
+
 #### 手写深拷贝？
 * https://github.com/zhouhuafei/readme-notes/tree/master/web/js-handwriting-something/deepCloneEasyScene.js
 
