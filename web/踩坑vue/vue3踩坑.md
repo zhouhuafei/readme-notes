@@ -68,3 +68,9 @@ declare module '*.scss' {
 * vite创建的模板太过单调，很多东西都需要自己配置。
 * create-vue可选项很多，很多东西都不需要自己配置，是基于vite进行打包。
 * vue-cli5可选项很多，很多东西都不需要自己配置，是基于webpack进行打包。
+
+## vite打包后的vue3项目，如果进行本地直接访问，会报错。
+* 在`vite.config.ts`中，不对base进行任何配置时（默认为`/`），js会报这个错。css报`net::ERR_FILE_NOT_FOUND`。
+* 在`vite.config.ts`中，base设置为`./`后，js还是会报这个错。css不报错。
+* Access to script at 'file:///E:/www/github-zhouhuafei/hello-world_vue3/dist/assets/index.b209f783.js' from origin 'null' has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes: http, data, chrome, chrome-extension, chrome-untrusted, https.
+* ...TODO
