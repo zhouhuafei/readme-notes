@@ -22,3 +22,6 @@
 
 # POST
 * 容量：无限制。
+
+# IndexedDB
+* IndexedDB存储数据大小一般在250M以上。
