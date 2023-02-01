@@ -6,7 +6,7 @@
     - 借助iframe的postMessage可以实现跨(主/子)域。
 
 # localStorage
-* 容量：不同浏览器容量的限制不一样。一般在5MB左右。
+* 容量：不同浏览器容量的限制不一样。一般是4MB。亲测Chrome浏览器可以存储4M。超过之后存储会失败。
 * 跨域：借助iframe的postMessage可以实现跨(主/子)域。
 * 事件：WindowEventHandlers.onstorage 属性包含一个在storage事件触发时的事件句柄。 当存储域发生改变时会触发事件。(例如：有新的项被存储)
     - 注意事项：onstorage事件，不会在当前窗口触发，只会在其他窗口触发。例如A窗口修改了localStorage，则A窗口并不会触发storage事件，B窗口才会触发storage事件。
