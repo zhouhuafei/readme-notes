@@ -25,3 +25,8 @@
 
 # IndexedDB
 * IndexedDB存储数据大小一般在250M以上。
+
+# StorageManager
+> Storage API的 StorageManager 接口提供了用于管理数据本地存储权限和估算可用存储空间的接口。
+* https://developer.mozilla.org/zh-CN/docs/Web/API/StorageManager
+* 没看出有啥用，不能提升存储上限，感觉没啥用。且只能https使用。
