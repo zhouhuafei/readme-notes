@@ -81,7 +81,7 @@ https://www.nowcoder.com/discuss/1083153
 ...TODO
 
 #### 手写reduce？
-...TODO
+* https://github.com/zhouhuafei/readme-notes/tree/master/web/js-handwriting-something/myReduce.js
 
 #### 手写深拷贝？
 * https://github.com/zhouhuafei/readme-notes/tree/master/web/js-handwriting-something/deepCloneEasyScene.js
