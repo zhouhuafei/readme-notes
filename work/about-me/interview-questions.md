@@ -318,8 +318,8 @@ fn(5) // 120
 * 怎么阻止事件的默认行为？`ev.preventDefault()`。
 #### bom？
 * cookie和sessionStorage以及localStorage的区别？
-  - 存储大小：cookie数据大小不能超过4k。后两者每个均可以存储5M左右。
-    - 亲测Chrome浏览器可以存储4M图片。超过之后存储会失败。但是存的是base64。图片转base64后会增加33%-36%的大小。所以是可以存储5M左右。
+  - 存储大小：cookie数据大小不能超过4kB。后两者每个均可以存储不超过5MB的数据。
+    - 亲测Chrome浏览器可以存储4MB图片。超过之后存储会失败。但是存的是base64。图片转base64后会增加33%-36%的大小。所以是可以存储5MB左右。
   - 存储时间：cookie可以设置有效期。sessionStorage关闭窗口就没了。localStorage永久存储。
   - 跨域行为：设置cookie时可以使用domain跨子域（`document.cookie='a=1; domain=.baidu.com'`）。后两者不可以跨子域。
   - 请求携带：不跨域的情况下，发送请求的时候默认会携带cookie（跨子域默认只会携带domain满足规则的cookie）。后两者不会被携带。
