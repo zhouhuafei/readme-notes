@@ -73,4 +73,6 @@ declare module '*.scss' {
 * 在`vite.config.ts`中，不对base进行任何配置时（默认为`/`），js会报这个错。css报`net::ERR_FILE_NOT_FOUND`。
 * 在`vite.config.ts`中，base设置为`./`后，js还是会报这个错。css不报错。
 * Access to script at 'file:///E:/www/github-zhouhuafei/hello-world_vue3/dist/assets/index.b209f783.js' from origin 'null' has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes: http, data, chrome, chrome-extension, chrome-untrusted, https.
-* ...TODO
+* 解答：在index.html中，使用type为module的script标签引入js时。
+  - 需要使用http的方式访问页面，也就是要启动一个静态服务器。
+  - 若在本地直接使用file协议进行访问，会报错。
