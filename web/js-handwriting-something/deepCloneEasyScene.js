@@ -72,4 +72,6 @@ console.log('JSON序列化时会把：Date对象的实例转为字符串', JSON.
 // 注意：JSON序列化时会把：NaN转为null
 console.log('JSON序列化时会把：NaN转为null', JSON.stringify({ a: NaN }))
 
+// 注意：JSON序列化循环引用自身的对象时会抛出错误
+
 // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
