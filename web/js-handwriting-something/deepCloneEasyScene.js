@@ -54,14 +54,22 @@ console.log('深拷贝 - 暴力实现方式------newObjLast', newObjLast)
 console.log('深拷贝 - 暴力实现方式------obj === newObjLast', obj === newObjLast)
 console.log('')
 
-// 弊端：JSON序列化时会把：undefined/函数（包含构造函数）/Symbol对象 忽略掉。
+// 注意：JSON序列化时会把：undefined/函数（包含构造函数）/symbol类型的值 忽略掉。
 console.log('JSON序列化时会把：undefined 忽略', JSON.stringify({ a: undefined }))
 console.log('JSON序列化时会把：函数（包含构造函数） 忽略', JSON.stringify({ a: Symbol }))
-console.log('JSON序列化时会把：Symbol对象 忽略', JSON.stringify({ a: Symbol('1') }))
+console.log('JSON序列化时会把：symbol类型的值 忽略', JSON.stringify({ a: Symbol('1') }))
 console.log('')
 
-// 弊端：JSON序列化时会把：Map对象/WeakMap对象/Set对象/WeakSet对象/正则/Error对象 转为空json对象。
-console.log('JSON序列化时会把：Map对象 转换为空对象', JSON.stringify({ a: new Map([['k1', 'v1'], ['k2', 'v2']]) }))
-console.log('JSON序列化时会把：Set对象 转换为空对象', JSON.stringify({ a: new Set([1, 2, 3]) }))
+// 注意：JSON序列化时会把：Map实例/WeakMap实例/Set实例/WeakSet实例/正则/Error实例 转为空json对象。
+console.log('JSON序列化时会把：Map实例 转换为空对象', JSON.stringify({ a: new Map([['k1', 'v1'], ['k2', 'v2']]) }))
+console.log('JSON序列化时会把：Set实例 转换为空对象', JSON.stringify({ a: new Set([1, 2, 3]) }))
 console.log('JSON序列化时会把：正则 转换为空对象', JSON.stringify({ a: /\w+/ }))
-console.log('JSON序列化时会把：Error对象 转换为空对象', JSON.stringify({ a: new Error('error') }))
+console.log('JSON序列化时会把：Error实例 转换为空对象', JSON.stringify({ a: new Error('error') }))
+
+// 注意：JSON序列化时会把：Date对象的实例转为字符串
+console.log('JSON序列化时会把：Date对象的实例转为字符串', JSON.stringify({ a: new Date() }))
+
+// 注意：JSON序列化时会把：NaN转为null
+console.log('JSON序列化时会把：NaN转为null', JSON.stringify({ a: NaN }))
+
+// https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
