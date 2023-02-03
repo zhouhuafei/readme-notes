@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>使用css绘制0.5px边框</title>
+    <style>
+      div {
+        position: relative;
+        width: 200px;
+        height: 200px;
+      }
+
+      div:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        bottom: -50%;
+        left: -50%;
+        border: 1px solid #f00;
+        transform: scale(0.5);
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>
