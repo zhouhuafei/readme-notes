@@ -77,9 +77,6 @@ https://www.nowcoder.com/discuss/1083153
   - 2.变换：对抽象语法树进行变换操作
   - 3.再建：根据变化后的抽象语法树再生成代码字符串
 
-#### 手写Promise？
-...TODO
-
 #### 手写reduce？
 * https://github.com/zhouhuafei/readme-notes/tree/master/web/js-handwriting-something/myReduce.js
 
