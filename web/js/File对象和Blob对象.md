@@ -233,3 +233,10 @@ if (Object.prototype.toString.call(response.data) === '[object ArrayBuffer]') {
   - `xhr`下载数据流，然后把数据流转成`blob`，上述有`downloadImg`案例。
   - 使用`URL.createObjectURL`可以将`blob`转成`blob:url`，上述有案例。`blob:url`可以直接放在`img`的`src`中使用。
   - 使用`FileReader`可以将`blob`转成`base64`。
+
+## canvas可以直接转成Blob对象
+```javascript
+canvas.toBlob((blob) => {
+  const url = URL.createObjectURL(blob)
+})
+```
