@@ -6,7 +6,11 @@
 <a href="http://sbxx.top/static-no-cache/test/zero/img.jpg" download="rename">
 ```
 * 注意事项：
-    - href的指向需要同源，跨域下载不下来。
+  - href的指向需要同源，跨域下载不下来。
+  - 可以用canvas对图片进行绘制，绘制完毕转成base64或者blob:url。再赋值给a标签就可以规避跨域问题。
+  - 工作中我们也会有下载excel的时候，这时如果后端的接口是get且响应头的内容类型是application/octet-stream。
+  - 那我们直接使用js在新标签页中打开路径，即可触发浏览器的下载行为。
+  - 否则的话，我们需要使用xhr接收，并把数据流转成blob:url后，再配合a标签的download属性进行下载。
 
 # 下载
 * 实验：ajax方式下载文件时无法触发浏览器打开保存文件对话框，也就无法将下载的文件保存到硬盘上！
