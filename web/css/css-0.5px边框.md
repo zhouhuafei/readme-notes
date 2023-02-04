@@ -1,3 +1,4 @@
+* 在苹果的IOS系统上，safari浏览器支持0.5px边框。微信小程序亦如此。安卓不支持。
 ```scss
 .hairline {
   position: relative;
@@ -17,18 +18,18 @@
 }
 ```
 
-* 顺便说下```:```和```::```的区别吧
-    - css2伪类用```:```，伪元素也是用```:```。
-    - css3为了区分两者。规范上定义的是：伪类用```:```，伪元素用```::```。但是伪元素依然可以用```:```。
-    
+* 顺便说下`:`和`::`的区别吧
+  - css2伪类用`:`，伪元素也是用`:`。
+  - css3为了区分两者。规范上定义的是：伪类用`:`，伪元素用`::`。但是伪元素依然可以用`:`。
+
 * 伪类选择器
-    > a:link | a:visited | a:hover | a:active
-    - div:first-of-type
-    - div:first-child
-    
+  > a:link | a:visited | a:hover | a:active
+  - div:first-of-type
+  - div:first-child
+
 * 伪元素选择器
-    > 伪元素是内联元素
-    - 为某个元素的第一行文字使用样式。```div::first-line```
-    - 为某个元素中的文字的首字母或第一个字使用样式。```div::first-letter```
-    - 在某个元素之前插入一些内容。```div::before```
-    - 在某个元素之后插入一些内容。```div::after```
+  > 伪元素是内联元素
+  - 为某个元素的第一行文字使用样式。`div::first-line`
+  - 为某个元素中的文字的首字母或第一个字使用样式。`div::first-letter`
+  - 在某个元素之前插入一些内容。`div::before`
+  - 在某个元素之后插入一些内容。`div::after`
