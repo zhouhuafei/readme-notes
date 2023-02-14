@@ -644,6 +644,11 @@ class="w500">
     - 解决方案：在el-form组件上使用label-width控制label的width。
 * el-dialog组件，后弹出的，被前面弹出的覆盖掉了。
     - 解决方案：给el-dialog加```append-to-body```属性。
+* el-dialog组件，覆盖了messageBox弹窗。
+    - 解决方案：给el-dialog增加z-index属性和append-to-body属性。
+* el-dialog组件，覆盖了message弹窗。
+  - 解决方案1：给el-dialog增加z-index属性和append-to-body属性。
+  - 解决方案2：给message扩展class以达到增加z-index属性的目的。
 * el-form，rules校验，怎么把不需要带给后端的数据，不放到form对象里，并能使校验生效？
     - 答：无解。如果想要校验，就需要把数据放到form对象里，配合上prop属性。如此才能被el-form的校验规则识别。
     - 如果不想把无关数据提交给后端，则无关数据用下划线开头，并在提交数据前进行过滤即可。
