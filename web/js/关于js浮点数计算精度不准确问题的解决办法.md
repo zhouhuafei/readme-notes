@@ -115,5 +115,3 @@ function divide(arg1, arg2) {
 
 # 包
 * https://github.com/nefe/number-precision
-* https://github.com/MikeMcl/decimal.js
-* https://github.com/MikeMcl/bignumber.js
