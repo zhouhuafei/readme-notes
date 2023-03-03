@@ -5,7 +5,7 @@ netstat -ano
 ```
 * 筛选
 ```
-netstat -ano | findstr 1111
+netstat -ano | findstr 6661
 ```
 * 参数
   - `-a`：显示所有链接和监听端口
