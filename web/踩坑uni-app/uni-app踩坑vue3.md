@@ -89,15 +89,3 @@ export default createStore({
 * 关于全局组件的注册？
   - 选择vue版本为2时，只能在main.js中进行全局组件的注册，如果把全局组件放到单独的js文件中进行注册则无效。
   - 选择vue版本为3时，依然存在上述问题。
-
-## 在uni-app中使用pinia的store.$reset()时，要么js异常，要么页面被不断重定向。
-```javascript
-// store.$reset()受语法糖影响故加此代码
-const pinia = createPinia()
-pinia.use(({ store }) => {
-  const initialState = JSON.parse(JSON.stringify(store.$state))
-  store.$reset = () => {
-    store.$patch(initialState)
-  }
-})
-```
