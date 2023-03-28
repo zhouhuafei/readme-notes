@@ -22,3 +22,4 @@
 > 可以根据图片生成视频（虚拟人）。
 * 在线网站（收费）：https://studio.d-id.com
 * 开源项目（免费）：https://github.com/Winfredy/SadTalker
+  - 在线网站（免费）：https://huggingface.co/spaces/vinthony/SadTalker
