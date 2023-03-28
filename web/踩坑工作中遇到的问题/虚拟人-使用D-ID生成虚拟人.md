@@ -9,11 +9,11 @@
 * 在线网站（收费）：https://www.midjourney.com
   - 国内无法访问。需要翻墙。
 
-## Stable Diffusion（不推荐）
+## Stable Diffusion（推荐）
 > 可以根据文本生成图片。
 * 在线网站（免费）：https://stablediffusionweb.com
-  - 生成的图片很劣质。
-  - 生成的人物图片不美观。
+  - 第1个输入框输入关键词：`A dolphin jumped out of the splashing water in the aquarium`。
+  - 第2个输入框排除关键词`low quality`。
 
 ## ElevenLabs（中文不推荐）
 > 可以根据文本生成音频。
@@ -34,8 +34,8 @@
   - 仅支持读取语音。
   - 在线网站：https://huggingface.co/spaces/vinthony/SadTalker
     - 我生成视频时，总是失败。没有一次是生成成功的。
-    - 案例视频，有很明显的抖动，且视频分辨率低，视频不清晰。体验不如D-ID。
+    - 案例视频，人物有很明显的抖动问题，且视频分辨率低，视频不清晰。体验不如D-ID。
   - 在线网站：https://colab.research.google.com/github/Winfredy/SadTalker/blob/main/quick_demo.ipynb
     - 国内无法访问。需要翻墙。
     - 我未进行尝试。因我不懂Python。
-    - 看了别人的生成效果，存在和案例视频同样的问题。视频有很明显的抖动，且视频分辨率低，视频不清晰。
+    - 看了别人的生成效果，存在和案例视频同样的问题。人物有很明显的抖动问题，且视频分辨率低，视频不清晰。
