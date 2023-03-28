@@ -15,6 +15,7 @@
 * 在线网站（免费）：https://stablediffusionweb.com
   - 第1个输入框输入关键词：`A dolphin jumped out of the splashing water in the aquarium`。
   - 第2个输入框排除关键词`low quality`。
+* ...TODO 本地安装？
 
 ## ElevenLabs（中文不推荐）
 > 可以根据文本生成音频。
