@@ -12,7 +12,7 @@
 
 ## Stable Diffusion
 > 可以根据文本生成图片。
-* 在线网站（收费）：https://stablediffusionweb.com
+* 在线网站（免费）：https://stablediffusionweb.com
 
 ## ElevenLabs
 > 可以根据文本生成音频。
