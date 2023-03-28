@@ -8,6 +8,7 @@
 > 可以根据文本生成图片。
 * 在线网站（收费）：https://www.midjourney.com
   - 国内无法访问。需要翻墙。
+  - ...TODO 和Stable Diffusion对比看看哪个生成的好？
 
 ## Stable Diffusion（推荐）
 > 可以根据文本生成图片。
