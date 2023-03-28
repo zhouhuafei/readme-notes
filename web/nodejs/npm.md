@@ -111,6 +111,7 @@ npm deprecate my-thing@"< 0.2.3" "critical bug fixed in v0.2.3"`
   - 当没有package-lock.json文件时（例如有个新人clone代码后进行依赖的安装）。
   - 进行`npm i`，则又会安装成`6.11.1`的版本。此时打包又会报错。
   - 固建议package.json中的依赖项改为`"qs": "6.7.0"`。
+* ...TODO package-lock.json是把本地的依赖写入进去。补充说明待续。
 
 # 设置环境变量
 * Linux：```export NODE_ENV=production```
