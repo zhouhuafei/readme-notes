@@ -10,6 +10,10 @@
 > 可以根据文本生成图片。
 * 在线网站（收费）：https://www.midjourney.com
 
+## Stable Diffusion
+> 可以根据文本生成图片。
+* 在线网站（收费）：https://stablediffusionweb.com
+
 ## ElevenLabs
 > 可以根据文本生成音频。
 * 在线网站（收费）：https://beta.elevenlabs.io
