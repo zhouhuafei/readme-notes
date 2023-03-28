@@ -96,7 +96,7 @@ npm deprecate my-thing@"< 0.2.3" "critical bug fixed in v0.2.3"`
 * 错误：`(node:94133) Warning: Accessing non-existent property 'cat' of module exports inside circular dependency`。
   - 解决方案：我把shelljs从0.8.2升级到0.8.5后，上述错误就消失了。node版本是`14.19.1`。
 
-# 版本
+# npm依赖包的版本
 * `~`会匹配最近的小版本依赖包，比如`~1.2.3`会匹配所有`1.2.x`版本，但是不包括`1.3.0`
 * `^`会匹配最新的大版本依赖包，比如`^1.2.3`会匹配所有`1.x.x的`包，包括`1.3.0`，但是不包括`2.0.0`
 * `*`这意味着安装最新版本的依赖包
