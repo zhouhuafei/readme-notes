@@ -101,17 +101,21 @@ npm deprecate my-thing@"< 0.2.3" "critical bug fixed in v0.2.3"`
 * `^`会匹配最新的大版本依赖包，比如`^1.2.3`会匹配所有`1.x.x的`包，包括`1.3.0`，但是不包括`2.0.0`
 * `*`这意味着安装最新版本的依赖包
 #### 以qs举例并进行案例记录
-> 遇到过因qs版本过高，导致uni-cli配合微信小程序的直播插件进行打包时，报错的问题。此时需要降低qs的版本至6.7.0。
-* package.json中的依赖项为`"qs": "^6.7.0"`时，使用`npm i`进行安装会安装`6.11.1`的版本。
-* package.json中的依赖项为`"qs": "~6.7.0"`时，使用`npm i`进行安装会安装`6.7.3`的版本。
-* package.json中的依赖项为`"qs": "6.7.0"`时，使用`npm i`进行安装会安装`6.7.0`的版本。
-* 使用`npm i qs@6.7.0`时，会安装`6.7.0`的版本，但自动写入package.json中的依赖项为`"qs": "^6.7.0"`。
-  - package-lock.json文件中依赖项也为`"qs": "^6.7.0"`。
-  - 但在大多数项目中，都会通过git忽略掉package-lock.json文件。
-  - 当没有package-lock.json文件时（例如有个新人clone代码后进行依赖的安装）。
-  - 进行`npm i`，则又会安装成`6.11.1`的版本。此时打包又会报错。
-  - 固建议package.json中的依赖项改为`"qs": "6.7.0"`。
-* ...TODO package-lock.json是把本地的依赖写入进去。补充说明待续。
+* 遇到问题：在app.json中，引入微信小程序的直播插件后，使用uni-cli打包，页面白屏且出现错误，把qs的版本降低至6.7.0即可。
+  - 错误信息：`app.js错误: TypeError: Function.prototype.apply was called on WeakMap.prototype.get, which is a string and not a function`。
+  - 解决问题：https://developers.weixin.qq.com/community/develop/doc/0000a26437c850a77a0c5c1dc5b400?jumpto=comment&commentid=00024cbc708308c77c0c6d202568
+* 本地无qs安装包时，使用`npm i`进行依赖安装。
+  - package.json中的依赖项为`"qs": "^6.7.0"`时，会安装`6.11.1`的版本。
+  - package.json中的依赖项为`"qs": "~6.7.0"`时，会安装`6.7.3`的版本。
+  - package.json中的依赖项为`"qs": "6.7.0"`时，安装`6.7.0`的版本。
+* 本地有qs安装包时，使用`npm i`进行依赖安装。
+  - 若本地的安装包版本，满足package.json中qs的版本规则，则不会重新下载。
+* 使用`npm i qs@6.7.0`时，不管本地有无qs包，一定会安装`6.7.0`的版本。
+  - 写入到package.json中的依赖项为`"qs": "^6.7.0"`。
+  - 写入到package-lock.json中依赖项为`"qs": "6.7.0"`。
+  - 因历史遗留问题，很多老项目，在git中都会选择忽略掉package-lock.json文件。
+  - 当本地无package-lock.json文件且无qs包时，进行`npm i`，安装的qs版本则为`6.11.1`的版本。此时打包后错误又会复现。
+  - 这种常见于，初次克隆代码后，进行依赖安装的场景。固建议手动将package.json中的依赖项改为`"qs": "6.7.0"`。即去掉`^`符号。
 
 # 设置环境变量
 * Linux：```export NODE_ENV=production```
