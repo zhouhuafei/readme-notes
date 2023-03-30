@@ -1,3 +1,8 @@
+## AIGC
+* UGC（全称：User Generated Content）是指广大用户生产的内容。其内容更加大众化和简单化，但是其质量参差不齐。
+* PGC（全称：Professional Generated Content）是指专业人士生产的内容。其创作的内容相对UGC更加专业、精准、高质量。
+* AIGC（全称：AI Generated Content）是指利用人工智能技术来生成内容。AIGC也被认为是继UGC、PGC之后的新型内容生产方式，AI绘画、AI写作等都属于AIGC的分支。
+
 ## ChatGPT（推荐）
 > 可以根据描述生成文本。
 * 在线网站（收费/每月20美元）：https://chat.openai.com
