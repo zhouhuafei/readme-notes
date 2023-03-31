@@ -1,4 +1,11 @@
-## 其他网站推荐
+## AIGC开源项目推荐
+* 文本转图片：https://github.com/AUTOMATIC1111/stable-diffusion-webui
+* 让图片开口说话：https://github.com/Winfredy/SadTalker
+* 语音转文字：https://github.com/openai/whisper
+* 语音转文字：https://github.com/Const-me/Whisper
+* 离线语音转文字：https://github.com/chidiwilliams/buzz
+
+## AIGC其他网站推荐
 * AI工具合集：https://www.futurepedia.io/
 * 使用人工智能语音将文本转换为视频（收费）：https://fliki.ai/
   - 国内的必剪和剪映也可以实现文本转视频（免费）
