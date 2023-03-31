@@ -1,5 +1,7 @@
-## 网站
+## 其他网站推荐
 * AI工具合集：https://www.futurepedia.io/
+* 使用人工智能语音将文本转换为视频：https://fliki.ai/
+* 像编辑文字一样编辑你的音视频作品：https://www.descript.com/
 
 ## AIGC
 * UGC（全称：User Generated Content）是指广大用户生产的内容。其内容更加大众化和简单化，但是其质量参差不齐。
