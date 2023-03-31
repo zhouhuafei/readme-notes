@@ -48,7 +48,7 @@
 
 ## 微软语音合成助手（推荐）
 > 可以根据文本生成音频。
-* 微软语音合成助手（收费/每1M字符$16美元）
+* 在线网站（收费/每1M字符$16美元）：https://azure.microsoft.com/zh-cn/services/cognitive-services/text-to-speech/
   - 中文支持很友好。
   - D-ID使用的应该就是这个。因为里面的选项一模一样。
   - 需要VISA的信用卡才能进行注册使用。
