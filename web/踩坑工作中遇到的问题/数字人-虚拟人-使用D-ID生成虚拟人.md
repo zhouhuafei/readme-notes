@@ -42,10 +42,19 @@
   - 已被训练好的模型资源（被墙了）：https://civitai.com/
   - 已被训练好的模型资源（可访问）：https://models.paomiantv.cn/models
 
-# getimg.ai（推荐）
+## getimg.ai（推荐）
 > 可以根据文本生成图片。
 * 在线网站（收费/每月$12-$99美元）：https://getimg.ai
   - 国内无法使用。需要翻墙。
+
+## Vega AI 创作平台（推荐）
+> 可以根据文本生成图片。
+* 在线网站（国产/尚未收费）：https://rightbrain.art/text2Image
+  - 此网站是基于开源项目Stable Diffusion进行的二开
+
+## 一帧秒创（推荐）
+> 可以根据描述生成文本。可以根据文本生成图片。可以根据文本生成音频。可以根据文本生成视频。可以根据图片生成视频。
+* 在线网站（国产/每月￥88人民币）：https://aigc.yizhentv.com/
 
 ## ElevenLabs（中文不推荐，英文很推荐）
 > 可以根据文本生成音频。
