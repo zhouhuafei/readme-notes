@@ -4,9 +4,6 @@
 * 语音转文字：https://github.com/openai/whisper
 * 语音转文字：https://github.com/Const-me/Whisper
 * 离线语音转文字：https://github.com/chidiwilliams/buzz
-* 图片去水印：...TODO
-* 图片无损压缩：...TODO
-* 视频去水印：...TODO
 
 ## AIGC其他网站推荐
 * AI工具合集：https://www.futurepedia.io/
@@ -27,7 +24,6 @@
   - 国内无法使用。需要翻墙。
   - ChatGPT是美国人工智能研究实验室OpenAI新推出的一种人工智能技术驱动的自然语言处理工具。
 * 国内目前可以免费使用的3.5版本：https://chat1.binjie.site:7777/#/chat/1680339476987
-* 国内目前可以免费使用的4.0版本：...TODO
 
 ## MidJourney（推荐）
 > 可以根据文本生成图片。
