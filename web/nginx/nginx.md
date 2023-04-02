@@ -453,6 +453,7 @@ location / {
     - 翻墙
     - Shadowsocks
     - 各种上网代理/VPN
+    - 代理(Proxy)和VPN的区别：https://zhuanlan.zhihu.com/p/451193697
 * 反向代理案例
     - nginx
     - 负载均衡
