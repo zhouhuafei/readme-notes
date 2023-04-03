@@ -96,6 +96,9 @@ CPU：i5 12代以上
 ## 虚拟数字人直播软件合辑
 * https://zhuanlan.zhihu.com/p/581647715
 
+## 数字人调研 - 数字人播报调研 - 数字人直播调研
+* https://docs.qq.com/sheet/DWHpoclNJY01DU21Z?tab=BB08J2
+
 ## 有感而发随便写写
 * 做自媒体最重要的是要有优质内容。
 * 想要发财需要拥有能为他人解决问题的能力。
