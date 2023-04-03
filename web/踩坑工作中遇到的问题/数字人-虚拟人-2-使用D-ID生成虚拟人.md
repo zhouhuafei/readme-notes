@@ -96,7 +96,7 @@ CPU：i5 12代以上
 ## 虚拟数字人直播软件合辑
 * https://zhuanlan.zhihu.com/p/581647715
 
-## 数字人调研 - 数字人播报调研 - 数字人直播调研
+## 虚拟数字人调研 - 虚拟数字人播报调研 - 虚拟数字人直播调研
 * https://docs.qq.com/sheet/DWHpoclNJY01DU21Z?tab=BB08J2
 
 ## 有感而发随便写写
