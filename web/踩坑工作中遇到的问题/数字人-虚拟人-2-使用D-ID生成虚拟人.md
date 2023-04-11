@@ -17,7 +17,7 @@
 
 ## Stable Diffusion
 > 可以根据文本生成图片。
-* 在线网站（免费）：https://stablediffusionweb.com
+* 在线网站（免费）：https://stablediffusionweb.com | https://huggingface.co/spaces/stabilityai/stable-diffusion
   - 第1个输入框输入关键词：`A dolphin jumped out of the splashing water in the aquarium`。
   - 第2个输入框排除关键词`low quality`。
   - 生成的图片不够美观和惊艳，可能是服务器上没有对应的已被训练好的模型。
