@@ -5,3 +5,6 @@
 
 ## 安装stable-diffusion-webui时gfpgan安装失败
 * https://blog.csdn.net/qq_45041788/article/details/129677247
+
+## stable-diffusion-webui程序界面汉化
+* https://www.360doc.cn/article/36363017_1075396022.html
