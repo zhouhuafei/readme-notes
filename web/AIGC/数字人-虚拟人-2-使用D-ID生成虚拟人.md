@@ -103,6 +103,13 @@ CPU：i5 12代以上
 ## 虚拟数字人调研 - 虚拟数字人播报调研 - 虚拟数字人直播调研
 * https://docs.qq.com/sheet/DWHpoclNJY01DU21Z?tab=BB08J2
 
+## 怎样系统的学习 AI 绘画？
+* https://www.zhihu.com/question/585131423/answer/2938150663
+
+## AI相关的博主 - 数字人制作 - 文本生成视频
+* https://space.bilibili.com/431556168/video
+* https://space.bilibili.com/3493106383063541/video
+
 ## 有感而发随便写写
 * 做自媒体最重要的是要有优质内容。
 * 想要发财需要拥有能为他人解决问题的能力。
