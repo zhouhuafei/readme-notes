@@ -13,6 +13,7 @@ ssh root@ip
 * yum install -y nginx
 * 启动：systemctl start nginx.service
 * 开机自启动：systemctl enable nginx.service
+* 禁止开机自启动：systemctl disable nginx.service
 * 静态资源默认目录：/usr/share/nginx/html
 * 配置文件默认目录：/etc/nginx/conf.d
 * 把本地文件拷贝到服务器：`scp ./http_comic.sbxx.top.conf root@115.159.148.99:/etc/nginx/conf.d/`
