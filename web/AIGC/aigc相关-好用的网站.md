@@ -59,6 +59,7 @@
 * 语音转文字：https://github.com/Const-me/Whisper
 * 离线语音转文字：https://github.com/chidiwilliams/buzz
 * 文本转语音：https://github.com/coqui-ai/TTS
+* 文本转语音（微软语音合成助手同款）：https://github.com/rany2/edge-tts
 * 配合音频可以让图片开口说话：https://github.com/Winfredy/SadTalker
 * 配合音频可以让图片开口说话（还可以根据音频转换视频中人物的口型）：https://github.com/Rudrabha/Wav2Lip
 
