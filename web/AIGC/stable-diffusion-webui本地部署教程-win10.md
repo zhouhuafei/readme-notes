@@ -1,6 +1,7 @@
 > Stable Diffusion本地部署、Stable Diffusion本地安装
 
 ## Win10 - stable-diffusion-webui本地部署教程
+* https://zhuanlan.zhihu.com/p/577676154
 * https://www.bilibili.com/read/cv22700219/
 
 ## 安装stable-diffusion-webui时gfpgan安装失败
