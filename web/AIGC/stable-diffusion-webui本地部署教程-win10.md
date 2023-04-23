@@ -13,5 +13,5 @@
 ## Stable Diffusion的各类模型介绍
 * https://zhuanlan.zhihu.com/p/622410028
 
-## Stable Diffusion AI绘画入门 模型详解 保姆教程
+## Stable Diffusion AI绘画入门 模型详解 模型训练 安装教程 汉化教程 保姆教程 教程集合
 * https://www.bilibili.com/video/BV1eL411176f/
