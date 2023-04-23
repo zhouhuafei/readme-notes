@@ -10,7 +10,7 @@
 ## stable-diffusion-webui程序界面汉化
 * https://www.360doc.cn/article/36363017_1075396022.html
 
-## Stable Diffusion的版本以及各类模型介绍
+## Stable Diffusion的各类模型介绍
 * https://zhuanlan.zhihu.com/p/622410028
 
 ## Stable Diffusion AI绘画入门 模型详解 保姆教程
