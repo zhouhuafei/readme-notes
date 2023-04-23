@@ -15,3 +15,6 @@
 
 ## Stable Diffusion AI绘画入门 模型详解 模型训练 安装教程 汉化教程 保姆教程 教程集合
 * https://www.bilibili.com/video/BV1eL411176f/
+
+## ckpt和safetensors的区别
+* ckpt和safetensors实质上是同样的文件，但因为各个模型算法有安全漏洞，导致普通模型文件ckpt可能携带病毒，所以对ckpt文件进行了封装，变成了更安全的safetensors。
