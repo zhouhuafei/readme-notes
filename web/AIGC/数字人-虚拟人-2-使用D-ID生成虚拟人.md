@@ -27,7 +27,7 @@
   - 如何训练模型？去哪下载模型？如何使用模型？[B站](https://www.bilibili.com/)皆有教程！
   - 已被训练好的模型资源（被墙了）：https://civitai.com/
   - 已被训练好的模型资源（可访问）：https://models.paomiantv.cn/models
-  - 已被训练好的模型资源（可访问）：https://huggingface.co/xiele/stable-diffusion-webui-models/tree/main/Stable-diffusion
+  - 已被训练好的模型资源（可访问）：https://huggingface.co/CompVis/stable-diffusion-v-1-4-original/tree/main
 
 ## Vega AI 创作平台
 > 可以根据文本生成图片。
