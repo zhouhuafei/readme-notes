@@ -27,6 +27,7 @@
   - 如何训练模型？去哪下载模型？如何使用模型？[B站](https://www.bilibili.com/)皆有教程！
   - 已被训练好的模型资源（被墙了）：https://civitai.com/
   - 已被训练好的模型资源（可访问）：https://aituzhan.com/
+  - 已被训练好的模型资源（可访问）：https://www.liblibai.com/
   - 已被训练好的模型资源（可访问）：https://models.paomiantv.cn/models
   - 已被训练好的模型资源（可访问）：https://huggingface.co/runwayml/stable-diffusion-v1-5/tree/main
 
