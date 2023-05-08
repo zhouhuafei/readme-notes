@@ -111,6 +111,9 @@ CPU：i5 12代以上
 ## 虚拟数字人调研 - 虚拟数字人播报调研 - 虚拟数字人直播调研
 * https://docs.qq.com/sheet/DWHpoclNJY01DU21Z?tab=BB08J2
 
+## AIGC相关思维导图
+* https://docs.qq.com/mind/DWERpRlBZTGlYTmFN
+
 ## 腾讯智影24小时数字人全自动直播体验总结
 * 生成一个在线视频，进行无限循环播放。然后使用直播伴侣，进行窗口捕获直播。
 * 绑定直播间链接，分析直播室弹幕，触发关键词时，进行问题回答。
