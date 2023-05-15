@@ -58,6 +58,7 @@
 * 语音转文字：https://github.com/openai/whisper
 * 语音转文字：https://github.com/Const-me/Whisper
 * 离线语音转文字：https://github.com/chidiwilliams/buzz
+* 语音转文字：https://github.com/nl8590687/ASRT_SpeechRecognition
 * 文本转语音：https://github.com/coqui-ai/TTS
 * 文本转语音（Microsoft Edge）：https://github.com/rany2/edge-tts
 * 配合音频可以让图片开口说话：https://github.com/Winfredy/SadTalker
