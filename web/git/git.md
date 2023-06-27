@@ -97,8 +97,8 @@ git remote set-url origin https://git.ishopex.cn/thomas/baihui-baidu-fenxiao.git
 git config --system --unset credential.helper
 git config --global credential.helper store
 ```
-* 账号会被存储在`.gitconfig`文件中
-* 密码会被存储在`.git-credentials`文件中
+* 账号会被存储在`.gitconfig`文件中。运行`git config --list --show-origin`你可以找到你的`.gitconfig`文件。
+* 密码会被存储在`.git-credentials`文件中。
 * 上述两个文件一般存储在用户根目录下
 
 ## git打tag(标签)(方便追溯指定版本存在的问题以及回溯到某个指定版本)
