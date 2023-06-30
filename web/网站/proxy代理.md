@@ -49,3 +49,6 @@
   - 电脑安装Fiddler证书：`Fiddler` -> `Tools` -> `Options` -> `HTTPS` -> `Actions` -> `Trust Root Certificate` -> `Yes`
   - 手机安装Fiddler证书：打开手机浏览器，在浏览器地址输入代理服务器IP和端口，会看到一个Fiddler提供的证书页面。
 * 问题：手机上抓包一直失败，有机会的话试试使用`Charles`软件进行抓包吧。
+
+# Fiddler工具中显示服务器IP地址的方法
+* https://blog.csdn.net/liitdar/article/details/88424736
