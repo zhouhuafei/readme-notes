@@ -12,3 +12,6 @@
 * select：select col from tableName;
   - asc：升序
   - desc：降序
+
+# Left Join、Right Join、Inner Join的区别
+https://zhuanlan.zhihu.com/p/568049355
