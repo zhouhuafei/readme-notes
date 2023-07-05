@@ -285,7 +285,7 @@ git branch | grep -v 'master' | xargs git branch -D
 
 ## ssh
 * `ls -al ~/.ssh`
-* `ssh-keygen -t rsa -C "zhouhuafei@wowkai.cn"`
+* `ssh-keygen -t rsa -C "1123486116@qq.com"`
 * `cat ~/.ssh/id_rsa.pub`
 
 ## rebase处理commit
