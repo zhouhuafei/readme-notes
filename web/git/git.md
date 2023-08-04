@@ -90,11 +90,10 @@ git remote -v
 
 ## 本地分支关联远程分支
 ```shell
-# 直接推送 - 推荐
+# 远程无对应分支 - 直接将本地分支推送到远程
 git push --set-upstream origin newBranchName
-# 先关联再推送
+# 远程有对应分支 - 将本地分支与远程分支关联
 git branch --set-upstream-to=origin/newBranchName
-git push
 ```
 
 ## 取消本地目录下关联的远程库：
