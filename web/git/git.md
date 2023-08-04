@@ -48,6 +48,12 @@ git checkout -b branchName origin/branchName
 git branch -D branchName
 ```
 
+## 删除本地的远程跟踪分支
+* `git remote prune upstream`删除远程上已不存在本地依然存在的远程跟踪分支。
+* `git branch --delete --remotes <remote>/<branch>`删除特定的本地远程跟踪分支。
+  - 该命令的缩写是：`git branch -dr <remote>/<branch>`。
+  - 案例：`git branch -dr upstream/vite`。
+
 ## 回滚
 ```
 git reset --hard commitId
