@@ -88,6 +88,15 @@ git push --set-upstream origin master
 git remote -v
 ```
 
+## 本地分支关联远程分支
+```shell
+# 直接推送 - 推荐
+git push --set-upstream origin newBranchName
+# 先关联再推送
+git branch --set-upstream-to=origin/newBranchName
+git push
+```
+
 ## 取消本地目录下关联的远程库：
 ```
 git remote remove origin
