@@ -88,13 +88,17 @@ npm deprecate my-thing@"< 0.2.3" "critical bug fixed in v0.2.3"`
     - 因纯依赖不再维护：zhf.tools，zhf.applications
 
 # npm报错
-* ```npm i```时报错：```npm ERR! Unexpected end of JSON input while parsing near```
-    - 网上的解决方案：删```package-lock.json```文件，然后```npm cache clean --force```。
-    - 我的解决方案：先```npm i -g cnpm```然后```cnpm i```。
-* sass报错：```Node Sass does not yet support your current environment: Windows 64-bit with Unsupported runtime (57) For more information on which environments are supported please see:```。
+* `npm i`时报错：`npm ERR! Unexpected end of JSON input while parsing near`
+    - 网上的解决方案：删`package-lock.json`文件，然后`npm cache clean --force`。
+    - 我的解决方案：先`npm i -g cnpm`然后`cnpm i`。
+* sass报错：`Node Sass does not yet support your current environment: Windows 64-bit with Unsupported runtime (57) For more information on which environments are supported please see:`。
     - 解决方案：gulp-sass升级到3版本以上。
 * 错误：`(node:94133) Warning: Accessing non-existent property 'cat' of module exports inside circular dependency`。
   - 解决方案：我把shelljs从0.8.2升级到0.8.5后，上述错误就消失了。node版本是`14.19.1`。
+* 错误：`this command with --force or --legacy-peer-deps`。
+  - 原因：因依赖包中`peerDependencies`指定的包，在主项目中没有。
+  - 临时解决：npmV7之前默认会忽略这种错误。npmV7之后需要自行手动忽略，即手动增加`--legacy-peer-deps`参数。或使用`--force`参数进行强制安装。
+  - 彻底解决：升级或降级相关依赖包到正确版本。
 
 # npm依赖包的版本
 * `~`会匹配最近的小版本依赖包，比如`~1.2.3`会匹配所有`1.2.x`版本，但是不包括`1.3.0`

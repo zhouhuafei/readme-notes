@@ -3,10 +3,12 @@
   "version": "2.0.0",
   "private": true,
   "engines": {
-    "node": "14.19.1",
-    "npm": "6.14.16"
+    "node": "18.17.0",
+    "npm": "9.6.7",
+    "pnpm": "8.6.12"
   },
   "scripts": {
+    "i": "pnpm install",
     "prepare": "husky install",
     "lint": "cross-env NODE_ENV=production eslint ./ --ext .js,.ts",
     "fix": "npm run lint -- --fix",
@@ -20,7 +22,7 @@
     "conventional-changelog-cli": "^2.2.2",
     "cross-env": "^7.0.3",
     "eslint": "^8.10.0",
-    "eslint-config-standard": "^16.0.3",
+    "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.0.0",
