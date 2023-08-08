@@ -64,7 +64,9 @@
 * 超级导购app内嵌h5：Create-React-App + React18 + react-router-dom + mobx-react + TS/TSX + Less + antd-mobile
   - 值得一说的事：引入企微机器人接口报警、引入企微机器人js报警。
 #### 超级任务（平台）
-* 超级任务管理端：yudao-ui-admin-vue3
+* 超级任务运营端：yudao-ui-admin-vue3
+* 超级任务发包端：yudao-ui-admin-vue3
+* 超级任务代理端：yudao-ui-admin-vue3
 * 超级任务客户端：uni-cli（Vite） + uni-app + Vue3 + Pinia + TS/TSX + Scss + uni-ui
 > 2016/04 - 2019/02（商派 - 上海商派网络科技有限公司）
 #### 云起微商城（SaaS -> 电商）（线上商城，无需选品，商品是商城商品，库存是商城库存）
