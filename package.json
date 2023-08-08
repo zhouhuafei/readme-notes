@@ -4,11 +4,9 @@
   "private": true,
   "engines": {
     "node": "18.17.0",
-    "npm": "9.6.7",
-    "pnpm": "8.6.12"
+    "npm": "9.6.7"
   },
   "scripts": {
-    "i": "pnpm install",
     "prepare": "husky install",
     "lint": "cross-env NODE_ENV=production eslint ./ --ext .js,.ts",
     "fix": "npm run lint -- --fix",
