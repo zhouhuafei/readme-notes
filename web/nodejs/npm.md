@@ -122,9 +122,20 @@ npm deprecate my-thing@"< 0.2.3" "critical bug fixed in v0.2.3"`
   - 这种常见于，初次克隆代码后，进行依赖安装的场景。固建议手动将package.json中的依赖项改为`"qs": "6.7.0"`。即去掉`^`符号。
 
 # 设置环境变量
-* Linux：```export NODE_ENV=production```
-* Windows：```set NODE_ENV=production```
+* Linux & Mac OS：`export NODE_ENV=production`
+* Windows：`set NODE_ENV=production`
 * 跨平台：https://github.com/kentcdodds/cross-env
+* 案例如下
+```shell
+# 解决node升级到v18后vue-cli运行出错的问题
+# Error: error:0308010C:digital envelope routines::unsupported
+# Linux & Mac OS - 注意：vue-cli-service前有&&符号拼接
+export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve
+# Windows命令提示符 - 注意：vue-cli-service前有&&符号拼接
+set NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve
+# 跨平台 - 注意：vue-cli-service前无&&符号拼接
+cross-env NODE_OPTIONS=--openssl-legacy-provider vue-cli-service serve
+```
 
 # package.json指定路径为github上的路径
 * 方式1：`package.json`中配置`"sass-export": "git://github.com/zhouhuafei-team/sass-export.git#master"`。
