@@ -13,9 +13,17 @@ git config --global user.name "xxx"
 git config --global user.email "xxx"
 ```
 
-## 新建分支
+## 新建分支 - 默认会自动关联同名的远程分支
 ```
 git checkout -b branchName
+```
+
+## 新建分支 - 手动关联非同名的远程分支
+```shell
+# 语法
+git checkout -b branchName <remote>/<branch>
+# 案例
+git checkout -b upstream-master upstream/master
 ```
 
 ## 推到远程仓库
