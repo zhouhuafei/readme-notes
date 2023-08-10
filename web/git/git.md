@@ -100,12 +100,12 @@ git branch --set-upstream-to=origin/newBranchName
 
 ## 取消本地目录下关联的远程库 - 删除本地追踪的远程remote - 会把本地追踪的远程remote上的所有分支一起删除
 ```
-git remote remove upstream
+git remote remove origin
 ```
 
 ## 更新remote的url
 ```
-git remote set-url upstream https://git.ishopex.cn/thomas/baihui-baidu-fenxiao.git
+git remote set-url origin https://git.ishopex.cn/thomas/baihui-baidu-fenxiao.git
 ```
 
 ## 每次提交输入密码太麻烦，以下是解决方案
