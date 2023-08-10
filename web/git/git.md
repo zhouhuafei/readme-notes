@@ -48,12 +48,6 @@ git checkout -b branchName origin/branchName
 git branch -D branchName
 ```
 
-## 删除本地的远程跟踪分支
-* `git remote prune upstream`删除远程上已不存在的本地远程跟踪分支。
-* `git branch --delete --remotes <remote>/<branch>`删除特定的本地远程跟踪分支。
-  - 该命令的缩写是：`git branch -dr <remote>/<branch>`。
-  - 案例：`git branch -dr upstream/vite`。
-
 ## 回滚
 ```
 git reset --hard commitId
@@ -96,7 +90,15 @@ git push --set-upstream origin newBranchName
 git branch --set-upstream-to=origin/newBranchName
 ```
 
-## 取消本地目录下关联的远程库：
+## 删除本地的远程跟踪分支 - 删除本地追踪的远程remote上的对应分支
+* `git remote prune upstream`删除远程上已不存在的本地远程跟踪分支。
+  - 使用`git fetch -p`或`git pull -p`会抓取tag。
+  - 使用`git branch -dr <remote>/<branch>`一个一个删又太麻烦。
+* `git branch --delete --remotes <remote>/<branch>`删除特定的本地远程跟踪分支。
+  - 该命令的缩写是：`git branch -dr <remote>/<branch>`。
+  - 案例：`git branch -dr upstream/vite`。
+
+## 取消本地目录下关联的远程库 - 删除本地追踪的远程remote - 会把本地追踪的远程remote上的所有分支一起删除
 ```
 git remote remove origin
 ```
