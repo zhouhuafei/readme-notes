@@ -78,5 +78,7 @@ declare module '*.scss' {
   - 若在本地直接使用file协议进行访问，会报错。
 
 ## vue3 + TS项目配置代码规范
-* https://zhuanlan.zhihu.com/p/492182151?utm_id=0
-* https://www.npmjs.com/package/vue-eslint-parser
+* vue-eslint-parser：https://www.npmjs.com/package/vue-eslint-parser
+* typescript-eslint：https://typescript-eslint.io/getting-started
+* 参考教程：https://zhuanlan.zhihu.com/p/492182151
+* 实战参考：https://github.com/zhouhuafei-team/super-task_client
