@@ -76,3 +76,7 @@ declare module '*.scss' {
 * 解答：在index.html中，使用type为module的script标签引入js时。
   - 需要使用http的方式访问页面，也就是要启动一个静态服务器。
   - 若在本地直接使用file协议进行访问，会报错。
+
+## vue3 + TS项目配置代码规范
+* https://zhuanlan.zhihu.com/p/492182151?utm_id=0
+* https://www.npmjs.com/package/vue-eslint-parser
