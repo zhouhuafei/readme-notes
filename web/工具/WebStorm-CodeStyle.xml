@@ -1,4 +1,5 @@
-<code_scheme name="Default" version="173">
+<code_scheme name="Default copy" version="173">
+  <option name="RIGHT_MARGIN" value="200" />
   <HTMLCodeStyleSettings>
     <option name="HTML_SPACE_INSIDE_EMPTY_TAG" value="true" />
     <option name="HTML_DO_NOT_INDENT_CHILDREN_OF" value="script" />
