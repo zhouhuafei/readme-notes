@@ -306,6 +306,7 @@ for (var i = 0; i < 5; i++) {
 ```
 
 ### Object.keys和Object.getOwnPropertyNames的区别
+* `for in`会遍历原型上可被枚举的属性。下述两个均不会遍历原型上的属性。
 * Object.keys()方法会返回一个由一个给定对象的自身可枚举属性组成的数组，数组中属性名的排列顺序和正常循环遍历该对象时返回的顺序一致。
 * Object.getOwnPropertyNames()方法返回一个由指定对象的所有自身属性的属性名（包括不可枚举属性但不包括Symbol值作为名称的属性）组成的数组。
 ```javascript
