@@ -110,7 +110,8 @@ div {
 
 * 贝塞尔曲线
     - 工具：https://cubic-bezier.com/
-    - `transition: 0.4s cubic-bezier(0, 0, .76, 1.45);`
+    - 回退线：`transition: 0.4s cubic-bezier(0, 0, .76, 1.45);`。
+    - 抛物线：`transition: 0.4s cubic-bezier(0.5, -0.5, 1, 1);`。
 
 * 改变输入框光标颜色，同时又不改变输入框里面的内容的颜色：`caret-color: red;`
 
