@@ -22,6 +22,7 @@
 * 图片增强（变清晰）：https://www.upscale.media/zh
 * 图片去水印（这个网站中的工具挺多）：https://zh-cn.aiseesoft.com/watermark-remover-online/
   - 或者使用专业的图片处理软件进行处理。例如PS。
+* PDF转换：https://www.onepdf.online/
 
 ## 视频处理网站推荐
 * 视频移除背景（抠图）：https://bgrem.deelvin.com/zh/
