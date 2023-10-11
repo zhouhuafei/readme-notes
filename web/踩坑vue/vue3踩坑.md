@@ -78,6 +78,7 @@ declare module '*.scss' {
   - 若在本地直接使用file协议进行访问，会报错。
 
 ## vue3 + TS项目配置代码规范
+> 搜索关键字：eslint配置参考、tslint配置参考
 * vue-eslint-parser：https://www.npmjs.com/package/vue-eslint-parser
 * typescript-eslint：https://typescript-eslint.io/getting-started
 * 参考教程：https://zhuanlan.zhihu.com/p/492182151
