@@ -323,8 +323,13 @@ Object.defineProperties(p, {
     enumerable: false
   }
 })
-console.log(Object.keys(p)) // ["name"]
-console.log(Object.getOwnPropertyNames(p)) // ["name", "age"]
+for (const attr in p) {
+  console.log(attr)
+  // 'name'
+  // 'sayHello'
+}
+console.log(Object.keys(p)) // ['name']
+console.log(Object.getOwnPropertyNames(p)) // ['name', 'age']
 ```
 
 ### JavaScript中数字占几个字节
