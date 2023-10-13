@@ -1,3 +1,4 @@
+* 查看`node`下载位置：`where node`。
 * 查看`npm`下载位置：`npm config get prefix`。
 * 设置淘宝源
 ```
