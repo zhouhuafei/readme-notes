@@ -27,14 +27,14 @@
   - 如何训练模型？去哪下载模型？如何使用模型？[B站](https://www.bilibili.com/)皆有教程！
   - 已被训练好的模型资源（被墙了）：https://civitai.com/
   - 已被训练好的模型资源（可访问）：https://aituzhan.com/
-  - 已被训练好的模型资源（可访问）：https://www.liblibai.com/
+  - 已被训练好的模型资源（可访问）：https://www.liblib.ai/
   - 已被训练好的模型资源（可访问）：https://models.paomiantv.cn/models
   - 已被训练好的模型资源（可访问）：https://huggingface.co/runwayml/stable-diffusion-v1-5/tree/main
 
 ## Vega AI 创作平台
 > 可以根据文本生成图片。
-* 在线网站（国产/尚未收费）：https://rightbrain.art/text2Image
-  - 手机访问：https://rightbrain.art/phone/creat/text2Image
+* 在线网站（国产/尚未收费）：http://vegaai.net/text2Image
+  - 手机访问：http://vegaai.net/phone/creat/text2Image
   - 此网站是基于开源项目Stable Diffusion进行的二开。
   - 案例（风格选手绘头像/模型选虚拟建模）：一个微笑着的短发女孩，汉服，白色背景。
   - 案例（风格选手绘头像/模型选虚拟建模）：一个微笑着的短发女孩，机甲，白色背景。
