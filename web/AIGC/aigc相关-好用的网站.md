@@ -79,3 +79,6 @@
 ## AIGC工具合集
 * AIGC工具合集（中文）：https://ai-bot.cn/
 * AIGC工具合集（英文）：https://www.futurepedia.io/
+
+## AIGC文生图平台型接口
+* https://platform.stability.ai/
