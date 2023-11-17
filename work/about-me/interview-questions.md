@@ -26,14 +26,15 @@
 #### 单位？
 * px，%，em，rem，vw，vh的区别。`px是相对单位和屏幕分辨率保持一致。%是百分比。em的大小和自身（先）以及父节点（后）的font-size有关。rem的大小和html的font-size有关。vw和vh的大小和可视区的宽高有关`。
 * 百分比布局的时候width和padding以及margin都是相对什么进行计算的？`相对父级容器的宽度进行计算`。
-  - 左右内外间距也是如此么？`也是如此`。
+  - 上下内外间距也是如此么？`也是如此`。
   - absolute的left和top也是如此么？`并非如此，left相对父级容器的宽度进行计算，top相对父级容器的高度进行计算`。
 * 1rem默认等于多少px？`1rem默认等于16px`。
 * rem和px的转换关系受什么影响？`受html的font-size影响`。
 * 移动端自适应布局适配？
-  - 方案1：`百分比`。
-  - 方案2：`rem` + `<meta name="viewport" content="width=device-width,initial-scale=1.0">`。
-  - 方案3：`vw`。
+  - 方案1：`百分比`。注意：需要使用css3的@media来控制字体大小的变化。
+  - 方案2：直接按照750的设计图制作，全写px，让浏览器自己去自适应缩小。弊端：超过750的设备不会自适应放大。
+  - 方案3：`rem` + `<meta name="viewport" content="width=device-width,initial-scale=1.0">`。注意：需要使用js来控制rem和px之间的大小转换。
+  - 方案4：`vw`。推荐：无需js支持。
 #### 应用？
 * CSS隐藏元素的几种方式及区别？`display: none; | visibility: none; | opacity: 0; | position | transform`。
 * 单行省略号怎么写？`overflow: hidden;white-space: nowrap;text-overflow: ellipsis;`。
