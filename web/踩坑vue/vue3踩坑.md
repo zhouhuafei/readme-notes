@@ -83,3 +83,8 @@ declare module '*.scss' {
 * typescript-eslint：https://typescript-eslint.io/getting-started
 * 参考教程：https://zhuanlan.zhihu.com/p/492182151
 * 实战参考：https://github.com/zhouhuafei-team/super-task_client
+
+## vue3工作流程
+* 编译器把模板编译成渲染函数h`h('div', { onClick: handler }, 'click me')`。
+* 渲染函数h返回虚拟DOM（用来描述真实DOM的普通JavaScript对象）。
+* 渲染器renderer函数把虚拟DOM渲染成真实DOM。
