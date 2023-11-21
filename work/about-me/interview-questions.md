@@ -34,7 +34,7 @@
   - 方案1：`百分比`。注意：需要使用css3的@media来控制字体大小的变化。
   - 方案2：直接按照750的设计图制作，全写px，让浏览器自己去自适应缩小。弊端：超过750的设备不会自适应放大。
   - 方案3：`rem` + `<meta name="viewport" content="width=device-width,initial-scale=1.0">`。注意：需要使用js来控制rem和px之间的大小转换。
-  - 方案4：`vw`。推荐：无需js支持。
+  - 方案4：`vw`。推荐：无需js支持。如果需要限制最大宽度则方案2和方案3更合适。
 #### 应用？
 * CSS隐藏元素的几种方式及区别？`display: none; | visibility: none; | opacity: 0; | position | transform`。
 * 单行省略号怎么写？`overflow: hidden;white-space: nowrap;text-overflow: ellipsis;`。
