@@ -347,6 +347,9 @@ git push
 ## 提交一个空的commit
 `git commit -m "1.1.11" --allow-empty --no-verify`
 
+## 克隆指定分支的代码
+* `git clone -b 分支名 仓库地址`。
+
 ## 广举的文档 - 独立发版项目创建流程及规则
 * 创建新的仓库
 ```
