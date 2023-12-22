@@ -46,3 +46,12 @@
 
 * 函数封装：文字绘制（多行，单行，省略号），圆角矩形，阴影设置等。
     - https://github.com/zhouhuafei/zhf.canvas-api
+
+#### canvas相关的工具包fabric
+* IText类具备selected事件，但是官方文档并没有写。只写了下述事件。
+```
+event:changed
+selection:changed
+editing:entered
+editing:exited
+```
