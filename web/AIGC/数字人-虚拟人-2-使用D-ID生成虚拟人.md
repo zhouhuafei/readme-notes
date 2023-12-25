@@ -33,8 +33,8 @@
 
 ## Vega AI 创作平台
 > 可以根据文本生成图片。
-* 在线网站（国产/尚未收费）：http://vegaai.net/text2Image
-  - 手机访问：http://vegaai.net/phone/creat/text2Image
+* 在线网站（国产/尚未收费）：https://vegaai.net/text2Image
+  - 手机访问：https://vegaai.net/phone/creat/text2Image
   - 此网站是基于开源项目Stable Diffusion进行的二开。
   - 案例（风格选手绘头像/模型选虚拟建模）：一个微笑着的短发女孩，汉服，白色背景。
   - 案例（风格选手绘头像/模型选虚拟建模）：一个微笑着的短发女孩，机甲，白色背景。
