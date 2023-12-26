@@ -88,6 +88,7 @@
 
 # windows WebStorm里使用`git log`中文乱码
 * 在命令行输入`set LESSCHARSET=utf-8`即可。
+* `LESSCHARSET`是什么？`less是默认情况下git使用的分页器，用于分页显示文件信息，将分页器的字符集设置为utf-8，就能正确分页显示中文信息。`
 
 # `CR` 和 `LF` 和 `CRLF` 的区别
 * `CR`：`Carriage Return`，对应`ASCII`中转义字符`\r`，表示回车。
