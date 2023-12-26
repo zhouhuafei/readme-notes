@@ -108,6 +108,12 @@ Windows 操作系统采用两个字符来进行换行，即 CRLF。
 Unix/Linux/Mac OS X 操作系统采用单个字符 LF 来进行换行。
 MacIntosh 操作系统(早期的 Mac 操作系统)采用单个字符 CR 来进行换行。
 ```
+#### git log中文乱码之CMD的解决方案
+* 临时方案（关闭终端后失效）：`set LESSCHARSET=utf-8`
+* 长期方案（关闭终端后有效）：给电脑设置环境变量，变量值为`LESSCHARSET`，变量值为`utf-8`。
+#### git log中文乱码之PowerShell的解决方案
+* 临时方案（关闭终端后失效）：`$env:LESSCHARSET='utf-8'`
+* 长期方案（关闭终端后有效）：给电脑设置环境变量，变量值为`LESSCHARSET`，变量值为`utf-8`。
 
 # 免费申请WebStorm使用许可
 https://blog.csdn.net/Jonathan_1994/article/details/89293878
