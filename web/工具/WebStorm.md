@@ -89,6 +89,15 @@
 # windows WebStorm里使用`git log`中文乱码
 * 在命令行输入`set LESSCHARSET=utf-8`即可。
 * `LESSCHARSET`是什么？`less是默认情况下git使用的分页器，用于分页显示文件信息，将分页器的字符集设置为utf-8，就能正确分页显示中文信息。`
+#### 最近试了一下发现不行了，需要使用下面的最新方式。
+* 1、打开 Webstorm 的设置，在 Tools > Terminal 中配置 Shell path，选择 bash.exe。其中 bash.exe 的位置就是你安装 Git 的位置：D:\software\Git\bin\bash.exe
+* 2、依然是找到你安装 Git 的路径：D:\software\Git\etc\bash.bashrc 在该文件下输入如下代码：
+```bash
+# support chinese
+export LANG="zh_CN.UTF-8"
+export LC_ALL="zh_CN.UTF-8"
+```
+* 3、重启 Webstorm 后，打开终端，输入 git log，即可正常显示中文日志。
 
 # `CR` 和 `LF` 和 `CRLF` 的区别
 * `CR`：`Carriage Return`，对应`ASCII`中转义字符`\r`，表示回车。
