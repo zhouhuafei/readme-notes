@@ -1,5 +1,5 @@
 <template>
-  <!--h5 vue 实现微信小程序scroll-view的部分功能-->
+  <!-- h5 vue 实现微信小程序scroll-view的部分功能 -->
   <div
     ref="wrap"
     class="wrap"
