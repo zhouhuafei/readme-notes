@@ -182,7 +182,7 @@ axios({ url: 'http://127.0.0.1:3000/cookie?type=axios' })
 * 服务端响应的时候，在响应头里设置时，Set-Cookie两个单词一般都是首字母大写。
     - 因在Chrome浏览器请求的响应头里看到过全小写的set-cookie。所以我不能确定首字母是否要必须大写。
 * 真理补充：
-    - http协议规定，Method是区分大小写的,而Header是不区分的。
+    - http协议规定，Method的值是区分大小写的，所以GET/POST/PUT等需要大写。而Header的键是不区分大小写的。
     - 所以请求时设置GET/POST/PUT/DELETE等需要大写。
     - 响应时设置set-cookie大写小写都行。
     - 服务端接收request.headers中的信息时，headers中的键一般都是小写。
