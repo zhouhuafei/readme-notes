@@ -70,6 +70,16 @@
 * 问：能去给子页面的index.html文件加meta标签，使之`Cache-Control`失效么？
   - 答：可以加，但是为时晚矣。因客户那边已经被缓存住了。
   - meta去除强缓存：`<meta http-equiv="Cache-Control" content="no-cache">`。
+  - 常用meta
+  ```html
+  <!-- 去缓存 -->
+  <!-- 即使加上下述3行，在内嵌iframe和WebView的场景下，依然会有客户被缓存住，即使Cache-Control设置为no-store也是无用，url上加时间戳才是去缓存的终极解决方案 -->
+  <meta http-equiv="Expires" content="0">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <!-- 自适应 -->
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  ```
   - 建议项目启动初期就加上，可以用来防止index.html页面被强缓存。
   - 不仅可以防止在tab中首次贴入的强缓存，还可以防止在iframe中的强缓存。
 * 问：如何清理缓存？
