@@ -32,7 +32,7 @@
   - 已被训练好的模型资源（可访问）：https://huggingface.co/runwayml/stable-diffusion-v1-5/tree/main
 
 ## Vega AI 创作平台
-> 可以根据文本生成图片。
+> 可以根据文本生成图片。文生图。
 * 在线网站（国产/尚未收费）：https://vegaai.net/text2Image
   - 手机访问：https://vegaai.net/phone/creat/text2Image
   - 此网站是基于开源项目Stable Diffusion进行的二开。
