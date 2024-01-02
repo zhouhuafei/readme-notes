@@ -7,3 +7,8 @@
 
 #### 给html标签设置hidden属性
 * 可以给html标签设置hidden属性`<div hidden>hello</div>`，设置后，相当于设置了`display: none;`。
+
+#### element-plus给el-button套一层div后，div顶部会产生间隙。
+> 注：仅苹果电脑的Chrome浏览器可以复现。
+* el-button是display: inline-flex;
+* 给div设置display: flex;即可让间隙消失。
