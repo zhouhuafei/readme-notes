@@ -25,5 +25,13 @@
 * hash模式在`#`号前使用`?`号拼接时间戳即可：`http://127.0.0.1:5173/?t=1704249051019/#/canvas/1`。
 * 注意：hash模式清缓存，时间戳不能加在#号之后，因#号之后的数据，不会被发送到服务端。
 
+## iframe被缓存了
+* 没使用CDN、没设置强缓存Cache-Control和Expires、设置了弱缓存...补充
+* 设置了meta
+```
+...补充
+```
+* 代码发布后、页面还是读了本地的缓存、返回200 OK (from disk cache)
+
 ## 给html标签设置hidden属性
 * 可以给html标签设置hidden属性`<div hidden>hello</div>`，设置后，相当于设置了`display: none;`。
