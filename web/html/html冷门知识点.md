@@ -7,6 +7,10 @@
   - 小知识1：url上#号之后的数据，不会被发送到服务端。
   - 小知识2：如果去掉#号，给iframe多次设置同一个src，iframe每次都会重新加载。因为去掉#号就会走history模式。
 
+#### 给iframe多次设置不同的src
+* 如果路由使用的是history模式，不管src是否变化，iframe每次都会重新加载。
+* 如果路由使用的是hash模式，hash值不管怎么变，iframe只有第一次会重新加载。
+
 #### 给html标签设置hidden属性
 * 可以给html标签设置hidden属性`<div hidden>hello</div>`，设置后，相当于设置了`display: none;`。
 
