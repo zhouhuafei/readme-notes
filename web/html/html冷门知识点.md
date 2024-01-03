@@ -27,7 +27,7 @@
 
 ## iframe被缓存了
 * 没使用CDN、没设置强缓存Cache-Control和Expires、设置了弱缓存...补充
-* 设置了meta
+* 明明设置了meta、为啥没效？...TODO
 ```
 ...补充
 ```
