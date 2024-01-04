@@ -40,8 +40,10 @@
   - 上述使用meta标签管理缓存，是历史遗留的产物，现在基本已经淘汰了。
 #### 仅仅设置了弱缓存Etag和Last-Modified，为啥生效了强缓存，导致返回200 OK (from disk cache)。
 * Chrome浏览器特性如此，有弱缓存时会默认生效强缓存。即有弱缓存时，则强缓存Cache-Control自动生效，其默认值是private。在iframe中，其有效期存在不确定性。
-* 有弱缓存时，如果你要启用`304 Not Modified`，即304缓存，你应该在响应头里把Cache-Control设置为no-cache。
-* 有弱缓存时，如果你要启用`200 OK`，即完全不缓存，你应该在响应头里把Cache-Control设置为no-store。
+* 有弱缓存时，如果你要启用`304 Not Modified`，即304缓存，你应该在响应头里把Cache-Control设置为no-cache。无弱缓存时会返回`200 OK`。
+* 有弱缓存时，如果你要启用`200 OK`，即完全不缓存，你应该在响应头里把Cache-Control设置为no-store。无弱缓存时亦返回`200 OK`。
+* 无弱缓存亦无强缓存时，次次返回`200 OK`，iframe亦如此。无弱缓存，强缓存Cache-Control为private或no-cache或no-store时，次次返回`200 OK`，iframe亦如此。
+* 注：有弱缓存时，默认生效的强缓存，其机制难以捉摸。在iframe中，其有效期存在不确定性。应当给html的响应头配置Cache-Control为no-cache，使之返回304，用以规避这种难以琢磨的特性。
 #### 如何有效的清理缓存
 * 可以在服务端，给html的响应头设置上`Cache-Control: no-cache`。来规避缓存问题。
   - 但是这个配置只能清理客户端的本地缓存，无法清理服务端的CDN缓存。如果客户端的页面已经被缓存住了，需要等缓存失效之后，这个配置才会生效。
