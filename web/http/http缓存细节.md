@@ -75,8 +75,9 @@
   <!-- 去缓存 -->
   <!-- 即使加上下述3行，在内嵌iframe和WebView的场景下，依然会有客户被缓存住，即使Cache-Control设置为no-store也是无用，url上加时间戳才是去缓存的终极解决方案 -->
   <meta http-equiv="Expires" content="0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <!-- Pragma是HTTP/1.1之前版本的历史遗留字段可用来兼容Cache-Control -->
   <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Cache-Control" content="no-cache">
   <!-- 自适应 -->
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   ```
