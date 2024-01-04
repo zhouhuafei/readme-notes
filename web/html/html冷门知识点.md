@@ -39,7 +39,7 @@
 * 因meta标签设置缓存的解析实现不是所有浏览器都支持，至少Chrome浏览器就不支持。
   - 上述使用meta标签管理缓存，是历史遗留的产物，现在基本已经淘汰了。
 #### 仅仅设置了弱缓存Etag和Last-Modified，为啥生效了强缓存，导致返回200 OK (from disk cache)。
-* Chrome浏览器特性如此，有弱缓存时会默认生效强缓存。即有弱缓存时，则强缓存Cache-Control自动生效，其默认值是private。
+* Chrome浏览器特性如此，有弱缓存时会默认生效强缓存。即有弱缓存时，则强缓存Cache-Control自动生效，其默认值是private。在iframe中，其有效期存在不确定性。
 * 有弱缓存时，如果你要启用`304 Not Modified`，即304缓存，你应该在响应头里把Cache-Control设置为no-cache。
 * 有弱缓存时，如果你要启用`200 OK`，即完全不缓存，你应该在响应头里把Cache-Control设置为no-store。
 #### 如何有效的清理缓存

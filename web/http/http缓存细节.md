@@ -18,7 +18,7 @@
 * 场景2：只让`Last-Modified`生效或只让`ETag`生效或让两者同时生效时。
   - `Status Code`首次是`200 OK`，后续是`200 OK (from memory cache)`。
   - 发现问题：明明只配置了弱缓存，为什么强缓存生效了？
-  - Chrome浏览器特性如此，有弱缓存时会默认生效强缓存。即有弱缓存时，则强缓存Cache-Control自动生效，其默认值是private。
+  - Chrome浏览器特性如此，有弱缓存时会默认生效强缓存。即有弱缓存时，则强缓存Cache-Control自动生效，其默认值是private。在iframe中，其有效期存在不确定性。
   - 有弱缓存时，如果你要启用`304 Not Modified`，即304缓存，你应该在响应头里把Cache-Control设置为no-cache。
   - 有弱缓存时，如果你要启用`200 OK`，即完全不缓存，你应该在响应头里把Cache-Control设置为no-store。
 * 场景3：只让`Last-Modified`生效或只让`ETag`生效或让两者同时生效时。若额外配置`Cache-Control no-cache;`或额外配置`Cache-Control max-age=0;`。
@@ -60,7 +60,7 @@
   - 子页面index.html的响应头里不存在`Cache-Control`强缓存，只存在`Last-Modified`和`ETag`这两个弱缓存。
   - 但是子页面index.html的状态码居然返回了`200 OK (from memory cache)`。
 * 问：子页面为什么会被强缓存？
-  - Chrome浏览器特性如此，有弱缓存时会默认生效强缓存。即有弱缓存时，则强缓存Cache-Control自动生效，其默认值是private。
+  - Chrome浏览器特性如此，有弱缓存时会默认生效强缓存。即有弱缓存时，则强缓存Cache-Control自动生效，其默认值是private。在iframe中，其有效期存在不确定性。
   - 有弱缓存时，如果你要启用`304 Not Modified`，即304缓存，你应该在响应头里把Cache-Control设置为no-cache。
   - 有弱缓存时，如果你要启用`200 OK`，即完全不缓存，你应该在响应头里把Cache-Control设置为no-store。
 * 问：强刷父页面能去除子页面的缓存么？
