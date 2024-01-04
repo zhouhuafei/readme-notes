@@ -46,37 +46,35 @@
   - 但是这个配置只能清理客户端的本地缓存，无法清理服务端的CDN缓存。如果客户端的页面已经被缓存住了，需要等缓存失效之后，这个配置才会生效。
   - 在页面的入口处加上时间戳进行缓存清理是最优解。不仅能清除本地缓存，还能规避CDN缓存。
 
-## 字体统一或不统一都有问题 ...TODO 重新组织文案
-* 同样是四个汉字，宽度却不一致。因win系统和mac系统的字体不一致。
-* 字体设置：`font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, 微软雅黑, Arial, sans-serif;`。
-* 数字展示：拿`Element Plus的日期时间选择器`举例。
-  - win系统，Chrome浏览器，时间框宽度调整到354px才出现裁切现象。
-  - mac系统，Chrome浏览器和Safari浏览器，时间框宽度调整到357px就出现了裁切现象。
-* 汉字展示：拿`调整单号`这四个字举例，把文字大小设置为14px。
-  - win系统，Chrome浏览器，这四个字的总宽度是56px。
-  - mac系统，Chrome浏览器，这四个字的总宽度是56px。Safari浏览器，这四个字的总宽度是57px。
-* 使用自定义字体`@font-face`配合`font-family`进行字体统一后。上述问题依然存在。...TODO
-* 字体不统一、都是Chrome浏览器、日期时间选择器、数字部分、win系统350px的宽度可以展示全、mac系统390px的宽度才可以展示全。
-  - font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, 微软雅黑, Arial, sans-serif;
-* 字体统一、Chrome浏览器、在mac上或在win上、4个汉字68px的宽度都可以展示全。在mac上的Safari浏览器里、会掉下来一个字，需要把宽度调整为70px才可以展示全。
-  - 使用自定义字体`@font-face`配合`font-family`进行字体统一。
-* 设计师把宽度卡的太死，没有冗余额外宽度，导致出现上述问题。
-* 目前的解决方案是以mac能完全展示为基准，进行宽度调整。
+## 字体不统一的弊端
+* 字体不统一，会导致win系统和mac系统的汉字宽度不统一。
+* 字体不统一，会导致win系统和mac系统的数字宽度不统一。
+* 字体不统一，会导致win系统和mac系统的字母宽度不统一。
+#### 以下述字体不统一的代码为例
 ```html
+<style>
+  body {
+    font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, 微软雅黑, Arial, sans-serif;
+  }
+</style>
 <div style="font-size: 14px;line-height: 1;">
   <span style="display: inline-block;">调整单号</span>
   <div></div>
   <span style="display: inline-block;">2024-01-03 15:02:19</span>
 </div>
 ```
-#### 不统一字体：根据`font-family`自行适配。
-* win系统，Chrome浏览器。汉字宽高：`56x14`像素。数字宽高：`130x14`像素。
-* mac系统，Chrome浏览器。汉字宽高：`56x14`像素。数字宽高：`131.55x14`像素。
-* mac系统，Safari浏览器。汉字宽高：`57x14`像素。数字宽高：`132x14`像素。
-#### 统一字体：从网上找了个字体`Sansation_Light.ttf`进行测试。
-* win系统，Chrome浏览器。汉字宽高：`56x14`像素。数字宽高：`123.44x14`像素。
-* mac系统，Chrome浏览器。汉字宽高：`56x14`像素。数字宽高：`123.43x14`像素。
-* mac系统，Safari浏览器。汉字宽高：`57x14`像素。数字宽高：`123x14`像素。
+#### 不统一字体：让字体根据`font-family`自行适配。
+* win系统，Chrome浏览器。汉字宽度：`56px`。数字宽度：`130px`。
+* mac系统，Chrome浏览器。汉字宽度：`56px`。数字宽度：`131.55px`。
+* mac系统，Safari浏览器。汉字宽度：`57px`。数字宽度：`132px`。
+* 遇到问题：我是以win系统为基准进行开发，设计师要求精准定宽，所以上述的不精准行为，导致我工作时，遇到了两个问题。
+  - 1、给`el-date-picker`精准定宽后，在mac上，其内数字展示不全。
+  - 2、给`el-form`精准定了四个汉字的`label-width`后，在Safari浏览器上，最后一个汉字掉了下来。
+* 解决问题：临时的解决方案是，我改为以mac系统为基准进行开发。终极解决方案是统一win系统和mac系统的字体。
+#### 统一字体：使用阿里巴巴普惠体`AlibabaPuHuiTi-3-55-Regular.ttf`进行字体统一。发现误差可以缩小到小数点之后。此字体文件大小为8.5MB，可以使用CDN来减少字体切换时带来的闪烁问题。
+* win系统，Chrome浏览器。汉字宽度：`55.11px`。数字宽度：`138.11px`。
+* mac系统，Chrome浏览器。汉字宽度：`55.11px`。数字宽度：`138.1px`。
+* mac系统，Safari浏览器。汉字宽度：`55px`。数字宽度：`138px`。
 
 
 ## 手机端自适应
