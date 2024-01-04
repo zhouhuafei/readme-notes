@@ -26,10 +26,17 @@
 * 注意：hash模式清缓存，时间戳不能加在#号之后，因#号之后的数据，不会被发送到服务端。
 
 ## iframe被缓存了
+* 业务中，难免会遇到使用iframe或者WebView内嵌h5的场景。
+* 即使你在html中，配置上下述代码。也还是会遇到被缓存的情况。
 * 没使用CDN、没设置强缓存Cache-Control和Expires、设置了弱缓存...补充
 * 明明设置了meta、为啥没效？...TODO
 ```
-...补充
+<meta http-equiv="Etag" content="0">
+<meta http-equiv="Last-Modified" content="0">
+<meta http-equiv="Expires" content="0">
+<!--即使Cache-Control设置为no-store也还是无用-->
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
 ```
 * 代码发布后、页面还是读了本地的缓存、返回200 OK (from disk cache)
 
