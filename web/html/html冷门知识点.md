@@ -25,11 +25,11 @@
 * hash模式在`#`号前使用`?`号拼接时间戳即可：`http://127.0.0.1:5173/?t=1704249051019/#/canvas/1`。
 * 注意：hash模式清缓存，时间戳不能加在#号之后，因#号之后的数据，不会被发送到服务端。
 
-## iframe被缓存了
+## iframe被缓存了 ...TODO
 * 业务中，难免会遇到使用iframe或者WebView内嵌h5的场景。
-* 即使你在html中，配置上下述代码。也还是会遇到被缓存的情况。
-* 没使用CDN、没设置强缓存Cache-Control和Expires、设置了弱缓存...补充
-* 明明设置了meta、为啥没效？...TODO
+* 静态资源没使用CDN、响应头里也没设置强缓存Cache-Control和Expires、仅仅设置了弱缓存Etag和Last-Modified。
+* 代码发布后、页面还是读了本地的缓存、返回200 OK (from disk cache)。
+* 即使你在html中，配置了下述代码。亦是无用。
 ```
 <meta http-equiv="Etag" content="0">
 <meta http-equiv="Last-Modified" content="0">
@@ -38,7 +38,7 @@
 <meta http-equiv="Cache-Control" content="no-cache">
 <meta http-equiv="Pragma" content="no-cache">
 ```
-* 代码发布后、页面还是读了本地的缓存、返回200 OK (from disk cache)
+* 上述代码，主要是用来设置缓存的，不是用来清理缓存的，它的优先级低于响应头里的设置，如果响应头里有，则优先以响应头里的为准。
 
 ## 给html标签设置hidden属性
 * 可以给html标签设置hidden属性`<div hidden>hello</div>`，设置后，相当于设置了`display: none;`。
