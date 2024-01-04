@@ -40,5 +40,12 @@
 ```
 * 上述代码，主要是用来设置缓存的，不是用来清理缓存的，它的优先级低于响应头里的设置，如果响应头里有，则优先以响应头里的为准。
 
+## 字体统一或不统一都有问题
+* 字体不统一、都是Chrome浏览器、日期时间选择器、数字部分、win系统350px的宽度可以展示全、mac系统390px的宽度才可以展示全。
+  - font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, 微软雅黑, Arial, sans-serif;
+* 字体统一、Chrome浏览器、在mac上或在win上、4个汉字68px的宽度都可以展示全。在mac上的Safari浏览器里、会掉下来一个字，需要把宽度调整为70px才可以展示全。
+  - 使用自定义字体`@font-face`配合`font-family`进行字体统一。
+* 无解：...TODO 设计师把宽度卡的太死、没有冗余额外宽度、目前无解。
+
 ## 给html标签设置hidden属性
 * 可以给html标签设置hidden属性`<div hidden>hello</div>`，设置后，相当于设置了`display: none;`。
