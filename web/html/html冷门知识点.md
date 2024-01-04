@@ -36,10 +36,14 @@
 <!-- Pragma是HTTP/1.1之前版本的历史遗留字段可用来兼容Cache-Control -->
 <meta http-equiv="Pragma" content="no-cache">
 ```
-* 因为前端的这个配置，是历史遗留的产物，现在基本已经淘汰了。
-  - meta标签的解析实现不是所有浏览器都支持，至少Chrome浏览器就不支持。
+* 因meta标签设置缓存的解析实现不是所有浏览器都支持，至少Chrome浏览器就不支持。
+  - 上述使用meta标签管理缓存，是历史遗留的产物，现在基本已经淘汰了。
+#### 仅仅设置了弱缓存Etag和Last-Modified，为啥生效了强缓存，导致返回200 OK (from disk cache)。
+* Chrome浏览器特性如此，有弱缓存时会默认生效强缓存。
+* 若不想要这个特性，可以在服务端，给html的响应头设置上`Cache-Control: no-cache`。
+#### 如何有效的清理缓存
 * 可以在服务端，给html的响应头设置上`Cache-Control: no-cache`。来规避缓存问题。
-  - 但是这个配置，只能清理本地缓存，无法清理CDN缓存。
+  - 但是这个配置只能清理客户端的本地缓存，无法清理服务端的CDN缓存。
   - 终极解决方案，只有一个，那就是在url上加时间戳。
 
 ## 字体统一或不统一都有问题
@@ -49,6 +53,12 @@
   - 使用自定义字体`@font-face`配合`font-family`进行字体统一。
 * 设计师把宽度卡的太死，没有冗余额外宽度，导致出现上述问题。
 * 目前的解决方案是以mac能完全展示为基准，进行宽度调整。
+
+## 手机端自适应
+* 常用配置：`<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">`。
+* 建议配置：`<meta name="viewport" content="width=device-width, initial-scale=1.0">`。
+  - 你应该避免使用minimum-scale、maximum-scale，尤其是将user-scalable设为no。
+  - 用户应该有权力尽可能大或小地进行缩放，阻止这种做法会引起访问性问题。
 
 ## 给html标签设置hidden属性
 * 可以给html标签设置hidden属性`<div hidden>hello</div>`，设置后，相当于设置了`display: none;`。

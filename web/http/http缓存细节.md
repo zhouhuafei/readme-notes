@@ -64,25 +64,11 @@
     - 难以捉摸的点1：在iframe中使用时，有时30分钟会失效一次（所有静态资源返回304）。但有时又不失效。
     - 难以捉摸的点2：在tab中首次贴入时，有时30分钟会失效一次（只有页面返回304）。但有时又不失效。
 * 问：能去给nginx配置`Cache-Control no-cache;`，让子页面的强缓存无效么？
-  - 答：可以配，但是为时晚矣，因客户那边已经被缓存住了。
+  - 答：可以配，但是为时晚矣，因客户那边已经被缓存住了。而且这个配置只能清理客户端的本地缓存，无法清理服务端的CDN缓存。
   - 若是配置，建议只给index.html配置，我配置时没配置成功。因为我不想其他非html的静态资源也失去强缓存。
   - 若其他非html的静态资源都放在第三方的cdn服务器上，nginx中只有index.html页面，那直接对根路径进行无强缓存配置即可。
 * 问：能去给子页面的index.html文件加meta标签，使之`Cache-Control`失效么？
-  - 答：可以加，但是为时晚矣。因客户那边已经被缓存住了。
-  - meta去除强缓存：`<meta http-equiv="Cache-Control" content="no-cache">`。
-  - 常用meta
-  ```html
-  <!-- 去缓存 -->
-  <!-- 即使加上下述3行，在内嵌iframe和WebView的场景下，依然会有客户被缓存住，即使Cache-Control设置为no-store也是无用，url上加时间戳才是去缓存的终极解决方案 -->
-  <meta http-equiv="Expires" content="0">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <!-- Pragma是HTTP/1.1之前版本的历史遗留字段可用来兼容Cache-Control -->
-  <meta http-equiv="Pragma" content="no-cache">
-  <!-- 自适应 -->
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  ```
-  - 建议项目启动初期就加上，可以用来防止index.html页面被强缓存。
-  - 不仅可以防止在tab中首次贴入的强缓存，还可以防止在iframe中的强缓存。
+  - 答：不能。因meta标签设置缓存的解析实现不是所有浏览器都支持，至少Chrome浏览器就不支持。
 * 问：如何清理缓存？
   - 答：在页面的入口处加上时间戳。
   - 单页hash模式清理缓存：http://localhost:3080/?t=1662118978358/#/about?a=1&b=2
