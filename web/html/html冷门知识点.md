@@ -47,6 +47,15 @@
   - 终极解决方案，只有一个，那就是在url上加时间戳。
 
 ## 字体统一或不统一都有问题
+* 同样是四个汉字，宽度却不一致。因win系统和mac系统的字体不一致。
+* 字体设置：`font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, 微软雅黑, Arial, sans-serif;`。
+* 数字展示：拿`Element Plus的日期时间选择器`举例。
+  - win系统，Chrome浏览器，时间框宽度调整到354px才出现裁切现象。
+  - mac系统，Chrome浏览器和Safari浏览器，时间框宽度调整到357px就出现了裁切现象。
+* 汉字展示：拿`调整单号`这四个字举例，把文字大小设置为14px。
+  - win系统，Chrome浏览器，这四个字的总宽度是56px。
+  - mac系统，Chrome浏览器，这四个字的总宽度是56px。Safari浏览器，这四个字的总宽度是57px。
+* 使用自定义字体`@font-face`配合`font-family`进行字体统一后。上述问题依然存在。...TODO
 * 字体不统一、都是Chrome浏览器、日期时间选择器、数字部分、win系统350px的宽度可以展示全、mac系统390px的宽度才可以展示全。
   - font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, 微软雅黑, Arial, sans-serif;
 * 字体统一、Chrome浏览器、在mac上或在win上、4个汉字68px的宽度都可以展示全。在mac上的Safari浏览器里、会掉下来一个字，需要把宽度调整为70px才可以展示全。
