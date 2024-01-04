@@ -76,7 +76,6 @@
 * mac系统，Chrome浏览器。汉字宽度：`55.11px`。数字宽度：`138.1px`。
 * mac系统，Safari浏览器。汉字宽度：`55px`。数字宽度：`138px`。
 
-
 ## 手机端自适应
 * 常用配置：`<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">`。
 * 建议配置：`<meta name="viewport" content="width=device-width, initial-scale=1.0">`。
