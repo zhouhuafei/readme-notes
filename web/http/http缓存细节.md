@@ -14,13 +14,17 @@
 >
 > 客户端工具：Chrome浏览器/105.0.5195.54
 * 场景1：不配置任何缓存时。
-  - `Status Code`次次是`200 OK`。
+  - `Status Code`次次是`200 OK`。在`iframe`中亦如此。
 * 场景2：只让`Last-Modified`生效或只让`ETag`生效或让两者同时生效时。
   - `Status Code`首次是`200 OK`，后续是`200 OK (from memory cache)`。
   - 发现问题：明明只配置了弱缓存，为什么强缓存生效了？
-  - 自我答疑：Chrome浏览器特性如此，有弱缓存时会默认生效强缓存。若不想要这个特性，可以参考`场景3`。
+  - Chrome浏览器特性如此，有弱缓存时会默认生效强缓存。即有弱缓存时，则强缓存Cache-Control自动生效，其默认值是private。
+  - 有弱缓存时，如果你要启用`304 Not Modified`，即304缓存，你应该在响应头里把Cache-Control设置为no-cache。
+  - 有弱缓存时，如果你要启用`200 OK`，即完全不缓存，你应该在响应头里把Cache-Control设置为no-store。
 * 场景3：只让`Last-Modified`生效或只让`ETag`生效或让两者同时生效时。若额外配置`Cache-Control no-cache;`或额外配置`Cache-Control max-age=0;`。
-  - `Status Code`首次是`200 OK`，后续是`304 Not Modified`。
+  - `Status Code`首次是`200 OK`，后续是`304 Not Modified`。在`iframe`中亦如此。
+* 场景4：只让`Last-Modified`生效或只让`ETag`生效或让两者同时生效时。若额外配置`Cache-Control no-store;`。
+  - `Status Code`首次是`200 OK`，后续是`200 OK`。在`iframe`中亦如此。
 #### 知识点补充：Cache-Control强缓存？
 * 单位：`Cache-Control: public, max-age=31536000`（秒）。
   - 使用nodejs的框架express设置这个缓存的时候是通过毫秒数设置的。
@@ -56,7 +60,9 @@
   - 子页面index.html的响应头里不存在`Cache-Control`强缓存，只存在`Last-Modified`和`ETag`这两个弱缓存。
   - 但是子页面index.html的状态码居然返回了`200 OK (from memory cache)`。
 * 问：子页面为什么会被强缓存？
-  - 答：Chrome浏览器特性如此，有弱缓存时会默认生效强缓存。
+  - Chrome浏览器特性如此，有弱缓存时会默认生效强缓存。即有弱缓存时，则强缓存Cache-Control自动生效，其默认值是private。
+  - 有弱缓存时，如果你要启用`304 Not Modified`，即304缓存，你应该在响应头里把Cache-Control设置为no-cache。
+  - 有弱缓存时，如果你要启用`200 OK`，即完全不缓存，你应该在响应头里把Cache-Control设置为no-store。
 * 问：强刷父页面能去除子页面的缓存么？
   - 答：若iframe是通过js进行渲染的，同步渲染时强刷能去除掉非html页面的强缓存。异步渲染时强刷所有静态资源强缓存依旧存在。
   - 答：若iframe是通过html直接渲染的，强刷有用，可以去除掉所有静态资源的强缓存。即使有用，让用户去强刷页面也是不合理的行为。
