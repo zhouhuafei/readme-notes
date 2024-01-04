@@ -18,7 +18,7 @@
 * 场景2：只让`Last-Modified`生效或只让`ETag`生效或让两者同时生效时。
   - `Status Code`首次是`200 OK`，后续是`200 OK (from memory cache)`。
   - 发现问题：明明只配置了弱缓存，为什么强缓存生效了？
-  - Chrome浏览器特性如此，有弱缓存时会默认生效强缓存。即有弱缓存时，则强缓存Cache-Control自动生效，其默认值是private。在iframe中，其有效期存在不确定性。
+  - Chrome浏览器特性如此，有弱缓存时会默认生效强缓存。即有弱缓存时，则强缓存Cache-Control自动生效，其默认值是private。
   - 有弱缓存时，如果你要启用`304 Not Modified`，即304缓存，你应该在响应头里把Cache-Control设置为no-cache。无弱缓存时会返回`200 OK`。
   - 有弱缓存时，如果你要启用`200 OK`，即完全不缓存，你应该在响应头里把Cache-Control设置为no-store。无弱缓存时亦返回`200 OK`。
   - 无弱缓存亦无强缓存时，次次返回`200 OK`，iframe亦如此。无弱缓存，强缓存Cache-Control为private或no-cache或no-store时，次次返回`200 OK`，iframe亦如此。
@@ -61,14 +61,14 @@
   - 子页面index.html的响应头里不存在`Cache-Control`强缓存，只存在`Last-Modified`和`ETag`这两个弱缓存。
   - 但是子页面index.html的状态码居然返回了`200 OK (from memory cache)`。
 * 问：子页面为什么会被强缓存？
-  - Chrome浏览器特性如此，有弱缓存时会默认生效强缓存。即有弱缓存时，则强缓存Cache-Control自动生效，其默认值是private。在iframe中，其有效期存在不确定性。
+  - Chrome浏览器特性如此，有弱缓存时会默认生效强缓存。即有弱缓存时，则强缓存Cache-Control自动生效，其默认值是private。
   - 有弱缓存时，如果你要启用`304 Not Modified`，即304缓存，你应该在响应头里把Cache-Control设置为no-cache。无弱缓存时会返回`200 OK`。
   - 有弱缓存时，如果你要启用`200 OK`，即完全不缓存，你应该在响应头里把Cache-Control设置为no-store。无弱缓存时亦返回`200 OK`。
   - 无弱缓存亦无强缓存时，次次返回`200 OK`，iframe亦如此。无弱缓存，强缓存Cache-Control为private或no-cache或no-store时，次次返回`200 OK`，iframe亦如此。
 * 问：强刷父页面能去除子页面的缓存么？
   - 答：若iframe是通过js进行渲染的，同步渲染时强刷能去除掉非html页面的强缓存。异步渲染时强刷所有静态资源强缓存依旧存在。
   - 答：若iframe是通过html直接渲染的，强刷有用，可以去除掉所有静态资源的强缓存。即使有用，让用户去强刷页面也是不合理的行为。
-  - 注：有弱缓存时，默认生效的强缓存，其机制难以捉摸。在iframe中，其有效期存在不确定性。应当给html的响应头配置Cache-Control为no-cache，使之返回304，用以规避这种难以琢磨的特性。
+  - 注：有弱缓存时，默认生效的强缓存，其机制难以捉摸。在iframe中，其有效期存在不确定性，时常会遇到页面已发布但缓存不失效的情况。应当给html的响应头配置Cache-Control为no-cache，使之返回304，用以规避这种难以琢磨的特性。
     - 难以捉摸的点1：在iframe中使用时，有时20秒有时30分钟会失效一次（所有静态资源返回304）。但有时又不失效。
     - 难以捉摸的点2：在tab中首次贴入时，有时20秒有时30分钟会失效一次（只有页面返回304）。但有时又不失效。
 * 问：能去给nginx配置`Cache-Control no-cache;`，让子页面的强缓存无效么？
