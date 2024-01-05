@@ -28,7 +28,7 @@
 ## 为啥使用meta标签清缓存无效
 * 业务中，难免会遇到使用iframe或者WebView内嵌h5的场景。
 * 静态资源没使用CDN，响应头里也没设置强缓存Cache-Control和Expires，仅仅设置了弱缓存Etag和Last-Modified。
-* 代码发布后、页面还是读了本地的缓存、返回200 OK (from disk cache)。
+* 代码发布后、页面还是读了本地的缓存、返回`200 OK (from disk cache)`或`200 OK (from memory cache)`。
 * 即使你在html中，配置了下述代码。亦是无用。
 ```html
 <meta http-equiv="Expires" content="0">
