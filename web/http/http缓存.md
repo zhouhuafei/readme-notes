@@ -35,7 +35,7 @@
 # 缓存优先级
 * 强缓存和对比缓存(也叫协商缓存)同时存在，如果强缓存还在生效期则强制缓存覆盖对比缓存，对比缓存不生效；如果强缓存不在有效期，对比缓存生效。即：强缓存优先级 > 对比缓存优先级。
 * 强缓存 Expires和Cache-Control同时存在时，则Cache-Control会覆盖Expires，Expires无论有没有过期，都无效。 即：Cache-Control优先级 > Expires优先级。
-* 对比缓存 对比缓存Last-Modified和Etag同时存在时，则要求它们的验证都必须通过才会返回304。
+* 对比缓存 Last-Modified和Etag同时存在时，则要求它们的验证都必须通过才会返回304。服务器会优先校验Etag。
   - 协议地址：https://www.ietf.org/rfc/rfc2616.txt
   - 搜关键字：tag and a Last-Modified
 
