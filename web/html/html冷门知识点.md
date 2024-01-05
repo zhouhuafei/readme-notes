@@ -16,7 +16,7 @@
 * 即使你在html中，配置上下述代码。也还是会遇到被缓存的情况。
 ```html
 <meta http-equiv="Expires" content="0">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Cache-Control" content="no-cache">
 <!-- Pragma是HTTP/1.1之前版本的历史遗留字段可用来兼容Cache-Control -->
 <meta http-equiv="Pragma" content="no-cache">
 ```
@@ -32,7 +32,7 @@
 * 即使你在html中，配置了下述代码。亦是无用。
 ```html
 <meta http-equiv="Expires" content="0">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Cache-Control" content="no-cache">
 <!-- Pragma是HTTP/1.1之前版本的历史遗留字段可用来兼容Cache-Control -->
 <meta http-equiv="Pragma" content="no-cache">
 ```
