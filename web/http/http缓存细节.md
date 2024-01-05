@@ -18,14 +18,14 @@
 >
 > 客户端工具：Chrome浏览器/105.0.5195.54
 * 场景1：不配置任何缓存时。
-  - `Status Code`次次是`200 OK`。在`iframe`中亦如此。
+  - `Status Code`次次是`200 OK`。
 * 场景2：只让`Last-Modified`生效或只让`ETag`生效或让两者同时生效时。
   - `Status Code`首次是`200 OK`，后续是`200 OK (from disk cache)`或`200 OK (from memory cache)`。
   - 发现问题：明明只配置了弱缓存，也没使用CDN，为什么强缓存生效了？答案可参考下文案例分析。
 * 场景3：只让`Last-Modified`生效或只让`ETag`生效或让两者同时生效时。若额外配置`Cache-Control no-cache;`或额外配置`Cache-Control max-age=0;`。
-  - `Status Code`首次是`200 OK`，后续是`304 Not Modified`。在`iframe`中亦如此。
+  - `Status Code`首次是`200 OK`，后续是`304 Not Modified`。
 * 场景4：只让`Last-Modified`生效或只让`ETag`生效或让两者同时生效时。若额外配置`Cache-Control no-store;`。
-  - `Status Code`首次是`200 OK`，后续是`200 OK`。在`iframe`中亦如此。
+  - `Status Code`首次是`200 OK`，后续是`200 OK`。
 #### 知识点补充：Cache-Control强缓存？
 * 单位：`Cache-Control: public, max-age=31536000`（秒）。
   - 使用nodejs的框架express设置这个缓存的时候是通过毫秒数设置的。
@@ -64,10 +64,10 @@
   - 但是子页面index.html的状态码居然返回了`200 OK (from disk cache)`或`200 OK (from memory cache)`。
 * 问：子页面为什么会被强缓存？明明只配置了弱缓存，也没使用CDN，为什么强缓存生效了？
   - 答：Chrome浏览器特性如此，有弱缓存时会默认生效强缓存。即有弱缓存时，则强缓存`Cache-Control`自动生效，其默认值是`private`。
-  - 有弱缓存时，如果你要启用`304 Not Modified`，即304缓存，你应该在响应头里把`Cache-Control`设置为`no-cache`。在`iframe`中亦如此。
-  - 有弱缓存时，如果你要启用`200 OK`，即完全不缓存，你应该在响应头里把`Cache-Control`设置为`no-store`。在`iframe`中亦如此。
-  - 无弱缓存亦无强缓存时，次次返回`200 OK`。在`iframe`中亦如此。
-  - 无弱缓存时，把强缓存`Cache-Control`设置为`private`或`no-cache`或`no-store`或`max-age=0`，亦是次次返回`200 OK`。在`iframe`中亦如此。
+  - 有弱缓存时，如果你要启用`304 Not Modified`，即304缓存，你应该在响应头里把`Cache-Control`设置为`no-cache`。
+  - 有弱缓存时，如果你要启用`200 OK`，即完全不缓存，你应该在响应头里把`Cache-Control`设置为`no-store`。
+  - 无弱缓存亦无强缓存时，次次返回`200 OK`。
+  - 无弱缓存时，把强缓存`Cache-Control`设置为`private`或`no-cache`或`no-store`或`max-age=0`，亦是次次返回`200 OK`。
   - 注：有弱缓存时，`Cache-Control`的默认值`private`会自动生效，但其有效期机制存在不确定性。建议手动设置为`no-cache`。
     - 不确定的点1：在iframe中使用时，有时半小时内失效，有时迟迟不失效。失效后所有静态资源返回304。即：整个iframe内，所有静态资源的强缓存都失效了。
     - 不确定的点2：在tab中首次贴入时，有时半小时内失效，有时迟迟不失效。失效后只有页面返回304。即：只有首条请求的强缓存失效了。
