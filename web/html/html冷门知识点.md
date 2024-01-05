@@ -40,10 +40,10 @@
   - 上述使用meta标签管理缓存，是历史遗留的产物，现在基本已经淘汰了。
 #### 仅仅设置了弱缓存Etag和Last-Modified，为啥生效了强缓存，导致返回了`200 OK (from disk cache)`或`200 OK (from memory cache)`。
 * 答：Chrome浏览器特性如此，有弱缓存时会默认生效强缓存。即有弱缓存时，则强缓存`Cache-Control`自动生效，其默认值是`private`。
-* 有弱缓存时，如果你要启用`304 Not Modified`，即304缓存，你应该在响应头里把`Cache-Control`设置为`no-cache`。
-* 有弱缓存时，如果你要启用`200 OK`，即完全不缓存，你应该在响应头里把`Cache-Control`设置为`no-store`。
-* 无弱缓存亦无强缓存时，次次返回`200 OK`，在`iframe`中亦如此。
-* 无弱缓存时，把强缓存`Cache-Control`设置为`private`或`no-cache`或`no-store`或`max-age=0`，亦是次次返回`200 OK`，在`iframe`中亦如此。
+* 有弱缓存时，如果你要启用`304 Not Modified`，即304缓存，你应该在响应头里把`Cache-Control`设置为`no-cache`。在`iframe`中亦如此。
+* 有弱缓存时，如果你要启用`200 OK`，即完全不缓存，你应该在响应头里把`Cache-Control`设置为`no-store`。在`iframe`中亦如此。
+* 无弱缓存亦无强缓存时，次次返回`200 OK`。在`iframe`中亦如此。
+* 无弱缓存时，把强缓存`Cache-Control`设置为`private`或`no-cache`或`no-store`或`max-age=0`，亦是次次返回`200 OK`。在`iframe`中亦如此。
 * 注：有弱缓存时，`Cache-Control`的默认值`private`会自动生效，但其有效期机制存在不确定性。建议手动设置为`no-cache`。
   - 不确定的点1：在iframe中使用时，有时半小时内失效，有时迟迟不失效。失效后所有静态资源返回304。即：整个iframe内，所有静态资源的强缓存都失效了。
   - 不确定的点2：在tab中首次贴入时，有时半小时内失效，有时迟迟不失效。失效后只有页面返回304。即：只有首条请求的强缓存失效了。
