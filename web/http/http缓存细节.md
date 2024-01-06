@@ -2,7 +2,7 @@
 * 在客户端向服务端发送http请求时，若返回状态码为`304 Not Modified`则表明此次请求为条件请求。在请求头中有两个请求参数：`If-Modified-Since`和`If-None-Match`。
 * 当客户端缓存了目标资源但不确定该缓存资源是否是最新版本的时候，就会发送一个条件请求。
   - 在进行条件请求时，客户端会提供给服务器一个`If-Modified-Since`请求头，其值为服务器上次返回响应头中`Last-Modified`值。
-  - 还会提供一个`If-None-Match`请求头，其值为服务器上次返回的`ETag`响应头的值。
+  - 还会提供一个`If-None-Match`请求头，其值为服务器上次返回的`Etag`响应头的值。
 * 服务器会读取到这两个请求头中的值，判断出客户端缓存的资源是否是最新的，如果是的话，服务器就会返回`304 Not Modified`状态码，但没有响应体。客户端收到304响应后，就会从本地缓存中读取对应的资源。
 # 200 OK (from disk cache) 和 200 OK (from memory cache)
 * 不对服务器进行请求，直接使用本地缓存。
@@ -19,12 +19,12 @@
 > 客户端工具：Chrome浏览器/105.0.5195.54
 * 场景1：不配置任何缓存时。
   - `Status Code`次次是`200 OK`。
-* 场景2：只让`Last-Modified`生效或只让`ETag`生效或让两者同时生效时。
+* 场景2：只让`Last-Modified`生效或只让`Etag`生效或让两者同时生效时。
   - `Status Code`首次是`200 OK`，后续是`200 OK (from disk cache)`或`200 OK (from memory cache)`。
   - 发现问题：明明只配置了弱缓存，也没使用CDN，为什么强缓存生效了？答案可参考下文案例分析。
-* 场景3：只让`Last-Modified`生效或只让`ETag`生效或让两者同时生效时。若额外配置`Cache-Control no-cache;`或额外配置`Cache-Control max-age=0;`。
+* 场景3：只让`Last-Modified`生效或只让`Etag`生效或让两者同时生效时。若额外配置`Cache-Control no-cache;`或额外配置`Cache-Control max-age=0;`。
   - `Status Code`首次是`200 OK`，后续是`304 Not Modified`。
-* 场景4：只让`Last-Modified`生效或只让`ETag`生效或让两者同时生效时。若额外配置`Cache-Control no-store;`。
+* 场景4：只让`Last-Modified`生效或只让`Etag`生效或让两者同时生效时。若额外配置`Cache-Control no-store;`。
   - `Status Code`首次是`200 OK`，后续是`200 OK`。
 #### 知识点补充：Cache-Control强缓存？
 * 单位：`Cache-Control: public, max-age=31536000`（秒）。
@@ -59,7 +59,7 @@
   - 弱缓存不存在则返回`200 OK`。
 #### 案例分析
 * 场景描述：父页面中通过iframe内嵌了一个子页面。
-  - 子页面index.html的响应头里不存在`Cache-Control`强缓存，只存在`Last-Modified`和`ETag`这两个弱缓存。
+  - 子页面index.html的响应头里不存在`Cache-Control`强缓存，只存在`Last-Modified`和`Etag`这两个弱缓存。
   - 但是子页面index.html的状态码居然返回了`200 OK (from disk cache)`或`200 OK (from memory cache)`。
 * 问：子页面为什么会被强缓存？明明只配置了弱缓存，也没使用CDN，为什么强缓存生效了？
   - 答：Chrome浏览器特性如此，有弱缓存时会默认生效强缓存。即有弱缓存时，则强缓存`Cache-Control`自动生效，其默认值是`private`。
