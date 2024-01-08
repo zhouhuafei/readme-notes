@@ -18,11 +18,6 @@
 
 ### Service Worker文章
 * 文章：https://www.jianshu.com/p/8c0fc2866b82
-* Service Worker的缓存是如何更新的？
-  - 前置知识：sw.js不会被浏览器缓存。
-  - 前提条件：sw.js发生了变更。
-  - 第1次刷新页面，从缓存中，加载老页面老资源，新sw.js，并对旧的缓存进行清理。
-  - 第2次刷新页面，从服务器，加载新页面新资源，老sw.js，并对新的资源进行缓存。
 
 ### Service Worker案例
 > 可用于拦截请求和响应以及操作Cache Storage，配合Cache Storage使应用可以离线访问。
@@ -119,6 +114,12 @@ async function cacheFirst (req) {
 
 ### Service Worker踩坑 - 工作中踩到了一个关于Service Worker的坑
 * index.html被Service Worker缓存住了，以为删除sw.js就能移除缓存。发现移除不了。给index.html加时间戳，也移除不掉Service Worker的缓存。总是`200 OK (from service worker)`。
+  - 因sw.js未发生变更。
+  - Service Worker的缓存是如何更新的？
+    - 前置知识：sw.js不会被浏览器缓存。
+    - 前提条件：sw.js发生了变更。
+    - 第1次刷新页面，从缓存中，加载老页面老资源，新sw.js，并对旧的缓存进行清理。
+    - 第2次刷新页面，从服务器，加载新页面新资源，老sw.js，并对新的资源进行缓存。
 * 后来还原了被删除的sw.js。然后增加删除缓存逻辑和卸载sw.js的逻辑才把缓存清理掉。删除缓存使用caches.delete方法。卸载sw.js使用unregister方法。
 
 ### Cache Storage
