@@ -1,6 +1,13 @@
 /* eslint-disable */
 
 window.cjdgUtils = {
+  getDpr () {
+    if (window) {
+      return window.devicePixelRatio
+    } else {
+      return 1
+    }
+  },
   utf8Encode (string) {
     string = string.replace(/\r\n/g, '\n')
     let utftext = ''
@@ -45,9 +52,17 @@ window.cjdgUtils = {
   imgSrc (obj) {
     if (Object.prototype.toString.call(obj).slice(8, -1) !== 'Object') return
 
-    let { src, type = 'normal', width, height, radius, rotate, markText = '' } = obj
+    let {
+      src,
+      type = 'normal',
+      width,
+      height,
+      rotate,
+      markText = ''
+    } = obj
 
-    if (!src) return
+    if (!src) return ''
+    if (type === 'none') return src
 
     // 以腾讯云为基准
     const typeObj = {
@@ -61,30 +76,30 @@ window.cjdgUtils = {
     width = Number(width)
     height = Number(height)
     rotate = Number(rotate)
-    radius = Number(radius)
+    const dpr = this.getDpr()
     switch (type) {
       case 'cut':
         if (!width) width = 100
         if (!height) height = 100
-        imgUrl += `${width}x${height}/gravity/center`
+        imgUrl += `${width * dpr}x${height * dpr}/gravity/center`
         break
       case 'rotate':
         if (!rotate) rotate = 90
         imgUrl += `${rotate}`
         if (width || height) imgUrl += `|imageView2/1/`
-        if (width) imgUrl += `w/${width}/`
-        if (height) imgUrl += `h/${height}/`
+        if (width) imgUrl += `w/${width * dpr}/`
+        if (height) imgUrl += `h/${height * dpr}/`
         break
       case 'watermark':
         imgUrl += `${this.encode(markText)}`
         if (width || height) imgUrl += `|imageView2/1/`
-        if (width) imgUrl += `w/${width}/`
-        if (height) imgUrl += `h/${height}/`
+        if (width) imgUrl += `w/${width * dpr}/`
+        if (height) imgUrl += `h/${height * dpr}/`
         break
       default:
         if (width || height) imgUrl += `?imageView2/1/`
-        if (width) imgUrl += `w/${width}/`
-        if (height) imgUrl += `h/${height}/`
+        if (width) imgUrl += `w/${width * dpr}/`
+        if (height) imgUrl += `h/${height * dpr}/`
         break
     }
     return imgUrl
@@ -107,6 +122,7 @@ window.cjdgUtils = {
         img {
           width: 100%;
           height: 100%;
+          object-fit: inherit;
           overflow: hidden;
           display: inline-block;
           vertical-align: middle;
@@ -140,25 +156,16 @@ window.cjdgUtils = {
         })
       }
 
-      if (!attrObj.dpr) attrObj.dpr = 1
-
       const arr = ['src', 'type', 'width', 'height']
       arr.map(item => {
         const itemVal = this.getAttribute(item) || this[item]
-        if (itemVal) {
-          if (['width', 'height'].includes(item)) {
-            attrObj[item] = itemVal * attrObj.dpr
-          } else {
-            attrObj[item] = itemVal
-          }
-        }
+        if (itemVal) attrObj[item] = itemVal
       })
 
-      const typeVal = this.getAttribute('type') || this['type']
-      if (typeVal) {
-        const imgUrl = window.cjdgUtils.imgSrc(attrObj)
-        imgDom.setAttribute('src', imgUrl)
-      }
+      const typeVal = this.getAttribute('type') || this['type'] || 'normal'
+      let imgUrl = this.getAttribute('src') || this['src']
+      if (typeVal !== 'none') imgUrl = window.cjdgUtils.imgSrc(attrObj)
+      imgDom.setAttribute('src', imgUrl)
 
       const shadow = this.attachShadow({ mode: 'closed' })
       shadow.appendChild(contentDom)
