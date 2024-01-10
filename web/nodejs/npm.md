@@ -3,7 +3,7 @@
 * 查看`npm`下载位置：`npm config get prefix`。
 * 设置淘宝源
 ```
-npm config set registry https://registry.npm.taobao.org
+npm config set registry https://registry.npmmirror.com
 ```
 * 使用默认的配置来创建package.json文件
 ```
