@@ -56,7 +56,7 @@ Vue.prototype.$imgSrc = window.cjdgUtils.imgSrc.bind(window.cjdgUtils)
   - 未设置dpr参数时，会自动适配。
   - 若手动设置了dpr参数，则以手动设置的为准。
 * 2、type默认为normal，若width和height都设置了，则会对图片进行等比缩放，居中裁剪。
-  - 支持仅设置width或height，mode默认为1，会自动裁切出一个正方形。mode为2时，仅设置width则height自适应，反之亦然。
+  - 支持仅设置width或height，mode默认为1，会自动裁切出一个正方形。mode为0时，仅设置width则height自适应，反之亦然。
   - 图片基本处理（腾讯云官方文档）：https://developer.qiniu.com/dora/1279/basic-processing-images-imageview2
 * 3、type为cut时，width和height必填，若不填则全都默认100 * dpr。
 * 4、type为rotate时，rotate必填，若不填则默认90。
