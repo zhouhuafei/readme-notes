@@ -377,3 +377,7 @@ window.customElements.define('user-card', UserCard);
       }
     }
     ```
+
+# 建议
+* 1、建议使用Shadow DOM
+* 2、商用案例：./web_components.ImageView.js
