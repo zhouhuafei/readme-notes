@@ -57,6 +57,7 @@ window.cjdgUtils = {
       type = 'normal',
       width,
       height,
+      dpr,
       rotate,
       markText = ''
     } = obj
@@ -76,7 +77,7 @@ window.cjdgUtils = {
     width = Number(width)
     height = Number(height)
     rotate = Number(rotate)
-    const dpr = this.getDpr()
+    dpr = dpr || this.getDpr()
     switch (type) {
       case 'cut':
         if (!width) width = 100
@@ -156,7 +157,7 @@ window.cjdgUtils = {
         })
       }
 
-      const arr = ['src', 'type', 'width', 'height']
+      const arr = ['src', 'type', 'width', 'height', 'dpr']
       arr.map(item => {
         const itemVal = this.getAttribute(item) || this[item]
         if (itemVal) attrObj[item] = itemVal

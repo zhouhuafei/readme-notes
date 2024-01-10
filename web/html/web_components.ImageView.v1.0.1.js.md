@@ -2,9 +2,9 @@
 * 基于腾讯云，统一处理图片的src，使之支持图片裁切、旋转、水印等。
 
 ## 引入
-* 第1步：在head标签中引入依赖文件
+* 在head标签中引入依赖文件
 ```html
-<script src="https://static.xxynet.com/common/js/ImageView.v1.0.0.js"></script>
+<script src="https://static.xxynet.com/common/js/ImageView.v1.0.1.js"></script>
 ```
 
 ## 在vue2中使用
@@ -55,12 +55,12 @@ Vue.prototype.$imgSrc = window.cjdgUtils.imgSrc.bind(window.cjdgUtils)
 * 1、dpr：苹果系统需要使用2倍图或3倍图。仅对src内的/w/和/h/生效。
   - 未设置dpr参数时，会自动适配。
   - 若手动设置了dpr参数，则以手动设置的为准。
-* 3、type默认为normal，若width和height都设置了，则会对图片进行等比缩放，居中裁剪。
+* 2、type默认为normal，若width和height都设置了，则会对图片进行等比缩放，居中裁剪。
   - 支持仅设置width或height、会自动裁切出一个正方形。
   - 图片基本处理（腾讯云官方文档）：https://developer.qiniu.com/dora/1279/basic-processing-images-imageview2
-* 4、type为cut时，width和height必填，若不填则全都默认100 * dpr。
-* 5、type为rotate时，rotate必填，若不填则默认90。
-* 6、type为watermark时，markText必填，若不填则无水印。
-* 7、type为none时，不对图片的src进行任何处理。
-* 8、image-view组件支持使用radius和round参数进行圆角设置，工具方法不支持。圆角的设置，建议在外部使用css处理，用以规避单位转换问题，例如px转rem、vw等。
-* 9、使用image-view组件时，有时需要对其内部的img标签进行object-fit设置。此时，直接使用css给image-view进行object-fit设置即可。
+* 3、type为cut时，width和height必填，若不填则全都默认100 * dpr。
+* 4、type为rotate时，rotate必填，若不填则默认90。
+* 5、type为watermark时，markText必填，若不填则无水印。
+* 6、type为none时，不对图片的src进行任何处理。
+* 7、image-view组件支持使用radius和round参数进行圆角设置，工具方法不支持。圆角的设置，建议在外部使用css处理，用以规避单位转换问题，例如px转rem、vw等。
+* 8、使用image-view组件时，有时需要对其内部的img标签进行object-fit设置。此时，直接使用css给image-view进行object-fit设置即可。
