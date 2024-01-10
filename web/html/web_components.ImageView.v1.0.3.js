@@ -55,6 +55,7 @@ window.cjdgUtils = {
     let {
       src,
       type = 'normal',
+      mode,
       width,
       height,
       dpr,
@@ -77,6 +78,8 @@ window.cjdgUtils = {
     width = Number(width)
     height = Number(height)
     rotate = Number(rotate)
+    mode = Number(mode)
+    mode = [0, 1, 2, 3, 4, 5].includes(mode) ? mode : 1
     dpr = Number(dpr) || this.getDpr()
     switch (type) {
       case 'cut':
@@ -87,18 +90,18 @@ window.cjdgUtils = {
       case 'rotate':
         if (!rotate) rotate = 90
         imgUrl += `${rotate}`
-        if (width || height) imgUrl += `|imageView2/1/`
+        if (width || height) imgUrl += `|imageView2/${mode}/`
         if (width) imgUrl += `w/${width * dpr}/`
         if (height) imgUrl += `h/${height * dpr}/`
         break
       case 'watermark':
         imgUrl += `${this.encode(markText)}`
-        if (width || height) imgUrl += `|imageView2/1/`
+        if (width || height) imgUrl += `|imageView2/${mode}/`
         if (width) imgUrl += `w/${width * dpr}/`
         if (height) imgUrl += `h/${height * dpr}/`
         break
       default:
-        if (width || height) imgUrl += `?imageView2/1/`
+        if (width || height) imgUrl += `?imageView2/${mode}/`
         if (width) imgUrl += `w/${width * dpr}/`
         if (height) imgUrl += `h/${height * dpr}/`
         break
@@ -157,7 +160,7 @@ window.cjdgUtils = {
         })
       }
 
-      const arr = ['src', 'type', 'width', 'height', 'dpr']
+      const arr = ['src', 'type', 'mode', 'width', 'height', 'dpr']
       arr.map(item => {
         const itemVal = this.getAttribute(item) || this[item]
         if (itemVal) attrObj[item] = itemVal
