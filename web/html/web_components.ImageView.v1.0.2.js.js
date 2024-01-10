@@ -77,7 +77,7 @@ window.cjdgUtils = {
     width = Number(width)
     height = Number(height)
     rotate = Number(rotate)
-    dpr = dpr || this.getDpr()
+    dpr = Number(dpr) || this.getDpr()
     switch (type) {
       case 'cut':
         if (!width) width = 100
