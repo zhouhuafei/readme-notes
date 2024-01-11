@@ -66,12 +66,15 @@ window.cjdgUtils = {
     if (!src) return ''
     if (type === 'none') return src
 
+    let symbol = '?'
+    if (src.includes('?')) symbol = '&'
+
     // 以腾讯云为基准
     const typeObj = {
-      normal: '',
-      cut: '?imageMogr2/crop/',
-      rotate: `?imageMogr2/rotate/`,
-      watermark: `?watermark/2/fontsize/20/dissolve/50/gravity/northeast/dx/20/dy/20/batch/1/degree/-45/spacing/100/text/`
+      normal: `${symbol}`,
+      cut: `${symbol}imageMogr2/crop/`,
+      rotate: `${symbol}imageMogr2/rotate/`,
+      watermark: `${symbol}watermark/2/fontsize/20/dissolve/50/gravity/northeast/dx/20/dy/20/batch/1/degree/-45/spacing/100/text/`
     }
 
     let imgUrl = `${src}${typeObj[type]}`
@@ -81,6 +84,13 @@ window.cjdgUtils = {
     mode = Number(mode)
     mode = [0, 1, 2, 3, 4, 5].includes(mode) ? mode : 1
     dpr = Number(dpr) || this.getDpr()
+
+    function setImageView2 (width, height, joinSymbol = '') {
+      if (width || height) imgUrl += `${joinSymbol}imageView2/${mode}/`
+      if (width) imgUrl += `w/${width * dpr}/`
+      if (height) imgUrl += `h/${height * dpr}/`
+    }
+
     switch (type) {
       case 'cut':
         if (!width) width = 100
@@ -90,20 +100,14 @@ window.cjdgUtils = {
       case 'rotate':
         if (!rotate) rotate = 90
         imgUrl += `${rotate}`
-        if (width || height) imgUrl += `|imageView2/${mode}/`
-        if (width) imgUrl += `w/${width * dpr}/`
-        if (height) imgUrl += `h/${height * dpr}/`
+        setImageView2(width, height, '|')
         break
       case 'watermark':
         imgUrl += `${this.encode(markText)}`
-        if (width || height) imgUrl += `|imageView2/${mode}/`
-        if (width) imgUrl += `w/${width * dpr}/`
-        if (height) imgUrl += `h/${height * dpr}/`
+        setImageView2(width, height, '|')
         break
       default:
-        if (width || height) imgUrl += `?imageView2/${mode}/`
-        if (width) imgUrl += `w/${width * dpr}/`
-        if (height) imgUrl += `h/${height * dpr}/`
+        setImageView2(width, height)
         break
     }
     return imgUrl

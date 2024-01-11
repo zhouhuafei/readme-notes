@@ -4,7 +4,7 @@
 ## 引入
 * 在head标签中引入依赖文件
 ```html
-<script src="https://static.xxynet.com/common/js/ImageView.v1.0.3.js"></script>
+<script src="https://static.xxynet.com/common/js/ImageView.v1.0.4.js"></script>
 ```
 
 ## 在vue2中使用

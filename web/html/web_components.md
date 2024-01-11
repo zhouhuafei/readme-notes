@@ -380,4 +380,4 @@ window.customElements.define('user-card', UserCard);
 
 # 建议
 * 1、建议使用Shadow DOM
-* 2、商用案例：./web_components.ImageView.v1.0.3.js
+* 2、商用案例：./web_components.ImageView.v1.0.4.js
