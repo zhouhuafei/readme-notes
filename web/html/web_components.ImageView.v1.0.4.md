@@ -1,24 +1,65 @@
 ## 目的
 * 基于腾讯云，统一处理图片的src，使之支持图片裁切、旋转、水印等。
 
-## 引入
-* 在head标签中引入依赖文件
+## 在vue2中使用
+#### 引入依赖文件
+* 在index.html的head头中引入依赖文件
 ```html
 <script src="https://static.xxynet.com/common/js/ImageView.v1.0.4.js"></script>
 ```
-
-## 在vue2中使用
-#### 在main.js中增加
+#### 使用工具方法
+* 需要先在main.js中增加下述代码
 ```javascript
 Vue.prototype.$imgSrc = window.cjdgUtils.imgSrc.bind(window.cjdgUtils)
 ```
-#### 使用工具方法
+* 然后使用
 ```html
 <img :src="$imgSrc({src:item.src,width:100})" />
 ```
 #### 使用image-view组件
+* 直接使用即可
 ```html
-<image-view :src="item.src" width="100" />
+<image-view :src="item.src" width="100" /><!--支持但不推荐-->
+<cjdg-image-view :src="item.src" width="100" /><!--推荐统一前缀-->
+```
+
+## 在vue3中使用
+#### 引入依赖文件
+* 在index.html的head头中引入依赖文件
+```html
+<script src="https://static.xxynet.com/common/js/ImageView.v1.0.4.js"></script>
+```
+#### 使用工具方法
+* 需要先在main.js中增加下述代码
+```javascript
+app.config.globalProperties.$imgSrc = window.cjdgUtils.imgSrc.bind(window.cjdgUtils)
+```
+* 然后使用
+```html
+<img :src="$imgSrc({src:item.src,width:100})" />
+```
+#### 使用image-view组件
+* 需要先在vite.config.js中增加下述配置
+```javascript
+// vite.config.js
+import vue from '@vitejs/plugin-vue'
+
+export default {
+  plugins: [
+    vue({
+      template: {
+        compilerOptions: {
+          isCustomElement: (tag) => (tag.includes('cjdg-') || tag.includes('image-view'))
+        }
+      }
+    })
+  ]
+}
+```
+* 然后使用
+```html
+<image-view :src="item.src" width="100" /><!--支持但不推荐-->
+<cjdg-image-view :src="item.src" width="100" /><!--推荐统一前缀-->
 ```
 
 ## 注意事项
