@@ -1,5 +1,8 @@
 /* eslint-disable */
 
+// 超导的管理后台，是angular项目，子项目繁多。此文件目前处于不稳定状态，建议备份一份放入om-bms-framework项目中自行维护，比使用CDN要方便。
+// 为啥不在om-bms-framework项目中动态引入CDN文件？因为动态引入的js文件，执行要慢一拍，刷新页面会报找不到方法的错误。
+
 // window.cjdgUtils
 window.cjdgUtils = {
   getDpr () {
@@ -216,113 +219,4 @@ window.cjdgUtils = {
 
   window.customElements.define('image-view', ExtHTMLElement) // 老的使用方式
   window.customElements.define('cjdg-image-view', NewExtHTMLElement)
-})()
-
-// 超导的管理后台 是angular项目 子项目繁多 此文件目前处于不稳定状态 建议备份一份放入framework项目中自行维护 比使用CDN要方便
-// 为啥不在om-bms-framework项目中动态引入CDN文件？因为动态引入的js文件，执行慢一拍，刷新页面会报错。
-
-// cjdg-file-upload
-;(function () {
-  const genScript = () => {
-    const sdkSrc = 'https://static.xxynet.com/common/js/cos-js-sdk-v5.min.js'
-    const script = document.createElement('script')
-    script.src = sdkSrc
-    document.head.appendChild(script)
-  }
-  genScript()
-
-  const genTemplateDom = () => {
-    const templateDom = document.createElement('template')
-    templateDom.innerHTML = `
-      <style>
-        :host {
-          overflow: hidden;
-          display: inline-block;
-          vertical-align: middle;
-          box-sizing: border-box;
-          border-color: transparent;
-          background: transparent;
-        }
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: inherit;
-          overflow: hidden;
-          display: inline-block;
-          vertical-align: middle;
-          box-sizing: border-box;
-          border-color: transparent;
-          background: transparent;
-        }
-      </style>
-      <img src="" alt="" />
-    `
-    return templateDom
-  }
-
-  class ExtHTMLElement extends HTMLElement {
-    genShadowDom () {
-      const contentDom = genTemplateDom().content
-      const imgDom = contentDom.querySelector('img')
-      const attributeList = this.getAttributeNames() || []
-      const attrObj = {}
-
-      if (attributeList.length) {
-        attributeList.map(item => {
-          const itemValue = this.getAttribute(item) || this[item]
-          attrObj[item] = itemValue
-          if (item === 'radius') {
-            imgDom.style.borderRadius = `${itemValue}px`
-          }
-          if (item === 'round') {
-            imgDom.style.borderRadius = '50%'
-          }
-        })
-      }
-
-      const arr = ['src', 'type', 'mode', 'width', 'height', 'dpr']
-      arr.map(item => {
-        const itemVal = this.getAttribute(item) || this[item]
-        if (itemVal) attrObj[item] = itemVal
-      })
-
-      const typeVal = this.getAttribute('type') || this['type'] || 'normal'
-      let imgUrl = this.getAttribute('src') || this['src']
-      if (typeVal !== 'none') imgUrl = window.cjdgUtils.imgSrc(attrObj)
-      imgDom.setAttribute('src', imgUrl)
-
-      const shadow = this.attachShadow({ mode: 'closed' })
-      shadow.appendChild(contentDom)
-
-      const e = new CustomEvent('change')
-      e.$data = {}
-      this.dispatchEvent(e)
-    }
-
-    // 当自定义元素第一次被连接到文档DOM时被调用 - 相当于mounted
-    connectedCallback () {
-      setTimeout(this.genShadowDom.bind(this))
-      console.log('connectedCallback')
-    }
-
-    // 当自定义元素与文档DOM断开连接时被调用 - 与beforeDestroy类似
-    disconnectedCallback () {
-      console.log('disconnectedCallback')
-    }
-
-    // 当自定义元素被移动到新文档时被调用
-    adoptedCallback () {
-      console.log('adoptedCallback')
-    }
-
-    // 当自定义元素的一个属性被增加、移除或更改时被调用
-    attributeChangedCallback () {
-      console.log('attributeChangedCallback')
-    }
-  }
-
-  class NewExtHTMLElement extends ExtHTMLElement {
-  }
-
-  window.customElements.define('cjdg-file-upload', NewExtHTMLElement)
 })()
