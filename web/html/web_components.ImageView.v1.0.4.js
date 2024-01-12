@@ -119,7 +119,6 @@ window.cjdgUtils = {
 ;(function () {
   const genTemplateDom = () => {
     const templateDom = document.createElement('template')
-    templateDom.id = 'imageViewTemplate'
     templateDom.innerHTML = `
       <style>
         :host {
