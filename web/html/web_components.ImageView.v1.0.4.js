@@ -1,5 +1,6 @@
 /* eslint-disable */
 
+// window.cjdgUtils
 window.cjdgUtils = {
   getDpr () {
     if (window) {
@@ -113,6 +114,8 @@ window.cjdgUtils = {
     return imgUrl
   }
 }
+
+// cjdg-image-view
 ;(function () {
   const genTemplateDom = () => {
     const templateDom = document.createElement('template')
@@ -144,7 +147,7 @@ window.cjdgUtils = {
     return templateDom
   }
 
-  class ImageView extends HTMLElement {
+  class ExtHTMLElement extends HTMLElement {
     genShadowDom () {
       const contentDom = genTemplateDom().content
       const imgDom = contentDom.querySelector('img')
@@ -201,5 +204,9 @@ window.cjdgUtils = {
     }
   }
 
-  window.customElements.define('image-view', ImageView)
+  class NewExtHTMLElement extends ExtHTMLElement {
+  }
+
+  window.customElements.define('image-view', ExtHTMLElement) // 老的使用方式
+  window.customElements.define('cjdg-image-view', NewExtHTMLElement)
 })()
