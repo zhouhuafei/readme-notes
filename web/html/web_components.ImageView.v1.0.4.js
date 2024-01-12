@@ -61,7 +61,8 @@ window.cjdgUtils = {
       height,
       dpr,
       rotate,
-      markText = ''
+      markText = '',
+      videoTime = 1
     } = obj
 
     if (!src) return ''
@@ -75,7 +76,8 @@ window.cjdgUtils = {
       normal: `${symbol}`,
       cut: `${symbol}imageMogr2/crop/`,
       rotate: `${symbol}imageMogr2/rotate/`,
-      watermark: `${symbol}watermark/2/fontsize/20/dissolve/50/gravity/northeast/dx/20/dy/20/batch/1/degree/-45/spacing/100/text/`
+      watermark: `${symbol}watermark/2/fontsize/20/dissolve/50/gravity/northeast/dx/20/dy/20/batch/1/degree/-45/spacing/100/text/`,
+      video: `${symbol}ci-process=snapshot&format=jpg&time=${videoTime}`
     }
 
     let imgUrl = `${src}${typeObj[type]}`
@@ -93,6 +95,9 @@ window.cjdgUtils = {
     }
 
     switch (type) {
+      case 'normal':
+        setImageView2(width, height)
+        break
       case 'cut':
         if (!width) width = 100
         if (!height) height = 100
@@ -107,8 +112,7 @@ window.cjdgUtils = {
         imgUrl += `${this.encode(markText)}`
         setImageView2(width, height, '|')
         break
-      default:
-        setImageView2(width, height)
+      case 'video':
         break
     }
     return imgUrl
@@ -166,7 +170,7 @@ window.cjdgUtils = {
         })
       }
 
-      const arr = ['src', 'type', 'mode', 'width', 'height', 'dpr']
+      const arr = ['src', 'type', 'mode', 'width', 'height', 'dpr', 'videoTime']
       arr.map(item => {
         const itemVal = this.getAttribute(item) || this[item]
         if (itemVal) attrObj[item] = itemVal
