@@ -77,7 +77,8 @@ window.cjdgUtils = {
       cut: `${symbol}imageMogr2/crop/`,
       rotate: `${symbol}imageMogr2/rotate/`,
       watermark: `${symbol}watermark/2/fontsize/20/dissolve/50/gravity/northeast/dx/20/dy/20/batch/1/degree/-45/spacing/100/text/`,
-      video: `${symbol}ci-process=snapshot&format=jpg&time=${videoTime}`
+      // 视频截取首帧 为了兼容七牛 增加了 &vframe/jpg/offset/${videoTime} 若后续不再需要 则可以进行删除
+      video: `${symbol}ci-process=snapshot&format=jpg&time=${videoTime}&vframe/jpg/offset/${videoTime}`
     }
 
     let imgUrl = `${src}${typeObj[type]}`
@@ -113,7 +114,6 @@ window.cjdgUtils = {
         setImageView2(width, height, '|')
         break
       case 'video':
-        setImageView2(width, height, '|')
         break
     }
 
@@ -217,6 +217,9 @@ window.cjdgUtils = {
   window.customElements.define('image-view', ExtHTMLElement) // 老的使用方式
   window.customElements.define('cjdg-image-view', NewExtHTMLElement)
 })()
+
+// 超导的管理后台 是angular项目 子项目繁多 此文件目前处于不稳定状态 建议备份一份放入framework项目中自行维护 比使用CDN要方便
+// 为啥不在om-bms-framework项目中动态引入CDN文件？因为动态引入的js文件，执行慢一拍，刷新页面会报错。
 
 // cjdg-file-upload
 ;(function () {
