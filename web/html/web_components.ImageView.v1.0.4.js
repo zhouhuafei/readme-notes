@@ -94,8 +94,8 @@ window.cjdgUtils = {
 
     function setImageView2 (width, height, joinSymbol = '') {
       if (width || height) imgUrl += `${joinSymbol}imageView2/${mode}/`
-      if (width) imgUrl += `w/${width * dpr}/`
-      if (height) imgUrl += `h/${height * dpr}/`
+      if (width) imgUrl += `w/${Math.round(width * dpr)}/`
+      if (height) imgUrl += `h/${Math.round(height * dpr)}/`
     }
 
     switch (type) {
@@ -105,9 +105,9 @@ window.cjdgUtils = {
       case 'cut':
         if (!width) width = 100
         if (!height) height = 100
-        imgUrl += `${width * dpr}x${height * dpr}/gravity/center`
-        // 图片裁切 为了兼容七牛 增加了 &imageMogr2/auto-orient/thumbnail/${width * dpr}x${height * dpr}! 若后续不再需要 则可以进行删除
-        imgUrl += `&imageMogr2/auto-orient/thumbnail/${width * dpr}x${height * dpr}!`
+        imgUrl += `${Math.round(width * dpr)}x${Math.round(height * dpr)}/gravity/center`
+        // 图片裁切 为了兼容七牛 增加了 &imageMogr2/auto-orient/thumbnail/${Math.round(width * dpr)}x${Math.round(height * dpr)}! 若后续不再需要 则可以进行删除
+        imgUrl += `&imageMogr2/auto-orient/thumbnail/${Math.round(width * dpr)}x${Math.round(height * dpr)}!`
         break
       case 'rotate':
         if (!rotate) rotate = 90
