@@ -106,6 +106,8 @@ window.cjdgUtils = {
         if (!width) width = 100
         if (!height) height = 100
         imgUrl += `${width * dpr}x${height * dpr}/gravity/center`
+        // 图片裁切 为了兼容七牛 增加了 &imageMogr2/auto-orient/thumbnail/${width * dpr}x${height * dpr}! 若后续不再需要 则可以进行删除
+        imgUrl += `&imageMogr2/auto-orient/thumbnail/${width * dpr}x${height * dpr}!`
         break
       case 'rotate':
         if (!rotate) rotate = 90
