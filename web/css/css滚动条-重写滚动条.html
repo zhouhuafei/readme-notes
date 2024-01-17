@@ -5,15 +5,6 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>css重写滚动条样式</title>
-    <!--
-    * ::-webkit-scrollbar 滚动条整体部分 其中的属性有width、height、background、border等
-    * ::-webkit-scrollbar-button 滚动条两端的按钮 可以用display:none让其不显示 也可以添加背景图片 颜色改变显示效果
-    * ::-webkit-scrollbar-track 外层轨道 可以用display:none让其不显示 也可以添加背景图片 颜色改变显示效果
-    * ::-webkit-scrollbar-track-piece 内层轨道 滚动条中间部分（除去）
-    * ::-webkit-scrollbar-thumb 滚动条里面可以拖动的那部分
-    * ::-webkit-scrollbar-corner 边角
-    * ::-webkit-resizer 定义右下角拖动块的样式
-    -->
     <style>
       .box {
         width: 150px;
@@ -39,9 +30,9 @@
       /*滚动条整体样式*/
       .box::-webkit-scrollbar {
         /*控制纵向滚动条的宽度*/
-        width: 10px;
+        width: 20px;
         /*控制横向滚动条的高度*/
-        height: 10px;
+        height: 20px;
       }
 
       /*滚动条滑块*/
@@ -71,6 +62,7 @@
     </style>
   </head>
   <body>
+    <div>https://developer.mozilla.org/zh-CN/docs/Web/CSS/::-webkit-scrollbar</div>
     <div class="box">
       <div>1</div>
       <div>2</div>
