@@ -78,7 +78,7 @@ window.cjdgUtils = {
     const typeObj = {
       normal: `${symbol}`,
       cut: `${symbol}imageMogr2/crop/`,
-      rotate: `${symbol}imageMogr2/rotate/`,
+      rotate: `${symbol}imageMogr2/`,
       watermark: `${symbol}watermark/2/fontsize/20/dissolve/50/gravity/northeast/dx/20/dy/20/batch/1/degree/-45/spacing/100/text/`,
       // 视频截取首帧 为了兼容七牛 增加了 &vframe/jpg/offset/${videoTime} 若后续不再需要 则可以进行删除
       video: `${symbol}ci-process=snapshot&format=jpg&time=${videoTime}&vframe/jpg/offset/${videoTime}`
@@ -111,7 +111,11 @@ window.cjdgUtils = {
         break
       case 'rotate':
         if (!rotate) rotate = 90
-        imgUrl += `${rotate}`
+        if (rotate !== 'auto') {
+          imgUrl += `rotate/${rotate}`
+        } else {
+          imgUrl += 'auto-orient'
+        }
         setImageView2(width, height, '|')
         break
       case 'watermark':
