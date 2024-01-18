@@ -25,8 +25,8 @@ git config --system --unset credential.helper
 git config --global credential.helper store
 ```
 
-# 报错
-* 报错信息：
+## 报错
+#### 报错信息：
 ```
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
@@ -46,10 +46,24 @@ fatal: Could not read from remote repository.
 Please make sure you have the correct access rights
 and the repository exists.
 ```
-* 解决方案：
+#### 解决方案：
 ```
 查看：ssh-keygen -l -f ~/.ssh/known_hosts
 删除：ssh-keygen -R github.com
 提交：git push
 选择：yes
+```
+#### 报错信息：
+```
+ssh: connect to host github.com port 22: Connection timed out
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+```
+#### 解决方案：在`~/.ssh/`目录下增加config文件。内容如下所示：
+```
+Host github.com
+Hostname ssh.github.com
+Port 443
 ```
