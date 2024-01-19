@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>css重写滚动条样式</title>
     <style>
@@ -10,10 +11,12 @@
         width: 150px;
         height: 200px;
         overflow: auto;
-        margin: 100px;
+        margin-left: 50px;
         background: #ddd;
         padding: 20px;
         text-align: center;
+        display: inline-block;
+        vertical-align: middle;
       }
 
       .box div {
@@ -30,9 +33,9 @@
       /*滚动条整体样式*/
       .ui-custom-scrollbar::-webkit-scrollbar {
         /*控制纵向滚动条的宽度*/
-        width: 5px;
+        width: 20px;
         /*控制横向滚动条的高度*/
-        height: 5px;
+        height: 20px;
       }
 
       /*滚动条滑块*/
@@ -57,12 +60,16 @@
 
       /*边角*/
       .ui-scrollbar-corner::-webkit-scrollbar-corner {
-        background: #ff0000;
+        background: #00ff00;
       }
     </style>
   </head>
   <body>
-    <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/::-webkit-scrollbar">https://developer.mozilla.org/zh-CN/docs/Web/CSS/::-webkit-scrollbar</a>
+    <div style="padding: 50px;">
+      <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/::-webkit-scrollbar">
+        文档地址：https://developer.mozilla.org/zh-CN/docs/Web/CSS/::-webkit-scrollbar
+      </a>
+    </div>
     <div class="box">
       <div>1</div>
       <div>2</div>
