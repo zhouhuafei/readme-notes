@@ -123,6 +123,7 @@ window.cjdgUtils = {
         setImageView2(width, height, '|')
         break
       case 'video':
+        setImageView2(width, height, '&')
         break
     }
 
