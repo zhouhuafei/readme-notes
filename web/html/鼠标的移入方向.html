@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>鼠标从哪个方向移入</title>
+    <title>鼠标的移入方向</title>
     <style>
       * {
         margin: 0;
@@ -84,7 +84,10 @@
       const radian = Math.atan2(diffY, diffX)
       const angle = radian / (Math.PI / 180)
       console.log('角度：', angle)
-      // 注：本期讲解仅做思想引导、真实业务场景中、计算clientX和clientY时需要附加上页面滚动条的scrollLeft和scrollTop、计算domCenterX和domCenterY时需要附加上父级及父级以上元素的offsetLeft和offsetTop。
+      // 本期讲解仅做思想引导
+      // 真实业务场景中
+      // 计算clientX和clientY时需要附加上页面滚动条的scrollLeft和scrollTop
+      // 计算domCenterX和domCenterY时需要附加上父级及父级以上元素的offsetLeft和offsetTop
     })
     </script>
   </body>
