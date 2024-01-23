@@ -85,6 +85,7 @@ declare module '*.scss' {
 * 实战参考：https://github.com/zhouhuafei-team/super-task_client
 
 ## vue3工作流程
+> template --> AST抽象语法树 --> render(h) --> 虚拟DOM --> UI
 * 编译器把模板编译成渲染函数h`h('div', { onClick: handler }, 'click me')`。
 * 渲染函数h返回虚拟DOM（用来描述真实DOM的普通JavaScript对象）。
 * 渲染器renderer函数把虚拟DOM渲染成真实DOM。
