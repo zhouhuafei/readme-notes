@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>鼠标从哪个方向移入</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .box {
+        width: 0;
+        height: 0;
+        border: 100px solid #ff0;
+        border-top-color: #f00;
+        border-right-color: #0f0;
+        border-bottom-color: #00f;
+        margin: 200px;
+        position: relative;
+      }
+
+      .x {
+        position: absolute;
+        width: 400px;
+        height: 1px;
+        background: #000000;
+        left: 0;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .x::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        border: 10px solid transparent;
+        border-left-color: #000;
+        transform: translate(100%, -50%);
+      }
+
+      .y {
+        position: absolute;
+        height: 400px;
+        width: 1px;
+        background: #000000;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .y::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        border: 10px solid transparent;
+        border-bottom-color: #000;
+        transform: translate(-50%, -100%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="x"></div>
+      <div class="y"></div>
+    </div>
+    <script>
+    const domBox = document.querySelector('.box')
+    domBox.addEventListener('mouseenter', (e) => {
+      const clientX = e.clientX
+      const clientY = e.clientY
+      const domCenterX = domBox.offsetLeft + domBox.offsetWidth / 2
+      const domCenterY = domBox.offsetTop + domBox.offsetHeight / 2
+      const diffX = clientX - domCenterX
+      const diffY = domCenterY - clientY
+      const radian = Math.atan2(diffY, diffX)
+      const angle = radian / (Math.PI / 180)
+      console.log('角度：', angle)
+      // 注：本期讲解仅做思想引导、真实业务场景中、计算clientX和clientY时需要附加上页面滚动条的scrollLeft和scrollTop、计算domCenterX和domCenterY时需要附加上父级及父级以上元素的offsetLeft和offsetTop。
+    })
+    </script>
+  </body>
+</html>
