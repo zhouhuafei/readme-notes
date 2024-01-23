@@ -79,9 +79,9 @@
       const clientY = e.clientY
       const domCenterX = domBox.offsetLeft + domBox.offsetWidth / 2
       const domCenterY = domBox.offsetTop + domBox.offsetHeight / 2
-      const diffX = clientX - domCenterX
-      const diffY = domCenterY - clientY
-      const radian = Math.atan2(diffY, diffX)
+      const x = clientX - domCenterX
+      const y = domCenterY - clientY
+      const radian = Math.atan2(y, x)
       const angle = radian / (Math.PI / 180)
       console.log('角度：', angle)
       // 本期讲解仅做思想引导
