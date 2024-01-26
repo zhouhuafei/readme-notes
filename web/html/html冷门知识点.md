@@ -102,3 +102,7 @@
 
 ## 给html标签设置hidden属性
 * 可以给html标签设置hidden属性`<div hidden>hello</div>`，设置后，相当于设置了`display: none;`。
+
+## https访问http资源
+* https访问http资源时，浏览器会自动把引入的http资源升级为https资源进行访问。
+* 所以，如果你的http资源配置了ssl证书，则可以正常访问。
