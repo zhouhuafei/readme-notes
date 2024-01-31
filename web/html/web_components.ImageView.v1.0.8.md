@@ -5,7 +5,7 @@
 #### 引入依赖文件
 * 在index.html的head头中引入依赖文件
 ```html
-<script src="https://static.xxynet.com/common/js/ImageView.v1.0.4.js"></script>
+<script src="https://static.xxynet.com/common/js/ImageView.v1.0.8.js"></script>
 ```
 #### 使用工具方法
 * 需要先在main.js中增加下述代码
@@ -27,7 +27,7 @@ Vue.prototype.$imgSrc = window.cjdgUtils.imgSrc.bind(window.cjdgUtils)
 #### 引入依赖文件
 * 在index.html的head头中引入依赖文件
 ```html
-<script src="https://static.xxynet.com/common/js/ImageView.v1.0.4.js"></script>
+<script src="https://static.xxynet.com/common/js/ImageView.v1.0.8.js"></script>
 ```
 #### 使用工具方法
 * 需要先在main.js中增加下述代码
