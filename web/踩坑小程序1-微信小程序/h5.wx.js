@@ -1,6 +1,6 @@
 const wx = {
-  setClipboardData ({ data }) {
-    const val = data || ''
+  setClipboardData (options) {
+    const val = options.data || ''
     const input = document.createElement('textarea')
     input.value = val
     document.body.appendChild(input)
@@ -9,38 +9,40 @@ const wx = {
     document.execCommand('Copy')
     document.body.removeChild(input)
   },
-  setNavigationBarTitle (obj) {
-    document.title = obj.title || ''
+  setNavigationBarTitle (options) {
+    document.title = options.title || ''
   },
-  uploadFile (opts = {}) {
+  uploadFile (options = {}) {
     const formData = new FormData()
-    Object.keys(opts.formData).forEach((key) => {
-      const val = opts.formData[key]
+    Object.keys(options.formData).forEach((key) => {
+      const val = options.formData[key]
       formData.append(key, val)
     })
-    formData.append('file', opts.filePath)
+    formData.append('file', options.filePath)
   },
-  chooseImage (opts = {}) {
+  chooseImage (options = {}) {
+    options.mimeType = options.mimeType || ['image/jpeg', 'image/png', 'image/gif']
     const input = document.createElement('input')
     input.addEventListener('change', (e) => {
       const tempFilePaths = e.target.files
-      if (tempFilePaths.length > opts.count) {
-        const message = `最多上传${opts.count}个文件`
+      if (tempFilePaths.length > options.count) {
+        const message = `最多上传${options.count}个文件`
         console.error(message)
-        opts.fail && opts.fail({ message })
+        options.fail && options.fail({ message })
       } else {
-        opts.success && opts.success({ tempFilePaths })
+        options.success && options.success({ tempFilePaths })
       }
     })
     input.type = 'file'
-    if (opts.count > 1) {
+    input.accept = options.mimeType.join(',')
+    if (options.count > 1) {
       input.setAttribute('multiple', 'multiple')
     }
     input.click()
   },
-  makePhoneCall (e) {
+  makePhoneCall (options) {
     const a = document.createElement('a')
-    a.href = `tel:${e.phoneNumber}`
+    a.href = `tel:${options.phoneNumber}`
     a.click()
   }
 }
