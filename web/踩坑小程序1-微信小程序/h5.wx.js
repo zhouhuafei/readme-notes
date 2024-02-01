@@ -48,3 +48,5 @@ const wx = {
 }
 
 console.log('wx：', wx)
+
+export { wx }
