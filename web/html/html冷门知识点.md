@@ -106,4 +106,4 @@
 ## https网站访问http资源
 * https网站访问http资源时，浏览器会自动把引入的http资源升级为https资源进行访问。
 * 所以，如果你的http资源配置了ssl证书的话，那么即使在https网站中访问http资源，也可以正常访问。
-* 目前已知：被引入的图片会自动升级、被引入的iframe不会自动升级。
+* 补充说明：被引入的img、audio、video会自动升级，被引入的iframe、script、css不会自动升级。
