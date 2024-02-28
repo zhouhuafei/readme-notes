@@ -108,5 +108,5 @@
 * 所以，如果你的http资源配置了ssl证书的话，那么即使在https网站中访问http资源，也可以正常访问。
 * 补充说明：被引入的img、audio、video会自动升级，被引入的iframe、script、css不会自动升级。
 
-## 随机图片
+## 随机图片 - 静态图
 * https://picsum.photos/200/300?timeStamp
