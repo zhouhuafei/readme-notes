@@ -88,7 +88,9 @@
       // 真实业务场景中
       // 计算clientX和clientY时需要附加上页面滚动条的scrollLeft和scrollTop
       // 计算domCenterX和domCenterY时需要附加上父级及父级以上元素的offsetLeft和offsetTop
-      // 上述父级指的是 offsetParent
+      // 上述父级指的是offsetParent，offsetLeft和offsetTop都是距离offsetParent的距离，offsetParent的默认值是body元素
+      // 父元素有定位（relative、absolute、fixed）时，子元素的offsetParent为父元素
+      // 子元素自身有fixed时，子元素的offsetParent为null
     })
     </script>
   </body>
