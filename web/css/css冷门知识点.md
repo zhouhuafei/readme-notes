@@ -135,3 +135,6 @@ div {
 ## grid
 * 教程：https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html
 * 案例：https://github.com/zhouhuafei/readme-notes/tree/master/web/css/grid.html
+
+## 100vh
+* h5在小米浏览器上100vh太高，会导致内容区域被底部菜单栏遮挡，建议使用100%设置高度。
