@@ -143,8 +143,8 @@ div {
 * 问题：h5底部安全区域为啥没生效？
 ```scss
 .footer {
-  padding-bottom: constant(safe-area-inset-bottom);
-  padding-bottom: env(safe-area-inset-bottom);
+  padding-bottom: calc(8px + constant(safe-area-inset-bottom));
+  padding-bottom: calc(8px + env(safe-area-inset-bottom));
 }
 ```
 * 答案：env和constant只有在viewport-fit=cover时候才能生效。
