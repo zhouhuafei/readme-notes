@@ -140,7 +140,14 @@ div {
 * h5在小米浏览器上100vh太高，会导致内容区域被底部菜单栏遮挡，建议使用100%设置高度。
 
 ## 底部安全区域
-> 参考文章：https://www.jianshu.com/p/d144610fb64d
+* 安全区域
+```
+safe-area-inset-left：安全区域距离左边界距离 通常是0
+safe-area-inset-right：安全区域距离右边界距离 通常是0
+safe-area-inset-top：安全区域距离顶部边界距离 通常是44px
+safe-area-inset-bottom：安全区域距离底部边界距离 通常是34px
+```
+* 参考文章：https://www.jianshu.com/p/d144610fb64d
 * 问题：h5底部安全区域为啥没生效？
 ```scss
 .footer {
