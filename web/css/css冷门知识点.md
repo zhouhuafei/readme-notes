@@ -142,10 +142,10 @@ div {
 ## 底部安全区域
 * 安全区域
 ```
-safe-area-inset-left：安全区域距离左边界距离 通常是0
-safe-area-inset-right：安全区域距离右边界距离 通常是0
 safe-area-inset-top：安全区域距离顶部边界距离 通常是44px
+safe-area-inset-right：安全区域距离右边界距离 通常是0
 safe-area-inset-bottom：安全区域距离底部边界距离 通常是34px
+safe-area-inset-left：安全区域距离左边界距离 通常是0
 ```
 * 参考文章：https://www.jianshu.com/p/d144610fb64d
 * 问题：h5底部安全区域为啥没生效？
