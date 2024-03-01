@@ -6,7 +6,7 @@
     - 借助iframe的postMessage可以实现跨(主/子)域。
 
 # localStorage
-* 容量：不同浏览器容量的限制不一样。一般不超过5MB的数据。
+* 容量：不同浏览器容量的限制不一样。一般不超过5MB的数据。sessionStorage亦如此。
   - 亲测Chrome浏览器可以存储4MB图片。超过之后存储会失败。但是存的是base64。图片转base64后会增加33%-36%的大小。所以是可以存储不超过5MB的数据。
 * 跨域：借助iframe的postMessage可以实现跨(主/子)域。
 * 事件：WindowEventHandlers.onstorage 属性包含一个在storage事件触发时的事件句柄。 当存储域发生改变时会触发事件。(例如：有新的项被存储)
@@ -19,12 +19,13 @@
   ```
 
 # GET
-* 容量：不同浏览器容量的限制不一样。一般在4KB左右。
+* 容量：不同浏览器容量的限制不一样。一般在2KB-8KB，建议不要超过2KB。
 
 # POST
 * 容量：无限制。
 
 # IndexedDB
+> 增加搜索关键字：indexedDB、indexeddb
 * IndexedDB存储数据大小一般在250M以上。
 
 # StorageManager
