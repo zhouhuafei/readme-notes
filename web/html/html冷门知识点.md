@@ -110,3 +110,10 @@
 
 ## 随机图片 - 静态图
 * https://picsum.photos/200/300?timeStamp
+
+## 在页面上渲染textarea的内容时如何保留换行？
+> textarea渲染换行
+```
+<pre v-html="thisFields.text"></pre>
+<div v-html="thisFields.text.replace(/\n/g, '<br>')"></div>
+```
