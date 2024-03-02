@@ -24,9 +24,10 @@
 # POST
 * 容量：无限制。
 
-# IndexedDB
-> 增加搜索关键字：indexedDB、indexeddb、window.indexedDB
-* IndexedDB存储数据大小一般在250M以上。
+# indexedDB
+> 增加搜索关键字：indexedDB、window.indexedDB、indexeddb、IndexedDB
+* indexedDB存储数据大小一般在250M以上，理论上没有存储上限。
+* 部分浏览器超出50MB后，需要用户同意授权，才可以扩大存储容量。
 
 # StorageManager
 > Storage API的 StorageManager 接口提供了用于管理数据本地存储权限和估算可用存储空间的接口。
