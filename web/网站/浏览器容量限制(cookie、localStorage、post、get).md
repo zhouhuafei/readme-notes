@@ -25,7 +25,7 @@
 * 容量：无限制。
 
 # IndexedDB
-> 增加搜索关键字：indexedDB、indexeddb
+> 增加搜索关键字：indexedDB、indexeddb、window.indexedDB
 * IndexedDB存储数据大小一般在250M以上。
 
 # StorageManager
