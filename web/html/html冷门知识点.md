@@ -117,3 +117,7 @@
 <pre v-html="thisFields.text"></pre>
 <div v-html="thisFields.text.replace(/\n/g, '<br>')"></div>
 ```
+
+## textarea的内容有几行？
+* h5高度是不固定的。所以可以先弄一个初始高度的div定位到看不到的地方当做标准高度。
+* 然后拿textarea的scrollHeight除以标准高度就可以计算出textarea的内容有几行。
