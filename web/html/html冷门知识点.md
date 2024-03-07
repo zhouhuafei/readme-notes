@@ -122,23 +122,19 @@
 * h5高度是不固定的。所以可以先弄一个初始高度的div定位到看不到的地方当做标准高度。
 * 然后拿textarea的scrollHeight除以标准高度就可以计算出textarea的内容有几行。
 ```javascript
-const computedFields = reactive({
-  textareaHeight: computed(() => {
-    const helperTextareaInitHeight = helperTextareaInitHeightRef.value
-    const helperTextareaEl = helperTextareaRef.value
-    if (!helperTextareaInitHeight || !helperTextareaEl) return {}
-    let num = 1
-    const initHeight = helperTextareaInitHeight.offsetHeight
-    helperTextareaEl.style.height = `${num * initHeight}px`
-    if (thisFields.text.length) { // 别删除这行，否则无法实时监听thisFields.text的变化，导致此函数整体执行不了。
-      // console.log(thisFields.text)
-    }
-    const scrollHeight = helperTextareaEl.scrollHeight
-    num = Math.ceil(scrollHeight / initHeight)
-    // const match = thisFields.text.match(/\n/ig) // 使用match匹配/\n/ig，无法覆盖textarea文本过长自动换行的场景。
-    // if (match) num = match.length
-    if (num >= 6) num = 6
-    return { height: `${num * initHeight}px` }
-  })
+watch(() => thisFields.text, async () => {
+  await nextTick()
+  const helperTextareaInitHeight = helperTextareaInitHeightRef.value
+  const helperTextareaEl = helperTextareaRef.value
+  if (!helperTextareaInitHeight || !helperTextareaEl) return
+  let num = 1
+  const initHeight = helperTextareaInitHeight.offsetHeight
+  helperTextareaEl.style.height = `${num * initHeight}px`
+  const scrollHeight = helperTextareaEl.scrollHeight
+  num = Math.ceil(scrollHeight / initHeight)
+  // const match = thisFields.text.match(/\n/ig) // 使用match匹配/\n/ig，无法覆盖textarea文本过长自动换行的场景。
+  // if (match) num = match.length
+  if (num >= 6) num = 6
+  helperTextareaEl.style.height = `${num * initHeight}px`
 })
 ```
