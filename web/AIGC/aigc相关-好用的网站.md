@@ -53,8 +53,7 @@
 * 还支持：视频合并、视频修剪、视频裁剪、视频旋转、视频循环等功能且全部免费。
 
 ## AIGC开源项目
-* 图片去水印开源项目：https://github.com/Sanster/lama-cleaner
-  - 已改名为：https://github.com/Sanster/IOPaint
+* 图片去水印开源项目：https://github.com/Sanster/IOPaint
 * 图片去水印开源项目：https://github.com/advimman/lama
 * 图片增强（变清晰）：https://github.com/TencentARC/GFPGAN
 * 视频增强（变清晰）：https://github.com/k4yt3x/video2x
