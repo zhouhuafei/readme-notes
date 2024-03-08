@@ -54,6 +54,7 @@
 
 ## AIGC开源项目
 * 图片去水印开源项目：https://github.com/Sanster/lama-cleaner
+  - 已改名为：https://github.com/Sanster/IOPaint
 * 图片去水印开源项目：https://github.com/advimman/lama
 * 图片增强（变清晰）：https://github.com/TencentARC/GFPGAN
 * 视频增强（变清晰）：https://github.com/k4yt3x/video2x
