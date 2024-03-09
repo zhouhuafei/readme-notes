@@ -66,6 +66,7 @@
 * 文本转语音（Microsoft Edge）：https://github.com/rany2/edge-tts
 * 配合音频可以让图片开口说话：https://github.com/Winfredy/SadTalker
 * 配合音频可以让图片开口说话（还可以根据音频转换视频中人物的口型）：https://github.com/Rudrabha/Wav2Lip
+* 根据音频转换视频中人物的口型：https://github.com/OpenTalker/video-retalking
 
 ## AIGC网站推荐
 * 使用人工智能语音将文本转换为图文视频（收费）：https://fliki.ai/
