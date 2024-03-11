@@ -49,6 +49,9 @@
 ## ckpt和safetensors的区别
 * ckpt和safetensors实质上是同样的文件，但因为各个模型算法有安全漏洞，导致普通模型文件ckpt可能携带病毒，所以对ckpt文件进行了封装，变成了更安全的safetensors。
 
-## sd提示词
-* https://www.bilibili.com/read/cv25368715
-* https://www.zhihu.com/question/598034327/answer/3090915675
+## sd提示词案例
+* https://www.bilibili.com/read/cv25368715/
+* https://www.bilibili.com/read/cv25284218/
+* https://www.bilibili.com/read/cv25293812/
+* https://juejin.cn/post/7237145375311659065/
+* https://www.zhihu.com/question/598034327/answer/3090915675/
