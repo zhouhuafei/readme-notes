@@ -5,8 +5,25 @@
   - https://www.nvidia.cn/Download/index.aspx
 * 安装Python 3.10.6
   - https://www.python.org/downloads/release/python-3106/
+* 克隆对应项目到本地
+  - 根据文档指引，下载对应项目相关的模型，并放入到对应目录。
+  - 因高墙耸立，固我在百度网盘备份了相关模型。
 
-## Win10 - stable-diffusion-webui本地部署教程
+## stable-diffusion-webui报错
+#### RuntimeError: Torch is not able to use GPU;
+#### Torch not compiled with CUDA enabled
+* 问题原因：上述两个错误，都是同一个原因导致的。显卡驱动没装好或项目依赖有问题。
+* 解决方案：重新安装显卡驱动并重新安装stable-diffusion-webui项目。
+
+## SadTalker报错
+#### AttributeError: 'Row' object has no attribute 'style'
+* 解决方案：更换app_sadtalker.py文件，我存百度网盘了。
+#### FFmpeg cannot edit existing files in-place.
+* 解决方案：更换src/test_audio2coeff.py文件，我存百度网盘了。
+#### 勾上GFPGAN as Face enhancer选项后报错RuntimeError: unexpected EOF, expected 270747 more bytes. The file might be corrupted.
+* 解决方案：...TODO
+
+## stable-diffusion-webui本地部署教程
 * https://zhuanlan.zhihu.com/p/577676154
 * https://www.bilibili.com/read/cv22700219/
 
