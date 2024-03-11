@@ -14,6 +14,8 @@
 #### Torch not compiled with CUDA enabled
 * 问题原因：上述两个错误，都是同一个原因导致的。显卡驱动没装好或项目依赖有问题。
 * 解决方案：重新安装显卡驱动或重新安装stable-diffusion-webui项目。
+#### no module 'xformers'. Processing without
+* 解决方案：pip install xformers
 
 ## SadTalker报错
 #### AttributeError: 'Row' object has no attribute 'style'
@@ -43,3 +45,7 @@
 
 ## ckpt和safetensors的区别
 * ckpt和safetensors实质上是同样的文件，但因为各个模型算法有安全漏洞，导致普通模型文件ckpt可能携带病毒，所以对ckpt文件进行了封装，变成了更安全的safetensors。
+
+## sd提示词
+* https://www.bilibili.com/read/cv25368715
+* https://www.zhihu.com/question/598034327/answer/3090915675
