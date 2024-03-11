@@ -18,7 +18,7 @@
 * 问题原因：上述两个错误，都是同一个原因导致的。显卡驱动没装好或项目依赖有问题。
 * 解决方案：重新安装显卡驱动或重新安装stable-diffusion-webui项目。
 #### no module 'xformers'. Processing without
-* 解决方案：pip install xformers
+* 解决方案：修改`./webui-user.bat`文件中的第6行代码：把`set COMMANDLINE_ARGS=`改为`set COMMANDLINE_ARGS=--xformers`。
 
 ## SadTalker报错
 #### AttributeError: 'Row' object has no attribute 'style'
