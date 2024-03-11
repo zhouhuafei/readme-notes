@@ -1,4 +1,10 @@
-> Stable Diffusion本地部署、Stable Diffusion本地安装
+> Stable Diffusion本地部署、Stable Diffusion本地安装、SadTalker本地部署、SadTalker本地安装、stable-diffusion-webui和SadTalker本地部署教程-win11
+
+## 前置条件
+* 安装最新的英伟达显卡驱动（NVIDIA Driver）
+  - https://www.nvidia.cn/Download/index.aspx
+* 安装Python 3.10.6
+  - https://www.python.org/downloads/release/python-3106/
 
 ## Win10 - stable-diffusion-webui本地部署教程
 * https://zhuanlan.zhihu.com/p/577676154
