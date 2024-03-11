@@ -10,7 +10,7 @@
   - 因高墙耸立，固我在百度网盘备份了相关模型。
 
 ## pip使用国内清华的源
-* pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+* pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple/
 
 ## stable-diffusion-webui报错
 #### RuntimeError: Torch is not able to use GPU;
