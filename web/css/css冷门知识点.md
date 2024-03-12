@@ -161,3 +161,6 @@ safe-area-inset-left：安全区域距离左边界距离 通常是0
 ```html
 <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0 maximum-scale=1, minimum-scale=1, user-scalable=no">
 ```
+
+## css各种loading案例
+* 案例：https://blog.csdn.net/hdp134793/article/details/131655277
