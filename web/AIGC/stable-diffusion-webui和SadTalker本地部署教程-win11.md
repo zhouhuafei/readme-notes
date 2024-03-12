@@ -55,3 +55,6 @@
 * https://www.bilibili.com/read/cv25293812/
 * https://juejin.cn/post/7237145375311659065/
 * https://www.zhihu.com/question/598034327/answer/3090915675/
+
+## sd插件
+* https://zhuanlan.zhihu.com/p/651927862
