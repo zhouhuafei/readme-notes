@@ -218,6 +218,7 @@ console.log(JSON.stringify({ a: null })) // '{"a":null}'
   - 使用toLocaleString：建议使用方式2，虽方式2会多个¥符号，但会保留小数位。截取字符串比补充小数位要简单。
     - 方式1：`(100000000.00).toLocaleString('zh-CN'); // '100,000,000'`
     - 方式2：`(100000000.00).toLocaleString('zh-CN', { style: 'currency', currency: 'CNY' }); // '¥100,000,000.00'`
+  - 是否是金额且最多保留两位小数：`/(^[1-9]([0-9]+)?(\.[0-9]{1,2})?$)|(^0$)|(^[0-9]\.[0-9]([0-9])?$)/`。
 #### 类
 * 声明一个类？`class A {}`。
 * 继承一个类？`class B extends A {}`。

@@ -361,19 +361,6 @@ false ?? 'd' // false
 0 ?? 'e' // 0
 ```
 
-## 保留几位小数的公式
-> 保留2位小数、保留两位小数
-```javascript
-// 保留2位小数
-(Math.floor(10.2 * 1000 / 10) / 100).toFixed(2)
-// 保留2位小数
-(Math.floor(parseFloat(10.2) * 1000 * Math.pow(10, 0) / 10) / (100 * Math.pow(10, 0))).toFixed(2)
-// 保留3位小数
-(Math.floor(parseFloat(10.2) * 1000 * Math.pow(10, 1) / 10) / (100 * Math.pow(10, 1))).toFixed(3)
-// 保留4位小数
-(Math.floor(parseFloat(10.2) * 1000 * Math.pow(10, 2) / 10) / (100 * Math.pow(10, 2))).toFixed(4)
-```
-
 ## 随机数公式
 ```javascript
 // 公式1
