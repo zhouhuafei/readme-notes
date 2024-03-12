@@ -57,4 +57,19 @@
 * https://www.zhihu.com/question/598034327/answer/3090915675/
 
 ## sd插件
-* https://zhuanlan.zhihu.com/p/651927862
+* 汉化插件1：https://github.com/dtlnor/stable-diffusion-webui-localization-zh_CN
+* 汉化插件2：https://github.com/VinsonLaro/stable-diffusion-webui-chinese
+  - 汉化插件，我用的这个，因为star数多。
+* 提示词插件：https://github.com/Physton/sd-webui-prompt-all-in-one
+  - 提示词插件，支持自动中文转英文、一键转英文、快速修改权重、收藏常用提示词，写提示词会方便很多。
+* 图片动作可控插件：https://github.com/Mikubill/sd-webui-controlnet
+  - 图片动作可控插件，可以精确绘制AI出图动作，还能给手稿上色，根据草图生成相应人，物等。
+* 视频无闪烁插件：https://github.com/s9roll7/ebsynth_utility
+  - 视频无闪烁插件，主要是用来生成稳定的视频帧的扩展。
+* AI动画生成插件：https://github.com/deforum-art/sd-webui-deforum
+  - AI动画生成插件，可以根据文本描述或参考图像生成连续的图像序列，并将它们拼接成视频。
+* 关键词反推插件：https://github.com/picobyte/stable-diffusion-webui-wd14-tagger
+  - 关键词反推插件，此插件的反推关键词更精准，生成的图片效果也更接近于原图效果。
+#### Deforum和EbSynth是两款强大的插件
+* Deforum是一款号称“瞬息全宇宙”的SD插件，只需要提供一帧的图像，它就可以基于设计多帧的文字提示、结合概率去噪扩散算法、随机生成各种风格的连续图像序列。
+* 如果说EbSynth的是基于图生图使得画面在可控的范围内转绘，那么Deforum就是基于文生图更富创造性的联想生成画面。
