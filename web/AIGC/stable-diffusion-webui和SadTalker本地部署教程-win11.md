@@ -29,6 +29,9 @@
 * 勾上GFPGAN as Face enhancer选项后报上述错误
 * 问题原因：文件夹解压的时候，套了一层gfpgan目录。
 * 解决方案：./gfpgan/gfpgan/变成./gfpgan/即可。
+#### in function 'cv::cvtColor'
+* 问题原因：图片名称不能使用汉字，音频名称可以。
+* 解决方案：图片名称不使用汉字。
 
 ## stable-diffusion-webui本地部署教程
 * https://zhuanlan.zhihu.com/p/577676154
