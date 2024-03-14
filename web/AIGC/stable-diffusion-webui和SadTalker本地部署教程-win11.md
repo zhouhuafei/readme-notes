@@ -76,3 +76,6 @@
 #### Deforum和EbSynth是两款强大的插件
 * Deforum是一款号称“瞬息全宇宙”的SD插件，只需要提供一帧的图像，它就可以基于设计多帧的文字提示、结合概率去噪扩散算法、随机生成各种风格的连续图像序列。
 * 如果说EbSynth的是基于图生图使得画面在可控的范围内转绘，那么Deforum就是基于文生图更富创造性的联想生成画面。
+#### sd升级版
+* webui：https://github.com/lllyasviel/stable-diffusion-webui-forge
+* 生成透明背景图插件：https://github.com/layerdiffusion/sd-forge-layerdiffuse
