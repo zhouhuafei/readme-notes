@@ -27,7 +27,7 @@
   - 如何训练模型？去哪下载模型？如何使用模型？[B站](https://www.bilibili.com/)皆有教程！
   - 已被训练好的模型资源（被墙了）：https://civitai.com/
   - 已被训练好的模型资源（可访问且资源丰富但文档不友好）：https://aituzhan.com/
-  - 已被训练好的模型资源（可访问且资源丰富且文档友好固推荐）：https://www.liblib.ai/
+  - 已被训练好的模型资源（可访问且资源丰富且文档友好固推荐）：https://www.liblib.art/
   - 已被训练好的模型资源（被墙了）：https://huggingface.co/runwayml/stable-diffusion-v1-5/tree/main
 
 ## Vega AI 创作平台
