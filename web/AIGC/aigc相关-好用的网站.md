@@ -57,15 +57,17 @@
 * 图片去水印开源项目：https://github.com/advimman/lama
 * 图片增强（变清晰）：https://github.com/TencentARC/GFPGAN
 * 视频增强（变清晰）：https://github.com/k4yt3x/video2x
-* 文本转图片：https://github.com/AUTOMATIC1111/stable-diffusion-webui
+* 文生图扩散模型：https://github.com/CompVis/stable-diffusion
+* 文本转图片WebUI（支持API模式）：https://github.com/AUTOMATIC1111/stable-diffusion-webui
 * 语音转文字：https://github.com/openai/whisper
 * 语音转文字：https://github.com/Const-me/Whisper
 * 离线语音转文字：https://github.com/chidiwilliams/buzz
 * 语音转文字：https://github.com/nl8590687/ASRT_SpeechRecognition
 * 文本转语音：https://github.com/coqui-ai/TTS
 * 文本转语音（Microsoft Edge）：https://github.com/rany2/edge-tts
-* 声音克隆：https://github.com/RVC-Boss/GPT-SoVITS
-* 配合音频可以让图片开口说话：https://github.com/Winfredy/SadTalker
+* 声音克隆WebUI：https://github.com/RVC-Boss/GPT-SoVITS
+* 声音克隆：https://github.com/CorentinJ/Real-Time-Voice-Cloning
+* 配合音频可以让图片开口说话（支持API模式）：https://github.com/Winfredy/SadTalker
 * 配合音频可以让图片开口说话（还可以根据音频转换视频中人物的口型）：https://github.com/Rudrabha/Wav2Lip
 * 根据音频转换视频中人物的口型：https://github.com/OpenTalker/video-retalking
 
