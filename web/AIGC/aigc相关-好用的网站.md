@@ -64,6 +64,7 @@
 * 语音转文字：https://github.com/nl8590687/ASRT_SpeechRecognition
 * 文本转语音：https://github.com/coqui-ai/TTS
 * 文本转语音（Microsoft Edge）：https://github.com/rany2/edge-tts
+* 声音克隆：https://github.com/RVC-Boss/GPT-SoVITS
 * 配合音频可以让图片开口说话：https://github.com/Winfredy/SadTalker
 * 配合音频可以让图片开口说话（还可以根据音频转换视频中人物的口型）：https://github.com/Rudrabha/Wav2Lip
 * 根据音频转换视频中人物的口型：https://github.com/OpenTalker/video-retalking
