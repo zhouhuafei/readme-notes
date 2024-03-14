@@ -53,6 +53,7 @@
 * ckpt和safetensors实质上是同样的文件，但因为各个模型算法有安全漏洞，导致普通模型文件ckpt可能携带病毒，所以对ckpt文件进行了封装，变成了更安全的safetensors。
 
 ## sd提示词案例
+* 推荐：https://www.liblib.art/
 * https://www.bilibili.com/read/cv25368715/
 * https://www.bilibili.com/read/cv25284218/
 * https://www.bilibili.com/read/cv25293812/
