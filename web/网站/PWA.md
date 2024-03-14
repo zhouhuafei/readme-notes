@@ -15,6 +15,7 @@
 > fetch(url)
 * fetch响应的是个流(ReadableStream)。需要res.json()转成json对象。或者res.text()转成字符串。
   - 搜索关键字`fetch 流式`，找寻可用案例。
+  - 讯飞星火的h5端，就是使用fetch发送问题，其响应结果就是以流的形式逐步返回的。
 * 可在Service Worker中使用的请求API。
 
 ### Service Worker文章
