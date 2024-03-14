@@ -26,7 +26,7 @@
 #### FFmpeg cannot edit existing files in-place.
 * 解决方案：更换src/test_audio2coeff.py文件，我存百度网盘了。
 #### RuntimeError: unexpected EOF, expected 270747 more bytes. The file might be corrupted.
-* 勾上GFPGAN as Face enhancer选项后报上述错误
+* 勾上GFPGAN as Face enhancer选项后报上述错误。
 * 问题原因：文件夹解压的时候，套了一层gfpgan目录。
 * 解决方案：./gfpgan/gfpgan/变成./gfpgan/即可。
 #### in function 'cv::cvtColor'
