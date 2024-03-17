@@ -377,3 +377,10 @@ Math.floor(Math.random() * (max - min + 1) + min)
 ## try/catch捕获错误
 * 能捕获同步错误
 * 还能在async函数内捕获await抛出的错误
+
+## 语音录入
+> js录音、语音录入、语音识别
+* https://www.zhihu.com/question/485683744/answer/2771614252
+* https://blog.csdn.net/WangYanWenXin/article/details/120447875
+* https://recorder.api.zhuyuntao.cn/Recorder/start.html
+* https://recorder.zhuyuntao.cn/
