@@ -1,13 +1,17 @@
 const wx = {
-  setClipboardData (options) {
+  async setClipboardData (options) {
     const val = options.data || ''
-    const input = document.createElement('textarea')
-    input.value = val
-    document.body.appendChild(input)
-    input.select()
-    input.blur()
-    document.execCommand('Copy')
-    document.body.removeChild(input)
+    if (navigator.clipboard.writeText) {
+      await navigator.clipboard.writeText(val)
+    } else {
+      const input = document.createElement('textarea')
+      input.setAttribute('value', val)
+      document.body.appendChild(input)
+      input.select()
+      input.blur()
+      document.execCommand('Copy')
+      document.body.removeChild(input)
+    }
   },
   setNavigationBarTitle (options) {
     document.title = options.title || ''
