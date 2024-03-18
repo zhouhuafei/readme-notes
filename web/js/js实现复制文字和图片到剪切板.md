@@ -17,6 +17,7 @@ document.querySelector('.my-copy-txt-btn').addEventListener('click', () => {
 })
 </script>
 ```
+* 上述已不兼容IOS，在本项目中，搜索`async setClipboardData`关键字，查看最新API：`await navigator.clipboard.writeText(val)`。
 
 ## 复制图片
 > https://blog.csdn.net/amyleeYMY/article/details/99311440
