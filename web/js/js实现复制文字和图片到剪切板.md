@@ -1,5 +1,19 @@
 > js实现复制文字和图片到剪切板
 
+## 复制文字和复制图片
+#### 复制内容到剪切板 - 文字和图片均可复制
+* navigator.clipboard.write
+* https://developer.mozilla.org/zh-CN/docs/Web/API/Clipboard/write
+#### 复制内容到剪切板 - 仅可复制文字
+* navigator.clipboard.writeText
+* https://developer.mozilla.org/zh-CN/docs/Web/API/Clipboard/writeText
+#### 读取剪贴板的内容 - 文字和图片均可读取
+* navigator.clipboard.read
+* https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/read
+#### 读取剪贴板的内容 - 仅可读取文字
+* navigator.clipboard.readText
+* https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/readText
+
 ## 复制文字 - 存在不兼容IOS的问题
 ```html
 <button class="my-copy-txt-btn">复制文本</button>
