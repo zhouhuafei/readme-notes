@@ -49,3 +49,15 @@ High definition, pure white background, (1 girl's upper body: 1.8), in the middl
 难看、变形、质量低、多余的手指、残缺的手指、多余的身体、多余的头、多余的腿、多余的脚
 Ugly, deformed, low quality, extra fingers, missing fingers, extra body, extra head, extra legs, extra feet
 ```
+
+## 文生图 - 原生 - 案例3
+```
+// 模型
+revAnimated_v122
+// LORA
+IP _ Q版 _ 3D 十二生肖_v1
+// 正向提示词
+1gril, solo, zodiac signs, bubbles, blue clothes, blue hair, blue eyes, ox horn
+// 负向提示词
+ng_deepnegative_v1_75t, badhandv4 (worst quality:2), (low quality:2), (normal quality:2), lowres, bad anatomy, bad hands, normal quality, ((monochrome)), ((grayscale)), nsfw
+```
