@@ -3,7 +3,7 @@
 // 模型
 NingLO-PureCGrealistic_3.0
 // 正向提示词
-masterpiece, best quality, ultra highres, Sharpen, 1girl, solo, shirt, middle finger, long hair, denim miniskirt, flower, t-shirt, red shirt, hands in pocket, (streaked hair:1.4), wavy hair, pink hair, navel, white background
+masterpiece, best quality, ultra highres, Sharpen, 1girl, solo, shirt, middle finger, long hair, upper body, flower, t-shirt, red shirt, (streaked hair:1.4), wavy hair, pink hair, navel, smile, white background
 // 负向提示词
 bad_prompt_version2, badhandv4, sketches, (worst quality:2), (low quality:2), (normal quality:2), lowers, normal quality, ((monochrome)), ((grayscale)), skin spots, acnes, skin blemishes, bad anatomy, DeepNegative, (fat:1.2), facing away, looking away, tilted head, bad anatomy, bad hands, text, error, logo, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, (watermark:2), character watermark, username, blurry, bad feet, cropped, poorly drawn hands, poorly drawn face, mutation, deformed, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, extra fingers, fewer digits, extra limbs, extra arms, extra legs, malformed limbs, fused fingers, too many fingers, long neck, cross-eyed, mutated hands, bad body, bad proportions, gross proportions, text, error, missing fingers, missing arms, missing legs, extra digit, extra arms, extra leg, extra foot, easynegative, ng_deepnegative_v1_75t
 // 采样器
