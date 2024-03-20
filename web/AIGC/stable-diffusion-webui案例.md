@@ -58,27 +58,27 @@ revAnimated_v122
 IP _ Q版 _ 3D 十二生肖_v1
 // 正向提示词 - 子鼠
 1gril, solo, zodiac signs, bubbles, white clothes, white hair, white eyes, little mouse
-// 正向提示词 - 丑牛 - TODO
+// 正向提示词 - 丑牛
 1gril, solo, zodiac signs, bubbles, blue clothes, blue hair, blue eyes, ox horn
 // 正向提示词 - 寅虎
 1gril, solo, zodiac signs, bubbles, yellow clothes, yellow hair, yellow eyes, small tiger
-// 正向提示词 - 卯兔 - TODO
+// 正向提示词 - 卯兔
 1gril, solo, zodiac signs, bubbles, red clothes, red hair, red eyes, rabbit ears
 // 正向提示词 - 辰龙
 1gril, solo, zodiac signs, bubbles, green clothes, green hair, green eyes, small dragon
-// 正向提示词 - 巳蛇 - TODO
+// 正向提示词 - 巳蛇
 1gril, solo, zodiac signs, bubbles, green clothes, green hair, green eyes, small snake
 // 正向提示词 - 午马
 1gril, solo, zodiac signs, bubbles, white clothes, white hair, white eyes, small white horse
-// 正向提示词 - 未羊 - TODO
+// 正向提示词 - 未羊
 1gril, solo, zodiac signs, bubbles, white clothes, white hair, white eyes, ram horn
 // 正向提示词 - 申猴
 1gril, solo, zodiac signs, bubbles, golden clothes, golden hair, golden eyes, little monkey
 // 正向提示词 - 酉鸡
 1gril, solo, zodiac signs, bubbles, red clothes, red hair, red eyes, rooster
-// 正向提示词 - 戌狗 - TODO
+// 正向提示词 - 戌狗
 1gril, solo, zodiac signs, bubbles, black clothes, black hair, black eyes, small dog
-// 正向提示词 - 亥猪 - TODO
+// 正向提示词 - 亥猪
 1gril, solo, zodiac signs, bubbles, pink clothes, pink hair, pink eyes, small pig
 // 负向提示词
 ng_deepnegative_v1_75t, badhandv4 (worst quality:2), (low quality:2), (normal quality:2), lowres, bad anatomy, bad hands, normal quality, ((monochrome)), ((grayscale)), nsfw
