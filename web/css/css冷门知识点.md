@@ -164,3 +164,12 @@ safe-area-inset-left：安全区域距离左边界距离 通常是0
 
 ## css各种loading案例
 * 案例：https://blog.csdn.net/hdp134793/article/details/131655277
+
+## 换行
+```scss
+pre,
+code {
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+```
