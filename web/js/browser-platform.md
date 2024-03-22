@@ -1,3 +1,7 @@
+#### npm第三方包推荐
+* react-device-detect
+
+#### 自己写
 ```
 (function (name, factory) {
     if (typeof exports === 'object' && typeof module !== 'undefined') { // nodejs - commonjs canon
