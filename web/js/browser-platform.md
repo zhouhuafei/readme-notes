@@ -1,5 +1,7 @@
-#### npm第三方包推荐
-* react-device-detect
+#### 第三方包推荐
+* https://github.com/duskload/react-device-detect
+* https://github.com/bestiejs/platform.js
+* https://github.com/react-native-device-info/react-native-device-info
 
 #### 自己写
 ```
