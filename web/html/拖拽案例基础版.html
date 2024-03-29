@@ -28,7 +28,7 @@
         // mask是为了防止拖拽到iframe上时出现卡顿。
         // iframe的zIndex需要低于mask的zIndex，否则拖拽起来会卡顿。
         const mask = document.createElement('div')
-        const zIndex = (getComputedStyle(draggable).zIndex) - 1
+        const zIndex = getComputedStyle(draggable).zIndex - 1
         mask.setAttribute('style', `width:100%;height:100%;position:fixed;left:0;top:0;z-index:${zIndex};display:none;`)
         document.body.appendChild(mask)
         draggable.addEventListener('click', () => {
