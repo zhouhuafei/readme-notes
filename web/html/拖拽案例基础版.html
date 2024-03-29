@@ -29,13 +29,14 @@
         // iframe的zIndex需要低于mask的zIndex，否则拖拽起来会卡顿。
         const mask = document.createElement('div')
         const zIndex = (getComputedStyle(draggable).zIndex) - 1
-        mask.setAttribute('style', `width:100%;height:100%;position:fixed;left:0;top:0;z-index:${zIndex};`)
+        mask.setAttribute('style', `width:100%;height:100%;position:fixed;left:0;top:0;z-index:${zIndex};display:none;`)
+        document.body.appendChild(mask)
         draggable.addEventListener('click', () => {
           this.iframeWrapShow()
         })
         draggable.addEventListener('mousedown', (e) => {
           e.preventDefault()
-          document.body.appendChild(mask)
+          mask.style.display = 'block'
           let isDragging = true
           this.draggableIsTriggerMove = false
           const initialX = e.clientX - draggable.offsetLeft
@@ -49,7 +50,7 @@
             draggable.style.top = newY + 'px'
           }
           const onMouseUp = () => {
-            document.body.removeChild(mask)
+            mask.style.display = 'none'
             isDragging = false
             document.removeEventListener('mousemove', onMouseMove)
             document.removeEventListener('mouseup', onMouseUp)
