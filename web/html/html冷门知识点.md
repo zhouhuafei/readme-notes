@@ -146,27 +146,24 @@ watch(() => thisFields.text, async () => {
 ```html
 <textarea id="myTextarea" style="width:300px; height:200px;"></textarea>
 <script>
-  var textarea = document.getElementById('myTextarea');
+const textarea = document.getElementById('myTextarea')
 
-  textarea.addEventListener('keydown', function(event) {
-    // 检查是否同时按下了Ctrl键和Enter键
-    if (event.ctrlKey && (event.key === 'Enter' || event.keyCode === 13)) {
-      // 阻止默认行为
-      event.preventDefault();
+textarea.addEventListener('keydown', function (event) {
+  // 检查是否同时按下了Ctrl键和Enter键
+  if (event.ctrlKey && (event.key === 'Enter' || event.keyCode === 13)) {
+    // 阻止默认行为
+    event.preventDefault()
 
-      // 获取当前的光标位置
-      const cursorPos = textarea.selectionStart;
-      const text = textarea.value;
+    // 获取当前的光标位置
+    const cursorPos = textarea.selectionStart
+    const text = textarea.value
 
-      // 插入换行符
-      const newText = text.substring(0, cursorPos) + "\n" + text.substring(cursorPos);
+    // 插入换行符 并 更新textarea的内容
+    textarea.value = text.substring(0, cursorPos) + '\n' + text.substring(cursorPos)
 
-      // 更新textarea的内容
-      textarea.value = newText;
-
-      // 移动光标到新位置（光标位置 + 1，因为插入了一个字符）
-      textarea.selectionStart = textarea.selectionEnd = cursorPos + 1;
-    }
-  });
+    // 移动光标到新位置（光标位置 + 1，因为插入了一个字符）
+    textarea.selectionStart = textarea.selectionEnd = cursorPos + 1
+  }
+})
 </script>
 ```
