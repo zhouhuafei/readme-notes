@@ -16,6 +16,7 @@
     none: 表示不应该预加载视频。【不推荐，因黑屏的体验太差】
     metadata: 表示仅预先获取视频的元数据（例如长度）。【推荐】
     auto: 表示可以下载整个视频文件，即使用户不希望使用它。【不推荐，因太浪费流量】
+    空字符串: 和值为auto一致。每个浏览器的默认值都不相同，即使规范建议设置为metadata。
     -->
     <video src="https://cjdg-ol-video-1323085753.cos.ap-shanghai.myqcloud.com/1705735845192745.mp4" controls preload="none"></video>
     <video src="https://cjdg-ol-video-1323085753.cos.ap-shanghai.myqcloud.com/csz1705737281830770.mp4" controls preload="auto"></video>
