@@ -38,28 +38,29 @@
   </head>
   <body>
     <!--
-    video的preload属性值
-    none: 表示不应该预加载视频。【不推荐，因黑屏的体验太差】
-    metadata: 表示仅预先获取视频的元数据（例如长度）。【推荐】
-    auto: 表示可以下载整个视频文件，即使用户不希望使用它。【不推荐，因太浪费流量】
-    空字符串: 和值为auto一致。每个浏览器的默认值都不相同，即使规范建议设置为metadata。
+    video的preload属性值。亲测不管设置为什么，都是播多少下载多少，不会上来就下载整个视频文件。
+    none: 表示不应该预加载视频。【亲测后不推荐，因不预加载会黑屏】【1G的视频点一下滚动条会加载2M左右的数据】
+    metadata: 表示仅预先获取视频的元数据，例如长度。【亲测后推荐，因不仅仅只获取了视频的元数据，还加载了部分视频数据】【1G的视频点一下滚动条会加载2M左右的数据】
+    auto: 表示可以下载整个视频文件，即使用户不希望使用它。【亲测后推荐，因并不会下载整个视频文件，只会加载部分视频数据】【1G的视频点一下滚动条会加载10M左右的数据】
+    空字符串: 和值为auto一致。
+    默认值：每个浏览器的默认值都不相同，即使规范建议设置为metadata。【亲测后觉的没必要设置video的preload属性值，就走默认值就挺好，只要默认值不是none就行，因metadata和auto的实际表现大同小异】
+    优先级：autoplay属性的优先级比preload高。自动播放需要静音。如果用户先在页面的任何地方用鼠标点击一下（需要用户的主动点击行为而非使用脚本自动点击），则无需静音就可以使用js自动播放视频。视频的连续播放功能依靠此特性。
 
-    autoplay属性的优先级比preload高。自动播放需要静音。
+    视频1：https://video.xxynet.com/jnby_w_1711518053465183.mp4
+    上述视频1是一个编码格式有问题的视频 播放时 会一直无限加载 无限浪费流量
+    使用ShanaEncoder对视频1压缩后 这个问题就不存在了 因为压缩工具会纠正视频编码格式
+
+    视频2：https://video.xxynet.com/sqys_w_1712113005047597.mp4
+    上述视频2是一个编码格式没问题的视频 播放时 一切正常
     -->
     <h2>腾讯云视频</h2>
-    <!--不点击播放时，会黑屏，会下载部分视频。点击播放会下载部分视频。不推荐-->
-    <video src="https://video.xxynet.com/jnby_w_1711518053465183.mp4?none" controls preload="none"></video>
-    <!--不点击播放时，不黑屏，会下载部分视频。点击播放会下载全部视频。不推荐-->
-    <video src="https://video.xxynet.com/jnby_w_1711518053465183.mp4?auto" controls preload="auto"></video>
-    <!--不点击播放时，不黑屏，会下载部分视频。点击播放会下载部分视频。很推荐-->
-    <video src="https://video.xxynet.com/jnby_w_1711518053465183.mp4?metadata" controls preload="metadata"></video>
+    <video src="https://video.xxynet.com/sqys_w_1712113005047597.MP4?none" controls preload="none"></video>
+    <video src="https://video.xxynet.com/sqys_w_1712113005047597.MP4?auto" controls preload="auto"></video>
+    <video src="https://video.xxynet.com/sqys_w_1712113005047597.MP4?metadata" controls preload="metadata"></video>
     <h2>七牛云视频</h2>
-    <!--不点击播放时，会黑屏，会下载部分视频。点击播放会下载部分视频。不推荐-->
-    <video src="https://qiniu.icaodong.com/jnby_w_1711518053465183.mp4?none" controls preload="none"></video>
-    <!--不点击播放时，不黑屏，会下载部分视频。点击播放会下载全部视频。不推荐-->
-    <video src="https://qiniu.icaodong.com/jnby_w_1711518053465183.mp4?auto" controls preload="auto"></video>
-    <!--不点击播放时，不黑屏，会下载部分视频。点击播放会下载部分视频。很推荐-->
-    <video src="https://qiniu.icaodong.com/jnby_w_1711518053465183.mp4?metadata" controls preload="metadata"></video>
+    <video src="https://qiniu.icaodong.com/sqys_w_1712113005047597.mp4?none" controls preload="none"></video>
+    <video src="https://qiniu.icaodong.com/sqys_w_1712113005047597.mp4?auto" controls preload="auto"></video>
+    <video src="https://qiniu.icaodong.com/sqys_w_1712113005047597.mp4?metadata" controls preload="metadata"></video>
     <h2>腾讯云图片</h2>
     <img src="https://supershoper.xxynet.com/csz_web_1706123271215.jpg" alt="">
     <img src="https://supershoper.xxynet.com/csz_web_1706122772984.jpg" alt="">
