@@ -172,7 +172,7 @@ safe-area-inset-left：安全区域距离左边界距离 通常是0
 ```scss
 pre,
 code {
-  white-space: pre-wrap;
+  white-space: pre-wrap; // 保留所有的空白字符和换行符，但允许在需要时进行换行。
   word-break: break-all;
 }
 ```
