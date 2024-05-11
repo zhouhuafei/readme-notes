@@ -5,7 +5,7 @@
 * 函数自执行,和函数调用,this指向undefined(和非严格模式不一致，非严格模式指向window)
 
 # nodeJS
-* nodeJS中的this，模块中指向```module.exports```，函数中指向```global```。方法中指向方法所属对象。
+* CommonJS规范下，nodeJS中的this，模块中指向`module.exports`，函数中指向`global`。方法中指向方法所属对象。
 ```
 console.log(this === module.exports); // true
 
