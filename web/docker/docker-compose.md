@@ -12,7 +12,7 @@ services:
       - 443:443
     volumes:
       - ./config/nginx/conf.d:/etc/nginx/conf.d
-      - ../../:/usr/share/nginx/html # bind mount 会清空容器内的文件，挂载宿主机的文件。
+      - ../../:/usr/share/nginx/html/www # bind mount 会清空容器内的文件，挂载宿主机的文件。
   mongo:
     container_name: mongo
     image: mongo:latest
@@ -29,20 +29,20 @@ services:
       - redis-data:/data
     ports:
       - 6379:6379
-  mysql:
-    container_name: mysql
-    image: mysql:latest
-    restart: always
-    volumes:
-      - mysql-data:/var/lib/mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: root # 必须要配置，否则启动不了。
-    ports:
-      - 3306:3306
+#  mysql:
+#    container_name: mysql
+#    image: mysql:latest
+#    restart: always
+#    volumes:
+#      - mysql-data:/var/lib/mysql
+#    environment:
+#      MYSQL_ROOT_PASSWORD: root # 必须要配置，否则启动不了。
+#    ports:
+#      - 3306:3306
 volumes:
   mongo-data:
   redis-data:
-  mysql-data:
+#  mysql-data:
 ```
 
 # docker-compose官方文档
