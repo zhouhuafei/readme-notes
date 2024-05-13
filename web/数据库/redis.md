@@ -100,10 +100,10 @@ keys *
 * Redis支持五种数据类型：string（字符串），hash（哈希），list（列表），set（集合）及zset(sorted set：有序集合)。
 ```shell
 set key 123
-# 会输出 '123'
+# 会输出 "123"
 get key
-set key {a: 1, b: 2}
-# 会输出 '{a: 1, b: 2}'
+set key '{"a":1,"b":2}'
+# 会输出 "{\"a\":1,\"b\":2}"
 get key
 del key
 ```
