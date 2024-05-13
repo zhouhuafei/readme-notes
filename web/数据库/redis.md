@@ -111,3 +111,13 @@ redisClient.get('key', function(error, value){}); // value是'123'
 redisClient.set('key', {a: 1, b: 2}); // 存储，这里其实也是异步的
 redisClient.get('key', function(error, value){}); // value是'[object Object]'
 ```
+
+## redis-cli
+#### 启动redis-cli
+* 运行`redis-cli`命令即可。
+#### 使用某个库 - 默认使用第0个库
+* 运行`SELECT 1`命令即可。或运行`redis-cli -n 1`命令。
+#### 查看使用的哪个库
+* `redis-cli`无对应命令。
+#### 查看指定库的所有key
+* 运行`KEYS *`命令即可。
