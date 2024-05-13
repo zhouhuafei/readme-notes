@@ -112,7 +112,7 @@ del key
 redisClient.set('key', 123); // 存储，这里其实也是异步的
 redisClient.get('key', function(error, value){}); // value是'123'
 redisClient.set('key', {a: 1, b: 2}); // 存储，这里其实也是异步的
-redisClient.get('key', function(error, value){}); // value是'[object Object]'
+redisClient.get('key', function(error, value){}); // value是'[object Object]' - 因存储时会把对象转为字符串 - 使用JSON序列化可以规避这个问题
 ```
 
 ## redis-cli
