@@ -30,41 +30,21 @@ $ launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist
 ```
 rm /Users/zhouhuafei/Library/LaunchAgents/homebrew.mxcl.mongodb.plist
 ```
-* 启动mongodb数据库
-```
-brew services start mongodb
-```
-* 停止mongodb数据库
-```
-brew services stop mongodb
-```
-* 配置文件的位置
-```
-/usr/local/etc/mongod.conf
-```
-*日志的位置
-```
-/usr/local/var/log/mongodb/mongo.log
-```
-* 数据的位置
-```
-/usr/local/var/mongodb/
-```
-* 输入mongo命令,链接成功,则表示mongodb服务是启动状态
-* 可视化工具
-  - Studio 3T
-
-* 启动mongodb数据库
-```
-mongod
-```
-* 链接mongodb数据库
-```
-mongo
-```
-* 查看mongodb数据库的版本号
-```
-mongo --version
-```
+* 启动mongodb数据库：`brew services start mongodb`。
+* 停止mongodb数据库：`brew services stop mongodb`。
+* 配置文件的位置：`/usr/local/etc/mongod.conf`。
+* 日志的位置：`/usr/local/var/log/mongodb/mongo.log`。
+* 数据的位置：`/usr/local/var/mongodb/`。
+* 输入mongo命令，连接成功，则表示mongodb服务是启动状态。
+* 可视化工具：`Studio 3T`。
+#### 启动mongodb数据库
+* 运行`mongod`命令即可。
+#### 连接mongodb数据库
+* `MongoDB 4.0`版本之前使用`mongo`命令。
+* `MongoDB 4.0`版本之后使用`mongosh`命令。
+#### 查看mongodb数据库的版本号
+* 查看MongoDB数据库服务器的版本：`mongod --version`。
+* 查看MongoDB命令行客户端`mongo shell`的版本：`mongo --version`。
+* 查看MongoDB命令行客户端`mongosh shell`的版本：`mongosh --version`。
 
 # windows

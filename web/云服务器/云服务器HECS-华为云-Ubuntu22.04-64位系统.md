@@ -18,4 +18,16 @@ KEYS *
 ```
 
 ## 如何修改mongo容器中的数据？
-* ...TODO
+#### db version v4.0.0之前
+* 先运行`docker exec -it mongo bash`命令进入mongo容器。
+* 后运行`mongo`命令连接数据库。
+#### db version v4.0.0之后
+* 先运行`docker exec -it mongo bash`命令进入mongo容器。
+* 后运行`mongosh`命令连接数据库。
+#### 常用命令
+```shell
+show dbs
+use easy-tool-set
+show collections
+db.Hello.find()
+```
