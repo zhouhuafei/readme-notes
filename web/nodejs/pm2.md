@@ -27,8 +27,8 @@
 
 # 开机自启动
 1. pm2 start pm2.json
-2. pm2 save
-3. pm2 startup
+2. pm2 startup
+3. pm2 save
 
 # 开机自启动解释
 > 官方文档：https://pm2.keymetrics.io/docs/usage/startup/
