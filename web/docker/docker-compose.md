@@ -93,3 +93,9 @@ https://blog.csdn.net/qq_36148847/article/details/79427878
 
 # 使用docker compose命令来代替原来的docker-compose命令
 * 从Docker Compose 1.27.0版本开始，docker-compose命令已经被集成到了Docker CLI中。现在可以使用docker compose命令来代替原来的docker-compose命令。
+
+# 下载最新的mongo7.0镜像结果使用的还是4.0镜像
+* 删除本地以前安装的4.0镜像：`docker rmi mongo:latest`。
+* 安装最新的7.0镜像：`docker pull mongo:latest`。
+* `docker-compose up`时mongo报错，错误信息附带了4.0版本的信息，并说当前期望7.0版本。
+* 我卸载并重装了docker后就一切正常了，怀疑是缓存问题。
