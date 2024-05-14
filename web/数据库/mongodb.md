@@ -4,7 +4,7 @@
 * 配置文件的位置：`/usr/local/etc/mongod.conf`。
 * 数据的位置：`/usr/local/var/mongodb/`。
 * 日志的位置：`/usr/local/var/log/mongodb/mongo.log`。
-* 可视化工具：`Studio 3T`。
+* 可视化工具：`Navicat Premium15`。
 #### 手动启动mongodb数据库
 * 使用`brew`命令启动mongodb数据库：`brew services start mongodb`。
 * 使用`brew`命令停止mongodb数据库：`brew services stop mongodb`。
