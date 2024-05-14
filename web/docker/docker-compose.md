@@ -90,3 +90,6 @@ https://blog.csdn.net/qq_36148847/article/details/79427878
 
 # 查看日志
 `docker-compose logs -t --tail=100 nginx`
+
+# 使用docker compose命令来代替原来的docker-compose命令
+* 从Docker Compose 1.27.0版本开始，docker-compose命令已经被集成到了Docker CLI中。现在可以使用docker compose命令来代替原来的docker-compose命令。
