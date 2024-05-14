@@ -27,3 +27,4 @@
 ## C盘爆满
 * 去这个目录`C:\Users\dell`下，找大文件，删掉。`dell`是用户名。
 * 这个目录`C:\Users\dell\AppData`下，有很多大文件，可酌情删减。
+* 我删掉了`C:\Users\dell\AppData\Local`下的`微信开发者工具`目录，省出了`20G`的空间。
