@@ -89,3 +89,9 @@ declare module '*.scss' {
 * 编译器把模板编译成渲染函数h`h('div', { onClick: handler }, 'click me')`。
 * 渲染函数h返回虚拟DOM（用来描述真实DOM的普通JavaScript对象）。
 * 渲染器renderer函数把虚拟DOM渲染成真实DOM。
+
+## Vite
+#### env
+> https://cn.vitejs.dev/guide/env-and-mode.html#modes
+* 默认情况下，开发服务器 (dev 命令) 运行在 development (开发) 模式，而 build 命令则运行在 production (生产) 模式。
+* 这意味着当执行 vite build 时，它会自动加载 .env.production 中可能存在的环境变量。
