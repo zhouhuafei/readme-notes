@@ -16,7 +16,7 @@
 * 期望薪资：面议
 
 ## 经历简述
-* 最近7年，主要独立负责电商相关的pc管理系统和h5端以及微信小程序端的开发。期间也做过app内嵌h5的混合开发。
+* 最近8年，主要独立负责电商相关的pc管理系统和h5端以及微信小程序端的开发。期间也做过app内嵌h5的混合开发。
 * 最初2年，主要独立负责医疗和医美相关的pc网站和h5网站的开发。
 
 ## 工作经历 + 项目经历
@@ -62,6 +62,8 @@
   - 值得一说的事：Less补充、基础组件补充、业务组件补充、引入对api进行二次封装的概念、引入企微机器人接口报警、引入企微机器人js报警、使用Vue3进行逐步重构。
 * 超级导购app内嵌h5：Create-React-App + React18 + react-router-dom + mobx-react + TS/TSX + Less + antd-mobile
   - 值得一说的事：引入企微机器人接口报警、引入企微机器人js报警。
+* AI助手管理端：create-vue（Vite） + Vue3全家桶 + Scss + Element-Plus
+* AI助手客户端：create-vue（Vite） + Vue3全家桶 + Scss + Vant
 #### 超级任务（平台）
 * 超级任务运营端：yudao-ui-admin-vue3
 * 超级任务发包端：yudao-ui-admin-vue3
