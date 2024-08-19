@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>次卧设计</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+        font-size: 12px;
+      }
+
+      .room {
+        width: 467px;
+        height: 284px;
+        text-align: center;
+        background: #e1e1e1;
+        margin: 50px 0 0 60px;
+        display: flex;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .area {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #a1a1a1;
+      }
+
+      .door {
+        border-radius: 1000px;
+        width: 140px;
+        height: 140px;
+        position: absolute;
+        left: 50px;
+        bottom: 0;
+        transform: translate(-50%, 50%);
+        box-sizing: border-box;
+        padding: 0 0 50px 50px;
+      }
+
+      .wardrobe {
+        width: 50px;
+        height: 100%;
+      }
+
+      .bed {
+        margin-left: 70px;
+        width: 180px;
+        height: 200px;
+      }
+
+      .desktop {
+        position: absolute;
+        right: 0;
+        width: 60px;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="room">
+      <div class="area door">开门<br>70x70</div>
+      <div class="area wardrobe">衣柜<br>50x284</div>
+      <div class="area bed">床<br>180x200</div>
+      <div class="area desktop">桌子<br>60x284</div>
+    </div>
+  </body>
+</html>
