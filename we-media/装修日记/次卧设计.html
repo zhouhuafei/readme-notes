@@ -12,11 +12,11 @@
       }
 
       .room {
-        width: 467px;
-        height: 284px;
+        width: 455px;
+        height: 270px;
         text-align: center;
         background: #e1e1e1;
-        margin: 50px 0 0 60px;
+        margin: 30px 0 0 40px;
         display: flex;
         position: relative;
         overflow: hidden;
@@ -24,37 +24,94 @@
 
       .area {
         display: flex;
-        align-items: center;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
         background: #a1a1a1;
       }
 
-      .door {
-        border-radius: 1000px;
-        width: 140px;
-        height: 140px;
-        position: absolute;
-        left: 50px;
-        bottom: 0;
-        transform: translate(-50%, 50%);
-        box-sizing: border-box;
-        padding: 0 0 60px 50px;
-      }
-
       .wardrobe {
-        width: 50px;
+        width: 55px;
         height: 100%;
       }
 
+      .doorArea {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+      }
+
+      .leftGap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+      }
+
+      .door {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        border: 1px dashed #a1a1a1;
+        border-left: none;
+        border-bottom: none;
+        width: 86px;
+        height: 86px;
+        position: relative;
+      }
+
+      .doorText {
+        position: relative;
+        z-index: 2;
+      }
+
+      .doorSector {
+        width: 200%;
+        height: 200%;
+        position: absolute;
+        left: -100%;
+        top: 0;
+        border-radius: 50%;
+        background: #a1a1a1;
+      }
+
+      .bedArea {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
       .bed {
-        margin-left: 70px;
         width: 180px;
         height: 200px;
+        position: relative;
+      }
+
+      .middleGap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+      }
+
+      .rightGap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
       }
 
       .desktop {
-        position: absolute;
-        right: 0;
         width: 60px;
         height: 100%;
       }
@@ -62,10 +119,62 @@
   </head>
   <body>
     <div class="room">
-      <div class="area door">开门<br>70x70</div>
-      <div class="area wardrobe">衣柜<br>50x284</div>
-      <div class="area bed">床<br>180x200</div>
-      <div class="area desktop">桌子<br>60x284</div>
+      <div class="area wardrobe">
+        <div>衣柜</div>
+        <div></div>
+      </div>
+      <div class="doorArea">
+        <div class="leftGap">
+          <div>余</div>
+          <div></div>
+        </div>
+        <div></div>
+        <div class="door">
+          <div class="doorText">开门</div>
+          <div class="doorText"></div>
+          <div class="doorSector"></div>
+        </div>
+      </div>
+      <div class="bedArea">
+        <div class="area bed">
+          <div>床</div>
+          <div></div>
+        </div>
+        <div class="middleGap">
+          <div>余</div>
+          <div></div>
+        </div>
+      </div>
+      <div class="rightGap">
+        <div>余</div>
+        <div></div>
+      </div>
+      <div class="area desktop">
+        <div>桌子</div>
+        <div></div>
+      </div>
     </div>
+    <script>
+    const setText = item => {
+      const dom = item.dom
+      const w = dom.offsetWidth
+      const h = dom.offsetHeight
+      let innerHTML = `${w}x${h}`
+      if (item.onlyLeft) innerHTML = `${w}`
+      dom.querySelectorAll('div')[1].innerHTML = innerHTML
+    }
+
+    const domArr = [
+      { dom: document.querySelector('.wardrobe') },
+      { dom: document.querySelector('.leftGap') },
+      { dom: document.querySelector('.door') },
+      { dom: document.querySelector('.bed') },
+      { dom: document.querySelector('.middleGap') },
+      { dom: document.querySelector('.rightGap') },
+      { dom: document.querySelector('.desktop') }
+    ]
+
+    domArr.forEach(v => setText(v))
+    </script>
   </body>
 </html>
