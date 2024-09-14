@@ -6,15 +6,16 @@ const wx = {
       try {
         await navigator.clipboard.writeText(val)
       } catch (e) {
-        setClipboardData()
+        console.log('e：', e)
+        setClipboardData2()
       }
     } else {
-      setClipboardData()
+      setClipboardData2()
     }
 
-    function setClipboardData () {
+    function setClipboardData2 () {
       const input = document.createElement('textarea')
-      input.setAttribute('value', val)
+      input.value = val
       document.body.appendChild(input)
       input.select()
       input.blur()
