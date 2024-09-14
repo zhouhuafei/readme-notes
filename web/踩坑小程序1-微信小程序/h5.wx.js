@@ -1,9 +1,18 @@
 const wx = {
   async setClipboardData (options) {
     const val = options.data || ''
+
     if (navigator.clipboard.writeText) {
-      await navigator.clipboard.writeText(val)
+      try {
+        await navigator.clipboard.writeText(val)
+      } catch (e) {
+        setClipboardData()
+      }
     } else {
+      setClipboardData()
+    }
+
+    function setClipboardData () {
       const input = document.createElement('textarea')
       input.setAttribute('value', val)
       document.body.appendChild(input)
