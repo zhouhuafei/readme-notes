@@ -137,4 +137,6 @@
   - 重构：已使用uni-cli（Vite） + uni-app + Vue3 + Pinia + TS/TSX + Scss + uni-ui进行重构
 
 ## 在线简历
-* 网址：https://gitee.com/zhouhuafei/about-me
+* 网址1：https://gitee.com/zhouhuafei/about-me
+* 网址2：https://docs.qq.com/doc/DWGxoTlNKVUdTd3Jn
+* 网址3：https://github.com/zhouhuafei/readme-notes/blob/master/work/about-me/work-resume.min.md
