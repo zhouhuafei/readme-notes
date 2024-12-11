@@ -401,3 +401,29 @@ git merge upstream/xxx
 
 ## 从所有的提交历史记录中删除某个文件
 `git filter-branch --tree-filter 'rm -f passwords.txt' HEAD`
+
+# 把coding代码同步到客户gitlab仓库
+* 方式一：在客户gitlab仓库建立git上游upstream
+```bash
+# 在客户gitlab仓库对应的项目命令行中建立git上游upstream
+git remote add upstream https://e.coding.net/g-kjhh4465/standard-api/muji-admin.git
+# 拉取上游master分支最新代码（以master分支为示例，其他分支同理）
+git fetch upstream master
+# 合并上游master分支代码到本地
+git merge upstream/master
+# 把合并的代码提交到客户仓库
+git push
+```
+* 方式2：在coding仓库建立git上游upstream
+```bash
+# 在coding仓库对应的项目命令行中建立git上游upstream
+git remote add upstream http://10.10.10.126/member/muji-admin.git
+# 拉取上游master分支最新代码（以master分支为示例，其他分支同理）
+git fetch upstream master
+# 合并上游master分支代码到本地
+git merge upstream/master
+# 把合并的代码提交到客户仓库
+git push upstream master
+# 把合并的代码提交到coding仓库
+git push
+```
