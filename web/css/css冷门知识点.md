@@ -163,26 +163,38 @@ div {
 @font-face {
   font-family: 'MUJIFont2020';
   font-weight: 300;
-  src: url('https://daozhi-tmp.oss-cn-shanghai.aliyuncs.com/muji/fonts/MUJIFont2020-Light.otf') format('truetype');
+  src: url('https://daozhi-tmp.oss-cn-shanghai.aliyuncs.com/muji/fonts/MUJIFont2020-Light.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'MUJIFont2020';
   font-weight: 400;
-  src: url('https://daozhi-tmp.oss-cn-shanghai.aliyuncs.com/muji/fonts/MUJIFont2020-Regular.otf') format('truetype');
+  src: url('https://daozhi-tmp.oss-cn-shanghai.aliyuncs.com/muji/fonts/MUJIFont2020-Regular.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'MUJIFont2020';
   font-weight: 700;
-  src: url('https://daozhi-tmp.oss-cn-shanghai.aliyuncs.com/muji/fonts/MUJIFont2020-Blod.otf') format('truetype');
+  src: url('https://daozhi-tmp.oss-cn-shanghai.aliyuncs.com/muji/fonts/MUJIFont2020-Blod.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'MUJIFont2020';
   font-weight: 900;
-  src: url('https://daozhi-tmp.oss-cn-shanghai.aliyuncs.com/muji/fonts/MUJIFont2020-Heavy.otf') format('truetype');
+  src: url('https://daozhi-tmp.oss-cn-shanghai.aliyuncs.com/muji/fonts/MUJIFont2020-Heavy.otf') format('opentype');
 }
+```
+#### format用于描述URI所引用的字体资源的格式的提示
+* 自定义字体的外部引用由一个URI、以及一个紧跟的可选的用于描述该URI所引用的字体资源的格式的提示。
+* 如果没有提供格式提示，则用户代理应当下载这些字体资源。
+* 如果提供了格式提示，则使用第一个能够成功激活的。如果格式提示都是不支持或未知的字体格式，则符合规范的用户代理必须跳过对这些字体资源的下载。
+```
+.woff2 - format('woff2')
+.woff - format('woff')
+.ttf - format('truetype')
+.ttf、.otf - format('opentype')
+.eot - format('embedded-opentype')
+.svg、.svgz - format('svg')
 ```
 #### 应用字体
 ```css
