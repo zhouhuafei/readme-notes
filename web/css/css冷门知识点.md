@@ -127,14 +127,78 @@ div {
   - 一个div有两个class，同层级时，后书写的样式会覆盖前者。即：样式不同时，样式的优先级，后书写的优先。
   - 两个div有同样class，同层级时，后书写的容器会覆盖前者。即：样式相同时，容器的优先级，后书写的优先。
 
-* font-weight
-  - 400 等同于 normal
-  - 700 等同于 bold
-  - font-weight其他数值不生效是因为对应字体不支持，可以使用自定义字体使之生效：https://blog.csdn.net/wanyaobujianqian/article/details/139593628
+## 常见设计稿字体对应字重font-weight大小
+#### 参考1：https://blog.csdn.net/yinhaijing_ss/article/details/143750849
+#### 参考2：https://www.w3.org/html/ig/zh/wiki/CSS3%E5%AD%97%E4%BD%93%E6%A8%A1%E5%9D%97#.E5.AD.97.E4.BD.93.E7.B2.97.E7.BB.86.EF.BC.9A.E2.80.98font-weight.E2.80.99.E5.B1.9E.E6.80.A7
+```
+100 - Thin
+200 - Extra Light (Ultra Light)
+300 - Light
+400 - Regular (Normal、Book、Roman)
+500 - Medium
+600 - Semi Bold (Demi Bold)
+700 - Bold
+800 - Extra Bold (Ultra Bold)
+900 - Black (Heavy)
+```
+#### PingFang SC 有六个字重
+* 在拿到 UI 设计稿时，可以经常看设计稿中常见的字体有 PingFangSC-Regular、PingFangSC-Medium、PingFangSC-Bold，并不会直接给我们 font-weight 的值。在这我们就需要知道常见字体和 font-weight 的对应关系。
+```
+100 - font-family: PingFangSC-Thin;
+200 - font-family: PingFangSC-Ultralight;
+300 - font-family: PingFangSC-Light;
+400 - font-family: PingFangSC-Regular;
+500 - font-family: PingFangSC-Medium;
+600 - font-family: PingFangSC-Semibold;
+```
 
-* aspect-ratio: 16 / 9;
-  - 宽高比是16比9
-  - 如果div的宽度是1600则高度为900
+## font-weight
+#### normal：等同于font-weight:400;如果字体不支持400粗细则浏览器会取相近的值。
+#### bold：等同于font-weight:700;如果字体不支持700粗细则浏览器会取相近的值。
+#### bolder：指定外观的重量大于继承的值。计算公式：继承100-300得到400、继承400-500得到700、继承600-900得到900。
+#### lighter：指定外观的重量小于继承的值。计算公式：继承100-500得到100、继承600-700得到400、继承800-900得到700。
+#### font-weight其他数值不生效是因为对应字体不支持，可以使用自定义字体使之生效：https://blog.csdn.net/wanyaobujianqian/article/details/139593628
+#### 定义字体
+```css
+@font-face {
+  font-family: 'MUJIFont2020';
+  font-weight: 300;
+  src: url('https://daozhi-tmp.oss-cn-shanghai.aliyuncs.com/muji/fonts/MUJIFont2020-Light.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'MUJIFont2020';
+  font-weight: 400;
+  src: url('https://daozhi-tmp.oss-cn-shanghai.aliyuncs.com/muji/fonts/MUJIFont2020-Regular.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'MUJIFont2020';
+  font-weight: 700;
+  src: url('https://daozhi-tmp.oss-cn-shanghai.aliyuncs.com/muji/fonts/MUJIFont2020-Blod.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'MUJIFont2020';
+  font-weight: 900;
+  src: url('https://daozhi-tmp.oss-cn-shanghai.aliyuncs.com/muji/fonts/MUJIFont2020-Heavy.otf') format('truetype');
+}
+```
+#### 应用字体
+```css
+.font-weight-400 {
+  font-family: 'MUJIFont2020';
+  font-weight: 400;
+}
+.font-weight-700 {
+  font-family: 'MUJIFont2020';
+  font-weight: 700;
+}
+```
+
+## aspect-ratio: 16 / 9;
+#### 宽高比是16比9
+#### 如果div的宽度是1600则高度为900
 
 ## grid
 * 教程：https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html
