@@ -151,6 +151,13 @@ div {
 500 - font-family: PingFangSC-Medium;
 600 - font-family: PingFangSC-Semibold;
 ```
+* 在写css时，通常不是直接使用上面的字体，而是按照下述方式使用，然后使用font-weight控制粗细。下述是一个案例：IOS使用苹果字体：`'PingFang SC'`，Android使用思源黑体：`'思源黑体'`。
+```css
+.page {
+  font-family: 'PingFang SC', '思源黑体', sans-serif;
+  font-weight: 400;
+}
+```
 
 ## font-weight
 #### normal：等同于font-weight:400;如果字体不支持400粗细则浏览器会取相近的值。
