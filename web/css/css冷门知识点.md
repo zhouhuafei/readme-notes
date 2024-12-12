@@ -158,6 +158,7 @@ div {
   font-weight: 400;
 }
 ```
+* 在css中给font-family设置值时：`PingFangSC`和`PingFang SC`是一样的。`PingFangSC-Regular`和`PingFangSC Regular`和`PingFang SC Regular`是一样的。
 
 ## font-weight
 #### normal：等同于font-weight:400;如果字体不支持400粗细则浏览器会取相近的值。
