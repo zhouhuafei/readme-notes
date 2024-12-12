@@ -130,6 +130,7 @@ div {
 * font-weight
   - 400 等同于 normal
   - 700 等同于 bold
+  - font-weight其他数值不生效是因为对应字体不支持，可以使用自定义字体使之生效：https://blog.csdn.net/wanyaobujianqian/article/details/139593628
 
 * aspect-ratio: 16 / 9;
   - 宽高比是16比9
