@@ -56,7 +56,7 @@
 #### 其他项目
 * 上海地铁四号线值班大屏（设备不联网）：Vue-CLI + Vue3全家桶 + TS/TSX + Scss + indexedDB
 * CHARLES & KEITH的集卡和抽奖活动（小程序内嵌h5）：create-vue（Vite） + Vue3全家桶 + TS/TSX + Scss + Vant
-* 永和豆浆美团和饿了么外卖平台的分类以及菜品分析（此项目是为了通过指标提高1%的菜单转化率而立项）：yudao-ui-admin-vue3
+* 永和大王美团和饿了么外卖平台的分类以及菜品分析（此项目是为了通过指标提高1%的菜单转化率而立项）：yudao-ui-admin-vue3
 > 2016/04 - 2019/02（商派 - 上海商派网络科技有限公司）
 #### 云起微商城（SaaS -> 电商）（线上商城，无选品，商品是商城商品，库存是商城库存）
 * 云起微商城后台管理系统：Gulp + SeaJS + jQuery + Vue + Scss
