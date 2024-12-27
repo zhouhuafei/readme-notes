@@ -6,7 +6,7 @@
     width:  300rpx; height:    200rpx;
   }
   `
-  str = str.replace(/(?<!px)(\d+)rpx/ig, (match, firstGroup) => `px2rpx(${firstGroup})`)
+  str = str.replace(/(?<!px)(-?\d+)rpx/ig, (match, firstGroup) => `px2rpx(${firstGroup})`)
   console.log('str：', str)
 }
 
