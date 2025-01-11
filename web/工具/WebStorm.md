@@ -148,3 +148,4 @@ https://blog.csdn.net/Jonathan_1994/article/details/89293878
 
 # 安装了`Bito`插件
 * 这个插件把`Full Line Code Completion`功能给禁用掉了。
+* 设置 -> 编辑器 -> 常规 -> 内联补全
