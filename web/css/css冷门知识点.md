@@ -228,6 +228,7 @@ div {
 > h5端，各个浏览器厂商，对100vh的定义不统一。
 * h5端，在Android的小米浏览器上，100vh太高，会导致内容区域被底部菜单栏遮挡，建议使用100%设置高度。
 * h5端，在IOS的Safari浏览器上，100vh更高，会导致内容区域被底部菜单栏遮挡更多，建议使用100%设置高度。
+* vh、svh（small）、lvh（large）、dvh（dynamic）：https://zhuanlan.zhihu.com/p/616712401
 
 ## 底部安全区域
 * 安全区域
