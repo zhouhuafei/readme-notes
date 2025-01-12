@@ -146,6 +146,6 @@ https://blog.csdn.net/Jonathan_1994/article/details/89293878
 * 上述破解工具，可以破解JetBrains旗下所有的开发者工具，不仅限于WebStorm。
 * 我2022年8月破解后，在关于中展示可以使用到2025年8月。据说虽展示如此，但可以永久使用。
 
-# 安装了`Bito`插件
+# 安装了`GitHub Copilot`插件
 * 这个插件把`Full Line Code Completion`功能给禁用掉了。
 * 设置 -> 编辑器 -> 常规 -> 内联补全
