@@ -149,3 +149,8 @@ https://blog.csdn.net/Jonathan_1994/article/details/89293878
 # 安装了`GitHub Copilot`插件
 * 这个插件把`Full Line Code Completion`功能给禁用掉了。
 * 设置 -> 编辑器 -> 常规 -> 内联补全
+
+# WebStorm自2024.3.1.1版本之后，git默认不显示本地更改。
+* File -> Setting -> Version Control -> Commit，去掉`Use non-model commit interface`选项，就可以看到本地代码修改记录了。
+* 文件 -> 设置 -> 版本控制 -> 提交，去掉`使用非模式提交界面`选项，就可以看到本地代码修改记录了。
+* 参考：https://www.cnblogs.com/fenglangjuxu/p/17983969
