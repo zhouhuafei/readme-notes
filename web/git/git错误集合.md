@@ -67,3 +67,18 @@ Host github.com
 Hostname ssh.github.com
 Port 443
 ```
+
+#### 报错信息：
+```shell
+Unable to negotiate with 120.27.45.57 port 22: no matching host key type found. Their offer: ssh-rsa,ssh-dss
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+```
+#### 解决方案：在您的 SSH 配置文件（~/.ssh/config）中添加以下几行：
+```shell
+Host *
+    HostkeyAlgorithms +ssh-rsa
+    PubkeyAcceptedAlgorithms +ssh-rsa
+```
