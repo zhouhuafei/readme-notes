@@ -89,3 +89,4 @@
 
 ## logo设计
 * 免费的LOGO在线设计制作工具：https://www.uugai.com/
+* favicon.ico图标在线制作：http://ico.hillcloud.net/
