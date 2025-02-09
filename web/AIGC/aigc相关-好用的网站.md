@@ -86,3 +86,6 @@
 
 ## AIGC文生图平台型接口
 * https://platform.stability.ai/
+
+## logo设计
+* 免费的LOGO在线设计制作工具：https://www.uugai.com/
