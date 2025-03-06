@@ -54,6 +54,7 @@
 * 超级任务代理端：yudao-ui-admin-vue3
 * 超级任务客户端：uni-cli（Vite） + uni-app + Vue3 + Pinia + TS/TSX + Scss + uni-ui
 #### 其他项目
+* 无印良品MUJI会员小程序：微信小程序原生语法 + Scss + Vant-Weapp
 * 上海地铁四号线值班大屏（设备不联网）：Vue-CLI + Vue3全家桶 + TS/TSX + Scss + indexedDB
 * CHARLES & KEITH的集卡和抽奖活动（小程序内嵌h5）：create-vue（Vite） + Vue3全家桶 + TS/TSX + Scss + Vant
 * 永和大王美团和饿了么外卖平台的分类以及菜品分析（此项目是为了通过指标提高1%的菜单转化率而立项）：yudao-ui-admin-vue3
@@ -114,8 +115,7 @@
 * 笔记：https://github.com/zhouhuafei/readme-notes/tree/master/web
 
 ## 个人项目 - 兴趣使然
-> 我有一个想法：基于题库，售卖周边。把做题和商城结合起来。
-#### 简易题库（SaaS -> 电商）（线上门店，选品后，商品是门店商品，库存是门店库存）
+#### 红杉拼图（SaaS -> 电商）（线上门店，选品后，商品是门店商品，库存是门店库存）
 * 服务端：koa2 + mongoose + docker-compose（nginx + mongodb + redis）
   - JWT鉴权、RestfulAPI风格（对HTTP协议中请求方法和状态码的应用）、企微机器人接口报警
   - 重构：已使用TS进行重构

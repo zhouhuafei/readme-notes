@@ -10,7 +10,7 @@ pinia.use(({ store }) => {
 })
 ```
 
-## 简易工具集小程序，自定义页面中，被v-if限制的WidgetIndex组件及其内部组件，他们对应的onLoad钩子都不会被触发。首页不存在类似问题。
+## 红杉拼图小程序，自定义页面中，被v-if限制的WidgetIndex组件及其内部组件，他们对应的onLoad钩子都不会被触发。首页不存在类似问题。
 * 虽然onLoad钩子不会被触发，但是下述钩子均会被触发。
   - onBeforeMount钩子会被触发。
   - onMounted钩子会被触发。
