@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <script>
+    function request (method, url, data, headers) {
+      return new Promise(function (resolve, reject) {
+        const xhr = new XMLHttpRequest()
+        xhr.open(method, url)
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status >= 200 && xhr.status < 300) {
+              resolve(xhr.responseText)
+            } else {
+              reject(xhr.statusText)
+            }
+          }
+        }
+        if (headers) {
+          Object.keys(headers).forEach(function (key) {
+            xhr.setRequestHeader(key, headers[key])
+          })
+        }
+        xhr.send(data)
+      })
+    }
+
+    if (!navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|IEMobile|XiaoMi|MiuiBrowser)/i)) {
+      alert('请在手机端打开')
+    } else {
+      const hrefs = window.location.href.split('?')[0].split('/')
+      const code = hrefs[hrefs.length - 1]
+      const tid = hrefs[hrefs.length - 2]
+      const urls = ['jomalone-uat.theatomdata.com', 'jml-vip.elcapp.cn', 'bb-vip.elcapp.cn', 'vip.muji.com.cn']
+      request('GET', 'https://' + urls[tid] + '/api/app/basic/white/url_scheme?code=' + code).then(function (response) {
+        console.log('Response:', response)
+        const json = JSON.parse(response)
+        if (json.code === 0) {
+          location.href = json.data
+        }
+      }).catch(function (error) {
+        console.log('Error:', error)
+      })
+    }
+    </script>
+  </body>
+</html>
