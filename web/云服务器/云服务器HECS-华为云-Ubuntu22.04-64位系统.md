@@ -2,7 +2,7 @@
 * 运行命令时，如果没安装，则系统会提示你安装。
 * 例如你运行`docker --version`命令，但是你没安装`docker`，此时系统会提示你安装`apt install docker.io`。
 
-## 如何部署的简易工具集？
+## 如何部署的红杉拼图？
 * 除了nodejs服务是本地部署。
 * 其他均是使用docker-compose部署。
 
