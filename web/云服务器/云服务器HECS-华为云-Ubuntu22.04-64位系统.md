@@ -27,7 +27,7 @@ KEYS *
 #### 常用命令
 ```shell
 show dbs
-use easy-tool-set
+use hongshanpintu
 show collections
 db.Hello.find()
 ```
