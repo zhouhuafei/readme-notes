@@ -9,7 +9,7 @@ const wx = {
       input.value = val
       document.body.appendChild(input)
       input.select && input.select() // Android
-      input.setSelectionRange && input.setSelectionRange(0, input.value.length) // IOS
+      input.setSelectionRange && input.setSelectionRange(0, val.length) // IOS
       document.execCommand('Copy')
       document.body.removeChild(input)
     }
