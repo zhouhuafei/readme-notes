@@ -13,7 +13,7 @@
 
 # nodejs导出，让浏览器自行下载
 * 导出excel
-```
+```javascript
 const nodeExcel = require('excel-export');
 async function exportdata () {
   const v = [
@@ -43,12 +43,12 @@ async function exportdata () {
   conf.rows = allData // 填充数据
   let result = nodeExcel.execute(conf)
   // express框架是如下写法
-  // res.setHeader('Content-Type', 'application/vnd.openxmlformats');
+  // res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
   // res.setHeader("Content-Disposition", "attachment; filename=" + "Report.xlsx");
   // res.end(result, 'binary');
   // koa框架是如下写法
   let data = new Buffer(result, 'binary')
-  ctx.set('Content-Type', 'application/vnd.openxmlformats')
+  ctx.set('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
   ctx.set('Content-Disposition', 'attachment; filename=' + 'Report.xlsx')
   ctx.body = data
 }
