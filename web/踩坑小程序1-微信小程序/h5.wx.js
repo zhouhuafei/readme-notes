@@ -1,23 +1,15 @@
 const wx = {
   async setClipboardData (options) {
     const val = options.data || ''
-
-    if (navigator.clipboard.writeText) {
-      try {
-        await navigator.clipboard.writeText(val)
-      } catch (e) {
-        console.log('e：', e)
-        setClipboardData2()
-      }
-    } else {
-      setClipboardData2()
-    }
-
-    function setClipboardData2 () {
+    try {
+      await navigator.clipboard.writeText(val)
+    } catch (e) {
+      console.log('e：', e)
       const input = document.createElement('textarea')
       input.value = val
       document.body.appendChild(input)
-      input.select()
+      input.select && input.select() // Android
+      input.setSelectionRange && input.setSelectionRange(0, input.value.length) // IOS
       document.execCommand('Copy')
       document.body.removeChild(input)
     }
