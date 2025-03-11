@@ -14,10 +14,10 @@ const mp = {
       document.body.removeChild(input)
     }
   },
-  setNavigationBarTitle (options) {
+  setNavigationBarTitle (options = {}) {
     document.title = options.title || ''
   },
-  makePhoneCall (options) {
+  makePhoneCall (options = {}) {
     const a = document.createElement('a')
     a.href = `tel:${options.phoneNumber}`
     a.click()
