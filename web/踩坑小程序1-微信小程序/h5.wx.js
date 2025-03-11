@@ -18,7 +18,6 @@ const wx = {
       input.value = val
       document.body.appendChild(input)
       input.select()
-      input.blur()
       document.execCommand('Copy')
       document.body.removeChild(input)
     }
