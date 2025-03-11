@@ -1,5 +1,5 @@
 const mp = {
-  async setClipboardData (options) {
+  async setClipboardData (options = {}) {
     const val = options.data || ''
     try {
       await navigator.clipboard.writeText(val)
@@ -61,14 +61,6 @@ const mp = {
       }
       input.click()
     })
-  },
-  tempFilesToFormData (options = {}) {
-    const formData = new FormData()
-    Object.keys(options.formData).forEach((key) => {
-      const val = options.formData[key]
-      formData.append(key, val)
-    })
-    formData.append('file', options.filePath)
   }
 }
 
