@@ -25,18 +25,32 @@ const mp = {
   chooseMedia (options = {}) {
     return new Promise((resolve, reject) => {
       options.count = options.count || 1
-      const imageMimeType = ['image/jpeg', 'image/png', 'image/gif']
-      const videoMimeType = ['video/mp4']
-      const excelMimeType = ['application/vnd.openxmlformats', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']
+      const imageMimeType = [
+        'image/jpeg', 'image/png', 'image/gif', // jpeg/png/gif
+        'image/webp', 'image/svg+xml', 'image/bmp', // webp/svg/bmp
+        'image/x-icon', 'image/vnd.microsoft.icon' // ico
+      ]
+      const videoMimeType = [
+        'video/mp4' // mp4
+      ]
+      const excelMimeType = [
+        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' // excel
+      ]
       if (options.mediaType) {
         const mimeType = []
-        if (options.mediaType.includes('image')) {
+        if (options.mediaType.includes('image/')) {
+          mimeType.push(...options.mediaType)
+        } else if (options.mediaType.includes('image')) {
           mimeType.push(...imageMimeType)
         }
-        if (options.mediaType.includes('video')) {
+        if (options.mediaType.includes('video/')) {
+          mimeType.push(...options.mediaType)
+        } else if (options.mediaType.includes('video')) {
           mimeType.push(...videoMimeType)
         }
-        if (options.mediaType.includes('excel')) {
+        if (options.mediaType.includes('application/')) {
+          mimeType.push(...options.mediaType)
+        } else if (options.mediaType.includes('excel')) {
           mimeType.push(...excelMimeType)
         }
         options.mediaType = mimeType
