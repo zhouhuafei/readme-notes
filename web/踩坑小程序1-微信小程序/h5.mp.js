@@ -37,6 +37,7 @@ const mp = {
         'audio/mpeg' // .mp3
       ]
       const excelMimeType = [
+        'application/vnd.ms-excel', // .xls
         'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' // .xlsx
       ]
       if (options.mediaType) {
