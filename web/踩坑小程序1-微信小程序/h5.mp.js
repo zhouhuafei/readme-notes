@@ -26,15 +26,18 @@ const mp = {
     return new Promise((resolve, reject) => {
       options.count = options.count || 1
       const imageMimeType = [
-        'image/jpeg', 'image/png', 'image/gif', // jpeg/png/gif
-        'image/webp', 'image/svg+xml', 'image/bmp', // webp/svg/bmp
-        'image/x-icon', 'image/vnd.microsoft.icon' // ico
+        'image/jpeg', 'image/png', 'image/gif', // .jpg|.jpeg/.png/.gif
+        'image/webp', 'image/svg+xml', 'image/bmp', // .webp/.svg/.bmp
+        'image/x-icon', 'image/vnd.microsoft.icon' // .ico
       ]
       const videoMimeType = [
-        'video/mp4' // mp4
+        'video/mp4' // .mp4
+      ]
+      const audioMimeType = [
+        'audio/mpeg' // .mp3
       ]
       const excelMimeType = [
-        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' // excel
+        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' // .xlsx
       ]
       if (options.mediaType) {
         const mimeType = []
@@ -47,6 +50,11 @@ const mp = {
           mimeType.push(...options.mediaType)
         } else if (options.mediaType.includes('video')) {
           mimeType.push(...videoMimeType)
+        }
+        if (options.mediaType.includes('audio/')) {
+          mimeType.push(...options.mediaType)
+        } else if (options.mediaType.includes('audio')) {
+          mimeType.push(...audioMimeType)
         }
         if (options.mediaType.includes('application/')) {
           mimeType.push(...options.mediaType)
