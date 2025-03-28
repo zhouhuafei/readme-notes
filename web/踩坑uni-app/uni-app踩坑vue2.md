@@ -84,6 +84,7 @@ https://github.com/SilurianYang/uni-simple-router
 # :style和:class的值如果是个计算属性？
 * :style不能直接接收一个计算属性，可以接收一个数组。数组里有一个计算属性。
   - 这样是可行的：`:style="[objComputedHeight]"`。
+  - uni-cli对应的vue3版本，:style能直接接收一个计算属性。
 * :class可以直接接收一个计算属性。
   - 这样是可行的：`:class="arrComputedClass"`。
 
