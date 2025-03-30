@@ -84,6 +84,7 @@ https://github.com/SilurianYang/uni-simple-router
 # :style和:class的值如果是个计算属性？
 * :style不能直接接收一个计算属性，可以接收一个数组。数组里有一个计算属性。
   - 这样是可行的：`:style="[objComputedHeight]"`。
+  - uni-cli对应的vue3版本，:style能直接接收一个计算属性。
 * :class可以直接接收一个计算属性。
   - 这样是可行的：`:class="arrComputedClass"`。
 
@@ -93,6 +94,7 @@ https://github.com/SilurianYang/uni-simple-router
   - 这样是可行的：`:style="[getStyle(item)]"`
   - 这样是可行的：`:class="[getClass(item)]"`
 * 在vue中，style和class属性提取成方法，方法可以被触发。
+  - uni-cli对应的vue3版本，style和class属性提取成方法，方法可以被触发。
 
 # `uni-app`解决动态绑定`upx`不起作用的问题
 * 使用`uni.upx2px(750)`把`upx`转成`px`进行解决。

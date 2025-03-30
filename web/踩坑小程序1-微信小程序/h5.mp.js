@@ -3,8 +3,8 @@ const mp = {
     const val = options.data || ''
     try {
       await navigator.clipboard.writeText(val)
-    } catch (e) {
-      console.log('e：', e)
+    } catch (error) {
+      console.log('navigator.clipboard.writeText - error：', error)
       const input = document.createElement('textarea')
       input.value = val
       document.body.appendChild(input)
@@ -12,6 +12,14 @@ const mp = {
       input.setSelectionRange && input.setSelectionRange(0, val.length) // IOS
       document.execCommand('Copy')
       document.body.removeChild(input)
+    }
+  },
+  async getClipboardData () {
+    try {
+      return await navigator.clipboard.readText()
+    } catch (error) {
+      console.log('navigator.clipboard.readText - error：', error)
+      return ''
     }
   },
   setNavigationBarTitle (options = {}) {
@@ -25,18 +33,41 @@ const mp = {
   chooseMedia (options = {}) {
     return new Promise((resolve, reject) => {
       options.count = options.count || 1
-      const imageMimeType = ['image/jpeg', 'image/png', 'image/gif']
-      const videoMimeType = ['video/mp4']
-      const excelMimeType = ['application/vnd.openxmlformats', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']
+      const imageMimeType = [
+        'image/jpeg', 'image/png', 'image/gif', // .jpg|.jpeg/.png/.gif
+        'image/webp', 'image/svg+xml', 'image/bmp', // .webp/.svg/.bmp
+        'image/x-icon', 'image/vnd.microsoft.icon' // .ico
+      ]
+      const videoMimeType = [
+        'video/mp4' // .mp4
+      ]
+      const audioMimeType = [
+        'audio/mpeg' // .mp3
+      ]
+      const excelMimeType = [
+        'application/vnd.ms-excel', // .xls
+        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' // .xlsx
+      ]
       if (options.mediaType) {
         const mimeType = []
-        if (options.mediaType.includes('image')) {
+        if (options.mediaType.includes('image/')) {
+          mimeType.push(...options.mediaType)
+        } else if (options.mediaType.includes('image')) {
           mimeType.push(...imageMimeType)
         }
-        if (options.mediaType.includes('video')) {
+        if (options.mediaType.includes('video/')) {
+          mimeType.push(...options.mediaType)
+        } else if (options.mediaType.includes('video')) {
           mimeType.push(...videoMimeType)
         }
-        if (options.mediaType.includes('excel')) {
+        if (options.mediaType.includes('audio/')) {
+          mimeType.push(...options.mediaType)
+        } else if (options.mediaType.includes('audio')) {
+          mimeType.push(...audioMimeType)
+        }
+        if (options.mediaType.includes('application/')) {
+          mimeType.push(...options.mediaType)
+        } else if (options.mediaType.includes('excel')) {
           mimeType.push(...excelMimeType)
         }
         options.mediaType = mimeType

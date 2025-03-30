@@ -41,8 +41,8 @@
   - 多行省略号怎么写？`overflow: hidden;white-space: normal;text-overflow: ellipsis;word-break: break-all;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;line-height: 18px;max-height: 36px;`。
   - 怎么解决`display: flex;`会让自身容器中文字单行省略号失效的问题？`给文字外再套一层父级`。
   - 怎么解决父级设置`flex: 1;`导致子级的单行省略号失效的问题？`给子级设置width或max-width | 子级使用多行省略号模拟单行省略号 | 父级加overflow: hidden; | 父级加min-width: 0;`。注：`给子级再套一层父级行不通`。
-* css怎么画实心右箭头？`width: 0;height: 0;border: 10px solid transparent;border-left-color: #000;`。
-* css怎么画空心右箭头？`width: 10px;height: 10px;border-top: 2px solid #000;border-right: 2px solid #000;transform: rotate(45deg);`。
+* css怎么画实心右箭头？`width: 0;height: 0;border: 5px solid transparent;border-left: 10px solid #000;border-right: none;`。
+* css怎么画空心右箭头？`width: 6px;height: 6px;border-top: 1px solid #000;border-right: 1px solid #000;transform: rotate(45deg);`。
 * 如何给一个div加0.5px的边框？`主要知识点是absolute各方位-50%;transform: scale(0.5);pointer-events: none;`。
   - 怎么使用css让js的点击事件失效？`pointer-events: none;`。
 * 不定宽高如何让盒子垂直水平居中？用定位如何实现？用flex如何实现？`主要考内联元素和块元素的水平居中和垂直居中`。
