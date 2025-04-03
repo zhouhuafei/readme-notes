@@ -89,4 +89,5 @@
 
 ## logo设计
 * 免费的LOGO在线设计制作工具：https://www.uugai.com/
-* favicon.ico图标在线制作：https://www.ico51.cn/
+* favicon.ico图标在线制作（无法基于png图生成透明ico图）：http://ico.hillcloud.net/
+* favicon.ico图标在线制作（可以基于png图生成透明ico图）：https://www.ico51.cn/
