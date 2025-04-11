@@ -11,7 +11,8 @@
 * https://github.com/fengyuanchen/cropperjs
 #### Crypto-JS加密 https://github.com/brix/crypto-js
 #### 移动端调试工具 Eruda https://github.com/liriliri/eruda
-```
+```html
+<!DOCTYPE html>
 <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
 <script>eruda.init()</script>
 ```
