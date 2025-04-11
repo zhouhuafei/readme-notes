@@ -13,6 +13,7 @@
 #### 移动端调试工具 Eruda https://github.com/liriliri/eruda
 ```html
 <!DOCTYPE html>
+
 <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
 <script>eruda.init()</script>
 ```
