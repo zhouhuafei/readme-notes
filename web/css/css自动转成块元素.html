@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css自动转成块元素、转块元素</title>
+    <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .inline-flex {
+      display: inline-flex;
+    }
+    </style>
+  </head>
+  <body>
+    <h5>display:flex; 会把子元素转成块元素（子元素默认不会铺满一行、加了这个属性的元素本身默认会铺满一行）。</h5>
+    <h5>display:inline-flex; 会把子元素转成块元素（子元素默认不会铺满一行、加了这个属性元素本身默认也不会铺满一行）。</h5>
+    <div class="flex">
+      <div>div</div>
+      <span>|span</span>
+    </div>
+    <div class="inline-flex">
+      <div>div</div>
+      <span>|span</span>
+    </div>
+  </body>
+</html>
