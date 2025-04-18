@@ -154,3 +154,7 @@ https://blog.csdn.net/Jonathan_1994/article/details/89293878
 * File -> Setting -> Version Control -> Commit，去掉`Use non-model commit interface`选项，就可以看到本地代码修改记录了。
 * 文件 -> 设置 -> 版本控制 -> 提交，去掉`使用非模式提交界面`选项，就可以看到本地代码修改记录了。
 * 参考：https://www.cnblogs.com/fenglangjuxu/p/17983969
+
+# WebStorm自2025.1版本之后，git不显示本地更改。
+* 尚未找到解决方案，用来控制是否显示本地更改的功能已经找不到了。固之前的解决方案没有用了。
+* 临时的解决方案是，左上角有个-o-按钮，在里面查看本地更改。
