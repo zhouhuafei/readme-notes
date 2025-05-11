@@ -48,6 +48,7 @@
   - 值得一说的事：引入企微机器人接口报警、引入企微机器人js报警。
 * AI助手管理端：create-vue（Vite） + Vue3全家桶 + Scss + Element-Plus
 * AI助手h5：create-vue（Vite） + Vue3全家桶 + Scss + Vant
+* AI编排（基于dify做的二开）：next
 #### 超级任务（平台）
 * 超级任务运营端：yudao-ui-admin-vue3
 * 超级任务发包端：yudao-ui-admin-vue3
