@@ -33,6 +33,8 @@
 
 ## 安装docker时
 * 搜索并打开`启用或关闭 Windows 功能`。随后找到`Hyper-V`并勾选即可。
+  - 从 Docker Desktop 4.x 开始，如果你的系统支持 WSL 2，默认情况下 Docker 会使用 WSL 2 后端，而不再需要启用 Hyper-V。
+  - win11系统支持 WSL 2
 * Docker Desktop一直启动中（Starting the Docker Engine...），可以试试`以管理员身份运行`。
 
 ## 关闭开机自启动
