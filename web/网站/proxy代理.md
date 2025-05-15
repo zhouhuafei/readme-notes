@@ -55,8 +55,9 @@
 * 2：`Tools -> Options -> HTTPS -> Ignore serve certificate errors（unsafe）`。
 * 设置第一项的时候，会弹窗让确认一些信息，直接全部确定即可。然后重启`Fiddler Classic`。pc端就可以抓到https请求了。h5端的浏览器也可以抓到https请求了（需无视小米14浏览器提示的证书安全问题并进行继续访问）。但是h5端的其它app还是抓不到https请求并提示网络异常（Android 7.0 及以上版本）。
   - Android 7.0 及以上版本新增了更严格的证书验证机制。对于基于 SDK 24 及以上开发的 App，不再像以前一样默认信任用户安装的证书，只信任系统自带的 CA 证书。这意味着抓包工具安装的用户证书在 App 中不被信任，从而导致无法抓取 HTTPS 请求。
-* 上述配置完之后，电脑上的桌面端应用可以正常抓包，例如桌面端微信。手机上的浏览器可以正常抓包。手机上的其它app应用不可以正常抓包并提示网络异常，例如微信。
+* 上述配置完之后，电脑上的桌面端应用可以正常抓包，例如桌面端微信、Chrome浏览器。手机上的浏览器可以正常抓包。手机上的其它app应用不可以正常抓包并提示网络异常，例如微信。
 #### Fiddler抓HTTPS请求 - app端
+* 尝试了 VirtualXposed 的 0.22.0 版本。安装完毕之后，在我手机上闪退，打不开。
 #### 实战之前收藏的参考资料
 * Fiddler工具中显示服务器IP地址的方法：https://blog.csdn.net/liitdar/article/details/88424736
 * Fiddler抓HTTPS请求：https://www.cnblogs.com/joshua317/p/8670923.html
