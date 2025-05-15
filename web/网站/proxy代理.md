@@ -46,13 +46,12 @@
 #### Fiddler Classic抓包http没反应 - pc端
 * 浏览器上安装了1VPN扩展程序，关掉这个扩展就可以了。
 #### Fiddler Classic抓包http没网络 - h5端
-* Tools -> Options -> Connections -> Allow remote computers to connect
-* 重启Fiddler
-
+* 1：`WiFi -> 代理 -> 手动 -> 主机名填写电脑IPv4地址 -> 端口填写8888`。
+* 2：`Tools -> Options -> Connections -> Allow remote computers to connect`。
+* 3：重启`Fiddler Classic`。
 #### Fiddler抓HTTPS请求
-* 教程：https://www.cnblogs.com/joshua317/p/8670923.html
-* 证书安装：
-  - 电脑安装Fiddler证书：`Fiddler` -> `Tools` -> `Options` -> `HTTPS` -> `Actions` -> `Trust Root Certificate` -> `Yes`
-  - 手机安装Fiddler证书：打开手机浏览器，在浏览器地址输入代理服务器IP和端口，会看到一个Fiddler提供的证书页面。
-##### Fiddler工具中显示服务器IP地址的方法
-* https://blog.csdn.net/liitdar/article/details/88424736
+* 1：`Tools -> Options -> HTTPS -> Decrypt HTTPS traffic`。
+* 2：`Tools -> Options -> HTTPS -> Ignore serve certificate errors（unsafe）`。
+#### 实战之前收藏的参考资料
+* Fiddler工具中显示服务器IP地址的方法：https://blog.csdn.net/liitdar/article/details/88424736
+* Fiddler抓HTTPS请求：https://www.cnblogs.com/joshua317/p/8670923.html
