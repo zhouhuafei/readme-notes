@@ -46,6 +46,10 @@
 # Fiddler Classic抓包http没反应 - pc端
 * 浏览器上安装了1VPN扩展程序，关掉这个扩展就可以了。
 
+# Fiddler Classic抓包http没网络 - h5端
+* Tools -> Options -> Connections -> Allow remote computers to connect
+* 重启Fiddler
+
 # Fiddler抓HTTPS请求
 * 教程：https://www.cnblogs.com/joshua317/p/8670923.html
 * 证书安装：
