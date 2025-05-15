@@ -58,6 +58,7 @@
 * 上述配置完之后，电脑上的桌面端应用可以正常抓包，例如桌面端微信、Chrome浏览器。手机上的浏览器可以正常抓包。手机上的其它app应用不可以正常抓包并提示网络异常，例如微信。
 #### Fiddler抓HTTPS请求 - app端
 * 尝试了 VirtualXposed 的 0.22.0 版本。安装完毕之后，在我手机上闪退，打不开。
+* 安卓无法信任用户安装的抓包工具证书。豆包说ios可以进行手动设置，使之强制信任。有机会的话，试试用ios抓包，并进行记录。
 #### 实战之前收藏的参考资料
 * Fiddler工具中显示服务器IP地址的方法：https://blog.csdn.net/liitdar/article/details/88424736
 * Fiddler抓HTTPS请求：https://www.cnblogs.com/joshua317/p/8670923.html
