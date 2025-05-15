@@ -37,25 +37,22 @@
 4. domain
 5. 服务器代理
 
-# Fiddler Classic抓包的原理
+## Fiddler Classic win11 实战
+#### Fiddler Classic抓包的原理
 * 开启了Fiddler之后，Fiddler会给系统自动设置代理。
 * 假如浏览器本来是要向百度的服务器发送一条请的，设置了代理之后。
 * 浏览器的请求就发送给了Fiddler服务器，Fiddler再转发给百度的服务器，接收到响应之后，Fiddler再反馈给浏览器。
 * 所以Fiddler中可以看到所有的用户请求，至于拦截和篡改请求，就是Fiddler的开发人员开发的功能了。这些功能可以方便开发人员的调试。
-
-# Fiddler Classic抓包http没反应 - pc端
+#### Fiddler Classic抓包http没反应 - pc端
 * 浏览器上安装了1VPN扩展程序，关掉这个扩展就可以了。
-
-# Fiddler Classic抓包http没网络 - h5端
+#### Fiddler Classic抓包http没网络 - h5端
 * Tools -> Options -> Connections -> Allow remote computers to connect
 * 重启Fiddler
 
-# Fiddler抓HTTPS请求
+#### Fiddler抓HTTPS请求
 * 教程：https://www.cnblogs.com/joshua317/p/8670923.html
 * 证书安装：
   - 电脑安装Fiddler证书：`Fiddler` -> `Tools` -> `Options` -> `HTTPS` -> `Actions` -> `Trust Root Certificate` -> `Yes`
   - 手机安装Fiddler证书：打开手机浏览器，在浏览器地址输入代理服务器IP和端口，会看到一个Fiddler提供的证书页面。
-* 问题：手机上抓包一直失败，有机会的话试试使用`Charles`软件进行抓包吧。
-
-# Fiddler工具中显示服务器IP地址的方法
+##### Fiddler工具中显示服务器IP地址的方法
 * https://blog.csdn.net/liitdar/article/details/88424736
