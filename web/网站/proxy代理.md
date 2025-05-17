@@ -59,7 +59,8 @@
 #### Fiddler抓HTTPS请求 - app端
 * 手机安装证书: 访问`http://电脑IPv4地址:8888`下载抓包工具的证书并进行安装。
 * 安卓无法信任用户安装的抓包工具证书，所以无法对app进行抓包。我尝试使用 VirtualXposed v0.22.0 虚拟环境去抓包，安装完毕之后，VirtualXposed在我手机上闪退，打不开。
-* 豆包说ios可以进行手动设置，使之强制信任抓包工具的证书。有机会的话，试试用ios抓包，并进行记录。
+* ios可以进行手动设置，使之强制信任抓包工具的证书。
+  - `设置 -> 通用 -> 关于本机 -> 证书信任设置`，打开抓包工具的证书的开关。
 #### 实战之前收藏的参考资料
 * Fiddler工具中显示服务器IP地址的方法：https://blog.csdn.net/liitdar/article/details/88424736
 * Fiddler抓HTTPS请求：https://www.cnblogs.com/joshua317/p/8670923.html
