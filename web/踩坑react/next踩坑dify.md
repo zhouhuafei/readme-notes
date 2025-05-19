@@ -17,7 +17,9 @@
 * `mdast-util-gfm-autolink-literal`包有bug。
 #### 方案一：把所有的包都fork一遍，改名字，修改内部依赖，发布到npm
 * 弊端：改动太大，改动涉及到的包太多，维护成本高。如果依赖的深度再深一点，那修复起来就更麻烦了。
-#### 方案二：使用 patch-package
-* 弊端：需要安装`patch-package`，需要手动打补丁，维护成本高。
-#### 方案三：使用 overrides
-* 推荐：对项目本身的侵入最小。
+#### 方案二：使用本地依赖
+* 把`mdast-util-gfm-autolink-literal`包复制一份到本地项目中，并提交到git仓库。
+* 把`mdast-util-gfm-autolink-literal`包加入到`package.json`的`dependencies`中。
+  - 把`mdast-util-gfm-autolink-literal`包指向本地的路径。
+  - `"mdast-util-gfm-autolink-literal": "file:./mdast-util-gfm-autolink-literal",`。
+* 把`mdast-util-gfm-autolink-literal`包的bug修复，然后重新安装依赖，重新打包。
