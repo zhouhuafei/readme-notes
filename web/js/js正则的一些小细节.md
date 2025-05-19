@@ -4,8 +4,8 @@
   ```
   var isTure = /bc(?=d)/.test('bcd'); // true (?=d)只能放在最后面，放在最前面或中间都匹配不到 /(?=a)bc/.test('abc'); // false
   ```
-  - (?<=exp) 正向后瞻 匹配前面满足表达式exp的位置 ios15以及ios15以下的系统不支持后瞻
-  - (?<!exp) 负向后瞻 匹配前面不满足表达式exp的位置 ios15以及ios15以下的系统不支持后瞻
+  - (?<=exp) 正向后瞻 匹配前面满足表达式exp的位置 ios16以下的系统不支持后瞻 ios16支持后瞻
+  - (?<!exp) 负向后瞻 匹配前面不满足表达式exp的位置 ios16以下的系统不支持后瞻 ios16支持后瞻
 * location.replace(newURL) 方法可用一个新文档取代当前文档。
   - replace() 方法不会在 History 对象中生成一个新的记录。当使用该方法时，新的 URL 将覆盖 History 对象中的当前记录。
 * 金钱格式化：https://www.jianshu.com/p/56d589ea48a9
