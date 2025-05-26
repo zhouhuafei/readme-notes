@@ -23,3 +23,9 @@
   - 把`mdast-util-gfm-autolink-literal`包指向本地的路径。
   - `"mdast-util-gfm-autolink-literal": "file:./mdast-util-gfm-autolink-literal",`。
 * 把`mdast-util-gfm-autolink-literal`包的bug修复，然后重新安装依赖，重新打包。
+#### ios15 渲染出错
+* 把依赖的第三方包`"remark-gfm": "^4.0.0",`改为`"zhf.remark-gfm": "^4.0.3",`。
+  - 没使用本地依赖进行修复，是因为使用本地依赖进行打包时，pnpm报错导致打包失败（npm不报错且能正常打包）。
+  - 后端架构师使用的pnpm进行包管理，打包时出错了，就还原回了方案一。我个人习惯使用npm进行包管理。
+#### ios14和ios13 渲染出错
+* 没继续排查，产品说兼容到ios15就行了。低于ios15的提示用户升级系统。
