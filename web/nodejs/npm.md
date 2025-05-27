@@ -152,7 +152,7 @@ cross-env NODE_OPTIONS=--openssl-legacy-provider vue-cli-service serve
   - `npm i`默认是`--save`。
 * `package.json`中的`prepare`钩子。
   - `prepare`钩子会在两种情况前运行，一是`npm publish`命令前，二是`npm install(不带任何参数)`命令后；它会在`prepublish`之后、`prepublishOnly`之前执行。
-  - `prepublishOnly`钩子，是`npm 4`到`npm 5`时，过渡`prepublish`和`prepare`时才有的。
+  - `prepublishOnly`钩子，是`npm 4`到`npm 5`时，过渡`prepublish`和`prepare`时才有的。`prepublish`已废弃，推荐使用`prepublishOnly`。
 * 测试`package.json`的`files`属性是否是控制指定的目录才会被发到npm上的关键。
   - 我把`sass-export`项目里的`files`属性删掉之后。
   - 再通过`npm i`去安装`github`上的`sass-export`包时，发现包里多了很多开发时的目录，例如：`src`目录、`exported-examples`目录、`test`目录。
@@ -172,6 +172,7 @@ cross-env NODE_OPTIONS=--openssl-legacy-provider vue-cli-service serve
 * 其他钩子具体请参考下述：`npm 钩子`。
 
 # npm 钩子
+> ###### 官方文档：https://docs.npmjs.com/cli/v11/using-npm/scripts
 > ###### 参考文档：http://www.ruanyifeng.com/blog/2016/10/npm_scripts.html
 > ###### 参考文档：https://segmentfault.com/a/1190000008832423
 * `npm`脚本有`pre`和`post`两个钩子。举例来说，`build`脚本命令的钩子就是`prebuild`和`postbuild`。
@@ -181,7 +182,7 @@ npm run prebuild && npm run build && npm run postbuild
 ```
 * `npm`默认提供下面这些钩子。
 ```
-prepublish，postpublish // 在npm publish命令执行前后触发
+prepublish（已废弃），postpublish // 在npm publish命令执行前后触发
 preinstall，postinstall // 在npm install命令执行前后触发
 preuninstall，postuninstall // 在npm uninstall命令执行前后触发
 preversion，postversion // 在改变包的version前后触发 提交之前
