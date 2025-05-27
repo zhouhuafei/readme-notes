@@ -3,8 +3,8 @@
   "version": "2.0.0",
   "private": true,
   "engines": {
-    "node": "18.17.1",
-    "npm": "9.6.7"
+    "node": ">=18.17.1",
+    "npm": ">=9.6.7"
   },
   "scripts": {
     "prepare": "husky install",
