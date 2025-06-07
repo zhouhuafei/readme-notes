@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiper纵向滚动示例</title>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" rel="stylesheet">
+    <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper-container {
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .swiper-slide {
+      height: auto !important; /* 强制滑块高度自适应 */
+    }
+
+    .child1 {
+      height: 60vh;
+      background-color: #ff6666;
+    }
+
+    .child2 {
+      height: 40vh;
+      background-color: #66ff66;
+    }
+
+    .child3 {
+      height: 60vh;
+      background-color: #6666ff;
+    }
+
+    .child4 {
+      height: 100vh;
+      background-color: #ff66cc;
+    }
+
+    .child5Wrap {
+      height: 100vh;
+      overflow-y: auto;
+      overscroll-behavior: none;
+    }
+
+    .child5Wrap::-webkit-scrollbar {
+      display: none;
+    }
+
+    .child5 {
+      height: 300vh;
+      background-color: #ffff66;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="swiper-container swiper-container-parent">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="child1">
+            <div>height: 60vh; x1</div>
+            <div>height: 60vh; x2</div>
+            <div>height: 60vh; x3</div>
+            <div>height: 60vh; x4</div>
+            <div>height: 60vh; x5</div>
+            <div>height: 60vh; x6</div>
+            <div>height: 60vh; x7</div>
+            <div>height: 60vh; x8</div>
+            <div>height: 60vh; x9</div>
+            <div>height: 60vh; x10</div>
+            <div>height: 60vh; x11</div>
+            <div>height: 60vh; x12</div>
+            <div>height: 60vh; x13</div>
+            <div>height: 60vh; x14</div>
+            <div>height: 60vh; x15</div>
+            <div>height: 60vh; x16</div>
+            <div>height: 60vh; x17</div>
+            <div>height: 60vh; x18</div>
+            <div>height: 60vh; x19</div>
+            <div>height: 60vh; x20</div>
+            <div>height: 60vh; x21</div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="child2">
+            <div>height: 40vh; x1</div>
+            <div>height: 40vh; x2</div>
+            <div>height: 40vh; x3</div>
+            <div>height: 40vh; x4</div>
+            <div>height: 40vh; x5</div>
+            <div>height: 40vh; x6</div>
+            <div>height: 40vh; x7</div>
+            <div>height: 40vh; x8</div>
+            <div>height: 40vh; x9</div>
+            <div>height: 40vh; x10</div>
+            <div>height: 40vh; x11</div>
+            <div>height: 40vh; x12</div>
+            <div>height: 40vh; x13</div>
+            <div>height: 40vh; x14</div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="child3">
+            <div>height: 60vh; x1</div>
+            <div>height: 60vh; x2</div>
+            <div>height: 60vh; x3</div>
+            <div>height: 60vh; x4</div>
+            <div>height: 60vh; x5</div>
+            <div>height: 60vh; x6</div>
+            <div>height: 60vh; x7</div>
+            <div>height: 60vh; x8</div>
+            <div>height: 60vh; x9</div>
+            <div>height: 60vh; x10</div>
+            <div>height: 60vh; x11</div>
+            <div>height: 60vh; x12</div>
+            <div>height: 60vh; x13</div>
+            <div>height: 60vh; x14</div>
+            <div>height: 60vh; x15</div>
+            <div>height: 60vh; x16</div>
+            <div>height: 60vh; x17</div>
+            <div>height: 60vh; x18</div>
+            <div>height: 60vh; x19</div>
+            <div>height: 60vh; x20</div>
+            <div>height: 60vh; x21</div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="child4">
+            <div>height: 100vh; x1</div>
+            <div>height: 100vh; x2</div>
+            <div>height: 100vh; x3</div>
+            <div>height: 100vh; x4</div>
+            <div>height: 100vh; x5</div>
+            <div>height: 100vh; x6</div>
+            <div>height: 100vh; x7</div>
+            <div>height: 100vh; x8</div>
+            <div>height: 100vh; x9</div>
+            <div>height: 100vh; x10</div>
+            <div>height: 100vh; x11</div>
+            <div>height: 100vh; x12</div>
+            <div>height: 100vh; x13</div>
+            <div>height: 100vh; x14</div>
+            <div>height: 100vh; x15</div>
+            <div>height: 100vh; x16</div>
+            <div>height: 100vh; x17</div>
+            <div>height: 100vh; x18</div>
+            <div>height: 100vh; x19</div>
+            <div>height: 100vh; x20</div>
+            <div>height: 100vh; x21</div>
+            <div>height: 100vh; x22</div>
+            <div>height: 100vh; x23</div>
+            <div>height: 100vh; x24</div>
+            <div>height: 100vh; x25</div>
+            <div>height: 100vh; x26</div>
+            <div>height: 100vh; x27</div>
+            <div>height: 100vh; x28</div>
+            <div>height: 100vh; x29</div>
+            <div>height: 100vh; x30</div>
+            <div>height: 100vh; x31</div>
+            <div>height: 100vh; x32</div>
+            <div>height: 100vh; x33</div>
+            <div>height: 100vh; x34</div>
+            <div>height: 100vh; x35</div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="child5Wrap">
+            <div class="child5">
+              <div>height: 300vh; x1</div>
+              <div>height: 300vh; x2</div>
+              <div>height: 300vh; x3</div>
+              <div>height: 300vh; x4</div>
+              <div>height: 300vh; x5</div>
+              <div>height: 300vh; x6</div>
+              <div>height: 300vh; x7</div>
+              <div>height: 300vh; x8</div>
+              <div>height: 300vh; x9</div>
+              <div>height: 300vh; x10</div>
+              <div>height: 300vh; x11</div>
+              <div>height: 300vh; x12</div>
+              <div>height: 300vh; x13</div>
+              <div>height: 300vh; x14</div>
+              <div>height: 300vh; x15</div>
+              <div>height: 300vh; x16</div>
+              <div>height: 300vh; x17</div>
+              <div>height: 300vh; x18</div>
+              <div>height: 300vh; x19</div>
+              <div>height: 300vh; x20</div>
+              <div>height: 300vh; x21</div>
+              <div>height: 300vh; x22</div>
+              <div>height: 300vh; x23</div>
+              <div>height: 300vh; x24</div>
+              <div>height: 300vh; x25</div>
+              <div>height: 300vh; x26</div>
+              <div>height: 300vh; x27</div>
+              <div>height: 300vh; x28</div>
+              <div>height: 300vh; x29</div>
+              <div>height: 300vh; x30</div>
+              <div>height: 300vh; x31</div>
+              <div>height: 300vh; x32</div>
+              <div>height: 300vh; x33</div>
+              <div>height: 300vh; x34</div>
+              <div>height: 300vh; x35</div>
+              <div>height: 300vh; x36</div>
+              <div>height: 300vh; x37</div>
+              <div>height: 300vh; x38</div>
+              <div>height: 300vh; x39</div>
+              <div>height: 300vh; x40</div>
+              <div>height: 300vh; x41</div>
+              <div>height: 300vh; x42</div>
+              <div>height: 300vh; x43</div>
+              <div>height: 300vh; x44</div>
+              <div>height: 300vh; x45</div>
+              <div>height: 300vh; x46</div>
+              <div>height: 300vh; x47</div>
+              <div>height: 300vh; x48</div>
+              <div>height: 300vh; x49</div>
+              <div>height: 300vh; x50</div>
+              <div>height: 300vh; x51</div>
+              <div>height: 300vh; x52</div>
+              <div>height: 300vh; x53</div>
+              <div>height: 300vh; x54</div>
+              <div>height: 300vh; x55</div>
+              <div>height: 300vh; x56</div>
+              <div>height: 300vh; x57</div>
+              <div>height: 300vh; x58</div>
+              <div>height: 300vh; x59</div>
+              <div>height: 300vh; x60</div>
+              <div>height: 300vh; x61</div>
+              <div>height: 300vh; x62</div>
+              <div>height: 300vh; x63</div>
+              <div>height: 300vh; x64</div>
+              <div>height: 300vh; x65</div>
+              <div>height: 300vh; x66</div>
+              <div>height: 300vh; x67</div>
+              <div>height: 300vh; x68</div>
+              <div>height: 300vh; x69</div>
+              <div>height: 300vh; x70</div>
+              <div>height: 300vh; x71</div>
+              <div>height: 300vh; x72</div>
+              <div>height: 300vh; x73</div>
+              <div>height: 300vh; x74</div>
+              <div>height: 300vh; x75</div>
+              <div>height: 300vh; x76</div>
+              <div>height: 300vh; x77</div>
+              <div>height: 300vh; x78</div>
+              <div>height: 300vh; x79</div>
+              <div>height: 300vh; x80</div>
+              <div>height: 300vh; x81</div>
+              <div>height: 300vh; x82</div>
+              <div>height: 300vh; x83</div>
+              <div>height: 300vh; x84</div>
+              <div>height: 300vh; x85</div>
+              <div>height: 300vh; x86</div>
+              <div>height: 300vh; x87</div>
+              <div>height: 300vh; x88</div>
+              <div>height: 300vh; x89</div>
+              <div>height: 300vh; x90</div>
+              <div>height: 300vh; x91</div>
+              <div>height: 300vh; x92</div>
+              <div>height: 300vh; x93</div>
+              <div>height: 300vh; x94</div>
+              <div>height: 300vh; x95</div>
+              <div>height: 300vh; x96</div>
+              <div>height: 300vh; x97</div>
+              <div>height: 300vh; x98</div>
+              <div>height: 300vh; x99</div>
+              <div>height: 300vh; x100</div>
+              <div>height: 300vh; x101</div>
+              <div>height: 300vh; x102</div>
+              <div>height: 300vh; x103</div>
+              <div>height: 300vh; x104</div>
+              <div>height: 300vh; x105</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+    // 官方文档：https://www.swiper.com.cn/api/index.html
+    const swiperParent = new Swiper('.swiper-container-parent', {
+      direction: 'vertical', // Swiper的滑动方向，可设置为水平方向切换horizontal或垂直方向切换vertical。
+      slidesPerView: 'auto', // 设置slider容器能够同时显示的slides数量。
+      spaceBetween: 0, // 在slide之间设置距离（单位px）。
+      loop: false, // 设置为true则开启循环（loop）模式。
+      speed: 500, // 切换速度，即slider自动滑动开始到结束的时间（单位ms），也是触摸滑动时释放至贴合的时间。
+      effect: 'slide', // 设置Slide的切换效果，默认为"slide"（普通位移切换），还可设置为"fade"（淡入）、"cube"（方块）、"coverflow"（3d流）、"flip"（3d翻转）、"cards"（卡片式）、"creative"（创意性）。
+      touchReleaseOnEdges: true, // 设置为true可以禁用边界滑动。
+      followFinger: true // 跟随手指。如果禁用，当你按住手指时slide不会移动，只有当你释放时slide才会切换。
+    })
+    </script>
+  </body>
+</html>
