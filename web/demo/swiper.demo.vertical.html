@@ -383,7 +383,6 @@
     // 官方文档：https://www.swiper.com.cn/api/index.html
     const swiperParent = new Swiper('.swiper-container-parent', {
       freeMode: false, // 是否启用自由模式功能。
-      momentumBounce: false, // 是否开启自由滑动反弹。
       direction: 'vertical', // Swiper的滑动方向，可设置为水平方向切换horizontal或垂直方向切换vertical。
       slidesPerView: 'auto', // 设置slider容器能够同时显示的slides数量。
       spaceBetween: 0, // 在slide之间设置距离（单位px）。
@@ -396,7 +395,6 @@
     const swiperChild5 = new Swiper('.swiper-container-child5', {
       nested: true, // 用于嵌套相同方向的swiper时，当切换到子swiper时停止父swiper的切换。
       freeMode: true, // 是否启用自由模式功能。
-      momentumBounce: false, // 是否开启自由滑动反弹。
       direction: 'vertical', // Swiper的滑动方向，可设置为水平方向切换horizontal或垂直方向切换vertical。
       slidesPerView: 'auto', // 设置slider容器能够同时显示的slides数量。
       spaceBetween: 0, // 在slide之间设置距离（单位px）。
