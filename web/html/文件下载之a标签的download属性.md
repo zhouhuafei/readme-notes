@@ -21,3 +21,15 @@
     - 方式三：URL.createObjectURL(new Blob(res)，利用前端H5提供的a的download属性来下载。IE11都不兼容。
     - 方式四：IE10、IE11有一个方法window.navigator.msSaveBlob可以将File或Blob对象保存到本地磁盘。
     - 方式五：最坏的打算就是拿到那些流，转换为base64，可以直接放入a标签的href。
+
+## 下载文件的终极解决方案
+* 'Content-Type': 'application/octet-stream'
+  - 是以流的形式下载文件,这样可以实现任意格式的文件下载。
+* 'Content-Disposition': 'attachment; filename=' + fileName
+  - 第一个值表示：以什么方式下载，如attachment为以附件方式下载。
+  - 第一个值表示：默认保存时的文件名。
+#### 服务器实现下载的优势：手机上的浏览器，大多数都能友好的支持。
+#### 纯前端实现下载的劣势：手机上的浏览器，只有少数能友好的支持。
+* 使用MDN推荐的第三方包`file-saver`进行纯前端下载。
+  - 安卓手机上的浏览器，大多数都能友好的支持。
+  - 苹果手机上的浏览器，只有safari能友好的支持。其它浏览器点了都没反应，例如：uc浏览器、qq浏览器等。
