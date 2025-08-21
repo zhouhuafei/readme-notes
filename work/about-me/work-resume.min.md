@@ -142,6 +142,11 @@
 * 【独自完成】小程序：HBuilderX（Webpack） + uni-app + Vue + Vuex + Scss + uni-ui
   - 动态换肤
   - 重构：已使用uni-cli（Vite） + uni-app + Vue3 + Pinia + TS/TSX + Scss + uni-ui进行重构
+#### 抖音遥控器（桌面端软件）
+* 【独自完成】桌面端：Electron + Vue3 + WebSocket + Koa + RobotJS
+  - 在电脑上安装抖音遥控器.exe，在电脑上打开抖音遥控器会出现一个二维码。
+  - 使用手机扫描二维码开打h5端，在h5端可以对电脑上的网页版抖音进行遥控。
+* 【独自完成】h5端：html + css + js
 
 ## 在线简历
 * 网址1：https://gitee.com/zhouhuafei/about-me
