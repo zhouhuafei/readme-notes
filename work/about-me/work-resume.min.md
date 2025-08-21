@@ -1,5 +1,5 @@
 ## 经历简述
-* 最近9年，主要负责电商相关的开发：pc端管理系统、pc端购物、h5端购物、app内嵌h5、小程序内嵌h5、百度小程序、微信小程序。主Vue/Vue3技术栈。
+* 最近9年，主要负责电商相关的开发：pc端管理系统、pc端购物、h5端购物、app内嵌h5、小程序内嵌h5、百度小程序、微信小程序。主Vue/<span style="color:red;">Vue3</span>技术栈。
 * 最初2年，主要负责医疗相关的开发：pc网站、h5网站。主html5+css3+js/jQuery技术栈。
 
 ## 工作经历 + 项目经历
@@ -43,22 +43,22 @@
 * 【独自完成】松下配件项目（拿松下商城项目做的二开）（主消费者端）
 #### 超级导购（SaaS -> 智慧导购 + 社交零售）
 * 【参与完成】超级导购后台管理系统：Angular-CLI + Angular4 + Angular Router + TS + Less + PrimeNG
-  - 值得一说的事：Less补充、基础组件补充、业务组件补充、引入对api进行二次封装的概念、引入企微机器人接口报警、引入企微机器人js报警、使用Vue3进行逐步重构。
+  - 值得一说的事：Less补充、基础组件补充、业务组件补充、引入对api进行二次封装的概念、引入企微机器人接口报警、引入企微机器人js报警、使用<span style="color:red;">Vue3</span>进行逐步重构。
 * 【独自完成】超级导购h5商品清单功能（app内嵌h5）：Create-React-App + React18 + React Router + Zustand + TS/TSX + Less + Ant Design Mobile
   - 值得一说的事：引入企微机器人接口报警、引入企微机器人js报警。
-* 【独自完成】AI助手管理端：create-vue（Vite） + Vue3 + Vue Router + Pinia + Scss + Element Plus
-* 【独自完成】AI助手h5：create-vue（Vite） + Vue3 + Vue Router + Pinia + Scss + Vant
+* 【独自完成】AI助手管理端：create-vue（Vite） + <span style="color:red;">Vue3</span> + Vue Router + Pinia + Scss + Element Plus
+* 【独自完成】AI助手h5：create-vue（Vite） + <span style="color:red;">Vue3</span> + Vue Router + Pinia + Scss + Vant
 * 【独自完成】AI编排（基于dify做的二开）：Next.js
 #### 超级任务（平台）
-* 【主导完成】超级任务管理端：yudao-ui-admin-vue3
-* 【主导完成】超级任务小程序：uni-cli（Vite） + uni-app + Vue3 + Pinia + TS/TSX + Scss + uni-ui
+* 【主导完成】超级任务管理端：yudao-ui-admin-<span style="color:red;">vue3</span>
+* 【主导完成】超级任务小程序：uni-cli（Vite） + uni-app + <span style="color:red;">Vue3</span> + Pinia + TS/TSX + Scss + uni-ui
 #### 其他项目
-* 【独自完成】上海地铁四号线值班大屏（设备不联网）：Vue-CLI + Vue3 + Vue Router + Pinia + TS/TSX + Scss + indexedDB
-* 【主导完成】永和大王美团和饿了么外卖平台的分类以及菜品分析（此项目是为了通过指标提高1%的菜单转化率而立项）：yudao-ui-admin-vue3
-* 【独自完成】CHARLES & KEITH的集卡和抽奖活动（小程序内嵌h5）：create-vue（Vite） + Vue3 + Vue Router + Pinia + TS/TSX + Scss + Vant
-* 【参与完成】无印良品MUJI会员管理端：Vite + Vue3 + Vue Router + Pinia + Scss + Ant Design Vue
+* 【独自完成】上海地铁四号线值班大屏（设备不联网）：Vue-CLI + <span style="color:red;">Vue3</span> + Vue Router + Pinia + TS/TSX + Scss + indexedDB
+* 【主导完成】永和大王美团和饿了么外卖平台的分类以及菜品分析（此项目是为了通过指标提高1%的菜单转化率而立项）：yudao-ui-admin-<span style="color:red;">vue3</span>
+* 【独自完成】CHARLES & KEITH的集卡和抽奖活动（小程序内嵌h5）：create-vue（Vite） + <span style="color:red;">Vue3</span> + Vue Router + Pinia + TS/TSX + Scss + Vant
+* 【参与完成】无印良品MUJI会员管理端：Vite + <span style="color:red;">Vue3</span> + Vue Router + Pinia + Scss + Ant Design Vue
 * 【参与完成】无印良品MUJI会员小程序：微信小程序原生语法 + Scss + Vant Weapp
-* 【独自完成】无印良品MUJI二十周年活动（小程序内嵌h5）：create-vue（Vite） + Vue3 + Vue Router + Pinia + TS/TSX + Scss + Vant
+* 【独自完成】无印良品MUJI二十周年活动（小程序内嵌h5）：create-vue（Vite） + <span style="color:red;">Vue3</span> + Vue Router + Pinia + TS/TSX + Scss + Vant
 * 【参与完成】話梅商店小程序功能改造：Taro + React18 + Taro Router + @formily/reactive-react + TS/TSX + Scss + Taro UI
 * 【参与完成】話梅商店管理端功能改造：Vite + React18 + React Router + Zustand + TS/TSX + Scss + Ant Design/Ant Design Pro
 > 2016/04 - 2019/02（商派 - 上海商派网络科技有限公司）
@@ -117,7 +117,7 @@
 * npm：https://www.npmjs.com/~zhouhuafei
 * github：https://github.com/zhouhuafei
   - 给umijs/qiankun提过pr，修复了使用案例中的一个微小问题，已被merge。
-  - 给jin-yufeng/mp-html提过pr，使之兼容vue3，已被merge。
+  - 给jin-yufeng/mp-html提过pr，使之兼容<span style="color:red;">vue3</span>，已被merge。
 * 笔记：https://github.com/zhouhuafei/readme-notes/tree/master/web
 
 ## 个人项目 - 兴趣使然
@@ -129,7 +129,7 @@
   - 品牌管理
   - 超管、管理员
   - 运营端操作日志、管理端操作日志、客户端操作日志、客户端行为轨迹
-  - 重构：已使用create-vue（Vite） + Vue3 + Vue Router + Pinia + TS/TSX + Scss + Element Plus进行重构
+  - 重构：已使用create-vue（Vite） + <span style="color:red;">Vue3</span> + Vue Router + Pinia + TS/TSX + Scss + Element Plus进行重构
 * 【独自完成】管理端：Vue-CLI + Vue + Vue Router + Vuex + Scss + Element UI
   - 动态换肤
   - 图片素材库、视频素材库
@@ -138,12 +138,12 @@
   - 超管、管理员、菜单权限、功能权限
   - 用户管理、员工管理、文章管理、题目管理
   - 管理端操作日志、客户端操作日志、客户端行为轨迹
-  - 重构：已使用create-vue（Vite） + Vue3 + Vue Router + Pinia + TS/TSX + Scss + Element Plus进行重构
+  - 重构：已使用create-vue（Vite） + <span style="color:red;">Vue3</span> + Vue Router + Pinia + TS/TSX + Scss + Element Plus进行重构
 * 【独自完成】小程序：HBuilderX（Webpack） + uni-app + Vue + Vuex + Scss + uni-ui
   - 动态换肤
-  - 重构：已使用uni-cli（Vite） + uni-app + Vue3 + Pinia + TS/TSX + Scss + uni-ui进行重构
+  - 重构：已使用uni-cli（Vite） + uni-app + <span style="color:red;">Vue3</span> + Pinia + TS/TSX + Scss + uni-ui进行重构
 #### 抖音遥控器（桌面端软件）
-* 【独自完成】桌面端：Electron + Vue3 + WebSocket + Koa + RobotJS
+* 【独自完成】桌面端：Electron + <span style="color:red;">Vue3</span> + WebSocket + Koa + RobotJS
   - 在电脑上安装抖音遥控器.exe，在电脑上打开抖音遥控器会出现一个二维码。
   - 使用手机扫描二维码开打h5端，在h5端可以对电脑上的网页版抖音进行遥控。
 * 【独自完成】h5端：html + css + js
