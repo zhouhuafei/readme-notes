@@ -29,8 +29,8 @@
   - 增加电子卡功能、预约功能。
 * 【<span style="color:#9a38d7;">独自完成</span>】松下商城项目（拿草动商城做的二开）（主消费者端）
   - 中国银行app内嵌松下h5项目：Vue-CLI + Vue + Vue Router + Vuex + Scss + Vant
-    - 把微信小程序代码转换成h5代码，我通过加中间层的方式，进行页面代理和方法代理以及api代理，使小程序语法能够在h5中正常运行。
-    - 模板语法是通过nodejs脚本解析字符串，把微信小程序的语法替换成了Vue的模板语法。
+    + 把微信小程序代码转换成h5代码，我通过加中间层的方式，进行页面代理和方法代理以及api代理，使小程序语法能够在h5中正常运行。
+    + 模板语法是通过nodejs脚本解析字符串，把微信小程序的语法替换成了Vue的模板语法。
   - 增加内购活动，松下每年都会进行2场小程序内购活动，平均每场卖1.5个亿。
   - 增加草动自研的客服系统（微信小程序内置的客服满足不了客服需要指定门店的需求）。
   - 增加售后服务、延长保修、异步延保、预约清洗、上门安装、LinkFlow的CDP埋点对接、留资（自定义表单、表单可视化）等功能。
@@ -114,11 +114,11 @@
 * 责任心强，响应迅速。做事专注，工作出活的效率很高。
 
 ### 个人杂集
-* npm：https://www.npmjs.com/~zhouhuafei
-* github：https://github.com/zhouhuafei
+* npm：[https://www.npmjs.com/~zhouhuafei](https://www.npmjs.com/~zhouhuafei)
+* github：[https://github.com/zhouhuafei](https://github.com/zhouhuafei)
   - 给umijs/qiankun提过pr，修复了使用案例中的一个微小问题，已被merge。
   - 给jin-yufeng/mp-html提过pr，使之兼容<span style="color:#ff0000;">vue3</span>，已被merge。
-* 笔记：https://github.com/zhouhuafei/readme-notes/tree/master/web
+* 笔记：[https://github.com/zhouhuafei/readme-notes/tree/master/web](https://github.com/zhouhuafei/readme-notes/tree/master/web)
 
 ### 个人项目 - 兴趣使然
 #### 红杉拼图（SaaS -> 电商）（线上门店，选品后，商品是门店商品，库存是门店库存）
@@ -149,6 +149,6 @@
 * 【<span style="color:#9a38d7;">独自完成</span>】h5端：html + css + js
 
 ### 在线简历
-* 网址1：https://gitee.com/zhouhuafei/about-me
-* 网址2：https://docs.qq.com/doc/DWGxoTlNKVUdTd3Jn
-* 网址3：https://github.com/zhouhuafei/readme-notes/blob/master/work/about-me/work-resume.min.md
+* 网址1：[https://gitee.com/zhouhuafei/about-me](https://gitee.com/zhouhuafei/about-me)
+* 网址2：[https://docs.qq.com/doc/DWGxoTlNKVUdTd3Jn](https://docs.qq.com/doc/DWGxoTlNKVUdTd3Jn)
+* 网址3：[https://github.com/zhouhuafei/readme-notes/blob/master/work/about-me/work-resume.min.md](https://github.com/zhouhuafei/readme-notes/blob/master/work/about-me/work-resume.min.md)
