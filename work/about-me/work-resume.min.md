@@ -42,7 +42,7 @@
   - 对接云闪付，购买家电，20%政府补贴。
 * 松下配件项目（拿松下商城项目做的二开）（主消费者端）
 #### 超级导购（SaaS -> 智慧导购 + 社交零售）
-* 超级导购后台管理系统：Angular-CLI + Angular4全家桶 + Less + primeng
+* 超级导购后台管理系统：Angular-CLI + Angular4 + Angular Router + TS + Less + primeng
   - 值得一说的事：Less补充、基础组件补充、业务组件补充、引入对api进行二次封装的概念、引入企微机器人接口报警、引入企微机器人js报警、使用Vue3进行逐步重构。
 * 超级导购app内嵌h5：Create-React-App + React18 + react-router-dom + mobx-react + TS/TSX + Less + Ant Design Mobile
   - 值得一说的事：引入企微机器人接口报警、引入企微机器人js报警。
