@@ -16,7 +16,7 @@
   - 值得一说的事：封装业务组件、引入单元测试（Jest）、引入commit提交规范、引入GitLab的CI/CD自动化打包、引入企微机器人接口报警、引入企微机器人js报警、促进后端接口规范、多次将功能的实现方式导向正规（功能怎么实现更合理）。2019年的时候获得了年度优秀员工。
   - 技术相关补充：地图使用的腾讯地图、图表使用的ECharts、富文本用的wangEditor、代码规范使用的ESLint/standard、代码管理使用的GitLab、抓包使用的Fiddler。
 * 【主导完成】草动商城微信小程序：Gulp + 微信小程序原生语法 + Scss + Vant Weapp
-* 【独自完成】草动商城h5文章和任务（微信公众号）：Vue-CLI + Vue + Vue Router + Vuex + Scss + Vant
+* 【独自完成】草动商城h5文章和任务功能（微信公众号）：Vue-CLI + Vue + Vue Router + Vuex + Scss + Vant
 * 【独自完成】五五营销微信小程序：Gulp + 微信小程序原生语法 + Scss
 * 【参与完成】悦诗风吟项目（拿草动商城做的二开）（主员工端）
   - 换肤、UI变更。
@@ -44,7 +44,7 @@
 #### 超级导购（SaaS -> 智慧导购 + 社交零售）
 * 【参与完成】超级导购后台管理系统：Angular-CLI + Angular4 + Angular Router + TS + Less + PrimeNG
   - 值得一说的事：Less补充、基础组件补充、业务组件补充、引入对api进行二次封装的概念、引入企微机器人接口报警、引入企微机器人js报警、使用Vue3进行逐步重构。
-* 【独自完成】超级导购app内嵌h5：Create-React-App + React18 + React Router + Zustand + TS/TSX + Less + Ant Design Mobile
+* 【独自完成】超级导购h5商品清单功能（app内嵌h5）：Create-React-App + React18 + React Router + Zustand + TS/TSX + Less + Ant Design Mobile
   - 值得一说的事：引入企微机器人接口报警、引入企微机器人js报警。
 * 【独自完成】AI助手管理端：create-vue（Vite） + Vue3 + Vue Router + Pinia + Scss + Element Plus
 * 【独自完成】AI助手h5：create-vue（Vite） + Vue3 + Vue Router + Pinia + Scss + Vant
