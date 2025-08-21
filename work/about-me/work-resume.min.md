@@ -55,13 +55,13 @@
 * 超级任务代理端：yudao-ui-admin-vue3
 * 超级任务小程序：uni-cli（Vite） + uni-app + Vue3 + Pinia + TS/TSX + Scss + uni-ui
 #### 其他项目
-* 話梅商店小程序功能改造：Taro + React18 + Taro Router + @formily/reactive-react + TS/TSX + Scss + Taro UI
-* 話梅商店管理端功能改造：Vite + React18 + React Router + Zustand + TS/TSX + Scss + Ant Design/Ant Design Pro
+* 上海地铁四号线值班大屏（设备不联网）：Vue-CLI + Vue3 + Vue Router + Pinia + TS/TSX + Scss + indexedDB
+* 永和大王美团和饿了么外卖平台的分类以及菜品分析（此项目是为了通过指标提高1%的菜单转化率而立项）：yudao-ui-admin-vue3
+* CHARLES & KEITH的集卡和抽奖活动（小程序内嵌h5）：create-vue（Vite） + Vue3 + Vue Router + Pinia + TS/TSX + Scss + Vant
 * 无印良品MUJI会员小程序：微信小程序原生语法 + Scss + Vant-Weapp
 * 无印良品MUJI二十周年活动（小程序内嵌h5）：create-vue（Vite） + Vue3 + Vue Router + Pinia + TS/TSX + Scss + Vant
-* CHARLES & KEITH的集卡和抽奖活动（小程序内嵌h5）：create-vue（Vite） + Vue3 + Vue Router + Pinia + TS/TSX + Scss + Vant
-* 永和大王美团和饿了么外卖平台的分类以及菜品分析（此项目是为了通过指标提高1%的菜单转化率而立项）：yudao-ui-admin-vue3
-* 上海地铁四号线值班大屏（设备不联网）：Vue-CLI + Vue3 + Vue Router + Pinia + TS/TSX + Scss + indexedDB
+* 話梅商店小程序功能改造：Taro + React18 + Taro Router + @formily/reactive-react + TS/TSX + Scss + Taro UI
+* 話梅商店管理端功能改造：Vite + React18 + React Router + Zustand + TS/TSX + Scss + Ant Design/Ant Design Pro
 > 2016/04 - 2019/02（商派 - 上海商派网络科技有限公司）
 #### 云起微商城（SaaS -> 电商）（线上商城，无选品，商品是商城商品，库存是商城库存）
 * 云起微商城后台管理系统：Gulp + SeaJS + jQuery + Vue + Scss
