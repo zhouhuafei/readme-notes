@@ -848,7 +848,8 @@ export default {
 * 能。
 
 # node-sass安装不上
-* 解决方案：`npm i node-sass --sass_binary_site=https://npm.taobao.org/mirrors/node-sass/`
+* 解决方案1（无效）：`npm i node-sass -D --sass_binary_site=https://npm.taobao.org/mirrors/node-sass/`
+* 解决方案2（有效）: `npm i sass@1.22.0 -D`。并把`/deep/`改为`::v-deep`。
 
 # 刷新页面时，create钩子中获取不到vuex里的userInfo
 * 解决方案：在```router.beforeEach```中进行控制，当接口返回之后，再触发```next()```。

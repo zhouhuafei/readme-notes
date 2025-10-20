@@ -67,3 +67,6 @@ animation-fill-mode: forwards;
 * y轴：竖直于电脑屏幕的方向。
 * z轴：垂直于电脑屏幕的方向(穿透于电脑屏幕的方向)。
 * 动画的`transform: rotate(30deg)`旋转，默认就是基于z轴的。
+
+## 前端动效讲解与实战
+* https://mp.weixin.qq.com/s/78VgoWrf3UzOAHQWpGbG_w
