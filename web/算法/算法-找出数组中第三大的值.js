@@ -1,5 +1,6 @@
 const getThirdMax = (array) => {
   let first = -Infinity, second = -Infinity, third = -Infinity
+
   for (let i = 0; i < array.length; i++) {
     const num = array[i]
     if (num === first || num === second || num === third) continue
@@ -14,6 +15,7 @@ const getThirdMax = (array) => {
       third = num
     }
   }
+
   return third === -Infinity ? null : third
 }
 
