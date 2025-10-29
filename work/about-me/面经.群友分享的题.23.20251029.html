@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  </head>
+  <body>
+    <!--有一段代码如下 在不考虑其他样式的情况下 最外面的div有多高-->
+    <div>
+      <div style="height: 100px; padding: 20px; margin: 15px;"></div>
+      <div style="height: 50px; padding: 10px; margin: 5px;"></div>
+    </div>
+    <!--
+    heigh是225
+    考的是BFC知识
+    一次过
+    -->
+
+    <script>
+    console.log('1. 同步代码开始')
+    setTimeout(() => {
+      console.log('2. setTimeout 1')
+      Promise.resolve().then(() => {
+        console.log('3. Promise in setTimeout 1')
+      })
+    }, 0)
+
+    Promise.resolve().then(() => {
+      console.log('4. Promise 1')
+      setTimeout(() => {
+        console.log('5. setTimeout in Promise 1')
+      }, 0)
+    })
+
+    Promise.resolve().then(() => {
+      console.log('6. Promise 2')
+    })
+
+    setTimeout(() => {
+      console.log('7. setTimeout 2')
+      Promise.resolve().then(() => {
+        console.log('8. Promise in setTimeout 2')
+      })
+    }, 0)
+    console.log('9. 同步代码结束')
+
+    // 1、9、4、6、2、3、7、8、5
+    // 考的是事件循环机制
+    // 一次过
+    </script>
+  </body>
+</html>
