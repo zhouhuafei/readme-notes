@@ -95,3 +95,11 @@ declare module '*.scss' {
 > https://cn.vitejs.dev/guide/env-and-mode.html#modes
 * 默认情况下，开发服务器 (dev 命令) 运行在 development (开发) 模式，而 build 命令则运行在 production (生产) 模式。
 * 这意味着当执行 vite build 时，它会自动加载 .env.production 中可能存在的环境变量。
+
+## 模板错误导致路由跳转不渲染页面的解决方案
+#### 在main.js中加上下述代码即可
+```javascript
+app.config.errorHandler = (err, instance, info) => {
+  console.error('模板/组件渲染错误:', err, '组件实例:', instance, '错误信息:', info)
+}
+```
