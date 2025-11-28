@@ -70,7 +70,7 @@ server {
     listen 80;
 
     # 配置独立域名
-    server_name admin.sbxx.top;
+    server_name admin.24678.top;
 
     # 代理/
     location ^~ / {
@@ -142,7 +142,7 @@ server {
     - 上面nginx配置307的地方如果配置成308的话会报错（308重定向需要跳到一个新网址）：
     ```
     无法访问此网站
-    网址为 http://local.admin.sbxx.com/admin/ 的网页可能暂时无法连接，或者它已永久性地移动到了新网址。
+    网址为 http://local.admin.24678.com/admin/ 的网页可能暂时无法连接，或者它已永久性地移动到了新网址。
     ERR_INVALID_RESPONSE
     ```
 * 禁止用户通过服务器的ip地址直接访问nginx服务的80端口。此配置会导致http域名泛解析失效。
@@ -300,11 +300,11 @@ server {
     - 解决方案：找到你的nginx.conf的文件夹目录，然后运行这个```sudo nginx -c /usr/local/etc/nginx/nginx.conf```命令，再运行```sudo nginx -s reload```，就可以了
 
 # server_name
-* 1、saas服务，给server_name配置通配符```*.h5.sbxx.top```。是个不错的解决方案。例如可以匹配到：s39210.h5.sbxx.top。
+* 1、saas服务，给server_name配置通配符```*.h5.24678.top```。是个不错的解决方案。例如可以匹配到：s39210.h5.24678.top。
     - 以上亲测可用。但是还不够精确。
     - 想要精确匹配。可以看第2条。如下所示：
 * 2、server_name还可以通过正则配置：这个是saas服务配域名的正确解决方案。
-    - ```~^s\d+\.h5.sbxx\.top$```
+    - ```~^s\d+\.h5.24678\.top$```
     - 虚拟主机必须以波浪线```~```起始，否则该名字会被认为是个确切的名字(亲测，确实如此，必须以波浪线```～```起始)。
 
 # 开启```Content-Encoding: gzip```
@@ -383,12 +383,12 @@ server {
 ```
 server {
 	listen 80;
-	server_name www.sbxx.top sbxx.top;
+	server_name www.24678.top 24678.top;
     return 301 https://$server_name$request_uri;
 }
 ```
 
-# nginx 配置comic.sbxx.top的静态服务器时，出现403。
+# nginx 配置comic.24678.top的静态服务器时，出现403。
 > 一定要先看错误日志。否则只是白白浪费时间。
 * 在nginx.conf中可以看到访问日志和错误日志。
     - access_log /var/log/nginx/access.log;
@@ -398,7 +398,7 @@ server {
 ```
 server {
 	listen 80;
-	server_name comic.sbxx.top;
+	server_name comic.24678.top;
     root /root/hello-world_crawler/pages/;
     index index.html;
 }
@@ -410,7 +410,7 @@ server {
 ```
 server {
 	listen 80;
-	server_name comic.sbxx.top;
+	server_name comic.24678.top;
     root /root/hello-world_crawler/pages/;
     index index.html;
     gzip on;
@@ -419,7 +419,7 @@ server {
         add_header X-Frame-Options SAMEORIGIN;
     }
     location /1/ {
-        valid_referers none blocked comic.sbxx.top;
+        valid_referers none blocked comic.24678.top;
         if ($invalid_referer) {
             return 403;
         }
@@ -427,7 +427,7 @@ server {
         proxy_set_header referer https://m.bnmanhua.com;
     }
     location /2/ {
-        valid_referers none blocked comic.sbxx.top;
+        valid_referers none blocked comic.24678.top;
         if ($invalid_referer) {
             return 403;
         }

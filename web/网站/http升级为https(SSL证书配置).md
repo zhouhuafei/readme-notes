@@ -45,7 +45,7 @@ const serverHttps = httpsServer.listen('55551', function () {
 ```
 server {
     listen 443;
-    server_name www.sbxx.top sbxx.top;
+    server_name www.24678.top 24678.top;
 
     ssl on;
     ssl_certificate /root/suibianxiexie/https/index.pem;
@@ -65,7 +65,7 @@ server {
 ```
 server {
     listen 80;
-    server_name www.sbxx.top sbxx.top;
+    server_name www.24678.top 24678.top;
     # 这是ngixn早前的写法，现在还可以使用。
     rewrite ^(.*)$  https://$host$1 permanent;
     # 这是nginx最新支持的写法。

@@ -3,7 +3,7 @@
     - 该属性也可以设置一个值来规定下载文件的名称。所允许的值没有限制，浏览器将自动检测正确的文件扩展名并添加到文件。
 * 在a标签中必须设置href属性。
 ```
-<a href="http://sbxx.top/static-no-cache/test/zero/img.jpg" download="rename">
+<a href="http://24678.top/static-no-cache/test/zero/img.jpg" download="rename">
 ```
 * 注意事项：
   - href的指向需要同源，跨域下载不下来。或源文件允许跨域才可以下载下来。在ios设备上，可能会忽略download属性，使文件下载变成了文件预览，此时需要给文件加响应头`'Content-Disposition': 'attachment; filename=' + fileName`。加响应头是终极解决方案且是兼容性最好的解决方案。
