@@ -1,4 +1,4 @@
-## 好用的docker镜像源
+## 设置docker镜像源 - 好用的镜像源 - 不好用了
 * https://docker.xuanyuan.me 国内的这个docker镜像源挺好用的
 * Docker Engine的JSON第一行增加一个配置：`"registry-mirrors": ["https://docker.xuanyuan.me"],`。
 
