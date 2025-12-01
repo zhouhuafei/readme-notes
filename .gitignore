@@ -11,6 +11,8 @@ lerna-debug.log*
 yarn.lock
 pnpm-lock.yaml
 package-lock.json
+src/auto-imports.d.ts
+src/components.d.ts
 node_modules
 .DS_Store
 dist
@@ -31,3 +33,5 @@ coverage
 *.njsproj
 *.sln
 *.sw?
+
+*.tsbuildinfo
