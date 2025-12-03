@@ -248,7 +248,7 @@ safe-area-inset-left：安全区域距离左边界距离 通常是0
 ```
 * 答案：env和constant只有在viewport-fit=cover时候才能生效。
 ```html
-<meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0 maximum-scale=1, minimum-scale=1, user-scalable=no">
+<meta name="viewport" content="viewport-fit=cover, width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 ```
 
 ## css各种loading案例
