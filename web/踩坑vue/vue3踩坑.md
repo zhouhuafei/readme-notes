@@ -103,3 +103,18 @@ app.config.errorHandler = (err, instance, info) => {
   console.error('模板/组件渲染错误:', err, '组件实例:', instance, '错误信息:', info)
 }
 ```
+
+## vue3引入静态资源的多种方式
+```javascript
+// 在js中动态引入public中的图片：`/images/ShareGuide/share${1}.png`
+// 在模板中动态引入public中的图片：<img :src="`/images/ShareGuide/share${1}.png`" alt="">
+
+// 在js中动态引入OSS中的图片：`${import.meta.env.VITE_OSS_URL}/images/ShareGuide/share${1}.png`
+// 在模板中动态引入OSS中的图片：<img :src="`${import.meta.env.VITE_OSS_URL}/images/ShareGuide/share${1}.png`" alt="">
+
+// 在js中动态引入assets中的图片：new URL(`@/assets/home/homeScreenIcon${1}.png`, import.meta.url).href
+// 在js中静态引入assets中的图片：import homeScreenIcon1 from '@/assets/home/homeScreenIcon1.png'
+// 在模板中静态引入assets中的图片：<img src="@/assets/home/homeScreenIcon1.png" alt="">
+
+// 在index.html中使用VITE变量：<script src="%VITE_OSS_DOMAIN%/muji-h5/dist/jweixin-1.6.0.js"></script>
+```
