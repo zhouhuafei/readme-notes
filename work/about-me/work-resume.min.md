@@ -121,7 +121,7 @@
 * 笔记：https://github.com/zhouhuafei/readme-notes/tree/master/web
 
 ## 个人项目 - 兴趣使然
-#### 红杉拼图（SaaS -> 电商）（线上门店，选品后，商品是门店商品，库存是门店库存）
+#### budlet-management（SaaS -> 电商）（线上门店，选品后，商品是门店商品，库存是门店库存）
 * 【独自完成】服务端：koa2 + mongoose + docker-compose（nginx + mongodb + redis）
   - JWT鉴权、RestfulAPI风格（对HTTP协议中请求方法和状态码的应用）、企微机器人接口报警
   - 重构：已使用TS进行重构
