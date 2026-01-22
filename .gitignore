@@ -1,4 +1,4 @@
-# 非模板内置
+# 查漏补缺
 yarn.lock
 pnpm-lock.yaml
 package-lock.json
@@ -7,8 +7,7 @@ src/components.d.ts
 .hbuilderx
 
 # Logs
-logs/*
-!logs/.gitkeep
+logs
 *.log
 npm-debug.log*
 yarn-debug.log*
