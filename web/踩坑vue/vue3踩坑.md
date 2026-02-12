@@ -118,3 +118,15 @@ app.config.errorHandler = (err, instance, info) => {
 
 // 在index.html中使用VITE变量：<script src="%VITE_OSS_DOMAIN%/muji-h5/dist/jweixin-1.6.0.js"></script>
 ```
+
+## 批量导入组件/批量注册组件 - import.meta.glob - vite提供的功能
+```typescript
+// 批量导入组件
+const components = import.meta.glob('@/components/icons/*.vue', { eager: true })
+
+// 批量注册组件
+Object.entries(components).forEach(([path, module]) => {
+  const componentName = path.split('/').pop().replace('.vue', '')
+  app.component(componentName, module.default)
+})
+```
