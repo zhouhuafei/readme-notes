@@ -121,12 +121,9 @@ app.config.errorHandler = (err, instance, info) => {
 
 ## 批量导入组件/批量注册组件 - import.meta.glob - vite提供的功能
 ```typescript
-// 批量导入组件
 const components = import.meta.glob('@/components/icons/*.vue', { eager: true })
-
-// 批量注册组件
 Object.entries(components).forEach(([path, module]) => {
   const componentName = path.split('/').pop().replace('.vue', '')
-  app.component(componentName, module.default)
+  app.component(componentName, (module as any).default)
 })
 ```
