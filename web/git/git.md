@@ -402,7 +402,7 @@ git merge upstream/xxx
 ## 从所有的提交历史记录中删除某个文件
 `git filter-branch --tree-filter 'rm -f passwords.txt' HEAD`
 
-# 把coding代码同步到客户gitlab仓库
+## 把coding代码同步到客户gitlab仓库
 * 方式一：在客户gitlab仓库建立git上游upstream
 ```bash
 # 在客户gitlab仓库对应的项目命令行中建立git上游upstream
@@ -427,3 +427,6 @@ git push upstream master
 # 把合并的代码提交到coding仓库
 git push
 ```
+
+## 同步上游仓库的代码到本地仓库
+`git fetch upstream -p`
