@@ -127,3 +127,8 @@ Object.entries(components).forEach(([path, module]) => {
   app.component(componentName, (module as any).default)
 })
 ```
+
+## KeepAlive
+* `<KeepAlive>`默认会缓存内部的所有组件实例。
+  - 但我们可以通过`include`和`exclude prop`来定制该行为。如此：↓
+  - 它会根据组件的`name`选项进行匹配，所以组件如果想要条件性地被`KeepAlive`缓存，就必须显式声明一个`name`选项。
