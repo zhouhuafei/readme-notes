@@ -112,7 +112,7 @@ app.config.errorHandler = (err, instance, info) => {
 // 在js中动态引入OSS中的图片：`${import.meta.env.VITE_OSS_URL}/images/ShareGuide/share${1}.png`
 // 在模板中动态引入OSS中的图片：<img :src="`${import.meta.env.VITE_OSS_URL}/images/ShareGuide/share${1}.png`" alt="">
 
-// 在js中动态引入assets中的图片：new URL(`@/assets/home/homeScreenIcon${1}.png`, import.meta.url).href
+// 在js中动态引入assets中的图片：new URL(`../assets/home/homeScreenIcon${1}.png`, import.meta.url).href
 // 在js中静态引入assets中的图片：import homeScreenIcon1 from '@/assets/home/homeScreenIcon1.png'
 // 在模板中静态引入assets中的图片：<img src="@/assets/home/homeScreenIcon1.png" alt="">
 

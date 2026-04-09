@@ -48,7 +48,9 @@ const mp = {
         'application/vnd.ms-excel', // .xls
         'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' // .xlsx
       ]
-      if (options.mediaType) {
+      if (options.mimeType) {
+        options.mediaType = options.mimeType
+      } else if (options.mediaType) {
         const mimeType = []
         if (options.mediaType.includes('image/')) {
           mimeType.push(...options.mediaType)
@@ -76,6 +78,7 @@ const mp = {
       }
       const input = document.createElement('input')
       input.addEventListener('change', (e) => {
+        document.body.removeChild(input)
         const tempFiles = [...e.target.files]
         if (tempFiles.length > options.count) {
           const message = `最多上传${options.count}个文件`
@@ -90,6 +93,8 @@ const mp = {
       if (options.count > 1) {
         input.setAttribute('multiple', 'multiple')
       }
+      input.style.display = 'none'
+      document.body.appendChild(input) // 修复ios无法触发change的问题
       input.click()
     })
   }
