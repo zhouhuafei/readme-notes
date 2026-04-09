@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>css布局-父级行高大于子级高度时-子级的垂直居中会出现误差-子级是内联块元素-本案例使用的表格布局</title>
+    <title>css布局-表格合并时-中间行的高度会变的很高-需要其他行的内容高度去挤压才可以变小</title>
     <style>
     * {
       margin: 0;
@@ -47,29 +47,6 @@
       font-size: 14px;
       line-height: 22px;
       text-align: center;
-      /* 下面四条属性是方案2：使用这个方案，直接在table组件中就可以解决误差问题 - 弊端：`display: flex;`会让自身的单行省略号失效，需要在具体的应用场景中额外套一层标签去加单行省略号。 */
-      /*display: flex;*/
-      /*align-items: center;*/
-      /*justify-content: center;*/
-      /*flex-wrap: wrap;*/
-    }
-
-    .button {
-      display: inline-block;
-      vertical-align: middle;
-      height: 60px;
-      background: #000;
-      width: 30px;
-    }
-
-    .button.small {
-      height: 18px; /* 若.button的高度小于.cell的行高，则.button的垂直居中会出现误差。 */
-    }
-
-    /* 下面的.private是方案1：使用这个方案，需要在应用场景中额外套一层.private解决误差问题 - 益处：单行省略号写起来方便。 */
-    .private {
-      line-height: 1; /* 给.button套一层.private即可解决上述误差问题 - 前提是.cell的行高和.button的高度都为奇数或都为偶数 - 否则误差依然会存在。 */
-      font-size: 0; /* 行高导致的问题就用行高来修复，此处是为了防止有些内联块没使用vertical-align: middle;导致出现多余的底部间距。使用font-size: 0;可以消除多余的底部间距。 */
     }
     </style>
   </head>
@@ -107,7 +84,7 @@
           <td>
             <div class="cell">男</div>
           </td>
-          <td>
+          <td rowspan="4">
             <div class="cell">
               <div>自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍</div>
               <div>自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍</div>
@@ -132,27 +109,22 @@
           </td>
         </tr>
         <tr>
-          <td>
-            <div class="cell">
-              <div class="private">
-                <div class="button"></div>
-              </div>
-            </div>
+          <td rowspan="3">
+            <div class="cell">周华飞</div>
           </td>
           <td>
-            <div class="cell">
-              <div class="private">
-                <div class="button small"></div>
-              </div>
-            </div>
+            <div class="cell">男</div>
           </td>
+        </tr>
+        <tr>
           <td>
-            <div class="cell">
-              <div class="private">
-                <div class="button small"></div>
-                <div class="button small"></div>
-              </div>
-            </div>
+            <div class="cell">男</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="cell">男</div>
+            <div class="cell">男</div>
           </td>
         </tr>
       </tbody>
