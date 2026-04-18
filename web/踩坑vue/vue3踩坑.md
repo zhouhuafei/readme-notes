@@ -137,5 +137,6 @@ Object.entries(components).forEach(([path, module]) => {
 * defineOptions的name需要是静态的，不能使用运行时变量进行动态赋值。
 
 ## import.meta.env
-* import.meta.env.DEV：判断当前是不是开发调试阶段，可用于区分开发阶段和生产阶段。例如开发阶段打本地代理接口，生产阶段打线上生产接口。
-* import.meta.env.MODE：根据不同模式加载不同的`.env`配置文件，可用于区分dev/uat/prod环境。例如dev环境跳a页面，uat环境跳b页面，prod环境跳c页面。
+* import.meta.env.DEV：布尔值 - 判断当前是不是开发调试阶段，可用于区分开发阶段和生产阶段。例如开发阶段打本地代理接口，生产阶段打线上生产接口。
+* import.meta.env.PROD：布尔值 - 同上。
+* import.meta.env.MODE：字符串 - 根据不同模式加载不同的`.env`配置文件，可用于区分dev/uat/prod环境。例如dev环境跳a页面，uat环境跳b页面，prod环境跳c页面。
