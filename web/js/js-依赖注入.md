@@ -7,10 +7,10 @@
 import ElementUI from 'element-ui'
 Vue.use(ElementUI)
 ```
-* 其实就是我们的需要的模块依赖vue模块，main.js就是vue模块抽象出来的接口，这里使用Vue.use()，把我们需要的模块vue注入进来，然后我们就可以用它了。
+* 其实就是我们的需要的模块依赖vue模块，main.js就是vue模块抽象出来的接口，这里使用`Vue.use()`，把我们需要的模块vue注入进来，然后我们就可以用它了。
 * 这是个很普通的代码，太正常了，我们每天都会写这些代码。
 * 其实依赖注入它只做两件事：
-    - 初始化被依赖的模块 
-    - 注入到依赖模块中
-* 这个时候应该知道了，import ElementUI from 'element-ui'，初始化了被依赖的模块；而Vue.use(ElementUI)是把我们依赖的模块注入到依赖模块中。
+  - 初始化被依赖的模块
+  - 注入到依赖模块中
+* 这个时候应该知道了，import ElementUI from 'element-ui'，初始化了被依赖的模块；而`Vue.use(ElementUI)`是把我们依赖的模块注入到依赖模块中。
 * 我们不依赖element-ui的具体实现，我们只是使用他这个库的抽象接口而已，比如它的button组件。
